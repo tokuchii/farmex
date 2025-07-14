@@ -1,26 +1,11 @@
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <nav
-      className={
-        `fixed w-full top-0 left-0 z-50 transition-colors duration-300 ` +
-        (scrolled
-          ? "bg-white shadow-lg"
-          : "bg-transparent")
-      }
+      className="fixed w-full top-0 left-0 z-50 transition-colors duration-300 bg-white/30 shadow-lg backdrop-blur group hover:bg-white"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 group">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <h1 className="text-2xl font-bold text-green-600">FarmEx</h1>
