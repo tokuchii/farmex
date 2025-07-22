@@ -1,21 +1,18 @@
 import {
-  isRouteErrorResponse,
   Links,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "react-router";
+} from "@remix-run/react";
+import type { LinksFunction } from "@remix-run/node";
 
-import type { Route } from "./+types/root";
-import "./app.css";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-import { useLocation } from "react-router";
-import { motion, AnimatePresence } from "framer-motion";
-import { useEffect } from "react";
+import "./tailwind.css";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import { AnimatePresence, motion } from "framer-motion";
 
-export const links: Route.LinksFunction = () => [
+export const links: LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
     rel: "preconnect",
@@ -47,16 +44,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  const location = useLocation();
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [location.pathname]);
   return (
     <>
       <Navbar />
       <AnimatePresence mode="wait">
         <motion.div
-          key={location.pathname}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -67,34 +59,5 @@ export default function App() {
       </AnimatePresence>
       <Footer />
     </>
-  );
-}
-
-export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
-  let message = "Oops!";
-  let details = "An unexpected error occurred.";
-  let stack: string | undefined;
-
-  if (isRouteErrorResponse(error)) {
-    message = error.status === 404 ? "404" : "Error";
-    details =
-      error.status === 404
-        ? "The requested page could not be found."
-        : error.statusText || details;
-  } else if (import.meta.env.DEV && error && error instanceof Error) {
-    details = error.message;
-    stack = error.stack;
-  }
-
-  return (
-    <main className="pt-16 p-4 container mx-auto">
-      <h1>{message}</h1>
-      <p>{details}</p>
-      {stack && (
-        <pre className="w-full p-4 overflow-x-auto">
-          <code>{stack}</code>
-        </pre>
-      )}
-    </main>
   );
 }
