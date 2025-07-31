@@ -37,7 +37,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\products.tsx"
   );
-  import.meta.hot.lastModified = "1753224906393.1978";
+  import.meta.hot.lastModified = "1753940010136.6956";
 }
 function meta() {
   return [{
@@ -53,41 +53,53 @@ function Products() {
   (0, import_react.useEffect)(() => {
     setIsClient(true);
   }, []);
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "min-h-screen pt-14", children: [
-    " ",
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "relative w-full h-auto overflow-hidden", initial: {
-      opacity: 0,
-      y: 40
-    }, whileInView: {
-      opacity: 1,
-      y: 0
-    }, viewport: {
-      once: true,
-      amount: 0.2
-    }, transition: {
-      duration: 0.6,
-      ease: "easeOut"
-    }, children: [
-      isClient && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: "/bgproducts.jpg", alt: "Farm Image", className: "w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover" }, void 0, false, {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "min-h-screen", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "relative w-full h-auto overflow-hidden", children: [
+    isClient && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(
+      motion.img,
+      {
+        src: "/bgproducts.jpg",
+        alt: "Farm Image",
+        className: "w-full h-64 sm:h-96 md:h-[600px] lg:h-[910px] object-cover",
+        initial: {
+          opacity: 0,
+          y: 40
+        },
+        whileInView: {
+          opacity: 1,
+          y: 0
+        },
+        viewport: {
+          once: true,
+          amount: 0.2
+        },
+        transition: {
+          duration: 0.6,
+          ease: "easeOut"
+        }
+      },
+      void 0,
+      false,
+      {
         fileName: "app/routes/products.tsx",
-        lineNumber: 52,
+        lineNumber: 40,
         columnNumber: 22
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 flex flex-col items-center justify-center z-20", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-white text-2xl md:text-4xl font-extrabold uppercase tracking-widest m-4", children: "Products" }, void 0, false, {
-        fileName: "app/routes/products.tsx",
-        lineNumber: 54,
-        columnNumber: 11
-      }, this) }, void 0, false, {
-        fileName: "app/routes/products.tsx",
-        lineNumber: 53,
-        columnNumber: 9
-      }, this)
-    ] }, void 0, true, {
+      },
+      this
+    ),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 flex flex-col items-center justify-center z-20", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-white text-2xl md:text-4xl font-extrabold uppercase tracking-widest mb-4 h-auto mt-16 md:-mt-26", children: "PRODUCTS" }, void 0, false, {
       fileName: "app/routes/products.tsx",
-      lineNumber: 39,
-      columnNumber: 7
+      lineNumber: 55,
+      columnNumber: 2
+    }, this) }, void 0, false, {
+      fileName: "app/routes/products.tsx",
+      lineNumber: 54,
+      columnNumber: 5
     }, this)
   ] }, void 0, true, {
+    fileName: "app/routes/products.tsx",
+    lineNumber: 39,
+    columnNumber: 7
+  }, this) }, void 0, false, {
     fileName: "app/routes/products.tsx",
     lineNumber: 38,
     columnNumber: 10
@@ -103,4 +115,4 @@ export {
   Products as default,
   meta
 };
-//# sourceMappingURL=/build/routes/products-ERKN7O3W.js.map
+//# sourceMappingURL=/build/routes/products-SXXDZJKZ.js.map

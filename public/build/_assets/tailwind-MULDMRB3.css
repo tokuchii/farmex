@@ -418,6 +418,9 @@ video {
 .ml-4 {
   margin-left: 1rem;
 }
+.mr-\[14\%\] {
+  margin-right: 14%;
+}
 .mt-1 {
   margin-top: .25rem;
 }
@@ -432,6 +435,24 @@ video {
 }
 .mt-6 {
   margin-top: 1.5rem;
+}
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+.mt-10 {
+  margin-top: 2.5rem;
+}
+.mt-20 {
+  margin-top: 5rem;
+}
+.mb-3 {
+  margin-bottom: .75rem;
+}
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+.mt-14 {
+  margin-top: 3.5rem;
 }
 .block {
   display: block;
@@ -474,6 +495,12 @@ video {
 }
 .h-full {
   height: 100%;
+}
+.h-64 {
+  height: 16rem;
+}
+.h-72 {
+  height: 18rem;
 }
 .max-h-\[400px\] {
   max-height: 400px;
@@ -576,6 +603,18 @@ video {
 }
 .gap-8 {
   gap: 2rem;
+}
+.gap-16 {
+  gap: 4rem;
+}
+.gap-0 {
+  gap: 0px;
+}
+.gap-24 {
+  gap: 6rem;
+}
+.gap-\[10\%\] {
+  gap: 10%;
 }
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -738,6 +777,10 @@ video {
   font-size: .75rem;
   line-height: 1rem;
 }
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
 .font-bold {
   font-weight: 700;
 }
@@ -758,6 +801,9 @@ video {
 }
 .leading-tight {
   line-height: 1.25;
+}
+.leading-relaxed {
+  line-height: 1.625;
 }
 .tracking-widest {
   letter-spacing: .1em;
@@ -974,6 +1020,9 @@ body {
   .sm\:h-\[400px\] {
     height: 400px;
   }
+  .sm\:h-96 {
+    height: 24rem;
+  }
   .sm\:w-2\/3 {
     width: 66.666667%;
   }
@@ -1011,8 +1060,17 @@ body {
   .md\:mt-4 {
     margin-top: 1rem;
   }
+  .md\:-mt-24 {
+    margin-top: -6rem;
+  }
+  .md\:-mt-28 {
+    margin-top: -7rem;
+  }
   .md\:h-\[500px\] {
     height: 500px;
+  }
+  .md\:h-\[600px\] {
+    height: 600px;
   }
   .md\:w-1\/2 {
     width: 50%;
@@ -1026,8 +1084,14 @@ body {
   .md\:flex-row {
     flex-direction: row;
   }
+  .md\:flex-row-reverse {
+    flex-direction: row-reverse;
+  }
   .md\:items-start {
     align-items: flex-start;
+  }
+  .md\:gap-16 {
+    gap: 4rem;
   }
   .md\:px-8 {
     padding-left: 2rem;
@@ -1048,6 +1112,9 @@ body {
 @media (min-width: 1024px) {
   .lg\:h-\[600px\] {
     height: 600px;
+  }
+  .lg\:h-\[910px\] {
+    height: 910px;
   }
   .lg\:w-1\/3 {
     width: 33.333333%;
@@ -1090,6 +1157,12 @@ body {
   .xl\:gap-16 {
     gap: 4rem;
   }
+  .xl\:gap-4 {
+    gap: 1rem;
+  }
+  .xl\:gap-12 {
+    gap: 3rem;
+  }
 }
 @media (max-width:1002px) {
   .\[\@media\(max-width\:1002px\)\]\:block {
@@ -1104,4 +1177,4 @@ body {
     display: flex;
   }
 }
-/*# sourceMappingURL=/build/_assets/tailwind-7YCFOB7F.css.map */
+/*# sourceMappingURL=/build/_assets/tailwind-E3XZIY7H.css.map */

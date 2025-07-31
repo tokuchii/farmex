@@ -27,7 +27,7 @@ import {
 } from "/build/_shared/chunk-PZDJHGND.js";
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-5GDXOZ3P.css";
+var tailwind_default = "/build/_assets/tailwind-MULDMRB3.css";
 
 // app/components/Navbar.tsx
 var import_react = __toESM(require_react(), 1);
@@ -528,10 +528,10 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\Footer.tsx"
   );
-  import.meta.hot.lastModified = "1753892286239.9392";
+  import.meta.hot.lastModified = "1753935619064.1633";
 }
 function Footer() {
-  return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("footer", { className: "bg-white border-t border-green-600 relative", children: [
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("footer", { className: "bg-white relative", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-6 py-4 flex flex-col md:flex-row items-center md:items-start justify-between gap-4", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex flex-shrink-0 items-center pt-4 md:pt-6 hide-below-850", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("img", { src: bgfooter_default, alt: "FarmEx Logo", className: "h-36 w-auto -mb-11" }, void 0, false, {
         fileName: "app/components/Footer.tsx",
@@ -542,7 +542,7 @@ function Footer() {
         lineNumber: 27,
         columnNumber: 8
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex flex-col items-start space-y-2 text-gray-900 text-xs sm:text-sm md:text-base md:mt-4", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex flex-col items-start space-y-2 text-gray-900 text-xs sm:text-sm md:text-base md:mt-4 mr-[14%]", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex items-center space-x-2", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(FaMapMarkerAlt, { className: "text-green-600" }, void 0, false, {
             fileName: "app/components/Footer.tsx",
@@ -778,4 +778,4 @@ export {
   App as default,
   links
 };
-//# sourceMappingURL=/build/root-R3UT2HDN.js.map
+//# sourceMappingURL=/build/root-SKUVHZGI.js.map

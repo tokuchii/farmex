@@ -3,7 +3,7 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-green-600 relative">
+    <footer className="bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6 py-4 flex flex-col md:flex-row items-center md:items-start justify-between gap-4">
         {/* Logo (hidden on small screens) */}
        <div className="flex flex-shrink-0 items-center pt-4 md:pt-6 hide-below-850">
@@ -12,7 +12,7 @@ export default function Footer() {
 
 
         {/* Contact Info */}
-        <div className="flex flex-col items-start space-y-2 text-gray-900 text-xs sm:text-sm md:text-base md:mt-4">
+        <div className="flex flex-col items-start space-y-2 text-gray-900 text-xs sm:text-sm md:text-base md:mt-4 mr-[14%]">
           <div className="flex items-center space-x-2">
             <FaMapMarkerAlt className="text-green-600" />
             <a

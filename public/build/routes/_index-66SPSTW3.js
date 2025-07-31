@@ -37,7 +37,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\_index.tsx"
   );
-  import.meta.hot.lastModified = "1753892387191.1304";
+  import.meta.hot.lastModified = "1753940055346.4038";
 }
 var meta = () => [{
   title: "FarmEx - Revolutionary Agricultural Technology"
@@ -52,7 +52,7 @@ function Home() {
     setIsClient(true);
   }, []);
   return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "min-h-screen", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "relative w-full h-auto overflow-hidden", initial: {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "w-full h-64 sm:h-96 md:h-[600px] lg:h-[910px] object-cover relative overflow-hidden", initial: {
       opacity: 0,
       y: 40
     }, whileInView: {
@@ -109,7 +109,7 @@ function Home() {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat"
       }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full flex flex-col items-center", children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-2xl sm:text-3xl md:text-4xl font-extrabold text-green-700 mb-2 uppercase leading-tight tracking-widest text-center", children: "Featured Products" }, void 0, false, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-2xl sm:text-3xl md:text-4xl font-extrabold text-green-700 mb-2 uppercase tracking-widest text-center", children: "Featured Products" }, void 0, false, {
           fileName: "app/routes/_index.tsx",
           lineNumber: 78,
           columnNumber: 5
@@ -131,8 +131,8 @@ function Home() {
         }, {
           name: "Jose Maria Milled Rice",
           image: "/josemaria.png"
-        }].map((product) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex flex-col items-center", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-w-[300px] bg-white rounded-lg shadow-lg flex items-center justify-center overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105", style: {
+        }].map((product) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex uppercase tracking-widest flex-col items-center", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-w-[300px] mb-6 bg-white rounded-lg shadow-lg flex items-center justify-center overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105", style: {
             boxShadow: "0 2px 20px 2px rgba(34, 197, 94, 0.85)"
           }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "/products", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: product.image, alt: product.name, className: "w-full h-auto object-cover" }, void 0, false, {
             fileName: "app/routes/_index.tsx",
@@ -187,7 +187,7 @@ function Home() {
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("section", { className: "relative w-full min-h-[900px] py-6 px-4 sm:px-6 md:px-8 flex items-center justify-center bg-cover bg-center bg-no-repeat", style: {
       backgroundImage: "url('/bgservices.jpg')"
     }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-w-7xl mx-auto flex flex-col items-center", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-3xl md:text-4xl font-extrabold text-white mb-12 uppercase leading-tight text-center tracking-widest", children: "Services" }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-3xl md:text-4xl font-extrabold text-white mb-12 uppercase text-center tracking-widest", children: "Services" }, void 0, false, {
         fileName: "app/routes/_index.tsx",
         lineNumber: 123,
         columnNumber: 5
@@ -197,11 +197,11 @@ function Home() {
         lineNumber: 127,
         columnNumber: 5
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex flex-col xl:flex-row justify-between items-center w-full gap-12 xl:gap-0", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex flex-col xl:flex-row justify-center items-center w-full gap-12 xl:gap-16", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex flex-col items-center w-full sm:w-2/3 md:w-1/2 lg:w-1/3 max-w-md", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-[525px]:w-[90%] rounded-lg border-4 border-white shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 overflow-hidden mb-8", style: {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-[525px]:w-[90%] h-72 rounded-lg border-4 border-white shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 overflow-hidden mb-8", style: {
             boxShadow: "0 2px 32px 2px rgba(34,197,94,0.25)"
-          }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: "/service1.jpg", alt: "Service 2", className: "w-full h-full object-cover block" }, void 0, false, {
+          }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: "/service1.jpg", alt: "Service 1", className: "w-full h-full object-cover block" }, void 0, false, {
             fileName: "app/routes/_index.tsx",
             lineNumber: 135,
             columnNumber: 3
@@ -210,7 +210,7 @@ function Home() {
             lineNumber: 132,
             columnNumber: 7
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "/services", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { type: "button", className: "bg-yellow-500 text-white px-8 py-3 max-[525px]:px-4 max-[525px]:py-2 rounded-lg font-bold text-base max-[525px]:text-sm shadow hover:bg-yellow-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:ring-opacity-50", children: "Get Involved" }, void 0, false, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "/services", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { type: "button", className: "bg-yellow-500 tracking-widest text-white px-8 py-3 max-[525px]:px-4 max-[525px]:py-2 rounded-lg font-bold text-base max-[525px]:text-sm shadow hover:bg-yellow-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:ring-opacity-50", children: "Get Involved" }, void 0, false, {
             fileName: "app/routes/_index.tsx",
             lineNumber: 138,
             columnNumber: 11
@@ -225,9 +225,9 @@ function Home() {
           columnNumber: 7
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex flex-col items-center w-full sm:w-2/3 md:w-1/2 lg:w-1/3 max-w-md", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-[525px]:w-[90%] rounded-lg border-4 border-white shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 overflow-hidden mb-8", style: {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-[525px]:w-[90%] h-72 rounded-lg border-4 border-white shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 overflow-hidden mb-8", style: {
             boxShadow: "0 2px 32px 2px rgba(34,197,94,0.25)"
-          }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: "/service2.png", alt: "Service 2", className: "w-full h-full max-h-[400px] object-cover block" }, void 0, false, {
+          }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: "/service2.png", alt: "Service 2", className: "w-full h-full object-cover block" }, void 0, false, {
             fileName: "app/routes/_index.tsx",
             lineNumber: 149,
             columnNumber: 3
@@ -236,7 +236,7 @@ function Home() {
             lineNumber: 146,
             columnNumber: 15
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "/services", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { type: "button", className: "bg-yellow-500 text-white px-8 py-3 max-[525px]:px-4 max-[525px]:py-2 rounded-lg font-bold text-base max-[525px]:text-sm shadow hover:bg-yellow-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:ring-opacity-50", children: "Get Involved" }, void 0, false, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "/services", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { type: "button", className: "bg-yellow-500 tracking-widest text-white px-8 py-3 max-[525px]:px-4 max-[525px]:py-2 rounded-lg font-bold text-base max-[525px]:text-sm shadow hover:bg-yellow-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:ring-opacity-50", children: "Get Involved" }, void 0, false, {
             fileName: "app/routes/_index.tsx",
             lineNumber: 153,
             columnNumber: 11
@@ -310,4 +310,4 @@ export {
   Home as default,
   meta
 };
-//# sourceMappingURL=/build/routes/_index-5WP7WO6C.js.map
+//# sourceMappingURL=/build/routes/_index-66SPSTW3.js.map

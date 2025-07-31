@@ -19,26 +19,83 @@ export default function About() {
     <div className="min-h-screen">
       <motion.div
         className="relative w-full h-auto overflow-hidden"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+
       >
         {isClient && (
-          <img
+          <motion.img
             src="/bgabout.jpg" // ← Replace this with your image path
             alt="Farm Image"
-            className="w-full h-[910px] object-cover"
+            className="w-full h-64 sm:h-96 md:h-[600px] lg:h-[910px] object-cover"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
           />
         )}
     <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
-  <h2 className="text-white text-2xl md:text-4xl font-extrabold uppercase tracking-widest mb-4">
-    FARMEX AT A GLANCE
-  </h2>
+ <h2 className="text-white text-2xl md:text-4xl font-extrabold uppercase tracking-widest mb-4 h-auto mt-16 md:-mt-26">
+  FARMEX AT A GLANCE
+</h2>
         </div>
       </motion.div>
       <motion.div>
-      {/* Products Section */}
+      {/* History and Our Mission Section */}
+<section className="relative w-full py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center bg-white justify-center bg-cover bg-center">
+  <div className="w-full max-w-7xl flex flex-col gap-16">
+    {/* History Row */}
+    <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-16">
+      {/* Image 1 */}
+      <div className="w-full md:w-1/2 flex justify-center">
+        <img
+          src="/history.jpg"
+          alt="FarmEx History"
+          className="rounded-lg shadow-lg w-full max-w-md object-cover"
+        style={{
+  boxShadow: "0 2px 20px 2px rgba(234, 179, 8, 0.85)", // gold shadow
+}}
+        />
+      </div>
+      {/* History Text */}
+      <div className="w-full md:w-1/2 flex flex-col justify-center">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-green-700 mb-4 uppercase tracking-widest">
+          History
+        </h2>
+        <p className="text-gray-700 text-lg leading-relaxed">
+          {/* Replace this with your actual history text */}
+          Leads Agriventures Corporation (LAV) was established in 2018 as subsidiary company of LEADS AGRI. Presently under the Malveda Holdings Corporation, the main business is focused on Hybrid Rice Seeds and milled rice distribution. Apart from these, LAV has now ventured in machineries rental, and coming up with our own milled rice grains.
+        </p>
+      </div>
+    </div>
+    {/* Our Mission Row */}
+    <div className="flex flex-col md:flex-row-reverse items-center md:items-start gap-8 md:gap-16">
+      {/* Image 2 */}
+      <div className="w-full md:w-1/2 flex justify-center">
+        <img
+          src="/mission.jpg"
+          alt="FarmEx Mission"
+          className="rounded-lg shadow-lg w-full max-w-md object-cover"
+         style={{
+  boxShadow: "0 2px 20px 2px rgba(234, 179, 8, 0.85)", // gold shadow
+}}
+        />
+      </div>
+      {/* Mission Text */}
+      <div className="w-full md:w-1/2 flex flex-col justify-center">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-green-700 mb-4 uppercase tracking-widest">
+          Our Mission
+        </h2>
+        <p className="text-gray-700 text-lg leading-relaxed">
+          {/* Replace this with your actual mission text */}
+          LAV’s mission is to come up with all the technologies and provide holistic support to the Filipino rice farmers. LAV is continuously testing high yielding rice seed varieties adaptable to the local conditions. From land preparation to harvesting activities, we provide after-sales support through technical consultations, machineries rental, production trainings and field demonstrations.
+
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+      </motion.div>
+      <motion.div>
+        {/* Products Section */}
 <section
   className="relative w-full py-16 px-4 sm:px-6 lg:px-8 flex items-center bg-white justify-center bg-cover bg-center"
   style={{
@@ -48,47 +105,7 @@ export default function About() {
     backgroundRepeat: 'no-repeat',
   }}
 >
-  <div className="w-full flex flex-col items-center">
-    <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-green-700 mb-2 uppercase leading-tight tracking-widest text-center">
-      Featured Products
-    </h2>
-  <div className="h-1 w-40 md:w-48 lg:w-[400px] bg-yellow-500 rounded-full mb-12"></div>
-    <div className="grid sm:grid-cols-2 gap-8 xl:flex xl:justify-center xl:gap-16 w-full max-w-7xl mt-6">
-      {/* Single Product Card */}
-      {[
-        { name: "Jackpot 102", image: "/jackpot102.png" },
-        { name: "LAV 777", image: "/lav777.png" },
-        { name: "Jackpot Ready", image: "/jackpotready.png" },
-        { name: "Jose Maria Milled Rice", image: "/josemaria.png" },
-      ].map((product) => (
-        <div key={product.name} className="flex flex-col items-center">
-          <div
-            className="w-full max-w-[300px] bg-white rounded-lg shadow-lg flex items-center justify-center overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105"
-            style={{
-              boxShadow: "0 2px 20px 2px rgba(34, 197, 94, 0.85)", 
-            }}
-          >
-            <a href="/products">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-auto object-cover"
-              />
-            </a>
-          </div>
-          <span className="font-semibold text-gray-800 mt-3 uppercase text-center text-sm sm:text-base">
-            {product.name}
-          </span>
-        </div>
-      ))}
-
-    </div>
-  </div>
 </section>
-      {/* Gold line under products section */}
-      <div className="w-full flex justify-center">
-        <div className="h-1 w-full bg-yellow-500"></div>
-      </div>
       </motion.div>
       
     </div>
