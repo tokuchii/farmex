@@ -45,93 +45,121 @@ export default function Home() {
           />
         </div>
       </motion.div>
+      <motion.div>
       {/* Products Section */}
-      <section
-        className="relative w-full py-12 px-2 flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: "url('/bgproducts.png')" }}
-      >
-        <div className="w-full flex flex-col items-center">
-          <h2 className="text-3xl font-extrabold text-green-700 mb-2 uppercase leading-tight tracking-widest text-center">Featured Products</h2>
-          <div className="h-1 w-50 bg-yellow-500 rounded-full mb-8"></div>
-          <div className="flex flex-row flex-wrap justify-center gap-16 w-full">
-            {/* Jackpot 102 */}
-            <div className="flex flex-col items-center">
-              <div className="w-64 h-64 bg-white rounded-lg shadow-lg flex items-center justify-center overflow-hidden" style={{ boxShadow: '0 2px 32px 2px rgba(234, 179, 8, 0.85)' }}>
-                <a href="/products">
-                <img src="/jackpot102.png" alt="Jackpot 102" className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
-                </a>
-              </div>
-              <span className="font-semibold text-gray-800 mt-2 uppercase  text-center">Jackpot 102</span>
-            </div>
-            {/* LAV 777 */}
-            <div className="flex flex-col items-center">
-              <div className="w-64 h-64 bg-white rounded-lg shadow-lg flex items-center justify-center overflow-hidden" style={{ boxShadow: '0 2px 32px 2px rgba(234, 179, 8, 0.85)' }}>
-                <a href="/products">
-                <img src="/lav777.png" alt="LAV 777" className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
-              </a>
-              </div>
-              <span className="font-semibold text-gray-800 mt-2 uppercase  text-center">LAV 777</span>
-            </div>
-            {/* Jackpot Ready */}
-            <div className="flex flex-col items-center">
-              <div className="w-64 h-64 bg-white rounded-lg shadow-lg flex items-center justify-center overflow-hidden" style={{ boxShadow: '0 2px 32px 2px rgba(234, 179, 8, 0.85)' }}>
-                <a href="/products">
-                <img src="/jackpotready.png" alt="Jackpot Ready" className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
-                </a>
-              </div>
-              <span className="font-semibold text-gray-800 mt-2 uppercase  text-center">Jackpot Ready</span>
-            </div>
-            {/* Jose Maria Milled Rice */}
-            <div className="flex flex-col items-center">
-              <div className="w-64 h-64 bg-white rounded-lg shadow-lg flex items-center justify-center overflow-hidden" style={{ boxShadow: '0 2px 32px 2px rgba(234, 179, 8, 0.85)' }}>
-                <a href="/products">
-                <img src="/josemaria.png" alt="Jose Maria Milled Rice" className="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
-                </a>
-              </div>
-              <span className="font-semibold text-gray-800 mt-2 uppercase text-center">Jose Maria Milled Rice</span>
-            </div>
+<section
+  className="relative w-full py-16 px-4 sm:px-6 lg:px-8 flex items-center bg-white justify-center bg-cover bg-center"
+  style={{
+    backgroundImage: "url('/featuredbg.jpg')", // change this to your actual image path
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+  }}
+>
+  <div className="w-full flex flex-col items-center">
+    <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-green-700 mb-2 uppercase leading-tight tracking-widest text-center">
+      Featured Products
+    </h2>
+  <div className="h-1 w-40 md:w-48 lg:w-[400px] bg-yellow-500 rounded-full mb-12"></div>
+    <div className="grid sm:grid-cols-2 gap-8 xl:flex xl:justify-center xl:gap-16 w-full max-w-7xl mt-6">
+      {/* Single Product Card */}
+      {[
+        { name: "Jackpot 102", image: "/jackpot102.png" },
+        { name: "LAV 777", image: "/lav777.png" },
+        { name: "Jackpot Ready", image: "/jackpotready.png" },
+        { name: "Jose Maria Milled Rice", image: "/josemaria.png" },
+      ].map((product) => (
+        <div key={product.name} className="flex flex-col items-center">
+          <div
+            className="w-full max-w-[300px] bg-white rounded-lg shadow-lg flex items-center justify-center overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105"
+            style={{
+              boxShadow: "0 2px 20px 2px rgba(34, 197, 94, 0.85)", 
+            }}
+          >
+            <a href="/products">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-full h-auto object-cover"
+              />
+            </a>
           </div>
+          <span className="font-semibold text-gray-800 mt-3 uppercase text-center text-sm sm:text-base">
+            {product.name}
+          </span>
         </div>
-      </section>
+      ))}
+
+    </div>
+  </div>
+</section>
       {/* Gold line under products section */}
       <div className="w-full flex justify-center">
         <div className="h-1 w-full bg-yellow-500"></div>
       </div>
-       {/* Services Section */}
-       <section
-        className="relative w-full min-h-[900px] py-6 px-2 flex items-center justify-center bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: "url('/bgservices.jpg')" }}
-      >
-        <div className="w-full flex flex-col items-center">
-          <h2 className="text-3xl font-extrabold text-white mb-8 uppercase leading-tight text-center tracking-widest">Services</h2>
-            <div className="h-1 w-[170px] -mt-8 bg-yellow-500"></div>
-          <div className="h-1 w-50 bg-yellow-500 rounded-full mb-28"></div>
-          <div className="flex flex-col xl:flex-row justify-between items-center w-full max-w-6xl mx-auto gap-12 xl:gap-0">
-            {/* Service 1 */}
-            <div className="flex flex-col items-center w-full lg:w-1/3 max-w-lg">
-              <div className="w-[508px] h-[308px] rounded-lg shadow-lg flex items-center justify-center object-contain transition-transform duration-300 ease-in-out hover:scale-105 overflow-hidden mb-8 border-4 border-white" style={{ boxShadow: '0 2px 32px 2px rgba(34,197,94,0.25)' }}>
-                <img src="/service1.jpg" alt="Service 1" className="w-full h-full object-contain" />
-              </div>
-                <a href="/services">
-                  <button type="button" className="bg-yellow-500 text-white px-10 py-3 rounded-lg font-bold text-lg shadow hover:bg-yellow-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:ring-opacity-50">
-                    Get Involved
-                  </button>
-                </a>
-            </div>
-            {/* Service 2 */}
-            <div className="flex flex-col items-center w-full lg:w-1/3 max-w-lg">
-              <div className="w-[508px] h-[308px] rounded-lg shadow-lg flex items-center justify-center object-contain transition-transform duration-300 ease-in-out hover:scale-105 overflow-hidden mb-8 border-4 border-white" style={{ boxShadow: '0 2px 32px 2px rgba(34,197,94,0.25)' }}>
-                <img src="/service2.png" alt="Service 2" className="w-full h-full object-contain" />
-              </div>
-              <a href="/services">
-                <button type="button" className="bg-yellow-500 text-white px-10 py-3 rounded-lg font-bold text-lg shadow hover:bg-yellow-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:ring-opacity-50">
-                  Get Involved
-                </button>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      </motion.div>
+      <motion.div>
+      {/* Services Section */}
+<section
+  className="relative w-full min-h-[900px] py-6 px-4 sm:px-6 md:px-8 flex items-center justify-center bg-cover bg-center bg-no-repeat"
+  style={{ backgroundImage: "url('/bgservices.jpg')" }}
+>
+  <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
+    <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-12 uppercase leading-tight text-center tracking-widest">
+      Services
+    </h2>
+
+    <div className="h-1 w-40 md:w-48 lg:w-52 bg-yellow-500 rounded-full -mt-12 mb-20"></div>
+
+    <div className="flex flex-col xl:flex-row justify-between items-center w-full gap-12 xl:gap-0">
+      {/* Service 1 */}
+      <div className="flex flex-col items-center w-full sm:w-2/3 md:w-1/2 lg:w-1/3 max-w-md">
+      <div
+  className="w-full max-[525px]:w-[90%] rounded-lg border-4 border-white shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 overflow-hidden mb-8"
+  style={{ boxShadow: '0 2px 32px 2px rgba(34,197,94,0.25)' }}
+>
+  <img
+    src="/service1.jpg"
+    alt="Service 2"
+    className="w-full h-full object-cover block"
+  />
+</div>
+        <a href="/services">
+          <button
+            type="button"
+            className="bg-yellow-500 text-white px-8 py-3 max-[525px]:px-4 max-[525px]:py-2 rounded-lg font-bold text-base max-[525px]:text-sm shadow hover:bg-yellow-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:ring-opacity-50"
+          >
+            Get Involved
+          </button>
+        </a>
+      </div>
+
+      {/* Service 2 */}
+      <div className="flex flex-col items-center w-full sm:w-2/3 md:w-1/2 lg:w-1/3 max-w-md">
+<div
+  className="w-full max-[525px]:w-[90%] rounded-lg border-4 border-white shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 overflow-hidden mb-8"
+  style={{ boxShadow: '0 2px 32px 2px rgba(34,197,94,0.25)' }}
+>
+  <img
+    src="/service2.png"
+    alt="Service 2"
+    className="w-full h-full max-h-[400px] object-cover block"
+  />
+</div>
+
+        <a href="/services">
+          <button
+            type="button"
+            className="bg-yellow-500 text-white px-8 py-3 max-[525px]:px-4 max-[525px]:py-2 rounded-lg font-bold text-base max-[525px]:text-sm shadow hover:bg-yellow-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:ring-opacity-50"
+          >
+            Get Involved
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+</motion.div>
       <div className="w-full flex justify-center">
         <div className="h-1 w-full bg-yellow-500"></div>
       </div>

@@ -1,1 +1,0 @@
-import{d as t,f as o}from"/build/_shared/chunk-VG7UYV5E.js";var e=t(o(),1);function a(){return(0,e.jsxs)("main",{className:"p-8",children:[(0,e.jsx)("h1",{className:"text-2xl font-bold mb-4",children:"News"}),(0,e.jsx)("p",{children:"This is the News page. Add your content here."})]})}export{a as default};

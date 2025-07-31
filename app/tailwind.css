@@ -10,3 +10,8 @@ body {
     color-scheme: dark;
   }
 }
+@media (max-width: 850px) {
+  .hide-below-850 {
+    display: none !important;
+  }
+}

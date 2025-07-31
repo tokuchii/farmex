@@ -14,6 +14,17 @@ export default function Navbar() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [menuOpen]);
   // Close dropdowns when clicking outside
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -31,25 +42,29 @@ export default function Navbar() {
 
   // Dropdown menu items
   const servicesDropdown = [
-    { label: "Consulting", href: "/services#consulting" },
-    { label: "Implementation", href: "/services#implementation" },
-    { label: "Support", href: "/services#support" },
+    { label: "Machine Rentals", href: "/services#machine-rentals" },
+    { label: "Technical Consultation", href: "/services#technical-consultation" },
   ];
   const knowledgeDropdown = [
-    { label: "Workshops", href: "/knowledge-transfer#workshops" },
-    { label: "Resources", href: "/knowledge-transfer#resources" },
-    { label: "Community", href: "/knowledge-transfer#community" },
+    { label: "LAV Station", href: "/knowledge-transfer#farmex-station" },
+    { label: "Rice Derbries", href: "/knowledge-transfer#rice-debris" },
   ];
 
   // Helper to close dropdowns
   const closeDropdowns = () => setOpenDropdown(null);
 
-  // Helper to scroll to top
-  const handleNavClick = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    const href = e.currentTarget.getAttribute("href") || "";
+    
+    // Only scroll to top if there's no hash
+    if (!href.includes("#")) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  
     setMenuOpen(false);
     closeDropdowns();
   };
+  
 
   return (
     <nav className="fixed w-full top-0 left-0 z-50 bg-white duration-300 shadow-[0_8px_40px_0_rgba(0,0,0,0.45)]">
@@ -140,7 +155,7 @@ export default function Navbar() {
         </div>
         {/* Mobile Menu */}
         <div
-          className={`[@media(max-width:1002px)]:block hidden fixed top-16 left-0 w-full z-40 bg-white shadow-lg transition-transform duration-300 ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-8 opacity-0 pointer-events-none'} ease-in-out`}
+          className={`[@media(max-width:1002px)]:block hidden fixed top-16 left-0 w-full z-60 bg-white shadow-lg transition-transform duration-300 ${menuOpen ? 'translate-y-0 opacity-100' : '-translate-y-8 opacity-0 pointer-events-none'} ease-in-out`}
         >
           <div className="flex flex-col space-y-4 px-6 py-8">
             <a href="/" className="text-gray-900 hover:text-green-600 font-medium" onClick={handleNavClick}>Home</a>
@@ -158,7 +173,7 @@ export default function Navbar() {
                 Services <span className="ml-1">▼</span>
               </button>
               {openDropdown === "services" && (
-                <div className="mt-1 ml-4 border-l pl-4">
+                <div className="mt-1 ml-4 border-l pl-4 relative z-10">
                   {servicesDropdown.map((item) => (
                     <a
                       key={item.label}
