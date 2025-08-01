@@ -39,8 +39,9 @@ export default function GetInvolved() {
       </motion.div>
       <motion.div>
         {/* Contact Section */}
-        <section className="w-full min-h-screen py-16 px-4 sm:px-8 bg-[url('/bgcontact.png')] bg-cover bg-center flex flex-col items-center justify-start">
-          <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8">
+      <section className="w-full min-h-screen pt-8 pb-16 px-4 sm:px-8 bg-[url('/bgcontact.png')] bg-cover bg-center flex flex-col items-center justify-start">
+  <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8">
+
 
             {/* Left Side: Logo + Text */}
             <div className="flex flex-col items-start justify-center space-y-6">
