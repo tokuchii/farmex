@@ -17,27 +17,27 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <motion.div
-        className="w-full h-64 sm:h-96 md:h-[600px] lg:h-[910px] object-cover relative overflow-hidden"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-      >
-        {isClient && (
-          <video
-            src="/rice.mp4"
-            autoPlay
-            loop
-            muted
-            className="w-full h-full object-cover"
-          />
-        )}
+      className="w-full h-64 sm:h-96 md:h-[600px] lg:h-[911px] object-cover relative overflow-hidden"
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.2 }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+>
+  {isClient && (
+    <video
+      src="/rice.mp4"
+      autoPlay
+      loop
+      muted
+      className="w-full h-full object-cover object-top"
+    />
+  )}
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="absolute inset-0 flex items-center justify-center z-10">
           <motion.img
             src="/welcome.png"
             alt="Welcome"
-            className="w-full max-w-[800px] sm:max-w-3xl md:max-w-3xl xl:max-w-7xl h-auto mt-16 md:-mt-20" 
+            className="w-full max-w-[800px] sm:max-w-3xl md:max-w-3xl xl:max-w-7xl h-auto mt-20 md:-mt-2"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
@@ -50,7 +50,7 @@ export default function Home() {
 <section
   className="relative w-full py-16 px-4 sm:px-6 lg:px-8 flex items-center bg-white justify-center bg-cover bg-center"
   style={{
-    backgroundImage: "url('/featuredbg.jpg')", // change this to your actual image path
+    backgroundImage: "url('/featuredbg.png')", // change this to your actual image path
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',

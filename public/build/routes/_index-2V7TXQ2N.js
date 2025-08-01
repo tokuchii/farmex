@@ -37,7 +37,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\_index.tsx"
   );
-  import.meta.hot.lastModified = "1753940055346.4038";
+  import.meta.hot.lastModified = "1754065479074.7273";
 }
 var meta = () => [{
   title: "FarmEx - Revolutionary Agricultural Technology"
@@ -52,7 +52,7 @@ function Home() {
     setIsClient(true);
   }, []);
   return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "min-h-screen", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "w-full h-64 sm:h-96 md:h-[600px] lg:h-[910px] object-cover relative overflow-hidden", initial: {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "w-full h-64 sm:h-96 md:h-[600px] lg:h-[911px] object-cover relative overflow-hidden", initial: {
       opacity: 0,
       y: 40
     }, whileInView: {
@@ -65,17 +65,17 @@ function Home() {
       duration: 0.6,
       ease: "easeOut"
     }, children: [
-      isClient && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("video", { src: "/rice.mp4", autoPlay: true, loop: true, muted: true, className: "w-full h-full object-cover" }, void 0, false, {
+      isClient && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("video", { src: "/rice.mp4", autoPlay: true, loop: true, muted: true, className: "w-full h-full object-cover object-top" }, void 0, false, {
         fileName: "app/routes/_index.tsx",
         lineNumber: 50,
-        columnNumber: 22
+        columnNumber: 16
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 bg-black/30" }, void 0, false, {
         fileName: "app/routes/_index.tsx",
         lineNumber: 51,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 flex items-center justify-center z-10", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.img, { src: "/welcome.png", alt: "Welcome", className: "w-full max-w-[800px] sm:max-w-3xl md:max-w-3xl xl:max-w-7xl h-auto mt-16 md:-mt-20", initial: {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 flex items-center justify-center z-10", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.img, { src: "/welcome.png", alt: "Welcome", className: "w-full max-w-[800px] sm:max-w-3xl md:max-w-3xl xl:max-w-7xl h-auto mt-20 md:-mt-2", initial: {
         opacity: 0,
         y: 40
       }, whileInView: {
@@ -103,7 +103,7 @@ function Home() {
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("section", { className: "relative w-full py-16 px-4 sm:px-6 lg:px-8 flex items-center bg-white justify-center bg-cover bg-center", style: {
-        backgroundImage: "url('/featuredbg.jpg')",
+        backgroundImage: "url('/featuredbg.png')",
         // change this to your actual image path
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -310,4 +310,4 @@ export {
   Home as default,
   meta
 };
-//# sourceMappingURL=/build/routes/_index-66SPSTW3.js.map
+//# sourceMappingURL=/build/routes/_index-2V7TXQ2N.js.map

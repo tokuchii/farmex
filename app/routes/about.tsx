@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 export function meta() {
   return [
     { title: "FarmEx - Revolutionary Agricultural Technology" },
-    { name: "description", content: "Transform your farming operations with FarmEx's cutting-edge agricultural technology solutions. Increase yields, reduce costs, and farm smarter." },
   ];
 }
 
@@ -22,15 +21,15 @@ export default function About() {
 
       >
         {isClient && (
-          <motion.img
-            src="/bgabout.jpg" // ← Replace this with your image path
-            alt="Farm Image"
-            className="w-full h-64 sm:h-96 md:h-[600px] lg:h-[910px] object-cover"
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          />
+       <motion.img
+  src="/bgabout.png"
+  alt="Farm Image"
+  className="w-full h-64 sm:h-96 md:h-[600px] lg:h-[500px] object-cover object-top"
+  initial={{ opacity: 0, y: 40 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.2 }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+/>
         )}
     <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
  <h2 className="text-white text-2xl md:text-4xl font-extrabold uppercase tracking-widest mb-4 h-auto mt-16 md:-mt-26">
@@ -46,10 +45,14 @@ export default function About() {
     <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-16">
       {/* Image 1 */}
       <div className="w-full md:w-1/2 flex justify-center">
-        <img
+        <motion.img
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }} 
+          transition={{ duration: 0.6, ease: "easeOut" }}
           src="/history.jpg"
           alt="FarmEx History"
-          className="rounded-lg shadow-lg w-full max-w-md object-cover"
+             className="rounded-lg shadow-lg w-full max-w-md h-64 sm:h-72 md:h-80 object-cover"
         style={{
   boxShadow: "0 2px 20px 2px rgba(234, 179, 8, 0.85)", // gold shadow
 }}
@@ -70,10 +73,14 @@ export default function About() {
     <div className="flex flex-col md:flex-row-reverse items-center md:items-start gap-8 md:gap-16">
       {/* Image 2 */}
       <div className="w-full md:w-1/2 flex justify-center">
-        <img
+        <motion.img
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
           src="/mission.jpg"
           alt="FarmEx Mission"
-          className="rounded-lg shadow-lg w-full max-w-md object-cover"
+            className="rounded-lg shadow-lg w-full max-w-md h-64 sm:h-72 md:h-80 object-cover"
          style={{
   boxShadow: "0 2px 20px 2px rgba(234, 179, 8, 0.85)", // gold shadow
 }}

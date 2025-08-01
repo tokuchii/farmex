@@ -27,7 +27,7 @@ import {
 } from "/build/_shared/chunk-PZDJHGND.js";
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-MULDMRB3.css";
+var tailwind_default = "/build/_assets/tailwind-QXP7NQWL.css";
 
 // app/components/Navbar.tsx
 var import_react = __toESM(require_react(), 1);
@@ -50,7 +50,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\Navbar.tsx"
   );
-  import.meta.hot.lastModified = "1753891840085.348";
+  import.meta.hot.lastModified = "1753958819167.9695";
 }
 function Navbar() {
   _s();
@@ -718,19 +718,33 @@ _c3 = Layout;
 function App() {
   _s2();
   const location = useLocation();
+  const [showOutlet, setShowOutlet] = (0, import_react5.useState)(true);
+  const [pendingLocation, setPendingLocation] = (0, import_react5.useState)(location);
   import_react5.default.useEffect(() => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: "auto"
     });
-  }, [location.pathname]);
+  }, []);
+  import_react5.default.useEffect(() => {
+    if (location !== pendingLocation) {
+      setShowOutlet(false);
+    }
+  }, [location, pendingLocation]);
   return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_jsx_dev_runtime3.Fragment, { children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Navbar, {}, void 0, false, {
       fileName: "app/root.tsx",
-      lineNumber: 70,
+      lineNumber: 78,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(AnimatePresence, { mode: "wait", children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(motion.div, { initial: {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(AnimatePresence, { mode: "wait", onExitComplete: () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "auto"
+      });
+      setPendingLocation(location);
+      setShowOutlet(true);
+    }, children: showOutlet && /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(motion.div, { initial: {
       opacity: 0
     }, animate: {
       opacity: 1
@@ -741,29 +755,29 @@ function App() {
       ease: "easeInOut"
     }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Outlet, {}, void 0, false, {
       fileName: "app/root.tsx",
-      lineNumber: 83,
-      columnNumber: 11
+      lineNumber: 99,
+      columnNumber: 13
+    }, this) }, pendingLocation.pathname, false, {
+      fileName: "app/root.tsx",
+      lineNumber: 88,
+      columnNumber: 24
     }, this) }, void 0, false, {
       fileName: "app/root.tsx",
-      lineNumber: 72,
-      columnNumber: 9
-    }, this) }, void 0, false, {
-      fileName: "app/root.tsx",
-      lineNumber: 71,
+      lineNumber: 79,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Footer, {}, void 0, false, {
       fileName: "app/root.tsx",
-      lineNumber: 86,
+      lineNumber: 102,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/root.tsx",
-    lineNumber: 69,
+    lineNumber: 77,
     columnNumber: 10
   }, this);
 }
-_s2(App, "BXcZrDMM76mmm4zA8/QV5UbMNXE=", false, function() {
+_s2(App, "z6IPi/IEGFwY13xjDXxNO1cODDE=", false, function() {
   return [useLocation];
 });
 _c22 = App;
@@ -778,4 +792,4 @@ export {
   App as default,
   links
 };
-//# sourceMappingURL=/build/root-SKUVHZGI.js.map
+//# sourceMappingURL=/build/root-6US6PPSV.js.map
