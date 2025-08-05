@@ -44,8 +44,8 @@ export default function GetInvolved() {
 
 
             {/* Left Side: Logo + Text */}
-            <div className="flex flex-col items-start justify-center space-y-6">
-              <img src="/logo1.png" alt="Logo" className="w-48 h-auto" />
+            <div className="flex flex-col items-center justify-center space-y-2">
+              <img src="/pandoybg1.png" alt="Logo" className="w-[350px] h-auto" />
 
               <div className="w-full flex justify-center">
                 <div className="h-1 w-full bg-yellow-500"></div>

@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState, } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Link } from "@remix-run/react";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,7 +21,7 @@ export default function Navbar() {
     } else {
       document.body.style.overflow = '';
     }
-  
+
     return () => {
       document.body.style.overflow = '';
     };
@@ -55,26 +56,26 @@ export default function Navbar() {
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     const href = e.currentTarget.getAttribute("href") || "";
-    
+
     // Only scroll to top if there's no hash
     if (!href.includes("#")) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-  
+
     setMenuOpen(false);
     closeDropdowns();
   };
-  
+
 
   return (
     <nav className="fixed w-full top-0 left-0 z-50 bg-white duration-300 shadow-[0_8px_40px_0_rgba(0,0,0,0.45)]">
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-4 group">
         <div className="flex justify-between h-20 items-center">
           <div className="flex items-center">
-          <a href="/">
-  <img src="/logo.jpg" alt="FarmEx Logo" className="h-16 w-auto" />
-</a>
-          </div>  
+            <a href="/">
+              <img src="/logo.jpg" alt="FarmEx Logo" className="h-16 w-auto" />
+            </a>
+          </div>
           {/* Desktop Nav */}
           <div className="hidden [@media(min-width:1002px)]:flex items-center space-x-6">
             <a href="/" className="text-black hover:text-green-600 font-medium" onClick={handleNavClick}>Home</a>
@@ -175,14 +176,14 @@ export default function Navbar() {
               {openDropdown === "services" && (
                 <div className="mt-1 ml-4 border-l pl-4 relative z-10">
                   {servicesDropdown.map((item) => (
-                    <a
+                    <Link
                       key={item.label}
-                      href={item.href}
+                      to={item.href}
                       className="block py-2 text-gray-700 hover:text-green-600"
                       onClick={handleNavClick}
                     >
                       {item.label}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               )}

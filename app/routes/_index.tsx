@@ -64,27 +64,25 @@ export default function Home() {
     <div className="grid sm:grid-cols-2 gap-8 xl:flex xl:justify-center xl:gap-16 w-full max-w-7xl mt-6">
       {/* Single Product Card */}
       {[
-        { name: "Jackpot 102", image: "/jackpot102.png" },
-        { name: "LAV 777", image: "/lav777.png" },
-        { name: "Jackpot Ready", image: "/jackpotready.png" },
-        { name: "Jose Maria Milled Rice", image: "/josemaria.png" },
+        { name: "Jackpot 102", image: "/jackpot102_product.png" },
+        { name: "LAV 777", image: "/lav777_product.png" },
+        { name: "Jackpot Ready", image: "/leads143_product.png" },
+        { name: "Jose Maria Milled Rice", image: "/jose1.png" },
       ].map((product) => (
         <div key={product.name} className="flex uppercase tracking-widest flex-col items-center">
           <div
-            className="w-full max-w-[300px] mb-6 bg-white rounded-lg shadow-lg flex items-center justify-center overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105"
-            style={{
-              boxShadow: "0 2px 20px 2px rgba(34, 197, 94, 0.85)", 
-            }}
+            className="w-full max-w-[300px] mb-6 flex items-center justify-center overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105"
+            
           >
             <a href="/products">
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-auto object-cover"
+                className="w-full h-80 object-cover"
               />
             </a>
           </div>
-          <span className="font-semibold text-gray-800 mt-3 uppercase text-center text-sm sm:text-base">
+          <span className="font-semibold text-gray-800 mt-3 uppercase text-center text-md sm:text-base">
             {product.name}
           </span>
         </div>
