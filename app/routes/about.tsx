@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export function meta() {
   return [
-    { title: "FarmEx - Revolutionary Agricultural Technology" },
+     { title: "Farmex" },
   ];
 }
 

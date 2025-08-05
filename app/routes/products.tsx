@@ -6,12 +6,13 @@ type Product = {
   name: string;
   image: string;
   desc: string;
+  desc1?: string; 
   pdf: string;
 };
 
 export function meta() {
   return [
-    { title: "FarmEx - Revolutionary Agricultural Technology" },
+    { title: "Farmex" },
   ];
 }
 
@@ -20,30 +21,35 @@ const productList: Product[] = [
     name: "Jackpot 102",
     image: "/jackpot102_product.png",
     desc: "Hybrid Rice",
+    desc1: "Jackpot 102 (NSIC 666H) is the first hybrid rice seed variety introduced and distributed by LAV way back 2019. Through the years, Jackpot has already proven its place in the hybrid rice seed industry by ranking in the Top 5 varieties preferred by farmers during Rice Derbies.",
     pdf: "/downloads/jackpot-102.pdf"
   },
   {
     name: "LAV 777",
     image: "/lav777_product.png",
     desc: "Hybrid Rice",
+    desc1: "LAV 777 (NSIC Rc 656H) is our latest variety offering to rice farmers. Launched last year in Occidental Mindoro, LAV 777 has the quality traits of a superior hybrid rice. \n\n A genetically high yielding and Bacterial Leaf Blight-tolerant variety partnered with our “Sapat na Alaga Protocol” can definitely help our rice farmers attain high yields without excessive production costs.",
     pdf: "/downloads/lav-777.pdf"
   },
   {
     name: "Jose Maria Milled Rice",
     image: "/jose1.png",
     desc: "Hybrid Rice",
+    desc1: "LAV has entered the whole value-chain of rice production by selling milled rice to the local market. Jose Maria is LAV’s regular-milled rice similar to the Dinorado type. As a product of contract growing, LAV helps the rice growers sell their produce by buying back their harvests at the prevailing market price. These fresh palay are then milled through our own milling facility and packaged as Jose Maria milled rice, named after the LAV’s Founder and President, Mr. Jose Maria Fernando L. Malveda.",
     pdf: "/downloads/jose-maria.pdf"
   },
   {
     name: "Leads 143",
     image: "/leads143_product.png",
     desc: "Hybrid Rice",
+    desc1: "",
     pdf: "/downloads/leads-143.pdf"
   },
   {
     name: "Jackpot ready",
     image: "/jackpot-ready_product.png",
     desc: "Hybrid Rice",
+    desc1: "Jackpot Ready is a product development where Jackpot 102 seeds have been grown into healthy 15-21 day-old seedlings. This technology gives the farmers an option of ready-to-plant seedlings and provides convenience to farmers who want to save time and energy during pre-planting stage.",
     pdf: "/downloads/jackpot-ready.pdf"
   },
 ];
@@ -105,6 +111,10 @@ export default function Products() {
                   <motion.img
                     src={product.image}
                     alt={product.name}
+                     initial={{ opacity: 0, y: 40 }}
+                     whileInView={{ opacity: 1, y: 0 }}
+                     viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
                     className="w-full h-50 object-cover rounded mb-4"
                   />
                   <h4 className="font-bold text-green-600 text-xl mb-2">{product.name}</h4>
@@ -124,93 +134,115 @@ export default function Products() {
 
       {/* Modal + Blur Background */}
       {selectedProduct && (
-        <>
-          {/* Blurred Background Layer */}
-          <div className="fixed inset-0 backdrop-blur-sm bg-black/30 z-40"></div>
+  <>
+    {/* Blurred Background Layer */}
+    <div className="fixed inset-0 backdrop-blur-sm bg-black/30 z-40"></div>
 
-          {/* Modal Layer */}
-          <div className="fixed inset-0 z-50 flex items-center justify-center px-4">
-            <div
-              className="rounded-lg max-w-4xl w-full flex flex-col md:flex-row overflow-hidden relative bg-cover bg-center"
-              style={{ backgroundImage: "url('/bgmodal.png')" }}>
-                
-              {/* Left Side */}
-              <div className="md:w-1/2 p-6 flex flex-col items-center relative">
-                <div className="w-full h-50 relative mb-4">
-                  <motion.img
-                    src={selectedProduct.image}
-                    alt={selectedProduct.name}
-                    className="w-full h-full object-cover rounded"
-                  />
-                  <h3 className="absolute top-2 left-1/2 transform -translate-x-1/2 text-green-800 text-2xl font-bold px-4 py-1">
-                  {selectedProduct.name}
-                </h3>
-                </div>
+    {/* Modal Layer */}
+    <div className="fixed inset-0 z-50 flex items-start justify-center pt-24 md:pt-32 px-4 overflow-auto">
 
-                <div className="text-left text-black">
-                  <span className="block text-lg font-semibold mb-1">
-                    For sales inquiries,
-                  </span>
-                  <span className="text-sm leading-relaxed block">
-                    Or call
-                    <a href="tel:(049) 576-007" className="text-black underline hover:underline">(049) 576-007</a>
-                    <br />
-                    <a
-                      href="https://www.google.com/maps/place/1775+F.T.+San+Luis+Avenue,+Bay,+4033+Laguna/@14.1770685,121.3138026,3a,75y,179.58h,90.22t/data=!3m7!1e1!3m5!1sER7LVQxCt1pLkAWu1AjQQg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-0.220788706272117%26panoid%3DER7LVQxCt1pLkAWu1AjQQg%26yaw%3D179.5800923117178!7i16384!8i8192!4m6!3m5!1s0x33bd5e176676321b:0x7b2c62c941bcd7a3!8m2!3d14.1722007!4d121.2746737!16s%2Fg%2F11qwynhv6y?entry=ttu"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-black underline hover:underline inline-flex items-center"
-                    >
-                      1775 F.T. San Luis Avenue, Bay, Laguna, Philippines
-                    </a>
+    <div
+  className="rounded-lg w-full max-w-4xl bg-cover bg-center flex flex-col md:flex-row overflow-hidden relative bg-white min-h-[400px]"
+  style={{ backgroundImage: "url('/bgmodal.png')" }}
+>
+        {/* Left Side */}
+<div className="w-full md:w-1/2 p-4 sm:p-6 flex flex-col justify-center items-center">
+  <div className="w-full mb-4">
+  <h3 className="mb-2 text-green-800 text-xl sm:text-2xl font-bold text-center">
+    {selectedProduct.name}
+  </h3>
+  <motion.img
+    src={selectedProduct.image}
+    alt={selectedProduct.name}
+     initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+    className="w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] h-auto object-contain mx-auto rounded"
+  />
+</div>
 
-                  </span>
-                </div>
+   {/* Show contact info here only on md+ */}
+  <div className="hidden md:block text-center md:text-left text-black text-sm sm:text-base">
+    <span className="block font-semibold mb-1">For sales inquiries,</span>
+    <span className="leading-relaxed text-sm">
+      Or call{" "}
+      <a
+        href="tel:(049) 576-007"
+        className="text-black text-sm underline hover:underline"
+      >
+        (049) 576-007
+      </a>
+      <br />
+      <a
+        href="https://www.google.com/maps/..."
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-black text-sm underline hover:underline inline-flex items-center"
+      >
+        1775 F.T. San Luis Avenue, Bay, Laguna
+      </a>
+    </span>
+  </div>
+</div>
 
+{/* Right Side */}
+<div className="w-full md:w-1/2 p-4 sm:p-6 flex flex-col justify-center text-black text-sm sm:text-base">
+  <div>
+    <p className="mb-6 whitespace-pre-line">
+      {selectedProduct.desc1 || selectedProduct.desc}
+    </p>
+  </div>
+{/* Contact info on mobile only */}
+  <div className="block md:hidden text-center text-black text-sm sm:text-base mb-6">
+    <span className="block font-semibold mb-1">For sales inquiries,</span>
+    <span className="leading-relaxed">
+      Or call{" "}
+      <a
+        href="tel:(049) 576-007"
+        className="text-black underline hover:underline"
+      >
+        (049) 576-007
+      </a>
+      <br />
+      <a
+        href="https://www.google.com/maps/..."
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-black underline hover:underline inline-flex items-center"
+      >
+        1775 F.T. San Luis Avenue, Bay, Laguna
+      </a>
+    </span>
+  </div>
+  <div className="flex flex-col sm:flex-row justify-center items-center gap-3 mt-4">
+    <a
+      href="/get-involved"
+      className="w-full sm:w-auto px-4 py-2 bg-green-700 text-white rounded hover:bg-green-900 text-center"
+    >
+      Contact Us
+    </a>
+    <a
+      href={selectedProduct.pdf}
+      className="w-full sm:w-auto px-4 py-2 bg-red-600 text-white rounded hover:bg-red-800 text-center"
+      download
+    >
+      Download
+    </a>
+  </div>
+</div>
 
-              </div>
-
-
-
-              {/* Right Side */}
-              <div className="md:w-1/2 p-6 flex flex-col justify-between text-black">
-                <div>
-                  <h4 className="text-lg font-semibold mb-2">Description</h4>
-                  <p className="mb-6">
-                    {selectedProduct.desc} is a top-performing hybrid rice variant known for its resilience,
-                    productivity, and superior grain quality. Ideal for commercial and local farming.
-                  </p>
-                </div>
-
-                <div className="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-6 mt-4">
-                  <a
-                    href="/get-involved"
-                    className="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-900 text-center w-full md:w-auto"
-                  >
-                    Contact Us
-                  </a>
-                  <a
-                    href={selectedProduct.pdf}
-                    className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-800 text-center w-full md:w-auto"
-                    download
-                  >
-                    Download
-                  </a>
-                </div>
-              </div>
-
-              {/* Close Button */}
-              <button
-                onClick={closeModal}
-                className="absolute top-2 right-2 text-black hover:text-gray-200 text-2xl font-bold"
-              >
-                &times;
-              </button>
-            </div>
-          </div>
-
-        </>
-      )}
+        {/* Close Button */}
+        <button
+          onClick={closeModal}
+          className="absolute top-2 right-2 text-black hover:text-gray-600 text-2xl font-bold"
+        >
+          &times;
+        </button>
+      </div>
+    </div>
+  </>
+)}
     </>
   );
 }

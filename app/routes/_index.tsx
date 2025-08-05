@@ -3,8 +3,7 @@ import { motion } from "framer-motion";
 import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => [
-  { title: "FarmEx - Revolutionary Agricultural Technology" },
-  { name: "description", content: "Transform your farming operations with FarmEx's cutting-edge agricultural technology solutions. Increase yields, reduce costs, and farm smarter." },
+  { title: "Farmex" },
 ];
 
 export default function Home() {
@@ -75,9 +74,13 @@ export default function Home() {
             
           >
             <a href="/products">
-              <img
+              <motion.img
                 src={product.image}
                 alt={product.name}
+                 initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
                 className="w-full h-80 object-cover"
               />
             </a>
@@ -116,10 +119,14 @@ export default function Home() {
   className="w-full max-[525px]:w-[90%] h-72 rounded-lg border-4 border-white shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 overflow-hidden mb-8"
   style={{ boxShadow: '0 2px 32px 2px rgba(34,197,94,0.25)' }}
 >
-  <img
+  <motion.img
     src="/service1.jpg"
     alt="Service 1"
     className="w-full h-full object-cover block"
+     initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
   />
 </div>
         <a href="/services">
@@ -138,10 +145,14 @@ export default function Home() {
   className="w-full max-[525px]:w-[90%] h-72 rounded-lg border-4 border-white shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 overflow-hidden mb-8"
   style={{ boxShadow: '0 2px 32px 2px rgba(34,197,94,0.25)' }}
 >
-  <img
+  <motion.img
     src="/service2.png"
     alt="Service 2"
     className="w-full h-full object-cover block"
+     initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
   />
 </div>
 

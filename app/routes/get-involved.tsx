@@ -1,18 +1,118 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
+import { AnimatePresence } from "framer-motion";
 
 export function meta() {
   return [
-    { title: "FarmEx - Revolutionary Agricultural Technology" },
+    { title: "Farmex" },
   ];
 }
+
 
 export default function GetInvolved() {
   const [isClient, setIsClient] = useState(false);
 
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalMessage, setModalMessage] = useState("");
+  const [isSending, setIsSending] = useState(false);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    contact: "",
+    message: "",
+  });
+
+const handleChange = (
+  e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+) => {
+  const { name, value } = e.target;
+  let newValue = value;
+
+  if (name === "name") {
+    // Remove numbers
+    newValue = newValue.replace(/[0-9]/g, "");
+    // Capitalize each word
+    newValue = newValue
+      .split(" ")
+      .map(
+        (word) =>
+          word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+      )
+      .join(" ");
+  }
+
+  if (name === "contact") {
+    // Remove all non-digits and limit to 10 digits
+    newValue = newValue.replace(/[^0-9]/g, "").slice(0, 10);
+  }
+
+  setFormData({ ...formData, [name]: newValue });
+};
+
+
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setIsSending(true);
+
+
+  const isValidEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
+    return emailRegex.test(email);
+  };
+
+
+  if (!isValidEmail(formData.email)) {
+    setModalMessage("Please enter a valid email address (e.g., user@gmail.com)");
+    setIsSending(false);
+    setModalOpen(true);
+    return;
+  }
+
+  const cleanedContact = formData.contact.replace(/[^0-9]/g, "");
+
+  const templateParams = {
+    name: formData.name,
+    email: formData.email,
+    contact: cleanedContact,
+    message: formData.message,
+    date: new Date().toLocaleString(),
+  };
+
+  try {
+    await emailjs.send(
+      "service_hce3n1d",
+      "template_l1ny1ph",
+      templateParams,
+      "GhCOaNaQzdYhDBH2G"
+    );
+
+    setModalMessage("Your message has been sent successfully!");
+    setFormData({ name: "", email: "", contact: "", message: "" });
+  } catch (error) {
+    console.error("FAILED...", error);
+    setModalMessage("Failed to send message. Please try again.");
+  } finally {
+    setIsSending(false);
+    setModalOpen(true);
+  }
+};
+
+
+  useEffect(() => {
+    if (modalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }, [modalOpen]);
+
   useEffect(() => {
     setIsClient(true);
   }, []);
+
 
   return (
     <div className="min-h-screen">
@@ -39,8 +139,8 @@ export default function GetInvolved() {
       </motion.div>
       <motion.div>
         {/* Contact Section */}
-      <section className="w-full min-h-screen pt-8 pb-16 px-4 sm:px-8 bg-[url('/bgcontact.png')] bg-cover bg-center flex flex-col items-center justify-start">
-  <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8">
+        <section className="w-full min-h-screen pt-8 pb-16 px-4 sm:px-8 bg-[url('/bgcontact.png')] bg-cover bg-center flex flex-col items-center justify-start">
+          <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8">
 
 
             {/* Left Side: Logo + Text */}
@@ -116,33 +216,48 @@ export default function GetInvolved() {
 
             {/* Right Side: Form + Map */}
             <div className="flex flex-col items-end gap-6">
-              <form className="bg-green-700 text-white p-6 rounded-lg w-full max-w-md shadow-lg">
+              <form
+                onSubmit={handleSubmit}
+                className="bg-green-700 text-white p-6 rounded-lg w-full max-w-md shadow-lg">
                 <div className="mb-4">
                   <input
                     type="text"
+                    name="name"
                     placeholder="Name"
-                    className="w-full px-4 py-3 rounded text-gray-700 bg-white border border-gray-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:outline-none"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded text-gray-700 bg-white border border-gray-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:outline-none mb-4"
+                    required
                   />
-                </div>
-                <div className="mb-4">
+
                   <input
                     type="email"
+                    name="email"
                     placeholder="Email Address"
-                    className="w-full px-4 py-3 rounded text-gray-700 bg-white border border-gray-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:outline-none"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded text-gray-700 bg-white border border-gray-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:outline-none mb-4"
+                    required
                   />
-                </div>
-                <div className="mb-4">
+
                   <input
                     type="text"
+                    name="contact"
                     placeholder="Contact Number"
-                    className="w-full px-4 py-3 rounded text-gray-700 bg-white border border-gray-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:outline-none"
+                    value={formData.contact}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded text-gray-700 bg-white border border-gray-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:outline-none mb-4"
+                    required
                   />
-                </div>
-                <div className="mb-4">
+
                   <textarea
+                    name="message"
                     rows={4}
                     placeholder="Your Message"
-                    className="w-full px-4 py-3 rounded text-gray-700 bg-white border border-gray-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:outline-none"
+                    value={formData.message}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded text-gray-700 bg-white border border-gray-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:outline-none mb-4"
+                    required
                   ></textarea>
                 </div>
                 <div className="flex justify-end">
@@ -150,14 +265,13 @@ export default function GetInvolved() {
                     type="submit"
                     className="text-white px-4 py-2 rounded hover:brightness-95"
                     style={{ backgroundColor: '#E0B100' }}
+                    disabled={isSending}
                   >
-                    Submit Form
+                    {isSending ? "Submitting..." : "Submit Form"}
                   </button>
+
                 </div>
               </form>
-
-
-
 
               {/* Map under form, aligned right */}
               <div className="w-full max-w-md h-80">
@@ -176,14 +290,42 @@ export default function GetInvolved() {
 
           </div>
         </section>
-
-
-
-
       </motion.div>
       <div className="w-full flex justify-center">
         <div className="h-1 w-full bg-yellow-500"></div>
       </div>
+      <AnimatePresence>
+        {modalOpen && (
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="bg-white p-6 rounded-xl shadow-2xl text-center max-w-sm w-full"
+              initial={{ y: 50, opacity: 0, scale: 0.95 }}
+              animate={{ y: 0, opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+            >
+              <div className="flex justify-center mb-4">
+                <div className={`text-4xl ${modalMessage.includes("success") ? "text-green-600" : "text-red-600"}`}>
+                  {modalMessage.includes("success") ? "✅" : "❌"}
+                </div>
+              </div>
+              <p className="text-gray-800 text-base">{modalMessage}</p>
+              <button
+                onClick={() => setModalOpen(false)}
+                className="mt-6 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+              >
+                OK
+              </button>
+            </motion.div>
+          </motion.div>
+
+        )}
+      </AnimatePresence>
     </div>
+
   );
 }

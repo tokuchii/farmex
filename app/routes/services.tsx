@@ -2,7 +2,11 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "@remix-run/react";
+import type { MetaFunction } from "@remix-run/node";
 
+export const meta: MetaFunction = () => [
+  { title: "Farmex" },
+];
 export default function Services() {
   const [activeSection, setActiveSection] = useState<'rentals' | 'consultation'>('rentals');
 

@@ -9,6 +9,7 @@
     "start": "remix-serve build"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@remix-run/express": "^2.16.7",
     "@remix-run/node": "^2.16.7",
     "@remix-run/react": "^2.16.7",
