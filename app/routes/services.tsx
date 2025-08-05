@@ -1,4 +1,3 @@
-{/* Sevices Machine Rentals */ }
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "@remix-run/react";
@@ -26,10 +25,11 @@ export default function Services() {
 
   return (
     <div className="bg-white w-full min-h-screen relative">
+      {/* Sevices Machine Rentals */ }
       {activeSection === 'rentals' && (
         <>
           {/* Hero Section */}
-          <motion.div className="relative w-full h-64 sm:h-96 md:h-[600px] lg:h-[500px] overflow-hidden">
+          <motion.div className="relative w-full h-[350px] sm:h-[400px] md:h-[600px] lg:h-[500px] overflow-hidden">
             {typeof window !== 'undefined' && (
               <motion.img
                 src="/machinerentals.png"
@@ -46,7 +46,7 @@ export default function Services() {
               <h2 className="text-white text-2xl md:text-4xl font-extrabold uppercase tracking-widest mb-2 md:mb-6">
                 MACHINE RENTALS
               </h2>
-              <p className="text-white text-[8px] md:text-xl leading-relaxed max-w-4xl text-center mb-2 md:mb-8">
+              <p className="text-white text-[10px] md:text-xl leading-relaxed max-w-4xl text-center mb-4 md:mb-8">
                 Genuine to its mission of providing all the Filipino farmer needs, Farmex is offering farm machineries rentals to extend the accessibility of farm technologies and equipment to individual rice farmers and farm cooperatives. With the help of our sister company, Leads Tech, Farmex team also do machine demonstrations and provides after-sales support to our customers.
               </p>
               <Link to="/get-involved" className="bg-[#E0B100F7] text-white px-2 md:px-8 py-1 md:py-3 rounded-lg font-bold hover:bg-[#E0B100F7] transition-colors duration-300 inline-block">
@@ -148,10 +148,12 @@ export default function Services() {
           </motion.div>
         </>
       )}
+
+      {/* Sevices Technical Consultation */ }
       {activeSection === 'consultation' && (
         <>
           {/* Hero Section for Technical Consultation */}
-          <motion.div className="relative w-full h-64 sm:h-96 md:h-[600px] lg:h-[500px] overflow-hidden flex items-center justify-center">
+          <motion.div className="relative w-full h-[360px] sm:h-[400px] md:h-[600px] lg:h-[500px] overflow-hidden flex items-center justify-center">
             {typeof window !== 'undefined' && (
               <motion.img
                 src="/technicalconcultant.png"
@@ -168,7 +170,7 @@ export default function Services() {
               <h2 className="text-white text-lg md:text-4xl font-extrabold uppercase tracking-widest mb-2 md:mb-6">
                 TECHNICAL CONSULTATION
               </h2>
-              <p className="text-white text-[8px] md:text-xl leading-relaxed max-w-6xl text-center mb-2 md:mb-8">
+              <p className="text-white text-[10px] md:text-xl leading-relaxed max-w-6xl text-center mb-2 md:mb-8">
                 Farmex's commitment to the rice farming communities does not end in providing quality hybrid rice seeds but extends its hands to those who are in need of free technical consultations. From farmers to agriculture students, Farmex technical team is always ready to share their expertise and strategy on rice farming production and technologies. Regular technical trainings are done to further equip and update our Seed Production Specialists on the latest technologies and having them share new learnings to our farmers.
               </p>
               <Link to="/get-involved" className="bg-[#E0B100F7] text-white px-2 md:px-8 py-1 md:py-3 rounded-lg font-bold hover:bg-[#E0B100F7] transition-colors duration-300 inline-block">
@@ -201,13 +203,13 @@ function TechnicalConsultationSlider() {
   return (
     <div className="w-full flex flex-col items-center">
       <div className="flex items-center justify-center w-full">
-        <button onClick={prev} className="text-2xl sm:text-3xl text-yellow-500 hover:text-yellow-600 px-2 sm:px-2 focus:outline-none ml-4">&#60;</button>
+        <button onClick={prev} className="text-3xl sm:text-4xl text-[#00703C] hover:text-[#00703C] px-2 sm:px-2 focus:outline-none ml-4">&#60;</button>
         <img
           src={images[index].src}
           alt={images[index].alt}
-          className="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl h-48 sm:h-64 md:h-80 object-cover rounded-lg mx-1 sm:mx-4 border-2 border-gray-200 bg-white"
+          className="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl h-64 sm:h-96 md:h-[350px] lg:h-[450px] object-cover rounded-lg mx-1 sm:mx-4 border-2 border-gray-200 bg-white"
         />
-        <button onClick={next} className="text-2xl sm:text-3xl text-yellow-500 hover:text-yellow-600 px-2 sm:px-2 focus:outline-none mr-4">&#62;</button>
+        <button onClick={next} className="text-3xl sm:text-4xl text-[#00703C] hover:text-[#00703C] px-2 sm:px-2 focus:outline-none mr-4">&#62;</button>
       </div>
       <div className="flex justify-center mt-2 sm:mt-4">
         {images.map((_, i) => (
