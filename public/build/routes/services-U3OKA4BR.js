@@ -42,7 +42,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\services.tsx"
   );
-  import.meta.hot.lastModified = "1754415303780.748";
+  import.meta.hot.lastModified = "1754503262593.5015";
 }
 var meta = () => [{
   title: "Farmex"
@@ -55,6 +55,8 @@ function Services() {
       const hash = window.location.hash;
       if (hash === "#technical-consultation") {
         setActiveSection("consultation");
+      } else if (hash === "#training") {
+        setActiveSection("training");
       } else {
         setActiveSection("rentals");
       }
@@ -80,38 +82,38 @@ function Services() {
           ease: "easeOut"
         } }, void 0, false, {
           fileName: "app/routes/services.tsx",
-          lineNumber: 50,
+          lineNumber: 52,
           columnNumber: 47
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 bg-green-600 bg-opacity-50" }, void 0, false, {
           fileName: "app/routes/services.tsx",
-          lineNumber: 63,
+          lineNumber: 65,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 flex flex-col items-center justify-center z-20 px-4 py-2 pt-20 md:pt-12", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-white text-2xl md:text-4xl font-extrabold uppercase tracking-widest mb-2 md:mb-6", children: "MACHINE RENTALS" }, void 0, false, {
             fileName: "app/routes/services.tsx",
-            lineNumber: 65,
+            lineNumber: 67,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-[10px] md:text-xl leading-relaxed max-w-4xl text-center mb-4 md:mb-8", children: "Genuine to its mission of providing all the Filipino farmer needs, Farmex is offering farm machineries rentals to extend the accessibility of farm technologies and equipment to individual rice farmers and farm cooperatives. With the help of our sister company, Leads Tech, Farmex team also do machine demonstrations and provides after-sales support to our customers." }, void 0, false, {
             fileName: "app/routes/services.tsx",
-            lineNumber: 68,
+            lineNumber: 70,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Link, { to: "/get-involved", className: "bg-[#E0B100F7] text-white px-2 md:px-8 py-1 md:py-3 rounded-lg font-bold hover:bg-[#E0B100F7] transition-colors duration-300 inline-block", children: "Contact Us" }, void 0, false, {
             fileName: "app/routes/services.tsx",
-            lineNumber: 71,
+            lineNumber: 73,
             columnNumber: 15
           }, this)
         ] }, void 0, true, {
           fileName: "app/routes/services.tsx",
-          lineNumber: 64,
+          lineNumber: 66,
           columnNumber: 13
         }, this)
       ] }, void 0, true, {
         fileName: "app/routes/services.tsx",
-        lineNumber: 49,
+        lineNumber: 51,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("section", { className: "w-full py-16 px-4 sm:px-8 bg-[url('/bgmachinerentals.jpg')] bg-cover bg-center flex flex-col items-center", children: [
@@ -132,31 +134,31 @@ function Services() {
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "px-4 pt-4", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h3", { className: "text-green-600 font-bold text-lg md:text-2xl", children: "Mobile Dryer" }, void 0, false, {
                 fileName: "app/routes/services.tsx",
-                lineNumber: 96,
+                lineNumber: 98,
                 columnNumber: 21
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-28 h-1 bg-yellow-400 mt-1" }, void 0, false, {
                 fileName: "app/routes/services.tsx",
-                lineNumber: 97,
+                lineNumber: 99,
                 columnNumber: 21
               }, this)
             ] }, void 0, true, {
               fileName: "app/routes/services.tsx",
-              lineNumber: 95,
+              lineNumber: 97,
               columnNumber: 19
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "h-80 w-70 overflow-hidden relative rounded py-4 px-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: "/mobiledryer.png", alt: "Mobile Dryer", className: "w-full h-full object-contain" }, void 0, false, {
               fileName: "app/routes/services.tsx",
-              lineNumber: 100,
+              lineNumber: 102,
               columnNumber: 21
             }, this) }, void 0, false, {
               fileName: "app/routes/services.tsx",
-              lineNumber: 99,
+              lineNumber: 101,
               columnNumber: 19
             }, this)
           ] }, void 0, true, {
             fileName: "app/routes/services.tsx",
-            lineNumber: 82,
+            lineNumber: 84,
             columnNumber: 17
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "rounded-lg shadow-lg overflow-hidden border-4 border-yellow-400 p-2", initial: {
@@ -175,31 +177,31 @@ function Services() {
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "px-4 pt-4", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h3", { className: "text-green-600 font-bold text-lg md:text-2xl", children: "Tractor" }, void 0, false, {
                 fileName: "app/routes/services.tsx",
-                lineNumber: 119,
+                lineNumber: 121,
                 columnNumber: 21
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-28 h-1 bg-yellow-400 mt-1" }, void 0, false, {
                 fileName: "app/routes/services.tsx",
-                lineNumber: 120,
+                lineNumber: 122,
                 columnNumber: 21
               }, this)
             ] }, void 0, true, {
               fileName: "app/routes/services.tsx",
-              lineNumber: 118,
+              lineNumber: 120,
               columnNumber: 19
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "h-80 w-70 overflow-hidden relative rounded py-4 px-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: "/tractor.png", alt: "Tractor", className: "w-full h-full object-contain" }, void 0, false, {
               fileName: "app/routes/services.tsx",
-              lineNumber: 123,
+              lineNumber: 125,
               columnNumber: 21
             }, this) }, void 0, false, {
               fileName: "app/routes/services.tsx",
-              lineNumber: 122,
+              lineNumber: 124,
               columnNumber: 19
             }, this)
           ] }, void 0, true, {
             fileName: "app/routes/services.tsx",
-            lineNumber: 105,
+            lineNumber: 107,
             columnNumber: 17
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "rounded-lg shadow-lg overflow-hidden border-4 border-yellow-400 p-2", initial: {
@@ -218,31 +220,31 @@ function Services() {
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "px-4 pt-4", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h3", { className: "text-green-600 font-bold text-lg md:text-2xl", children: "Transplanter" }, void 0, false, {
                 fileName: "app/routes/services.tsx",
-                lineNumber: 142,
+                lineNumber: 144,
                 columnNumber: 21
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-28 h-1 bg-yellow-400 mt-1" }, void 0, false, {
                 fileName: "app/routes/services.tsx",
-                lineNumber: 143,
+                lineNumber: 145,
                 columnNumber: 21
               }, this)
             ] }, void 0, true, {
               fileName: "app/routes/services.tsx",
-              lineNumber: 141,
+              lineNumber: 143,
               columnNumber: 19
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "h-80 w-70 overflow-hidden relative rounded py-4 px-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: "/transplanter.png", alt: "Transplanter", className: "w-full h-full object-contain" }, void 0, false, {
               fileName: "app/routes/services.tsx",
-              lineNumber: 146,
+              lineNumber: 148,
               columnNumber: 21
             }, this) }, void 0, false, {
               fileName: "app/routes/services.tsx",
-              lineNumber: 145,
+              lineNumber: 147,
               columnNumber: 19
             }, this)
           ] }, void 0, true, {
             fileName: "app/routes/services.tsx",
-            lineNumber: 128,
+            lineNumber: 130,
             columnNumber: 17
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "rounded-lg shadow-lg overflow-hidden border-4 border-yellow-400 p-2", initial: {
@@ -261,55 +263,55 @@ function Services() {
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "px-4 pt-4", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h3", { className: "text-green-600 font-bold text-lg md:text-2xl", children: "Harvester" }, void 0, false, {
                 fileName: "app/routes/services.tsx",
-                lineNumber: 165,
+                lineNumber: 167,
                 columnNumber: 21
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-28 h-1 bg-yellow-400 mt-1" }, void 0, false, {
                 fileName: "app/routes/services.tsx",
-                lineNumber: 166,
+                lineNumber: 168,
                 columnNumber: 21
               }, this)
             ] }, void 0, true, {
               fileName: "app/routes/services.tsx",
-              lineNumber: 164,
+              lineNumber: 166,
               columnNumber: 19
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "h-80 w-70 overflow-hidden relative rounded py-4 px-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: "/harvester.png", alt: "Harvester", className: "w-full h-full object-contain" }, void 0, false, {
               fileName: "app/routes/services.tsx",
-              lineNumber: 169,
+              lineNumber: 171,
               columnNumber: 21
             }, this) }, void 0, false, {
               fileName: "app/routes/services.tsx",
-              lineNumber: 168,
+              lineNumber: 170,
               columnNumber: 19
             }, this)
           ] }, void 0, true, {
             fileName: "app/routes/services.tsx",
-            lineNumber: 151,
+            lineNumber: 153,
             columnNumber: 17
           }, this)
         ] }, void 0, true, {
           fileName: "app/routes/services.tsx",
-          lineNumber: 80,
+          lineNumber: 82,
           columnNumber: 15
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full h-1 bg-yellow-400 mt-4" }, void 0, false, {
           fileName: "app/routes/services.tsx",
-          lineNumber: 173,
+          lineNumber: 175,
           columnNumber: 15
         }, this)
       ] }, void 0, true, {
         fileName: "app/routes/services.tsx",
-        lineNumber: 79,
+        lineNumber: 81,
         columnNumber: 13
       }, this) }, void 0, false, {
         fileName: "app/routes/services.tsx",
-        lineNumber: 78,
+        lineNumber: 80,
         columnNumber: 11
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/services.tsx",
-      lineNumber: 47,
+      lineNumber: 49,
       columnNumber: 39
     }, this),
     activeSection === "consultation" && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, { children: [
@@ -328,61 +330,113 @@ function Services() {
           ease: "easeOut"
         } }, void 0, false, {
           fileName: "app/routes/services.tsx",
-          lineNumber: 182,
+          lineNumber: 184,
           columnNumber: 47
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 bg-green-600 bg-opacity-50" }, void 0, false, {
           fileName: "app/routes/services.tsx",
-          lineNumber: 195,
+          lineNumber: 197,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 flex flex-col items-center justify-center z-20 px-4 py-2 pt-20 md:pt-16", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-white text-lg md:text-4xl font-extrabold uppercase tracking-widest mb-2 md:mb-6", children: "TECHNICAL CONSULTATION" }, void 0, false, {
             fileName: "app/routes/services.tsx",
-            lineNumber: 197,
+            lineNumber: 199,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-[10px] md:text-xl leading-relaxed max-w-6xl text-center mb-2 md:mb-8", children: "Farmex's commitment to the rice farming communities does not end in providing quality hybrid rice seeds but extends its hands to those who are in need of free technical consultations. From farmers to agriculture students, Farmex technical team is always ready to share their expertise and strategy on rice farming production and technologies. Regular technical trainings are done to further equip and update our Seed Production Specialists on the latest technologies and having them share new learnings to our farmers." }, void 0, false, {
             fileName: "app/routes/services.tsx",
-            lineNumber: 200,
+            lineNumber: 202,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Link, { to: "/get-involved", className: "bg-[#E0B100F7] text-white px-2 md:px-8 py-1 md:py-3 rounded-lg font-bold hover:bg-[#E0B100F7] transition-colors duration-300 inline-block", children: "Contact Us" }, void 0, false, {
             fileName: "app/routes/services.tsx",
-            lineNumber: 203,
+            lineNumber: 205,
             columnNumber: 15
           }, this)
         ] }, void 0, true, {
           fileName: "app/routes/services.tsx",
-          lineNumber: 196,
+          lineNumber: 198,
           columnNumber: 13
         }, this)
       ] }, void 0, true, {
         fileName: "app/routes/services.tsx",
-        lineNumber: 181,
+        lineNumber: 183,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full py-8 sm:py-12 bg-white md:bg-[url('/bgmachinerentals.jpg')] md:bg-center md:bg-repeat-y flex justify-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl bg-white border-4 border-yellow-400 rounded-lg shadow-lg px-2 sm:px-4 py-4 sm:py-6 flex flex-col items-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(TechnicalConsultationSlider, {}, void 0, false, {
         fileName: "app/routes/services.tsx",
-        lineNumber: 213,
+        lineNumber: 215,
         columnNumber: 15
       }, this) }, void 0, false, {
         fileName: "app/routes/services.tsx",
-        lineNumber: 211,
+        lineNumber: 213,
         columnNumber: 13
       }, this) }, void 0, false, {
         fileName: "app/routes/services.tsx",
-        lineNumber: 210,
+        lineNumber: 212,
         columnNumber: 11
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/services.tsx",
-      lineNumber: 179,
+      lineNumber: 181,
       columnNumber: 44
+    }, this),
+    activeSection === "training" && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "relative w-full h-[600px] sm:h-[600px] md:h-[1000px] lg:h-[800px] overflow-hidden", children: [
+      typeof window !== "undefined" && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.img, { src: "/training-bg.jpg", alt: "Training Background", className: "w-full h-full object-cover object-top", initial: {
+        opacity: 0,
+        y: 40
+      }, whileInView: {
+        opacity: 1,
+        y: 0
+      }, viewport: {
+        once: true,
+        amount: 0.2
+      }, transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      } }, void 0, false, {
+        fileName: "app/routes/services.tsx",
+        lineNumber: 224,
+        columnNumber: 47
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 bg-green-600 bg-opacity-50" }, void 0, false, {
+        fileName: "app/routes/services.tsx",
+        lineNumber: 237,
+        columnNumber: 13
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 flex flex-col items-center justify-center z-20 px-4 md:px-8 py-4 pt-24 md:pt-12", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-white text-3xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-widest mb-2 md:mb-4 text-center", children: "COMING SOON" }, void 0, false, {
+          fileName: "app/routes/services.tsx",
+          lineNumber: 240,
+          columnNumber: 15
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-white text-[14px] md:text-xl lg:text-2xl font-bold leading-relaxed max-w-4xl mb-4 md:mb-8 text-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "mb-4", children: "Big learning ahead \u2014 stay tuned." }, void 0, false, {
+          fileName: "app/routes/services.tsx",
+          lineNumber: 246,
+          columnNumber: 17
+        }, this) }, void 0, false, {
+          fileName: "app/routes/services.tsx",
+          lineNumber: 245,
+          columnNumber: 15
+        }, this)
+      ] }, void 0, true, {
+        fileName: "app/routes/services.tsx",
+        lineNumber: 238,
+        columnNumber: 13
+      }, this)
+    ] }, void 0, true, {
+      fileName: "app/routes/services.tsx",
+      lineNumber: 223,
+      columnNumber: 11
+    }, this) }, void 0, false, {
+      fileName: "app/routes/services.tsx",
+      lineNumber: 221,
+      columnNumber: 40
     }, this)
   ] }, void 0, true, {
     fileName: "app/routes/services.tsx",
-    lineNumber: 45,
+    lineNumber: 47,
     columnNumber: 10
   }, this);
 }
@@ -404,38 +458,38 @@ function TechnicalConsultationSlider() {
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex items-center justify-center w-full", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: prev, className: "text-3xl sm:text-4xl text-[#00703C] hover:text-[#00703C] px-2 sm:px-2 focus:outline-none ml-4", children: "<" }, void 0, false, {
         fileName: "app/routes/services.tsx",
-        lineNumber: 235,
+        lineNumber: 271,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: images[index].src, alt: images[index].alt, className: "w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl h-64 sm:h-96 md:h-[350px] lg:h-[450px] object-cover rounded-lg mx-1 sm:mx-4 border-2 border-gray-200 bg-white" }, void 0, false, {
         fileName: "app/routes/services.tsx",
-        lineNumber: 236,
+        lineNumber: 272,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: next, className: "text-3xl sm:text-4xl text-[#00703C] hover:text-[#00703C] px-2 sm:px-2 focus:outline-none mr-4", children: ">" }, void 0, false, {
         fileName: "app/routes/services.tsx",
-        lineNumber: 237,
+        lineNumber: 273,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/services.tsx",
-      lineNumber: 234,
+      lineNumber: 270,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex justify-center mt-2 sm:mt-4", children: images.map((_, i) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: `mx-0.5 sm:mx-1 w-2 h-2 sm:w-3 sm:h-3 rounded-full ${i === index ? "bg-yellow-500" : "bg-gray-300"}`, style: {
       display: "inline-block"
     } }, i, false, {
       fileName: "app/routes/services.tsx",
-      lineNumber: 240,
+      lineNumber: 276,
       columnNumber: 31
     }, this)) }, void 0, false, {
       fileName: "app/routes/services.tsx",
-      lineNumber: 239,
+      lineNumber: 275,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/routes/services.tsx",
-    lineNumber: 233,
+    lineNumber: 269,
     columnNumber: 10
   }, this);
 }
@@ -451,4 +505,4 @@ export {
   Services as default,
   meta
 };
-//# sourceMappingURL=/build/routes/services-A63SK777.js.map
+//# sourceMappingURL=/build/routes/services-U3OKA4BR.js.map

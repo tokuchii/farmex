@@ -28,7 +28,7 @@ import {
 } from "/build/_shared/chunk-PZDJHGND.js";
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-Z7MVX3SH.css";
+var tailwind_default = "/build/_assets/tailwind-56RWLZGL.css";
 
 // app/components/Navbar.tsx
 var import_react = __toESM(require_react(), 1);
@@ -51,7 +51,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\Navbar.tsx"
   );
-  import.meta.hot.lastModified = "1754384401880.6028";
+  import.meta.hot.lastModified = "1754505153345.6484";
 }
 function Navbar() {
   _s();
@@ -92,13 +92,16 @@ function Navbar() {
   }, {
     label: "Technical Consultation",
     href: "/services#technical-consultation"
+  }, {
+    label: "Training",
+    href: "/services#training"
   }];
   const knowledgeDropdown = [{
     label: "LAV Station",
-    href: "/knowledge-transfer#farmex-station"
+    href: "/knowledge-transfer#lav-station"
   }, {
-    label: "Rice Derbries",
-    href: "/knowledge-transfer#rice-debris"
+    label: "Rice Derbies",
+    href: "/knowledge-transfer#rice-derbies"
   }];
   const closeDropdowns = () => setOpenDropdown(null);
   const handleNavClick = (e) => {
@@ -116,31 +119,31 @@ function Navbar() {
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex justify-between h-20 items-center", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex items-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "/", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: "/logo.jpg", alt: "FarmEx Logo", className: "h-16 w-auto" }, void 0, false, {
         fileName: "app/components/Navbar.tsx",
-        lineNumber: 94,
+        lineNumber: 97,
         columnNumber: 15
       }, this) }, void 0, false, {
         fileName: "app/components/Navbar.tsx",
-        lineNumber: 93,
+        lineNumber: 96,
         columnNumber: 13
       }, this) }, void 0, false, {
         fileName: "app/components/Navbar.tsx",
-        lineNumber: 92,
+        lineNumber: 95,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "hidden [@media(min-width:1002px)]:flex items-center space-x-6", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "/", className: "text-black hover:text-green-600 font-medium", onClick: handleNavClick, children: "Home" }, void 0, false, {
           fileName: "app/components/Navbar.tsx",
-          lineNumber: 99,
+          lineNumber: 102,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "/about", className: "text-black hover:text-green-600 font-medium", onClick: handleNavClick, children: "About Us" }, void 0, false, {
           fileName: "app/components/Navbar.tsx",
-          lineNumber: 100,
+          lineNumber: 103,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "/products", className: "text-black hover:text-green-600 font-medium", onClick: handleNavClick, children: "Products" }, void 0, false, {
           fileName: "app/components/Navbar.tsx",
-          lineNumber: 101,
+          lineNumber: 104,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative", ref: servicesRef, children: [
@@ -148,26 +151,26 @@ function Navbar() {
             "Services ",
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "ml-1", children: "\u25BC" }, void 0, false, {
               fileName: "app/components/Navbar.tsx",
-              lineNumber: 105,
+              lineNumber: 108,
               columnNumber: 26
             }, this)
           ] }, void 0, true, {
             fileName: "app/components/Navbar.tsx",
-            lineNumber: 104,
+            lineNumber: 107,
             columnNumber: 15
           }, this),
           openDropdown === "services" && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute left-0 mt-2 w-48 bg-white border rounded shadow-lg z-50 animate-fade-in", children: servicesDropdown.map((item) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: item.href, className: "block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600", onClick: handleNavClick, children: item.label }, item.label, false, {
             fileName: "app/components/Navbar.tsx",
-            lineNumber: 108,
+            lineNumber: 111,
             columnNumber: 49
           }, this)) }, void 0, false, {
             fileName: "app/components/Navbar.tsx",
-            lineNumber: 107,
+            lineNumber: 110,
             columnNumber: 47
           }, this)
         ] }, void 0, true, {
           fileName: "app/components/Navbar.tsx",
-          lineNumber: 103,
+          lineNumber: 106,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative", ref: knowledgeRef, children: [
@@ -175,88 +178,88 @@ function Navbar() {
             "Knowledge Transfer ",
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "ml-1", children: "\u25BC" }, void 0, false, {
               fileName: "app/components/Navbar.tsx",
-              lineNumber: 116,
+              lineNumber: 119,
               columnNumber: 36
             }, this)
           ] }, void 0, true, {
             fileName: "app/components/Navbar.tsx",
-            lineNumber: 115,
+            lineNumber: 118,
             columnNumber: 15
           }, this),
           openDropdown === "knowledge" && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute left-0 mt-2 w-56 bg-white border rounded shadow-lg z-50 animate-fade-in", children: knowledgeDropdown.map((item) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: item.href, className: "block px-4 py-2 text-gray-700 hover:bg-green-50 hover:text-green-600", onClick: handleNavClick, children: item.label }, item.label, false, {
             fileName: "app/components/Navbar.tsx",
-            lineNumber: 119,
+            lineNumber: 122,
             columnNumber: 50
           }, this)) }, void 0, false, {
             fileName: "app/components/Navbar.tsx",
-            lineNumber: 118,
+            lineNumber: 121,
             columnNumber: 48
           }, this)
         ] }, void 0, true, {
           fileName: "app/components/Navbar.tsx",
-          lineNumber: 114,
+          lineNumber: 117,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "/news", className: "text-gray-700 hover:text-green-600 font-medium", onClick: handleNavClick, children: "News" }, void 0, false, {
           fileName: "app/components/Navbar.tsx",
-          lineNumber: 124,
+          lineNumber: 127,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "/get-involved", className: "text-gray-700 hover:text-green-600 font-medium", onClick: handleNavClick, children: "Get Involved" }, void 0, false, {
           fileName: "app/components/Navbar.tsx",
-          lineNumber: 125,
+          lineNumber: 128,
           columnNumber: 13
         }, this)
       ] }, void 0, true, {
         fileName: "app/components/Navbar.tsx",
-        lineNumber: 98,
+        lineNumber: 101,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { className: "[@media(max-width:1002px)]:flex hidden flex-col items-center justify-center w-10 h-10 p-2 rounded focus:outline-none transition-all duration-300", "aria-label": "Toggle menu", onClick: () => setMenuOpen((open) => !open), children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "sr-only", children: "Open main menu" }, void 0, false, {
           fileName: "app/components/Navbar.tsx",
-          lineNumber: 129,
+          lineNumber: 132,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: `block h-0.5 w-6 bg-gray-800 rounded transition-all duration-300 ${menuOpen ? "rotate-45 translate-y-1.5" : ""}` }, void 0, false, {
           fileName: "app/components/Navbar.tsx",
-          lineNumber: 130,
+          lineNumber: 133,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: `block h-0.5 w-6 bg-gray-800 rounded transition-all duration-300 my-1 ${menuOpen ? "opacity-0" : "opacity-100"}` }, void 0, false, {
           fileName: "app/components/Navbar.tsx",
-          lineNumber: 131,
+          lineNumber: 134,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: `block h-0.5 w-6 bg-gray-800 rounded transition-all duration-300 ${menuOpen ? "-rotate-45 -translate-y-1.5" : ""}` }, void 0, false, {
           fileName: "app/components/Navbar.tsx",
-          lineNumber: 132,
+          lineNumber: 135,
           columnNumber: 13
         }, this)
       ] }, void 0, true, {
         fileName: "app/components/Navbar.tsx",
-        lineNumber: 128,
+        lineNumber: 131,
         columnNumber: 11
       }, this)
     ] }, void 0, true, {
       fileName: "app/components/Navbar.tsx",
-      lineNumber: 91,
+      lineNumber: 94,
       columnNumber: 9
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: `[@media(max-width:1002px)]:block hidden fixed top-16 left-0 w-full z-60 bg-white shadow-lg transition-transform duration-300 ${menuOpen ? "translate-y-0 opacity-100" : "-translate-y-8 opacity-0 pointer-events-none"} ease-in-out`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex flex-col space-y-4 px-6 py-8", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "/", className: "text-gray-900 hover:text-green-600 font-medium", onClick: handleNavClick, children: "Home" }, void 0, false, {
         fileName: "app/components/Navbar.tsx",
-        lineNumber: 138,
+        lineNumber: 141,
         columnNumber: 13
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "/about", className: "text-gray-700 hover:text-green-600 font-medium", onClick: handleNavClick, children: "About Us" }, void 0, false, {
         fileName: "app/components/Navbar.tsx",
-        lineNumber: 139,
+        lineNumber: 142,
         columnNumber: 13
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "/products", className: "text-gray-700 hover:text-green-600 font-medium", onClick: handleNavClick, children: "Products" }, void 0, false, {
         fileName: "app/components/Navbar.tsx",
-        lineNumber: 140,
+        lineNumber: 143,
         columnNumber: 13
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative", children: [
@@ -264,26 +267,26 @@ function Navbar() {
           "Services ",
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "ml-1", children: "\u25BC" }, void 0, false, {
             fileName: "app/components/Navbar.tsx",
-            lineNumber: 144,
+            lineNumber: 147,
             columnNumber: 26
           }, this)
         ] }, void 0, true, {
           fileName: "app/components/Navbar.tsx",
-          lineNumber: 143,
+          lineNumber: 146,
           columnNumber: 15
         }, this),
         openDropdown === "services" && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "mt-1 ml-4 border-l pl-4 relative z-10", children: servicesDropdown.map((item) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Link, { to: item.href, className: "block py-2 text-gray-700 hover:text-green-600", onClick: handleNavClick, children: item.label }, item.label, false, {
           fileName: "app/components/Navbar.tsx",
-          lineNumber: 147,
+          lineNumber: 150,
           columnNumber: 49
         }, this)) }, void 0, false, {
           fileName: "app/components/Navbar.tsx",
-          lineNumber: 146,
+          lineNumber: 149,
           columnNumber: 47
         }, this)
       ] }, void 0, true, {
         fileName: "app/components/Navbar.tsx",
-        lineNumber: 142,
+        lineNumber: 145,
         columnNumber: 13
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative", children: [
@@ -291,54 +294,54 @@ function Navbar() {
           "Knowledge Transfer ",
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "ml-1", children: "\u25BC" }, void 0, false, {
             fileName: "app/components/Navbar.tsx",
-            lineNumber: 155,
+            lineNumber: 158,
             columnNumber: 36
           }, this)
         ] }, void 0, true, {
           fileName: "app/components/Navbar.tsx",
-          lineNumber: 154,
+          lineNumber: 157,
           columnNumber: 15
         }, this),
         openDropdown === "knowledge" && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "mt-1 ml-4 border-l pl-4", children: knowledgeDropdown.map((item) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: item.href, className: "block py-2 text-gray-700 hover:text-green-600", onClick: handleNavClick, children: item.label }, item.label, false, {
           fileName: "app/components/Navbar.tsx",
-          lineNumber: 158,
+          lineNumber: 161,
           columnNumber: 50
         }, this)) }, void 0, false, {
           fileName: "app/components/Navbar.tsx",
-          lineNumber: 157,
+          lineNumber: 160,
           columnNumber: 48
         }, this)
       ] }, void 0, true, {
         fileName: "app/components/Navbar.tsx",
-        lineNumber: 153,
+        lineNumber: 156,
         columnNumber: 13
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "/news", className: "text-gray-700 hover:text-green-600 font-medium", onClick: handleNavClick, children: "News" }, void 0, false, {
         fileName: "app/components/Navbar.tsx",
-        lineNumber: 163,
+        lineNumber: 166,
         columnNumber: 13
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "/get-involved", className: "text-gray-700 hover:text-green-600 font-medium", onClick: handleNavClick, children: "Get Involved" }, void 0, false, {
         fileName: "app/components/Navbar.tsx",
-        lineNumber: 164,
+        lineNumber: 167,
         columnNumber: 13
       }, this)
     ] }, void 0, true, {
       fileName: "app/components/Navbar.tsx",
-      lineNumber: 137,
+      lineNumber: 140,
       columnNumber: 11
     }, this) }, void 0, false, {
       fileName: "app/components/Navbar.tsx",
-      lineNumber: 136,
+      lineNumber: 139,
       columnNumber: 9
     }, this)
   ] }, void 0, true, {
     fileName: "app/components/Navbar.tsx",
-    lineNumber: 90,
+    lineNumber: 93,
     columnNumber: 7
   }, this) }, void 0, false, {
     fileName: "app/components/Navbar.tsx",
-    lineNumber: 89,
+    lineNumber: 92,
     columnNumber: 10
   }, this);
 }
@@ -793,4 +796,4 @@ export {
   App as default,
   links
 };
-//# sourceMappingURL=/build/root-5NLM35XS.js.map
+//# sourceMappingURL=/build/root-UQMJSAQT.js.map

@@ -7,13 +7,15 @@ export const meta: MetaFunction = () => [
   { title: "Farmex" },
 ];
 export default function Services() {
-  const [activeSection, setActiveSection] = useState<'rentals' | 'consultation'>('rentals');
+  const [activeSection, setActiveSection] = useState<'rentals' | 'consultation' | 'training'>('rentals');
 
   useEffect(() => {
     function handleHashChange() {
       const hash = window.location.hash;
       if (hash === '#technical-consultation') {
         setActiveSection('consultation');
+      } else if (hash === '#training') {
+        setActiveSection('training');
       } else {
         setActiveSection('rentals');
       }
@@ -186,6 +188,40 @@ export default function Services() {
               <TechnicalConsultationSlider />
             </div>
           </div>
+        </>
+      )}
+
+      {/* Services Training */ }
+      {activeSection === 'training' && (
+        <>
+          {/* Hero Section for Training */}
+          <motion.div className="relative w-full h-[600px] sm:h-[600px] md:h-[1000px] lg:h-[800px] overflow-hidden">
+            {typeof window !== 'undefined' && (
+              <motion.img
+                src="/training-bg.jpg"
+                alt="Training Background"
+                className="w-full h-full object-cover object-top"
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+              />
+            )}
+            <div className="absolute inset-0 bg-green-600 bg-opacity-50"></div>
+            <div className="absolute inset-0 flex flex-col items-center justify-center z-20 px-4 md:px-8 py-4 pt-24 md:pt-12">
+              {/* Title */}
+              <h2 className="text-white text-3xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-widest mb-2 md:mb-4 text-center">
+                COMING SOON
+              </h2>
+              
+              {/* Description */}
+              <div className="text-white text-[14px] md:text-xl lg:text-2xl font-bold leading-relaxed max-w-4xl mb-4 md:mb-8 text-center">
+                <p className="mb-4">
+                  Big learning ahead — stay tuned.
+                </p>
+              </div>
+            </div>
+          </motion.div>
         </>
       )}
     </div>

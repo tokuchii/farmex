@@ -45,10 +45,11 @@ export default function Navbar() {
   const servicesDropdown = [
     { label: "Machine Rentals", href: "/services#machine-rentals" },
     { label: "Technical Consultation", href: "/services#technical-consultation" },
+    { label: "Training", href: "/services#training" },
   ];
   const knowledgeDropdown = [
-    { label: "LAV Station", href: "/knowledge-transfer#farmex-station" },
-    { label: "Rice Derbries", href: "/knowledge-transfer#rice-debris" },
+    { label: "LAV Station", href: "/knowledge-transfer#lav-station" },
+    { label: "Rice Derbies", href: "/knowledge-transfer#rice-derbies" },
   ];
 
   // Helper to close dropdowns
