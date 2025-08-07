@@ -630,14 +630,26 @@ video {
 .w-full {
   width: 100%;
 }
-.w-1\/4 {
-  width: 25%;
+.w-60 {
+  width: 15rem;
 }
-.w-1\/6 {
-  width: 16.666667%;
+.w-20 {
+  width: 5rem;
 }
-.w-1\/3 {
-  width: 33.333333%;
+.w-32 {
+  width: 8rem;
+}
+.w-64 {
+  width: 16rem;
+}
+.w-\[500px\] {
+  width: 500px;
+}
+.w-\[400px\] {
+  width: 400px;
+}
+.w-\[300px\] {
+  width: 300px;
 }
 .max-w-4xl {
   max-width: 56rem;
@@ -744,6 +756,9 @@ video {
 .gap-16 {
   gap: 4rem;
 }
+.gap-2 {
+  gap: .5rem;
+}
 .gap-3 {
   gap: .75rem;
 }
@@ -755,9 +770,6 @@ video {
 }
 .gap-8 {
   gap: 2rem;
-}
-.gap-2 {
-  gap: .5rem;
 }
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -914,10 +926,6 @@ video {
 .bg-yellow-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(234 179 8 / var(--tw-bg-opacity, 1));
-}
-.bg-green-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 197 94 / var(--tw-bg-opacity, 1));
 }
 .bg-opacity-50 {
   --tw-bg-opacity: .5;
@@ -1668,6 +1676,9 @@ body {
   .md\:w-1\/2 {
     width: 50%;
   }
+  .md\:w-1\/3 {
+    width: 33.333333%;
+  }
   .md\:w-10 {
     width: 2.5rem;
   }
@@ -1676,9 +1687,6 @@ body {
   }
   .md\:w-48 {
     width: 12rem;
-  }
-  .md\:w-1\/3 {
-    width: 33.333333%;
   }
   .md\:max-w-2xl {
     max-width: 42rem;
@@ -1891,4 +1899,4 @@ body {
     display: flex;
   }
 }
-/*# sourceMappingURL=/build/_assets/tailwind-VNN32ALI.css.map */
+/*# sourceMappingURL=/build/_assets/tailwind-RA6PD2HD.css.map */

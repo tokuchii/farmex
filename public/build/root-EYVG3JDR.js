@@ -28,7 +28,7 @@ import {
 } from "/build/_shared/chunk-PZDJHGND.js";
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-6II2OBJG.css";
+var tailwind_default = "/build/_assets/tailwind-ZRB2WHW3.css";
 
 // app/components/Navbar.tsx
 var import_react = __toESM(require_react(), 1);
@@ -525,7 +525,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\Footer.tsx"
   );
-  import.meta.hot.lastModified = "1754565742345.3015";
+  import.meta.hot.lastModified = "1754568239906.2786";
 }
 function Footer() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("footer", { className: "bg-white relative", children: [
@@ -599,7 +599,7 @@ function Footer() {
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "text-center text-xs sm:text-sm md:text-base text-green-700 z-10 relative", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "w-full md:w-1/3 mx-auto mb-1 border-t border-green-600" }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "w-[350px] mx-auto mb-1 border-t border-green-600" }, void 0, false, {
         fileName: "app/components/Footer.tsx",
         lineNumber: 57,
         columnNumber: 3
@@ -608,7 +608,7 @@ function Footer() {
     ] }, void 0, true, {
       fileName: "app/components/Footer.tsx",
       lineNumber: 56,
-      columnNumber: 7
+      columnNumber: 5
     }, this)
   ] }, void 0, true, {
     fileName: "app/components/Footer.tsx",
@@ -789,4 +789,4 @@ export {
   App as default,
   links
 };
-//# sourceMappingURL=/build/root-N3RYYGX4.js.map
+//# sourceMappingURL=/build/root-EYVG3JDR.js.map

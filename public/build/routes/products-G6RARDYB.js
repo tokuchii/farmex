@@ -37,7 +37,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\products.tsx"
   );
-  import.meta.hot.lastModified = "1754567665855.3108";
+  import.meta.hot.lastModified = "1754567691555.186";
 }
 function meta() {
   return [{
@@ -376,4 +376,4 @@ export {
   Products as default,
   meta
 };
-//# sourceMappingURL=/build/routes/products-CB7HNZFE.js.map
+//# sourceMappingURL=/build/routes/products-G6RARDYB.js.map
