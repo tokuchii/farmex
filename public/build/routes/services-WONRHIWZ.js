@@ -43,7 +43,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\services.tsx"
   );
-  import.meta.hot.lastModified = "1754525963678.4497";
+  import.meta.hot.lastModified = "1754526109465.775";
 }
 var meta = () => [{
   title: "Farmex"
@@ -342,7 +342,7 @@ function Services() {
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 flex flex-col items-center justify-center z-20 px-4 py-2 pt-20 md:pt-16", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-white text-2xl md:text-4xl font-extrabold uppercase tracking-widest mb-2 md:mb-6", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-white text-center text-2xl md:text-4xl font-extrabold uppercase tracking-widest mb-2 md:mb-6", children: [
             "TECHNICAL",
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "block md:inline", children: " CONSULTATION" }, void 0, false, {
               fileName: "app/routes/services.tsx",
@@ -517,4 +517,4 @@ export {
   Services as default,
   meta
 };
-//# sourceMappingURL=/build/routes/services-YCVDXKID.js.map
+//# sourceMappingURL=/build/routes/services-WONRHIWZ.js.map

@@ -174,7 +174,7 @@ export default function Services() {
             )}
             <div className="absolute inset-0 bg-green-600 bg-opacity-50"></div>
             <div className="absolute inset-0 flex flex-col items-center justify-center z-20 px-4 py-2 pt-20 md:pt-16">
-              <h2 className="text-white text-2xl md:text-4xl font-extrabold uppercase tracking-widest mb-2 md:mb-6">
+              <h2 className="text-white text-center text-2xl md:text-4xl font-extrabold uppercase tracking-widest mb-2 md:mb-6">
                 TECHNICAL<span className="block md:inline"> CONSULTATION</span>
               </h2>
               <p className="text-white text-[10px] md:text-xl leading-relaxed max-w-4xl text-center mb-4 md:mb-8">

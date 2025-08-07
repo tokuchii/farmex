@@ -1035,9 +1035,6 @@ video {
 .leading-snug {
   line-height: 1.375;
 }
-.leading-tight {
-  line-height: 1.25;
-}
 .tracking-widest {
   letter-spacing: .1em;
 }
@@ -1623,10 +1620,6 @@ body {
     font-size: 2.25rem;
     line-height: 2.5rem;
   }
-  .md\:text-5xl {
-    font-size: 3rem;
-    line-height: 1;
-  }
   .md\:text-6xl {
     font-size: 3.75rem;
     line-height: 1;
@@ -1756,4 +1749,4 @@ body {
     display: flex;
   }
 }
-/*# sourceMappingURL=/build/_assets/tailwind-OTNYN7RT.css.map */
+/*# sourceMappingURL=/build/_assets/tailwind-4JINSQQG.css.map */
