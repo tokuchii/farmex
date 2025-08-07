@@ -7,7 +7,7 @@ import {
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-FEEY3YGC.js";
+} from "/build/_shared/chunk-65CJFPR6.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -16,7 +16,7 @@ import {
   __toESM
 } from "/build/_shared/chunk-PZDJHGND.js";
 
-// app/routes/about.tsx
+// app/routes/news.tsx
 var import_react = __toESM(require_react(), 1);
 var import_jsx_dev_runtime = __toESM(require_jsx_dev_runtime(), 1);
 if (!window.$RefreshReg$ || !window.$RefreshSig$ || !window.$RefreshRuntime$) {
@@ -25,7 +25,7 @@ if (!window.$RefreshReg$ || !window.$RefreshSig$ || !window.$RefreshRuntime$) {
   prevRefreshReg = window.$RefreshReg$;
   prevRefreshSig = window.$RefreshSig$;
   window.$RefreshReg$ = (type, id) => {
-    window.$RefreshRuntime$.register(type, '"app\\\\routes\\\\about.tsx"' + id);
+    window.$RefreshRuntime$.register(type, '"app\\\\routes\\\\news.tsx"' + id);
   };
   window.$RefreshSig$ = window.$RefreshRuntime$.createSignatureFunctionForTransform;
 }
@@ -35,16 +35,16 @@ var _s = $RefreshSig$();
 if (import.meta) {
   import.meta.hot = createHotContext(
     //@ts-expect-error
-    "app\\routes\\about.tsx"
+    "app\\routes\\news.tsx"
   );
-  import.meta.hot.lastModified = "1754409060880.428";
+  import.meta.hot.lastModified = "1754399321066.2776";
 }
 function meta() {
   return [{
     title: "Farmex"
   }];
 }
-function About() {
+function News() {
   _s();
   const [isClient, setIsClient] = (0, import_react.useState)(false);
   (0, import_react.useEffect)(() => {
@@ -65,21 +65,21 @@ function About() {
         duration: 0.6,
         ease: "easeOut"
       } }, void 0, false, {
-        fileName: "app/routes/about.tsx",
+        fileName: "app/routes/news.tsx",
         lineNumber: 37,
         columnNumber: 22
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 flex flex-col items-center justify-center z-20", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-white text-2xl md:text-4xl font-extrabold uppercase tracking-widest mb-4 h-auto mt-16 md:-mt-26", children: "FARMEX AT A GLANCE" }, void 0, false, {
-        fileName: "app/routes/about.tsx",
+        fileName: "app/routes/news.tsx",
         lineNumber: 51,
         columnNumber: 11
       }, this) }, void 0, false, {
-        fileName: "app/routes/about.tsx",
+        fileName: "app/routes/news.tsx",
         lineNumber: 50,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
-      fileName: "app/routes/about.tsx",
+      fileName: "app/routes/news.tsx",
       lineNumber: 36,
       columnNumber: 7
     }, this),
@@ -101,32 +101,32 @@ function About() {
           boxShadow: "0 2px 20px 2px rgba(234, 179, 8, 0.85)"
           // gold shadow
         } }, void 0, false, {
-          fileName: "app/routes/about.tsx",
+          fileName: "app/routes/news.tsx",
           lineNumber: 64,
           columnNumber: 17
         }, this) }, void 0, false, {
-          fileName: "app/routes/about.tsx",
+          fileName: "app/routes/news.tsx",
           lineNumber: 63,
           columnNumber: 15
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full md:w-1/2 flex flex-col justify-center", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-2xl sm:text-3xl md:text-4xl font-extrabold text-green-700 mb-4 uppercase tracking-widest", children: "History" }, void 0, false, {
-            fileName: "app/routes/about.tsx",
+            fileName: "app/routes/news.tsx",
             lineNumber: 82,
             columnNumber: 17
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-gray-700 text-lg leading-relaxed", children: "Leads Agriventures Corporation (LAV) was established in 2018 as subsidiary company of LEADS AGRI. Presently under the Malveda Holdings Corporation, the main business is focused on Hybrid Rice Seeds and milled rice distribution. Apart from these, LAV has now ventured in machineries rental, and coming up with our own milled rice grains." }, void 0, false, {
-            fileName: "app/routes/about.tsx",
+            fileName: "app/routes/news.tsx",
             lineNumber: 85,
             columnNumber: 17
           }, this)
         ] }, void 0, true, {
-          fileName: "app/routes/about.tsx",
+          fileName: "app/routes/news.tsx",
           lineNumber: 81,
           columnNumber: 15
         }, this)
       ] }, void 0, true, {
-        fileName: "app/routes/about.tsx",
+        fileName: "app/routes/news.tsx",
         lineNumber: 61,
         columnNumber: 13
       }, this),
@@ -147,45 +147,45 @@ function About() {
           boxShadow: "0 2px 20px 2px rgba(234, 179, 8, 0.85)"
           // gold shadow
         } }, void 0, false, {
-          fileName: "app/routes/about.tsx",
+          fileName: "app/routes/news.tsx",
           lineNumber: 95,
           columnNumber: 17
         }, this) }, void 0, false, {
-          fileName: "app/routes/about.tsx",
+          fileName: "app/routes/news.tsx",
           lineNumber: 94,
           columnNumber: 15
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full md:w-1/2 flex flex-col justify-center", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-2xl sm:text-3xl md:text-4xl font-extrabold text-green-700 mb-4 uppercase tracking-widest", children: "Our Mission" }, void 0, false, {
-            fileName: "app/routes/about.tsx",
+            fileName: "app/routes/news.tsx",
             lineNumber: 113,
             columnNumber: 17
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-gray-700 text-lg leading-relaxed", children: "LAV\u2019s mission is to come up with all the technologies and provide holistic support to the Filipino rice farmers. LAV is continuously testing high yielding rice seed varieties adaptable to the local conditions. From land preparation to harvesting activities, we provide after-sales support through technical consultations, machineries rental, production trainings and field demonstrations." }, void 0, false, {
-            fileName: "app/routes/about.tsx",
+            fileName: "app/routes/news.tsx",
             lineNumber: 116,
             columnNumber: 17
           }, this)
         ] }, void 0, true, {
-          fileName: "app/routes/about.tsx",
+          fileName: "app/routes/news.tsx",
           lineNumber: 112,
           columnNumber: 15
         }, this)
       ] }, void 0, true, {
-        fileName: "app/routes/about.tsx",
+        fileName: "app/routes/news.tsx",
         lineNumber: 92,
         columnNumber: 13
       }, this)
     ] }, void 0, true, {
-      fileName: "app/routes/about.tsx",
+      fileName: "app/routes/news.tsx",
       lineNumber: 59,
       columnNumber: 11
     }, this) }, void 0, false, {
-      fileName: "app/routes/about.tsx",
+      fileName: "app/routes/news.tsx",
       lineNumber: 58,
       columnNumber: 9
     }, this) }, void 0, false, {
-      fileName: "app/routes/about.tsx",
+      fileName: "app/routes/news.tsx",
       lineNumber: 56,
       columnNumber: 7
     }, this),
@@ -196,28 +196,28 @@ function About() {
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat"
     } }, void 0, false, {
-      fileName: "app/routes/about.tsx",
+      fileName: "app/routes/news.tsx",
       lineNumber: 128,
       columnNumber: 9
     }, this) }, void 0, false, {
-      fileName: "app/routes/about.tsx",
+      fileName: "app/routes/news.tsx",
       lineNumber: 126,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
-    fileName: "app/routes/about.tsx",
+    fileName: "app/routes/news.tsx",
     lineNumber: 35,
     columnNumber: 10
   }, this);
 }
-_s(About, "k460N28PNzD7zo1YW47Q9UigQis=");
-_c = About;
+_s(News, "k460N28PNzD7zo1YW47Q9UigQis=");
+_c = News;
 var _c;
-$RefreshReg$(_c, "About");
+$RefreshReg$(_c, "News");
 window.$RefreshReg$ = prevRefreshReg;
 window.$RefreshSig$ = prevRefreshSig;
 export {
-  About as default,
+  News as default,
   meta
 };
-//# sourceMappingURL=/build/routes/about-3C2YF57W.js.map
+//# sourceMappingURL=/build/routes/news-HGLQXUFJ.js.map

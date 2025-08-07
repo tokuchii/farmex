@@ -1,6 +1,6 @@
 import {
   Link
-} from "/build/_shared/chunk-25UY2YLG.js";
+} from "/build/_shared/chunk-ADWLACKH.js";
 import "/build/_shared/chunk-PLT55Z5M.js";
 import {
   motion
@@ -11,7 +11,7 @@ import {
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-FEEY3YGC.js";
+} from "/build/_shared/chunk-65CJFPR6.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -43,7 +43,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\knowledge-transfer.tsx"
   );
-  import.meta.hot.lastModified = "1754502193710.9363";
+  import.meta.hot.lastModified = "1754524950560.2302";
 }
 var meta = () => [{
   title: "Farmex - Knowledge Transfer"
@@ -91,38 +91,28 @@ function KnowledgeTransfer() {
           lineNumber: 66,
           columnNumber: 13
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 flex flex-col md:flex-row items-center justify-center z-20 px-2 md:px-12 py-4 pt-24 md-pt-12", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "md:w-1/2 flex flex-col items-center justify-center md:items-start", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-white text-2xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-widest mb-4 md:mb-6 text-center md:text-left", children: "LAV STATION" }, void 0, false, {
-            fileName: "app/routes/knowledge-transfer.tsx",
-            lineNumber: 70,
-            columnNumber: 17
-          }, this) }, void 0, false, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 flex flex-col items-center justify-center z-20 px-4 md:px-8 py-4 pt-24 md:pt-20", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-white text-2xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-widest mb-4 md:mb-6 text-center", children: "LAV STATION" }, void 0, false, {
             fileName: "app/routes/knowledge-transfer.tsx",
             lineNumber: 69,
             columnNumber: 15
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "md:w-1/2 flex flex-col items-center md:items-start", children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-white text-[12px] md:text-lg lg:text-xl leading-relaxed max-w-2xl mb-0 md:mb-8 text-center md:text-left", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "mb-4", children: "Situated on a 6.6 hectare agricultural land in Calauan, Laguna, the LAV Station aims to lead, integrate, and deliver R&D solutions to meet farmer demands. As Leads' primary Research Center, the station is the venue for in-house trials that consequently give innovations in rice farming production. Additionally, the site is where we provide trainings to farmers, agriculture students, extension workers and agri enthusiasts." }, void 0, false, {
-              fileName: "app/routes/knowledge-transfer.tsx",
-              lineNumber: 77,
-              columnNumber: 19
-            }, this) }, void 0, false, {
-              fileName: "app/routes/knowledge-transfer.tsx",
-              lineNumber: 76,
-              columnNumber: 17
-            }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex justify-center md:justify-end w-full pr-0 md:pr-16", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Link, { to: "/get-involved", className: "bg-[#E0B100] text-white px-2 md:px-8 py-1 md:py-3 rounded-lg font-bold hover:bg-[#E0B100F7] transition-colors duration-300 inline-block text-center", children: "Contact Us" }, void 0, false, {
-              fileName: "app/routes/knowledge-transfer.tsx",
-              lineNumber: 82,
-              columnNumber: 19
-            }, this) }, void 0, false, {
-              fileName: "app/routes/knowledge-transfer.tsx",
-              lineNumber: 81,
-              columnNumber: 17
-            }, this)
-          ] }, void 0, true, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-white text-[12px] md:text-lg lg:text-xl leading-relaxed max-w-4xl mb-4 md:mb-8 text-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "mb-4", children: "Situated on a 6.6 hectare agricultural land in Calauan, Laguna, the LAV Station aims to lead, integrate, and deliver R&D solutions to meet farmer demands. As Leads\u2019 primary Research Center, the station is the venue for in-house trials that consequently give innovations in rice farming production. Additionally, the site is where we provide trainings to farmers, agriculture students, extension workers and agri enthusiasts." }, void 0, false, {
             fileName: "app/routes/knowledge-transfer.tsx",
             lineNumber: 75,
+            columnNumber: 17
+          }, this) }, void 0, false, {
+            fileName: "app/routes/knowledge-transfer.tsx",
+            lineNumber: 74,
+            columnNumber: 15
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex justify-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Link, { to: "/get-involved", className: "bg-[#E0B100] text-white px-2 md:px-8 py-1 md:py-3 rounded-lg font-bold hover:bg-[#E0B100F7] transition-colors duration-300 inline-block text-center", children: "Contact Us" }, void 0, false, {
+            fileName: "app/routes/knowledge-transfer.tsx",
+            lineNumber: 82,
+            columnNumber: 17
+          }, this) }, void 0, false, {
+            fileName: "app/routes/knowledge-transfer.tsx",
+            lineNumber: 81,
             columnNumber: 15
           }, this)
         ] }, void 0, true, {
@@ -138,33 +128,33 @@ function KnowledgeTransfer() {
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "w-full bg-[url('/bgmachinerentals.jpg')] bg-cover bg-center flex flex-col items-center justify-center", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "w-full py-2 sm:py-4 flex justify-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl px-0 sm:px-2 py-4 sm:py-6 flex flex-col items-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(LAVStationSlider, {}, void 0, false, {
           fileName: "app/routes/knowledge-transfer.tsx",
-          lineNumber: 94,
+          lineNumber: 93,
           columnNumber: 17
         }, this) }, void 0, false, {
           fileName: "app/routes/knowledge-transfer.tsx",
-          lineNumber: 93,
+          lineNumber: 92,
           columnNumber: 15
         }, this) }, void 0, false, {
           fileName: "app/routes/knowledge-transfer.tsx",
-          lineNumber: 92,
+          lineNumber: 91,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl px-2 sm:px-4 py-4 sm:py-6 flex flex-col items-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative w-full h-64 sm:h-96 md:h-[350px] lg:h-[470px] overflow-hidden", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("iframe", { src: "https://www.youtube.com/embed/OwXif6G_3oU", title: "LAV Station Video", className: "w-full h-full", allowFullScreen: true, allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" }, void 0, false, {
           fileName: "app/routes/knowledge-transfer.tsx",
-          lineNumber: 99,
+          lineNumber: 98,
           columnNumber: 17
         }, this) }, void 0, false, {
           fileName: "app/routes/knowledge-transfer.tsx",
-          lineNumber: 98,
+          lineNumber: 97,
           columnNumber: 15
         }, this) }, void 0, false, {
           fileName: "app/routes/knowledge-transfer.tsx",
-          lineNumber: 97,
+          lineNumber: 96,
           columnNumber: 13
         }, this)
       ] }, void 0, true, {
         fileName: "app/routes/knowledge-transfer.tsx",
-        lineNumber: 90,
+        lineNumber: 89,
         columnNumber: 11
       }, this)
     ] }, void 0, true, {
@@ -188,98 +178,98 @@ function KnowledgeTransfer() {
           ease: "easeOut"
         } }, void 0, false, {
           fileName: "app/routes/knowledge-transfer.tsx",
-          lineNumber: 108,
+          lineNumber: 107,
           columnNumber: 26
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 bg-[#007F3D8C]" }, void 0, false, {
           fileName: "app/routes/knowledge-transfer.tsx",
-          lineNumber: 121,
+          lineNumber: 120,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 flex flex-col items-center justify-center z-20 px-4 md:px-8 py-4 pt-24 md:pt-20", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-white text-2xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-widest mb-4 md:mb-6 text-center", children: "RICE DERBIES" }, void 0, false, {
             fileName: "app/routes/knowledge-transfer.tsx",
-            lineNumber: 124,
+            lineNumber: 123,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-white text-[12px] md:text-lg lg:text-xl leading-relaxed max-w-4xl mb-4 md:mb-8 text-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "mb-4", children: "Farmex actively participates yearly to regional, provincial and district derbies nationwide. By showcasing our varieties, Jackpot 102 and LAV 777, stakeholders are continually witnessing the competencies of our products. In these events, we showcase not just the genetic traits and performance of our hybrid seeds but also our proven production protocols in achieving high yields." }, void 0, false, {
             fileName: "app/routes/knowledge-transfer.tsx",
-            lineNumber: 130,
+            lineNumber: 129,
             columnNumber: 17
           }, this) }, void 0, false, {
             fileName: "app/routes/knowledge-transfer.tsx",
-            lineNumber: 129,
+            lineNumber: 128,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex justify-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Link, { to: "/get-involved", className: "bg-[#E0B100] text-white px-2 md:px-8 py-1 md:py-3 rounded-lg font-bold hover:bg-[#E0B100F7] transition-colors duration-300 inline-block text-center", children: "Contact Us" }, void 0, false, {
             fileName: "app/routes/knowledge-transfer.tsx",
-            lineNumber: 137,
+            lineNumber: 136,
             columnNumber: 17
           }, this) }, void 0, false, {
             fileName: "app/routes/knowledge-transfer.tsx",
-            lineNumber: 136,
+            lineNumber: 135,
             columnNumber: 15
           }, this)
         ] }, void 0, true, {
           fileName: "app/routes/knowledge-transfer.tsx",
-          lineNumber: 122,
+          lineNumber: 121,
           columnNumber: 13
         }, this)
       ] }, void 0, true, {
         fileName: "app/routes/knowledge-transfer.tsx",
-        lineNumber: 107,
+        lineNumber: 106,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "w-full bg-[url('/ricederbies-bg.jpg')] bg-cover bg-center flex flex-col md items-center justify-center", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "w-full py-2 sm:py-4 flex justify-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl px-0 sm:px-2 py-4 sm:py-6 flex flex-col items-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(RiceDerbiesSlider, {}, void 0, false, {
           fileName: "app/routes/knowledge-transfer.tsx",
-          lineNumber: 148,
+          lineNumber: 147,
           columnNumber: 17
         }, this) }, void 0, false, {
           fileName: "app/routes/knowledge-transfer.tsx",
-          lineNumber: 147,
+          lineNumber: 146,
           columnNumber: 15
         }, this) }, void 0, false, {
           fileName: "app/routes/knowledge-transfer.tsx",
-          lineNumber: 146,
+          lineNumber: 145,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-6xl px-2 sm:px-4 py-4 sm:py-6 flex flex-col items-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative w-full h-[180px] sm:h-[250px] md:h-[330px] lg:h-[320px] overflow-hidden", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("iframe", { src: "https://www.youtube.com/embed/xsk3jOkGG8k", title: "Rice Derbies Video", className: "w-full h-full", allowFullScreen: true, allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" }, void 0, false, {
             fileName: "app/routes/knowledge-transfer.tsx",
-            lineNumber: 155,
+            lineNumber: 154,
             columnNumber: 20
           }, this) }, void 0, false, {
             fileName: "app/routes/knowledge-transfer.tsx",
-            lineNumber: 154,
+            lineNumber: 153,
             columnNumber: 18
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative w-full h-[180px] sm:h-[250px] md:h-[330px] lg:h-[320px] overflow-hidden", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("iframe", { src: "https://www.youtube.com/embed/ozN10240MUI", title: "Rice Derbies Video 2", className: "w-full h-full", allowFullScreen: true, allow: "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" }, void 0, false, {
             fileName: "app/routes/knowledge-transfer.tsx",
-            lineNumber: 158,
+            lineNumber: 157,
             columnNumber: 20
           }, this) }, void 0, false, {
             fileName: "app/routes/knowledge-transfer.tsx",
-            lineNumber: 157,
+            lineNumber: 156,
             columnNumber: 18
           }, this)
         ] }, void 0, true, {
           fileName: "app/routes/knowledge-transfer.tsx",
-          lineNumber: 153,
+          lineNumber: 152,
           columnNumber: 16
         }, this) }, void 0, false, {
           fileName: "app/routes/knowledge-transfer.tsx",
-          lineNumber: 152,
+          lineNumber: 151,
           columnNumber: 14
         }, this)
       ] }, void 0, true, {
         fileName: "app/routes/knowledge-transfer.tsx",
-        lineNumber: 144,
+        lineNumber: 143,
         columnNumber: 11
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/knowledge-transfer.tsx",
-      lineNumber: 105,
+      lineNumber: 104,
       columnNumber: 36
     }, this)
   ] }, void 0, true, {
@@ -331,52 +321,52 @@ function LAVStationSlider() {
   const next = () => setIndex((i) => i === images.length - 1 ? 0 : i + 1);
   return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full flex flex-col items-center", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative w-full flex items-center justify-center px-4", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: prev, className: "absolute left-0 md:-left-8 z-10 bg-[#057A31] hover:bg-[#046a2a] text-white rounded-full w-10 h-10 md:w-12 md:h-[220px] flex items-center justify-center shadow-lg transition-colors duration-200 -ml-3 md:-ml-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "text-lg md:text-xl font-bold", children: "<" }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: prev, className: "absolute \r\n             left-2 sm:left-4 md:-left-8 \r\n             z-10 bg-[#057A31] hover:bg-[#046a2a] text-white rounded-full \r\n             w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-[180px] lg:h-[220px] \r\n             flex items-center justify-center shadow-md transition-all duration-200", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "text-sm sm:text-base md:text-xl font-bold", children: "<" }, void 0, false, {
         fileName: "app/routes/knowledge-transfer.tsx",
-        lineNumber: 211,
-        columnNumber: 11
+        lineNumber: 214,
+        columnNumber: 3
       }, this) }, void 0, false, {
         fileName: "app/routes/knowledge-transfer.tsx",
-        lineNumber: 210,
-        columnNumber: 9
+        lineNumber: 209,
+        columnNumber: 7
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-w-lg sm:max-w-2xl md:max-w-4xl lg:max-w-6xl h-64 sm:h-96 md:h-[350px] lg:h-[450px] relative", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: images[index].src, alt: images[index].alt, className: "w-full h-full object-cover rounded-lg border-4 border-[#057A31]" }, void 0, false, {
         fileName: "app/routes/knowledge-transfer.tsx",
-        lineNumber: 216,
+        lineNumber: 219,
         columnNumber: 12
       }, this) }, void 0, false, {
         fileName: "app/routes/knowledge-transfer.tsx",
-        lineNumber: 215,
+        lineNumber: 218,
         columnNumber: 10
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: next, className: "absolute right-0 md:-right-8 z-10 bg-[#057A31] hover:bg-[#046a2a] text-white rounded-full w-10 h-10 md:w-12 md:h-[220px] flex items-center justify-center shadow-lg transition-colors duration-200 -mr-3 md:-mr-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "text-lg md:text-xl font-bold", children: ">" }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: next, className: "absolute \r\n             right-2 sm:right-4 md:-right-8 \r\n             z-10 bg-[#057A31] hover:bg-[#046a2a] text-white rounded-full \r\n             w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-[180px] lg:h-[220px] \r\n             flex items-center justify-center shadow-md transition-all duration-200", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "text-sm sm:text-base md:text-xl font-bold", children: ">" }, void 0, false, {
         fileName: "app/routes/knowledge-transfer.tsx",
-        lineNumber: 221,
-        columnNumber: 11
+        lineNumber: 228,
+        columnNumber: 3
       }, this) }, void 0, false, {
         fileName: "app/routes/knowledge-transfer.tsx",
-        lineNumber: 220,
-        columnNumber: 9
+        lineNumber: 223,
+        columnNumber: 7
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/knowledge-transfer.tsx",
-      lineNumber: 208,
+      lineNumber: 207,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex justify-center mt-4 sm:mt-6", children: images.map((_, i) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: `mx-1 w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors duration-200 ${i === index ? "bg-[#057A31]" : "bg-gray-300"}`, style: {
       display: "inline-block"
     } }, i, false, {
       fileName: "app/routes/knowledge-transfer.tsx",
-      lineNumber: 227,
+      lineNumber: 234,
       columnNumber: 31
     }, this)) }, void 0, false, {
       fileName: "app/routes/knowledge-transfer.tsx",
-      lineNumber: 226,
+      lineNumber: 233,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/routes/knowledge-transfer.tsx",
-    lineNumber: 207,
+    lineNumber: 206,
     columnNumber: 10
   }, this);
 }
@@ -410,50 +400,50 @@ function RiceDerbiesSlider() {
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative w-full flex items-center justify-center px-4", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: prev, className: "absolute left-0 md:-left-8 z-10 bg-[#057A31] hover:bg-[#046a2a] text-white rounded-full w-10 h-10 md:w-12 md:h-[220px] flex items-center justify-center shadow-lg transition-colors duration-200 -ml-3 md:-ml-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "text-lg md:text-xl font-bold", children: "<" }, void 0, false, {
         fileName: "app/routes/knowledge-transfer.tsx",
-        lineNumber: 263,
+        lineNumber: 270,
         columnNumber: 11
       }, this) }, void 0, false, {
         fileName: "app/routes/knowledge-transfer.tsx",
-        lineNumber: 262,
+        lineNumber: 269,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-w-lg sm:max-w-2xl md:max-w-4xl lg:max-w-6xl h-64 sm:h-96 md:h-[350px] lg:h-[450px] relative", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: images[index].src, alt: images[index].alt, className: "w-full h-full object-cover rounded-lg border-4 border-[#057A31]" }, void 0, false, {
         fileName: "app/routes/knowledge-transfer.tsx",
-        lineNumber: 268,
+        lineNumber: 275,
         columnNumber: 11
       }, this) }, void 0, false, {
         fileName: "app/routes/knowledge-transfer.tsx",
-        lineNumber: 267,
+        lineNumber: 274,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: next, className: "absolute right-0 md:-right-8 z-10 bg-[#057A31] hover:bg-[#046a2a] text-white rounded-full w-10 h-10 md:w-12 md:h-[220px] flex items-center justify-center shadow-lg transition-colors duration-200 -mr-3 md:-mr-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "text-lg md:text-xl font-bold", children: ">" }, void 0, false, {
         fileName: "app/routes/knowledge-transfer.tsx",
-        lineNumber: 273,
+        lineNumber: 280,
         columnNumber: 11
       }, this) }, void 0, false, {
         fileName: "app/routes/knowledge-transfer.tsx",
-        lineNumber: 272,
+        lineNumber: 279,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/knowledge-transfer.tsx",
-      lineNumber: 260,
+      lineNumber: 267,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex justify-center mt-4 sm:mt-6", children: images.map((_, i) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: `mx-1 w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-colors duration-200 ${i === index ? "bg-[#057A31]" : "bg-gray-300"}`, style: {
       display: "inline-block"
     } }, i, false, {
       fileName: "app/routes/knowledge-transfer.tsx",
-      lineNumber: 279,
+      lineNumber: 286,
       columnNumber: 31
     }, this)) }, void 0, false, {
       fileName: "app/routes/knowledge-transfer.tsx",
-      lineNumber: 278,
+      lineNumber: 285,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/routes/knowledge-transfer.tsx",
-    lineNumber: 259,
+    lineNumber: 266,
     columnNumber: 10
   }, this);
 }
@@ -471,4 +461,4 @@ export {
   KnowledgeTransfer as default,
   meta
 };
-//# sourceMappingURL=/build/routes/knowledge-transfer-YBQCJBPP.js.map
+//# sourceMappingURL=/build/routes/knowledge-transfer-7KHESX32.js.map

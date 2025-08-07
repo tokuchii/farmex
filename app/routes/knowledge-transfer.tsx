@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "@remix-run/react";
+import { Link, useLocation } from "@remix-run/react";
 import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => [
@@ -45,28 +45,27 @@ export default function KnowledgeTransfer() {
               />
             )}
             <div className="absolute inset-0 bg-[#007F3D8C]"></div>
-            <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-center z-20 px-2 md:px-12 py-4 pt-24 md-pt-12">
-              {/* Left Side - Title */}
-              <div className="md:w-1/2 flex flex-col items-center justify-center md:items-start">
-                <h2 className="text-white text-2xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-widest mb-4 md:mb-6 text-center md:text-left">
-                  LAV STATION
-                </h2>
+            <div className="absolute inset-0 flex flex-col items-center justify-center z-20 px-4 md:px-8 py-4 pt-24 md:pt-20">
+              {/* Title */}
+              <h2 className="text-white text-2xl md:text-4xl lg:text-5xl font-extrabold uppercase tracking-widest mb-4 md:mb-6 text-center">
+                LAV STATION
+              </h2>
+              
+              {/* Description */}
+              <div className="text-white text-[12px] md:text-lg lg:text-xl leading-relaxed max-w-4xl mb-4 md:mb-8 text-center">
+                <p className="mb-4">
+                  Situated on a 6.6 hectare agricultural land in Calauan, Laguna, the LAV Station aims to lead, integrate, and deliver R&D solutions to meet farmer demands. As Leads’ primary Research Center, the station is the venue for in-house trials that consequently give innovations in rice farming production. Additionally, the site is where we provide trainings to farmers, agriculture students, extension workers and agri enthusiasts.
+                </p>
               </div>
-              {/* Right Side - Description and Button */}
-              <div className="md:w-1/2 flex flex-col items-center md:items-start">
-                <div className="text-white text-[12px] md:text-lg lg:text-xl leading-relaxed max-w-2xl mb-0 md:mb-8 text-center md:text-left">
-                  <p className="mb-4">
-                    Situated on a 6.6 hectare agricultural land in Calauan, Laguna, the LAV Station aims to lead, integrate, and deliver R&D solutions to meet farmer demands. As Leads' primary Research Center, the station is the venue for in-house trials that consequently give innovations in rice farming production. Additionally, the site is where we provide trainings to farmers, agriculture students, extension workers and agri enthusiasts.
-                  </p>
-                </div>
-                <div className="flex justify-center md:justify-end w-full pr-0 md:pr-16">
-                  <Link 
-                    to="/get-involved" 
-                    className="bg-[#E0B100] text-white px-2 md:px-8 py-1 md:py-3 rounded-lg font-bold hover:bg-[#E0B100F7] transition-colors duration-300 inline-block text-center"
-                  >
-                    Contact Us
-                  </Link>
-                </div>
+              
+              {/* Button */}
+              <div className="flex justify-center">
+                <Link 
+                  to="/get-involved" 
+                  className="bg-[#E0B100] text-white px-2 md:px-8 py-1 md:py-3 rounded-lg font-bold hover:bg-[#E0B100F7] transition-colors duration-300 inline-block text-center"
+                >
+                  Contact Us
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -195,12 +194,16 @@ function LAVStationSlider() {
     <div className="w-full flex flex-col items-center">
       <div className="relative w-full flex items-center justify-center px-4">
         {/* Left Navigation Arrow */}
-        <button 
-          onClick={prev} 
-          className="absolute left-0 md:-left-8 z-10 bg-[#057A31] hover:bg-[#046a2a] text-white rounded-full w-10 h-10 md:w-12 md:h-[220px] flex items-center justify-center shadow-lg transition-colors duration-200 -ml-3 md:-ml-4"
-        >
-          <span className="text-lg md:text-xl font-bold">&#60;</span>
-        </button>
+<button 
+  onClick={prev} 
+  className="absolute 
+             left-2 sm:left-4 md:-left-8 
+             z-10 bg-[#057A31] hover:bg-[#046a2a] text-white rounded-full 
+             w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-[180px] lg:h-[220px] 
+             flex items-center justify-center shadow-md transition-all duration-200"
+>
+  <span className="text-sm sm:text-base md:text-xl font-bold">&#60;</span>
+</button>
         
                  {/* Main Image Container */}
          <div className="w-full max-w-lg sm:max-w-2xl md:max-w-4xl lg:max-w-6xl h-64 sm:h-96 md:h-[350px] lg:h-[450px] relative">
@@ -212,12 +215,16 @@ function LAVStationSlider() {
          </div>
         
         {/* Right Navigation Arrow */}
-        <button 
-          onClick={next} 
-          className="absolute right-0 md:-right-8 z-10 bg-[#057A31] hover:bg-[#046a2a] text-white rounded-full w-10 h-10 md:w-12 md:h-[220px] flex items-center justify-center shadow-lg transition-colors duration-200 -mr-3 md:-mr-4"
-        >
-          <span className="text-lg md:text-xl font-bold">&#62;</span>
-        </button>
+<button 
+  onClick={next} 
+  className="absolute 
+             right-2 sm:right-4 md:-right-8 
+             z-10 bg-[#057A31] hover:bg-[#046a2a] text-white rounded-full 
+             w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-[180px] lg:h-[220px] 
+             flex items-center justify-center shadow-md transition-all duration-200"
+>
+  <span className="text-sm sm:text-base md:text-xl font-bold">&#62;</span>
+</button>
       </div>
       
       {/* Pagination Dots */}

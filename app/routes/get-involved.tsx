@@ -151,66 +151,71 @@ const handleChange = (
                 <div className="h-1 w-full bg-yellow-500"></div>
               </div>
 
-              <div className="text-black space-y-6 text-md">
-                {/* Emails */}
-                <div>
-                  <h3 className="font-bold text-xl">Emails:</h3>
-                  <p>
-                    <a href="mailto:customersupport@leadsav.com" className="underline text-black hover:text-green-600">
-                      customersupport@leadsav.com
-                    </a>
-                  </p>
-                  <p>
-                    <a href="mailto:hr@leadsagri.com" className="underline text-black hover:text-green-600">
-                      hr@leadsagri.com
-                    </a>
-                  </p>
-                </div>
+              <div className="text-black space-y-6 text-sm sm:text-base lg:text-lg w-full px-2 sm:px-4">
+  {/* Emails */}
+  <div>
+    <h3 className="font-bold text-lg sm:text-xl mb-1">Emails:</h3>
+    <p className="break-words">
+      <a href="mailto:customersupport@leadsav.com" className="underline text-black hover:text-green-600 break-words">
+        customersupport@leadsav.com
+      </a>
+    </p>
+    <p className="break-words">
+      <a href="mailto:hr@leadsagri.com" className="underline text-black hover:text-green-600 break-words">
+        hr@leadsagri.com
+      </a>
+    </p>
+  </div>
 
-                {/* Contact Numbers */}
-                <div>
-                  <h3 className="font-bold text-xl">Contact numbers:</h3>
-                  <p>
-                    FARMEX Customer Service & Support:{" "}
-                    <a href="tel:+639451709401" className="underline text-black hover:text-green-600">
-                      +63 945 170 9401
-                    </a>
-                  </p>
-                  <p>
-                    Northern Luzon:{" "}
-                    <a href="tel:+639064819885" className="underline text-black hover:text-green-600">
-                      +63 906 481 9885
-                    </a>
-                  </p>
-                  <p>
-                    MIMAROPA:{" "}
-                    <a href="tel:+639267091276" className="underline text-black hover:text-green-600">
-                      +63 926 709 1276
-                    </a>
-                  </p>
-                  <p>
-                    CALABARZON:{" "}
-                    <a href="tel:+639173138162" className="underline text-black hover:text-green-600">
-                      +63 917 313 8162
-                    </a>
-                  </p>
-                </div>
-                {/* Station Address */}
-                <div>
-                  <h3 className="font-bold text-xl">Station Address:</h3>
-                  <p>
-                    <a
-                      href="https://www.google.com/maps?q=14.330623,121.076050"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline text-black hover:text-green-600"
-                    >
-                      Unit A 201 and Alfresco Area, 2nd Floor Coral Center Mall, Barangay San Francisco, Biñan, Laguna
-                    </a>
+  {/* Contact Numbers */}
+  <div>
+    <h3 className="font-bold text-lg sm:text-xl mb-1">Contact numbers:</h3>
+    <p>
+      FARMEX Customer Service & Support:
+      <br />
+      <a href="tel:+639451709401" className="underline text-black hover:text-green-600">
+        +63 945 170 9401
+      </a>
+    </p>
+    <p>
+      Northern Luzon:
+      <br />
+      <a href="tel:+639064819885" className="underline text-black hover:text-green-600">
+        +63 906 481 9885
+      </a>
+    </p>
+    <p>
+      MIMAROPA:
+      <br />
+      <a href="tel:+639267091276" className="underline text-black hover:text-green-600">
+        +63 926 709 1276
+      </a>
+    </p>
+    <p>
+      CALABARZON:
+      <br />
+      <a href="tel:+639173138162" className="underline text-black hover:text-green-600">
+        +63 917 313 8162
+      </a>
+    </p>
+  </div>
 
-                  </p>
-                </div>
-              </div>
+  {/* Station Address */}
+  <div>
+    <h3 className="font-bold text-lg sm:text-xl mb-1">Station Address:</h3>
+    <p className="break-words">
+      <a
+        href="https://www.google.com/maps?q=14.330623,121.076050"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline text-black hover:text-green-600"
+      >
+        Unit A 201 and Alfresco Area, 2nd Floor Coral Center Mall, Barangay San Francisco, Biñan, Laguna
+      </a>
+    </p>
+  </div>
+</div>
+
             </div>
 
 

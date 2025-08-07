@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Link } from "@remix-run/react";
+import { Link, useLocation } from "@remix-run/react";
 import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => [
@@ -8,22 +8,27 @@ export const meta: MetaFunction = () => [
 ];
 export default function Services() {
   const [activeSection, setActiveSection] = useState<'rentals' | 'consultation' | 'training'>('rentals');
+  const [isClient, setIsClient] = useState(false);
+useEffect(() => {
+  setIsClient(true);
+}, []);
 
-  useEffect(() => {
-    function handleHashChange() {
-      const hash = window.location.hash;
-      if (hash === '#technical-consultation') {
-        setActiveSection('consultation');
-      } else if (hash === '#training') {
-        setActiveSection('training');
-      } else {
-        setActiveSection('rentals');
-      }
-    }
-    handleHashChange(); // run on mount
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
-  }, []);
+
+const location = useLocation();
+
+useEffect(() => {
+  const hash = location.hash;
+
+  if (hash === '#technical-consultation') {
+    setActiveSection('consultation');
+  } else if (hash === '#training') {
+    setActiveSection('training');
+  } else if (hash === '#machine-rentals' || hash === '' || hash === '#') {
+    setActiveSection('rentals');
+  } else {
+    setActiveSection('rentals');
+  }
+}, [location.hash]);
 
   return (
     <div className="bg-white w-full min-h-screen relative">
@@ -32,7 +37,7 @@ export default function Services() {
         <>
           {/* Hero Section */}
           <motion.div className="relative w-full h-[350px] sm:h-[400px] md:h-[600px] lg:h-[500px] overflow-hidden">
-            {typeof window !== 'undefined' && (
+            {isClient && (
               <motion.img
                 src="/machinerentals.png"
                 alt="Machine Rentals Background"
@@ -156,7 +161,7 @@ export default function Services() {
         <>
           {/* Hero Section for Technical Consultation */}
           <motion.div className="relative w-full h-[360px] sm:h-[400px] md:h-[600px] lg:h-[500px] overflow-hidden flex items-center justify-center">
-            {typeof window !== 'undefined' && (
+            {isClient && (
               <motion.img
                 src="/technicalconcultant.png"
                 alt="Technical Consultation Hero"
@@ -169,9 +174,9 @@ export default function Services() {
             )}
             <div className="absolute inset-0 bg-green-600 bg-opacity-50"></div>
             <div className="absolute inset-0 flex flex-col items-center justify-center z-20 px-4 py-2 pt-20 md:pt-16">
-              <h2 className="text-white text-lg md:text-4xl font-extrabold uppercase tracking-widest mb-2 md:mb-6">
-                TECHNICAL CONSULTATION
-              </h2>
+<h2 className="text-white text-center text-2xl sm:text-3xl md:text-5xl font-extrabold uppercase tracking-widest mb-2 md:mb-6 leading-tight">
+  TECHNICAL<span className="block md:inline"> CONSULTATION</span>
+</h2>
               <p className="text-white text-[10px] md:text-xl leading-relaxed max-w-6xl text-center mb-2 md:mb-8">
                 Farmex's commitment to the rice farming communities does not end in providing quality hybrid rice seeds but extends its hands to those who are in need of free technical consultations. From farmers to agriculture students, Farmex technical team is always ready to share their expertise and strategy on rice farming production and technologies. Regular technical trainings are done to further equip and update our Seed Production Specialists on the latest technologies and having them share new learnings to our farmers.
               </p>
@@ -196,7 +201,7 @@ export default function Services() {
         <>
           {/* Hero Section for Training */}
           <motion.div className="relative w-full h-[600px] sm:h-[600px] md:h-[1000px] lg:h-[800px] overflow-hidden">
-            {typeof window !== 'undefined' && (
+            {isClient && (
               <motion.img
                 src="/training-bg.jpg"
                 alt="Training Background"
@@ -238,24 +243,48 @@ function TechnicalConsultationSlider() {
   const next = () => setIndex((i) => (i === images.length - 1 ? 0 : i + 1));
   return (
     <div className="w-full flex flex-col items-center">
-      <div className="flex items-center justify-center w-full">
-        <button onClick={prev} className="text-3xl sm:text-4xl text-[#00703C] hover:text-[#00703C] px-2 sm:px-2 focus:outline-none ml-4">&#60;</button>
-        <img
-          src={images[index].src}
-          alt={images[index].alt}
-          className="w-full max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl h-64 sm:h-96 md:h-[350px] lg:h-[450px] object-cover rounded-lg mx-1 sm:mx-4 border-2 border-gray-200 bg-white"
-        />
-        <button onClick={next} className="text-3xl sm:text-4xl text-[#00703C] hover:text-[#00703C] px-2 sm:px-2 focus:outline-none mr-4">&#62;</button>
-      </div>
-      <div className="flex justify-center mt-2 sm:mt-4">
-        {images.map((_, i) => (
-          <span
-            key={i}
-            className={`mx-0.5 sm:mx-1 w-2 h-2 sm:w-3 sm:h-3 rounded-full ${i === index ? 'bg-yellow-500' : 'bg-gray-300'}`}
-            style={{ display: 'inline-block' }}
-          ></span>
-        ))}
-      </div>
-    </div>
+  <div className="flex items-center justify-center w-full px-2 sm:px-4">
+    {/* Left Arrow */}
+    <button
+      onClick={prev}
+      className="text-2xl sm:text-3xl md:text-4xl text-[#00703C] hover:text-[#00703C] 
+                 px-1 sm:px-2 focus:outline-none ml-1 sm:ml-4"
+    >
+      &#60;
+    </button>
+
+    {/* Main Image */}
+    <img
+      src={images[index].src}
+      alt={images[index].alt}
+      className="w-full max-w-[260px] sm:max-w-md md:max-w-lg lg:max-w-2xl 
+                 h-56 sm:h-80 md:h-[350px] lg:h-[450px] 
+                 object-cover rounded-lg mx-1 sm:mx-4 border-2 border-gray-200 bg-white"
+    />
+
+    {/* Right Arrow */}
+    <button
+      onClick={next}
+      className="text-2xl sm:text-3xl md:text-4xl text-[#00703C] hover:text-[#00703C] 
+                 px-1 sm:px-2 focus:outline-none mr-1 sm:mr-4"
+    >
+      &#62;
+    </button>
+  </div>
+
+  {/* Pagination Dots */}
+  <div className="flex justify-center mt-2 sm:mt-4">
+    {images.map((_, i) => (
+      <span
+        key={i}
+        className={`mx-0.5 sm:mx-1 w-2 h-2 sm:w-3 sm:h-3 rounded-full ${
+          i === index ? "bg-yellow-500" : "bg-gray-300"
+        }`}
+        style={{ display: "inline-block" }}
+      ></span>
+    ))}
+  </div>
+</div>
+
   );
 } 
