@@ -47,8 +47,9 @@ export default function Footer() {
 
       {/* Copyright */}
       <div className="text-center text-xs sm:text-sm md:text-base text-green-700 z-10 relative">
-  <div className="border-t border-green-600 w-2/3 mx-auto mb-1"></div>
-  Copyright © 2025 Leads Agriventures Corporation
+  <div className="w-full md:w-1/3 mx-auto mb-1 border-t border-green-600" />
+
+  Copyright © 2025 Farmex Corporation
 </div>
     </footer>
   );

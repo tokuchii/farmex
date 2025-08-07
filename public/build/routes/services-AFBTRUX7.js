@@ -43,7 +43,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\services.tsx"
   );
-  import.meta.hot.lastModified = "1754526109465.775";
+  import.meta.hot.lastModified = "1754530072239.2134";
 }
 var meta = () => [{
   title: "Farmex"
@@ -517,4 +517,4 @@ export {
   Services as default,
   meta
 };
-//# sourceMappingURL=/build/routes/services-WONRHIWZ.js.map
+//# sourceMappingURL=/build/routes/services-AFBTRUX7.js.map

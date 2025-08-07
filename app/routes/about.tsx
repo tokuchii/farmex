@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export function meta() {
   return [
-     { title: "Farmex" },
+    { title: "Farmex" },
   ];
 }
 
@@ -39,24 +39,25 @@ export default function About() {
       </motion.div>
       <motion.div>
         {/* History and Our Mission Section */}
-        <section className="relative w-full py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center bg-white justify-center bg-cover bg-center">
+        <section className="relative w-full py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center bg-white justify-center bg-cover bg-center"
+          style={{ backgroundImage: "url('/bgcontact.png')" }}>
           <div className="w-full max-w-7xl flex flex-col gap-16">
             {/* History Row */}
             <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-16">
               {/* Image 1 */}
               <div className="w-full md:w-1/2 flex justify-center">
-                <motion.img
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                  src="/history.jpg"
-                  alt="FarmEx History"
-                  className="rounded-lg shadow-lg w-full max-w-md h-64 sm:h-72 md:h-80 object-cover"
+                <div
+                  className="rounded-lg shadow-lg w-full max-w-md h-64 sm:h-72 md:h-80 overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-105"
                   style={{
                     boxShadow: "0 2px 20px 2px rgba(234, 179, 8, 0.85)", // gold shadow
                   }}
-                />
+                >
+                  <img
+                    src="/history.jpg" // or "/mission.jpg"
+                    alt="FarmEx History" // or "FarmEx Mission"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
               </div>
               {/* History Text */}
               <div className="w-full md:w-1/2 flex flex-col justify-center">
@@ -73,18 +74,18 @@ export default function About() {
             <div className="flex flex-col md:flex-row-reverse items-center md:items-start gap-8 md:gap-16">
               {/* Image 2 */}
               <div className="w-full md:w-1/2 flex justify-center">
-                <motion.img
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                  src="/mission.jpg"
-                  alt="FarmEx Mission"
-                  className="rounded-lg shadow-lg w-full max-w-md h-64 sm:h-72 md:h-80 object-cover"
+                <div
+                  className="rounded-lg shadow-lg w-full max-w-md h-64 sm:h-72 md:h-80 overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-105"
                   style={{
                     boxShadow: "0 2px 20px 2px rgba(234, 179, 8, 0.85)", // gold shadow
                   }}
-                />
+                >
+                  <img
+                    src="/mission.jpg" // or "/mission.jpg"
+                    alt="FarmEx History" // or "FarmEx Mission"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
               </div>
               {/* Mission Text */}
               <div className="w-full md:w-1/2 flex flex-col justify-center">

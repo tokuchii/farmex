@@ -49,14 +49,14 @@ export default function Home() {
 <section
   className="relative w-full py-16 px-4 sm:px-6 lg:px-8 flex items-center bg-white justify-center bg-cover bg-center"
   style={{
-    backgroundImage: "url('/featuredbg.png')", // change this to your actual image path
+    backgroundImage: "url('/featuredbg.png')", 
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
   }}
 >
   <div className="w-full flex flex-col items-center">
-    <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-green-700 mb-2 uppercase tracking-widest text-center">
+    <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-2 uppercase tracking-widest text-center">
       Featured Products
     </h2>
   <div className="h-1 w-40 md:w-48 lg:w-[400px] bg-yellow-500 rounded-full mb-12"></div>
@@ -85,7 +85,7 @@ export default function Home() {
               />
             </a>
           </div>
-          <span className="font-semibold text-gray-800 mt-3 uppercase text-center text-md sm:text-base">
+          <span className="font-semibold text-white mt-3 uppercase text-center text-md sm:text-base">
             {product.name}
           </span>
         </div>
@@ -119,14 +119,10 @@ export default function Home() {
   className="w-full max-[525px]:w-[90%] h-72 rounded-lg border-4 border-white shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 overflow-hidden mb-8"
   style={{ boxShadow: '0 2px 32px 2px rgba(34,197,94,0.25)' }}
 >
-  <motion.img
+  <img
     src="/service1.jpg"
     alt="Service 1"
     className="w-full h-full object-cover block"
-     initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
   />
 </div>
         <a href="/services">
@@ -145,14 +141,10 @@ export default function Home() {
   className="w-full max-[525px]:w-[90%] h-72 rounded-lg border-4 border-white shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 overflow-hidden mb-8"
   style={{ boxShadow: '0 2px 32px 2px rgba(34,197,94,0.25)' }}
 >
-  <motion.img
+  <img
     src="/service2.png"
     alt="Service 2"
     className="w-full h-full object-cover block"
-     initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.6, ease: "easeOut" }}
   />
 </div>
 

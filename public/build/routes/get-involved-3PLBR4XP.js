@@ -282,7 +282,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\get-involved.tsx"
   );
-  import.meta.hot.lastModified = "1754524491394.6047";
+  import.meta.hot.lastModified = "1754539617516.494";
 }
 function meta() {
   return [{
@@ -323,7 +323,7 @@ function GetInvolved() {
     e.preventDefault();
     setIsSending(true);
     const isValidEmail = (email) => {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
+      const emailRegex = /^[^\s@]+@[a-zA-Z][a-zA-Z0-9.-]*\.(com|org|net|edu|gov|io)$/i;
       return emailRegex.test(email);
     };
     if (!isValidEmail(formData.email)) {
@@ -400,7 +400,7 @@ function GetInvolved() {
       lineNumber: 113,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("section", { className: "w-full min-h-screen pt-8 pb-16 px-4 sm:px-8 bg-[url('/bgcontact.png')] bg-cover bg-center flex flex-col items-center justify-start", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("section", { className: "w-full min-h-screen pt-8 pb-16 px-4 sm:px-8 bg-[url('/productbg1.png')] bg-cover bg-center flex flex-col items-center justify-start", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex flex-col items-center justify-center space-y-2", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: "/pandoybg1.png", alt: "Logo", className: "w-[350px] h-auto" }, void 0, false, {
           fileName: "app/routes/get-involved.tsx",
@@ -555,7 +555,7 @@ function GetInvolved() {
         lineNumber: 140,
         columnNumber: 13
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex flex-col items-end gap-6", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex flex-col items-end gap-6 mt-16", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("form", { onSubmit: handleSubmit, className: "bg-green-700 text-white p-6 rounded-lg w-full max-w-md shadow-lg", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "mb-4", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("input", { type: "text", name: "name", placeholder: "Name", value: formData.name, onChange: handleChange, className: "w-full px-4 py-3 rounded text-gray-700 bg-white border border-gray-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:outline-none mb-4", required: true }, void 0, false, {
@@ -701,4 +701,4 @@ export {
   GetInvolved as default,
   meta
 };
-//# sourceMappingURL=/build/routes/get-involved-WMG3YXCE.js.map
+//# sourceMappingURL=/build/routes/get-involved-3PLBR4XP.js.map

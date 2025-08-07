@@ -37,7 +37,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\products.tsx"
   );
-  import.meta.hot.lastModified = "1754400027792.6926";
+  import.meta.hot.lastModified = "1754567665855.3108";
 }
 function meta() {
   return [{
@@ -47,31 +47,31 @@ function meta() {
 var productList = [{
   name: "Jackpot 102",
   image: "/jackpot102_product.png",
-  desc: "Hybrid Rice",
+  desc: "Hybrid Rice Seed",
   desc1: "Jackpot 102 (NSIC 666H) is the first hybrid rice seed variety introduced and distributed by LAV way back 2019. Through the years, Jackpot has already proven its place in the hybrid rice seed industry by ranking in the Top 5 varieties preferred by farmers during Rice Derbies.",
   pdf: "/downloads/jackpot-102.pdf"
 }, {
   name: "LAV 777",
   image: "/lav777_product.png",
-  desc: "Hybrid Rice",
+  desc: "Hybrid Rice Seed",
   desc1: "LAV 777 (NSIC Rc 656H) is our latest variety offering to rice farmers. Launched last year in Occidental Mindoro, LAV 777 has the quality traits of a superior hybrid rice. \n\n A genetically high yielding and Bacterial Leaf Blight-tolerant variety partnered with our\xA0\u201CSapat na Alaga Protocol\u201D\xA0can definitely help our rice farmers attain high yields without excessive production costs.",
   pdf: "/downloads/lav-777.pdf"
 }, {
   name: "Jose Maria Milled Rice",
   image: "/jose1.png",
-  desc: "Hybrid Rice",
+  desc: "Hybrid Rice Seed",
   desc1: "LAV has entered the whole value-chain of rice production by selling milled rice to the local market. Jose Maria is LAV\u2019s regular-milled rice similar to the Dinorado type. As a product of contract growing, LAV helps the rice growers sell their produce by buying back their harvests at the prevailing market price. These fresh palay are then milled through our own milling facility and packaged as Jose Maria milled rice, named after the LAV\u2019s Founder and President, Mr. Jose Maria Fernando L. Malveda.",
   pdf: "/downloads/jose-maria.pdf"
 }, {
   name: "Leads 143",
   image: "/leads143_product.png",
-  desc: "Hybrid Rice",
+  desc: "Hybrid Rice Seed",
   desc1: "",
   pdf: "/downloads/leads-143.pdf"
 }, {
   name: "Jackpot ready",
   image: "/jackpot-ready_product.png",
-  desc: "Hybrid Rice",
+  desc: "Hybrid Rice Seed",
   desc1: "Jackpot Ready is a product development where Jackpot 102 seeds have been grown into healthy 15-21 day-old seedlings. This technology gives the farmers an option of ready-to-plant seedlings and provides convenience to farmers who want to save time and energy during pre-planting stage.",
   pdf: "/downloads/jackpot-ready.pdf"
 }];
@@ -127,44 +127,50 @@ function Products() {
         lineNumber: 87,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("section", { className: "w-full py-16 px-4 sm:px-8 bg-[url('/productbg1.png')] bg-cover bg-center flex flex-col items-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-8", children: productList.map((product, idx) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex flex-col items-center", children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.img, { src: product.image, alt: product.name, initial: {
-          opacity: 0,
-          y: 40
-        }, whileInView: {
-          opacity: 1,
-          y: 0
-        }, viewport: {
-          once: true,
-          amount: 0.2
-        }, transition: {
-          duration: 0.6,
-          ease: "easeOut"
-        }, className: "w-full h-50 object-cover rounded mb-4" }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("section", { className: "w-full py-16 px-4 sm:px-8 bg-[url('/bgmodal.png')] bg-cover bg-center flex flex-col items-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-8 auto-rows-fr", children: productList.map((product) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(
+        "div",
+        {
+          className: "flex flex-col items-centeR h-full",
+          children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full overflow-hidden rounded mb-5", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: product.image, alt: product.name, className: "w-full h-60 object-contain transform transition-transform duration-300 ease-in-out hover:scale-105" }, void 0, false, {
+              fileName: "app/routes/products.tsx",
+              lineNumber: 115,
+              columnNumber: 21
+            }, this) }, void 0, false, {
+              fileName: "app/routes/products.tsx",
+              lineNumber: 114,
+              columnNumber: 19
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "font-bold text-green-700 text-2xl mb-3 text-center", children: product.name }, void 0, false, {
+              fileName: "app/routes/products.tsx",
+              lineNumber: 117,
+              columnNumber: 19
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-gray-700 text-base text-center mb-6", children: product.desc }, void 0, false, {
+              fileName: "app/routes/products.tsx",
+              lineNumber: 118,
+              columnNumber: 19
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "mt-auto w-full flex justify-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: () => setSelectedProduct(product), className: "px-5 py-2.5 bg-[#057A31] text-white text-base rounded hover:bg-green-900 transition", children: "Learn More" }, void 0, false, {
+              fileName: "app/routes/products.tsx",
+              lineNumber: 120,
+              columnNumber: 21
+            }, this) }, void 0, false, {
+              fileName: "app/routes/products.tsx",
+              lineNumber: 119,
+              columnNumber: 19
+            }, this)
+          ]
+        },
+        product.name,
+        true,
+        {
           fileName: "app/routes/products.tsx",
-          lineNumber: 113,
-          columnNumber: 19
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "font-bold text-green-600 text-xl mb-2", children: product.name }, void 0, false, {
-          fileName: "app/routes/products.tsx",
-          lineNumber: 126,
-          columnNumber: 19
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-gray-600 text-center mb-4", children: product.desc }, void 0, false, {
-          fileName: "app/routes/products.tsx",
-          lineNumber: 127,
-          columnNumber: 19
-        }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: () => setSelectedProduct(product), className: "mt-auto px-4 py-2 bg-[#057A31] text-white rounded hover:bg-green-900 transition", children: "Learn More" }, void 0, false, {
-          fileName: "app/routes/products.tsx",
-          lineNumber: 128,
-          columnNumber: 19
-        }, this)
-      ] }, idx, true, {
-        fileName: "app/routes/products.tsx",
-        lineNumber: 112,
-        columnNumber: 50
-      }, this)) }, void 0, false, {
+          lineNumber: 112,
+          columnNumber: 43
+        },
+        this
+      )) }, void 0, false, {
         fileName: "app/routes/products.tsx",
         lineNumber: 111,
         columnNumber: 13
@@ -185,18 +191,18 @@ function Products() {
     selectedProduct && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "fixed inset-0 backdrop-blur-sm bg-black/30 z-40" }, void 0, false, {
         fileName: "app/routes/products.tsx",
-        lineNumber: 140,
-        columnNumber: 5
+        lineNumber: 135,
+        columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "fixed inset-0 z-50 flex items-start justify-center pt-24 md:pt-32 px-4 overflow-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "rounded-lg w-full max-w-4xl bg-cover bg-center flex flex-col md:flex-row overflow-hidden relative bg-white min-h-[400px]", style: {
-        backgroundImage: "url('/bgmodal.png')"
+        backgroundImage: "url('/bgmodal1.png')"
       }, children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full md:w-1/2 p-4 sm:p-6 flex flex-col justify-center items-center", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full mb-4", children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h3", { className: "mb-2 text-green-800 text-xl sm:text-2xl font-bold text-center", children: selectedProduct.name }, void 0, false, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h3", { className: "mb-2 text-white text-xl sm:text-2xl font-bold text-center", children: selectedProduct.name }, void 0, false, {
               fileName: "app/routes/products.tsx",
-              lineNumber: 151,
-              columnNumber: 3
+              lineNumber: 146,
+              columnNumber: 19
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.img, { src: selectedProduct.image, alt: selectedProduct.name, initial: {
               opacity: 0,
@@ -212,135 +218,146 @@ function Products() {
               ease: "easeOut"
             }, className: "w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] h-auto object-contain mx-auto rounded" }, void 0, false, {
               fileName: "app/routes/products.tsx",
-              lineNumber: 154,
-              columnNumber: 3
+              lineNumber: 149,
+              columnNumber: 19
             }, this)
           ] }, void 0, true, {
             fileName: "app/routes/products.tsx",
-            lineNumber: 150,
-            columnNumber: 3
+            lineNumber: 145,
+            columnNumber: 17
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "hidden md:block text-center md:text-left text-black text-sm sm:text-base", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "block font-semibold mb-1", children: "For sales inquiries," }, void 0, false, {
               fileName: "app/routes/products.tsx",
-              lineNumber: 171,
-              columnNumber: 5
+              lineNumber: 166,
+              columnNumber: 19
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "leading-relaxed text-sm", children: [
               "Or call",
               " ",
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "tel:(049) 576-007", className: "text-black text-sm underline hover:underline", children: "(049) 576-007" }, void 0, false, {
                 fileName: "app/routes/products.tsx",
-                lineNumber: 174,
-                columnNumber: 7
+                lineNumber: 169,
+                columnNumber: 21
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("br", {}, void 0, false, {
                 fileName: "app/routes/products.tsx",
-                lineNumber: 177,
-                columnNumber: 7
+                lineNumber: 172,
+                columnNumber: 21
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "https://www.google.com/maps/...", target: "_blank", rel: "noopener noreferrer", className: "text-black text-sm underline hover:underline inline-flex items-center", children: "1775 F.T. San Luis Avenue, Bay, Laguna" }, void 0, false, {
                 fileName: "app/routes/products.tsx",
-                lineNumber: 178,
-                columnNumber: 7
+                lineNumber: 173,
+                columnNumber: 21
               }, this)
             ] }, void 0, true, {
               fileName: "app/routes/products.tsx",
-              lineNumber: 172,
-              columnNumber: 5
+              lineNumber: 167,
+              columnNumber: 19
             }, this)
           ] }, void 0, true, {
             fileName: "app/routes/products.tsx",
-            lineNumber: 170,
-            columnNumber: 3
+            lineNumber: 165,
+            columnNumber: 17
           }, this)
         ] }, void 0, true, {
           fileName: "app/routes/products.tsx",
-          lineNumber: 149,
-          columnNumber: 11
+          lineNumber: 144,
+          columnNumber: 15
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full md:w-1/2 p-4 sm:p-6 flex flex-col justify-center text-black text-sm sm:text-base", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full md:w-1/2 p-4 sm:p-6 flex flex-col justify-center text-white text-sm sm:text-base", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "mb-6 whitespace-pre-line", children: selectedProduct.desc1 || selectedProduct.desc }, void 0, false, {
             fileName: "app/routes/products.tsx",
-            lineNumber: 188,
-            columnNumber: 5
+            lineNumber: 183,
+            columnNumber: 19
           }, this) }, void 0, false, {
             fileName: "app/routes/products.tsx",
-            lineNumber: 187,
-            columnNumber: 3
+            lineNumber: 182,
+            columnNumber: 17
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "block md:hidden text-center text-black text-sm sm:text-base mb-6", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "block font-semibold mb-1", children: "For sales inquiries," }, void 0, false, {
               fileName: "app/routes/products.tsx",
-              lineNumber: 194,
-              columnNumber: 5
+              lineNumber: 189,
+              columnNumber: 19
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "leading-relaxed", children: [
               "Or call",
               " ",
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "tel:(049) 576-007", className: "text-black underline hover:underline", children: "(049) 576-007" }, void 0, false, {
                 fileName: "app/routes/products.tsx",
-                lineNumber: 197,
-                columnNumber: 7
+                lineNumber: 192,
+                columnNumber: 21
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("br", {}, void 0, false, {
                 fileName: "app/routes/products.tsx",
-                lineNumber: 200,
-                columnNumber: 7
+                lineNumber: 195,
+                columnNumber: 21
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "https://www.google.com/maps/...", target: "_blank", rel: "noopener noreferrer", className: "text-black underline hover:underline inline-flex items-center", children: "1775 F.T. San Luis Avenue, Bay, Laguna" }, void 0, false, {
                 fileName: "app/routes/products.tsx",
-                lineNumber: 201,
-                columnNumber: 7
+                lineNumber: 196,
+                columnNumber: 21
               }, this)
             ] }, void 0, true, {
               fileName: "app/routes/products.tsx",
-              lineNumber: 195,
-              columnNumber: 5
+              lineNumber: 190,
+              columnNumber: 19
             }, this)
           ] }, void 0, true, {
             fileName: "app/routes/products.tsx",
-            lineNumber: 193,
-            columnNumber: 3
+            lineNumber: 188,
+            columnNumber: 17
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex flex-col sm:flex-row justify-center items-center gap-3 mt-4", children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "/get-involved", className: "w-full sm:w-auto px-4 py-2 bg-green-700 text-white rounded hover:bg-green-900 text-center", children: "Contact Us" }, void 0, false, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "/get-involved", className: "w-full sm:w-auto px-4 py-2 bg-green-600 text-white rounded hover:bg-green-900 text-center", children: "Contact Us" }, void 0, false, {
               fileName: "app/routes/products.tsx",
-              lineNumber: 207,
-              columnNumber: 5
+              lineNumber: 202,
+              columnNumber: 19
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: selectedProduct.pdf, className: "w-full sm:w-auto px-4 py-2 bg-red-600 text-white rounded hover:bg-red-800 text-center", download: true, children: "Download" }, void 0, false, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: selectedProduct.pdf, className: "w-full sm:w-auto px-4 py-2 bg-red-600 text-white rounded hover:bg-red-800 text-center flex items-center justify-center gap-2", download: true, children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("svg", { xmlns: "http://www.w3.org/2000/svg", width: "14", height: "14", viewBox: "0 0 14 14", fill: "none", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("path", { d: "M1.4 12.4444H12.6V7H14V13.2222C14 13.6518 13.6866 14 13.3 14H0.7C0.313404 14 0 13.6518 0 13.2222V7H1.4V12.4444ZM8.4 4.66667H11.9L7 10.1111L2.1 4.66667H5.6V0H8.4V4.66667Z", fill: "white" }, void 0, false, {
+                fileName: "app/routes/products.tsx",
+                lineNumber: 207,
+                columnNumber: 5
+              }, this) }, void 0, false, {
+                fileName: "app/routes/products.tsx",
+                lineNumber: 206,
+                columnNumber: 3
+              }, this),
+              "Download PDF"
+            ] }, void 0, true, {
               fileName: "app/routes/products.tsx",
-              lineNumber: 210,
-              columnNumber: 5
+              lineNumber: 205,
+              columnNumber: 2
             }, this)
           ] }, void 0, true, {
             fileName: "app/routes/products.tsx",
-            lineNumber: 206,
-            columnNumber: 3
+            lineNumber: 201,
+            columnNumber: 17
           }, this)
         ] }, void 0, true, {
           fileName: "app/routes/products.tsx",
-          lineNumber: 186,
-          columnNumber: 11
+          lineNumber: 181,
+          columnNumber: 15
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: closeModal, className: "absolute top-2 right-2 text-black hover:text-gray-600 text-2xl font-bold", children: "\xD7" }, void 0, false, {
           fileName: "app/routes/products.tsx",
-          lineNumber: 217,
-          columnNumber: 9
+          lineNumber: 216,
+          columnNumber: 15
         }, this)
       ] }, void 0, true, {
         fileName: "app/routes/products.tsx",
-        lineNumber: 145,
-        columnNumber: 5
+        lineNumber: 140,
+        columnNumber: 13
       }, this) }, void 0, false, {
         fileName: "app/routes/products.tsx",
-        lineNumber: 143,
-        columnNumber: 5
+        lineNumber: 138,
+        columnNumber: 11
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/products.tsx",
-      lineNumber: 138,
+      lineNumber: 133,
       columnNumber: 27
     }, this)
   ] }, void 0, true, {
@@ -359,4 +376,4 @@ export {
   Products as default,
   meta
 };
-//# sourceMappingURL=/build/routes/products-4H4OG3ON.js.map
+//# sourceMappingURL=/build/routes/products-CB7HNZFE.js.map

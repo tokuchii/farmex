@@ -58,10 +58,10 @@ const handleChange = (
   setIsSending(true);
 
 
-  const isValidEmail = (email: string) => {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
-    return emailRegex.test(email);
-  };
+const isValidEmail = (email: string) => {
+  const emailRegex = /^[^\s@]+@[a-zA-Z][a-zA-Z0-9.-]*\.(com|org|net|edu|gov|io)$/i;
+  return emailRegex.test(email);
+};
 
 
   if (!isValidEmail(formData.email)) {
@@ -139,7 +139,7 @@ const handleChange = (
       </motion.div>
       <motion.div>
         {/* Contact Section */}
-        <section className="w-full min-h-screen pt-8 pb-16 px-4 sm:px-8 bg-[url('/bgcontact.png')] bg-cover bg-center flex flex-col items-center justify-start">
+        <section className="w-full min-h-screen pt-8 pb-16 px-4 sm:px-8 bg-[url('/productbg1.png')] bg-cover bg-center flex flex-col items-center justify-start">
           <div className="w-full max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-8">
 
 
@@ -220,7 +220,7 @@ const handleChange = (
 
 
             {/* Right Side: Form + Map */}
-            <div className="flex flex-col items-end gap-6">
+            <div className="flex flex-col items-end gap-6 mt-16">
               <form
                 onSubmit={handleSubmit}
                 className="bg-green-700 text-white p-6 rounded-lg w-full max-w-md shadow-lg">
