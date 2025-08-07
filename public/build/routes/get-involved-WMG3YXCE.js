@@ -282,7 +282,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\get-involved.tsx"
   );
-  import.meta.hot.lastModified = "1754524391917.1814";
+  import.meta.hot.lastModified = "1754524491394.6047";
 }
 function meta() {
   return [{
@@ -701,4 +701,4 @@ export {
   GetInvolved as default,
   meta
 };
-//# sourceMappingURL=/build/routes/get-involved-SOMDO44V.js.map
+//# sourceMappingURL=/build/routes/get-involved-WMG3YXCE.js.map

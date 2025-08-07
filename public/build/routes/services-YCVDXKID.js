@@ -43,7 +43,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\services.tsx"
   );
-  import.meta.hot.lastModified = "1754525505288.198";
+  import.meta.hot.lastModified = "1754525963678.4497";
 }
 var meta = () => [{
   title: "Farmex"
@@ -342,19 +342,19 @@ function Services() {
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 flex flex-col items-center justify-center z-20 px-4 py-2 pt-20 md:pt-16", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-white text-center text-2xl sm:text-3xl md:text-5xl font-extrabold uppercase tracking-widest mb-2 md:mb-6 leading-tight", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-white text-2xl md:text-4xl font-extrabold uppercase tracking-widest mb-2 md:mb-6", children: [
             "TECHNICAL",
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "block md:inline", children: " CONSULTATION" }, void 0, false, {
               fileName: "app/routes/services.tsx",
               lineNumber: 202,
-              columnNumber: 12
+              columnNumber: 26
             }, this)
           ] }, void 0, true, {
             fileName: "app/routes/services.tsx",
             lineNumber: 201,
-            columnNumber: 11
+            columnNumber: 15
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-[10px] md:text-xl leading-relaxed max-w-6xl text-center mb-2 md:mb-8", children: "Farmex's commitment to the rice farming communities does not end in providing quality hybrid rice seeds but extends its hands to those who are in need of free technical consultations. From farmers to agriculture students, Farmex technical team is always ready to share their expertise and strategy on rice farming production and technologies. Regular technical trainings are done to further equip and update our Seed Production Specialists on the latest technologies and having them share new learnings to our farmers." }, void 0, false, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-[10px] md:text-xl leading-relaxed max-w-4xl text-center mb-4 md:mb-8", children: "Farmex's commitment to the rice farming communities does not end in providing quality hybrid rice seeds but extends its hands to those who are in need of free technical consultations. From farmers to agriculture students, Farmex technical team is always ready to share their expertise and strategy on rice farming production and technologies. Regular technical trainings are done to further equip and update our Seed Production Specialists on the latest technologies and having them share new learnings to our farmers." }, void 0, false, {
             fileName: "app/routes/services.tsx",
             lineNumber: 204,
             columnNumber: 15
@@ -471,33 +471,33 @@ function TechnicalConsultationSlider() {
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: prev, className: "text-2xl sm:text-3xl md:text-4xl text-[#00703C] hover:text-[#00703C] \r\n                 px-1 sm:px-2 focus:outline-none ml-1 sm:ml-4", children: "<" }, void 0, false, {
         fileName: "app/routes/services.tsx",
         lineNumber: 276,
-        columnNumber: 5
+        columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: images[index].src, alt: images[index].alt, className: "w-full max-w-[260px] sm:max-w-md md:max-w-lg lg:max-w-2xl \r\n                 h-56 sm:h-80 md:h-[350px] lg:h-[450px] \r\n                 object-cover rounded-lg mx-1 sm:mx-4 border-2 border-gray-200 bg-white" }, void 0, false, {
         fileName: "app/routes/services.tsx",
         lineNumber: 282,
-        columnNumber: 5
+        columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: next, className: "text-2xl sm:text-3xl md:text-4xl text-[#00703C] hover:text-[#00703C] \r\n                 px-1 sm:px-2 focus:outline-none mr-1 sm:mr-4", children: ">" }, void 0, false, {
         fileName: "app/routes/services.tsx",
         lineNumber: 287,
-        columnNumber: 5
+        columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/services.tsx",
       lineNumber: 274,
-      columnNumber: 3
+      columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex justify-center mt-2 sm:mt-4", children: images.map((_, i) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: `mx-0.5 sm:mx-1 w-2 h-2 sm:w-3 sm:h-3 rounded-full ${i === index ? "bg-yellow-500" : "bg-gray-300"}`, style: {
       display: "inline-block"
     } }, i, false, {
       fileName: "app/routes/services.tsx",
       lineNumber: 295,
-      columnNumber: 27
+      columnNumber: 31
     }, this)) }, void 0, false, {
       fileName: "app/routes/services.tsx",
       lineNumber: 294,
-      columnNumber: 3
+      columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/routes/services.tsx",
@@ -517,4 +517,4 @@ export {
   Services as default,
   meta
 };
-//# sourceMappingURL=/build/routes/services-QS7RZ3EH.js.map
+//# sourceMappingURL=/build/routes/services-YCVDXKID.js.map

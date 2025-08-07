@@ -28,7 +28,7 @@ import {
 } from "/build/_shared/chunk-PZDJHGND.js";
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-JEJDADT4.css";
+var tailwind_default = "/build/_assets/tailwind-Y3SV2XKD.css";
 
 // app/components/Navbar.tsx
 var import_react = __toESM(require_react(), 1);
@@ -51,7 +51,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\Navbar.tsx"
   );
-  import.meta.hot.lastModified = "1754523852970.6675";
+  import.meta.hot.lastModified = "1754524028929.7742";
 }
 function Navbar() {
   _s();
@@ -789,4 +789,4 @@ export {
   App as default,
   links
 };
-//# sourceMappingURL=/build/root-36HNMOQF.js.map
+//# sourceMappingURL=/build/root-W3TCSGAT.js.map

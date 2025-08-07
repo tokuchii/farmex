@@ -9,30 +9,30 @@ export const meta: MetaFunction = () => [
 export default function Services() {
   const [activeSection, setActiveSection] = useState<'rentals' | 'consultation' | 'training'>('rentals');
   const [isClient, setIsClient] = useState(false);
-useEffect(() => {
-  setIsClient(true);
-}, []);
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
 
-const location = useLocation();
+  const location = useLocation();
 
-useEffect(() => {
-  const hash = location.hash;
+  useEffect(() => {
+    const hash = location.hash;
 
-  if (hash === '#technical-consultation') {
-    setActiveSection('consultation');
-  } else if (hash === '#training') {
-    setActiveSection('training');
-  } else if (hash === '#machine-rentals' || hash === '' || hash === '#') {
-    setActiveSection('rentals');
-  } else {
-    setActiveSection('rentals');
-  }
-}, [location.hash]);
+    if (hash === '#technical-consultation') {
+      setActiveSection('consultation');
+    } else if (hash === '#training') {
+      setActiveSection('training');
+    } else if (hash === '#machine-rentals' || hash === '' || hash === '#') {
+      setActiveSection('rentals');
+    } else {
+      setActiveSection('rentals');
+    }
+  }, [location.hash]);
 
   return (
     <div className="bg-white w-full min-h-screen relative">
-      {/* Sevices Machine Rentals */ }
+      {/* Sevices Machine Rentals */}
       {activeSection === 'rentals' && (
         <>
           {/* Hero Section */}
@@ -156,7 +156,7 @@ useEffect(() => {
         </>
       )}
 
-      {/* Sevices Technical Consultation */ }
+      {/* Sevices Technical Consultation */}
       {activeSection === 'consultation' && (
         <>
           {/* Hero Section for Technical Consultation */}
@@ -174,10 +174,10 @@ useEffect(() => {
             )}
             <div className="absolute inset-0 bg-green-600 bg-opacity-50"></div>
             <div className="absolute inset-0 flex flex-col items-center justify-center z-20 px-4 py-2 pt-20 md:pt-16">
-<h2 className="text-white text-center text-2xl sm:text-3xl md:text-5xl font-extrabold uppercase tracking-widest mb-2 md:mb-6 leading-tight">
-  TECHNICAL<span className="block md:inline"> CONSULTATION</span>
-</h2>
-              <p className="text-white text-[10px] md:text-xl leading-relaxed max-w-6xl text-center mb-2 md:mb-8">
+              <h2 className="text-white text-2xl md:text-4xl font-extrabold uppercase tracking-widest mb-2 md:mb-6">
+                TECHNICAL<span className="block md:inline"> CONSULTATION</span>
+              </h2>
+              <p className="text-white text-[10px] md:text-xl leading-relaxed max-w-4xl text-center mb-4 md:mb-8">
                 Farmex's commitment to the rice farming communities does not end in providing quality hybrid rice seeds but extends its hands to those who are in need of free technical consultations. From farmers to agriculture students, Farmex technical team is always ready to share their expertise and strategy on rice farming production and technologies. Regular technical trainings are done to further equip and update our Seed Production Specialists on the latest technologies and having them share new learnings to our farmers.
               </p>
               <Link to="/get-involved" className="bg-[#E0B100F7] text-white px-2 md:px-8 py-1 md:py-3 rounded-lg font-bold hover:bg-[#E0B100F7] transition-colors duration-300 inline-block">
@@ -196,7 +196,7 @@ useEffect(() => {
         </>
       )}
 
-      {/* Services Training */ }
+      {/* Services Training */}
       {activeSection === 'training' && (
         <>
           {/* Hero Section for Training */}
@@ -218,7 +218,7 @@ useEffect(() => {
               <h2 className="text-white text-3xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-widest mb-2 md:mb-4 text-center">
                 COMING SOON
               </h2>
-              
+
               {/* Description */}
               <div className="text-white text-[14px] md:text-xl lg:text-2xl font-bold leading-relaxed max-w-4xl mb-4 md:mb-8 text-center">
                 <p className="mb-4">
@@ -243,48 +243,47 @@ function TechnicalConsultationSlider() {
   const next = () => setIndex((i) => (i === images.length - 1 ? 0 : i + 1));
   return (
     <div className="w-full flex flex-col items-center">
-  <div className="flex items-center justify-center w-full px-2 sm:px-4">
-    {/* Left Arrow */}
-    <button
-      onClick={prev}
-      className="text-2xl sm:text-3xl md:text-4xl text-[#00703C] hover:text-[#00703C] 
+      <div className="flex items-center justify-center w-full px-2 sm:px-4">
+        {/* Left Arrow */}
+        <button
+          onClick={prev}
+          className="text-2xl sm:text-3xl md:text-4xl text-[#00703C] hover:text-[#00703C] 
                  px-1 sm:px-2 focus:outline-none ml-1 sm:ml-4"
-    >
-      &#60;
-    </button>
+        >
+          &#60;
+        </button>
 
-    {/* Main Image */}
-    <img
-      src={images[index].src}
-      alt={images[index].alt}
-      className="w-full max-w-[260px] sm:max-w-md md:max-w-lg lg:max-w-2xl 
+        {/* Main Image */}
+        <img
+          src={images[index].src}
+          alt={images[index].alt}
+          className="w-full max-w-[260px] sm:max-w-md md:max-w-lg lg:max-w-2xl 
                  h-56 sm:h-80 md:h-[350px] lg:h-[450px] 
                  object-cover rounded-lg mx-1 sm:mx-4 border-2 border-gray-200 bg-white"
-    />
+        />
 
-    {/* Right Arrow */}
-    <button
-      onClick={next}
-      className="text-2xl sm:text-3xl md:text-4xl text-[#00703C] hover:text-[#00703C] 
+        {/* Right Arrow */}
+        <button
+          onClick={next}
+          className="text-2xl sm:text-3xl md:text-4xl text-[#00703C] hover:text-[#00703C] 
                  px-1 sm:px-2 focus:outline-none mr-1 sm:mr-4"
-    >
-      &#62;
-    </button>
-  </div>
+        >
+          &#62;
+        </button>
+      </div>
 
-  {/* Pagination Dots */}
-  <div className="flex justify-center mt-2 sm:mt-4">
-    {images.map((_, i) => (
-      <span
-        key={i}
-        className={`mx-0.5 sm:mx-1 w-2 h-2 sm:w-3 sm:h-3 rounded-full ${
-          i === index ? "bg-yellow-500" : "bg-gray-300"
-        }`}
-        style={{ display: "inline-block" }}
-      ></span>
-    ))}
-  </div>
-</div>
+      {/* Pagination Dots */}
+      <div className="flex justify-center mt-2 sm:mt-4">
+        {images.map((_, i) => (
+          <span
+            key={i}
+            className={`mx-0.5 sm:mx-1 w-2 h-2 sm:w-3 sm:h-3 rounded-full ${i === index ? "bg-yellow-500" : "bg-gray-300"
+              }`}
+            style={{ display: "inline-block" }}
+          ></span>
+        ))}
+      </div>
+    </div>
 
   );
 } 
