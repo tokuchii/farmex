@@ -82,13 +82,14 @@ export default function KnowledgeTransfer() {
                 <iframe
                   src="https://www.youtube.com/embed/OwXif6G_3oU"
                   title="LAV Station Video"
-                  className="w-full h-full"
+                  className="w-full h-full borde-2 md:border-4 border-[#00703C] rounded-lg"
                   allowFullScreen
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 ></iframe>
               </div>
             </div>
           </motion.div>
+          <div className="relative w-full h-1 bg-[#E0B100]"></div>
         </section>
       )}
       {/* Knowledge-transfer for Rice Derbies Section */}

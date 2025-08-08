@@ -104,7 +104,8 @@ export default function Products() {
 
         {/* Products Section */}
         <motion.div>
-          <section className="w-full py-16 px-4 sm:px-8 bg-[url('/bgmodal.png')] bg-cover bg-center flex flex-col items-center">
+        <section className="relative w-full py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center bg-white justify-center bg-cover bg-center"
+          style={{ backgroundImage: "url('/About us 1.png')" }}>
             <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-8 auto-rows-fr">
               {productList.map((product) => (
                 <div

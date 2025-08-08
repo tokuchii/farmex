@@ -64,94 +64,94 @@ export default function Services() {
 
           {/* Equipment Grid Section */}
           <motion.div>
-            <section className="w-full py-16 px-4 sm:px-8 bg-[url('/bgmachinerentals.jpg')] bg-cover bg-center flex flex-col items-center">
-              <div className="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8">
+            <section className="w-full py-16 px-4 sm:px-8 bg-[url('/newbgmachinerental.png')] bg-cover bg-center flex flex-col items-center">
+              <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
                 {/* Mobile Dryer */}
                 <motion.div
-                  className="rounded-lg shadow-lg overflow-hidden border-4 border-yellow-400 p-2"
+                  className="overflow-hidden p-2 sm:p-3 lg:p-4"
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
                 >
-                  <div className="px-4 pt-4">
-                    <h3 className="text-green-600 font-bold text-lg md:text-2xl">Mobile Dryer</h3>
-                    <div className="w-28 h-1 bg-yellow-400 mt-1"></div>
+                  <div className="px-2 sm:px-4 pt-2 sm:pt-4">
+                    <h3 className="text-green-600 font-bold text-base sm:text-lg md:text-xl lg:text-2xl">Mobile Dryer</h3>
+                    <div className="w-20 sm:w-24 md:w-28 h-0.5 sm:h-1 bg-yellow-400 mt-1"></div>
                   </div>
-                  <div className="h-80 w-70 overflow-hidden relative rounded py-4 px-4">
-                    <img
-                      src="/mobiledryer.png"
-                      alt="Mobile Dryer"
-                      className="w-full h-full object-contain"
-                    />
+                  <div className="h-[280px] sm:h-[280px] md:h-[350px] lg:h-[450px] w-full overflow-hidden relative rounded py-2 sm:py-3 lg:py-4">
+                                         <img
+                       src="/mobiledryer.png"
+                       alt="Mobile Dryer"
+                       className="w-full h-full object-cover border-2 sm:border-3 md:border-4 border-[#00703C] rounded-lg"
+                     />
                   </div>
                 </motion.div>
 
                 {/* Tractor */}
                 <motion.div
-                  className="rounded-lg shadow-lg overflow-hidden border-4 border-yellow-400 p-2"
+                  className="overflow-hidden p-2 sm:p-3 lg:p-4"
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
                 >
-                  <div className="px-4 pt-4">
-                    <h3 className="text-green-600 font-bold text-lg md:text-2xl">Tractor</h3>
-                    <div className="w-28 h-1 bg-yellow-400 mt-1"></div>
+                  <div className="px-2 sm:px-4 pt-2 sm:pt-4">
+                    <h3 className="text-green-600 font-bold text-base sm:text-lg md:text-xl lg:text-2xl">Tractor</h3>
+                    <div className="w-20 sm:w-24 md:w-28 h-0.5 sm:h-1 bg-yellow-400 mt-1"></div>
                   </div>
-                  <div className="h-80 w-70 overflow-hidden relative rounded py-4 px-4">
+                  <div className="h-[280px] sm:h-[280px] md:h-[350px] lg:h-[450px] w-full overflow-hidden relative rounded py-2 sm:py-3 lg:py-4">
                     <img
                       src="/tractor.png"
                       alt="Tractor"
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-cover border-2 sm:border-3 md:border-4 border-[#00703C] rounded-lg"
                     />
                   </div>
                 </motion.div>
 
                 {/* Transplanter */}
                 <motion.div
-                  className="rounded-lg shadow-lg overflow-hidden border-4 border-yellow-400 p-2"
+                  className="overflow-hidden p-2 sm:p-3 lg:p-4"
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
                 >
-                  <div className="px-4 pt-4">
-                    <h3 className="text-green-600 font-bold text-lg md:text-2xl">Transplanter</h3>
-                    <div className="w-28 h-1 bg-yellow-400 mt-1"></div>
+                  <div className="px-2 sm:px-4 pt-2 sm:pt-4">
+                    <h3 className="text-green-600 font-bold text-base sm:text-lg md:text-xl lg:text-2xl">Transplanter</h3>
+                    <div className="w-20 sm:w-24 md:w-28 h-0.5 sm:h-1 bg-yellow-400 mt-1"></div>
                   </div>
-                  <div className="h-80 w-70 overflow-hidden relative rounded py-4 px-4">
+                  <div className="h-[280px] sm:h-[280px] md:h-[350px] lg:h-[450px] w-full overflow-hidden relative rounded py-2 sm:py-3 lg:py-4">
                     <img
                       src="/transplanter.png"
                       alt="Transplanter"
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-cover border-2 sm:border-3 md:border-4 border-[#00703C] rounded-lg"
                     />
                   </div>
                 </motion.div>
 
                 {/* Harvester */}
                 <motion.div
-                  className="rounded-lg shadow-lg overflow-hidden border-4 border-yellow-400 p-2"
+                  className="overflow-hidden p-2 sm:p-3 lg:p-4"
                   initial={{ opacity: 0, y: 40 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.2 }}
                   transition={{ duration: 0.6, ease: "easeOut" }}
                 >
-                  <div className="px-4 pt-4">
-                    <h3 className="text-green-600 font-bold text-lg md:text-2xl">Harvester</h3>
-                    <div className="w-28 h-1 bg-yellow-400 mt-1"></div>
+                  <div className="px-2 sm:px-4 pt-2 sm:pt-4">
+                    <h3 className="text-green-600 font-bold text-base sm:text-lg md:text-xl lg:text-2xl">Harvester</h3>
+                    <div className="w-20 sm:w-24 md:w-28 h-0.5 sm:h-1 bg-yellow-400 mt-1"></div>
                   </div>
-                  <div className="h-80 w-70 overflow-hidden relative rounded py-4 px-4">
+                  <div className="h-[280px] sm:h-[280px] md:h-[350px] lg:h-[450px] w-full overflow-hidden relative rounded py-2 sm:py-3 lg:py-4">
                     <img
                       src="/harvester.png"
                       alt="Harvester"
-                      className="w-full h-full object-contain"
+                      className="w-full h-full object-cover border-2 sm:border-3 md:border-4 border-[#00703C] rounded-lg"
                     />
                   </div>
                 </motion.div>
               </div>
-              <div className="w-full h-1 bg-yellow-400 mt-4"></div>
             </section>
+            <div className="relative w-full h-1 bg-[#E0B100]"></div>
           </motion.div>
         </>
       )}
@@ -188,7 +188,7 @@ export default function Services() {
 
           {/* Image Carousel/Slider Section */}
           <div className="w-full py-8 sm:py-12 bg-white md:bg-[url('/bgmachinerentals.jpg')] md:bg-center md:bg-repeat-y flex justify-center">
-            <div className="relative w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl bg-white border-4 border-yellow-400 rounded-lg shadow-lg px-2 sm:px-4 py-4 sm:py-6 flex flex-col items-center">
+            <div className="relative w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl px-2 sm:px-4 py-4 sm:py-6 flex flex-col items-center">
               {/* Simple slider logic */}
               <TechnicalConsultationSlider />
             </div>
@@ -247,7 +247,7 @@ function TechnicalConsultationSlider() {
         {/* Left Arrow */}
         <button
           onClick={prev}
-          className="text-2xl sm:text-3xl md:text-4xl text-[#00703C] hover:text-[#00703C] 
+          className="text-3xl sm:text-4xl md:text-5xl text-[#00703C] hover:text-[#00703C] 
                  px-1 sm:px-2 focus:outline-none ml-1 sm:ml-4"
         >
           &#60;
@@ -265,7 +265,7 @@ function TechnicalConsultationSlider() {
         {/* Right Arrow */}
         <button
           onClick={next}
-          className="text-2xl sm:text-3xl md:text-4xl text-[#00703C] hover:text-[#00703C] 
+          className="text-3xl sm:text-4xl md:text-5xl text-[#00703C] hover:text-[#00703C] 
                  px-1 sm:px-2 focus:outline-none mr-1 sm:mr-4"
         >
           &#62;
