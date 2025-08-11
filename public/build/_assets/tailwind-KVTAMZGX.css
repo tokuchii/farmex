@@ -858,9 +858,6 @@ video {
 .border-t {
   border-top-width: 1px;
 }
-.border-b {
-  border-bottom-width: 1px;
-}
 .border-\[\#00703C\] {
   --tw-border-opacity: 1;
   border-color: rgb(0 112 60 / var(--tw-border-opacity, 1));
@@ -889,20 +886,12 @@ video {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
 }
-.border-black {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
-}
 .bg-\[\#00703C\] {
   --tw-bg-opacity: 1;
   background-color: rgb(0 112 60 / var(--tw-bg-opacity, 1));
 }
 .bg-\[\#007F3D8C\] {
   background-color: #007f3d8c;
-}
-.bg-\[\#007F3D\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 127 61 / var(--tw-bg-opacity, 1));
 }
 .bg-\[\#057A31\] {
   --tw-bg-opacity: 1;
@@ -981,65 +970,20 @@ video {
 .bg-\[url\(\'\/bgmachinerentals\.jpg\'\)\] {
   background-image: url(/bgmachinerentals.jpg);
 }
+.bg-\[url\(\'\/bgmascot-form_get-involved\.png\'\)\] {
+  background-image: url(/bgmascot-form_get-involved.png);
+}
 .bg-\[url\(\'\/newbgfeedback\.png\'\)\] {
   background-image: url(/newbgfeedback.png);
 }
 .bg-\[url\(\'\/newbgmachinerental\.png\'\)\] {
   background-image: url(/newbgmachinerental.png);
 }
-.bg-\[url\(\'\/productbg1\.png\'\)\] {
-  background-image: url(/productbg1.png);
-}
 .bg-\[url\(\'\/ricederbies-bg\.jpg\'\)\] {
   background-image: url(/ricederbies-bg.jpg);
 }
 .bg-gradient-to-tr {
   background-image: linear-gradient(to top right, var(--tw-gradient-stops));
-}
-.bg-\[url\(\'\/b\'\)\] {
-  background-image: url(/b);
-}
-.bg-\[url\(\'\/bgm\'\)\] {
-  background-image: url(/bgm);
-}
-.bg-\[url\(\'\/bgmmachine\'\)\] {
-  background-image: url(/bgmmachine);
-}
-.bg-\[url\(\'\/bgma\'\)\] {
-  background-image: url(/bgma);
-}
-.bg-\[url\(\'\/bgmachinerenta\'\)\] {
-  background-image: url(/bgmachinerenta);
-}
-.bg-\[url\(\'\/bgmachinerentals\'\)\] {
-  background-image: url(/bgmachinerentals);
-}
-.bg-\[url\(\'\/bgmachinerentals\,\'\)\] {
-  background-image: url(/bgmachinerentals,);
-}
-.bg-\[url\(\'\/bgmachinerentals\,jpg\'\)\] {
-  background-image: url(/bgmachinerentals,jpg);
-}
-.bg-\[url\(\'\/bg\'\)\] {
-  background-image: url(/bg);
-}
-.bg-\[url\(\'\/bgmac\'\)\] {
-  background-image: url(/bgmac);
-}
-.bg-\[url\(\'\/bgmascot-\'\)\] {
-  background-image: url(/bgmascot-);
-}
-.bg-\[url\(\'\/bgmascot-form\'\)\] {
-  background-image: url(/bgmascot-form);
-}
-.bg-\[url\(\'\/bgmascot-form_get\'\)\] {
-  background-image: url(/bgmascot-form_get);
-}
-.bg-\[url\(\'\/bgmascot-form_get-invo\'\)\] {
-  background-image: url(/bgmascot-form_get-invo);
-}
-.bg-\[url\(\'\/bgmascot-form_get-involved\.png\'\)\] {
-  background-image: url(/bgmascot-form_get-involved.png);
 }
 .from-\[\#788B5F\] {
   --tw-gradient-from: #788B5F var(--tw-gradient-from-position);
@@ -2101,4 +2045,4 @@ body {
     display: flex;
   }
 }
-/*# sourceMappingURL=/build/_assets/tailwind-ARH2WMNZ.css.map */
+/*# sourceMappingURL=/build/_assets/tailwind-MP73DWC3.css.map */

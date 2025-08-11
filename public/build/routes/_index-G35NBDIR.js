@@ -7,7 +7,7 @@ import {
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-FEEY3YGC.js";
+} from "/build/_shared/chunk-65CJFPR6.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -37,7 +37,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\_index.tsx"
   );
-  import.meta.hot.lastModified = "1754636990055.2305";
+  import.meta.hot.lastModified = "1754890524487.5234";
 }
 var meta = () => [{
   title: "Farmex"
@@ -316,4 +316,4 @@ export {
   Home as default,
   meta
 };
-//# sourceMappingURL=/build/routes/_index-HPAKOZKA.js.map
+//# sourceMappingURL=/build/routes/_index-G35NBDIR.js.map

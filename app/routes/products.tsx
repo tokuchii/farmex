@@ -61,9 +61,9 @@ export default function Products() {
 
   useEffect(() => {
     if (selectedProduct) {
-      document.body.style.overflow = "hidden"; // disable scroll
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = ""; // reset scroll
+      document.body.style.overflow = ""; 
     }
 
     // Clean up just in case
@@ -77,6 +77,24 @@ export default function Products() {
   }, []);
 
   const closeModal = () => setSelectedProduct(null);
+
+
+useEffect(() => {
+  if (!selectedProduct) return;
+
+  const handleEsc = (event: KeyboardEvent) => {
+    if (event.key === "Escape") {
+      closeModal();
+    }
+  };
+
+  window.addEventListener("keydown", handleEsc);
+
+  return () => {
+    window.removeEventListener("keydown", handleEsc);
+  };
+}, [selectedProduct]);
+
 
   return (
     <>
