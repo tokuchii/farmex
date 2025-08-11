@@ -12,7 +12,7 @@ type Product = {
 
 export function meta() {
   return [
-    { title: "Farmex" },
+    { title: "Products" },
   ];
 }
 

@@ -648,6 +648,9 @@ var links = () => [{
   rel: "stylesheet",
   href: tailwind_default
 }, {
+  rel: "icon",
+  href: "/group30.png"
+}, {
   rel: "preconnect",
   href: "https://fonts.googleapis.com"
 }, {
@@ -665,49 +668,49 @@ function Layout({
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("head", { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("meta", { charSet: "utf-8" }, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 46,
+        lineNumber: 49,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("meta", { name: "viewport", content: "width=device-width, initial-scale=1" }, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 47,
+        lineNumber: 50,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Meta, {}, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 48,
+        lineNumber: 51,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Links, {}, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 49,
+        lineNumber: 52,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/root.tsx",
-      lineNumber: 45,
+      lineNumber: 48,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("body", { children: [
       children,
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(ScrollRestoration, {}, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 53,
+        lineNumber: 56,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Scripts, {}, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 54,
+        lineNumber: 57,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/root.tsx",
-      lineNumber: 51,
+      lineNumber: 54,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/root.tsx",
-    lineNumber: 44,
+    lineNumber: 47,
     columnNumber: 10
   }, this);
 }
@@ -731,7 +734,7 @@ function App() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_jsx_dev_runtime3.Fragment, { children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Navbar, {}, void 0, false, {
       fileName: "app/root.tsx",
-      lineNumber: 78,
+      lineNumber: 81,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(AnimatePresence, { mode: "wait", onExitComplete: () => {
@@ -752,25 +755,25 @@ function App() {
       ease: "easeInOut"
     }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Outlet, {}, void 0, false, {
       fileName: "app/root.tsx",
-      lineNumber: 99,
+      lineNumber: 102,
       columnNumber: 13
     }, this) }, pendingLocation.pathname, false, {
       fileName: "app/root.tsx",
-      lineNumber: 88,
+      lineNumber: 91,
       columnNumber: 24
     }, this) }, void 0, false, {
       fileName: "app/root.tsx",
-      lineNumber: 79,
+      lineNumber: 82,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Footer, {}, void 0, false, {
       fileName: "app/root.tsx",
-      lineNumber: 102,
+      lineNumber: 105,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/root.tsx",
-    lineNumber: 77,
+    lineNumber: 80,
     columnNumber: 10
   }, this);
 }
@@ -789,4 +792,4 @@ export {
   App as default,
   links
 };
-//# sourceMappingURL=/build/root-SB6PYXOH.js.map
+//# sourceMappingURL=/build/root-MATU7DKA.js.map

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export function meta() {
   return [
-    { title: "Farmex" },
+    { title: "About Us" },
   ];
 }
 

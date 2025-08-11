@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 
 export function meta() {
-  return [{ title: "Farmex - News" }];
+  return [{ title: "News" }];
 }
 
 // Types

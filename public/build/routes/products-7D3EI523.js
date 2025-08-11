@@ -37,11 +37,11 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\products.tsx"
   );
-  import.meta.hot.lastModified = "1754890618115.3123";
+  import.meta.hot.lastModified = "1754891642550.5972";
 }
 function meta() {
   return [{
-    title: "Farmex"
+    title: "Products"
   }];
 }
 var productList = [{
@@ -391,4 +391,4 @@ export {
   Products as default,
   meta
 };
-//# sourceMappingURL=/build/routes/products-IPNTQQUL.js.map
+//# sourceMappingURL=/build/routes/products-7D3EI523.js.map

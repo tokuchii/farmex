@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => [
-  { title: "Farmex" },
+  { title: "Farmex Corporation" },
 ];
 
 export default function Home() {

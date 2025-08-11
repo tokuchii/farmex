@@ -282,11 +282,11 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\get-involved.tsx"
   );
-  import.meta.hot.lastModified = "1754890524488.5303";
+  import.meta.hot.lastModified = "1754891596737.98";
 }
 function meta() {
   return [{
-    title: "Farmex"
+    title: "Get Involved"
   }];
 }
 function GetInvolved() {
@@ -725,4 +725,4 @@ export {
   GetInvolved as default,
   meta
 };
-//# sourceMappingURL=/build/routes/get-involved-74O3I6HG.js.map
+//# sourceMappingURL=/build/routes/get-involved-QD4RJQZB.js.map

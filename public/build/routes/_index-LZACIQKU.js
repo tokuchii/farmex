@@ -37,10 +37,10 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\_index.tsx"
   );
-  import.meta.hot.lastModified = "1754890524487.5234";
+  import.meta.hot.lastModified = "1754891656855.4243";
 }
 var meta = () => [{
-  title: "Farmex"
+  title: "Farmex Corporation"
 }];
 function Home() {
   _s();
@@ -316,4 +316,4 @@ export {
   Home as default,
   meta
 };
-//# sourceMappingURL=/build/routes/_index-G35NBDIR.js.map
+//# sourceMappingURL=/build/routes/_index-LZACIQKU.js.map

@@ -38,11 +38,11 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\news.tsx"
   );
-  import.meta.hot.lastModified = "1754890524489.5344";
+  import.meta.hot.lastModified = "1754891681855.278";
 }
 function meta() {
   return [{
-    title: "Farmex - News"
+    title: "News"
   }];
 }
 var newsItems = [{
@@ -627,4 +627,4 @@ export {
   News as default,
   meta
 };
-//# sourceMappingURL=/build/routes/news-PPNLA5CN.js.map
+//# sourceMappingURL=/build/routes/news-RKEKH6ZJ.js.map

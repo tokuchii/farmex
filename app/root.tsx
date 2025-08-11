@@ -6,7 +6,7 @@ import {
   ScrollRestoration,
   useLocation,
 } from "@remix-run/react";
-import type { LinksFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
 
 import styles from "./tailwind.css";
 import Navbar from "./components/Navbar";
@@ -16,6 +16,7 @@ import React, { useState } from "react";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
+  { rel: "icon", href: "/group30.png" }, 
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
     rel: "preconnect",

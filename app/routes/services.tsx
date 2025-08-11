@@ -4,7 +4,7 @@ import { Link, useLocation } from "@remix-run/react";
 import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => [
-  { title: "Farmex" },
+  { title: "Services" },
 ];
 export default function Services() {
   const [activeSection, setActiveSection] = useState<'rentals' | 'consultation' | 'training'>('rentals');

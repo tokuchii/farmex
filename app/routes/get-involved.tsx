@@ -5,7 +5,7 @@ import { AnimatePresence } from "framer-motion";
 
 export function meta() {
   return [
-    { title: "Farmex" },
+    { title: "Get Involved" },
   ];
 }
 

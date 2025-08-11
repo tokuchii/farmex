@@ -43,10 +43,10 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\knowledge-transfer.tsx"
   );
-  import.meta.hot.lastModified = "1754890524488.5303";
+  import.meta.hot.lastModified = "1754891627037.615";
 }
 var meta = () => [{
-  title: "Farmex - Knowledge Transfer"
+  title: "Knowledge Transfer"
 }];
 function KnowledgeTransfer() {
   _s();
@@ -466,4 +466,4 @@ export {
   KnowledgeTransfer as default,
   meta
 };
-//# sourceMappingURL=/build/routes/knowledge-transfer-6DNEDXH7.js.map
+//# sourceMappingURL=/build/routes/knowledge-transfer-JUMBIBG4.js.map

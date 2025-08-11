@@ -37,11 +37,11 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\about.tsx"
   );
-  import.meta.hot.lastModified = "1754890524488.5303";
+  import.meta.hot.lastModified = "1754891662127.8452";
 }
 function meta() {
   return [{
-    title: "Farmex"
+    title: "About Us"
   }];
 }
 function About() {
@@ -458,4 +458,4 @@ export {
   About as default,
   meta
 };
-//# sourceMappingURL=/build/routes/about-DR55PTHP.js.map
+//# sourceMappingURL=/build/routes/about-HDK7CIPY.js.map

@@ -4,7 +4,7 @@ import { Link, useLocation } from "@remix-run/react";
 import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => [
-  { title: "Farmex - Knowledge Transfer" },
+  { title: "Knowledge Transfer" },
 ];
 
 export default function KnowledgeTransfer() {
