@@ -239,28 +239,24 @@ export default function GetInvolved() {
                   <h3 className="font-bold text-lg sm:text-xl mb-1">Contact numbers:</h3>
                   <p>
                     FARMEX Customer Service & Support:
-                    <br />
                     <a href="tel:+639451709401" className="underline text-black hover:text-green-600">
                       +63 945 170 9401
                     </a>
                   </p>
                   <p>
                     Northern Luzon:
-                    <br />
                     <a href="tel:+639064819885" className="underline text-black hover:text-green-600">
                       +63 906 481 9885
                     </a>
                   </p>
                   <p>
                     MIMAROPA:
-                    <br />
                     <a href="tel:+639267091276" className="underline text-black hover:text-green-600">
-                      +63 926 709 1276
+                      +63 917 313 8153
                     </a>
                   </p>
                   <p>
                     CALABARZON:
-                    <br />
                     <a href="tel:+639173138162" className="underline text-black hover:text-green-600">
                       +63 917 313 8162
                     </a>

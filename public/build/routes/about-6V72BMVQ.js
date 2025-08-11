@@ -37,7 +37,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\about.tsx"
   );
-  import.meta.hot.lastModified = "1754891662127.8452";
+  import.meta.hot.lastModified = "1754920509955.6592";
 }
 function meta() {
   return [{
@@ -120,7 +120,42 @@ function About() {
             lineNumber: 76,
             columnNumber: 17
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-gray-700 text-lg leading-relaxed", children: "Leads Agriventures Corporation (LAV) was established in 2018 as subsidiary company of LEADS AGRI. Presently under the Malveda Holdings Corporation, the main business is focused on Hybrid Rice Seeds and milled rice distribution. Apart from these, LAV has now ventured in machineries rental, and coming up with our own milled rice grains." }, void 0, false, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-gray-700 text-lg leading-relaxed", children: [
+            "Farmex Corporation began its journey in 2018 under the name Leads Agriventures Corporation (LAV), as a proud subsidiary of LEADS Agri. In 2024, as the company expanded its scope and vision, it was officially rebranded to Farmex Corporation.  ",
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("br", {}, void 0, false, {
+              fileName: "app/routes/about.tsx",
+              lineNumber: 81,
+              columnNumber: 261
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("br", {}, void 0, false, {
+              fileName: "app/routes/about.tsx",
+              lineNumber: 81,
+              columnNumber: 267
+            }, this),
+            "Farmex continues to strengthen its position in the agricultural sector. Our core business focuses on hybrid rice seed varietal testing and milled rice distribution, helping improve rice productivity and food security across the country. ",
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("br", {}, void 0, false, {
+              fileName: "app/routes/about.tsx",
+              lineNumber: 83,
+              columnNumber: 256
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("br", {}, void 0, false, {
+              fileName: "app/routes/about.tsx",
+              lineNumber: 83,
+              columnNumber: 262
+            }, this),
+            "Building on our strong foundation, Farmex has recently diversified into financing of rice farmers, rental of large-scale agricultural machinery and the distribution of small farm tools and equipment, offering farmers end-to-end solutions from planting to post-harvest. ",
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("br", {}, void 0, false, {
+              fileName: "app/routes/about.tsx",
+              lineNumber: 85,
+              columnNumber: 288
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("br", {}, void 0, false, {
+              fileName: "app/routes/about.tsx",
+              lineNumber: 85,
+              columnNumber: 294
+            }, this),
+            "We are committed to advancing Philippine agriculture through innovation, sustainability, and meaningful partnerships with the farming community."
+          ] }, void 0, true, {
             fileName: "app/routes/about.tsx",
             lineNumber: 79,
             columnNumber: 17
@@ -150,38 +185,38 @@ function About() {
           false,
           {
             fileName: "app/routes/about.tsx",
-            lineNumber: 92,
+            lineNumber: 98,
             columnNumber: 19
           },
           this
         ) }, void 0, false, {
           fileName: "app/routes/about.tsx",
-          lineNumber: 89,
+          lineNumber: 95,
           columnNumber: 17
         }, this) }, void 0, false, {
           fileName: "app/routes/about.tsx",
-          lineNumber: 88,
+          lineNumber: 94,
           columnNumber: 15
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full md:w-1/2 flex flex-col justify-center", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-2xl sm:text-3xl md:text-4xl font-extrabold text-green-700 mb-4 uppercase tracking-widest", children: "Our Mission" }, void 0, false, {
             fileName: "app/routes/about.tsx",
-            lineNumber: 99,
+            lineNumber: 105,
             columnNumber: 17
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-gray-700 text-lg leading-relaxed", children: "LAV\u2019s mission is to come up with all the technologies and provide holistic support to the Filipino rice farmers. LAV is continuously testing high yielding rice seed varieties adaptable to the local conditions. From land preparation to harvesting activities, we provide after-sales support through technical consultations, machineries rental, production trainings and field demonstrations." }, void 0, false, {
             fileName: "app/routes/about.tsx",
-            lineNumber: 102,
+            lineNumber: 108,
             columnNumber: 17
           }, this)
         ] }, void 0, true, {
           fileName: "app/routes/about.tsx",
-          lineNumber: 98,
+          lineNumber: 104,
           columnNumber: 15
         }, this)
       ] }, void 0, true, {
         fileName: "app/routes/about.tsx",
-        lineNumber: 86,
+        lineNumber: 92,
         columnNumber: 13
       }, this)
     ] }, void 0, true, {
@@ -205,72 +240,72 @@ function About() {
       backgroundRepeat: "no-repeat"
     } }, void 0, false, {
       fileName: "app/routes/about.tsx",
-      lineNumber: 114,
+      lineNumber: 120,
       columnNumber: 9
     }, this) }, void 0, false, {
       fileName: "app/routes/about.tsx",
-      lineNumber: 112,
+      lineNumber: 118,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("section", { className: "relative w-full bg-gradient-to-tr from-[#788B5F] to-[#2A4127] min-h-screen", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative w-full h-1 bg-[#E0B100]" }, void 0, false, {
         fileName: "app/routes/about.tsx",
-        lineNumber: 130,
+        lineNumber: 136,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative z-10 px-4 sm:px-6 lg:px-8 py-16", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "max-w-6xl mx-auto", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-center mb-16", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-4xl md:text-5xl font-extrabold text-white mb-4", children: "Farmex Leadership Team" }, void 0, false, {
             fileName: "app/routes/about.tsx",
-            lineNumber: 154,
+            lineNumber: 160,
             columnNumber: 17
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-auto md:w-[620px] h-1 bg-[#E0B100] mx-auto" }, void 0, false, {
             fileName: "app/routes/about.tsx",
-            lineNumber: 157,
+            lineNumber: 163,
             columnNumber: 17
           }, this)
         ] }, void 0, true, {
           fileName: "app/routes/about.tsx",
-          lineNumber: 153,
+          lineNumber: 159,
           columnNumber: 15
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-white text-base md:text-lg leading-relaxed mb-16 space-y-6", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { children: "The leadership team of Farmex Corporation is composed of dedicated and forward-thinking individuals committed to empowering Filipino rice farmers through innovation and holistic agricultural support." }, void 0, false, {
             fileName: "app/routes/about.tsx",
-            lineNumber: 162,
+            lineNumber: 168,
             columnNumber: 17
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { children: "Guided by the mission to deliver comprehensive technologies and services across the rice production cycle, the team oversees initiatives that include the continuous testing of high-yielding, locally adaptable rice seed varieties under Farmex Corporation." }, void 0, false, {
             fileName: "app/routes/about.tsx",
-            lineNumber: 165,
+            lineNumber: 171,
             columnNumber: 17
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { children: "Their leadership ensures that farmers receive end-to-end assistance\u2014from land preparation to harvest\u2014through technical consultations, machinery rentals, production training, and field demonstrations, driving sustainable growth and productivity in the local rice industry." }, void 0, false, {
             fileName: "app/routes/about.tsx",
-            lineNumber: 168,
+            lineNumber: 174,
             columnNumber: 17
           }, this)
         ] }, void 0, true, {
           fileName: "app/routes/about.tsx",
-          lineNumber: 161,
+          lineNumber: 167,
           columnNumber: 15
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "mb-16", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-center mb-12", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h3", { className: "text-2xl md:text-3xl font-bold text-white mb-2", children: "Fernando B. Malveda" }, void 0, false, {
               fileName: "app/routes/about.tsx",
-              lineNumber: 177,
+              lineNumber: 183,
               columnNumber: 19
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-lg uppercase tracking-wide", children: "Chairman" }, void 0, false, {
               fileName: "app/routes/about.tsx",
-              lineNumber: 180,
+              lineNumber: 186,
               columnNumber: 19
             }, this)
           ] }, void 0, true, {
             fileName: "app/routes/about.tsx",
-            lineNumber: 176,
+            lineNumber: 182,
             columnNumber: 17
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16", children: [
@@ -278,168 +313,168 @@ function About() {
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
                 /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-xl md:text-2xl font-bold text-white mb-1", children: "Jose Maria Fernando L. Malveda" }, void 0, false, {
                   fileName: "app/routes/about.tsx",
-                  lineNumber: 190,
+                  lineNumber: 196,
                   columnNumber: 23
                 }, this),
                 /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "PRESIDENT" }, void 0, false, {
                   fileName: "app/routes/about.tsx",
-                  lineNumber: 193,
+                  lineNumber: 199,
                   columnNumber: 23
                 }, this)
               ] }, void 0, true, {
                 fileName: "app/routes/about.tsx",
-                lineNumber: 189,
+                lineNumber: 195,
                 columnNumber: 21
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
                 /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-xl md:text-2xl font-bold text-white mb-1", children: "Angelica A. Belarmino" }, void 0, false, {
                   fileName: "app/routes/about.tsx",
-                  lineNumber: 198,
+                  lineNumber: 204,
                   columnNumber: 23
                 }, this),
                 /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "Operations Manager" }, void 0, false, {
                   fileName: "app/routes/about.tsx",
-                  lineNumber: 201,
+                  lineNumber: 207,
                   columnNumber: 23
                 }, this)
               ] }, void 0, true, {
                 fileName: "app/routes/about.tsx",
-                lineNumber: 197,
+                lineNumber: 203,
                 columnNumber: 21
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
                 /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-xl md:text-2xl font-bold text-white mb-1", children: "Karlo Miguel F. Santos" }, void 0, false, {
                   fileName: "app/routes/about.tsx",
-                  lineNumber: 206,
+                  lineNumber: 212,
                   columnNumber: 23
                 }, this),
                 /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "LTC Operations Manager" }, void 0, false, {
                   fileName: "app/routes/about.tsx",
-                  lineNumber: 209,
+                  lineNumber: 215,
                   columnNumber: 23
                 }, this)
               ] }, void 0, true, {
                 fileName: "app/routes/about.tsx",
-                lineNumber: 205,
+                lineNumber: 211,
                 columnNumber: 21
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
                 /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-xl md:text-2xl font-bold text-white mb-1", children: "Rey N. Rivera" }, void 0, false, {
                   fileName: "app/routes/about.tsx",
-                  lineNumber: 214,
+                  lineNumber: 220,
                   columnNumber: 23
                 }, this),
                 /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "Warehouse Manager" }, void 0, false, {
                   fileName: "app/routes/about.tsx",
-                  lineNumber: 217,
+                  lineNumber: 223,
                   columnNumber: 23
                 }, this)
               ] }, void 0, true, {
                 fileName: "app/routes/about.tsx",
-                lineNumber: 213,
+                lineNumber: 219,
                 columnNumber: 21
               }, this)
             ] }, void 0, true, {
               fileName: "app/routes/about.tsx",
-              lineNumber: 188,
+              lineNumber: 194,
               columnNumber: 19
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "space-y-8 text-center", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
                 /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-xl md:text-2xl font-bold text-white mb-1", children: "Arturo A. Alejar Jr." }, void 0, false, {
                   fileName: "app/routes/about.tsx",
-                  lineNumber: 226,
+                  lineNumber: 232,
                   columnNumber: 23
                 }, this),
                 /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "Chief Operations Officer (COO)" }, void 0, false, {
                   fileName: "app/routes/about.tsx",
-                  lineNumber: 229,
+                  lineNumber: 235,
                   columnNumber: 23
                 }, this)
               ] }, void 0, true, {
                 fileName: "app/routes/about.tsx",
-                lineNumber: 225,
+                lineNumber: 231,
                 columnNumber: 21
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
                 /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-xl md:text-2xl font-bold text-white mb-1", children: "Myrile Mae T. Adlus" }, void 0, false, {
                   fileName: "app/routes/about.tsx",
-                  lineNumber: 234,
+                  lineNumber: 240,
                   columnNumber: 23
                 }, this),
                 /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "Business Development Manager" }, void 0, false, {
                   fileName: "app/routes/about.tsx",
-                  lineNumber: 237,
+                  lineNumber: 243,
                   columnNumber: 23
                 }, this)
               ] }, void 0, true, {
                 fileName: "app/routes/about.tsx",
-                lineNumber: 233,
+                lineNumber: 239,
                 columnNumber: 21
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
                 /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-xl md:text-2xl font-bold text-white mb-1", children: "Janine M. Villamor" }, void 0, false, {
                   fileName: "app/routes/about.tsx",
-                  lineNumber: 242,
+                  lineNumber: 248,
                   columnNumber: 23
                 }, this),
                 /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "Admin and Sales Operations Manager" }, void 0, false, {
                   fileName: "app/routes/about.tsx",
-                  lineNumber: 245,
+                  lineNumber: 251,
                   columnNumber: 23
                 }, this)
               ] }, void 0, true, {
                 fileName: "app/routes/about.tsx",
-                lineNumber: 241,
+                lineNumber: 247,
                 columnNumber: 21
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
                 /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-xl md:text-2xl font-bold text-white mb-1", children: "Angelou Q. Reodique" }, void 0, false, {
                   fileName: "app/routes/about.tsx",
-                  lineNumber: 250,
+                  lineNumber: 256,
                   columnNumber: 23
                 }, this),
                 /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "Communications Manager" }, void 0, false, {
                   fileName: "app/routes/about.tsx",
-                  lineNumber: 253,
+                  lineNumber: 259,
                   columnNumber: 23
                 }, this)
               ] }, void 0, true, {
                 fileName: "app/routes/about.tsx",
-                lineNumber: 249,
+                lineNumber: 255,
                 columnNumber: 21
               }, this)
             ] }, void 0, true, {
               fileName: "app/routes/about.tsx",
-              lineNumber: 224,
+              lineNumber: 230,
               columnNumber: 19
             }, this)
           ] }, void 0, true, {
             fileName: "app/routes/about.tsx",
-            lineNumber: 186,
+            lineNumber: 192,
             columnNumber: 17
           }, this)
         ] }, void 0, true, {
           fileName: "app/routes/about.tsx",
-          lineNumber: 174,
+          lineNumber: 180,
           columnNumber: 15
         }, this)
       ] }, void 0, true, {
         fileName: "app/routes/about.tsx",
-        lineNumber: 151,
+        lineNumber: 157,
         columnNumber: 13
       }, this) }, void 0, false, {
         fileName: "app/routes/about.tsx",
-        lineNumber: 150,
+        lineNumber: 156,
         columnNumber: 11
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/about.tsx",
-      lineNumber: 128,
+      lineNumber: 134,
       columnNumber: 9
     }, this) }, void 0, false, {
       fileName: "app/routes/about.tsx",
-      lineNumber: 126,
+      lineNumber: 132,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
@@ -458,4 +493,4 @@ export {
   About as default,
   meta
 };
-//# sourceMappingURL=/build/routes/about-HDK7CIPY.js.map
+//# sourceMappingURL=/build/routes/about-6V72BMVQ.js.map

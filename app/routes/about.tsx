@@ -66,7 +66,13 @@ export default function About() {
                 </h2>
                 <p className="text-gray-700 text-lg leading-relaxed">
                   {/* Replace this with your actual history text */}
-                  Leads Agriventures Corporation (LAV) was established in 2018 as subsidiary company of LEADS AGRI. Presently under the Malveda Holdings Corporation, the main business is focused on Hybrid Rice Seeds and milled rice distribution. Apart from these, LAV has now ventured in machineries rental, and coming up with our own milled rice grains.
+                  Farmex Corporation began its journey in 2018 under the name Leads Agriventures Corporation (LAV), as a proud subsidiary of LEADS Agri. In 2024, as the company expanded its scope and vision, it was officially rebranded to Farmex Corporation.  <br /><br />
+
+                  Farmex continues to strengthen its position in the agricultural sector. Our core business focuses on hybrid rice seed varietal testing and milled rice distribution, helping improve rice productivity and food security across the country. <br /><br />
+
+                  Building on our strong foundation, Farmex has recently diversified into financing of rice farmers, rental of large-scale agricultural machinery and the distribution of small farm tools and equipment, offering farmers end-to-end solutions from planting to post-harvest. <br /><br />
+
+                  We are committed to advancing Philippine agriculture through innovation, sustainability, and meaningful partnerships with the farming community.
                 </p>
               </div>
             </div>

@@ -282,7 +282,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\get-involved.tsx"
   );
-  import.meta.hot.lastModified = "1754891596737.98";
+  import.meta.hot.lastModified = "1754915815295.0464";
 }
 function meta() {
   return [{
@@ -527,14 +527,9 @@ function GetInvolved() {
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { children: [
               "FARMEX Customer Service & Support:",
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("br", {}, void 0, false, {
-                fileName: "app/routes/get-involved.tsx",
-                lineNumber: 196,
-                columnNumber: 21
-              }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "tel:+639451709401", className: "underline text-black hover:text-green-600", children: "+63 945 170 9401" }, void 0, false, {
                 fileName: "app/routes/get-involved.tsx",
-                lineNumber: 197,
+                lineNumber: 196,
                 columnNumber: 21
               }, this)
             ] }, void 0, true, {
@@ -544,53 +539,38 @@ function GetInvolved() {
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { children: [
               "Northern Luzon:",
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("br", {}, void 0, false, {
-                fileName: "app/routes/get-involved.tsx",
-                lineNumber: 203,
-                columnNumber: 21
-              }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "tel:+639064819885", className: "underline text-black hover:text-green-600", children: "+63 906 481 9885" }, void 0, false, {
                 fileName: "app/routes/get-involved.tsx",
-                lineNumber: 204,
+                lineNumber: 202,
                 columnNumber: 21
               }, this)
             ] }, void 0, true, {
               fileName: "app/routes/get-involved.tsx",
-              lineNumber: 201,
+              lineNumber: 200,
               columnNumber: 19
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { children: [
               "MIMAROPA:",
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("br", {}, void 0, false, {
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "tel:+639267091276", className: "underline text-black hover:text-green-600", children: "+63 917 313 8153" }, void 0, false, {
                 fileName: "app/routes/get-involved.tsx",
-                lineNumber: 210,
-                columnNumber: 21
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "tel:+639267091276", className: "underline text-black hover:text-green-600", children: "+63 926 709 1276" }, void 0, false, {
-                fileName: "app/routes/get-involved.tsx",
-                lineNumber: 211,
+                lineNumber: 208,
                 columnNumber: 21
               }, this)
             ] }, void 0, true, {
               fileName: "app/routes/get-involved.tsx",
-              lineNumber: 208,
+              lineNumber: 206,
               columnNumber: 19
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { children: [
               "CALABARZON:",
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("br", {}, void 0, false, {
-                fileName: "app/routes/get-involved.tsx",
-                lineNumber: 217,
-                columnNumber: 21
-              }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "tel:+639173138162", className: "underline text-black hover:text-green-600", children: "+63 917 313 8162" }, void 0, false, {
                 fileName: "app/routes/get-involved.tsx",
-                lineNumber: 218,
+                lineNumber: 214,
                 columnNumber: 21
               }, this)
             ] }, void 0, true, {
               fileName: "app/routes/get-involved.tsx",
-              lineNumber: 215,
+              lineNumber: 212,
               columnNumber: 19
             }, this)
           ] }, void 0, true, {
@@ -601,21 +581,21 @@ function GetInvolved() {
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h3", { className: "font-bold text-lg sm:text-xl mb-1", children: "Station Address:" }, void 0, false, {
               fileName: "app/routes/get-involved.tsx",
-              lineNumber: 226,
+              lineNumber: 222,
               columnNumber: 19
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "break-words", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "https://www.google.com/maps?q=14.330623,121.076050", target: "_blank", rel: "noopener noreferrer", className: "underline text-black hover:text-green-600", children: "Unit A 201 and Alfresco Area, 2nd Floor Coral Center Mall, Barangay San Francisco, Bi\xF1an, Laguna" }, void 0, false, {
               fileName: "app/routes/get-involved.tsx",
-              lineNumber: 228,
+              lineNumber: 224,
               columnNumber: 21
             }, this) }, void 0, false, {
               fileName: "app/routes/get-involved.tsx",
-              lineNumber: 227,
+              lineNumber: 223,
               columnNumber: 19
             }, this)
           ] }, void 0, true, {
             fileName: "app/routes/get-involved.tsx",
-            lineNumber: 225,
+            lineNumber: 221,
             columnNumber: 17
           }, this)
         ] }, void 0, true, {
@@ -625,11 +605,11 @@ function GetInvolved() {
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-w-md md:max-w-full h-80 md:h-[480px] border-2 md:border-4 border-[#057A31]", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("iframe", { title: "FarmEx Location", src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.64908692822!2d121.27209887587168!3d14.172200686486535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd5e176676321b%3A0x7b2c62c941bcd7a3!2s1775%20F.T.%20San%20Luis%20Ave%2C%20Bay%2C%20Laguna%204033!5e0!3m2!1sen!2sph!4v1693817890000!5m2!1sen!2sph", width: "100%", height: "100%", allowFullScreen: true, loading: "lazy", className: "rounded-md shadow-lg", referrerPolicy: "no-referrer-when-downgrade" }, void 0, false, {
           fileName: "app/routes/get-involved.tsx",
-          lineNumber: 237,
+          lineNumber: 233,
           columnNumber: 17
         }, this) }, void 0, false, {
           fileName: "app/routes/get-involved.tsx",
-          lineNumber: 236,
+          lineNumber: 232,
           columnNumber: 15
         }, this)
       ] }, void 0, true, {
@@ -652,11 +632,11 @@ function GetInvolved() {
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full flex justify-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "h-1 w-full bg-yellow-500" }, void 0, false, {
       fileName: "app/routes/get-involved.tsx",
-      lineNumber: 244,
+      lineNumber: 240,
       columnNumber: 9
     }, this) }, void 0, false, {
       fileName: "app/routes/get-involved.tsx",
-      lineNumber: 243,
+      lineNumber: 239,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(AnimatePresence, { children: modalOpen && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50", initial: {
@@ -679,34 +659,34 @@ function GetInvolved() {
     }, children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex justify-center mb-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: `text-4xl ${modalMessage.includes("success") ? "text-green-600" : "text-red-600"}`, children: modalMessage.includes("success") ? "\u2705" : "\u274C" }, void 0, false, {
         fileName: "app/routes/get-involved.tsx",
-        lineNumber: 267,
+        lineNumber: 263,
         columnNumber: 17
       }, this) }, void 0, false, {
         fileName: "app/routes/get-involved.tsx",
-        lineNumber: 266,
+        lineNumber: 262,
         columnNumber: 15
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-gray-800 text-base", children: modalMessage }, void 0, false, {
         fileName: "app/routes/get-involved.tsx",
-        lineNumber: 271,
+        lineNumber: 267,
         columnNumber: 15
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: () => setModalOpen(false), className: "mt-6 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition", children: "OK" }, void 0, false, {
         fileName: "app/routes/get-involved.tsx",
-        lineNumber: 272,
+        lineNumber: 268,
         columnNumber: 15
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/get-involved.tsx",
-      lineNumber: 254,
+      lineNumber: 250,
       columnNumber: 13
     }, this) }, void 0, false, {
       fileName: "app/routes/get-involved.tsx",
-      lineNumber: 247,
+      lineNumber: 243,
       columnNumber: 23
     }, this) }, void 0, false, {
       fileName: "app/routes/get-involved.tsx",
-      lineNumber: 246,
+      lineNumber: 242,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
@@ -725,4 +705,4 @@ export {
   GetInvolved as default,
   meta
 };
-//# sourceMappingURL=/build/routes/get-involved-QD4RJQZB.js.map
+//# sourceMappingURL=/build/routes/get-involved-WDAMHVVW.js.map

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import React from "react";
 
 // Define Product type
 type Product = {
@@ -7,6 +8,8 @@ type Product = {
   image: string;
   desc: string;
   desc1?: string;
+  details?: [string, string][];
+  code: string
   pdf: string;
 };
 
@@ -19,36 +22,68 @@ export function meta() {
 const productList: Product[] = [
   {
     name: "Jackpot 102",
-    image: "/jackpot102_product.png",
+    image: "jackpot102_product.png",
     desc: "Hybrid Rice Seed",
-    desc1: "Jackpot 102 (NSIC 666H) is the first hybrid rice seed variety introduced and distributed by LAV way back 2019. Through the years, Jackpot has already proven its place in the hybrid rice seed industry by ranking in the Top 5 varieties preferred by farmers during Rice Derbies.",
-    pdf: "/downloads/jackpot-102.pdf"
+    code: "NSIC 2021 Rc 666H",
+    details: [
+      ["Potential Yield", "11 MT or 220 cavans and above"],
+      ["Maturity (DAS)", "109-113 Days"],
+      ["Milling Recovery", "75%"],
+      ["Grain Type", "Long and slender"],
+      ["Amylose Content", "20.1%"],
+      ["Plant Height", "112 CM"],
+      ["Number of tillers", "12-14"],
+      ["Seeding rate: \n Direct seeded Transplanted", "21-24 KG \n 15-18 KG"]
+    ],
+    pdf: "/pdfs/jackpot.pdf"
   },
   {
     name: "LAV 777",
-    image: "/lav777_product.png",
+    image: "lav777_product.png",
     desc: "Hybrid Rice Seed",
-    desc1: "LAV 777 (NSIC Rc 656H) is our latest variety offering to rice farmers. Launched last year in Occidental Mindoro, LAV 777 has the quality traits of a superior hybrid rice. \n\n A genetically high yielding and Bacterial Leaf Blight-tolerant variety partnered with our “Sapat na Alaga Protocol” can definitely help our rice farmers attain high yields without excessive production costs.",
-    pdf: "/downloads/lav-777.pdf"
+    code: "NSIC 2021 Rc 656H",
+    details: [
+      ["Potential Yield", "18 MT or 360 cavans"],
+      ["Maturity (DAS)", "110-115 days"],
+      ["Milling Recovery", "71%"],
+      ["Grain Type", "Long and slender"],
+      ["Amylose Content", "14.8%"],
+      ["Plant Height", "109 CM"],
+      ["Number of tillers", "12-13"],
+      ["Seeding rate: \n Direct seeded Transplanted", "21-24 KG \n 15-18 KG"]
+    ],
+    pdf: "/pdfs/lav777.pdf"
+  },
+  {
+    name: "Leads 143",
+    image: "leads143_product.png",
+    desc: "Hybrid Rice Seed",
+    code: "NSIC 2022 Rc 694H",
+    details: [
+      ["Potential Yield", "11 MT or 220 cavans and above"],
+      ["Maturity (DAS)", "112-114 days"],
+      ["Milling Recovery", "68.7%"],
+      ["Grain Type", "Long and slender"],
+      ["Amylose Content", "13.7%"],
+      ["Plant Height", "111 CM"],
+      ["Number of tillers", "12-13"],
+      ["Seeding rate: \n Direct seeded Transplanted", "21-24 KG \n 15-18 KG"]
+    ],
+    pdf: "/pdfs/leads143.pdf"
   },
   {
     name: "Jose Maria Milled Rice",
     image: "/jose1.png",
-    desc: "Hybrid Rice Seed",
+    desc: "Regular-milled Rice",
+    code: "",
     desc1: "LAV has entered the whole value-chain of rice production by selling milled rice to the local market. Jose Maria is LAV’s regular-milled rice similar to the Dinorado type. As a product of contract growing, LAV helps the rice growers sell their produce by buying back their harvests at the prevailing market price. These fresh palay are then milled through our own milling facility and packaged as Jose Maria milled rice, named after the LAV’s Founder and President, Mr. Jose Maria Fernando L. Malveda.",
     pdf: "/downloads/jose-maria.pdf"
   },
   {
-    name: "Leads 143",
-    image: "/leads143_product.png",
-    desc: "Hybrid Rice Seed",
-    desc1: "",
-    pdf: "/downloads/leads-143.pdf"
-  },
-  {
     name: "Jackpot ready",
     image: "/jackpot-ready_product.png",
-    desc: "Hybrid Rice Seed",
+    code: "",
+    desc: "Hybrid Rice Seedlings",
     desc1: "Jackpot Ready is a product development where Jackpot 102 seeds have been grown into healthy 15-21 day-old seedlings. This technology gives the farmers an option of ready-to-plant seedlings and provides convenience to farmers who want to save time and energy during pre-planting stage.",
     pdf: "/downloads/jackpot-ready.pdf"
   },
@@ -58,12 +93,13 @@ const productList: Product[] = [
 export default function Products() {
   const [isClient, setIsClient] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const [showError, setShowError] = useState(false);
 
   useEffect(() => {
     if (selectedProduct) {
       document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = ""; 
+      document.body.style.overflow = "";
     }
 
     // Clean up just in case
@@ -79,12 +115,46 @@ export default function Products() {
   const closeModal = () => setSelectedProduct(null);
 
 
-useEffect(() => {
-  if (!selectedProduct) return;
+  const handleDownload = async (pdf: string) => {
+    if (!pdf) {
+      setShowError(true);
+      return;
+    }
+
+    try {
+      // Check if PDF exists
+      const res = await fetch(pdf, { method: "HEAD" });
+      if (!res.ok) {
+        // File not found (404, 403, etc.)
+        setShowError(true);
+        return;
+      }
+
+      // If file exists, trigger download
+      window.location.href = pdf;
+    } catch (error) {
+      // Network or CORS error
+      setShowError(true);
+    }
+  };
+
+
+
+ useEffect(() => {
+  // Only add listener if either modal is open
+  if (!selectedProduct && !showError) return;
 
   const handleEsc = (event: KeyboardEvent) => {
     if (event.key === "Escape") {
-      closeModal();
+      // Close error modal first if open
+      if (showError) {
+        setShowError(false);
+        return;
+      }
+      // Otherwise close product modal if open
+      if (selectedProduct) {
+        closeModal();
+      }
     }
   };
 
@@ -93,7 +163,8 @@ useEffect(() => {
   return () => {
     window.removeEventListener("keydown", handleEsc);
   };
-}, [selectedProduct]);
+}, [selectedProduct, showError]);
+
 
 
   return (
@@ -122,12 +193,12 @@ useEffect(() => {
 
         {/* Products Section */}
         <motion.div>
-        <section className="relative w-full py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center bg-white justify-center bg-cover bg-center"
-          style={{ backgroundImage: "url('/About us 1.png')" }}>
+          <section className="relative w-full py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center bg-white justify-center bg-cover bg-center"
+            style={{ backgroundImage: "url('/About us 1.png')" }}>
             <div className="w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-8 auto-rows-fr">
               {productList.map((product) => (
                 <div
-                  key={product.name} // ← unique key
+                  key={product.name}
                   className="flex flex-col items-centeR h-full"
                 >
                   <div className="w-full overflow-hidden rounded mb-5">
@@ -166,9 +237,10 @@ useEffect(() => {
           <div className="fixed inset-0 z-50 flex items-start justify-center pt-24 md:pt-32 px-4 overflow-auto">
 
             <div
-              className="rounded-lg w-full max-w-4xl bg-cover bg-center flex flex-col md:flex-row overflow-hidden relative bg-white min-h-[400px]"
+              className="rounded-lg w-full max-w-6xl bg-cover bg-center flex flex-col md:flex-row overflow-hidden relative bg-white min-h-[400px] pr-12"
               style={{ backgroundImage: "url('/bgmodal1.png')" }}
             >
+
               {/* Left Side */}
               <div className="w-full md:w-1/2 p-4 sm:p-6 flex flex-col justify-center items-center">
                 <div className="w-full mb-4">
@@ -184,6 +256,11 @@ useEffect(() => {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] h-auto object-contain mx-auto rounded"
                   />
+                  {selectedProduct.desc === "Hybrid Rice Seed" && (
+                    <p className=" text-white text-center text-sm sm:text-base">
+                      ({selectedProduct.code})
+                    </p>
+                  )}
                 </div>
 
                 {/* Show contact info here only on md+ */}
@@ -212,11 +289,34 @@ useEffect(() => {
 
               {/* Right Side */}
               <div className="w-full md:w-1/2 p-4 sm:p-6 flex flex-col justify-center text-white text-sm sm:text-base">
-                <div>
+                {selectedProduct.details ? (
+                  <div className="grid grid-cols-2 text-sm border border-white divide-x divide-white divide-y mb-4">
+                    {selectedProduct.details.map(([label, value], idx) => (
+                      <React.Fragment key={idx}>
+                        <div className="p-3 flex flex-col min-h-[48px] font-bold">
+                          {label.split('\n').map((line, i) => (
+                            <React.Fragment key={i}>
+                              {line}
+                              <br />
+                            </React.Fragment>
+                          ))}
+                        </div>
+                        <div className="p-3 flex flex-col min-h-[48px]">
+                          {value.split('\n').map((line, i) => (
+                            <React.Fragment key={i}>
+                              {line}
+                              <br />
+                            </React.Fragment>
+                          ))}
+                        </div>
+                      </React.Fragment>
+                    ))}
+                  </div>
+                ) : (
                   <p className="mb-6 whitespace-pre-line">
                     {selectedProduct.desc1 || selectedProduct.desc}
                   </p>
-                </div>
+                )}
                 {/* Contact info on mobile only */}
                 <div className="block md:hidden text-center text-black text-sm sm:text-base mb-6">
                   <span className="block font-semibold mb-1">For sales inquiries,</span>
@@ -246,25 +346,24 @@ useEffect(() => {
                   >
                     Contact Us
                   </a>
- <a
-  href={selectedProduct.pdf}
-  className="w-full sm:w-auto px-4 py-2 bg-red-600 text-white rounded hover:bg-red-800 text-center flex items-center justify-center gap-2"
-  download
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="14"
-    height="14"
-    viewBox="0 0 14 14"
-    fill="none"
-  >
-    <path
-      d="M1.4 12.4444H12.6V7H14V13.2222C14 13.6518 13.6866 14 13.3 14H0.7C0.313404 14 0 13.6518 0 13.2222V7H1.4V12.4444ZM8.4 4.66667H11.9L7 10.1111L2.1 4.66667H5.6V0H8.4V4.66667Z"
-      fill="white"
-    />
-  </svg>
-  Download PDF
-</a>
+                  <button
+                    onClick={() => handleDownload(selectedProduct.pdf)}
+                    className="w-full sm:w-auto px-4 py-2 bg-red-600 text-white rounded hover:bg-red-800 text-center flex items-center justify-center gap-2"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="14"
+                      height="14"
+                      viewBox="0 0 14 14"
+                      fill="none"
+                    >
+                      <path
+                        d="M1.4 12.4444H12.6V7H14V13.2222C14 13.6518 13.6866 14 13.3 14H0.7C0.313404 14 0 13.6518 0 13.2222V7H1.4V12.4444ZM8.4 4.66667H11.9L7 10.1111L2.1 4.66667H5.6V0H8.4V4.66667Z"
+                        fill="white"
+                      />
+                    </svg>
+                    Download PDF
+                  </button>
 
                 </div>
               </div>
@@ -272,14 +371,47 @@ useEffect(() => {
               {/* Close Button */}
               <button
                 onClick={closeModal}
-                className="absolute top-2 right-2 text-black hover:text-gray-600 text-2xl font-bold"
+                className="absolute top-2 right-6 text-white hover:text-gray-300 text-2xl font-bold"
               >
                 &times;
               </button>
             </div>
           </div>
+          {/* Error Modal */}
+         {showError && (
+  <>
+    <div
+      className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[60]"
+      onClick={() => setShowError(false)}
+    ></div>
+    <div className="fixed inset-0 flex items-center justify-center z-[70]">
+      <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full text-center relative">
+        {/* Close button */}
+        <button
+          onClick={() => setShowError(false)}
+          className="absolute top-2 right-2 text-gray-600 hover:text-gray-900 text-2xl font-bold"
+          aria-label="Close error modal"
+        >
+          &times;
+        </button>
+
+        <h3 className="text-lg font-semibold mb-4 text-red-600">
+          Sorry, this product does not have a PDF available for download.
+        </h3>
+        <button
+          onClick={() => setShowError(false)}
+          className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-800"
+        >
+          OK
+        </button>
+      </div>
+    </div>
+  </>
+)}
+
         </>
       )}
     </>
   );
 }
+

@@ -38,7 +38,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\news.tsx"
   );
-  import.meta.hot.lastModified = "1754891681855.278";
+  import.meta.hot.lastModified = "1754922068827.5657";
 }
 function meta() {
   return [{
@@ -627,4 +627,4 @@ export {
   News as default,
   meta
 };
-//# sourceMappingURL=/build/routes/news-RKEKH6ZJ.js.map
+//# sourceMappingURL=/build/routes/news-ZGZU5R5J.js.map

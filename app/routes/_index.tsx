@@ -65,7 +65,7 @@ export default function Home() {
       {[
         { name: "Jackpot 102", image: "/jackpot102_product.png" },
         { name: "LAV 777", image: "/lav777_product.png" },
-        { name: "Jackpot Ready", image: "/leads143_product.png" },
+        { name: "Leads 143", image: "/leads143_product.png" },
         { name: "Jackpot ready", image: "/jackpot-ready_featured.png" },
       ].map((product) => (
         <div key={product.name} className="flex uppercase tracking-widest flex-col items-center">
