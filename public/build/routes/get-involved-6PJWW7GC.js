@@ -282,7 +282,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\get-involved.tsx"
   );
-  import.meta.hot.lastModified = "1754653989597.5642";
+  import.meta.hot.lastModified = "1754884477222.841";
 }
 function meta() {
   return [{
@@ -405,8 +405,8 @@ function GetInvolved() {
       lineNumber: 113,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("section", { className: "w-full min-h-screen pt-8 pb-16 px-4 sm:px-8 bg-[url('/productbg1.png')] bg-cover bg-center flex flex-col items-center justify-start", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-w-7xl space-y-12", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "bg-[#007F3D] rounded-xl p-6 md:p-10 shadow-xl", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8 items-start", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("section", { className: "w-full min-h-screen pt-8 pb-16 px-4 sm:px-8 bg-[url('/newbgmachinerental.png')] bg-cover bg-center flex flex-col items-center justify-start", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-w-7xl space-y-12", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "bg-[url('/bgmascot-form_get-involved.png')] bg-cover bg-center rounded-xl p-6 md:p-10 shadow-xl", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8 items-start", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex flex-col items-center justify-center", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: "/pandoybg1.png", alt: "Mascot", className: "w-[350px] h-auto" }, void 0, false, {
             fileName: "app/routes/get-involved.tsx",
@@ -423,7 +423,7 @@ function GetInvolved() {
           lineNumber: 142,
           columnNumber: 17
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex items-start justify-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-w-md", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex items-start justify-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-w-lg", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h3", { className: "text-white text-3xl font-semibold mb-4", children: "Sent us a message" }, void 0, false, {
             fileName: "app/routes/get-involved.tsx",
             lineNumber: 150,
@@ -725,4 +725,4 @@ export {
   GetInvolved as default,
   meta
 };
-//# sourceMappingURL=/build/routes/get-involved-BGGM7GK5.js.map
+//# sourceMappingURL=/build/routes/get-involved-6PJWW7GC.js.map

@@ -140,10 +140,10 @@ export default function GetInvolved() {
       </motion.div>
       <motion.div>
         {/* Contact Section */}
-        <section className="w-full min-h-screen pt-8 pb-16 px-4 sm:px-8 bg-[url('/productbg1.png')] bg-cover bg-center flex flex-col items-center justify-start">
+        <section className="w-full min-h-screen pt-8 pb-16 px-4 sm:px-8 bg-[url('/newbgmachinerental.png')] bg-cover bg-center flex flex-col items-center justify-start">
           <div className="w-full max-w-7xl space-y-12">
             {/* Row 1: Mascot (left) + Form (right) inside green background */}
-            <div className="bg-[#007F3D] rounded-xl p-6 md:p-10 shadow-xl">
+            <div className="bg-[url('/bgmascot-form_get-involved.png')] bg-cover bg-center rounded-xl p-6 md:p-10 shadow-xl">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
               {/* Left: Mascot/Image */}
                 <div className="flex flex-col items-center justify-center">
@@ -153,7 +153,7 @@ export default function GetInvolved() {
 
               {/* Right: Form */}
                 <div className="flex items-start justify-center">
-                  <div className="w-full max-w-md">
+                  <div className="w-full max-w-lg">
                     <h3 className="text-white text-3xl font-semibold mb-4">Sent us a message</h3>
                     <form
                       onSubmit={handleSubmit}

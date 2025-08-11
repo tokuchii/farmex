@@ -28,7 +28,7 @@ import {
 } from "/build/_shared/chunk-PZDJHGND.js";
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-K7ALPNLC.css";
+var tailwind_default = "/build/_assets/tailwind-ITH66T7F.css";
 
 // app/components/Navbar.tsx
 var import_react = __toESM(require_react(), 1);
@@ -789,4 +789,4 @@ export {
   App as default,
   links
 };
-//# sourceMappingURL=/build/root-LILGQEU7.js.map
+//# sourceMappingURL=/build/root-U3A5XKDQ.js.map
