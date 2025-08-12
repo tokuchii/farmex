@@ -173,7 +173,7 @@ export default function KnowledgeTransfer() {
 
 function LAVStationSlider() {
   const images = [
-    { src: "/LAV-station 2.png", alt: "LAV Station 2" },
+    { src: "/LAV-station 13.jpg", alt: "LAV Station 2" },
     { src: "/LAV-station 3.jpg", alt: "LAV Station 3" },
     { src: "/LAV-station 4.jpg", alt: "LAV Station 4" },
     { src: "/LAV-station 5.jpg", alt: "LAV Station 5" },

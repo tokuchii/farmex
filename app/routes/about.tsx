@@ -161,7 +161,7 @@ export default function About() {
               {/* Introductory Text */}
               <div className="text-white text-base md:text-lg leading-relaxed mb-16 space-y-6">
                 <p>
-                  The leadership team of Farmex Corporation is composed of dedicated and forward-thinking individuals committed to empowering Filipino rice farmers through innovation and holistic agricultural support.
+                  The leadership team of Farmex Corporation comprises dedicated and forward-thinking individuals committed to empowering Filipino rice farmers through innovation and comprehensive agricultural support. 
                 </p>
                 <p>
                   Guided by the mission to deliver comprehensive technologies and services across the rice production cycle, the team oversees initiatives that include the continuous testing of high-yielding, locally adaptable rice seed varieties under Farmex Corporation.

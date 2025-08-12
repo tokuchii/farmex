@@ -22,7 +22,7 @@ export function meta() {
 const productList: Product[] = [
   {
     name: "Jackpot 102",
-    image: "jackpot102_product.png",
+    image: "J102.png",
     desc: "Hybrid Rice Seed",
     code: "NSIC 2021 Rc 666H",
     details: [

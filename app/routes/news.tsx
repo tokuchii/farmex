@@ -127,10 +127,12 @@ The visit resulted in a strengthened partnership between Leads and Winall, both 
 const newsSlides: Record<number, { src: string; alt: string }[]> = {
   0: [
     { src: "/news1 1.png", alt: "FARMEX Corporation Recognized" },
-    { src: "/news1 2.png", alt: "FARMEX Corporation Recognized" },
+    { src: "/news1 7.jpg", alt: "FARMEX Corporation Recognized" },
+    { src: "/news1 8.jpg", alt: "FARMEX Corporation Recognized" },
     { src: "/news1 3.png", alt: "FARMEX Corporation Recognized" },
     { src: "/news1 4.png", alt: "FARMEX Corporation Recognized" },
     { src: "/news1 5.png", alt: "FARMEX Corporation Recognized" },
+    { src: "/news1 6.jpg", alt: "FARMEX Corporation Recognized" },
   ],
   1: [
     { src: "/news2 1.png", alt: "FARMEX  Regional Training" },
@@ -158,7 +160,7 @@ const newsSlides: Record<number, { src: string; alt: string }[]> = {
   ],
   5: [
     { src: "/news6 1.png", alt: "Leads explored the hybrid rice seed technologies" },
-    { src: "/news6 2.png", alt: "Leads explored the hybrid rice seed technologies" },
+    { src: "/news6 5.jpg", alt: "Leads explored the hybrid rice seed technologies" },
     { src: "/news6 3.png", alt: "Leads explored the hybrid rice seed technologies" },
     { src: "/news6 4.png", alt: "Leads explored the hybrid rice seed technologies" },
   ],
