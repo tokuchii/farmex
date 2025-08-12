@@ -79,7 +79,7 @@ export default function Services() {
                     <div className="w-20 sm:w-24 md:w-28 h-0.5 sm:h-1 bg-yellow-400 mt-1"></div>
                   </div>
                   <div className="h-[280px] sm:h-[280px] md:h-[350px] lg:h-[450px] w-full overflow-hidden relative rounded py-2 sm:py-3 lg:py-4">
-                                         <img
+                      <img
                        src="/mobiledryer.png"
                        alt="Mobile Dryer"
                        className="w-full h-full object-cover border-2 sm:border-3 md:border-4 border-[#00703C] rounded-lg"
@@ -143,7 +143,7 @@ export default function Services() {
                   </div>
                   <div className="h-[280px] sm:h-[280px] md:h-[350px] lg:h-[450px] w-full overflow-hidden relative rounded py-2 sm:py-3 lg:py-4">
                     <img
-                      src="/harvester.png"
+                      src="/Harvester.jpg"
                       alt="Harvester"
                       className="w-full h-full object-cover border-2 sm:border-3 md:border-4 border-[#00703C] rounded-lg"
                     />

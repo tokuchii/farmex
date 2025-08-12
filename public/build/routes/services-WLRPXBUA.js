@@ -43,7 +43,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\services.tsx"
   );
-  import.meta.hot.lastModified = "1754971266272.4148";
+  import.meta.hot.lastModified = "1754976383703.3733";
 }
 var meta = () => [{
   title: "Services"
@@ -153,7 +153,7 @@ function Services() {
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "h-[280px] sm:h-[280px] md:h-[350px] lg:h-[450px] w-full overflow-hidden relative rounded py-2 sm:py-3 lg:py-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: "/mobiledryer.png", alt: "Mobile Dryer", className: "w-full h-full object-cover border-2 sm:border-3 md:border-4 border-[#00703C] rounded-lg" }, void 0, false, {
               fileName: "app/routes/services.tsx",
               lineNumber: 104,
-              columnNumber: 42
+              columnNumber: 23
             }, this) }, void 0, false, {
               fileName: "app/routes/services.tsx",
               lineNumber: 103,
@@ -279,7 +279,7 @@ function Services() {
               lineNumber: 168,
               columnNumber: 19
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "h-[280px] sm:h-[280px] md:h-[350px] lg:h-[450px] w-full overflow-hidden relative rounded py-2 sm:py-3 lg:py-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: "/harvester.png", alt: "Harvester", className: "w-full h-full object-cover border-2 sm:border-3 md:border-4 border-[#00703C] rounded-lg" }, void 0, false, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "h-[280px] sm:h-[280px] md:h-[350px] lg:h-[450px] w-full overflow-hidden relative rounded py-2 sm:py-3 lg:py-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: "/Harvester.jpg", alt: "Harvester", className: "w-full h-full object-cover border-2 sm:border-3 md:border-4 border-[#00703C] rounded-lg" }, void 0, false, {
               fileName: "app/routes/services.tsx",
               lineNumber: 173,
               columnNumber: 21
@@ -517,4 +517,4 @@ export {
   Services as default,
   meta
 };
-//# sourceMappingURL=/build/routes/services-MM67XLKD.js.map
+//# sourceMappingURL=/build/routes/services-WLRPXBUA.js.map
