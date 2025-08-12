@@ -37,7 +37,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\_index.tsx"
   );
-  import.meta.hot.lastModified = "1754974994471.849";
+  import.meta.hot.lastModified = "1754994105022.5693";
 }
 var meta = () => [{
   title: "Farmex Corporation"
@@ -135,7 +135,7 @@ function Home() {
           image: "/leads143_product.png"
         }, {
           name: "Jackpot ready",
-          image: "/jackpot-ready_featured.png"
+          image: "/jr_new_image1.png"
         }].map((product) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex uppercase tracking-widest flex-col items-center", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-w-[300px] mb-6 flex items-center justify-center overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "/products", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.img, { src: product.image, alt: product.name, initial: {
             opacity: 0,
@@ -325,4 +325,4 @@ export {
   Home as default,
   meta
 };
-//# sourceMappingURL=/build/routes/_index-3TJWQDVW.js.map
+//# sourceMappingURL=/build/routes/_index-SXEADI7G.js.map

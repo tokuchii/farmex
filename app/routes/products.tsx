@@ -26,13 +26,13 @@ const productList: Product[] = [
     desc: "Hybrid Rice Seed",
     code: "NSIC 2021 Rc 666H",
     details: [
-      ["Potential Yield", "11 MT or 220 cavans and above"],
-      ["Maturity (DAS)", "109-113 Days"],
-      ["Milling Recovery", "75%"],
+      ["Potential Yield", "18 MT or 360 cavans"],
+      ["Maturity (DAS)", "110-115 days"],
+      ["Milling Recovery", "71%"],
       ["Grain Type", "Long and slender"],
-      ["Amylose Content", "20.1%"],
-      ["Plant Height", "112 CM"],
-      ["Number of tillers", "12-14"],
+      ["Amylose Content", "14.8%"],
+      ["Plant Height", "109 CM"],
+      ["Number of tillers", "12-13"],
       ["Seeding rate: \n Direct seeded Transplanted", "21-24 KG \n 15-18 KG"]
     ],
     pdf: "/pdfs/jackpot.pdf"
@@ -43,13 +43,13 @@ const productList: Product[] = [
     desc: "Hybrid Rice Seed",
     code: "NSIC 2021 Rc 656H",
     details: [
-      ["Potential Yield", "18 MT or 360 cavans"],
-      ["Maturity (DAS)", "110-115 days"],
-      ["Milling Recovery", "71%"],
+      ["Potential Yield", "11 MT or 220 cavans and above"],
+      ["Maturity (DAS)", "109-113 Days"],
+      ["Milling Recovery", "75%"],
       ["Grain Type", "Long and slender"],
-      ["Amylose Content", "14.8%"],
-      ["Plant Height", "109 CM"],
-      ["Number of tillers", "12-13"],
+      ["Amylose Content", "20.1%"],
+      ["Plant Height", "112 CM"],
+      ["Number of tillers", "12-14"],
       ["Seeding rate: \n Direct seeded Transplanted", "21-24 KG \n 15-18 KG"]
     ],
     pdf: "/pdfs/lav777.pdf"
@@ -81,7 +81,7 @@ const productList: Product[] = [
   },
   {
     name: "Jackpot ready",
-    image: "/jackpot-ready_product.png",
+    image: "/jr_new_image2.png",
     code: "",
     desc: "Hybrid Rice Seedlings",
     desc1: "Jackpot Ready is a product development where Jackpot 102 seeds have been grown into healthy 15-21 day-old seedlings. This technology gives the farmers an option of ready-to-plant seedlings and provides convenience to farmers who want to save time and energy during pre-planting stage.",
@@ -269,19 +269,20 @@ export default function Products() {
                   <span className="leading-relaxed text-sm">
                     Or call{" "}
                     <a
-                      href="tel:(049) 576-007"
+                      href="tel:(+63) 945 170 9401"
                       className="text-black text-sm underline hover:underline"
                     >
-                      (049) 576-007
+                      (+63) 945 170 9401
                     </a>
                     <br />
                     <a
-                      href="https://www.google.com/maps/..."
+                      href="https://www.google.com/maps?q=14.330623,121.076050"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-black text-sm underline hover:underline inline-flex items-center"
                     >
-                      1775 F.T. San Luis Avenue, Bay, Laguna
+                      Unit A 201 and Alfresco Area 2nd Floor Coral Center Mall
+                      Barangay San Francisco, Biñan Laguna
                     </a>
                   </span>
                 </div>
@@ -323,19 +324,20 @@ export default function Products() {
                   <span className="leading-relaxed">
                     Or call{" "}
                     <a
-                      href="tel:(049) 576-007"
+                      href="tel:(+63) 945 170 9401"
                       className="text-black underline hover:underline"
                     >
-                      (049) 576-007
+                      (+63) 945 170 9401
                     </a>
                     <br />
                     <a
-                      href="https://www.google.com/maps/..."
+                      href="https://www.google.com/maps?q=14.330623,121.076050"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-black underline hover:underline inline-flex items-center"
                     >
-                      1775 F.T. San Luis Avenue, Bay, Laguna
+                      Unit A 201 and Alfresco Area 2nd Floor Coral Center Mall
+                      Barangay San Francisco, Biñan Laguna
                     </a>
                   </span>
                 </div>
