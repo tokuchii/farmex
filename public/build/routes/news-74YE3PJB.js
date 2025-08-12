@@ -38,7 +38,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\news.tsx"
   );
-  import.meta.hot.lastModified = "1754974711245.48";
+  import.meta.hot.lastModified = "1754979474264.7234";
 }
 function meta() {
   return [{
@@ -149,10 +149,10 @@ var newsSlides = {
     src: "/news1 1.png",
     alt: "FARMEX Corporation Recognized"
   }, {
-    src: "/news1 7.jpg",
+    src: "/news1 7.JPG",
     alt: "FARMEX Corporation Recognized"
   }, {
-    src: "/news1 8.jpg",
+    src: "/news1 8.JPG",
     alt: "FARMEX Corporation Recognized"
   }, {
     src: "/news1 3.png",
@@ -164,7 +164,7 @@ var newsSlides = {
     src: "/news1 5.png",
     alt: "FARMEX Corporation Recognized"
   }, {
-    src: "/news1 6.jpg",
+    src: "/news1 6.JPG",
     alt: "FARMEX Corporation Recognized"
   }],
   1: [{
@@ -633,4 +633,4 @@ export {
   News as default,
   meta
 };
-//# sourceMappingURL=/build/routes/news-PEFEK4YJ.js.map
+//# sourceMappingURL=/build/routes/news-74YE3PJB.js.map
