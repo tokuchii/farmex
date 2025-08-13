@@ -28,7 +28,13 @@ export default function Home() {
             autoPlay
             loop
             muted
-            className="w-full h-full object-cover object-top"
+            playsInline
+            controls={false}
+            disablePictureInPicture
+            controlsList="nodownload noplaybackrate noremoteplayback"
+            onContextMenu={(e) => e.preventDefault()}
+            preload="auto"
+            className="w-full h-full object-cover object-top pointer-events-none"
           />
         )}
         <div className="absolute inset-0 bg-black/30"></div>

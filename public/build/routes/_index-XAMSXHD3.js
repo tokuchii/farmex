@@ -37,7 +37,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\_index.tsx"
   );
-  import.meta.hot.lastModified = "1754994105022.5693";
+  import.meta.hot.lastModified = "1755060100111.4065";
 }
 var meta = () => [{
   title: "Farmex Corporation"
@@ -62,7 +62,7 @@ function Home() {
       duration: 0.6,
       ease: "easeOut"
     }, children: [
-      isClient && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("video", { src: "/rice.mp4", autoPlay: true, loop: true, muted: true, className: "w-full h-full object-cover object-top" }, void 0, false, {
+      isClient && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("video", { src: "/rice.mp4", autoPlay: true, loop: true, muted: true, playsInline: true, controls: false, disablePictureInPicture: true, controlsList: "nodownload noplaybackrate noremoteplayback", onContextMenu: (e) => e.preventDefault(), preload: "auto", className: "w-full h-full object-cover object-top pointer-events-none" }, void 0, false, {
         fileName: "app/routes/_index.tsx",
         lineNumber: 47,
         columnNumber: 22
@@ -325,4 +325,4 @@ export {
   Home as default,
   meta
 };
-//# sourceMappingURL=/build/routes/_index-SXEADI7G.js.map
+//# sourceMappingURL=/build/routes/_index-XAMSXHD3.js.map

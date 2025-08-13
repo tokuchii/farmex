@@ -37,7 +37,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\about.tsx"
   );
-  import.meta.hot.lastModified = "1754975157198.807";
+  import.meta.hot.lastModified = "1755060660368.0215";
 }
 function meta() {
   return [{
@@ -255,7 +255,7 @@ function About() {
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative z-10 px-4 sm:px-6 lg:px-8 py-16", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "max-w-6xl mx-auto", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-center mb-16", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-4xl md:text-5xl font-extrabold text-white mb-4", children: "Farmex Leadership Team" }, void 0, false, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-[24px] md:text-5xl font-extrabold text-white mb-4", children: "Farmex Leadership Team" }, void 0, false, {
             fileName: "app/routes/about.tsx",
             lineNumber: 160,
             columnNumber: 17
@@ -271,17 +271,17 @@ function About() {
           columnNumber: 15
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-white text-base md:text-lg leading-relaxed mb-16 space-y-6", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { children: "The leadership team of Farmex Corporation comprises dedicated and forward-thinking individuals committed to empowering Filipino rice farmers through innovation and comprehensive agricultural support." }, void 0, false, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "indent-12 md:indent-28 text-justify", children: "The leadership team of Farmex Corporation comprises dedicated and forward-thinking individuals committed to empowering Filipino rice farmers through innovation and comprehensive agricultural support." }, void 0, false, {
             fileName: "app/routes/about.tsx",
             lineNumber: 168,
             columnNumber: 17
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { children: "Guided by the mission to deliver comprehensive technologies and services across the rice production cycle, the team oversees initiatives that include the continuous testing of high-yielding, locally adaptable rice seed varieties under Farmex Corporation." }, void 0, false, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "indent-12 md:indent-28 text-justify", children: "Guided by the mission to deliver comprehensive technologies and services across the rice production cycle, the team oversees initiatives that include the continuous testing of high-yielding, locally adaptable rice seed varieties under Farmex Corporation." }, void 0, false, {
             fileName: "app/routes/about.tsx",
             lineNumber: 171,
             columnNumber: 17
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { children: "Their leadership ensures that farmers receive end-to-end assistance\u2014from land preparation to harvest\u2014through technical consultations, machinery rentals, production training, and field demonstrations, driving sustainable growth and productivity in the local rice industry." }, void 0, false, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "indent-12 md:indent-28 text-justify", children: "Their leadership ensures that farmers receive end-to-end assistance\u2014from land preparation to harvest\u2014through technical consultations, machinery rentals, production training, and field demonstrations, driving sustainable growth and productivity in the local rice industry." }, void 0, false, {
             fileName: "app/routes/about.tsx",
             lineNumber: 174,
             columnNumber: 17
@@ -493,4 +493,4 @@ export {
   About as default,
   meta
 };
-//# sourceMappingURL=/build/routes/about-37GA7OJX.js.map
+//# sourceMappingURL=/build/routes/about-JHKDRMZS.js.map

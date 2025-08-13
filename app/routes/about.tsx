@@ -152,7 +152,7 @@ export default function About() {
             <div className="max-w-6xl mx-auto">
               {/* Header */}
               <div className="text-center mb-16">
-                <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-4">
+                <h2 className="text-[24px] md:text-5xl font-extrabold text-white mb-4">
                   Farmex Leadership Team
                 </h2>
                 <div className="w-auto md:w-[620px] h-1 bg-[#E0B100] mx-auto"></div>
@@ -160,13 +160,13 @@ export default function About() {
 
               {/* Introductory Text */}
               <div className="text-white text-base md:text-lg leading-relaxed mb-16 space-y-6">
-                <p>
+                <p className="indent-12 md:indent-28 text-justify">
                   The leadership team of Farmex Corporation comprises dedicated and forward-thinking individuals committed to empowering Filipino rice farmers through innovation and comprehensive agricultural support. 
                 </p>
-                <p>
+                <p className="indent-12 md:indent-28 text-justify">
                   Guided by the mission to deliver comprehensive technologies and services across the rice production cycle, the team oversees initiatives that include the continuous testing of high-yielding, locally adaptable rice seed varieties under Farmex Corporation.
                 </p>
-                <p>
+                <p className="indent-12 md:indent-28 text-justify">
                   Their leadership ensures that farmers receive end-to-end assistance—from land preparation to harvest—through technical consultations, machinery rentals, production training, and field demonstrations, driving sustainable growth and productivity in the local rice industry.
                 </p>
               </div>

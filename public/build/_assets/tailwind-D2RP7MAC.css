@@ -1175,6 +1175,21 @@ video {
 .text-justify {
   text-align: justify;
 }
+.indent-8 {
+  text-indent: 2rem;
+}
+.indent-12 {
+  text-indent: 3rem;
+}
+.indent-32 {
+  text-indent: 8rem;
+}
+.indent-24 {
+  text-indent: 6rem;
+}
+.indent-28 {
+  text-indent: 7rem;
+}
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -1215,6 +1230,21 @@ video {
 .text-xs {
   font-size: .75rem;
   line-height: 1rem;
+}
+.text-\[32px\] {
+  font-size: 32px;
+}
+.text-\[3px\] {
+  font-size: 3px;
+}
+.text-\[28px\] {
+  font-size: 28px;
+}
+.text-\[26px\] {
+  font-size: 26px;
+}
+.text-\[24px\] {
+  font-size: 24px;
 }
 .font-bold {
   font-weight: 700;
@@ -1300,6 +1330,9 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+.text-\[\] {
+  color:;
 }
 .underline {
   text-decoration-line: underline;
@@ -1923,6 +1956,9 @@ body {
   .md\:text-left {
     text-align: left;
   }
+  .md\:indent-28 {
+    text-indent: 7rem;
+  }
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -2088,4 +2124,4 @@ body {
     display: flex;
   }
 }
-/*# sourceMappingURL=/build/_assets/tailwind-UXIGJIEP.css.map */
+/*# sourceMappingURL=/build/_assets/tailwind-LFNM4MYN.css.map */
