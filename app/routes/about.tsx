@@ -113,7 +113,7 @@ export default function About() {
         <section
           className="relative w-full py-16 px-4 sm:px-6 lg:px-8 flex items-center bg-white justify-center bg-cover bg-center"
           style={{
-            backgroundImage: "url('/featuredbg.jpg')", // change this to your actual image path
+            backgroundImage: "url('/bgabout.jpg')", // change this to your actual image path
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
@@ -172,92 +172,92 @@ export default function About() {
               </div>
 
               {/* Leadership Personnel */}
-              <div className="mb-16">
-                {/* Chairman */}
-                <div className="text-center mb-12">
-                  <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
-                    Fernando B. Malveda
-                  </h3>
-                  <p className="text-white text-lg uppercase tracking-wide">
-                    Chairman
-                  </p>
-                </div>
+<div className="mb-16">
+  {/* Chairman */}
+  <div className="text-center mb-12 order-1 md:order-none">
+    <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+      Fernando B. Malveda
+    </h3>
+    <p className="text-white text-lg uppercase tracking-wide">
+      Chairman
+    </p>
+  </div>
+<div className="mb-16">
+  {/* Leaders */}
+  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 text-center">
+    {/* Item 1 - Jose Maria */}
+    <div>
+      <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
+        Jose Maria Fernando L. Malveda
+      </h4>
+      <p className="text-white text-base">PRESIDENT</p>
+    </div>
 
-                {/* Other Leaders - Two Columns */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
-                  {/* Left Column */}
-                  <div className="space-y-8 text-center">
-                    <div>
-                      <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
-                        Jose Maria Fernando L. Malveda
-                      </h4>
-                      <p className="text-white text-base">
-                        PRESIDENT
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
-                        Angelica A. Belarmino
-                      </h4>
-                      <p className="text-white text-base">
-                        Operations Manager
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
-                        Karlo Miguel F. Santos
-                      </h4>
-                      <p className="text-white text-base">
-                        LTC Operations Manager
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
-                        Rey N. Rivera
-                      </h4>
-                      <p className="text-white text-base">
-                        Warehouse Manager
-                      </p>
-                    </div>
-                  </div>
+    {/* Item 2 - Arturo */}
+    <div>
+      <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
+        Arturo A. Alejar Jr.
+      </h4>
+      <p className="text-white text-base">
+        Chief Operations Officer (COO)
+      </p>
+    </div>
 
-                  {/* Right Column */}
-                  <div className="space-y-8 text-center">
-                    <div>
-                      <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
-                        Arturo A. Alejar Jr.
-                      </h4>
-                      <p className="text-white text-base">
-                        Chief Operations Officer (COO)
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
-                        Myrile Mae T. Adlus
-                      </h4>
-                      <p className="text-white text-base">
-                        Business Development Manager
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
-                        Janine M. Villamor
-                      </h4>
-                      <p className="text-white text-base">
-                        Admin and Sales Operations Manager
-                      </p>
-                    </div>
-                    <div>
-                      <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
-                        Angelou Q. Reodique
-                      </h4>
-                      <p className="text-white text-base">
-                        Communications Manager
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+    {/* Item 3 - Angelica */}
+    <div>
+      <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
+        Angelica A. Belarmino
+      </h4>
+      <p className="text-white text-base">Operations Manager</p>
+    </div>
+
+    {/* Item 4 - Myrile */}
+    <div>
+      <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
+        Myrile Mae T. Adlus
+      </h4>
+      <p className="text-white text-base">Business Development Manager</p>
+    </div>
+
+    {/* Item 5 - Karlo */}
+    <div>
+      <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
+        Karlo Miguel F. Santos
+      </h4>
+      <p className="text-white text-base">LTC Operations Manager</p>
+    </div>
+
+    {/* Item 6 - Janine */}
+    <div>
+      <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
+        Janine M. Villamor
+      </h4>
+      <p className="text-white text-base">
+        Admin and Sales Operations Manager
+      </p>
+    </div>
+
+    {/* Item 7 - Rey */}
+    <div>
+      <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
+        Rey N. Rivera
+      </h4>
+      <p className="text-white text-base">Warehouse Manager</p>
+    </div>
+
+    {/* Item 8 - Angelou */}
+    <div>
+      <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
+        Angelou Q. Reodique
+      </h4>
+      <p className="text-white text-base">Communications Manager</p>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
             </div>
           </div>
         </section>

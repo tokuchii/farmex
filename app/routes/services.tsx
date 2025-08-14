@@ -215,16 +215,17 @@ export default function Services() {
             <div className="absolute inset-0 bg-green-600 bg-opacity-50"></div>
             <div className="absolute inset-0 flex flex-col items-center justify-center z-20 px-4 md:px-8 py-4 pt-24 md:pt-12">
               {/* Title */}
-              <h2 className="text-white text-3xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-widest mb-2 md:mb-4 text-center">
+              <h2 className="text-white  md:text-6xl lg:text-7xl font-extrabold uppercase tracking-widest mb-2 md:mb-4 text-center">
                 COMING SOON
               </h2>
 
               {/* Description */}
-              <div className="text-white text-[14px] md:text-xl lg:text-2xl font-bold leading-relaxed max-w-4xl mb-4 md:mb-8 text-center">
-                <p className="mb-4">
-                  Big learning ahead — stay tuned.
-                </p>
-              </div>
+<div className="text-white text-3xl md:text-3xl lg:text-4xl font-bold leading-relaxed max-w-4xl mb-4 md:mb-8 text-center">
+  <p className="mb-4">
+    Big learning ahead — stay tuned.
+  </p>
+</div>
+
             </div>
           </motion.div>
         </>

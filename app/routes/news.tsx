@@ -241,16 +241,28 @@ function SliderModal({
           {images.length > 1 && (
             <button
               onClick={prev}
-              className="absolute left-0 text-3xl text-green-800 px-3 font-bold"
+              className="absolute left-0 text-2xl text-green-800 px-3 py-1 font-bold bg-black/40 rounded-full hover:bg-gray-800 transition"
             >
               &#60;
             </button>
+
           )}
-          <img
-            src={images[index].src}
-            alt={images[index].alt}
-            className="w-full h-[25vh] md:h-[60vh] object-cover rounded-md border-4 border-green-700"
-          />
+          {window.innerWidth < 768 ? (
+            <a href={images[index].src} target="_blank" rel="noopener noreferrer">
+              <img
+                src={images[index].src}
+                alt={images[index].alt}
+                className="max-h-[35vh] md:max-h-[60vh] object-contain rounded-md border-4 border-green-700 cursor-zoom-in"
+              />
+            </a>
+          ) : (
+            <img
+              src={images[index].src}
+              alt={images[index].alt}
+              className="max-h-[35vh] md:max-h-[60vh] object-contain rounded-md border-4 border-green-700"
+            />
+          )}
+
           {images.length > 1 && (
             <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-white text-xs bg-black/40 px-2 py-0.5 rounded">
               {index + 1} / {images.length}
@@ -259,7 +271,7 @@ function SliderModal({
           {images.length > 1 && (
             <button
               onClick={next}
-              className="absolute right-0 text-3xl text-green-800 px-3 font-bold"
+              className="absolute right-0 text-2xl text-green-800 px-3 py-1 font-bold bg-black/40 rounded-full hover:bg-gray-800 transition"
             >
               &#62;
             </button>
@@ -417,7 +429,7 @@ export default function News() {
             {/* Two Card Layout */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
               {/* Left Card - Gina Gonzalez */}
-              <motion.div 
+              <motion.div
                 className="bg-gradient-to-tr from-[#788B5F] to-[#2A4127] rounded-xl p-6 sm:p-8 shadow-lg"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -454,7 +466,7 @@ export default function News() {
               </motion.div>
 
               {/* Right Card - Mr. Edson Del Rosario */}
-              <motion.div 
+              <motion.div
                 className="bg-[#3D5B3D] rounded-xl p-6 sm:p-8 shadow-lg"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}

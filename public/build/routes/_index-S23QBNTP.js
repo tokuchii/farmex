@@ -7,7 +7,7 @@ import {
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-FEEY3YGC.js";
+} from "/build/_shared/chunk-65CJFPR6.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -37,7 +37,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\_index.tsx"
   );
-  import.meta.hot.lastModified = "1755060100111.4065";
+  import.meta.hot.lastModified = "1755145355121.945";
 }
 var meta = () => [{
   title: "Farmex Corporation"
@@ -72,7 +72,7 @@ function Home() {
         lineNumber: 48,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 flex items-center justify-center z-10", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.img, { src: "/welcome.png", alt: "Welcome", className: "w-full max-w-[800px] sm:max-w-3xl md:max-w-3xl xl:max-w-7xl h-auto mt-20 md:-mt-2", initial: {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 flex items-center justify-center z-10", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.img, { src: "/welcome.png", alt: "Welcome", className: "w-full max-w-[300px] sm:max-w-lg md:max-w-lg xl:max-w-4xl h-auto mt-16 md:-mt-2", initial: {
         opacity: 0,
         y: 40
       }, whileInView: {
@@ -325,4 +325,4 @@ export {
   Home as default,
   meta
 };
-//# sourceMappingURL=/build/routes/_index-XAMSXHD3.js.map
+//# sourceMappingURL=/build/routes/_index-S23QBNTP.js.map

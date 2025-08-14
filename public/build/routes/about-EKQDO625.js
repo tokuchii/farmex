@@ -7,7 +7,7 @@ import {
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-FEEY3YGC.js";
+} from "/build/_shared/chunk-65CJFPR6.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -37,7 +37,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\about.tsx"
   );
-  import.meta.hot.lastModified = "1755060660368.0215";
+  import.meta.hot.lastModified = "1755142567592.491";
 }
 function meta() {
   return [{
@@ -233,7 +233,7 @@ function About() {
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("section", { className: "relative w-full py-16 px-4 sm:px-6 lg:px-8 flex items-center bg-white justify-center bg-cover bg-center", style: {
-      backgroundImage: "url('/featuredbg.jpg')",
+      backgroundImage: "url('/bgabout.jpg')",
       // change this to your actual image path
       backgroundSize: "cover",
       backgroundPosition: "center",
@@ -292,172 +292,164 @@ function About() {
           columnNumber: 15
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "mb-16", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-center mb-12", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-center mb-12 order-1 md:order-none", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h3", { className: "text-2xl md:text-3xl font-bold text-white mb-2", children: "Fernando B. Malveda" }, void 0, false, {
               fileName: "app/routes/about.tsx",
               lineNumber: 183,
-              columnNumber: 19
+              columnNumber: 5
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-lg uppercase tracking-wide", children: "Chairman" }, void 0, false, {
               fileName: "app/routes/about.tsx",
               lineNumber: 186,
-              columnNumber: 19
+              columnNumber: 5
             }, this)
           ] }, void 0, true, {
             fileName: "app/routes/about.tsx",
             lineNumber: 182,
-            columnNumber: 17
+            columnNumber: 3
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16", children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "space-y-8 text-center", children: [
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-xl md:text-2xl font-bold text-white mb-1", children: "Jose Maria Fernando L. Malveda" }, void 0, false, {
-                  fileName: "app/routes/about.tsx",
-                  lineNumber: 196,
-                  columnNumber: 23
-                }, this),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "PRESIDENT" }, void 0, false, {
-                  fileName: "app/routes/about.tsx",
-                  lineNumber: 199,
-                  columnNumber: 23
-                }, this)
-              ] }, void 0, true, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "mb-16", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 text-center", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-xl md:text-2xl font-bold text-white mb-1", children: "Jose Maria Fernando L. Malveda" }, void 0, false, {
                 fileName: "app/routes/about.tsx",
                 lineNumber: 195,
-                columnNumber: 21
+                columnNumber: 7
               }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-xl md:text-2xl font-bold text-white mb-1", children: "Angelica A. Belarmino" }, void 0, false, {
-                  fileName: "app/routes/about.tsx",
-                  lineNumber: 204,
-                  columnNumber: 23
-                }, this),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "Operations Manager" }, void 0, false, {
-                  fileName: "app/routes/about.tsx",
-                  lineNumber: 207,
-                  columnNumber: 23
-                }, this)
-              ] }, void 0, true, {
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "PRESIDENT" }, void 0, false, {
                 fileName: "app/routes/about.tsx",
-                lineNumber: 203,
-                columnNumber: 21
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-xl md:text-2xl font-bold text-white mb-1", children: "Karlo Miguel F. Santos" }, void 0, false, {
-                  fileName: "app/routes/about.tsx",
-                  lineNumber: 212,
-                  columnNumber: 23
-                }, this),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "LTC Operations Manager" }, void 0, false, {
-                  fileName: "app/routes/about.tsx",
-                  lineNumber: 215,
-                  columnNumber: 23
-                }, this)
-              ] }, void 0, true, {
-                fileName: "app/routes/about.tsx",
-                lineNumber: 211,
-                columnNumber: 21
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-xl md:text-2xl font-bold text-white mb-1", children: "Rey N. Rivera" }, void 0, false, {
-                  fileName: "app/routes/about.tsx",
-                  lineNumber: 220,
-                  columnNumber: 23
-                }, this),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "Warehouse Manager" }, void 0, false, {
-                  fileName: "app/routes/about.tsx",
-                  lineNumber: 223,
-                  columnNumber: 23
-                }, this)
-              ] }, void 0, true, {
-                fileName: "app/routes/about.tsx",
-                lineNumber: 219,
-                columnNumber: 21
+                lineNumber: 198,
+                columnNumber: 7
               }, this)
             ] }, void 0, true, {
               fileName: "app/routes/about.tsx",
               lineNumber: 194,
-              columnNumber: 19
+              columnNumber: 5
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "space-y-8 text-center", children: [
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-xl md:text-2xl font-bold text-white mb-1", children: "Arturo A. Alejar Jr." }, void 0, false, {
-                  fileName: "app/routes/about.tsx",
-                  lineNumber: 232,
-                  columnNumber: 23
-                }, this),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "Chief Operations Officer (COO)" }, void 0, false, {
-                  fileName: "app/routes/about.tsx",
-                  lineNumber: 235,
-                  columnNumber: 23
-                }, this)
-              ] }, void 0, true, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-xl md:text-2xl font-bold text-white mb-1", children: "Arturo A. Alejar Jr." }, void 0, false, {
                 fileName: "app/routes/about.tsx",
-                lineNumber: 231,
-                columnNumber: 21
+                lineNumber: 203,
+                columnNumber: 7
               }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-xl md:text-2xl font-bold text-white mb-1", children: "Myrile Mae T. Adlus" }, void 0, false, {
-                  fileName: "app/routes/about.tsx",
-                  lineNumber: 240,
-                  columnNumber: 23
-                }, this),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "Business Development Manager" }, void 0, false, {
-                  fileName: "app/routes/about.tsx",
-                  lineNumber: 243,
-                  columnNumber: 23
-                }, this)
-              ] }, void 0, true, {
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "Chief Operations Officer (COO)" }, void 0, false, {
                 fileName: "app/routes/about.tsx",
-                lineNumber: 239,
-                columnNumber: 21
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-xl md:text-2xl font-bold text-white mb-1", children: "Janine M. Villamor" }, void 0, false, {
-                  fileName: "app/routes/about.tsx",
-                  lineNumber: 248,
-                  columnNumber: 23
-                }, this),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "Admin and Sales Operations Manager" }, void 0, false, {
-                  fileName: "app/routes/about.tsx",
-                  lineNumber: 251,
-                  columnNumber: 23
-                }, this)
-              ] }, void 0, true, {
-                fileName: "app/routes/about.tsx",
-                lineNumber: 247,
-                columnNumber: 21
-              }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-xl md:text-2xl font-bold text-white mb-1", children: "Angelou Q. Reodique" }, void 0, false, {
-                  fileName: "app/routes/about.tsx",
-                  lineNumber: 256,
-                  columnNumber: 23
-                }, this),
-                /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "Communications Manager" }, void 0, false, {
-                  fileName: "app/routes/about.tsx",
-                  lineNumber: 259,
-                  columnNumber: 23
-                }, this)
-              ] }, void 0, true, {
-                fileName: "app/routes/about.tsx",
-                lineNumber: 255,
-                columnNumber: 21
+                lineNumber: 206,
+                columnNumber: 7
               }, this)
             ] }, void 0, true, {
               fileName: "app/routes/about.tsx",
-              lineNumber: 230,
-              columnNumber: 19
+              lineNumber: 202,
+              columnNumber: 5
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-xl md:text-2xl font-bold text-white mb-1", children: "Angelica A. Belarmino" }, void 0, false, {
+                fileName: "app/routes/about.tsx",
+                lineNumber: 213,
+                columnNumber: 7
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "Operations Manager" }, void 0, false, {
+                fileName: "app/routes/about.tsx",
+                lineNumber: 216,
+                columnNumber: 7
+              }, this)
+            ] }, void 0, true, {
+              fileName: "app/routes/about.tsx",
+              lineNumber: 212,
+              columnNumber: 5
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-xl md:text-2xl font-bold text-white mb-1", children: "Myrile Mae T. Adlus" }, void 0, false, {
+                fileName: "app/routes/about.tsx",
+                lineNumber: 221,
+                columnNumber: 7
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "Business Development Manager" }, void 0, false, {
+                fileName: "app/routes/about.tsx",
+                lineNumber: 224,
+                columnNumber: 7
+              }, this)
+            ] }, void 0, true, {
+              fileName: "app/routes/about.tsx",
+              lineNumber: 220,
+              columnNumber: 5
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-xl md:text-2xl font-bold text-white mb-1", children: "Karlo Miguel F. Santos" }, void 0, false, {
+                fileName: "app/routes/about.tsx",
+                lineNumber: 229,
+                columnNumber: 7
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "LTC Operations Manager" }, void 0, false, {
+                fileName: "app/routes/about.tsx",
+                lineNumber: 232,
+                columnNumber: 7
+              }, this)
+            ] }, void 0, true, {
+              fileName: "app/routes/about.tsx",
+              lineNumber: 228,
+              columnNumber: 5
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-xl md:text-2xl font-bold text-white mb-1", children: "Janine M. Villamor" }, void 0, false, {
+                fileName: "app/routes/about.tsx",
+                lineNumber: 237,
+                columnNumber: 7
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "Admin and Sales Operations Manager" }, void 0, false, {
+                fileName: "app/routes/about.tsx",
+                lineNumber: 240,
+                columnNumber: 7
+              }, this)
+            ] }, void 0, true, {
+              fileName: "app/routes/about.tsx",
+              lineNumber: 236,
+              columnNumber: 5
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-xl md:text-2xl font-bold text-white mb-1", children: "Rey N. Rivera" }, void 0, false, {
+                fileName: "app/routes/about.tsx",
+                lineNumber: 247,
+                columnNumber: 7
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "Warehouse Manager" }, void 0, false, {
+                fileName: "app/routes/about.tsx",
+                lineNumber: 250,
+                columnNumber: 7
+              }, this)
+            ] }, void 0, true, {
+              fileName: "app/routes/about.tsx",
+              lineNumber: 246,
+              columnNumber: 5
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-xl md:text-2xl font-bold text-white mb-1", children: "Angelou Q. Reodique" }, void 0, false, {
+                fileName: "app/routes/about.tsx",
+                lineNumber: 255,
+                columnNumber: 7
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "Communications Manager" }, void 0, false, {
+                fileName: "app/routes/about.tsx",
+                lineNumber: 258,
+                columnNumber: 7
+              }, this)
+            ] }, void 0, true, {
+              fileName: "app/routes/about.tsx",
+              lineNumber: 254,
+              columnNumber: 5
             }, this)
           ] }, void 0, true, {
             fileName: "app/routes/about.tsx",
             lineNumber: 192,
-            columnNumber: 17
+            columnNumber: 3
+          }, this) }, void 0, false, {
+            fileName: "app/routes/about.tsx",
+            lineNumber: 190,
+            columnNumber: 15
           }, this)
         ] }, void 0, true, {
           fileName: "app/routes/about.tsx",
           lineNumber: 180,
-          columnNumber: 15
+          columnNumber: 13
         }, this)
       ] }, void 0, true, {
         fileName: "app/routes/about.tsx",
@@ -493,4 +485,4 @@ export {
   About as default,
   meta
 };
-//# sourceMappingURL=/build/routes/about-JHKDRMZS.js.map
+//# sourceMappingURL=/build/routes/about-EKQDO625.js.map

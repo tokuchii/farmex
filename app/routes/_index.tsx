@@ -42,7 +42,7 @@ export default function Home() {
           <motion.img
             src="/welcome.png"
             alt="Welcome"
-            className="w-full max-w-[800px] sm:max-w-3xl md:max-w-3xl xl:max-w-7xl h-auto mt-20 md:-mt-2"
+            className="w-full max-w-[300px] sm:max-w-lg md:max-w-lg xl:max-w-4xl h-auto mt-16 md:-mt-2"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}

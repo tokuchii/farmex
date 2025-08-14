@@ -6,7 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
   useLocation
-} from "/build/_shared/chunk-25UY2YLG.js";
+} from "/build/_shared/chunk-ADWLACKH.js";
 import "/build/_shared/chunk-PLT55Z5M.js";
 import {
   AnimatePresence,
@@ -18,7 +18,7 @@ import {
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-FEEY3YGC.js";
+} from "/build/_shared/chunk-65CJFPR6.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -28,7 +28,7 @@ import {
 } from "/build/_shared/chunk-PZDJHGND.js";
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-D2RP7MAC.css";
+var tailwind_default = "/build/_assets/tailwind-GBO57IJJ.css";
 
 // app/components/Navbar.tsx
 var import_react = __toESM(require_react(), 1);
@@ -51,7 +51,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\Navbar.tsx"
   );
-  import.meta.hot.lastModified = "1754630065222.8594";
+  import.meta.hot.lastModified = "1755139231103.1536";
 }
 function Navbar() {
   _s();
@@ -525,7 +525,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\Footer.tsx"
   );
-  import.meta.hot.lastModified = "1754630065222.8594";
+  import.meta.hot.lastModified = "1755139365787.9724";
 }
 function Footer() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("footer", { className: "bg-white relative", children: [
@@ -598,17 +598,15 @@ function Footer() {
       lineNumber: 25,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "text-center text-xs sm:text-sm md:text-base text-green-700 z-10 relative", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "w-[350px] mx-auto mb-1 border-t border-green-600" }, void 0, false, {
-        fileName: "app/components/Footer.tsx",
-        lineNumber: 57,
-        columnNumber: 3
-      }, this),
-      "Copyright \xA9 2025 Farmex Corporation"
-    ] }, void 0, true, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "w-11/12 max-w-[350px] mx-auto mb-2 border-t border-green-600" }, void 0, false, {
       fileName: "app/components/Footer.tsx",
       lineNumber: 56,
-      columnNumber: 5
+      columnNumber: 3
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-green-700 text-center text-xs sm:text-sm md:text-base", children: "\xA9 2025 Farmex Corporation" }, void 0, false, {
+      fileName: "app/components/Footer.tsx",
+      lineNumber: 57,
+      columnNumber: 3
     }, this)
   ] }, void 0, true, {
     fileName: "app/components/Footer.tsx",
@@ -792,4 +790,4 @@ export {
   App as default,
   links
 };
-//# sourceMappingURL=/build/root-C3POXLFY.js.map
+//# sourceMappingURL=/build/root-ALB4KUEV.js.map

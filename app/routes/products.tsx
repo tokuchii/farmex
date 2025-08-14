@@ -33,7 +33,7 @@ const productList: Product[] = [
       ["Amylose Content", "14.8%"],
       ["Plant Height", "109 CM"],
       ["Number of tillers", "12-13"],
-      ["Seeding rate: \n Direct seeded Transplanted", "21-24 KG \n 15-18 KG"]
+      ["Seeding rate: \n\n Direct seeded \n Transplanted" ,"\n\n 21-24 KG \n 15-18 KG"]
     ],
     pdf: "/pdfs/jackpot.pdf"
   },
@@ -50,7 +50,7 @@ const productList: Product[] = [
       ["Amylose Content", "20.1%"],
       ["Plant Height", "112 CM"],
       ["Number of tillers", "12-14"],
-      ["Seeding rate: \n Direct seeded Transplanted", "21-24 KG \n 15-18 KG"]
+      ["Seeding rate: \n\n Direct seeded \n Transplanted" ,"\n\n 21-24 KG \n 15-18 KG"]
     ],
     pdf: "/pdfs/lav777.pdf"
   },
@@ -67,7 +67,7 @@ const productList: Product[] = [
       ["Amylose Content", "13.7%"],
       ["Plant Height", "111 CM"],
       ["Number of tillers", "12-13"],
-      ["Seeding rate: \n Direct seeded Transplanted", "21-24 KG \n 15-18 KG"]
+      ["Seeding rate: \n\n Direct seeded \n Transplanted" ,"\n\n 21-24 KG \n 15-18 KG"]
     ],
     pdf: "/pdfs/leads143.pdf"
   },
@@ -84,7 +84,7 @@ const productList: Product[] = [
     image: "/jr_new_image2.png",
     code: "",
     desc: "Hybrid Rice Seedlings",
-    desc1: "Jackpot Ready is a product development where Jackpot 102 seeds have been grown into healthy 15-21 day-old seedlings. This technology gives the farmers an option of ready-to-plant seedlings and provides convenience to farmers who want to save time and energy during pre-planting stage.",
+    desc1: "Jackpot Ready is a product development where Jackpot 102 seeds have been grown into healthy 15-21 day-old seedlings.This technology gives the farmers an option of ready-to-plant seedlings and provides convenience to farmers who want to save time and energy during pre-planting stage.",
     pdf: "/downloads/jackpot-ready.pdf"
   },
 ];
@@ -237,7 +237,7 @@ export default function Products() {
           <div className="fixed inset-0 z-50 flex items-start justify-center pt-24 md:pt-32 px-4 overflow-auto">
 
             <div
-              className="rounded-lg w-full max-w-6xl bg-cover bg-center flex flex-col md:flex-row overflow-hidden relative bg-white min-h-[400px] pr-12"
+              className="rounded-lg w-full max-w-6xl bg-cover bg-center flex flex-col md:flex-row overflow-hidden relative bg-white min-h-[400px] md:pr-12"
               style={{ backgroundImage: "url('/bgmodal1.png')" }}
             >
 
@@ -254,7 +254,7 @@ export default function Products() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="w-full max-w-[300px] sm:max-w-[350px] md:max-w-[400px] lg:max-w-[450px] h-auto object-contain mx-auto rounded"
+                    className="  w-full max-w-[360px]    sm:max-w-[350px]  md:max-w-[400px] lg:max-w-[450px] h-auto object-contain mx-auto rounded"
                   />
                   {selectedProduct.desc === "Hybrid Rice Seed" && (
                     <p className=" text-white text-center text-sm sm:text-base">
@@ -291,28 +291,19 @@ export default function Products() {
               {/* Right Side */}
               <div className="w-full md:w-1/2 p-4 sm:p-6 flex flex-col justify-center text-white text-sm sm:text-base">
                 {selectedProduct.details ? (
-                  <div className="grid grid-cols-2 text-sm border border-white divide-x divide-white divide-y mb-4">
-                    {selectedProduct.details.map(([label, value], idx) => (
-                      <React.Fragment key={idx}>
-                        <div className="p-3 flex flex-col min-h-[48px] font-bold">
-                          {label.split('\n').map((line, i) => (
-                            <React.Fragment key={i}>
-                              {line}
-                              <br />
-                            </React.Fragment>
-                          ))}
-                        </div>
-                        <div className="p-3 flex flex-col min-h-[48px]">
-                          {value.split('\n').map((line, i) => (
-                            <React.Fragment key={i}>
-                              {line}
-                              <br />
-                            </React.Fragment>
-                          ))}
-                        </div>
-                      </React.Fragment>
-                    ))}
-                  </div>
+                 <div className="grid grid-cols-2 text-sm border border-white divide-x divide-white divide-y mb-4 items-stretch">
+  {selectedProduct.details.map(([label, value], idx) => (
+    <React.Fragment key={idx}>
+      <div className="p-3 font-bold whitespace-pre-line flex items-center">
+        {label}
+      </div>
+      <div className="p-3 whitespace-pre-line flex items-center">
+        {value}
+      </div>
+    </React.Fragment>
+  ))}
+</div>
+
                 ) : (
                   <p className="mb-6 whitespace-pre-line">
                     {selectedProduct.desc1 || selectedProduct.desc}

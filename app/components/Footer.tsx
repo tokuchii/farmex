@@ -46,10 +46,10 @@ export default function Footer() {
       </div>
 
 {/* Copyright */}
-<div className="text-center text-xs sm:text-sm md:text-base text-green-700 z-10 relative">
-  <div className="w-[350px] mx-auto mb-1 border-t border-green-600" />
-  Copyright © 2025 Farmex Corporation
-</div>
+  <div className="w-11/12 max-w-[350px] mx-auto mb-2 border-t border-green-600" />
+  <p className="text-green-700 text-center text-xs sm:text-sm md:text-base">
+    &copy; 2025 Farmex Corporation
+  </p>
 
     </footer>
   );
