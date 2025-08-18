@@ -6,7 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
   useLocation
-} from "/build/_shared/chunk-ADWLACKH.js";
+} from "/build/_shared/chunk-25UY2YLG.js";
 import "/build/_shared/chunk-PLT55Z5M.js";
 import {
   AnimatePresence,
@@ -18,7 +18,7 @@ import {
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-65CJFPR6.js";
+} from "/build/_shared/chunk-FEEY3YGC.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -28,7 +28,7 @@ import {
 } from "/build/_shared/chunk-PZDJHGND.js";
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-GBO57IJJ.css";
+var tailwind_default = "/build/_assets/tailwind-OYKYZMUL.css";
 
 // app/components/Navbar.tsx
 var import_react = __toESM(require_react(), 1);
@@ -51,7 +51,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\Navbar.tsx"
   );
-  import.meta.hot.lastModified = "1755139231103.1536";
+  import.meta.hot.lastModified = "1754630065222.8594";
 }
 function Navbar() {
   _s();
@@ -525,88 +525,93 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\Footer.tsx"
   );
-  import.meta.hot.lastModified = "1755139365787.9724";
+  import.meta.hot.lastModified = "1755485918817.8438";
 }
 function Footer() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("footer", { className: "bg-white relative", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "relative w-full h-1 bg-[#E0B100]" }, void 0, false, {
+      fileName: "app/components/Footer.tsx",
+      lineNumber: 25,
+      columnNumber: 7
+    }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-6 py-4 flex flex-col md:flex-row items-center md:items-start justify-between gap-4", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex flex-shrink-0 items-center pt-4 md:pt-6 hide-below-850", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("img", { src: bgfooter_default, alt: "FarmEx Logo", className: "h-36 w-auto -mb-11" }, void 0, false, {
         fileName: "app/components/Footer.tsx",
-        lineNumber: 28,
-        columnNumber: 3
+        lineNumber: 29,
+        columnNumber: 11
       }, this) }, void 0, false, {
         fileName: "app/components/Footer.tsx",
-        lineNumber: 27,
-        columnNumber: 8
+        lineNumber: 28,
+        columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex flex-col items-start space-y-2 text-gray-900 text-xs sm:text-sm md:text-base md:mt-4 mr-[14%]", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex items-center space-x-2", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(FaMapMarkerAlt, { className: "text-green-600" }, void 0, false, {
             fileName: "app/components/Footer.tsx",
-            lineNumber: 35,
+            lineNumber: 36,
             columnNumber: 13
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("a", { href: "https://www.google.com/maps?q=Coral+Center+Mall,+San+Francisco,+Bi\xF1an,+Laguna", target: "_blank", rel: "noopener noreferrer", className: "hover:underline text-black leading-snug", children: "Unit A 201 and Alfresco Area 2nd Floor Coral Center Mall Barangay San Francisco, Bi\xF1an Laguna" }, void 0, false, {
             fileName: "app/components/Footer.tsx",
-            lineNumber: 36,
+            lineNumber: 37,
             columnNumber: 13
           }, this)
         ] }, void 0, true, {
           fileName: "app/components/Footer.tsx",
-          lineNumber: 34,
+          lineNumber: 35,
           columnNumber: 11
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex items-center space-x-2", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(FaPhoneAlt, { className: "text-green-600" }, void 0, false, {
             fileName: "app/components/Footer.tsx",
-            lineNumber: 41,
+            lineNumber: 42,
             columnNumber: 13
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("a", { href: "tel:+639451709401", className: "hover:underline text-black leading-snug", children: "+63 945 170 9401" }, void 0, false, {
             fileName: "app/components/Footer.tsx",
-            lineNumber: 42,
+            lineNumber: 43,
             columnNumber: 13
           }, this)
         ] }, void 0, true, {
           fileName: "app/components/Footer.tsx",
-          lineNumber: 40,
+          lineNumber: 41,
           columnNumber: 11
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex items-center space-x-2", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(FaEnvelope, { className: "text-green-600" }, void 0, false, {
             fileName: "app/components/Footer.tsx",
-            lineNumber: 47,
+            lineNumber: 48,
             columnNumber: 13
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("a", { href: "mailto:leadsagriventurescorporation@gmail.com", className: "hover:underline text-black leading-snug", children: "leadsagriventurescorporation@gmail.com" }, void 0, false, {
             fileName: "app/components/Footer.tsx",
-            lineNumber: 48,
+            lineNumber: 49,
             columnNumber: 13
           }, this)
         ] }, void 0, true, {
           fileName: "app/components/Footer.tsx",
-          lineNumber: 46,
+          lineNumber: 47,
           columnNumber: 11
         }, this)
       ] }, void 0, true, {
         fileName: "app/components/Footer.tsx",
-        lineNumber: 33,
+        lineNumber: 34,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/components/Footer.tsx",
-      lineNumber: 25,
+      lineNumber: 26,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "w-11/12 max-w-[350px] mx-auto mb-2 border-t border-green-600" }, void 0, false, {
       fileName: "app/components/Footer.tsx",
-      lineNumber: 56,
-      columnNumber: 3
+      lineNumber: 57,
+      columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-green-700 text-center text-xs sm:text-sm md:text-base", children: "\xA9 2025 Farmex Corporation" }, void 0, false, {
       fileName: "app/components/Footer.tsx",
-      lineNumber: 57,
-      columnNumber: 3
+      lineNumber: 58,
+      columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/components/Footer.tsx",
@@ -790,4 +795,4 @@ export {
   App as default,
   links
 };
-//# sourceMappingURL=/build/root-ALB4KUEV.js.map
+//# sourceMappingURL=/build/root-MCUITPPA.js.map

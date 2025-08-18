@@ -1,6 +1,6 @@
 import {
   Link
-} from "/build/_shared/chunk-ADWLACKH.js";
+} from "/build/_shared/chunk-25UY2YLG.js";
 import "/build/_shared/chunk-PLT55Z5M.js";
 import {
   motion
@@ -11,7 +11,7 @@ import {
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-65CJFPR6.js";
+} from "/build/_shared/chunk-FEEY3YGC.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -43,7 +43,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\knowledge-transfer.tsx"
   );
-  import.meta.hot.lastModified = "1755139231106.4";
+  import.meta.hot.lastModified = "1755486112083.4006";
 }
 var meta = () => [{
   title: "Knowledge Transfer"
@@ -155,11 +155,6 @@ function KnowledgeTransfer() {
       ] }, void 0, true, {
         fileName: "app/routes/knowledge-transfer.tsx",
         lineNumber: 89,
-        columnNumber: 11
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative w-full h-1 bg-[#E0B100]" }, void 0, false, {
-        fileName: "app/routes/knowledge-transfer.tsx",
-        lineNumber: 102,
         columnNumber: 11
       }, this)
     ] }, void 0, true, {
@@ -466,4 +461,4 @@ export {
   KnowledgeTransfer as default,
   meta
 };
-//# sourceMappingURL=/build/routes/knowledge-transfer-DOJY2MXS.js.map
+//# sourceMappingURL=/build/routes/knowledge-transfer-IE5JZZ2Q.js.map

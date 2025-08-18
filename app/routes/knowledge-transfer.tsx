@@ -89,7 +89,7 @@ export default function KnowledgeTransfer() {
               </div>
             </div>
           </motion.div>
-          <div className="relative w-full h-1 bg-[#E0B100]"></div>
+          {/* <div className="relative w-full h-1 bg-[#E0B100]"></div> */}
         </section>
       )}
       {/* Knowledge-transfer for Rice Derbies Section */}

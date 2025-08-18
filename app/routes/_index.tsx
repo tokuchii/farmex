@@ -105,9 +105,9 @@ export default function Home() {
           </div>
         </section>
         {/* Gold line under products section */}
-        <div className="w-full flex justify-center">
+        {/* <div className="w-full flex justify-center">
           <div className="h-1 w-full bg-yellow-500"></div>
-        </div>
+        </div> */}
       </motion.div>
       <motion.div>
         {/* Services Section */}
@@ -171,9 +171,9 @@ export default function Home() {
           </div>
         </section>
       </motion.div>
-      <div className="w-full flex justify-center">
+      {/* <div className="w-full flex justify-center">
         <div className="h-1 w-full bg-yellow-500"></div>
-      </div>
+      </div> */}
       <motion.main
         className="relative z-20"
         initial={{ opacity: 0, y: 40 }}

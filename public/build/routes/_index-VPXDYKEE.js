@@ -7,7 +7,7 @@ import {
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-65CJFPR6.js";
+} from "/build/_shared/chunk-FEEY3YGC.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -37,7 +37,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\_index.tsx"
   );
-  import.meta.hot.lastModified = "1755145355121.945";
+  import.meta.hot.lastModified = "1755486363641.724";
 }
 var meta = () => [{
   title: "Farmex Corporation"
@@ -184,15 +184,6 @@ function Home() {
         fileName: "app/routes/_index.tsx",
         lineNumber: 71,
         columnNumber: 9
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full flex justify-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "h-1 w-full bg-yellow-500" }, void 0, false, {
-        fileName: "app/routes/_index.tsx",
-        lineNumber: 124,
-        columnNumber: 11
-      }, this) }, void 0, false, {
-        fileName: "app/routes/_index.tsx",
-        lineNumber: 123,
-        columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/_index.tsx",
@@ -283,15 +274,6 @@ function Home() {
       lineNumber: 127,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full flex justify-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "h-1 w-full bg-yellow-500" }, void 0, false, {
-      fileName: "app/routes/_index.tsx",
-      lineNumber: 173,
-      columnNumber: 9
-    }, this) }, void 0, false, {
-      fileName: "app/routes/_index.tsx",
-      lineNumber: 172,
-      columnNumber: 7
-    }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.main, { className: "relative z-20", initial: {
       opacity: 0,
       y: 40
@@ -325,4 +307,4 @@ export {
   Home as default,
   meta
 };
-//# sourceMappingURL=/build/routes/_index-S23QBNTP.js.map
+//# sourceMappingURL=/build/routes/_index-VPXDYKEE.js.map

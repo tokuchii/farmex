@@ -283,7 +283,7 @@ export default function GetInvolved() {
               <div className="w-full max-w-md md:max-w-full h-80 md:h-[480px] border-2 md:border-4 border-[#057A31]">
                 <iframe
                   title="FarmEx Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.64908692822!2d121.27209887587168!3d14.172200686486535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd5e176676321b%3A0x7b2c62c941bcd7a3!2s1775%20F.T.%20San%20Luis%20Ave%2C%20Bay%2C%20Laguna%204033!5e0!3m2!1sen!2sph!4v1693817890000!5m2!1sen!2sph"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d35917.25807111052!2d121.25206336136385!3d14.173866964059993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd5f625f843819%3A0x2869c3992b0c6d61!2sLeads%20Agriventures!5e1!3m2!1sen!2sph!4v1755487300350!5m2!1sen!2sph"
                   width="100%"
                   height="100%"
                   allowFullScreen
@@ -296,9 +296,9 @@ export default function GetInvolved() {
           </div>
         </section>
       </motion.div>
-      <div className="w-full flex justify-center">
+      {/* <div className="w-full flex justify-center">
         <div className="h-1 w-full bg-yellow-500"></div>
-      </div>
+      </div> */}
       <AnimatePresence>
         {modalOpen && (
           <motion.div
