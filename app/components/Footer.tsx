@@ -7,15 +7,13 @@ export default function Footer() {
       <div className="relative w-full h-1 bg-[#E0B100]"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6 py-4 flex flex-col md:flex-row items-center md:items-start justify-between gap-4">
         {/* Logo (hidden on small screens) */}
-       <div className="flex flex-shrink-0 items-center pt-4 md:pt-6 hide-below-850">
-  <img src={logo} alt="FarmEx Logo" className="h-36 w-auto -mb-12" />
-</div>
-
-
+        <div className="flex flex-shrink-0 items-center pt-4 md:pt-6 hide-below-850">
+          <img src={logo} alt="FarmEx Logo" className="h-36 w-auto -mb-12" />
+        </div>
         {/* Contact Info */}
         <div className="flex flex-col items-start space-y-2 text-gray-900 text-xs sm:text-sm md:text-base md:mt-4 mr-[14%]">
           <div className="flex items-center space-x-2">
-            <FaMapMarkerAlt className="text-green-600" />
+            <FaMapMarkerAlt className="text-green-600 text-xl md:text-base" />
             <a
               href="https://www.google.com/maps?q=Coral+Center+Mall,+San+Francisco,+Biñan,+Laguna"
               target="_blank"

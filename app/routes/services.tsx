@@ -79,11 +79,11 @@ export default function Services() {
                     <div className="w-20 sm:w-24 md:w-28 h-0.5 sm:h-1 bg-yellow-400 mt-1"></div>
                   </div>
                   <div className="h-[280px] sm:h-[280px] md:h-[350px] lg:h-[450px] w-full overflow-hidden relative rounded py-2 sm:py-3 lg:py-4">
-                      <img
-                       src="/mobiledryer.png"
-                       alt="Mobile Dryer"
-                       className="w-full h-full object-cover border-2 sm:border-3 md:border-4 border-[#00703C] rounded-lg"
-                     />
+                    <img
+                      src="/mobiledryer.png"
+                      alt="Mobile Dryer"
+                      className="w-full h-full object-cover border-2 sm:border-3 md:border-4 border-[#00703C] rounded-lg"
+                    />
                   </div>
                 </motion.div>
 
@@ -203,7 +203,7 @@ export default function Services() {
           <motion.div className="relative w-full h-[600px] sm:h-[600px] md:h-[1000px] lg:h-[800px] overflow-hidden">
             {isClient && (
               <motion.img
-                src="/Group38.png"
+                src="/newbg-training-section.png"
                 alt="Training Background"
                 className="w-full h-full object-cover object-top"
                 initial={{ opacity: 0, y: 40 }}
@@ -220,12 +220,11 @@ export default function Services() {
               </h2>
 
               {/* Description */}
-<div className="text-white text-2xl md:text-3xl lg:text-4xl font-bold leading-relaxed max-w-4xl mb-4 md:mb-8 text-center">
-  <p className="mb-4">
-    Big learning ahead — stay tuned.
-  </p>
-</div>
-
+              <div className="text-white text-2xl md:text-3xl lg:text-4xl font-bold leading-relaxed max-w-4xl mb-4 md:mb-8 text-center">
+                <p className="mb-4">
+                  Big learning ahead — stay tuned.
+                </p>
+              </div>
             </div>
           </motion.div>
         </>

@@ -44,8 +44,8 @@ export default function GetInvolved() {
     }
 
     if (name === "contact") {
-      // Remove all non-digits and limit to 10 digits
-      newValue = newValue.replace(/[^0-9]/g, "").slice(0, 10);
+      // Remove all non-digits and limit to 11 digits
+      newValue = newValue.replace(/[^0-9]/g, "").slice(0, 11);
     }
 
     setFormData({ ...formData, [name]: newValue });
