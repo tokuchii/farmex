@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6 py-4 flex flex-col md:flex-row items-center md:items-start justify-between gap-4">
         {/* Logo (hidden on small screens) */}
        <div className="flex flex-shrink-0 items-center pt-4 md:pt-6 hide-below-850">
-  <img src={logo} alt="FarmEx Logo" className="h-36 w-auto -mb-11" />
+  <img src={logo} alt="FarmEx Logo" className="h-36 w-auto -mb-12" />
 </div>
 
 

@@ -28,7 +28,7 @@ import {
 } from "/build/_shared/chunk-PZDJHGND.js";
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-GBO57IJJ.css";
+var tailwind_default = "/build/_assets/tailwind-XA2B5XR6.css";
 
 // app/components/Navbar.tsx
 var import_react = __toESM(require_react(), 1);
@@ -525,12 +525,12 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\Footer.tsx"
   );
-  import.meta.hot.lastModified = "1755139365787.9724";
+  import.meta.hot.lastModified = "1755496548719.2097";
 }
 function Footer() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("footer", { className: "bg-white relative", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-6 py-4 flex flex-col md:flex-row items-center md:items-start justify-between gap-4", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex flex-shrink-0 items-center pt-4 md:pt-6 hide-below-850", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("img", { src: bgfooter_default, alt: "FarmEx Logo", className: "h-36 w-auto -mb-11" }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex flex-shrink-0 items-center pt-4 md:pt-6 hide-below-850", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("img", { src: bgfooter_default, alt: "FarmEx Logo", className: "h-36 w-auto -mb-12" }, void 0, false, {
         fileName: "app/components/Footer.tsx",
         lineNumber: 28,
         columnNumber: 3
@@ -790,4 +790,4 @@ export {
   App as default,
   links
 };
-//# sourceMappingURL=/build/root-ALB4KUEV.js.map
+//# sourceMappingURL=/build/root-DDK5OOKS.js.map

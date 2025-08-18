@@ -38,7 +38,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\products.tsx"
   );
-  import.meta.hot.lastModified = "1755145962930.899";
+  import.meta.hot.lastModified = "1755497424403.502";
 }
 function meta() {
   return [{
@@ -51,21 +51,21 @@ var productList = [{
   desc: "Hybrid Rice Seed",
   code: "NSIC 2021 Rc 666H",
   details: [["Potential Yield", "18 MT or 360 cavans"], ["Maturity (DAS)", "110-115 days"], ["Milling Recovery", "71%"], ["Grain Type", "Long and slender"], ["Amylose Content", "14.8%"], ["Plant Height", "109 CM"], ["Number of tillers", "12-13"], ["Seeding rate: \n\n Direct seeded \n Transplanted", "\n\n 21-24 KG \n 15-18 KG"]],
-  pdf: "/pdfs/jackpot.pdf"
+  pdf: "/downloads/jackpot-102.pdf"
 }, {
   name: "LAV 777",
   image: "lav777_product.png",
   desc: "Hybrid Rice Seed",
   code: "NSIC 2021 Rc 656H",
   details: [["Potential Yield", "11 MT or 220 cavans and above"], ["Maturity (DAS)", "109-113 Days"], ["Milling Recovery", "75%"], ["Grain Type", "Long and slender"], ["Amylose Content", "20.1%"], ["Plant Height", "112 CM"], ["Number of tillers", "12-14"], ["Seeding rate: \n\n Direct seeded \n Transplanted", "\n\n 21-24 KG \n 15-18 KG"]],
-  pdf: "/pdfs/lav777.pdf"
+  pdf: "/downloads/lav-777.pdf"
 }, {
   name: "Leads 143",
   image: "leads143_product.png",
   desc: "Hybrid Rice Seed",
   code: "NSIC 2022 Rc 694H",
   details: [["Potential Yield", "11 MT or 220 cavans and above"], ["Maturity (DAS)", "112-114 days"], ["Milling Recovery", "68.7%"], ["Grain Type", "Long and slender"], ["Amylose Content", "13.7%"], ["Plant Height", "111 CM"], ["Number of tillers", "12-13"], ["Seeding rate: \n\n Direct seeded \n Transplanted", "\n\n 21-24 KG \n 15-18 KG"]],
-  pdf: "/pdfs/leads143.pdf"
+  pdf: "/downloads/leads143.pdf"
 }, {
   name: "Jose Maria Milled Rice",
   image: "/jose1.png",
@@ -472,4 +472,4 @@ export {
   Products as default,
   meta
 };
-//# sourceMappingURL=/build/routes/products-6XXWP7BN.js.map
+//# sourceMappingURL=/build/routes/products-QIBA42TW.js.map

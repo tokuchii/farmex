@@ -100,7 +100,7 @@ export default function About() {
                 </h2>
                 <p className="text-gray-700 text-lg leading-relaxed">
                   {/* Replace this with your actual mission text */}
-                  LAV’s mission is to come up with all the technologies and provide holistic support to the Filipino rice farmers. LAV is continuously testing high yielding rice seed varieties adaptable to the local conditions. From land preparation to harvesting activities, we provide after-sales support through technical consultations, machineries rental, production trainings and field demonstrations.
+                  Farmex mission is to come up with all the technologies and provide holistic support to the Filipino rice farmers. Farmex is continuously testing high yielding rice seed varieties adaptable to the local conditions. From land preparation to harvesting activities, we provide after-sales support through technical consultations, machineries rental, production trainings and field demonstrations.
 
                 </p>
               </div>

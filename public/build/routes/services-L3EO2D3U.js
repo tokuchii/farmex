@@ -43,7 +43,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\services.tsx"
   );
-  import.meta.hot.lastModified = "1755142833263.1858";
+  import.meta.hot.lastModified = "1755497833760.602";
 }
 var meta = () => [{
   title: "Services"
@@ -393,7 +393,7 @@ function Services() {
       columnNumber: 44
     }, this),
     activeSection === "training" && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "relative w-full h-[600px] sm:h-[600px] md:h-[1000px] lg:h-[800px] overflow-hidden", children: [
-      isClient && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.img, { src: "/training-bg.jpg", alt: "Training Background", className: "w-full h-full object-cover object-top", initial: {
+      isClient && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.img, { src: "/Group38.png", alt: "Training Background", className: "w-full h-full object-cover object-top", initial: {
         opacity: 0,
         y: 40
       }, whileInView: {
@@ -416,12 +416,12 @@ function Services() {
         columnNumber: 13
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 flex flex-col items-center justify-center z-20 px-4 md:px-8 py-4 pt-24 md:pt-12", children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-white  md:text-6xl lg:text-7xl font-extrabold uppercase tracking-widest mb-2 md:mb-4 text-center", children: "COMING SOON" }, void 0, false, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-white text-3xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-widest mb-2 md:mb-4 text-center", children: "COMING SOON" }, void 0, false, {
           fileName: "app/routes/services.tsx",
           lineNumber: 242,
           columnNumber: 15
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-white text-3xl md:text-3xl lg:text-4xl font-bold leading-relaxed max-w-4xl mb-4 md:mb-8 text-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "mb-4", children: "Big learning ahead \u2014 stay tuned." }, void 0, false, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-white text-2xl md:text-3xl lg:text-4xl font-bold leading-relaxed max-w-4xl mb-4 md:mb-8 text-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "mb-4", children: "Big learning ahead \u2014 stay tuned." }, void 0, false, {
           fileName: "app/routes/services.tsx",
           lineNumber: 248,
           columnNumber: 3
@@ -517,4 +517,4 @@ export {
   Services as default,
   meta
 };
-//# sourceMappingURL=/build/routes/services-5HDMBBCE.js.map
+//# sourceMappingURL=/build/routes/services-L3EO2D3U.js.map

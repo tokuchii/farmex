@@ -282,7 +282,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\get-involved.tsx"
   );
-  import.meta.hot.lastModified = "1755139231105.4438";
+  import.meta.hot.lastModified = "1755496699254.067";
 }
 function meta() {
   return [{
@@ -386,7 +386,7 @@ function GetInvolved() {
         lineNumber: 114,
         columnNumber: 22
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 bg-green-400 bg-opacity-45" }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 bg-[#007F3D] bg-opacity-45" }, void 0, false, {
         fileName: "app/routes/get-involved.tsx",
         lineNumber: 127,
         columnNumber: 9
@@ -705,4 +705,4 @@ export {
   GetInvolved as default,
   meta
 };
-//# sourceMappingURL=/build/routes/get-involved-BWHKKGZU.js.map
+//# sourceMappingURL=/build/routes/get-involved-GPHMAVLY.js.map

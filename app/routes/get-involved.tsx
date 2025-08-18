@@ -131,7 +131,7 @@ export default function GetInvolved() {
             transition={{ duration: 0.6, ease: "easeOut" }}
           />
         )}
-        <div className="absolute inset-0 bg-green-400 bg-opacity-45"></div>
+        <div className="absolute inset-0 bg-[#007F3D] bg-opacity-45"></div>
         <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
           <h2 className="text-white text-2xl md:text-4xl font-extrabold uppercase tracking-widest mb-4 h-auto mt-16 md:-mt-26">
             FARMEX AT A GLANCE

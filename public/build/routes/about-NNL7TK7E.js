@@ -37,7 +37,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\about.tsx"
   );
-  import.meta.hot.lastModified = "1755142567592.491";
+  import.meta.hot.lastModified = "1755497617420.4224";
 }
 function meta() {
   return [{
@@ -204,7 +204,7 @@ function About() {
             lineNumber: 105,
             columnNumber: 17
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-gray-700 text-lg leading-relaxed", children: "LAV\u2019s mission is to come up with all the technologies and provide holistic support to the Filipino rice farmers. LAV is continuously testing high yielding rice seed varieties adaptable to the local conditions. From land preparation to harvesting activities, we provide after-sales support through technical consultations, machineries rental, production trainings and field demonstrations." }, void 0, false, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-gray-700 text-lg leading-relaxed", children: "Farmex mission is to come up with all the technologies and provide holistic support to the Filipino rice farmers. Farmex is continuously testing high yielding rice seed varieties adaptable to the local conditions. From land preparation to harvesting activities, we provide after-sales support through technical consultations, machineries rental, production trainings and field demonstrations." }, void 0, false, {
             fileName: "app/routes/about.tsx",
             lineNumber: 108,
             columnNumber: 17
@@ -485,4 +485,4 @@ export {
   About as default,
   meta
 };
-//# sourceMappingURL=/build/routes/about-EKQDO625.js.map
+//# sourceMappingURL=/build/routes/about-NNL7TK7E.js.map

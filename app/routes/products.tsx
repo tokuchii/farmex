@@ -35,7 +35,7 @@ const productList: Product[] = [
       ["Number of tillers", "12-13"],
       ["Seeding rate: \n\n Direct seeded \n Transplanted" ,"\n\n 21-24 KG \n 15-18 KG"]
     ],
-    pdf: "/pdfs/jackpot.pdf"
+    pdf: "/downloads/jackpot-102.pdf"
   },
   {
     name: "LAV 777",
@@ -52,7 +52,7 @@ const productList: Product[] = [
       ["Number of tillers", "12-14"],
       ["Seeding rate: \n\n Direct seeded \n Transplanted" ,"\n\n 21-24 KG \n 15-18 KG"]
     ],
-    pdf: "/pdfs/lav777.pdf"
+    pdf: "/downloads/lav-777.pdf"
   },
   {
     name: "Leads 143",
@@ -69,7 +69,7 @@ const productList: Product[] = [
       ["Number of tillers", "12-13"],
       ["Seeding rate: \n\n Direct seeded \n Transplanted" ,"\n\n 21-24 KG \n 15-18 KG"]
     ],
-    pdf: "/pdfs/leads143.pdf"
+    pdf: "/downloads/leads143.pdf"
   },
   {
     name: "Jose Maria Milled Rice",
