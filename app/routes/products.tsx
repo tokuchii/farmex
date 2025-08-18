@@ -33,7 +33,7 @@ const productList: Product[] = [
       ["Amylose Content", "14.8%"],
       ["Plant Height", "109 CM"],
       ["Number of tillers", "12-13"],
-      ["Seeding rate: \n\n Direct seeded \n Transplanted" ,"\n\n 21-24 KG \n 15-18 KG"]
+      ["Seeding rate: \n\n Direct seeded \n Transplanted", "\n\n 21-24 KG \n 15-18 KG"]
     ],
     pdf: "/downloads/jackpot-102.pdf"
   },
@@ -50,7 +50,7 @@ const productList: Product[] = [
       ["Amylose Content", "20.1%"],
       ["Plant Height", "112 CM"],
       ["Number of tillers", "12-14"],
-      ["Seeding rate: \n\n Direct seeded \n Transplanted" ,"\n\n 21-24 KG \n 15-18 KG"]
+      ["Seeding rate: \n\n Direct seeded \n Transplanted", "\n\n 21-24 KG \n 15-18 KG"]
     ],
     pdf: "/downloads/lav-777.pdf"
   },
@@ -67,7 +67,7 @@ const productList: Product[] = [
       ["Amylose Content", "13.7%"],
       ["Plant Height", "111 CM"],
       ["Number of tillers", "12-13"],
-      ["Seeding rate: \n\n Direct seeded \n Transplanted" ,"\n\n 21-24 KG \n 15-18 KG"]
+      ["Seeding rate: \n\n Direct seeded \n Transplanted", "\n\n 21-24 KG \n 15-18 KG"]
     ],
     pdf: "/downloads/leads143.pdf"
   },
@@ -140,30 +140,30 @@ export default function Products() {
 
 
 
- useEffect(() => {
-  // Only add listener if either modal is open
-  if (!selectedProduct && !showError) return;
+  useEffect(() => {
+    // Only add listener if either modal is open
+    if (!selectedProduct && !showError) return;
 
-  const handleEsc = (event: KeyboardEvent) => {
-    if (event.key === "Escape") {
-      // Close error modal first if open
-      if (showError) {
-        setShowError(false);
-        return;
+    const handleEsc = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        // Close error modal first if open
+        if (showError) {
+          setShowError(false);
+          return;
+        }
+        // Otherwise close product modal if open
+        if (selectedProduct) {
+          closeModal();
+        }
       }
-      // Otherwise close product modal if open
-      if (selectedProduct) {
-        closeModal();
-      }
-    }
-  };
+    };
 
-  window.addEventListener("keydown", handleEsc);
+    window.addEventListener("keydown", handleEsc);
 
-  return () => {
-    window.removeEventListener("keydown", handleEsc);
-  };
-}, [selectedProduct, showError]);
+    return () => {
+      window.removeEventListener("keydown", handleEsc);
+    };
+  }, [selectedProduct, showError]);
 
 
 
@@ -221,8 +221,6 @@ export default function Products() {
                 </div>
               ))}
             </div>
-
-
           </section>
         </motion.div>
       </div>
@@ -291,18 +289,18 @@ export default function Products() {
               {/* Right Side */}
               <div className="w-full md:w-1/2 p-4 sm:p-6 flex flex-col justify-center text-white text-sm sm:text-base">
                 {selectedProduct.details ? (
-                 <div className="grid grid-cols-2 text-sm border border-white divide-x divide-white divide-y mb-4 items-stretch">
-  {selectedProduct.details.map(([label, value], idx) => (
-    <React.Fragment key={idx}>
-      <div className="p-3 font-bold whitespace-pre-line flex items-center">
-        {label}
-      </div>
-      <div className="p-3 whitespace-pre-line flex items-center">
-        {value}
-      </div>
-    </React.Fragment>
-  ))}
-</div>
+                  <div className="grid grid-cols-2 text-sm border border-white divide-x divide-white divide-y mb-4 items-stretch">
+                    {selectedProduct.details.map(([label, value], idx) => (
+                      <React.Fragment key={idx}>
+                        <div className="p-3 font-bold whitespace-pre-line flex items-center">
+                          {label}
+                        </div>
+                        <div className="p-3 whitespace-pre-line flex items-center">
+                          {value}
+                        </div>
+                      </React.Fragment>
+                    ))}
+                  </div>
 
                 ) : (
                   <p className="mb-6 whitespace-pre-line">
@@ -371,36 +369,36 @@ export default function Products() {
             </div>
           </div>
           {/* Error Modal */}
-         {showError && (
-  <>
-    <div
-      className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[60]"
-      onClick={() => setShowError(false)}
-    ></div>
-    <div className="fixed inset-0 flex items-center justify-center z-[70]">
-      <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full text-center relative">
-        {/* Close button */}
-        <button
-          onClick={() => setShowError(false)}
-          className="absolute top-2 right-2 text-gray-600 hover:text-gray-900 text-2xl font-bold"
-          aria-label="Close error modal"
-        >
-          &times;
-        </button>
+          {showError && (
+            <>
+              <div
+                className="fixed inset-0 bg-black/40 backdrop-blur-sm z-[60]"
+                onClick={() => setShowError(false)}
+              ></div>
+              <div className="fixed inset-0 flex items-center justify-center z-[70]">
+                <div className="bg-white p-6 rounded-lg shadow-lg max-w-sm w-full text-center relative">
+                  {/* Close button */}
+                  <button
+                    onClick={() => setShowError(false)}
+                    className="absolute top-2 right-2 text-gray-600 hover:text-gray-900 text-2xl font-bold"
+                    aria-label="Close error modal"
+                  >
+                    &times;
+                  </button>
 
-        <h3 className="text-lg font-semibold mb-4 text-red-600">
-          Sorry, this product does not have a PDF available for download.
-        </h3>
-        <button
-          onClick={() => setShowError(false)}
-          className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-800"
-        >
-          OK
-        </button>
-      </div>
-    </div>
-  </>
-)}
+                  <h3 className="text-lg font-semibold mb-4 text-red-600">
+                    Sorry, this product does not have a PDF available for download.
+                  </h3>
+                  <button
+                    onClick={() => setShowError(false)}
+                    className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-800"
+                  >
+                    OK
+                  </button>
+                </div>
+              </div>
+            </>
+          )}
 
         </>
       )}

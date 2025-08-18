@@ -151,7 +151,7 @@ export default function Services() {
                 </motion.div>
               </div>
             </section>
-            <div className="relative w-full h-1 bg-[#E0B100]"></div>
+            {/* <div className="relative w-full h-1 bg-[#E0B100]"></div> */}
           </motion.div>
         </>
       )}

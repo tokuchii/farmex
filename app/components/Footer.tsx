@@ -4,6 +4,7 @@ import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="bg-white relative">
+      <div className="relative w-full h-1 bg-[#E0B100]"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-6 py-4 flex flex-col md:flex-row items-center md:items-start justify-between gap-4">
         {/* Logo (hidden on small screens) */}
        <div className="flex flex-shrink-0 items-center pt-4 md:pt-6 hide-below-850">
@@ -45,11 +46,11 @@ export default function Footer() {
         </div>
       </div>
 
-{/* Copyright */}
-  <div className="w-11/12 max-w-[350px] mx-auto mb-2 border-t border-green-600" />
-  <p className="text-green-700 text-center text-xs sm:text-sm md:text-base">
-    &copy; 2025 Farmex Corporation
-  </p>
+      {/* Copyright */}
+      <div className="w-11/12 max-w-[350px] mx-auto mb-2 border-t border-green-600" />
+      <p className="text-green-700 text-center text-xs sm:text-sm md:text-base">
+        &copy; 2025 Farmex Corporation
+      </p>
 
     </footer>
   );
