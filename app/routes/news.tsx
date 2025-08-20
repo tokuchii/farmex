@@ -440,7 +440,7 @@ export default function News() {
                 <div className="flex justify-center mb-6">
                   <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-white shadow-lg">
                     <img
-                      src="/Ellipse 13 (1).png"
+                      src="/gab_image.png"
                       alt="Gina Gonzalez"
                       className="w-full h-full object-cover"
                     />
@@ -450,17 +450,20 @@ export default function News() {
                 {/* Testimonial */}
                 <div className="text-justify mb-6">
                   <p className="text-white text-sm sm:text-base leading-relaxed">
-                    "Sa Jackpot, nagustuhan yon dahil mataas ang milling recovery, nag-aaverage sya ng almost 67 to 68 (percent), and yung quality ng bigas niya ay buo at malambot. Regular milled pa lang yun. Siguro mas lalong quality pa ang labas ng bigas no'n kapag i-papolish pa yun. Nakasubok na kami makakain ng Jackpot (na binigas). Maganda na ang butil sa Single-pass pa lang. Nagugustuhan ng mga suki ko, laging hinahanap ang Jackpot na bigas. Maganda ang pagkakanin, masarap ang kanin, quality. Nasubukan na namin at kumita na kami ng Malaki."
+                    “Nagtanim ako ng Jackpot 102 , bilib ako sa dami ng suwi niya. Katamtaman ang taas nito, matibay sa hangin, mahaba ang inuhay at siksik ang butil. Mabigat pa ang timbang ng kada sako ng palay ko. Malambot at masarap ang kanin at may aroma siya”.
                   </p>
                 </div>
 
                 {/* Customer Info */}
-                <div className="text-center">
+                <div className="text-center mt-0 md:mt-28">
                   <h4 className="text-white font-bold text-lg sm:text-xl mb-1">
-                    Gina Gonzalez
+                    Honorato Gabriel
                   </h4>
                   <p className="text-white text-sm sm:text-base">
-                    Rice trader and Miller, Brgy. Tubuan, Pila, Laguna
+                    Region 2 (Cagayan Valley)
+                  </p>
+                  <p className="text-white text-sm sm:text-base">
+                    Victoria, Mallig, Isabela Variety planted/used: Jackpot 102
                   </p>
                 </div>
               </motion.div>
@@ -477,7 +480,7 @@ export default function News() {
                 <div className="flex justify-center mb-6">
                   <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-white shadow-lg">
                     <img
-                      src="/Ellipse 13.png"
+                      src="/est_image.png"
                       alt="Mr. Edson Del Rosario"
                       className="w-full h-full object-cover"
                     />
@@ -487,17 +490,20 @@ export default function News() {
                 {/* Testimonial */}
                 <div className="text-justify mb-8">
                   <p className="text-white text-sm sm:text-base leading-relaxed">
-                    "Sa tayo ng palay ng LAV 777, pwedeng pwedeng irekomenda sa mga magsasaka. Talagang kung ang habol natin ay maparami ang ani para tayo ay makaahon sa gastos, ito ay rekomendado ko. Kitang-kita naman natin, ang daming pumupuri. Maganda, matas, mahaba ang uhay."
+                    “Noong nagtanim ako ng LAV 777, na-obserbahan ko na maganda at marami ang  suhi niya at hindi siya prone sa sakit. Nang lumabas ang uhay niya ay mahaba, at siksik ang butil niya. Mataas ang milling recovery, malambot ang kanin at masarap po siya kainin”.
                   </p>
                 </div>
 
                 {/* Customer Info */}
-                <div className="text-center mt-0 md:mt-28">
+                <div className="text-center mt-0 md:mt-[87px]">
                   <h4 className="text-white font-bold text-lg sm:text-xl mb-1">
-                    Mr. Edson Del Rosario
+                    Melchor Estorga
                   </h4>
                   <p className="text-white text-sm sm:text-base">
-                    Farmer Calintaan, Occidental Mindoro
+                    Cordillera Administrative Region
+                  </p>
+                  <p className="text-white text-sm sm:text-base">
+                    Bulo, Tabuk, Kalinga Variety planted/used: LAV 777
                   </p>
                 </div>
               </motion.div>
