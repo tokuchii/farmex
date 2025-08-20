@@ -122,7 +122,7 @@ export default function GetInvolved() {
       >
         {isClient && (
           <motion.img
-            src="/jackpot102.jpg"
+            src="/Jackpot102.jpg"
             alt="Farm Image"
             className="w-full h-64 sm:h-96 md:h-[600px] lg:h-[500px] object-cover object-top"
             initial={{ opacity: 0, y: 40 }}
