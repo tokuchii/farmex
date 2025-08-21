@@ -76,7 +76,7 @@ const productList: Product[] = [
     image: "/jose1.png",
     desc: "Regular-milled Rice",
     code: "",
-    desc1: "LAV has entered the whole value-chain of rice production by selling milled rice to the local market. Jose Maria is LAV’s regular-milled rice similar to the Dinorado type. As a product of contract growing, LAV helps the rice growers sell their produce by buying back their harvests at the prevailing market price. These fresh palay are then milled through our own milling facility and packaged as Jose Maria milled rice, named after the LAV’s Founder and President, Mr. Jose Maria Fernando L. Malveda.",
+    desc1: "Farmex has entered the whole value-chain of rice production by selling milled rice to the local market. Jose Maria is Farmex’s regular-milled rice similar to the Dinorado type. As a product of contract growing, Farmex helps the rice growers sell their produce by buying back their harvests at the prevailing market price. These fresh palay are then milled through our own milling facility and packaged as Jose Maria milled rice, named after the Farmex’s Founder and President, Mr. Jose Maria Fernando L. Malveda.",
     pdf: "/downloads/jose-maria.pdf"
   },
   {

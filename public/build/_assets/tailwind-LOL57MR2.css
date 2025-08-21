@@ -519,18 +519,6 @@ video {
 .mt-auto {
   margin-top: auto;
 }
-.mr-\[4\%\] {
-  margin-right: 4%;
-}
-.mr-\[24\%\] {
-  margin-right: 24%;
-}
-.mr-\[\] {
-  margin-right:;
-}
-.mr-\[14\] {
-  margin-right: 14;
-}
 .block {
   display: block;
 }
@@ -624,9 +612,6 @@ video {
 .h-full {
   height: 100%;
 }
-.h-3 {
-  height: .75rem;
-}
 .max-h-\[35vh\] {
   max-height: 35vh;
 }
@@ -686,9 +671,6 @@ video {
 }
 .w-full {
   width: 100%;
-}
-.w-3 {
-  width: .75rem;
 }
 .max-w-4xl {
   max-width: 56rem;
@@ -752,14 +734,6 @@ video {
   --tw-translate-y: .375rem;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-.-translate-x-5 {
-  --tw-translate-x: -1.25rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
-.translate-x-5 {
-  --tw-translate-x: 1.25rem;
-  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
-}
 .-rotate-45 {
   --tw-rotate: -45deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -771,16 +745,8 @@ video {
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-.animate-\[fadeIn_0\.5s_ease-in-out_forwards\] {
-  animation: fadeIn .5s ease-in-out forwards;
-}
 .cursor-zoom-in {
   cursor: zoom-in;
-}
-.select-none {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
 }
 .resize-none {
   resize: none;
@@ -1479,22 +1445,11 @@ video {
   transition-timing-function: cubic-bezier(.4, 0, .2, 1);
   transition-duration: .15s;
 }
-.transition-opacity {
-  transition-property: opacity;
-  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-  transition-duration: .15s;
-}
 .duration-200 {
   transition-duration: .2s;
 }
 .duration-300 {
   transition-duration: .3s;
-}
-.duration-700 {
-  transition-duration: .7s;
-}
-.duration-500 {
-  transition-duration: .5s;
 }
 .ease-in-out {
   transition-timing-function: cubic-bezier(.4, 0, .2, 1);
@@ -1601,10 +1556,6 @@ body {
 .hover\:text-green-600:hover {
   --tw-text-opacity: 1;
   color: rgb(22 163 74 / var(--tw-text-opacity, 1));
-}
-.hover\:text-\[\#005d31\]:hover {
-  --tw-text-opacity: 1;
-  color: rgb(0 93 49 / var(--tw-text-opacity, 1));
 }
 .hover\:underline:hover {
   text-decoration-line: underline;
@@ -1856,12 +1807,6 @@ body {
   }
   .md\:mt-\[87px\] {
     margin-top: 87px;
-  }
-  .md\:mr-\[24\%\] {
-    margin-right: 24%;
-  }
-  .md\:mr-\[14\%\] {
-    margin-right: 14%;
   }
   .md\:block {
     display: block;
@@ -2168,4 +2113,4 @@ body {
     display: flex;
   }
 }
-/*# sourceMappingURL=/build/_assets/tailwind-MQ5ZTENI.css.map */
+/*# sourceMappingURL=/build/_assets/tailwind-5HBTB4UB.css.map */

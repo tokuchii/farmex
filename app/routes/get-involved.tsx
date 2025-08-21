@@ -275,6 +275,16 @@ export default function GetInvolved() {
                     >
                       Farmex Corporation KM 70 National Highway, Brgy. Bangyas, Calauan, Laguna
                     </a>
+                    <p className="break-words mt-4">
+                    <a
+                      href="https://maps.app.goo.gl/wiCDvstV13xTotCq7"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline text-black hover:text-green-600"
+                    >
+                      Unit A 201 and Alfresco Area 2nd Floor Coral Center Mall Barangay San Francisco, Biñan Laguna
+                    </a>
+                  </p>
                   </p>
                 </div>
               </div>

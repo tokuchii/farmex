@@ -282,7 +282,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\get-involved.tsx"
   );
-  import.meta.hot.lastModified = "1755749066359.1074";
+  import.meta.hot.lastModified = "1755761481274.5527";
 }
 function meta() {
   return [{
@@ -584,11 +584,22 @@ function GetInvolved() {
               lineNumber: 222,
               columnNumber: 19
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "break-words", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "https://maps.app.goo.gl/sjpAiD1d1ciTcU9n7", target: "_blank", rel: "noopener noreferrer", className: "underline text-black hover:text-green-600", children: "Farmex Corporation KM 70 National Highway, Brgy. Bangyas, Calauan, Laguna" }, void 0, false, {
-              fileName: "app/routes/get-involved.tsx",
-              lineNumber: 224,
-              columnNumber: 21
-            }, this) }, void 0, false, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "break-words", children: [
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "https://maps.app.goo.gl/sjpAiD1d1ciTcU9n7", target: "_blank", rel: "noopener noreferrer", className: "underline text-black hover:text-green-600", children: "Farmex Corporation KM 70 National Highway, Brgy. Bangyas, Calauan, Laguna" }, void 0, false, {
+                fileName: "app/routes/get-involved.tsx",
+                lineNumber: 224,
+                columnNumber: 21
+              }, this),
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "break-words mt-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "https://maps.app.goo.gl/wiCDvstV13xTotCq7", target: "_blank", rel: "noopener noreferrer", className: "underline text-black hover:text-green-600", children: "Unit A 201 and Alfresco Area 2nd Floor Coral Center Mall Barangay San Francisco, Bi\xF1an Laguna" }, void 0, false, {
+                fileName: "app/routes/get-involved.tsx",
+                lineNumber: 228,
+                columnNumber: 21
+              }, this) }, void 0, false, {
+                fileName: "app/routes/get-involved.tsx",
+                lineNumber: 227,
+                columnNumber: 21
+              }, this)
+            ] }, void 0, true, {
               fileName: "app/routes/get-involved.tsx",
               lineNumber: 223,
               columnNumber: 19
@@ -605,11 +616,11 @@ function GetInvolved() {
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-w-md md:max-w-full h-80 md:h-[480px] border-2 md:border-4 border-[#057A31]", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("iframe", { title: "FarmEx Location", src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d35917.25807111052!2d121.25206336136385!3d14.173866964059993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd5f625f843819%3A0x2869c3992b0c6d61!2sLeads%20Agriventures!5e1!3m2!1sen!2sph!4v1755487300350!5m2!1sen!2sph", width: "100%", height: "100%", allowFullScreen: true, loading: "lazy", className: "rounded-md shadow-lg", referrerPolicy: "no-referrer-when-downgrade" }, void 0, false, {
           fileName: "app/routes/get-involved.tsx",
-          lineNumber: 233,
+          lineNumber: 238,
           columnNumber: 17
         }, this) }, void 0, false, {
           fileName: "app/routes/get-involved.tsx",
-          lineNumber: 232,
+          lineNumber: 237,
           columnNumber: 15
         }, this)
       ] }, void 0, true, {
@@ -650,34 +661,34 @@ function GetInvolved() {
     }, children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex justify-center mb-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: `text-4xl ${modalMessage.includes("success") ? "text-green-600" : "text-red-600"}`, children: modalMessage.includes("success") ? "\u2705" : "\u274C" }, void 0, false, {
         fileName: "app/routes/get-involved.tsx",
-        lineNumber: 263,
+        lineNumber: 268,
         columnNumber: 17
       }, this) }, void 0, false, {
-        fileName: "app/routes/get-involved.tsx",
-        lineNumber: 262,
-        columnNumber: 15
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-gray-800 text-base", children: modalMessage }, void 0, false, {
         fileName: "app/routes/get-involved.tsx",
         lineNumber: 267,
         columnNumber: 15
       }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-gray-800 text-base", children: modalMessage }, void 0, false, {
+        fileName: "app/routes/get-involved.tsx",
+        lineNumber: 272,
+        columnNumber: 15
+      }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: () => setModalOpen(false), className: "mt-6 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition", children: "OK" }, void 0, false, {
         fileName: "app/routes/get-involved.tsx",
-        lineNumber: 268,
+        lineNumber: 273,
         columnNumber: 15
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/get-involved.tsx",
-      lineNumber: 250,
+      lineNumber: 255,
       columnNumber: 13
     }, this) }, void 0, false, {
       fileName: "app/routes/get-involved.tsx",
-      lineNumber: 243,
+      lineNumber: 248,
       columnNumber: 23
     }, this) }, void 0, false, {
       fileName: "app/routes/get-involved.tsx",
-      lineNumber: 242,
+      lineNumber: 247,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
@@ -696,4 +707,4 @@ export {
   GetInvolved as default,
   meta
 };
-//# sourceMappingURL=/build/routes/get-involved-M7R5JR56.js.map
+//# sourceMappingURL=/build/routes/get-involved-XAV4YXAS.js.map
