@@ -43,7 +43,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\services.tsx"
   );
-  import.meta.hot.lastModified = "1755512636606.9678";
+  import.meta.hot.lastModified = "1755748412281.077";
 }
 var meta = () => [{
   title: "Services"
@@ -457,48 +457,69 @@ function TechnicalConsultationSlider() {
     alt: "Technical Consultation 2"
   }];
   const [index, setIndex] = (0, import_react.useState)(0);
+  const [touchStart, setTouchStart] = (0, import_react.useState)(null);
+  const [touchEnd, setTouchEnd] = (0, import_react.useState)(null);
   const prev = () => setIndex((i) => i === 0 ? images.length - 1 : i - 1);
   const next = () => setIndex((i) => i === images.length - 1 ? 0 : i + 1);
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd)
+      return;
+    const distance = touchStart - touchEnd;
+    if (distance > 50) {
+      next();
+    }
+    if (distance < -50) {
+      prev();
+    }
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
   return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full flex flex-col items-center", children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex items-center justify-center w-full px-2 sm:px-4", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: prev, className: "text-3xl sm:text-4xl md:text-5xl text-[#00703C] hover:text-[#00703C] \r\n                 px-1 sm:px-2 focus:outline-none ml-1 sm:ml-4", children: "<" }, void 0, false, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex items-center justify-center w-full px-2 sm:px-4", onTouchStart: handleTouchStart, onTouchMove: handleTouchMove, onTouchEnd: handleTouchEnd, children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: prev, className: "text-3xl sm:text-4xl md:text-5xl text-[#00703C] hover:text-[#00703C] \r\n                   px-1 sm:px-2 focus:outline-none ml-1 sm:ml-4", children: "<" }, void 0, false, {
         fileName: "app/routes/services.tsx",
-        lineNumber: 276,
+        lineNumber: 302,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: images[index].src, alt: images[index].alt, className: "w-full max-w-[260px] sm:max-w-md md:max-w-lg lg:max-w-2xl \r\n                 h-56 sm:h-80 md:h-[350px] lg:h-[450px] \r\n                 object-cover rounded-lg mx-1 sm:mx-4 border-2 border-gray-200 bg-white" }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: images[index].src, alt: images[index].alt, className: "w-full max-w-[260px] sm:max-w-md md:max-w-lg lg:max-w-2xl \r\n                   h-56 sm:h-80 md:h-[350px] lg:h-[450px] \r\n                   object-cover rounded-lg mx-1 sm:mx-4 border-2 border-gray-200 bg-white" }, void 0, false, {
         fileName: "app/routes/services.tsx",
-        lineNumber: 282,
+        lineNumber: 308,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: next, className: "text-3xl sm:text-4xl md:text-5xl text-[#00703C] hover:text-[#00703C] \r\n                 px-1 sm:px-2 focus:outline-none mr-1 sm:mr-4", children: ">" }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: next, className: "text-3xl sm:text-4xl md:text-5xl text-[#00703C] hover:text-[#00703C] \r\n                   px-1 sm:px-2 focus:outline-none mr-1 sm:mr-4", children: ">" }, void 0, false, {
         fileName: "app/routes/services.tsx",
-        lineNumber: 287,
+        lineNumber: 313,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/services.tsx",
-      lineNumber: 274,
+      lineNumber: 300,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex justify-center mt-2 sm:mt-4", children: images.map((_, i) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: `mx-0.5 sm:mx-1 w-2 h-2 sm:w-3 sm:h-3 rounded-full ${i === index ? "bg-yellow-500" : "bg-gray-300"}`, style: {
       display: "inline-block"
     } }, i, false, {
       fileName: "app/routes/services.tsx",
-      lineNumber: 295,
+      lineNumber: 321,
       columnNumber: 31
     }, this)) }, void 0, false, {
       fileName: "app/routes/services.tsx",
-      lineNumber: 294,
+      lineNumber: 320,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/routes/services.tsx",
-    lineNumber: 273,
+    lineNumber: 299,
     columnNumber: 10
   }, this);
 }
-_s2(TechnicalConsultationSlider, "x2oTrUAHknTo02Ld7gcDOqaxQ8E=");
+_s2(TechnicalConsultationSlider, "N7OVlTBA0qgekR4Zaii07AZPUFs=");
 _c2 = TechnicalConsultationSlider;
 var _c;
 var _c2;
@@ -510,4 +531,4 @@ export {
   Services as default,
   meta
 };
-//# sourceMappingURL=/build/routes/services-T2RIID5T.js.map
+//# sourceMappingURL=/build/routes/services-XB2MGNPW.js.map

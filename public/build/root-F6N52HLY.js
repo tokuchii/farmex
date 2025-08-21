@@ -28,7 +28,7 @@ import {
 } from "/build/_shared/chunk-PZDJHGND.js";
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-LOL57MR2.css";
+var tailwind_default = "/build/_assets/tailwind-23BW36IE.css";
 
 // app/components/Navbar.tsx
 var import_react = __toESM(require_react(), 1);
@@ -525,7 +525,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\Footer.tsx"
   );
-  import.meta.hot.lastModified = "1755514095440.2065";
+  import.meta.hot.lastModified = "1755750224319.3855";
 }
 function Footer() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("footer", { className: "bg-white relative", children: [
@@ -551,7 +551,7 @@ function Footer() {
             lineNumber: 34,
             columnNumber: 13
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("a", { href: "https://www.google.com/maps?q=Coral+Center+Mall,+San+Francisco,+Bi\xF1an,+Laguna", target: "_blank", rel: "noopener noreferrer", className: "hover:underline text-black leading-snug", children: "Unit A 201 and Alfresco Area 2nd Floor Coral Center Mall Barangay San Francisco, Bi\xF1an Laguna" }, void 0, false, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("a", { href: "https://maps.app.goo.gl/sjpAiD1d1ciTcU9n7", target: "_blank", rel: "noopener noreferrer", className: "hover:underline text-black leading-snug", children: "Farmex Corporation KM 70 National Highway, Brgy. Bangyas, Calauan, Laguna" }, void 0, false, {
             fileName: "app/components/Footer.tsx",
             lineNumber: 35,
             columnNumber: 13
@@ -795,4 +795,4 @@ export {
   App as default,
   links
 };
-//# sourceMappingURL=/build/root-IAQKN2GF.js.map
+//# sourceMappingURL=/build/root-F6N52HLY.js.map

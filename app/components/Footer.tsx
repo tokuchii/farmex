@@ -15,12 +15,12 @@ export default function Footer() {
           <div className="flex items-center space-x-2">
             <FaMapMarkerAlt className="text-green-600 text-xl md:text-base" />
             <a
-              href="https://www.google.com/maps?q=Coral+Center+Mall,+San+Francisco,+Biñan,+Laguna"
+              href="https://maps.app.goo.gl/sjpAiD1d1ciTcU9n7"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:underline text-black leading-snug"
             >
-              Unit A 201 and Alfresco Area 2nd Floor Coral Center Mall Barangay San Francisco, Biñan Laguna
+              Farmex Corporation KM 70 National Highway, Brgy. Bangyas, Calauan, Laguna
             </a>
           </div>
           <div className="flex items-center space-x-2">

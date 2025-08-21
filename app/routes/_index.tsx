@@ -135,7 +135,7 @@ export default function Home() {
                     className="w-full h-full object-cover block"
                   />
                 </div>
-                <a href="/services">
+                <a href="/services#machine-rentals">
                   <button
                     type="button"
                     className="bg-yellow-500 tracking-widest text-white px-8 py-3 max-[525px]:px-4 max-[525px]:py-2 rounded-lg font-bold text-base max-[525px]:text-sm shadow hover:bg-yellow-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:ring-opacity-50"
@@ -158,7 +158,7 @@ export default function Home() {
                   />
                 </div>
 
-                <a href="/services">
+                <a href="/services#technical-consultation">
                   <button
                     type="button"
                     className="bg-yellow-500 tracking-widest text-white px-8 py-3 max-[525px]:px-4 max-[525px]:py-2 rounded-lg font-bold text-base max-[525px]:text-sm shadow hover:bg-yellow-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:ring-opacity-50"

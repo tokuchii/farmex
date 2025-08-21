@@ -282,7 +282,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\get-involved.tsx"
   );
-  import.meta.hot.lastModified = "1755669793510.877";
+  import.meta.hot.lastModified = "1755749066359.1074";
 }
 function meta() {
   return [{
@@ -584,7 +584,7 @@ function GetInvolved() {
               lineNumber: 222,
               columnNumber: 19
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "break-words", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "https://www.google.com/maps?q=14.330623,121.076050", target: "_blank", rel: "noopener noreferrer", className: "underline text-black hover:text-green-600", children: "Unit A 201 and Alfresco Area, 2nd Floor Coral Center Mall, Barangay San Francisco, Bi\xF1an, Laguna" }, void 0, false, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "break-words", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "https://maps.app.goo.gl/sjpAiD1d1ciTcU9n7", target: "_blank", rel: "noopener noreferrer", className: "underline text-black hover:text-green-600", children: "Farmex Corporation KM 70 National Highway, Brgy. Bangyas, Calauan, Laguna" }, void 0, false, {
               fileName: "app/routes/get-involved.tsx",
               lineNumber: 224,
               columnNumber: 21
@@ -696,4 +696,4 @@ export {
   GetInvolved as default,
   meta
 };
-//# sourceMappingURL=/build/routes/get-involved-27V6PE2I.js.map
+//# sourceMappingURL=/build/routes/get-involved-M7R5JR56.js.map

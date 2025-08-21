@@ -238,17 +238,53 @@ function TechnicalConsultationSlider() {
     { src: "/technicalconsultantimg1.jpg", alt: "Technical Consultation 1" },
     { src: "/technicalconsultantimg2.jpg", alt: "Technical Consultation 2" },
   ];
+
   const [index, setIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
   const prev = () => setIndex((i) => (i === 0 ? images.length - 1 : i - 1));
   const next = () => setIndex((i) => (i === images.length - 1 ? 0 : i + 1));
+
+  // Handle swipe start
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  // Handle swipe move
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  // Handle swipe end
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+
+    if (distance > 50) {
+      next(); // swipe left → next
+    }
+    if (distance < -50) {
+      prev(); // swipe right → prev
+    }
+
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
+
   return (
     <div className="w-full flex flex-col items-center">
-      <div className="flex items-center justify-center w-full px-2 sm:px-4">
+      <div
+        className="flex items-center justify-center w-full px-2 sm:px-4"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         {/* Left Arrow */}
         <button
           onClick={prev}
           className="text-3xl sm:text-4xl md:text-5xl text-[#00703C] hover:text-[#00703C] 
-                 px-1 sm:px-2 focus:outline-none ml-1 sm:ml-4"
+                   px-1 sm:px-2 focus:outline-none ml-1 sm:ml-4"
         >
           &#60;
         </button>
@@ -258,15 +294,15 @@ function TechnicalConsultationSlider() {
           src={images[index].src}
           alt={images[index].alt}
           className="w-full max-w-[260px] sm:max-w-md md:max-w-lg lg:max-w-2xl 
-                 h-56 sm:h-80 md:h-[350px] lg:h-[450px] 
-                 object-cover rounded-lg mx-1 sm:mx-4 border-2 border-gray-200 bg-white"
+                   h-56 sm:h-80 md:h-[350px] lg:h-[450px] 
+                   object-cover rounded-lg mx-1 sm:mx-4 border-2 border-gray-200 bg-white"
         />
 
         {/* Right Arrow */}
         <button
           onClick={next}
           className="text-3xl sm:text-4xl md:text-5xl text-[#00703C] hover:text-[#00703C] 
-                 px-1 sm:px-2 focus:outline-none mr-1 sm:mr-4"
+                   px-1 sm:px-2 focus:outline-none mr-1 sm:mr-4"
         >
           &#62;
         </button>
@@ -277,13 +313,13 @@ function TechnicalConsultationSlider() {
         {images.map((_, i) => (
           <span
             key={i}
-            className={`mx-0.5 sm:mx-1 w-2 h-2 sm:w-3 sm:h-3 rounded-full ${i === index ? "bg-yellow-500" : "bg-gray-300"
-              }`}
+            className={`mx-0.5 sm:mx-1 w-2 h-2 sm:w-3 sm:h-3 rounded-full ${
+              i === index ? "bg-yellow-500" : "bg-gray-300"
+            }`}
             style={{ display: "inline-block" }}
           ></span>
         ))}
       </div>
     </div>
-
   );
-} 
+}

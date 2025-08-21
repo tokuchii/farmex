@@ -268,12 +268,12 @@ export default function GetInvolved() {
                   <h3 className="font-bold text-lg sm:text-xl mb-1">Station Address:</h3>
                   <p className="break-words">
                     <a
-                      href="https://www.google.com/maps?q=14.330623,121.076050"
+                      href="https://maps.app.goo.gl/sjpAiD1d1ciTcU9n7"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="underline text-black hover:text-green-600"
                     >
-                      Unit A 201 and Alfresco Area, 2nd Floor Coral Center Mall, Barangay San Francisco, Biñan, Laguna
+                      Farmex Corporation KM 70 National Highway, Brgy. Bangyas, Calauan, Laguna
                     </a>
                   </p>
                 </div>
