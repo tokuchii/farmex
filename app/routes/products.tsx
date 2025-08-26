@@ -115,29 +115,16 @@ export default function Products() {
   const closeModal = () => setSelectedProduct(null);
 
 
-  const handleDownload = async (pdf: string) => {
-    if (!pdf) {
-      setShowError(true);
-      return;
-    }
+  const handleDownload = (pdf: string) => {
+    if (!pdf) return;
 
-    try {
-      // Check if PDF exists
-      const res = await fetch(pdf, { method: "HEAD" });
-      if (!res.ok) {
-        // File not found (404, 403, etc.)
-        setShowError(true);
-        return;
-      }
-
-      // If file exists, trigger download
-      window.location.href = pdf;
-    } catch (error) {
-      // Network or CORS error
-      setShowError(true);
-    }
+    const link = document.createElement('a');
+    link.href = pdf;
+    link.download = pdf.split('/').pop() || 'file.pdf'; // fallback
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
-
 
 
   useEffect(() => {
@@ -337,24 +324,27 @@ export default function Products() {
                   >
                     Contact Us
                   </a>
-                  <button
-                    onClick={() => handleDownload(selectedProduct.pdf)}
-                    className="w-full sm:w-auto px-4 py-2 bg-red-600 text-white rounded hover:bg-red-800 text-center flex items-center justify-center gap-2"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="14"
-                      height="14"
-                      viewBox="0 0 14 14"
-                      fill="none"
+                  {selectedProduct.pdf && selectedProduct.name !== "Jose Maria Milled Rice" && selectedProduct.name !== "Jackpot ready" && (
+                    <button
+                      onClick={() => handleDownload(selectedProduct.pdf)}
+                      className="w-full sm:w-auto px-4 py-2 bg-red-600 text-white rounded hover:bg-red-800 text-center flex items-center justify-center gap-2"
                     >
-                      <path
-                        d="M1.4 12.4444H12.6V7H14V13.2222C14 13.6518 13.6866 14 13.3 14H0.7C0.313404 14 0 13.6518 0 13.2222V7H1.4V12.4444ZM8.4 4.66667H11.9L7 10.1111L2.1 4.66667H5.6V0H8.4V4.66667Z"
-                        fill="white"
-                      />
-                    </svg>
-                    Download PDF
-                  </button>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
+                      >
+                        <path
+                          d="M1.4 12.4444H12.6V7H14V13.2222C14 13.6518 13.6866 14 13.3 14H0.7C0.313404 14 0 13.6518 0 13.2222V7H1.4V12.4444ZM8.4 4.66667H11.9L7 10.1111L2.1 4.66667H5.6V0H8.4V4.66667Z"
+                          fill="white"
+                        />
+                      </svg>
+                      Download PDF
+                    </button>
+                  )}
+
 
                 </div>
               </div>

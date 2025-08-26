@@ -164,7 +164,7 @@ export default function About() {
                   <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
                     Fernando B. Malveda
                   </h3>
-                  <p className="text-white text-lg uppercase tracking-wide">
+                  <p className="text-white text-lg tracking-wide">
                     Chairman
                   </p>
                 </div>
@@ -176,7 +176,7 @@ export default function About() {
                       <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
                         Jose Maria Fernando L. Malveda
                       </h4>
-                      <p className="text-white text-base">PRESIDENT</p>
+                      <p className="text-white text-base">President</p>
                     </div>
 
                     {/* Item 2 - Arturo */}

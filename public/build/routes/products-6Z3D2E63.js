@@ -7,7 +7,7 @@ import {
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-FEEY3YGC.js";
+} from "/build/_shared/chunk-65CJFPR6.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -38,7 +38,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\products.tsx"
   );
-  import.meta.hot.lastModified = "1755760073146.2961";
+  import.meta.hot.lastModified = "1756181843181.6443";
 }
 function meta() {
   return [{
@@ -100,23 +100,15 @@ function Products() {
     setIsClient(true);
   }, []);
   const closeModal = () => setSelectedProduct(null);
-  const handleDownload = async (pdf) => {
-    if (!pdf) {
-      setShowError(true);
+  const handleDownload = (pdf) => {
+    if (!pdf)
       return;
-    }
-    try {
-      const res = await fetch(pdf, {
-        method: "HEAD"
-      });
-      if (!res.ok) {
-        setShowError(true);
-        return;
-      }
-      window.location.href = pdf;
-    } catch (error) {
-      setShowError(true);
-    }
+    const link = document.createElement("a");
+    link.href = pdf;
+    link.download = pdf.split("/").pop() || "file.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
   (0, import_react.useEffect)(() => {
     if (!selectedProduct && !showError)
@@ -154,21 +146,21 @@ function Products() {
           ease: "easeOut"
         } }, void 0, false, {
           fileName: "app/routes/products.tsx",
-          lineNumber: 139,
+          lineNumber: 125,
           columnNumber: 24
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 flex flex-col items-center justify-center z-20", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-white text-2xl md:text-4xl font-extrabold uppercase tracking-widest mb-4 h-auto mt-16 md:-mt-26", children: "PRODUCTS" }, void 0, false, {
           fileName: "app/routes/products.tsx",
-          lineNumber: 153,
+          lineNumber: 139,
           columnNumber: 13
         }, this) }, void 0, false, {
           fileName: "app/routes/products.tsx",
-          lineNumber: 152,
+          lineNumber: 138,
           columnNumber: 11
         }, this)
       ] }, void 0, true, {
         fileName: "app/routes/products.tsx",
-        lineNumber: 138,
+        lineNumber: 124,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("section", { className: "relative w-full py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center bg-white justify-center bg-cover bg-center", style: {
@@ -176,58 +168,58 @@ function Products() {
       }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-w-5xl grid grid-cols-1 md:grid-cols-3 gap-8 auto-rows-fr", children: productList.map((product) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex flex-col items-centeR h-full", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full overflow-hidden rounded mb-5", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: product.image, alt: product.name, className: "w-full h-60 object-contain transform transition-transform duration-300 ease-in-out hover:scale-105" }, void 0, false, {
           fileName: "app/routes/products.tsx",
-          lineNumber: 167,
+          lineNumber: 153,
           columnNumber: 21
         }, this) }, void 0, false, {
           fileName: "app/routes/products.tsx",
-          lineNumber: 166,
+          lineNumber: 152,
           columnNumber: 19
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "font-bold text-green-700 text-2xl mb-3 text-center", children: product.name }, void 0, false, {
           fileName: "app/routes/products.tsx",
-          lineNumber: 169,
+          lineNumber: 155,
           columnNumber: 19
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-gray-700 text-base text-center mb-6", children: product.desc }, void 0, false, {
           fileName: "app/routes/products.tsx",
-          lineNumber: 170,
+          lineNumber: 156,
           columnNumber: 19
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "mt-auto w-full flex justify-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: () => setSelectedProduct(product), className: "px-5 py-2.5 bg-[#057A31] text-white text-base rounded hover:bg-green-900 transition", children: "Learn More" }, void 0, false, {
           fileName: "app/routes/products.tsx",
-          lineNumber: 172,
+          lineNumber: 158,
           columnNumber: 21
         }, this) }, void 0, false, {
           fileName: "app/routes/products.tsx",
-          lineNumber: 171,
+          lineNumber: 157,
           columnNumber: 19
         }, this)
       ] }, product.name, true, {
         fileName: "app/routes/products.tsx",
-        lineNumber: 165,
+        lineNumber: 151,
         columnNumber: 43
       }, this)) }, void 0, false, {
         fileName: "app/routes/products.tsx",
-        lineNumber: 164,
+        lineNumber: 150,
         columnNumber: 13
       }, this) }, void 0, false, {
         fileName: "app/routes/products.tsx",
-        lineNumber: 161,
+        lineNumber: 147,
         columnNumber: 11
       }, this) }, void 0, false, {
         fileName: "app/routes/products.tsx",
-        lineNumber: 160,
+        lineNumber: 146,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/products.tsx",
-      lineNumber: 136,
+      lineNumber: 122,
       columnNumber: 7
     }, this),
     selectedProduct && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "fixed inset-0 backdrop-blur-sm bg-black/30 z-40" }, void 0, false, {
         fileName: "app/routes/products.tsx",
-        lineNumber: 185,
+        lineNumber: 171,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "fixed inset-0 z-50 flex items-start justify-center pt-24 md:pt-32 px-4 overflow-auto", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "rounded-lg w-full max-w-6xl bg-cover bg-center flex flex-col md:flex-row overflow-hidden relative bg-white min-h-[400px] md:pr-12", style: {
@@ -237,7 +229,7 @@ function Products() {
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full mb-4", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h3", { className: "mb-2 text-white text-xl sm:text-2xl font-bold text-center", children: selectedProduct.name }, void 0, false, {
               fileName: "app/routes/products.tsx",
-              lineNumber: 197,
+              lineNumber: 183,
               columnNumber: 19
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.img, { src: selectedProduct.image, alt: selectedProduct.name, initial: {
@@ -254,7 +246,7 @@ function Products() {
               ease: "easeOut"
             }, className: "  w-full max-w-[360px]    sm:max-w-[350px]  md:max-w-[400px] lg:max-w-[450px] h-auto object-contain mx-auto rounded" }, void 0, false, {
               fileName: "app/routes/products.tsx",
-              lineNumber: 200,
+              lineNumber: 186,
               columnNumber: 19
             }, this),
             selectedProduct.desc === "Hybrid Rice Seed" && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: " text-white text-center text-sm sm:text-base", children: [
@@ -263,18 +255,18 @@ function Products() {
               ")"
             ] }, void 0, true, {
               fileName: "app/routes/products.tsx",
-              lineNumber: 213,
+              lineNumber: 199,
               columnNumber: 67
             }, this)
           ] }, void 0, true, {
             fileName: "app/routes/products.tsx",
-            lineNumber: 196,
+            lineNumber: 182,
             columnNumber: 17
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "hidden md:block text-center md:text-left text-black text-sm sm:text-base", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "block font-semibold mb-1", children: "For sales inquiries," }, void 0, false, {
               fileName: "app/routes/products.tsx",
-              lineNumber: 220,
+              lineNumber: 206,
               columnNumber: 19
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "leading-relaxed text-sm", children: [
@@ -282,63 +274,63 @@ function Products() {
               " ",
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "tel:(+63) 945 170 9401", className: "text-black text-sm underline hover:underline", children: "(+63) 945 170 9401" }, void 0, false, {
                 fileName: "app/routes/products.tsx",
-                lineNumber: 223,
+                lineNumber: 209,
                 columnNumber: 21
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("br", {}, void 0, false, {
                 fileName: "app/routes/products.tsx",
-                lineNumber: 226,
+                lineNumber: 212,
                 columnNumber: 21
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "https://www.google.com/maps?q=14.330623,121.076050", target: "_blank", rel: "noopener noreferrer", className: "text-black text-sm underline hover:underline inline-flex items-center", children: "Unit A 201 and Alfresco Area 2nd Floor Coral Center Mall Barangay San Francisco, Bi\xF1an Laguna" }, void 0, false, {
                 fileName: "app/routes/products.tsx",
-                lineNumber: 227,
+                lineNumber: 213,
                 columnNumber: 21
               }, this)
             ] }, void 0, true, {
               fileName: "app/routes/products.tsx",
-              lineNumber: 221,
+              lineNumber: 207,
               columnNumber: 19
             }, this)
           ] }, void 0, true, {
             fileName: "app/routes/products.tsx",
-            lineNumber: 219,
+            lineNumber: 205,
             columnNumber: 17
           }, this)
         ] }, void 0, true, {
           fileName: "app/routes/products.tsx",
-          lineNumber: 195,
+          lineNumber: 181,
           columnNumber: 15
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full md:w-1/2 p-4 sm:p-6 flex flex-col justify-center text-white text-sm sm:text-base", children: [
           selectedProduct.details ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "grid grid-cols-2 text-sm border border-white divide-x divide-white divide-y mb-4 items-stretch", children: selectedProduct.details.map(([label, value], idx) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_react2.default.Fragment, { children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "p-3 font-bold whitespace-pre-line flex items-center", children: label }, void 0, false, {
               fileName: "app/routes/products.tsx",
-              lineNumber: 239,
+              lineNumber: 225,
               columnNumber: 25
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "p-3 whitespace-pre-line flex items-center", children: value }, void 0, false, {
               fileName: "app/routes/products.tsx",
-              lineNumber: 242,
+              lineNumber: 228,
               columnNumber: 25
             }, this)
           ] }, idx, true, {
             fileName: "app/routes/products.tsx",
-            lineNumber: 238,
+            lineNumber: 224,
             columnNumber: 75
           }, this)) }, void 0, false, {
             fileName: "app/routes/products.tsx",
-            lineNumber: 237,
+            lineNumber: 223,
             columnNumber: 44
           }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "mb-6 whitespace-pre-line", children: selectedProduct.desc1 || selectedProduct.desc }, void 0, false, {
             fileName: "app/routes/products.tsx",
-            lineNumber: 246,
+            lineNumber: 232,
             columnNumber: 28
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "block md:hidden text-center text-black text-sm sm:text-base mb-6", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "block font-semibold mb-1", children: "For sales inquiries," }, void 0, false, {
               fileName: "app/routes/products.tsx",
-              lineNumber: 251,
+              lineNumber: 237,
               columnNumber: 19
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "leading-relaxed", children: [
@@ -346,119 +338,119 @@ function Products() {
               " ",
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "tel:(+63) 945 170 9401", className: "text-black underline hover:underline", children: "(+63) 945 170 9401" }, void 0, false, {
                 fileName: "app/routes/products.tsx",
-                lineNumber: 254,
+                lineNumber: 240,
                 columnNumber: 21
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("br", {}, void 0, false, {
                 fileName: "app/routes/products.tsx",
-                lineNumber: 257,
+                lineNumber: 243,
                 columnNumber: 21
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "https://www.google.com/maps?q=14.330623,121.076050", target: "_blank", rel: "noopener noreferrer", className: "text-black underline hover:underline inline-flex items-center", children: "Unit A 201 and Alfresco Area 2nd Floor Coral Center Mall Barangay San Francisco, Bi\xF1an Laguna" }, void 0, false, {
                 fileName: "app/routes/products.tsx",
-                lineNumber: 258,
+                lineNumber: 244,
                 columnNumber: 21
               }, this)
             ] }, void 0, true, {
               fileName: "app/routes/products.tsx",
-              lineNumber: 252,
+              lineNumber: 238,
               columnNumber: 19
             }, this)
           ] }, void 0, true, {
             fileName: "app/routes/products.tsx",
-            lineNumber: 250,
+            lineNumber: 236,
             columnNumber: 17
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex flex-col sm:flex-row justify-center items-center gap-3 mt-4", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "/get-involved", className: "w-full sm:w-auto px-4 py-2 bg-green-600 text-white rounded hover:bg-green-900 text-center", children: "Contact Us" }, void 0, false, {
               fileName: "app/routes/products.tsx",
-              lineNumber: 265,
+              lineNumber: 251,
               columnNumber: 19
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: () => handleDownload(selectedProduct.pdf), className: "w-full sm:w-auto px-4 py-2 bg-red-600 text-white rounded hover:bg-red-800 text-center flex items-center justify-center gap-2", children: [
+            selectedProduct.pdf && selectedProduct.name !== "Jose Maria Milled Rice" && selectedProduct.name !== "Jackpot ready" && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: () => handleDownload(selectedProduct.pdf), className: "w-full sm:w-auto px-4 py-2 bg-red-600 text-white rounded hover:bg-red-800 text-center flex items-center justify-center gap-2", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("svg", { xmlns: "http://www.w3.org/2000/svg", width: "14", height: "14", viewBox: "0 0 14 14", fill: "none", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("path", { d: "M1.4 12.4444H12.6V7H14V13.2222C14 13.6518 13.6866 14 13.3 14H0.7C0.313404 14 0 13.6518 0 13.2222V7H1.4V12.4444ZM8.4 4.66667H11.9L7 10.1111L2.1 4.66667H5.6V0H8.4V4.66667Z", fill: "white" }, void 0, false, {
                 fileName: "app/routes/products.tsx",
-                lineNumber: 270,
-                columnNumber: 23
+                lineNumber: 256,
+                columnNumber: 25
               }, this) }, void 0, false, {
                 fileName: "app/routes/products.tsx",
-                lineNumber: 269,
-                columnNumber: 21
+                lineNumber: 255,
+                columnNumber: 23
               }, this),
               "Download PDF"
             ] }, void 0, true, {
               fileName: "app/routes/products.tsx",
-              lineNumber: 268,
-              columnNumber: 19
+              lineNumber: 254,
+              columnNumber: 140
             }, this)
           ] }, void 0, true, {
             fileName: "app/routes/products.tsx",
-            lineNumber: 264,
+            lineNumber: 250,
             columnNumber: 17
           }, this)
         ] }, void 0, true, {
           fileName: "app/routes/products.tsx",
-          lineNumber: 236,
+          lineNumber: 222,
           columnNumber: 15
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: closeModal, className: "absolute top-2 right-6 text-white hover:text-gray-300 text-2xl font-bold", children: "\xD7" }, void 0, false, {
           fileName: "app/routes/products.tsx",
-          lineNumber: 279,
+          lineNumber: 266,
           columnNumber: 15
         }, this)
       ] }, void 0, true, {
         fileName: "app/routes/products.tsx",
-        lineNumber: 190,
+        lineNumber: 176,
         columnNumber: 13
       }, this) }, void 0, false, {
         fileName: "app/routes/products.tsx",
-        lineNumber: 188,
+        lineNumber: 174,
         columnNumber: 11
       }, this),
       showError && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, { children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "fixed inset-0 bg-black/40 backdrop-blur-sm z-[60]", onClick: () => setShowError(false) }, void 0, false, {
           fileName: "app/routes/products.tsx",
-          lineNumber: 286,
+          lineNumber: 273,
           columnNumber: 15
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "fixed inset-0 flex items-center justify-center z-[70]", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "bg-white p-6 rounded-lg shadow-lg max-w-sm w-full text-center relative", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: () => setShowError(false), className: "absolute top-2 right-2 text-gray-600 hover:text-gray-900 text-2xl font-bold", "aria-label": "Close error modal", children: "\xD7" }, void 0, false, {
             fileName: "app/routes/products.tsx",
-            lineNumber: 290,
+            lineNumber: 277,
             columnNumber: 19
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h3", { className: "text-lg font-semibold mb-4 text-red-600", children: "Sorry, this product does not have a PDF available for download." }, void 0, false, {
             fileName: "app/routes/products.tsx",
-            lineNumber: 294,
+            lineNumber: 281,
             columnNumber: 19
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: () => setShowError(false), className: "px-4 py-2 bg-green-600 text-white rounded hover:bg-green-800", children: "OK" }, void 0, false, {
             fileName: "app/routes/products.tsx",
-            lineNumber: 297,
+            lineNumber: 284,
             columnNumber: 19
           }, this)
         ] }, void 0, true, {
           fileName: "app/routes/products.tsx",
-          lineNumber: 288,
+          lineNumber: 275,
           columnNumber: 17
         }, this) }, void 0, false, {
           fileName: "app/routes/products.tsx",
-          lineNumber: 287,
+          lineNumber: 274,
           columnNumber: 15
         }, this)
       ] }, void 0, true, {
         fileName: "app/routes/products.tsx",
-        lineNumber: 285,
+        lineNumber: 272,
         columnNumber: 25
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/products.tsx",
-      lineNumber: 183,
+      lineNumber: 169,
       columnNumber: 27
     }, this)
   ] }, void 0, true, {
     fileName: "app/routes/products.tsx",
-    lineNumber: 134,
+    lineNumber: 120,
     columnNumber: 10
   }, this);
 }
@@ -472,4 +464,4 @@ export {
   Products as default,
   meta
 };
-//# sourceMappingURL=/build/routes/products-4RZCCYG3.js.map
+//# sourceMappingURL=/build/routes/products-6Z3D2E63.js.map

@@ -708,6 +708,9 @@ video {
 .max-w-xs {
   max-width: 20rem;
 }
+.flex-1 {
+  flex: 1 1 0%;
+}
 .flex-shrink-0 {
   flex-shrink: 0;
 }
@@ -945,10 +948,6 @@ video {
 .bg-\[\#2A4127\] {
   --tw-bg-opacity: 1;
   background-color: rgb(42 65 39 / var(--tw-bg-opacity, 1));
-}
-.bg-\[\#3D5B3D\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(61 91 61 / var(--tw-bg-opacity, 1));
 }
 .bg-\[\#E0B100F7\] {
   background-color: #e0b100f7;
@@ -2113,4 +2112,4 @@ body {
     display: flex;
   }
 }
-/*# sourceMappingURL=/build/_assets/tailwind-5HBTB4UB.css.map */
+/*# sourceMappingURL=/build/_assets/tailwind-YIIKB5ZL.css.map */

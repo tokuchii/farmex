@@ -422,7 +422,7 @@ export default function News() {
             {/* Section Header */}
             <div className="mb-12">
               <h2 className="text-[#057A31] text-2xl md:text-3xl lg:text-4xl font-extrabold uppercase tracking-widest mb-4">
-                Customers Feedbacks
+                Customer Testimonials
               </h2>
             </div>
 
@@ -465,12 +465,10 @@ export default function News() {
                   <p className="text-white text-sm sm:text-base">
                     Victoria, Mallig, Isabela Variety planted/used: Jackpot 102
                   </p>
-                </div>
+                </div>  
               </motion.div>
-
-              {/* Right Card - Mr. Edson Del Rosario */}
-              <motion.div
-                className="bg-[#3D5B3D] rounded-xl p-6 sm:p-8 shadow-lg"
+                 <motion.div
+                className="bg-gradient-to-tr from-[#788B5F] to-[#2A4127] rounded-xl p-6 sm:p-8 shadow-lg"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
@@ -504,6 +502,80 @@ export default function News() {
                   </p>
                   <p className="text-white text-sm sm:text-base">
                     Bulo, Tabuk, Kalinga Variety planted/used: LAV 777
+                  </p>
+                </div>
+              </motion.div>
+
+              {/* Right Card - Mr. Edson Del Rosario */}
+              <motion.div
+  className="bg-gradient-to-tr from-[#788B5F] to-[#2A4127] rounded-xl p-6 sm:p-8 shadow-lg flex flex-col justify-between h-full"
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true, amount: 0.2 }}
+  transition={{ duration: 0.5, delay: 0.1 }}
+>
+  {/* Profile Picture */}
+  <div className="flex justify-center mb-6">
+    <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-white shadow-lg">
+      <img
+        src="/edison.png"
+        alt="Mr. Edson Del Rosario"
+        className="w-full h-full object-cover"
+      />
+    </div>
+  </div>
+
+  {/* Testimonial */}
+  <div className="text-justify mb-8 flex-1">
+    <p className="text-white text-sm sm:text-base leading-relaxed">
+      “Sa tayo ng palay ng LAV 777, pwedeng pwedeng irekomenda sa mga magsasaka. Talagang kung ang habol natin ay maparami ang ani para tayo ay makaahon sa gastos, ito ay rekomendado ko. Kitang-kita naman natin, ang daming pumupuri. Maganda, matas, mahaba ang uhay.”
+    </p>
+  </div>
+
+  {/* Customer Info */}
+  <div className="text-center mt-4">
+    <h4 className="text-white font-bold text-lg sm:text-xl mb-1">
+      Mr. Edson Del Rosario
+    </h4>
+    <p className="text-white text-sm sm:text-base">
+      Farmer Calintaan, Occidental Minodoro
+    </p>
+  </div>
+</motion.div>
+
+
+                <motion.div
+              className="bg-gradient-to-tr from-[#788B5F] to-[#2A4127] rounded-xl p-6 sm:p-8 shadow-lg"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                {/* Profile Picture */}
+                <div className="flex justify-center mb-6">
+                  <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                    <img
+                      src="/gina.png"
+                      alt="Mr. Edson Del Rosario"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+
+                {/* Testimonial */}
+                <div className="text-justify mb-8">
+                  <p className="text-white text-sm sm:text-base leading-relaxed">
+                    “Sa Jackpot, nagustuhan yon dahil mataas ang milling recovery, nag-aaverage sya ng almost 67 to 68 (percent), and yung quality ng bigas niya ay buo at malambot. Regular milled pa lang yun. Siguro mas lalong quality pa ang labas ng bigas no’n kapag i-papolish pa yun. Nakasubok na kami makakain ng Jackpot (na binigas). Maganda na ang butil sa Single-pass pa lang. Nagugustuhan ng mga suki ko, laging hinahanap ang Jackpot na bigas. Maganda ang pagkakanin, masarap ang kanin, quality. Nasubukan na namin at kumita na kami ng Malaki.”
+                  </p>
+                </div>
+
+                {/* Customer Info */}
+                <div className="text-center mt-0 md:mt-[87px]">
+                  <h4 className="text-white font-bold text-lg sm:text-xl mb-1">
+                    Gina Gonzalez
+                  </h4>
+                  <p className="text-white text-sm sm:text-base">
+                   Rice trader and Miller, Brgy. Tubuan, Pila, Laguna
                   </p>
                 </div>
               </motion.div>

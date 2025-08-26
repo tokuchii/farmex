@@ -7,7 +7,7 @@ import {
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-FEEY3YGC.js";
+} from "/build/_shared/chunk-65CJFPR6.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -38,7 +38,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\news.tsx"
   );
-  import.meta.hot.lastModified = "1755663487945.0496";
+  import.meta.hot.lastModified = "1756186150107.8025";
 }
 function meta() {
   return [{
@@ -477,7 +477,7 @@ function News() {
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("section", { className: "relative w-full py-16 px-4 sm:px-6 lg:px-8 bg-[url('/newbgfeedback.png')] bg-cover bg-center flex flex-col items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative z-10 w-full max-w-6xl", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "mb-12", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-[#057A31] text-2xl md:text-3xl lg:text-4xl font-extrabold uppercase tracking-widest mb-4", children: "Customers Feedbacks" }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "mb-12", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-[#057A31] text-2xl md:text-3xl lg:text-4xl font-extrabold uppercase tracking-widest mb-4", children: "Customer Testimonials" }, void 0, false, {
         fileName: "app/routes/news.tsx",
         lineNumber: 389,
         columnNumber: 15
@@ -547,7 +547,7 @@ function News() {
           lineNumber: 397,
           columnNumber: 15
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "bg-[#3D5B3D] rounded-xl p-6 sm:p-8 shadow-lg", initial: {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "bg-gradient-to-tr from-[#788B5F] to-[#2A4127] rounded-xl p-6 sm:p-8 shadow-lg", initial: {
           opacity: 0,
           y: 20
         }, whileInView: {
@@ -562,51 +562,163 @@ function News() {
         }, children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex justify-center mb-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-white shadow-lg", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: "/est_image.png", alt: "Mr. Edson Del Rosario", className: "w-full h-full object-cover" }, void 0, false, {
             fileName: "app/routes/news.tsx",
-            lineNumber: 454,
+            lineNumber: 452,
             columnNumber: 21
           }, this) }, void 0, false, {
             fileName: "app/routes/news.tsx",
-            lineNumber: 453,
+            lineNumber: 451,
             columnNumber: 19
           }, this) }, void 0, false, {
             fileName: "app/routes/news.tsx",
-            lineNumber: 452,
+            lineNumber: 450,
             columnNumber: 17
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-justify mb-8", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-sm sm:text-base leading-relaxed", children: "\u201CNoong nagtanim ako ng LAV 777, na-obserbahan ko na maganda at marami ang\xA0 suhi niya at hindi siya prone sa sakit. Nang lumabas ang uhay niya ay mahaba, at siksik ang butil niya. Mataas ang milling recovery, malambot ang kanin at masarap po siya kainin\u201D." }, void 0, false, {
             fileName: "app/routes/news.tsx",
-            lineNumber: 460,
+            lineNumber: 458,
             columnNumber: 19
           }, this) }, void 0, false, {
             fileName: "app/routes/news.tsx",
-            lineNumber: 459,
+            lineNumber: 457,
             columnNumber: 17
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-center mt-0 md:mt-[87px]", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-white font-bold text-lg sm:text-xl mb-1", children: "Melchor Estorga" }, void 0, false, {
               fileName: "app/routes/news.tsx",
-              lineNumber: 467,
+              lineNumber: 465,
               columnNumber: 19
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-sm sm:text-base", children: "Cordillera Administrative Region" }, void 0, false, {
               fileName: "app/routes/news.tsx",
-              lineNumber: 470,
+              lineNumber: 468,
               columnNumber: 19
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-sm sm:text-base", children: "Bulo, Tabuk, Kalinga Variety planted/used: LAV 777" }, void 0, false, {
               fileName: "app/routes/news.tsx",
-              lineNumber: 473,
+              lineNumber: 471,
               columnNumber: 19
             }, this)
           ] }, void 0, true, {
             fileName: "app/routes/news.tsx",
-            lineNumber: 466,
+            lineNumber: 464,
             columnNumber: 17
           }, this)
         ] }, void 0, true, {
           fileName: "app/routes/news.tsx",
-          lineNumber: 438,
+          lineNumber: 436,
+          columnNumber: 18
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "bg-gradient-to-tr from-[#788B5F] to-[#2A4127] rounded-xl p-6 sm:p-8 shadow-lg flex flex-col justify-between h-full", initial: {
+          opacity: 0,
+          y: 20
+        }, whileInView: {
+          opacity: 1,
+          y: 0
+        }, viewport: {
+          once: true,
+          amount: 0.2
+        }, transition: {
+          duration: 0.5,
+          delay: 0.1
+        }, children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex justify-center mb-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-white shadow-lg", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: "/edison.png", alt: "Mr. Edson Del Rosario", className: "w-full h-full object-cover" }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 494,
+            columnNumber: 7
+          }, this) }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 493,
+            columnNumber: 5
+          }, this) }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 492,
+            columnNumber: 3
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-justify mb-8 flex-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-sm sm:text-base leading-relaxed", children: "\u201CSa tayo ng palay ng LAV 777, pwedeng pwedeng irekomenda sa mga magsasaka. Talagang kung ang habol natin ay maparami ang ani para tayo ay makaahon sa gastos, ito ay rekomendado ko. Kitang-kita naman natin, ang daming pumupuri. Maganda, matas, mahaba ang uhay.\u201D" }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 500,
+            columnNumber: 5
+          }, this) }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 499,
+            columnNumber: 3
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-center mt-4", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-white font-bold text-lg sm:text-xl mb-1", children: "Mr. Edson Del Rosario" }, void 0, false, {
+              fileName: "app/routes/news.tsx",
+              lineNumber: 507,
+              columnNumber: 5
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-sm sm:text-base", children: "Farmer Calintaan, Occidental Minodoro" }, void 0, false, {
+              fileName: "app/routes/news.tsx",
+              lineNumber: 510,
+              columnNumber: 5
+            }, this)
+          ] }, void 0, true, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 506,
+            columnNumber: 3
+          }, this)
+        ] }, void 0, true, {
+          fileName: "app/routes/news.tsx",
+          lineNumber: 478,
           columnNumber: 15
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "bg-gradient-to-tr from-[#788B5F] to-[#2A4127] rounded-xl p-6 sm:p-8 shadow-lg", initial: {
+          opacity: 0,
+          y: 20
+        }, whileInView: {
+          opacity: 1,
+          y: 0
+        }, viewport: {
+          once: true,
+          amount: 0.2
+        }, transition: {
+          duration: 0.5,
+          delay: 0.1
+        }, children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex justify-center mb-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-white shadow-lg", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: "/gina.png", alt: "Mr. Edson Del Rosario", className: "w-full h-full object-cover" }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 533,
+            columnNumber: 21
+          }, this) }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 532,
+            columnNumber: 19
+          }, this) }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 531,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-justify mb-8", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-sm sm:text-base leading-relaxed", children: "\u201CSa Jackpot, nagustuhan yon dahil mataas ang milling recovery, nag-aaverage sya ng almost 67 to 68 (percent), and yung quality ng bigas niya ay buo at malambot. Regular milled pa lang yun. Siguro mas lalong quality pa ang labas ng bigas no\u2019n kapag i-papolish pa yun. Nakasubok na kami makakain ng Jackpot (na binigas). Maganda na ang butil sa Single-pass pa lang. Nagugustuhan ng mga suki ko, laging hinahanap ang Jackpot na bigas. Maganda ang pagkakanin, masarap ang kanin, quality. Nasubukan na namin at kumita na kami ng Malaki.\u201D" }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 539,
+            columnNumber: 19
+          }, this) }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 538,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-center mt-0 md:mt-[87px]", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-white font-bold text-lg sm:text-xl mb-1", children: "Gina Gonzalez" }, void 0, false, {
+              fileName: "app/routes/news.tsx",
+              lineNumber: 546,
+              columnNumber: 19
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-sm sm:text-base", children: "Rice trader and Miller, Brgy. Tubuan, Pila, Laguna" }, void 0, false, {
+              fileName: "app/routes/news.tsx",
+              lineNumber: 549,
+              columnNumber: 19
+            }, this)
+          ] }, void 0, true, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 545,
+            columnNumber: 17
+          }, this)
+        ] }, void 0, true, {
+          fileName: "app/routes/news.tsx",
+          lineNumber: 517,
+          columnNumber: 17
         }, this)
       ] }, void 0, true, {
         fileName: "app/routes/news.tsx",
@@ -644,4 +756,4 @@ export {
   News as default,
   meta
 };
-//# sourceMappingURL=/build/routes/news-NXM6JOZE.js.map
+//# sourceMappingURL=/build/routes/news-F6ONYVIK.js.map

@@ -7,7 +7,7 @@ import {
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-FEEY3YGC.js";
+} from "/build/_shared/chunk-65CJFPR6.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -37,7 +37,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\about.tsx"
   );
-  import.meta.hot.lastModified = "1755512339963.4697";
+  import.meta.hot.lastModified = "1756181930326.6555";
 }
 function meta() {
   return [{
@@ -283,7 +283,7 @@ function About() {
               lineNumber: 171,
               columnNumber: 19
             }, this),
-            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-lg uppercase tracking-wide", children: "Chairman" }, void 0, false, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-lg tracking-wide", children: "Chairman" }, void 0, false, {
               fileName: "app/routes/about.tsx",
               lineNumber: 174,
               columnNumber: 19
@@ -300,7 +300,7 @@ function About() {
                 lineNumber: 183,
                 columnNumber: 23
               }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "PRESIDENT" }, void 0, false, {
+              /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-base", children: "President" }, void 0, false, {
                 fileName: "app/routes/about.tsx",
                 lineNumber: 186,
                 columnNumber: 23
@@ -470,4 +470,4 @@ export {
   About as default,
   meta
 };
-//# sourceMappingURL=/build/routes/about-Q4Q5EFUU.js.map
+//# sourceMappingURL=/build/routes/about-ARPN4Y73.js.map

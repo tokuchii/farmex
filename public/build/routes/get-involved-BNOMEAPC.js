@@ -8,7 +8,7 @@ import {
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-FEEY3YGC.js";
+} from "/build/_shared/chunk-65CJFPR6.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -282,7 +282,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\get-involved.tsx"
   );
-  import.meta.hot.lastModified = "1755761481274.5527";
+  import.meta.hot.lastModified = "1756185148197.3398";
 }
 function meta() {
   return [{
@@ -707,4 +707,4 @@ export {
   GetInvolved as default,
   meta
 };
-//# sourceMappingURL=/build/routes/get-involved-XAV4YXAS.js.map
+//# sourceMappingURL=/build/routes/get-involved-BNOMEAPC.js.map
