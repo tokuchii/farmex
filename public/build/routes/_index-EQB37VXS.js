@@ -7,7 +7,7 @@ import {
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-65CJFPR6.js";
+} from "/build/_shared/chunk-FEEY3YGC.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -37,7 +37,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\_index.tsx"
   );
-  import.meta.hot.lastModified = "1756181227930.8086";
+  import.meta.hot.lastModified = "1755746600696.1946";
 }
 var meta = () => [{
   title: "Farmex Corporation"
@@ -307,4 +307,4 @@ export {
   Home as default,
   meta
 };
-//# sourceMappingURL=/build/routes/_index-JDWZEG3T.js.map
+//# sourceMappingURL=/build/routes/_index-EQB37VXS.js.map

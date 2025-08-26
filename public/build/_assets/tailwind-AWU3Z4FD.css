@@ -612,6 +612,9 @@ video {
 .h-full {
   height: 100%;
 }
+.h-5 {
+  height: 1.25rem;
+}
 .max-h-\[35vh\] {
   max-height: 35vh;
 }
@@ -671,6 +674,9 @@ video {
 }
 .w-full {
   width: 100%;
+}
+.w-5 {
+  width: 1.25rem;
 }
 .max-w-4xl {
   max-width: 56rem;
@@ -747,6 +753,14 @@ video {
 }
 .transform {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skew(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin {
+  animation: spin 1s linear infinite;
 }
 .cursor-zoom-in {
   cursor: zoom-in;
@@ -1320,6 +1334,12 @@ video {
 }
 .opacity-100 {
   opacity: 1;
+}
+.opacity-25 {
+  opacity: .25;
+}
+.opacity-75 {
+  opacity: .75;
 }
 .shadow {
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1);
@@ -2112,4 +2132,4 @@ body {
     display: flex;
   }
 }
-/*# sourceMappingURL=/build/_assets/tailwind-YIIKB5ZL.css.map */
+/*# sourceMappingURL=/build/_assets/tailwind-OFV735GX.css.map */

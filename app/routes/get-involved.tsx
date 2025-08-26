@@ -83,10 +83,10 @@ export default function GetInvolved() {
 
     try {
       await emailjs.send(
-        "service_hce3n1d",
-        "template_l1ny1ph",
+        "service_p1oxbrg",
+        "template_0s54upq",
         templateParams,
-        "GhCOaNaQzdYhDBH2G"
+        "KlmaVtugUAM18mELR"
       );
 
       setModalMessage("Your message has been sent successfully!");
@@ -145,13 +145,13 @@ export default function GetInvolved() {
             {/* Row 1: Mascot (left) + Form (right) inside green background */}
             <div className="bg-[url('/bgmascot-form_get-involved.png')] bg-cover bg-center rounded-xl p-6 md:p-10 shadow-xl">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-              {/* Left: Mascot/Image */}
+                {/* Left: Mascot/Image */}
                 <div className="flex flex-col items-center justify-center">
                   <img src="/pandoybg1.png" alt="Mascot" className="w-[350px] h-auto" />
                   <div className="h-1 bg-yellow-500 w-3/4 md:w-2/3 mt-4" />
                 </div>
 
-              {/* Right: Form */}
+                {/* Right: Form */}
                 <div className="flex items-start justify-center">
                   <div className="w-full max-w-lg">
                     <h3 className="text-white text-3xl font-semibold mb-4">Sent us a message</h3>
@@ -159,53 +159,75 @@ export default function GetInvolved() {
                       onSubmit={handleSubmit}
                       className="bg-white text-gray-800 p-6 rounded-lg w-full shadow-lg border border-gray-200"
                     >
-                    <div className="mb-4">
-                      <input
-                        type="text"
-                        name="name"
-                        placeholder="Name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 rounded text-gray-700 bg-white border border-gray-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:outline-none mb-4"
-                        required
-                      />
+                      <div className="mb-4">
+                        <input
+                          type="text"
+                          name="name"
+                          placeholder="Name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 rounded text-gray-700 bg-white border border-gray-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:outline-none mb-4"
+                          required
+                        />
 
-                      <input
-                        type="email"
-                        name="email"
-                        placeholder="Email Address"
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 rounded text-gray-700 bg-white border border-gray-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:outline-none mb-4"
-                        required
-                      />
+                        <input
+                          type="email"
+                          name="email"
+                          placeholder="Email Address"
+                          value={formData.email}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 rounded text-gray-700 bg-white border border-gray-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:outline-none mb-4"
+                          required
+                        />
 
-                      <input
-                        type="text"
-                        name="contact"
-                        placeholder="Contact Number"
-                        value={formData.contact}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 rounded text-gray-700 bg-white border border-gray-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:outline-none mb-4"
-                        required
-                      />
+                        <input
+                          type="text"
+                          name="contact"
+                          placeholder="Contact Number"
+                          value={formData.contact}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 rounded text-gray-700 bg-white border border-gray-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:outline-none mb-4"
+                          required
+                        />
 
-                      <textarea
-                        name="message"
-                        rows={6}
-                        placeholder="Your Message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 rounded text-gray-700 bg-white border border-gray-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:outline-none mb-4 resize-none"
-                        required
-                      ></textarea>
+                        <textarea
+                          name="message"
+                          rows={6}
+                          placeholder="Your Message"
+                          value={formData.message}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 rounded text-gray-700 bg-white border border-gray-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:outline-none mb-4 resize-none"
+                          required
+                        ></textarea>
                       </div>
                       <div className="flex justify-end">
                         <button
                           type="submit"
-                          className="bg-[#00703C] text-white px-4 py-2 rounded hover:bg-green-700 disabled:opacity-60"
+                          className="flex items-center gap-2 bg-[#00703C] text-white px-4 py-2 rounded hover:bg-green-700 disabled:opacity-60"
                           disabled={isSending}
                         >
+                          {isSending && (
+                            <svg
+                              className="animate-spin h-5 w-5 text-white"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                            >
+                              <circle
+                                className="opacity-25"
+                                cx="12"
+                                cy="12"
+                                r="10"
+                                stroke="currentColor"
+                                strokeWidth="4"
+                              />
+                              <path
+                                className="opacity-75"
+                                fill="currentColor"
+                                d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                              />
+                            </svg>
+                          )}
                           {isSending ? "Submitting..." : "Submit Form"}
                         </button>
                       </div>
@@ -263,9 +285,9 @@ export default function GetInvolved() {
                   </p>
                 </div>
 
-                {/* Station Address */}
+                {/* Office Address */}
                 <div>
-                  <h3 className="font-bold text-lg sm:text-xl mb-1">Station Address:</h3>
+                  <h3 className="font-bold text-lg sm:text-xl mb-1">Office Address:</h3>
                   <p className="break-words">
                     <a
                       href="https://maps.app.goo.gl/sjpAiD1d1ciTcU9n7"
@@ -276,15 +298,15 @@ export default function GetInvolved() {
                       Farmex Corporation KM 70 National Highway, Brgy. Bangyas, Calauan, Laguna
                     </a>
                     <p className="break-words mt-4">
-                    <a
-                      href="https://maps.app.goo.gl/wiCDvstV13xTotCq7"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline text-black hover:text-green-600"
-                    >
-                      Unit A 201 and Alfresco Area 2nd Floor Coral Center Mall Barangay San Francisco, Biñan Laguna
-                    </a>
-                  </p>
+                      <a
+                        href="https://maps.app.goo.gl/wiCDvstV13xTotCq7"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline text-black hover:text-green-600"
+                      >
+                        Unit A 201 and Alfresco Area 2nd Floor Coral Center Mall Barangay San Francisco, Biñan Laguna
+                      </a>
+                    </p>
                   </p>
                 </div>
               </div>
