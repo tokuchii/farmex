@@ -1030,6 +1030,12 @@ video {
 .bg-opacity-80 {
   --tw-bg-opacity: .8;
 }
+.bg-opacity-75 {
+  --tw-bg-opacity: .75;
+}
+.bg-opacity-85 {
+  --tw-bg-opacity: .85;
+}
 .bg-\[url\(\'\/bgmachinerentals\.jpg\'\)\] {
   background-image: url(/bgmachinerentals.jpg);
 }
@@ -2185,4 +2191,4 @@ body {
     display: flex;
   }
 }
-/*# sourceMappingURL=/build/_assets/tailwind-CX4VYITP.css.map */
+/*# sourceMappingURL=/build/_assets/tailwind-I4GDCTBY.css.map */

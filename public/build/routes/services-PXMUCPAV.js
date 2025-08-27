@@ -43,7 +43,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\services.tsx"
   );
-  import.meta.hot.lastModified = "1756264704604.623";
+  import.meta.hot.lastModified = "1756266107821.0962";
 }
 var meta = () => [{
   title: "Services"
@@ -403,7 +403,7 @@ function Services() {
         lineNumber: 226,
         columnNumber: 26
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 bg-green-600 bg-opacity-50" }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 bg-green-600 bg-opacity-80" }, void 0, false, {
         fileName: "app/routes/services.tsx",
         lineNumber: 239,
         columnNumber: 13
@@ -538,4 +538,4 @@ export {
   Services as default,
   meta
 };
-//# sourceMappingURL=/build/routes/services-A6HLAJ23.js.map
+//# sourceMappingURL=/build/routes/services-PXMUCPAV.js.map
