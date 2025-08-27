@@ -83,10 +83,10 @@ Through this event, LAV’s presence left a lasting impression on festival-goers
     description: "The Rice Advocacy Inc. (RiceBoard) has elected its new set of officers for 2025–2026",
     image: "/news4.png",
     author: "",
-    content2: "(from left to right: Bonn August Decena (Atlas Fertilizer Corp.), Prashant Dargani (Bioseed Research), Joseph Fajardo (TAO Seeds), Recher Ondap (Bayer CropScience, former RB President), Ivy Escobin (ProAgri Seed Corporation), Ruby Eduarte (Syngenta Phils), Jojo Alejar (Farmex Corporation), Anthony Tan (New Hope Corporation) and Dr. Narciso Intal (Inavet Nutrition Technologies Inc.)",
+    content2: "(from left to right: Bonn August Decena (Atlas Fertilizer Corp.), Devadatta Sirdeshpande (Bioseed Research), Joseph Fajardo (TAO Seeds), Recher Ondap (Bayer CropScience, former RB President), Ivy Escobin (ProAgri Seed Corporation), Ruby Eduarte (Syngenta Phils), Jojo Alejar (Farmex Corporation), Anthony Tan (New Hope Corporation) and Dr. Narciso Intal (Inavet Nutrition Technologies Inc.)",
     content: `The Rice Advocacy Inc. (RiceBoard) has elected its new set of officers for 2025–2026 on April 11, 2025, marking a new chapter in its ongoing mission to uplift the Philippine rice industry.
 
-Arturo “Jojo” A. Alejar, Jr. of Farmex Corporation (formerly Leads Agriventures) was elected as President, with Anthony Tan of New Hope as Vice President, Ruby Eduarte of Syngenta as Secretary, Ivy Escobin of PASCO as Treasurer, and Bonn August Decena of Atlas, Prashant Dargani of Bioseed and Joseph Fajardo of TAO Seeds as Auditors.
+Arturo “Jojo” A. Alejar, Jr. of Farmex Corporation (formerly Leads Agriventures) was elected as President, with Anthony Tan of New Hope as Vice President, Ruby Eduarte of Syngenta as Secretary, Ivy Escobin of PASCO as Treasurer, and Bonn August Decena of Atlas, Devadatta Sirdeshpande of Bioseed and Joseph Fajardo of TAO Seeds as Auditors.
 
 The RiceBoard is a key organization that plays a critical role in representing seed companies and input providers committed to advancing rice productivity in the Philippines.
 
