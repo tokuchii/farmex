@@ -32,7 +32,7 @@ export default function KnowledgeTransfer() {
       {activeSection === 'lav' && (
         <section id="lav-station">
           {/* Hero Section */}
-          <motion.div className="relative w-full h-[400px] sm:h-[400px] md:h-[600px] lg:h-[500px] overflow-hidden">
+          <motion.div className="relative w-full h-[520px] sm:h-[520px] md:h-[600px] lg:h-[600px] overflow-hidden">
             {isClient && (
               <motion.img
                 src="/LAV-station 1.png"
@@ -52,9 +52,12 @@ export default function KnowledgeTransfer() {
               </h2>
               
               {/* Description */}
-              <div className="text-white text-[12px] md:text-lg lg:text-xl leading-relaxed max-w-4xl mb-4 md:mb-8 text-center">
+              <div className="text-white text-[10px] md:text-base lg:text-lg leading-relaxed max-w-6xl mb-4 md:mb-8 text-justify">
                 <p className="mb-4">
-                  Situated on a 6.6 hectare agricultural land in Calauan, Laguna, the LAV Station aims to lead, integrate, and deliver R&D solutions to meet farmer demands. As Leads’ primary Research Center, the station is the venue for in-house trials that consequently give innovations in rice farming production. Additionally, the site is where we provide trainings to farmers, agriculture students, extension workers and agri enthusiasts.
+                  Situated on a 6.6-hectare agricultural land in Calauan, Laguna, the LAV Station serves as the heart of Farmex Corporation’s research and development efforts. As the Leads Group’s primary research center, it is where we conduct in-house trials that pave the way for innovations in rice farming. It also serves as a learning hub, hosting training programs for farmers, agriculture students, extension workers, and enthusiasts who share our passion for advancing agriculture.
+                </p>
+                <p>
+                  Though Farmex Corporation is now our name, we proudly retain the name ‘LAV Station’ in honor of our beginnings as Leads Agriventures Corporation (LAV). This name embodies the dedication and perseverance of the people who worked tirelessly in the early years to establish our seed business. Today, it stands as a symbol of how far we have come and a reminder of our continuing commitment to deliver sustainable solutions that help farmers thrive.
                 </p>
               </div>
               

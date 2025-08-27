@@ -213,16 +213,19 @@ export default function Services() {
               />
             )}
             <div className="absolute inset-0 bg-green-600 bg-opacity-50"></div>
-            <div className="absolute inset-0 flex flex-col items-center justify-center z-20 px-4 md:px-8 py-4 pt-24 md:pt-12">
+            <div className="absolute inset-0 flex flex-col items-center justify-center z-20 px-4 md:px-8 py-4 pt-24 md:pt-24">
               {/* Title */}
-              <h2 className="text-white text-3xl md:text-6xl lg:text-7xl font-extrabold uppercase tracking-widest mb-2 md:mb-4 text-center">
-                COMING SOON
+              <h2 className="text-white text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-widest mb-8 md:mb-12 text-center">
+                Trainings
               </h2>
 
               {/* Description */}
-              <div className="text-white text-2xl md:text-3xl lg:text-4xl font-bold leading-relaxed max-w-4xl mb-4 md:mb-8 text-center">
+              <div className="text-white text-[12px] md:text-lg lg:text-xl leading-relaxed max-w-6xl mb-4 md:mb-8 text-justify">
                 <p className="mb-4">
-                  Big learning ahead — stay tuned.
+                  Farmex Corporation is proud to be recognized as a Learning Site for Agriculture (LSA). Since the 2nd quarter of 2025, we have been hosting training programs in partnership with the Agricultural Training Institute (ATI)-CALABARZON. Beyond these collaborations, our LAV Station also opens its doors to schools, farmer clusters, and other organizations seeking practical, science-based learning experiences in agriculture.
+                </p>
+                <p>
+                  As an LSA, we remain committed to helping Filipino farmers and agri-stakeholders across crop industries by providing relevant knowledge, field-based demonstrations, and hands-on training. We believe that continuous education not only improves productivity but also inspires the next generation to pursue and sustain the future of agriculture.
                 </p>
               </div>
             </div>
