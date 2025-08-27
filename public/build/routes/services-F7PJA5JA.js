@@ -43,7 +43,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\services.tsx"
   );
-  import.meta.hot.lastModified = "1756266107821.0962";
+  import.meta.hot.lastModified = "1756266383946.299";
 }
 var meta = () => [{
   title: "Services"
@@ -414,7 +414,7 @@ function Services() {
           lineNumber: 242,
           columnNumber: 15
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-white text-[12px] md:text-lg lg:text-xl leading-relaxed max-w-6xl mb-4 md:mb-8 text-justify", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-white text-[12px] md:text-lg lg:text-xl font-semibold leading-relaxed max-w-6xl mb-4 md:mb-8 text-justify", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "mb-4", children: "Farmex Corporation is proud to be recognized as a Learning Site for Agriculture (LSA). Since the 2nd quarter of 2025, we have been hosting training programs in partnership with the Agricultural Training Institute (ATI)-CALABARZON. Beyond these collaborations, our LAV Station also opens its doors to schools, farmer clusters, and other organizations seeking practical, science-based learning experiences in agriculture." }, void 0, false, {
             fileName: "app/routes/services.tsx",
             lineNumber: 248,
@@ -538,4 +538,4 @@ export {
   Services as default,
   meta
 };
-//# sourceMappingURL=/build/routes/services-PXMUCPAV.js.map
+//# sourceMappingURL=/build/routes/services-F7PJA5JA.js.map

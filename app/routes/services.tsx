@@ -220,7 +220,7 @@ export default function Services() {
               </h2>
 
               {/* Description */}
-              <div className="text-white text-[12px] md:text-lg lg:text-xl leading-relaxed max-w-6xl mb-4 md:mb-8 text-justify">
+              <div className="text-white text-[12px] md:text-lg lg:text-xl font-semibold leading-relaxed max-w-6xl mb-4 md:mb-8 text-justify">
                 <p className="mb-4">
                   Farmex Corporation is proud to be recognized as a Learning Site for Agriculture (LSA). Since the 2nd quarter of 2025, we have been hosting training programs in partnership with the Agricultural Training Institute (ATI)-CALABARZON. Beyond these collaborations, our LAV Station also opens its doors to schools, farmer clusters, and other organizations seeking practical, science-based learning experiences in agriculture.
                 </p>
