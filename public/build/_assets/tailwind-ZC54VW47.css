@@ -606,6 +606,9 @@ video {
 .h-\[480px\] {
   height: 480px;
 }
+.h-\[520px\] {
+  height: 520px;
+}
 .h-\[600px\] {
   height: 600px;
 }
@@ -614,12 +617,6 @@ video {
 }
 .h-full {
   height: 100%;
-}
-.h-\[500px\] {
-  height: 500px;
-}
-.h-\[520px\] {
-  height: 520px;
 }
 .max-h-\[35vh\] {
   max-height: 35vh;
@@ -720,9 +717,6 @@ video {
 .max-w-xs {
   max-width: 20rem;
 }
-.max-w-2xl {
-  max-width: 42rem;
-}
 .flex-1 {
   flex: 1 1 0%;
 }
@@ -774,9 +768,6 @@ video {
 .cursor-zoom-in {
   cursor: zoom-in;
 }
-.resize-none {
-  resize: none;
-}
 .resize {
   resize: both;
 }
@@ -800,9 +791,6 @@ video {
 }
 .items-stretch {
   align-items: stretch;
-}
-.justify-start {
-  justify-content: flex-start;
 }
 .justify-end {
   justify-content: flex-end;
@@ -1030,12 +1018,6 @@ video {
 .bg-opacity-80 {
   --tw-bg-opacity: .8;
 }
-.bg-opacity-75 {
-  --tw-bg-opacity: .75;
-}
-.bg-opacity-85 {
-  --tw-bg-opacity: .85;
-}
 .bg-\[url\(\'\/bgmachinerentals\.jpg\'\)\] {
   background-image: url(/bgmachinerentals.jpg);
 }
@@ -1200,12 +1182,6 @@ video {
 .pt-8 {
   padding-top: 2rem;
 }
-.pt-32 {
-  padding-top: 8rem;
-}
-.pt-36 {
-  padding-top: 9rem;
-}
 .text-left {
   text-align: left;
 }
@@ -1217,9 +1193,6 @@ video {
 }
 .text-justify {
   text-align: justify;
-}
-.indent-12 {
-  text-indent: 3rem;
 }
 .text-2xl {
   font-size: 1.5rem;
@@ -1346,12 +1319,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-.text-\[px\] {
-  color: px;
-}
-.text-\[\] {
-  color:;
 }
 .underline {
   text-decoration-line: underline;
@@ -1702,14 +1669,11 @@ body {
   .sm\:h-\[400px\] {
     height: 400px;
   }
-  .sm\:h-\[600px\] {
-    height: 600px;
-  }
-  .sm\:h-\[500px\] {
-    height: 500px;
-  }
   .sm\:h-\[520px\] {
     height: 520px;
+  }
+  .sm\:h-\[600px\] {
+    height: 600px;
   }
   .sm\:w-2\/3 {
     width: 66.666667%;
@@ -1842,8 +1806,8 @@ body {
   .md\:-mt-2 {
     margin-top: -.5rem;
   }
-  .md\:mb-4 {
-    margin-bottom: 1rem;
+  .md\:mb-12 {
+    margin-bottom: 3rem;
   }
   .md\:mb-6 {
     margin-bottom: 1.5rem;
@@ -1859,9 +1823,6 @@ body {
   }
   .md\:mt-\[87px\] {
     margin-top: 87px;
-  }
-  .md\:mb-12 {
-    margin-bottom: 3rem;
   }
   .md\:block {
     display: block;
@@ -1991,20 +1952,17 @@ body {
   .md\:pt-20 {
     padding-top: 5rem;
   }
+  .md\:pt-24 {
+    padding-top: 6rem;
+  }
   .md\:pt-32 {
     padding-top: 8rem;
   }
   .md\:pt-6 {
     padding-top: 1.5rem;
   }
-  .md\:pt-24 {
-    padding-top: 6rem;
-  }
   .md\:text-left {
     text-align: left;
-  }
-  .md\:indent-28 {
-    text-indent: 7rem;
   }
   .md\:text-2xl {
     font-size: 1.5rem;
@@ -2020,10 +1978,6 @@ body {
   }
   .md\:text-5xl {
     font-size: 3rem;
-    line-height: 1;
-  }
-  .md\:text-6xl {
-    font-size: 3.75rem;
     line-height: 1;
   }
   .md\:text-base {
@@ -2055,14 +2009,14 @@ body {
   .lg\:h-\[500px\] {
     height: 500px;
   }
+  .lg\:h-\[600px\] {
+    height: 600px;
+  }
   .lg\:h-\[800px\] {
     height: 800px;
   }
   .lg\:h-\[911px\] {
     height: 911px;
-  }
-  .lg\:h-\[600px\] {
-    height: 600px;
   }
   .lg\:w-1\/3 {
     width: 33.333333%;
@@ -2128,8 +2082,8 @@ body {
     font-size: 3rem;
     line-height: 1;
   }
-  .lg\:text-7xl {
-    font-size: 4.5rem;
+  .lg\:text-6xl {
+    font-size: 3.75rem;
     line-height: 1;
   }
   .lg\:text-lg {
@@ -2139,23 +2093,6 @@ body {
   .lg\:text-xl {
     font-size: 1.25rem;
     line-height: 1.75rem;
-  }
-  .lg\:text-6xl {
-    font-size: 3.75rem;
-    line-height: 1;
-  }
-  .lg\:text-3xl {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-  }
-  .lg\:text-\[24px\] {
-    font-size: 24px;
-  }
-  .lg\:text-\[\] {
-    color:;
-  }
-  .lg\:text-\[24\] {
-    color: 24;
   }
 }
 @media (min-width: 1280px) {
@@ -2191,4 +2128,4 @@ body {
     display: flex;
   }
 }
-/*# sourceMappingURL=/build/_assets/tailwind-I4GDCTBY.css.map */
+/*# sourceMappingURL=/build/_assets/tailwind-OT5CGXR7.css.map */

@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+import LazyLoadImagePkg from "react-lazy-load-image-component";
+const { LazyLoadImage } = LazyLoadImagePkg;
+
 
 export function meta() {
   return [{ title: "News" }];
@@ -216,6 +219,16 @@ function SliderModal({
     else next();
   };
 
+
+  const [isMobile, setIsMobile] = useState(false);
+
+useEffect(() => {
+  const handleResize = () => setIsMobile(window.innerWidth < 768);
+  handleResize();
+  window.addEventListener("resize", handleResize);
+  return () => window.removeEventListener("resize", handleResize);
+}, []);
+
   return (
     <div className="fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center px-4" onClick={onClose}>
       <div
@@ -247,16 +260,16 @@ function SliderModal({
             </button>
 
           )}
-          {window.innerWidth < 768 ? (
+          {isMobile ? (
             <a href={images[index].src} target="_blank" rel="noopener noreferrer">
-              <img
+              <LazyLoadImage
                 src={images[index].src}
                 alt={images[index].alt}
                 className="max-h-[35vh] md:max-h-[60vh] object-contain rounded-md border-4 border-green-700 cursor-zoom-in"
               />
             </a>
           ) : (
-            <img
+            <LazyLoadImage
               src={images[index].src}
               alt={images[index].alt}
               className="max-h-[35vh] md:max-h-[60vh] object-contain rounded-md border-4 border-green-700"
@@ -325,13 +338,10 @@ export default function News() {
       {/* Background Image */}
       <div className="relative min-h-screen w-full">
         {isClient && (
-          <motion.img
+          <LazyLoadImage
             src="/bgnews.png"
             alt="News Background"
             className="absolute inset-0 w-full h-full object-cover z-0"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
           />
         )}
 
@@ -360,7 +370,7 @@ export default function News() {
                   className="shadow-md flex flex-col overflow-hidden h-[480px]"
                 >
                   {/* Image */}
-                  <img
+                  <LazyLoadImage
                     src={item.image}
                     alt={item.title}
                     className="w-full h-[180px] object-cover"
@@ -439,7 +449,7 @@ export default function News() {
                 {/* Profile Picture */}
                 <div className="flex justify-center mb-6">
                   <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-white shadow-lg">
-                    <img
+                    <LazyLoadImage
                       src="/gab_image.png"
                       alt="Gina Gonzalez"
                       className="w-full h-full object-cover"
@@ -477,7 +487,7 @@ export default function News() {
                 {/* Profile Picture */}
                 <div className="flex justify-center mb-6">
                   <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-white shadow-lg">
-                    <img
+                    <LazyLoadImage
                       src="/est_image.png"
                       alt="Mr. Edson Del Rosario"
                       className="w-full h-full object-cover"
@@ -517,7 +527,7 @@ export default function News() {
   {/* Profile Picture */}
   <div className="flex justify-center mb-6">
     <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-white shadow-lg">
-      <img
+      <LazyLoadImage
         src="/edison.png"
         alt="Mr. Edson Del Rosario"
         className="w-full h-full object-cover"
@@ -554,7 +564,7 @@ export default function News() {
                 {/* Profile Picture */}
                 <div className="flex justify-center mb-6">
                   <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-white shadow-lg">
-                    <img
+                    <LazyLoadImage
                       src="/gina.png"
                       alt="Mr. Edson Del Rosario"
                       className="w-full h-full object-cover"

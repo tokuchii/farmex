@@ -7,7 +7,7 @@ import {
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-FEEY3YGC.js";
+} from "/build/_shared/chunk-65CJFPR6.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -37,7 +37,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\about.tsx"
   );
-  import.meta.hot.lastModified = "1756187377031.7922";
+  import.meta.hot.lastModified = "1756345620076.5989";
 }
 function meta() {
   return [{
@@ -255,18 +255,18 @@ function About() {
           lineNumber: 147,
           columnNumber: 15
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-white text-base md:text-lg leading-relaxed mb-16 space-y-6", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "indent-12 md:indent-28 text-justify", children: "The leadership team of Farmex Corporation comprises dedicated and forward-thinking individuals committed to empowering Filipino rice farmers through innovation and comprehensive agricultural support." }, void 0, false, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-white text-center text-base md:text-lg leading-relaxed mb-16 space-y-6", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { children: "The leadership team of Farmex Corporation comprises dedicated and forward-thinking individuals committed to empowering Filipino rice farmers through innovation and comprehensive agricultural support." }, void 0, false, {
             fileName: "app/routes/about.tsx",
             lineNumber: 156,
             columnNumber: 17
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "indent-12 md:indent-28 text-justify", children: "Guided by the mission to deliver comprehensive technologies and services across the rice production cycle, the team oversees initiatives that include the continuous testing of high-yielding, locally adaptable rice seed varieties under Farmex Corporation." }, void 0, false, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { children: "Guided by the mission to deliver comprehensive technologies and services across the rice production cycle, the team oversees initiatives that include the continuous testing of high-yielding, locally adaptable rice seed varieties under Farmex Corporation." }, void 0, false, {
             fileName: "app/routes/about.tsx",
             lineNumber: 159,
             columnNumber: 17
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "indent-12 md:indent-28 text-justify", children: "Their leadership ensures that farmers receive end-to-end assistance\u2014from land preparation to harvest\u2014through technical consultations, machinery rentals, production training, and field demonstrations, driving sustainable growth and productivity in the local rice industry." }, void 0, false, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { children: "Their leadership ensures that farmers receive end-to-end assistance\u2014from land preparation to harvest\u2014through technical consultations, machinery rentals, production training, and field demonstrations, driving sustainable growth and productivity in the local rice industry." }, void 0, false, {
             fileName: "app/routes/about.tsx",
             lineNumber: 162,
             columnNumber: 17
@@ -470,4 +470,4 @@ export {
   About as default,
   meta
 };
-//# sourceMappingURL=/build/routes/about-ZOBXLMSX.js.map
+//# sourceMappingURL=/build/routes/about-HS4DKNGV.js.map

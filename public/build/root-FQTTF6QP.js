@@ -6,7 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
   useLocation
-} from "/build/_shared/chunk-25UY2YLG.js";
+} from "/build/_shared/chunk-ADWLACKH.js";
 import "/build/_shared/chunk-PLT55Z5M.js";
 import {
   AnimatePresence,
@@ -18,7 +18,7 @@ import {
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-FEEY3YGC.js";
+} from "/build/_shared/chunk-65CJFPR6.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -28,7 +28,7 @@ import {
 } from "/build/_shared/chunk-PZDJHGND.js";
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-Y3JARPMO.css";
+var tailwind_default = "/build/_assets/tailwind-ZC54VW47.css";
 
 // app/components/Navbar.tsx
 var import_react = __toESM(require_react(), 1);
@@ -51,7 +51,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\Navbar.tsx"
   );
-  import.meta.hot.lastModified = "1754630065222.8594";
+  import.meta.hot.lastModified = "1756279500451.1987";
 }
 function Navbar() {
   _s();
@@ -525,7 +525,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\Footer.tsx"
   );
-  import.meta.hot.lastModified = "1755750224319.3855";
+  import.meta.hot.lastModified = "1756279500450.691";
 }
 function Footer() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("footer", { className: "bg-white relative", children: [
@@ -684,9 +684,24 @@ function Layout({
         lineNumber: 51,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Links, {}, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("link", { rel: "preload", as: "image", href: "/bgnews.png" }, void 0, false, {
         fileName: "app/root.tsx",
         lineNumber: 52,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("link", { rel: "preload", as: "image", href: "/newbgevents.png" }, void 0, false, {
+        fileName: "app/root.tsx",
+        lineNumber: 53,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("link", { rel: "preload", as: "image", href: "/productbg1.png" }, void 0, false, {
+        fileName: "app/root.tsx",
+        lineNumber: 54,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Links, {}, void 0, false, {
+        fileName: "app/root.tsx",
+        lineNumber: 55,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
@@ -698,17 +713,17 @@ function Layout({
       children,
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(ScrollRestoration, {}, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 56,
+        lineNumber: 59,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Scripts, {}, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 57,
+        lineNumber: 60,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/root.tsx",
-      lineNumber: 54,
+      lineNumber: 57,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
@@ -737,7 +752,7 @@ function App() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_jsx_dev_runtime3.Fragment, { children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Navbar, {}, void 0, false, {
       fileName: "app/root.tsx",
-      lineNumber: 81,
+      lineNumber: 84,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(AnimatePresence, { mode: "wait", onExitComplete: () => {
@@ -758,25 +773,25 @@ function App() {
       ease: "easeInOut"
     }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Outlet, {}, void 0, false, {
       fileName: "app/root.tsx",
-      lineNumber: 102,
+      lineNumber: 105,
       columnNumber: 13
     }, this) }, pendingLocation.pathname, false, {
       fileName: "app/root.tsx",
-      lineNumber: 91,
+      lineNumber: 94,
       columnNumber: 24
     }, this) }, void 0, false, {
       fileName: "app/root.tsx",
-      lineNumber: 82,
+      lineNumber: 85,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Footer, {}, void 0, false, {
       fileName: "app/root.tsx",
-      lineNumber: 105,
+      lineNumber: 108,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/root.tsx",
-    lineNumber: 80,
+    lineNumber: 83,
     columnNumber: 10
   }, this);
 }
@@ -795,4 +810,4 @@ export {
   App as default,
   links
 };
-//# sourceMappingURL=/build/root-WLNWQ5KU.js.map
+//# sourceMappingURL=/build/root-FQTTF6QP.js.map
