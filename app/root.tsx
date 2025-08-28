@@ -11,12 +11,11 @@ import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import styles from "./tailwind.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { AnimatePresence, motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: styles },
-  { rel: "icon", href: "/group30.png" }, 
+  { rel: "icon", href: "/group30.png" },
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
     rel: "preconnect",
@@ -52,43 +51,16 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
 export default function App() {
   const location = useLocation();
-  const [showOutlet, setShowOutlet] = useState(true);
-  const [pendingLocation, setPendingLocation] = useState(location);
 
-  // Scroll to top on initial mount (refresh)
-  React.useEffect(() => {
+  // Scroll to top on page change
+  useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
-  }, []);
-
-  React.useEffect(() => {
-    if (location !== pendingLocation) {
-      setShowOutlet(false); // start fade out
-    }
-  }, [location, pendingLocation]);
+  }, [location]);
 
   return (
     <>
       <Navbar />
-      <AnimatePresence
-        mode="wait"
-        onExitComplete={() => {
-          window.scrollTo({ top: 0, behavior: "auto" }); // scroll after fade out
-          setPendingLocation(location); // update pending location
-          setShowOutlet(true); // fade in new page
-        }}
-      >
-        {showOutlet && (
-          <motion.div
-            key={pendingLocation.pathname}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.15, ease: "easeInOut" }}
-          >
-            <Outlet />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <Outlet />
       <Footer />
     </>
   );

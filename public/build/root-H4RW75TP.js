@@ -9,11 +9,6 @@ import {
 } from "/build/_shared/chunk-ADWLACKH.js";
 import "/build/_shared/chunk-PLT55Z5M.js";
 import {
-  AnimatePresence,
-  motion
-} from "/build/_shared/chunk-ZJN32EVK.js";
-import "/build/_shared/chunk-Y6RJRNBS.js";
-import {
   require_jsx_dev_runtime
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
@@ -671,64 +666,64 @@ function Layout({
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("head", { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("meta", { charSet: "utf-8" }, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 49,
+        lineNumber: 48,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("meta", { name: "viewport", content: "width=device-width, initial-scale=1" }, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 50,
+        lineNumber: 49,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Meta, {}, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 51,
+        lineNumber: 50,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("link", { rel: "preload", as: "image", href: "/bgnews.png" }, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 52,
+        lineNumber: 51,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("link", { rel: "preload", as: "image", href: "/newbgevents.png" }, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 53,
+        lineNumber: 52,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("link", { rel: "preload", as: "image", href: "/productbg1.png" }, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 54,
+        lineNumber: 53,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Links, {}, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 55,
+        lineNumber: 54,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/root.tsx",
-      lineNumber: 48,
+      lineNumber: 47,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("body", { children: [
       children,
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(ScrollRestoration, {}, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 59,
+        lineNumber: 58,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Scripts, {}, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 60,
+        lineNumber: 59,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/root.tsx",
-      lineNumber: 57,
+      lineNumber: 56,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/root.tsx",
-    lineNumber: 47,
+    lineNumber: 46,
     columnNumber: 10
   }, this);
 }
@@ -736,66 +731,35 @@ _c3 = Layout;
 function App() {
   _s2();
   const location = useLocation();
-  const [showOutlet, setShowOutlet] = (0, import_react6.useState)(true);
-  const [pendingLocation, setPendingLocation] = (0, import_react6.useState)(location);
-  import_react6.default.useEffect(() => {
+  (0, import_react6.useEffect)(() => {
     window.scrollTo({
       top: 0,
       behavior: "auto"
     });
-  }, []);
-  import_react6.default.useEffect(() => {
-    if (location !== pendingLocation) {
-      setShowOutlet(false);
-    }
-  }, [location, pendingLocation]);
+  }, [location]);
   return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_jsx_dev_runtime3.Fragment, { children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Navbar, {}, void 0, false, {
       fileName: "app/root.tsx",
-      lineNumber: 84,
+      lineNumber: 76,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(AnimatePresence, { mode: "wait", onExitComplete: () => {
-      window.scrollTo({
-        top: 0,
-        behavior: "auto"
-      });
-      setPendingLocation(location);
-      setShowOutlet(true);
-    }, children: showOutlet && /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(motion.div, { initial: {
-      opacity: 0
-    }, animate: {
-      opacity: 1
-    }, exit: {
-      opacity: 0
-    }, transition: {
-      duration: 0.15,
-      ease: "easeInOut"
-    }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Outlet, {}, void 0, false, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Outlet, {}, void 0, false, {
       fileName: "app/root.tsx",
-      lineNumber: 105,
-      columnNumber: 13
-    }, this) }, pendingLocation.pathname, false, {
-      fileName: "app/root.tsx",
-      lineNumber: 94,
-      columnNumber: 24
-    }, this) }, void 0, false, {
-      fileName: "app/root.tsx",
-      lineNumber: 85,
+      lineNumber: 77,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Footer, {}, void 0, false, {
       fileName: "app/root.tsx",
-      lineNumber: 108,
+      lineNumber: 78,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/root.tsx",
-    lineNumber: 83,
+    lineNumber: 75,
     columnNumber: 10
   }, this);
 }
-_s2(App, "z6IPi/IEGFwY13xjDXxNO1cODDE=", false, function() {
+_s2(App, "BXcZrDMM76mmm4zA8/QV5UbMNXE=", false, function() {
   return [useLocation];
 });
 _c22 = App;
@@ -810,4 +774,4 @@ export {
   App as default,
   links
 };
-//# sourceMappingURL=/build/root-FQTTF6QP.js.map
+//# sourceMappingURL=/build/root-H4RW75TP.js.map
