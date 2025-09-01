@@ -1,7 +1,7 @@
 import {
   Link,
   useLocation
-} from "/build/_shared/chunk-ADWLACKH.js";
+} from "/build/_shared/chunk-25UY2YLG.js";
 import "/build/_shared/chunk-PLT55Z5M.js";
 import {
   motion
@@ -12,7 +12,7 @@ import {
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-65CJFPR6.js";
+} from "/build/_shared/chunk-FEEY3YGC.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -43,7 +43,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\services.tsx"
   );
-  import.meta.hot.lastModified = "1756279500454.8098";
+  import.meta.hot.lastModified = "1756700409023.767";
 }
 var meta = () => [{
   title: "Services"
@@ -311,8 +311,8 @@ function Services() {
       columnNumber: 39
     }, this),
     activeSection === "consultation" && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(import_jsx_dev_runtime.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "relative w-full h-[360px] sm:h-[400px] md:h-[600px] lg:h-[500px] overflow-hidden flex items-center justify-center", children: [
-        isClient && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.img, { src: "/technicalconcultant.png", alt: "Technical Consultation Hero", className: "w-full h-full object-cover object-top pt-20", initial: {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "relative w-full h-[400px] sm:h-[400px] md:h-[600px] lg:h-[550px] overflow-hidden flex items-center justify-center", children: [
+        isClient && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.img, { src: "/bgricederbies_copy.jpg", alt: "Technical Consultation Hero", className: "w-full h-full object-cover object-top pt-20", initial: {
           opacity: 0,
           y: 40
         }, whileInView: {
@@ -347,7 +347,7 @@ function Services() {
             lineNumber: 201,
             columnNumber: 15
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-[10px] md:text-xl leading-relaxed max-w-4xl text-center mb-4 md:mb-8", children: "Farmex's commitment to the rice farming communities does not end in providing quality hybrid rice seeds but extends its hands to those who are in need of free technical consultations. From farmers to agriculture students, Farmex technical team is always ready to share their expertise and strategy on rice farming production and technologies. Regular technical trainings are done to further equip and update our Seed Production Specialists on the latest technologies and having them share new learnings to our farmers." }, void 0, false, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-[10px] md:text-xl leading-relaxed max-w-6xl text-center mb-4 md:mb-8", children: "Farmex's commitment to the rice farming communities does not end in providing quality hybrid rice seeds but extends its hands to those who are in need of free technical consultations. From farmers to agriculture students, Farmex technical team is always ready to share their expertise and strategy on rice farming production and technologies. Regular technical trainings are done to further equip and update our Seed Production Specialists on the latest technologies and having them share new learnings to our farmers." }, void 0, false, {
             fileName: "app/routes/services.tsx",
             lineNumber: 204,
             columnNumber: 15
@@ -494,7 +494,7 @@ function TechnicalConsultationSlider() {
         lineNumber: 305,
         columnNumber: 9
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: images[index].src, alt: images[index].alt, className: "w-full max-w-[260px] sm:max-w-md md:max-w-lg lg:max-w-2xl \r\n                   h-56 sm:h-80 md:h-[350px] lg:h-[450px] \r\n                   object-cover rounded-lg mx-1 sm:mx-4 border-2 border-gray-200 bg-white" }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: images[index].src, alt: images[index].alt, className: "w-full max-w-[260px] sm:max-w-md md:max-w-lg lg:max-w-4xl \r\n                   h-56 sm:h-80 md:h-[350px] lg:h-[550px] \r\n                   object-cover rounded-lg mx-1 sm:mx-4 border-2 border-gray-200 bg-white" }, void 0, false, {
         fileName: "app/routes/services.tsx",
         lineNumber: 311,
         columnNumber: 9
@@ -538,4 +538,4 @@ export {
   Services as default,
   meta
 };
-//# sourceMappingURL=/build/routes/services-7GWF6XHX.js.map
+//# sourceMappingURL=/build/routes/services-COTRDUF5.js.map

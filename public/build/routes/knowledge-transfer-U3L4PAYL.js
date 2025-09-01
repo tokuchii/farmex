@@ -1,6 +1,6 @@
 import {
   Link
-} from "/build/_shared/chunk-ADWLACKH.js";
+} from "/build/_shared/chunk-25UY2YLG.js";
 import "/build/_shared/chunk-PLT55Z5M.js";
 import {
   motion
@@ -11,7 +11,7 @@ import {
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-65CJFPR6.js";
+} from "/build/_shared/chunk-FEEY3YGC.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -43,7 +43,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\knowledge-transfer.tsx"
   );
-  import.meta.hot.lastModified = "1756279500454.2727";
+  import.meta.hot.lastModified = "1756698126113.4949";
 }
 var meta = () => [{
   title: "Knowledge Transfer"
@@ -171,7 +171,7 @@ function KnowledgeTransfer() {
     }, this),
     activeSection === "rice" && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("section", { id: "rice-derbies", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "relative w-full h-[400px] sm:h-[400px] md:h-[600px] lg:h-[500px] overflow-hidden", children: [
-        isClient && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.img, { src: "/bgricederbies.jpg", alt: "Rice Derbies Background", className: "w-full h-full object-cover object-top", initial: {
+        isClient && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.img, { src: "/Jackpot102.jpg", alt: "Rice Derbies Background", className: "w-full h-full object-cover object-top", initial: {
           opacity: 0,
           y: 40
         }, whileInView: {
@@ -468,4 +468,4 @@ export {
   KnowledgeTransfer as default,
   meta
 };
-//# sourceMappingURL=/build/routes/knowledge-transfer-WTMHADMV.js.map
+//# sourceMappingURL=/build/routes/knowledge-transfer-U3L4PAYL.js.map

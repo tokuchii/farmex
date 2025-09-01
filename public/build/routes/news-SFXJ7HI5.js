@@ -7,7 +7,7 @@ import {
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-65CJFPR6.js";
+} from "/build/_shared/chunk-FEEY3YGC.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -896,7 +896,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\news.tsx"
   );
-  import.meta.hot.lastModified = "1756346453210.15";
+  import.meta.hot.lastModified = "1756698004223.1802";
 }
 var {
   LazyLoadImage
@@ -1617,4 +1617,4 @@ export {
   News as default,
   meta
 };
-//# sourceMappingURL=/build/routes/news-SSIKW2YP.js.map
+//# sourceMappingURL=/build/routes/news-SFXJ7HI5.js.map

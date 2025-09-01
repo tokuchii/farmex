@@ -160,10 +160,10 @@ export default function Services() {
       {activeSection === 'consultation' && (
         <>
           {/* Hero Section for Technical Consultation */}
-          <motion.div className="relative w-full h-[360px] sm:h-[400px] md:h-[600px] lg:h-[500px] overflow-hidden flex items-center justify-center">
+          <motion.div className="relative w-full h-[400px] sm:h-[400px] md:h-[600px] lg:h-[550px] overflow-hidden flex items-center justify-center">
             {isClient && (
               <motion.img
-                src="/technicalconcultant.png"
+                src="/bgricederbies_copy.jpg"
                 alt="Technical Consultation Hero"
                 className="w-full h-full object-cover object-top pt-20"
                 initial={{ opacity: 0, y: 40 }}
@@ -177,7 +177,7 @@ export default function Services() {
               <h2 className="text-white text-center text-2xl md:text-4xl font-extrabold uppercase tracking-widest mb-2 md:mb-6">
                 TECHNICAL<span className="block md:inline"> CONSULTATION</span>
               </h2>
-              <p className="text-white text-[10px] md:text-xl leading-relaxed max-w-4xl text-center mb-4 md:mb-8">
+              <p className="text-white text-[10px] md:text-xl leading-relaxed max-w-6xl text-center mb-4 md:mb-8">
                 Farmex's commitment to the rice farming communities does not end in providing quality hybrid rice seeds but extends its hands to those who are in need of free technical consultations. From farmers to agriculture students, Farmex technical team is always ready to share their expertise and strategy on rice farming production and technologies. Regular technical trainings are done to further equip and update our Seed Production Specialists on the latest technologies and having them share new learnings to our farmers.
               </p>
               <Link to="/get-involved" className="bg-[#E0B100F7] text-white px-2 md:px-8 py-1 md:py-3 rounded-lg font-bold hover:bg-[#E0B100F7] transition-colors duration-300 inline-block">
@@ -296,8 +296,8 @@ function TechnicalConsultationSlider() {
         <img
           src={images[index].src}
           alt={images[index].alt}
-          className="w-full max-w-[260px] sm:max-w-md md:max-w-lg lg:max-w-2xl 
-                   h-56 sm:h-80 md:h-[350px] lg:h-[450px] 
+          className="w-full max-w-[260px] sm:max-w-md md:max-w-lg lg:max-w-4xl 
+                   h-56 sm:h-80 md:h-[350px] lg:h-[550px] 
                    object-cover rounded-lg mx-1 sm:mx-4 border-2 border-gray-200 bg-white"
         />
 

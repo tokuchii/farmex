@@ -102,7 +102,7 @@ export default function KnowledgeTransfer() {
           <motion.div className="relative w-full h-[400px] sm:h-[400px] md:h-[600px] lg:h-[500px] overflow-hidden">
             {isClient && (
               <motion.img
-                src="/bgricederbies.jpg"
+                src="/Jackpot102.jpg"
                 alt="Rice Derbies Background"
                 className="w-full h-full object-cover object-top"
                 initial={{ opacity: 0, y: 40 }}

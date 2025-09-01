@@ -6,14 +6,14 @@ import {
   Scripts,
   ScrollRestoration,
   useLocation
-} from "/build/_shared/chunk-ADWLACKH.js";
+} from "/build/_shared/chunk-25UY2YLG.js";
 import "/build/_shared/chunk-PLT55Z5M.js";
 import {
   require_jsx_dev_runtime
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-65CJFPR6.js";
+} from "/build/_shared/chunk-FEEY3YGC.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -23,7 +23,7 @@ import {
 } from "/build/_shared/chunk-PZDJHGND.js";
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-ZC54VW47.css";
+var tailwind_default = "/build/_assets/tailwind-FDOATD76.css";
 
 // app/components/Navbar.tsx
 var import_react = __toESM(require_react(), 1);
@@ -46,7 +46,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\Navbar.tsx"
   );
-  import.meta.hot.lastModified = "1756279500451.1987";
+  import.meta.hot.lastModified = "1754630065222.8594";
 }
 function Navbar() {
   _s();
@@ -520,7 +520,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\Footer.tsx"
   );
-  import.meta.hot.lastModified = "1756279500450.691";
+  import.meta.hot.lastModified = "1755750224319.3855";
 }
 function Footer() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("footer", { className: "bg-white relative", children: [
@@ -774,4 +774,4 @@ export {
   App as default,
   links
 };
-//# sourceMappingURL=/build/root-H4RW75TP.js.map
+//# sourceMappingURL=/build/root-SLNBF6CS.js.map
