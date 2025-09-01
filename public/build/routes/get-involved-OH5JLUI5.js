@@ -282,7 +282,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\get-involved.tsx"
   );
-  import.meta.hot.lastModified = "1756698004223.1802";
+  import.meta.hot.lastModified = "1756734056975.4058";
 }
 function meta() {
   return [{
@@ -406,7 +406,7 @@ function GetInvolved() {
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("section", { className: "w-full min-h-screen pt-8 pb-16 px-4 sm:px-8 bg-[url('/newbgmachinerental.png')] bg-cover bg-center flex flex-col items-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-w-7xl space-y-12", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "bg-[url('/bgmascot-form_get-involved.png')] bg-cover bg-center rounded-xl p-6 md:p-10 shadow-xl", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8 items-start", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex flex-col items-center", children: [
-          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: "/pandoybg1.png", alt: "Mascot", className: "w-[350px] h-auto" }, void 0, false, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: "/pandoybg3_new.png", alt: "Mascot", className: "w-[350px] h-auto" }, void 0, false, {
             fileName: "app/routes/get-involved.tsx",
             lineNumber: 133,
             columnNumber: 17
@@ -702,4 +702,4 @@ export {
   GetInvolved as default,
   meta
 };
-//# sourceMappingURL=/build/routes/get-involved-BJHWXNGN.js.map
+//# sourceMappingURL=/build/routes/get-involved-OH5JLUI5.js.map
