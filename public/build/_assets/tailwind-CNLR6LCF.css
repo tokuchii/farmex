@@ -2018,6 +2018,9 @@ body {
   .lg\:h-\[911px\] {
     height: 911px;
   }
+  .lg\:h-\[550px\] {
+    height: 550px;
+  }
   .lg\:w-1\/3 {
     width: 33.333333%;
   }
@@ -2128,4 +2131,4 @@ body {
     display: flex;
   }
 }
-/*# sourceMappingURL=/build/_assets/tailwind-OT5CGXR7.css.map */
+/*# sourceMappingURL=/build/_assets/tailwind-RJKKA6SR.css.map */

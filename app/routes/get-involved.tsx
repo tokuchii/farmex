@@ -125,7 +125,7 @@ export default function GetInvolved() {
           <div className="bg-[url('/bgmascot-form_get-involved.png')] bg-cover bg-center rounded-xl p-6 md:p-10 shadow-xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
               <div className="flex flex-col items-center">
-                <img src="/pandoybg1.png" alt="Mascot" className="w-[350px] h-auto" />
+                <img src="/pandoybg3_new.png" alt="Mascot" className="w-[350px] h-auto" />
                 <div className="h-1 bg-yellow-500 w-3/4 md:w-2/3 mt-4" />
               </div>
 
