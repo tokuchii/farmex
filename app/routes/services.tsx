@@ -2,6 +2,21 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "@remix-run/react";
 import type { MetaFunction } from "@remix-run/node";
+import Calendar from 'react-calendar';
+import calendarStyles from "../styles/calendar.css?url";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "~/components/ui/dialog";
+const { LazyLoadImage } = LazyLoadImagePkg;
+import LazyLoadImagePkg from "react-lazy-load-image-component";
+
+
+export const links = () => [
+  { rel: "stylesheet", href: calendarStyles },
+];
 
 export const meta: MetaFunction = () => [
   { title: "Services" },
@@ -29,6 +44,53 @@ export default function Services() {
       setActiveSection('rentals');
     }
   }, [location.hash]);
+
+
+  const [tooltip, setTooltip] = useState({ visible: false, text: "", x: 0, y: 0 });
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const trainingRanges: { start: string; end: string; title: string }[] = [
+    { start: "2025-06-23", end: "2025-06-27", title: "🌱 Building Stronger Rice Communities: Advancing Knowledge in Farm Machinaries Operations and Maintenance" },
+    { start: "2025-06-30", end: "2025-07-02", title: "🌱 Building Stronger Rice Communities: Advancing Knowledge in Farm Machinaries Operations and Maintenance" },
+    { start: "2025-07-10", end: "2025-07-11", title: "🎓 1 day Field demo and 1 day graduation only" },
+    { start: "2025-07-21", end: "2025-07-25", title: "🌱 Building Stronger Rice Communities: Advancing Knowledge in Farm Machinaries Operations and Maintenance" },
+    { start: "2025-08-04", end: "2025-08-08", title: "🌱 Building Stronger Rice Communities: Advancing Knowledge in Farm Machinaries Operations and Maintenance" },
+  ];
+
+  // Helper to check if a date is in range
+  const isDateInRange = (date: Date, start: string, end: string) => {
+    const d = date.setHours(0, 0, 0, 0);
+    const s = new Date(start).setHours(0, 0, 0, 0);
+    const e = new Date(end).setHours(0, 0, 0, 0);
+    return d >= s && d <= e;
+  };
+
+  // Example at the top of your component
+  const images: { src: string; alt: string }[] = [
+    { src: "/training1.jpg", alt: "Training 1" },
+    { src: "/training2.jpg", alt: "Training 2" },
+    { src: "/training4.jpg", alt: "Training 4" },
+    { src: "/training5.jpg", alt: "Training 5" },
+    { src: "/training6.jpg", alt: "Training 6" },
+    { src: "/training7.jpg", alt: "Training 7" },
+    { src: "/training8.jpg", alt: "Training 8" },
+  ];
+
+
+  const [index, setIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 4000); // 4 seconds
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="bg-white w-full min-h-screen relative">
@@ -230,6 +292,140 @@ export default function Services() {
               </div>
             </div>
           </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 md:px-8 py-12 items-stretch">
+            {/* Left: Image Carousel as a Card */}
+            <div className="w-full order-2 lg:order-1">
+              <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] rounded-2xl shadow-lg overflow-hidden flex items-center justify-center bg-white/20 backdrop-blur-sm">
+                {images.map((img, i) => (
+                  <div
+                    key={i}
+                    className={`
+          absolute inset-0 flex items-center justify-center
+          transition-opacity duration-1000 ease-out
+          ${i === index ? "opacity-100 z-10" : "opacity-0 z-0"}
+        `}
+                  >
+                    {isMobile ? (
+                      <a href={img.src} target="_blank" rel="noopener noreferrer" className="w-full h-full">
+                        <LazyLoadImage
+                          src={img.src}
+                          alt={img.alt}
+                          className="w-full h-full object-cover rounded-2xl cursor-zoom-in"
+                        />
+                      </a>
+                    ) : (
+                      <LazyLoadImage
+                        src={img.src}
+                        alt={img.alt}
+                        className="w-full h-full object-cover rounded-2xl"
+                      />
+                    )}
+                  </div>
+                ))}
+
+                {/* Image counter */}
+                {images.length > 1 && (
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm bg-black/40 px-3 py-1 rounded">
+                    {index + 1} / {images.length}
+                  </div>
+                )}
+              </div>
+            </div>
+
+
+
+
+
+            {/* Right: Calendar */}
+            <div className="w-full order-1 lg:order-2">
+              <div className="bg-white rounded-2xl shadow-lg p-4 w-full flex flex-col h-[400px] md:h-[500px] lg:h-[600px] sticky top-24">
+                <h3 className="text-xl font-bold mb-4 text-center text-green-700">
+                  Training Schedule
+                </h3>
+                <div className="flex justify-center flex-1 overflow-auto">
+                  {isClient && (
+                    <>
+                      <Calendar
+                        className="w-full border border-gray-600 rounded-lg"
+                        onClickDay={(date) => {
+                          setSelectedDate(date);
+                          setIsOpen(true);
+                        }}
+                        tileClassName={({ date, view }) => {
+                          if (view !== "month") return "";
+
+                          // Check if date is in any training range
+                          for (let range of trainingRanges) {
+                            if (isDateInRange(date, range.start, range.end)) {
+                              return "!bg-green-300 !rounded-lg"; // highlight the tile
+                            }
+                          }
+
+                          return "";
+                        }}
+                        tileContent={({ date, view }) => {
+                          if (view !== "month") return null;
+
+                          const range = trainingRanges.find((r) => isDateInRange(date, r.start, r.end));
+                          if (!range) return null;
+
+                          // optional invisible div to handle tooltip
+                          return (
+                            <div
+                              className="absolute inset-0 pointer-events-auto"
+                              onMouseEnter={(e) =>
+                                setTooltip({ visible: true, text: range.title, x: e.clientX, y: e.clientY })
+                              }
+                              onMouseMove={(e) =>
+                                setTooltip((prev) => ({ ...prev, x: e.clientX, y: e.clientY }))
+                              }
+                              onMouseLeave={() => setTooltip({ visible: false, text: "", x: 0, y: 0 })}
+                            />
+                          );
+                        }}
+                      />
+
+                      {/* Tooltip */}
+                      {tooltip.visible && (
+                        <div
+                          className="fixed bg-gray-800 text-white text-xs px-2 py-1 rounded shadow-lg pointer-events-none z-50"
+                          style={{ top: tooltip.y + 10, left: tooltip.x + 10 }}
+                        >
+                          {tooltip.text}
+                        </div>
+                      )}
+                      {/* Modal */}
+                      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+                        <DialogContent>
+                          <DialogHeader>
+                            <DialogTitle className="text-center font-semibold">
+                              {(() => {
+                                if (!selectedDate) return "";
+                                const range = trainingRanges.find((r) => isDateInRange(selectedDate, r.start, r.end));
+                                return range
+                                  ? `${new Date(range.start).toDateString()} - ${new Date(range.end).toDateString()}`
+                                  : selectedDate.toDateString();
+                              })()}
+                            </DialogTitle>
+                          </DialogHeader>
+                          <p className="text-gray-200">
+                            {selectedDate
+                              ? trainingRanges.find((r) => isDateInRange(selectedDate, r.start, r.end))?.title ||
+                              "No training scheduled for this date."
+                              : ""}
+                          </p>
+                        </DialogContent>
+                      </Dialog>
+
+                    </>
+                  )}
+
+
+                </div>
+              </div>
+            </div>
+          </div>
         </>
       )}
     </div>
@@ -316,9 +512,8 @@ function TechnicalConsultationSlider() {
         {images.map((_, i) => (
           <span
             key={i}
-            className={`mx-0.5 sm:mx-1 w-2 h-2 sm:w-3 sm:h-3 rounded-full ${
-              i === index ? "bg-yellow-500" : "bg-gray-300"
-            }`}
+            className={`mx-0.5 sm:mx-1 w-2 h-2 sm:w-3 sm:h-3 rounded-full ${i === index ? "bg-yellow-500" : "bg-gray-300"
+              }`}
             style={{ display: "inline-block" }}
           ></span>
         ))}
