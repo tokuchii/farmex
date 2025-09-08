@@ -81,9 +81,13 @@ export default function Services() {
     { src: "/training8.jpg", alt: "Training 8" },
   ];
 
+  const [showMore, setShowMore] = useState(false);
   const [showAll, setShowAll] = useState(false);
   const [index, setIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
+
+  const firstNineImages = images.slice(0, 9);
+  const remainingImages = images.slice(9);
 
   useEffect(() => {
     setIsMobile(window.innerWidth < 768);
@@ -296,61 +300,76 @@ export default function Services() {
 
           {/* Grid Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 md:px-8 py-12 items-stretch">
-{/* Left: Image Collage */}
-<div className="w-full order-2 lg:order-1">
-  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-    {images.map((img, i) => (
-      <div key={i} className="overflow-hidden rounded-2xl shadow-lg">
-        <button
-          type="button"
-          onClick={() => {
-            setSelectedImage(img); // store clicked image in state
-            setIsImageOpen(true);  // open modal
-          }}
-          className="w-full h-full focus:outline-none"
-        >
-          <LazyLoadImage
-            src={img.src}
-            alt={img.alt}
-            className="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
-          />
-        </button>
-      </div>
-    ))}
-  </div>
+            {/* Left: Image Collage */}
+            <div className="w-full order-2 lg:order-1">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {/* First 9 images */}
+                {images.slice(0, 9).map((img, i) => (
+                  <div key={i} className="overflow-hidden rounded-2xl shadow-lg">
+                    <button
+                      onClick={() => {
+                        setSelectedImage(img);
+                        setIsImageOpen(true);
+                      }}
+                      className="w-full h-full focus:outline-none"
+                    >
+                      <LazyLoadImage
+                        src={img.src}
+                        alt={img.alt}
+                        className="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
+                      />
+                    </button>
+                  </div>
+                ))}
 
-{/* Dialog Modal for Image */}
-{selectedImage && (
-  <Dialog open={isImageOpen} onOpenChange={(open) => setIsImageOpen(open)}>
-    <DialogContent className="max-w-3xl w-full p-0 bg-transparent shadow-none">
-      <img
-        src={selectedImage.src}
-        alt={selectedImage.alt}
-        className="w-full h-full object-contain"
-      />
-    </DialogContent>
-  </Dialog>
-)}
+                {/* Remaining images shown when toggled */}
+                {showMore &&
+                  images.slice(9).map((img, i) => (
+                    <div key={i + 9} className="overflow-hidden rounded-2xl shadow-lg">
+                      <button
+                        onClick={() => {
+                          setSelectedImage(img);
+                          setIsImageOpen(true);
+                        }}
+                        className="w-full h-full focus:outline-none"
+                      >
+                        <LazyLoadImage
+                          src={img.src}
+                          alt={img.alt}
+                          className="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
+                        />
+                      </button>
+                    </div>
+                  ))}
+              </div>
 
-</div>
-
-
-
+              {/* Show More / Show Less button */}
+              {images.length > 9 && (
+                <div className="mt-4 text-center">
+                  <button
+                    onClick={() => setShowMore(!showMore)}
+                    className="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition"
+                  >
+                    {showMore ? "Show Less" : "Show More"}
+                  </button>
+                </div>
+              )}
+            </div>
 
 
             {/* Right: Calendar */}
             <div className="w-full order-1 lg:order-2">
-             <div className="bg-gradient-to-br from-green-300 via-green-200 to-green-300 rounded-2xl shadow-lg p-4 w-full flex flex-col sticky top-24">
-<h3 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-center text-white bg-green-600 bg-opacity-90 rounded-t-2xl py-3 px-6 shadow-lg tracking-wider uppercase animate-fadeIn">
-  Training Schedule
-</h3>
+              <div className="bg-gradient-to-br from-green-300 via-green-200 to-green-300 rounded-2xl shadow-lg p-4 w-full flex flex-col sticky top-24">
+                <h3 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-center text-white bg-green-600 bg-opacity-90 rounded-t-2xl py-3 px-6 shadow-lg tracking-wider uppercase animate-fadeIn">
+                  Training Schedule
+                </h3>
 
                 <div className="flex justify-center flex-1 overflow-auto h-[400px] md:h-[500px] lg:h-[600px]">
                   {isClient && (
                     <>
                       <Calendar
                         key={selectedDate ? selectedDate.toDateString() : "calendar"}
-                       className="w-full border border-gray-600 rounded-b-2xl mb-6"
+                        className="w-full border border-gray-600 rounded-b-2xl mb-6"
                         onClickDay={(date: Date) => {
                           setSelectedDate(date);
                           setIsOpen(true);
@@ -464,8 +483,8 @@ export default function Services() {
                 {isClient && (
                   <div className="mt-6 px-4 md:px-8">
                     <h3 className="text-xl font-bold mb-4 text-center text-green-700 border-b-2 border-green-300 pb-2">
-  Training Events
-</h3>
+                      Training Events
+                    </h3>
 
                     <ul className="flex flex-col gap-3">
                       {trainingRanges

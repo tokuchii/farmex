@@ -1904,6 +1904,10 @@ body {
 .hover\:bg-black\/40:hover {
   background-color: #0006;
 }
+.hover\:bg-gray-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity, 1));
+}
 .hover\:text-\[\#00703C\]:hover {
   --tw-text-opacity: 1;
   color: rgb(0 112 60 / var(--tw-text-opacity, 1));
@@ -2582,4 +2586,4 @@ body {
     display: flex;
   }
 }
-/*# sourceMappingURL=/build/_assets/tailwind-OLLDRKSP.css.map */
+/*# sourceMappingURL=/build/_assets/tailwind-KMT4CGET.css.map */
