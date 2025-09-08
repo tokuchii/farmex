@@ -61,6 +61,7 @@
   color: #fff;
   font-weight: 700;
   box-shadow: 0 2px 6px #00000026;
+  border-radius: .5rem;
 }
 .react-calendar__tile:enabled:hover {
   background: #e5e7eb;
@@ -76,4 +77,18 @@
   position: relative;
   overflow: visible;
 }
-/*# sourceMappingURL=/build/_assets/calendar-4O4VG35Z.css.map */
+.react-calendar__tile.upcoming {
+  background-color: #bfdbfe;
+}
+.react-calendar__tile.ongoing {
+  background-color: #86efac;
+}
+.react-calendar__tile.past {
+  background-color: #f3f4f6;
+}
+.react-calendar__tile.selected {
+  background-color: #16a34a;
+  color: #fff;
+  font-weight: 700;
+}
+/*# sourceMappingURL=/build/_assets/calendar-BUOLF5C6.css.map */

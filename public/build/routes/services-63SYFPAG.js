@@ -1943,7 +1943,10 @@ var Calendar_default = Calendar;
 var dist_default2 = Calendar_default;
 
 // app/styles/calendar.css?url
-var calendar_default = "/build/_assets/calendar-BOJQOHLX.css?url";
+var calendar_default = "/build/_assets/calendar-FMAS2K6P.css?url";
+
+// app/routes/services.tsx
+var import_react_lazy_load_image_component = __toESM(require_build(), 1);
 
 // app/components/ui/dialog.tsx
 var React25 = __toESM(require_react(), 1);
@@ -7283,7 +7286,6 @@ window.$RefreshReg$ = prevRefreshReg;
 window.$RefreshSig$ = prevRefreshSig;
 
 // app/routes/services.tsx
-var import_react_lazy_load_image_component = __toESM(require_build(), 1);
 var import_jsx_dev_runtime2 = __toESM(require_jsx_dev_runtime(), 1);
 if (!window.$RefreshReg$ || !window.$RefreshSig$ || !window.$RefreshRuntime$) {
   console.warn("remix:hmr: React Fast Refresh only works when the Remix compiler is running in development mode.");
@@ -7335,6 +7337,7 @@ function Services() {
       setActiveSection("rentals");
     }
   }, [location.hash]);
+  const [calendarActiveStartDate, setCalendarActiveStartDate] = (0, import_react7.useState)(/* @__PURE__ */ new Date());
   const [tooltip, setTooltip] = (0, import_react7.useState)({
     visible: false,
     text: "",
@@ -7346,23 +7349,23 @@ function Services() {
   const trainingRanges = [{
     start: "2025-06-23",
     end: "2025-06-27",
-    title: "\u{1F331} Building Stronger Rice Communities: Advancing Knowledge in Farm Machinaries Operations and Maintenance"
+    title: '\u{1F331} Batch No. 1 \u2014 "Building Stronger Rice Communities: Advancing Knowledge in Farm Machinaries Operations and Maintenance"'
   }, {
     start: "2025-06-30",
     end: "2025-07-02",
-    title: "\u{1F331} Building Stronger Rice Communities: Advancing Knowledge in Farm Machinaries Operations and Maintenance"
+    title: '\u{1F331} Batch No. 2 \u2014 "Building Stronger Rice Communities: Advancing Knowledge in Farm Machinaries Operations and Maintenance"'
   }, {
     start: "2025-07-10",
     end: "2025-07-11",
-    title: "\u{1F393} 1 day Field demo and 1 day graduation only"
+    title: '\u{1F393} Batch No. 3 \u2014 "1 day Field demo and 1 day graduation only"'
   }, {
     start: "2025-07-21",
     end: "2025-07-25",
-    title: "\u{1F331} Building Stronger Rice Communities: Advancing Knowledge in Farm Machinaries Operations and Maintenance"
+    title: '\u{1F331} Batch No. 4 \u2014 "Building Stronger Rice Communities: Advancing Knowledge in Farm Machinaries Operations and Maintenance"'
   }, {
     start: "2025-08-04",
     end: "2025-08-08",
-    title: "\u{1F331} Building Stronger Rice Communities: Advancing Knowledge in Farm Machinaries Operations and Maintenance"
+    title: '\u{1F331} Batch No. 5 \u2014 "Building Stronger Rice Communities: Advancing Knowledge in Farm Machinaries Operations and Maintenance"'
   }];
   const isDateInRange = (date, start, end) => {
     const d = date.setHours(0, 0, 0, 0);
@@ -7392,6 +7395,7 @@ function Services() {
     src: "/training8.jpg",
     alt: "Training 8"
   }];
+  const [showAll, setShowAll] = (0, import_react7.useState)(false);
   const [index, setIndex] = (0, import_react7.useState)(0);
   const [isMobile, setIsMobile] = (0, import_react7.useState)(false);
   (0, import_react7.useEffect)(() => {
@@ -7747,23 +7751,23 @@ function Services() {
         /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "absolute inset-0 flex flex-col items-center justify-center z-20 px-4 md:px-8 py-4 pt-24 md:pt-24", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("h2", { className: "text-white text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-widest mb-8 md:mb-12 text-center", children: "Trainings" }, void 0, false, {
             fileName: "app/routes/services.tsx",
-            lineNumber: 332,
+            lineNumber: 331,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "text-white text-[12px] md:text-lg lg:text-xl font-semibold leading-relaxed max-w-6xl mb-4 md:mb-8 text-justify", children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "mb-4", children: "Farmex Corporation is proud to be recognized as a Learning Site for Agriculture (LSA). Since the 2nd quarter of 2025, we have been hosting training programs in partnership with the Agricultural Training Institute (ATI)-CALABARZON. Beyond these collaborations, our LAV Station also opens its doors to schools, farmer clusters, and other organizations seeking practical, science-based learning experiences in agriculture." }, void 0, false, {
               fileName: "app/routes/services.tsx",
-              lineNumber: 338,
+              lineNumber: 335,
               columnNumber: 17
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { children: "As an LSA, we remain committed to helping Filipino farmers and agri-stakeholders across crop industries by providing relevant knowledge, field-based demonstrations, and hands-on training. We believe that continuous education not only improves productivity but also inspires the next generation to pursue and sustain the future of agriculture." }, void 0, false, {
               fileName: "app/routes/services.tsx",
-              lineNumber: 341,
+              lineNumber: 338,
               columnNumber: 17
             }, this)
           ] }, void 0, true, {
             fileName: "app/routes/services.tsx",
-            lineNumber: 337,
+            lineNumber: 334,
             columnNumber: 15
           }, this)
         ] }, void 0, true, {
@@ -7777,99 +7781,112 @@ function Services() {
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 md:px-8 py-12 items-stretch", children: [
-        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "w-full order-2 lg:order-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "relative w-full h-[400px] md:h-[500px] lg:h-[600px] rounded-2xl shadow-lg overflow-hidden flex items-center justify-center bg-white/20 backdrop-blur-sm", children: [
-          images.map((img, i) => /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: `
-          absolute inset-0 flex items-center justify-center
-          transition-opacity duration-1000 ease-out
-          ${i === index ? "opacity-100 z-10" : "opacity-0 z-0"}
-        `, children: isMobile ? /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("a", { href: img.src, target: "_blank", rel: "noopener noreferrer", className: "w-full h-full", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(LazyLoadImage, { src: img.src, alt: img.alt, className: "w-full h-full object-cover rounded-2xl cursor-zoom-in" }, void 0, false, {
-            fileName: "app/routes/services.tsx",
-            lineNumber: 359,
-            columnNumber: 25
-          }, this) }, void 0, false, {
-            fileName: "app/routes/services.tsx",
-            lineNumber: 358,
-            columnNumber: 33
-          }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(LazyLoadImage, { src: img.src, alt: img.alt, className: "w-full h-full object-cover rounded-2xl" }, void 0, false, {
-            fileName: "app/routes/services.tsx",
-            lineNumber: 361,
-            columnNumber: 30
-          }, this) }, i, false, {
-            fileName: "app/routes/services.tsx",
-            lineNumber: 352,
-            columnNumber: 41
-          }, this)),
-          images.length > 1 && /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm bg-black/40 px-3 py-1 rounded", children: [
-            index + 1,
-            " / ",
-            images.length
-          ] }, void 0, true, {
-            fileName: "app/routes/services.tsx",
-            lineNumber: 365,
-            columnNumber: 39
-          }, this)
-        ] }, void 0, true, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "w-full order-2 lg:order-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "relative w-full h-[400px] md:h-[500px] lg:h-[600px] rounded-2xl shadow-lg overflow-hidden flex items-center justify-center bg-white/20 backdrop-blur-sm", children: images.map((img, i) => /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: `absolute inset-0 flex items-center justify-center transition-opacity duration-1000 ease-out ${i === index ? "opacity-100 z-10" : "opacity-0 z-0"}`, children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(LazyLoadImage, { src: img.src, alt: img.alt, className: `w-full h-full object-cover rounded-2xl ${isMobile ? "cursor-zoom-in" : ""}` }, void 0, false, {
           fileName: "app/routes/services.tsx",
-          lineNumber: 351,
+          lineNumber: 352,
+          columnNumber: 21
+        }, this) }, i, false, {
+          fileName: "app/routes/services.tsx",
+          lineNumber: 350,
+          columnNumber: 41
+        }, this)) }, void 0, false, {
+          fileName: "app/routes/services.tsx",
+          lineNumber: 349,
           columnNumber: 15
         }, this) }, void 0, false, {
           fileName: "app/routes/services.tsx",
-          lineNumber: 350,
+          lineNumber: 348,
           columnNumber: 13
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "w-full order-1 lg:order-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "bg-white rounded-2xl shadow-lg p-4 w-full flex flex-col h-[400px] md:h-[500px] lg:h-[600px] sticky top-24", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "w-full order-1 lg:order-2", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "bg-white rounded-2xl shadow-lg p-4 w-full flex flex-col sticky top-24", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("h3", { className: "text-xl font-bold mb-4 text-center text-green-700", children: "Training Schedule" }, void 0, false, {
             fileName: "app/routes/services.tsx",
-            lineNumber: 378,
+            lineNumber: 361,
             columnNumber: 17
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex justify-center flex-1 overflow-auto", children: isClient && /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_jsx_dev_runtime2.Fragment, { children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(dist_default2, { className: "w-full border border-gray-600 rounded-lg", onClickDay: (date) => {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex justify-center flex-1 overflow-auto h-[400px] md:h-[500px] lg:h-[600px]", children: isClient && /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(import_jsx_dev_runtime2.Fragment, { children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(dist_default2, { className: "w-full border border-gray-600 rounded-lg mb-6", onClickDay: (date) => {
               setSelectedDate(date);
               setIsOpen(true);
+            }, activeStartDate: calendarActiveStartDate, onActiveStartDateChange: ({
+              activeStartDate
+            }) => {
+              if (activeStartDate)
+                setCalendarActiveStartDate(activeStartDate);
             }, tileClassName: ({
               date,
               view
             }) => {
               if (view !== "month")
                 return "";
-              for (let range of trainingRanges) {
-                if (isDateInRange(date, range.start, range.end)) {
-                  return "!bg-green-300 !rounded-lg";
-                }
+              const range = trainingRanges.find((r2) => isDateInRange(date, r2.start, r2.end));
+              const isSelected = selectedDate && date.toDateString() === selectedDate.toDateString();
+              let statusClass = "";
+              if (range) {
+                const now = /* @__PURE__ */ new Date();
+                const start = new Date(range.start);
+                const end = new Date(range.end);
+                if (now.getTime() >= start.getTime() && now.getTime() <= end.getTime())
+                  statusClass = "ongoing";
+                else if (now.getTime() < start.getTime())
+                  statusClass = "upcoming";
+                else if (now.getTime() > end.getTime())
+                  statusClass = "past";
               }
-              return "";
+              if (isSelected)
+                statusClass += " selected";
+              return statusClass;
             }, tileContent: ({
               date,
-              view
+              view,
+              activeStartDate,
+              ...props
             }) => {
               if (view !== "month")
                 return null;
-              const range = trainingRanges.find((r2) => isDateInRange(date, r2.start, r2.end));
-              if (!range)
+              const ranges = trainingRanges.filter((r2) => isDateInRange(date, r2.start, r2.end));
+              if (!ranges.length)
                 return null;
-              return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "absolute inset-0 pointer-events-auto", onMouseEnter: (e) => setTooltip({
-                visible: true,
-                text: range.title,
-                x: e.clientX,
-                y: e.clientY
-              }), onMouseMove: (e) => setTooltip((prev) => ({
-                ...prev,
-                x: e.clientX,
-                y: e.clientY
-              })), onMouseLeave: () => setTooltip({
+              return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "w-full h-full flex flex-col justify-start items-center relative", onMouseEnter: (e) => {
+                setTooltip({
+                  visible: true,
+                  text: ranges.map((r2) => r2.title).join(", "),
+                  x: e.clientX,
+                  y: e.clientY
+                });
+              }, onMouseMove: (e) => {
+                setTooltip((prev) => ({
+                  ...prev,
+                  x: e.clientX,
+                  y: e.clientY
+                }));
+              }, onMouseLeave: () => setTooltip({
                 visible: false,
                 text: "",
                 x: 0,
                 y: 0
+              }), children: ranges.map((range, idx) => {
+                const now = /* @__PURE__ */ new Date();
+                const start = new Date(range.start);
+                const end = new Date(range.end);
+                let bg = "bg-blue-500";
+                if (now.getTime() >= start.getTime() && now.getTime() <= end.getTime())
+                  bg = "bg-green-500";
+                else if (now.getTime() > end.getTime())
+                  bg = "bg-gray-400";
+                return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: `w-2 h-2 rounded-full ${bg} absolute bottom-1` }, idx, false, {
+                  fileName: "app/routes/services.tsx",
+                  lineNumber: 427,
+                  columnNumber: 30
+                }, this);
               }) }, void 0, false, {
                 fileName: "app/routes/services.tsx",
-                lineNumber: 408,
+                lineNumber: 398,
                 columnNumber: 26
               }, this);
             } }, void 0, false, {
               fileName: "app/routes/services.tsx",
-              lineNumber: 383,
+              lineNumber: 366,
               columnNumber: 23
             }, this),
             tooltip.visible && /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "fixed bg-gray-800 text-white text-xs px-2 py-1 rounded shadow-lg pointer-events-none z-50", style: {
@@ -7877,7 +7894,7 @@ function Services() {
               left: tooltip.x + 10
             }, children: tooltip.text }, void 0, false, {
               fileName: "app/routes/services.tsx",
-              lineNumber: 427,
+              lineNumber: 433,
               columnNumber: 43
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(Dialog2, { open: isOpen, onOpenChange: setIsOpen, children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(DialogContent2, { children: [
@@ -7888,48 +7905,114 @@ function Services() {
                 return range ? `${new Date(range.start).toDateString()} - ${new Date(range.end).toDateString()}` : selectedDate.toDateString();
               })() }, void 0, false, {
                 fileName: "app/routes/services.tsx",
-                lineNumber: 438,
+                lineNumber: 446,
                 columnNumber: 29
               }, this) }, void 0, false, {
                 fileName: "app/routes/services.tsx",
-                lineNumber: 437,
+                lineNumber: 445,
                 columnNumber: 27
               }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-gray-200", children: selectedDate ? trainingRanges.find((r2) => isDateInRange(selectedDate, r2.start, r2.end))?.title || "No training scheduled for this date." : "" }, void 0, false, {
+              /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-gray-200 text-center mt-2", children: selectedDate ? trainingRanges.find((r2) => isDateInRange(selectedDate, r2.start, r2.end))?.title || "No training scheduled for this date." : "" }, void 0, false, {
                 fileName: "app/routes/services.tsx",
-                lineNumber: 446,
+                lineNumber: 454,
                 columnNumber: 27
               }, this)
             ] }, void 0, true, {
               fileName: "app/routes/services.tsx",
-              lineNumber: 436,
+              lineNumber: 444,
               columnNumber: 25
             }, this) }, void 0, false, {
               fileName: "app/routes/services.tsx",
-              lineNumber: 435,
+              lineNumber: 443,
               columnNumber: 23
             }, this)
           ] }, void 0, true, {
             fileName: "app/routes/services.tsx",
-            lineNumber: 382,
+            lineNumber: 365,
             columnNumber: 32
           }, this) }, void 0, false, {
             fileName: "app/routes/services.tsx",
-            lineNumber: 381,
+            lineNumber: 364,
             columnNumber: 17
+          }, this),
+          isClient && /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "mt-6 px-4 md:px-8", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("h3", { className: "text-xl font-bold mb-4 text-green-700", children: "Training Events" }, void 0, false, {
+              fileName: "app/routes/services.tsx",
+              lineNumber: 463,
+              columnNumber: 21
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("ul", { className: "flex flex-col gap-3", children: trainingRanges.sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime()).slice(0, showAll ? trainingRanges.length : 3).map((event, idx) => {
+              const now = /* @__PURE__ */ new Date();
+              const start = new Date(event.start);
+              const end = new Date(event.end);
+              let statusBg = "bg-gray-200 text-gray-600";
+              if (now.getTime() >= start.getTime() && now.getTime() <= end.getTime())
+                statusBg = "bg-green-300 text-white";
+              else if (now.getTime() < start.getTime())
+                statusBg = "bg-blue-200 text-gray-800";
+              return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("li", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("button", { onClick: () => {
+                setSelectedDate(start);
+                setCalendarActiveStartDate(new Date(start.getFullYear(), start.getMonth(), 1));
+              }, className: `w-full text-left p-4 rounded-lg shadow-md transition hover:opacity-90 ${statusBg}`, children: [
+                /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "font-semibold truncate", children: event.title }, void 0, false, {
+                  fileName: "app/routes/services.tsx",
+                  lineNumber: 480,
+                  columnNumber: 33
+                }, this),
+                /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-sm", children: [
+                  start.toDateString(),
+                  " - ",
+                  end.toDateString()
+                ] }, void 0, true, {
+                  fileName: "app/routes/services.tsx",
+                  lineNumber: 481,
+                  columnNumber: 33
+                }, this),
+                /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-xs mt-1", children: now.getTime() > end.getTime() ? "Past" : now.getTime() >= start.getTime() ? "Ongoing" : "Upcoming" }, void 0, false, {
+                  fileName: "app/routes/services.tsx",
+                  lineNumber: 482,
+                  columnNumber: 33
+                }, this)
+              ] }, void 0, true, {
+                fileName: "app/routes/services.tsx",
+                lineNumber: 475,
+                columnNumber: 31
+              }, this) }, idx, false, {
+                fileName: "app/routes/services.tsx",
+                lineNumber: 474,
+                columnNumber: 26
+              }, this);
+            }) }, void 0, false, {
+              fileName: "app/routes/services.tsx",
+              lineNumber: 464,
+              columnNumber: 21
+            }, this),
+            trainingRanges.length > 3 && /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "mt-4 text-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("button", { onClick: () => setShowAll(!showAll), className: "text-green-700 font-semibold hover:underline", children: showAll ? "See Less" : "See More" }, void 0, false, {
+              fileName: "app/routes/services.tsx",
+              lineNumber: 492,
+              columnNumber: 25
+            }, this) }, void 0, false, {
+              fileName: "app/routes/services.tsx",
+              lineNumber: 491,
+              columnNumber: 51
+            }, this)
+          ] }, void 0, true, {
+            fileName: "app/routes/services.tsx",
+            lineNumber: 462,
+            columnNumber: 30
           }, this)
         ] }, void 0, true, {
           fileName: "app/routes/services.tsx",
-          lineNumber: 377,
+          lineNumber: 360,
           columnNumber: 15
         }, this) }, void 0, false, {
           fileName: "app/routes/services.tsx",
-          lineNumber: 376,
+          lineNumber: 359,
           columnNumber: 13
         }, this)
       ] }, void 0, true, {
         fileName: "app/routes/services.tsx",
-        lineNumber: 348,
+        lineNumber: 346,
         columnNumber: 11
       }, this)
     ] }, void 0, true, {
@@ -7943,7 +8026,7 @@ function Services() {
     columnNumber: 10
   }, this);
 }
-_s(Services, "oABVgXBMSSvEttsWjcTFdofPXAw=", false, function() {
+_s(Services, "lLEFUPKGDzTY+uqGEn+qrpG8f44=", false, function() {
   return [useLocation];
 });
 _c10 = Services;
@@ -7984,38 +8067,38 @@ function TechnicalConsultationSlider() {
     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex items-center justify-center w-full px-2 sm:px-4", onTouchStart: handleTouchStart, onTouchMove: handleTouchMove, onTouchEnd: handleTouchEnd, children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("button", { onClick: prev, className: "text-3xl sm:text-4xl md:text-5xl text-[#00703C] hover:text-[#00703C] \r\n                   px-1 sm:px-2 focus:outline-none ml-1 sm:ml-4", children: "<" }, void 0, false, {
         fileName: "app/routes/services.tsx",
-        lineNumber: 508,
+        lineNumber: 551,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("img", { src: images[index].src, alt: images[index].alt, className: "w-full max-w-[260px] sm:max-w-md md:max-w-lg lg:max-w-4xl \r\n                   h-56 sm:h-80 md:h-[350px] lg:h-[550px] \r\n                   object-cover rounded-lg mx-1 sm:mx-4 border-2 border-gray-200 bg-white" }, void 0, false, {
         fileName: "app/routes/services.tsx",
-        lineNumber: 516,
+        lineNumber: 559,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("button", { onClick: next, className: "text-3xl sm:text-4xl md:text-5xl text-[#00703C] hover:text-[#00703C] \r\n                   px-1 sm:px-2 focus:outline-none mr-1 sm:mr-4", children: ">" }, void 0, false, {
         fileName: "app/routes/services.tsx",
-        lineNumber: 524,
+        lineNumber: 567,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/services.tsx",
-      lineNumber: 505,
+      lineNumber: 548,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "flex justify-center mt-2 sm:mt-4", children: images.map((_, i) => /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("span", { className: `mx-0.5 sm:mx-1 w-2 h-2 sm:w-3 sm:h-3 rounded-full ${i === index ? "bg-yellow-500" : "bg-gray-300"}`, style: {
       display: "inline-block"
     } }, i, false, {
       fileName: "app/routes/services.tsx",
-      lineNumber: 534,
+      lineNumber: 577,
       columnNumber: 31
     }, this)) }, void 0, false, {
       fileName: "app/routes/services.tsx",
-      lineNumber: 533,
+      lineNumber: 576,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/routes/services.tsx",
-    lineNumber: 504,
+    lineNumber: 547,
     columnNumber: 10
   }, this);
 }
@@ -8082,4 +8165,4 @@ lucide-react/dist/esm/lucide-react.js:
    * See the LICENSE file in the root directory of this source tree.
    *)
 */
-//# sourceMappingURL=/build/routes/services-WAJ5B2RG.js.map
+//# sourceMappingURL=/build/routes/services-63SYFPAG.js.map
