@@ -65,19 +65,20 @@
 
 /* Today */
 .react-calendar__tile--now {
-  background: #f3f4f6;
-  font-weight: 600;
-  border: 1px solid #d1d5db;
+  background-color: #16a34a; /* green shade */
+  color: white;
 }
 
-/* Active (selected day) */
+/* Selected (highlighted) day */
+.react-calendar__tile.selected,
 .react-calendar__tile--active {
-  background: #16a34a; /* green shade */
-  color: #ffffff; /* text color */
+  background-color: #16a34a; /* green shade */
+  color: white;
   font-weight: bold;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  border-radius: 0.5rem; /* adjust as needed */
+  border-radius: 0.5rem;
 }
+
 
 
 /* Hover effect */

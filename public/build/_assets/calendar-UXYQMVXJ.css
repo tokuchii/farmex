@@ -52,12 +52,12 @@
   transition: all .2s ease-in-out;
 }
 .react-calendar__tile--now {
-  background: #f3f4f6;
-  font-weight: 600;
-  border: 1px solid #d1d5db;
+  background-color: #16a34a;
+  color: #fff;
 }
+.react-calendar__tile.selected,
 .react-calendar__tile--active {
-  background: #16a34a;
+  background-color: #16a34a;
   color: #fff;
   font-weight: 700;
   box-shadow: 0 2px 6px #00000026;
@@ -91,4 +91,4 @@
   color: #fff;
   font-weight: 700;
 }
-/*# sourceMappingURL=/build/_assets/calendar-BUOLF5C6.css.map */
+/*# sourceMappingURL=/build/_assets/calendar-PUM5ULFQ.css.map */
