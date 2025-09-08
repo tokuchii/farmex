@@ -13,19 +13,26 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import React, { useEffect } from "react";
 
+
 export const links: LinksFunction = () => [
+  // Tailwind CSS
+  { rel: "preload", as: "style", href: styles },
   { rel: "stylesheet", href: styles },
+
+  // Favicon
+  { rel: "preload", as: "image", href: "/group30.png" },
   { rel: "icon", href: "/group30.png" },
+
+  // Google Fonts
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
-  {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
-  },
-  {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
-  },
+  { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+  { rel: "preload", as: "style", href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" },
+  { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" },
+
+  // Critical Images
+  { rel: "preload", as: "image", href: "/bgnews.png" },
+  { rel: "preload", as: "image", href: "/newbgevents.png" },
+  { rel: "preload", as: "image", href: "/productbg1.png" },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -35,9 +42,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
-        <link rel="preload" as="image" href="/bgnews.png" />
-        <link rel="preload" as="image" href="/newbgevents.png" />
-        <link rel="preload" as="image" href="/productbg1.png" />
         <Links />
       </head>
       <body>

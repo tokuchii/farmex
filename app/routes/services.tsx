@@ -50,11 +50,14 @@ export default function Services() {
   const [tooltip, setTooltip] = useState({ visible: false, text: "", x: 0, y: 0 });
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
+  const [isImageOpen, setIsImageOpen] = useState(false);
+
 
   const trainingRanges: { start: string; end: string; title: string }[] = [
     { start: "2025-06-23", end: "2025-06-27", title: '🌱 Batch No. 1 — "Building Stronger Rice Communities: Advancing Knowledge in Farm Machinaries Operations and Maintenance"' },
     { start: "2025-06-30", end: "2025-07-02", title: '🌱 Batch No. 2 — "Building Stronger Rice Communities: Advancing Knowledge in Farm Machinaries Operations and Maintenance"' },
-    { start: "2025-07-10", end: "2025-07-11", title: '🎓 Batch No. 3 — "1 day Field demo and 1 day graduation only"'},
+    { start: "2025-07-10", end: "2025-07-11", title: '🎓 Batch No. 3 — "1 day Field demo and 1 day graduation only"' },
     { start: "2025-07-21", end: "2025-07-25", title: '🌱 Batch No. 4 — "Building Stronger Rice Communities: Advancing Knowledge in Farm Machinaries Operations and Maintenance"' },
     { start: "2025-08-04", end: "2025-08-08", title: '🌱 Batch No. 5 — "Building Stronger Rice Communities: Advancing Knowledge in Farm Machinaries Operations and Maintenance"' },
   ];
@@ -293,122 +296,147 @@ export default function Services() {
 
           {/* Grid Section */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 md:px-8 py-12 items-stretch">
-            {/* Left: Image Carousel */}
-            <div className="w-full order-2 lg:order-1">
-              <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] rounded-2xl shadow-lg overflow-hidden flex items-center justify-center bg-white/20 backdrop-blur-sm">
-                {images.map((img, i) => (
-                  <div
-                    key={i}
-                    className={`absolute inset-0 flex items-center justify-center transition-opacity duration-1000 ease-out ${i === index ? "opacity-100 z-10" : "opacity-0 z-0"}`}
-                  >
-                    <LazyLoadImage
-                      src={img.src}
-                      alt={img.alt}
-                      className={`w-full h-full object-cover rounded-2xl ${isMobile ? "cursor-zoom-in" : ""}`}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
+{/* Left: Image Collage */}
+<div className="w-full order-2 lg:order-1">
+  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+    {images.map((img, i) => (
+      <div key={i} className="overflow-hidden rounded-2xl shadow-lg">
+        <button
+          type="button"
+          onClick={() => {
+            setSelectedImage(img); // store clicked image in state
+            setIsImageOpen(true);  // open modal
+          }}
+          className="w-full h-full focus:outline-none"
+        >
+          <LazyLoadImage
+            src={img.src}
+            alt={img.alt}
+            className="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
+          />
+        </button>
+      </div>
+    ))}
+  </div>
+
+{/* Dialog Modal for Image */}
+{selectedImage && (
+  <Dialog open={isImageOpen} onOpenChange={(open) => setIsImageOpen(open)}>
+    <DialogContent className="max-w-3xl w-full p-0 bg-transparent shadow-none">
+      <img
+        src={selectedImage.src}
+        alt={selectedImage.alt}
+        className="w-full h-full object-contain"
+      />
+    </DialogContent>
+  </Dialog>
+)}
+
+</div>
+
+
+
+
 
             {/* Right: Calendar */}
             <div className="w-full order-1 lg:order-2">
-              <div className="bg-white rounded-2xl shadow-lg p-4 w-full flex flex-col sticky top-24">
-                <h3 className="text-xl font-bold mb-4 text-center text-green-700">
-                  Training Schedule
-                </h3>
+             <div className="bg-gradient-to-br from-green-300 via-green-200 to-green-300 rounded-2xl shadow-lg p-4 w-full flex flex-col sticky top-24">
+<h3 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-center text-white bg-green-600 bg-opacity-90 rounded-t-2xl py-3 px-6 shadow-lg tracking-wider uppercase animate-fadeIn">
+  Training Schedule
+</h3>
+
                 <div className="flex justify-center flex-1 overflow-auto h-[400px] md:h-[500px] lg:h-[600px]">
                   {isClient && (
                     <>
-                 <Calendar
-                  key={selectedDate ? selectedDate.toDateString() : "calendar"}
-  className="w-full border border-gray-600 rounded-lg mb-6"
-  onClickDay={(date: Date) => {
-    setSelectedDate(date);
-    setIsOpen(true);
-  }}
-  activeStartDate={calendarActiveStartDate}
-  onActiveStartDateChange={({ activeStartDate }) => {
-    if (activeStartDate) setCalendarActiveStartDate(activeStartDate);
-  }}
-  tileClassName={({ date, view }) => {
-    if (view !== "month") return "";
+                      <Calendar
+                        key={selectedDate ? selectedDate.toDateString() : "calendar"}
+                       className="w-full border border-gray-600 rounded-b-2xl mb-6"
+                        onClickDay={(date: Date) => {
+                          setSelectedDate(date);
+                          setIsOpen(true);
+                        }}
+                        activeStartDate={calendarActiveStartDate}
+                        onActiveStartDateChange={({ activeStartDate }) => {
+                          if (activeStartDate) setCalendarActiveStartDate(activeStartDate);
+                        }}
+                        tileClassName={({ date, view }) => {
+                          if (view !== "month") return "";
 
-    const range = trainingRanges.find(r => isDateInRange(date, r.start, r.end));
-    const isSelected = selectedDate && date.toDateString() === selectedDate.toDateString();
+                          const range = trainingRanges.find(r => isDateInRange(date, r.start, r.end));
+                          const isSelected = selectedDate && date.toDateString() === selectedDate.toDateString();
 
-    let statusClass = "";
-    if (range) {
-      const now = new Date();
-      const start = new Date(range.start);
-      const end = new Date(range.end);
-      if (now.getTime() >= start.getTime() && now.getTime() <= end.getTime()) statusClass = "ongoing";
-      else if (now.getTime() < start.getTime()) statusClass = "upcoming";
-      else if (now.getTime() > end.getTime()) statusClass = "past";
-    }
+                          let statusClass = "";
+                          if (range) {
+                            const now = new Date();
+                            const start = new Date(range.start);
+                            const end = new Date(range.end);
+                            if (now.getTime() >= start.getTime() && now.getTime() <= end.getTime()) statusClass = "ongoing";
+                            else if (now.getTime() < start.getTime()) statusClass = "upcoming";
+                            else if (now.getTime() > end.getTime()) statusClass = "past";
+                          }
 
-    if (isSelected) statusClass += " selected";
+                          if (isSelected) statusClass += " selected";
 
-    return statusClass;
-  }}
-  tileContent={({ date, view, activeStartDate, ...props }) => {
-    if (view !== "month") return null;
+                          return statusClass;
+                        }}
+                        tileContent={({ date, view, activeStartDate, ...props }) => {
+                          if (view !== "month") return null;
 
-    const ranges = trainingRanges.filter(r => isDateInRange(date, r.start, r.end));
-    if (!ranges.length) return null;
+                          const ranges = trainingRanges.filter(r => isDateInRange(date, r.start, r.end));
+                          if (!ranges.length) return null;
 
-    return (
-      <div
-        className="w-full h-full flex flex-col justify-start items-center relative"
-        onMouseEnter={(e) => {
-          setTooltip({
-            visible: true,
-            text: ranges.map(r => r.title).join(", "),
-            x: e.clientX,
-            y: e.clientY,
-          });
-        }}
-        onMouseMove={(e) => {
-          setTooltip(prev => ({
-            ...prev,
-            x: e.clientX,
-            y: e.clientY,
-          }));
-        }}
-        onMouseLeave={() => setTooltip({ visible: false, text: "", x: 0, y: 0 })}
-      >
-        {/* Dots for events */}
-        {ranges.map((range, idx) => {
-          const now = new Date();
-          const start = new Date(range.start);
-          const end = new Date(range.end);
+                          return (
+                            <div
+                              className="w-full h-full flex flex-col justify-start items-center relative"
+                              onMouseEnter={(e) => {
+                                setTooltip({
+                                  visible: true,
+                                  text: ranges.map(r => r.title).join(", "),
+                                  x: e.clientX,
+                                  y: e.clientY,
+                                });
+                              }}
+                              onMouseMove={(e) => {
+                                setTooltip(prev => ({
+                                  ...prev,
+                                  x: e.clientX,
+                                  y: e.clientY,
+                                }));
+                              }}
+                              onMouseLeave={() => setTooltip({ visible: false, text: "", x: 0, y: 0 })}
+                            >
+                              {/* Dots for events */}
+                              {ranges.map((range, idx) => {
+                                const now = new Date();
+                                const start = new Date(range.start);
+                                const end = new Date(range.end);
 
-          let bg = "bg-blue-500"; // upcoming
-          if (now.getTime() >= start.getTime() && now.getTime() <= end.getTime()) bg = "bg-green-500"; // ongoing
-          else if (now.getTime() > end.getTime()) bg = "bg-gray-400"; // past
+                                let bg = "bg-blue-500"; // upcoming
+                                if (now.getTime() >= start.getTime() && now.getTime() <= end.getTime()) bg = "bg-green-500"; // ongoing
+                                else if (now.getTime() > end.getTime()) bg = "bg-gray-400"; // past
 
-          return <span key={idx} className={`w-2 h-2 rounded-full ${bg} absolute bottom-1`}></span>;
-        })}
-      </div>
-    );
-  }}
-/>
+                                return <span key={idx} className={`w-2 h-2 rounded-full ${bg} absolute bottom-1`}></span>;
+                              })}
+                            </div>
+                          );
+                        }}
+                      />
 
-{tooltip.visible && (
-  <div
-    className="fixed bg-gray-800 text-white text-xs px-2 py-1 rounded shadow-lg pointer-events-none z-50"
-    style={{ top: tooltip.y + 10, left: tooltip.x + 10 }}
-  >
-    {tooltip.text}
-  </div>
-)}
+                      {tooltip.visible && (
+                        <div
+                          className="fixed bg-gray-800 text-white text-xs px-2 py-1 rounded shadow-lg pointer-events-none z-50"
+                          style={{ top: tooltip.y + 10, left: tooltip.x + 10 }}
+                        >
+                          {tooltip.text}
+                        </div>
+                      )}
 
 
                       {/* Dialog Modal */}
-                     <Dialog open={isOpen} onOpenChange={(open) => {
-  setIsOpen(open);
-  if (!open) setSelectedDate(null); // clear previous selection
-}}>
+                      <Dialog open={isOpen} onOpenChange={(open) => {
+                        setIsOpen(open);
+                        if (!open) setSelectedDate(null); // clear previous selection
+                      }}>
                         <DialogContent>
                           <DialogHeader>
                             <DialogTitle className="text-center font-semibold">
@@ -434,62 +462,65 @@ export default function Services() {
                 </div>
                 {/* Events List */}
                 {isClient && (
-  <div className="mt-6 px-4 md:px-8">
-    <h3 className="text-xl font-bold mb-4 text-green-700">Training Events</h3>
-    <ul className="flex flex-col gap-3">
-      {trainingRanges
-        .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime())
-        .slice(0, showAll ? trainingRanges.length : 3) // show only first 3 if showAll is false
-        .map((event, idx) => {
-          const now = new Date();
-          const start = new Date(event.start);
-          const end = new Date(event.end);
+                  <div className="mt-6 px-4 md:px-8">
+                    <h3 className="text-xl font-bold mb-4 text-center text-green-700 border-b-2 border-green-300 pb-2">
+  Training Events
+</h3>
 
-          let statusBg = "bg-gray-200 text-gray-600"; // past
-          if (now.getTime() >= start.getTime() && now.getTime() <= end.getTime()) statusBg = "bg-green-300 text-white"; // ongoing
-          else if (now.getTime() < start.getTime()) statusBg = "bg-blue-200 text-gray-800"; // upcoming
+                    <ul className="flex flex-col gap-3">
+                      {trainingRanges
+                        .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime())
+                        .slice(0, showAll ? trainingRanges.length : 3) // show only first 3 if showAll is false
+                        .map((event, idx) => {
+                          const now = new Date();
+                          const start = new Date(event.start);
+                          const end = new Date(event.end);
 
-          return (
-            <li key={idx}>
-              <button
-onClick={() => {
-  setCalendarActiveStartDate(
-    new Date(new Date(event.start).getFullYear(), new Date(event.start).getMonth(), 1)
-  );
-  setSelectedDate(new Date(event.start));
-}}
+                          let statusBg = "bg-gray-200 text-gray-600"; // past
+                          if (now.getTime() >= start.getTime() && now.getTime() <= end.getTime()) statusBg = "bg-green-300 text-white"; // ongoing
+                          else if (now.getTime() < start.getTime()) statusBg = "bg-blue-200 text-gray-800"; // upcoming
 
-  className={`w-full text-left p-4 rounded-lg shadow-md transition hover:opacity-90 ${statusBg}`}
->
-  <p className="font-semibold truncate">{event.title}</p>
-  <p className="text-sm">{start.toDateString()} - {end.toDateString()}</p>
-  <p className="text-xs mt-1">
-    {now.getTime() > end.getTime()
-      ? "Past"
-      : now.getTime() >= start.getTime()
-        ? "Ongoing"
-        : "Upcoming"}
-  </p>
-</button>
+                          return (
+                            <li key={idx}>
+                              <button
+                                onClick={() => {
+                                  setCalendarActiveStartDate(
+                                    new Date(new Date(event.start).getFullYear(), new Date(event.start).getMonth(), 1)
+                                  );
+                                  setSelectedDate(new Date(event.start));
+                                }}
 
-            </li>
-          );
-        })}
-    </ul>
+                                className={`w-full text-left p-4 rounded-lg shadow-md transition hover:opacity-90 ${statusBg}`}
+                              >
+                                <p className="font-semibold truncate">{event.title}</p>
+                                <p className="text-sm">{start.toDateString()} - {end.toDateString()}</p>
+                                <p className="text-xs mt-1">
+                                  {now.getTime() > end.getTime()
+                                    ? "Past"
+                                    : now.getTime() >= start.getTime()
+                                      ? "Ongoing"
+                                      : "Upcoming"}
+                                </p>
+                              </button>
 
-    {/* See More / See Less Button */}
-    {trainingRanges.length > 3 && (
-      <div className="mt-4 text-center">
-        <button
-          onClick={() => setShowAll(!showAll)}
-          className="text-green-700 font-semibold hover:underline"
-        >
-          {showAll ? "See Less" : "See More"}
-        </button>
-      </div>
-    )}
-  </div>
-)}
+                            </li>
+                          );
+                        })}
+                    </ul>
+
+                    {/* See More / See Less Button */}
+                    {trainingRanges.length > 3 && (
+                      <div className="mt-4 text-center">
+                        <button
+                          onClick={() => setShowAll(!showAll)}
+                          className="text-green-700 font-semibold hover:underline"
+                        >
+                          {showAll ? "See Less" : "See More"}
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                )}
 
               </div>
             </div>

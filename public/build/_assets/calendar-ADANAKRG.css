@@ -3,7 +3,10 @@
   border: 1px solid #e5e7eb;
   background: #ffffff;
   color: #111827;
-  border-radius: .75rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: .75rem;
+  border-bottom-right-radius: .75rem;
   font-family: Inter, sans-serif;
   padding: 1rem;
   box-shadow: 0 4px 10px #0000000d;
@@ -91,4 +94,4 @@
   color: #fff;
   font-weight: 700;
 }
-/*# sourceMappingURL=/build/_assets/calendar-PUM5ULFQ.css.map */
+/*# sourceMappingURL=/build/_assets/calendar-V44TF6X6.css.map */

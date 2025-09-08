@@ -1,14 +1,18 @@
 /* Base Calendar */
 .react-calendar {
-  border: 1px solid #e5e7eb; /* light gray */
+  border: 1px solid #e5e7eb;
   background: #ffffff;
   color: #111827;
-  border-radius: 0.75rem; /* more rounded */
+  border-top-left-radius: 0;    /* top-left square */
+  border-top-right-radius: 0;   /* top-right square */
+  border-bottom-left-radius: 0.75rem;  /* bottom-left rounded */
+  border-bottom-right-radius: 0.75rem; /* bottom-right rounded */
   font-family: 'Inter', sans-serif;
   padding: 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* subtle shadow */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
   transition: all 0.2s ease-in-out;
 }
+
 
 /* Navigation (month & year row) */
 .react-calendar__navigation {

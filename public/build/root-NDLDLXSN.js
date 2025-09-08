@@ -23,7 +23,7 @@ import {
 } from "/build/_shared/chunk-PZDJHGND.js";
 
 // app/tailwind.css
-var tailwind_default = "/build/_assets/tailwind-PQCETUPC.css";
+var tailwind_default = "/build/_assets/tailwind-YYHE7YDG.css";
 
 // app/components/Navbar.tsx
 var import_react = __toESM(require_react(), 1);
@@ -642,23 +642,63 @@ if (import.meta) {
     "app\\root.tsx"
   );
 }
-var links = () => [{
-  rel: "stylesheet",
-  href: tailwind_default
-}, {
-  rel: "icon",
-  href: "/group30.png"
-}, {
-  rel: "preconnect",
-  href: "https://fonts.googleapis.com"
-}, {
-  rel: "preconnect",
-  href: "https://fonts.gstatic.com",
-  crossOrigin: "anonymous"
-}, {
-  rel: "stylesheet",
-  href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-}];
+var links = () => [
+  // Tailwind CSS
+  {
+    rel: "preload",
+    as: "style",
+    href: tailwind_default
+  },
+  {
+    rel: "stylesheet",
+    href: tailwind_default
+  },
+  // Favicon
+  {
+    rel: "preload",
+    as: "image",
+    href: "/group30.png"
+  },
+  {
+    rel: "icon",
+    href: "/group30.png"
+  },
+  // Google Fonts
+  {
+    rel: "preconnect",
+    href: "https://fonts.googleapis.com"
+  },
+  {
+    rel: "preconnect",
+    href: "https://fonts.gstatic.com",
+    crossOrigin: "anonymous"
+  },
+  {
+    rel: "preload",
+    as: "style",
+    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+  },
+  {
+    rel: "stylesheet",
+    href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+  },
+  // Critical Images
+  {
+    rel: "preload",
+    as: "image",
+    href: "/bgnews.png"
+  },
+  {
+    rel: "preload",
+    as: "image",
+    href: "/newbgevents.png"
+  },
+  {
+    rel: "preload",
+    as: "image",
+    href: "/productbg1.png"
+  }
+];
 function Layout({
   children
 }) {
@@ -666,64 +706,49 @@ function Layout({
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("head", { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("meta", { charSet: "utf-8" }, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 48,
+        lineNumber: 80,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("meta", { name: "viewport", content: "width=device-width, initial-scale=1" }, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 49,
+        lineNumber: 81,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Meta, {}, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 50,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("link", { rel: "preload", as: "image", href: "/bgnews.png" }, void 0, false, {
-        fileName: "app/root.tsx",
-        lineNumber: 51,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("link", { rel: "preload", as: "image", href: "/newbgevents.png" }, void 0, false, {
-        fileName: "app/root.tsx",
-        lineNumber: 52,
-        columnNumber: 9
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("link", { rel: "preload", as: "image", href: "/productbg1.png" }, void 0, false, {
-        fileName: "app/root.tsx",
-        lineNumber: 53,
+        lineNumber: 82,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Links, {}, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 54,
+        lineNumber: 83,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/root.tsx",
-      lineNumber: 47,
+      lineNumber: 79,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)("body", { children: [
       children,
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(ScrollRestoration, {}, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 58,
+        lineNumber: 87,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Scripts, {}, void 0, false, {
         fileName: "app/root.tsx",
-        lineNumber: 59,
+        lineNumber: 88,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/root.tsx",
-      lineNumber: 56,
+      lineNumber: 85,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/root.tsx",
-    lineNumber: 46,
+    lineNumber: 78,
     columnNumber: 10
   }, this);
 }
@@ -740,22 +765,22 @@ function App() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_jsx_dev_runtime3.Fragment, { children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Navbar, {}, void 0, false, {
       fileName: "app/root.tsx",
-      lineNumber: 76,
+      lineNumber: 105,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Outlet, {}, void 0, false, {
       fileName: "app/root.tsx",
-      lineNumber: 77,
+      lineNumber: 106,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Footer, {}, void 0, false, {
       fileName: "app/root.tsx",
-      lineNumber: 78,
+      lineNumber: 107,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/root.tsx",
-    lineNumber: 75,
+    lineNumber: 104,
     columnNumber: 10
   }, this);
 }
@@ -774,4 +799,4 @@ export {
   App as default,
   links
 };
-//# sourceMappingURL=/build/root-OLB2CIQB.js.map
+//# sourceMappingURL=/build/root-NDLDLXSN.js.map

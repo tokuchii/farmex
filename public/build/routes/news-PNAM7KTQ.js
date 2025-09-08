@@ -42,7 +42,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\news.tsx"
   );
-  import.meta.hot.lastModified = "1756866666436.8599";
+  import.meta.hot.lastModified = "1757322315758.2063";
 }
 var {
   LazyLoadImage
@@ -763,4 +763,4 @@ export {
   News as default,
   meta
 };
-//# sourceMappingURL=/build/routes/news-HL5IV6ZK.js.map
+//# sourceMappingURL=/build/routes/news-PNAM7KTQ.js.map
