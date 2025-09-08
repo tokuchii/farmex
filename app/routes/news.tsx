@@ -129,43 +129,43 @@ The visit resulted in a strengthened partnership between Leads and Winall, both 
 // Slides per news item
 const newsSlides: Record<number, { src: string; alt: string }[]> = {
   0: [
-    { src: "/news1 1.png", alt: "FARMEX Corporation Recognized" },
-    { src: "/news1 7.JPG", alt: "FARMEX Corporation Recognized" },
-    { src: "/news1 8.JPG", alt: "FARMEX Corporation Recognized" },
-    { src: "/news1 3.png", alt: "FARMEX Corporation Recognized" },
-    { src: "/news1 4.png", alt: "FARMEX Corporation Recognized" },
-    { src: "/news1 5.png", alt: "FARMEX Corporation Recognized" },
-    { src: "/news1 6.JPG", alt: "FARMEX Corporation Recognized" },
+    { src: "/news1-1_copy.webp", alt: "FARMEX Corporation Recognized" },
+    { src: "/news1-7_copy.webp", alt: "FARMEX Corporation Recognized" },
+    { src: "/news1-8_copy.webp", alt: "FARMEX Corporation Recognized" },
+    { src: "/news1-3_copy.webp", alt: "FARMEX Corporation Recognized" },
+    { src: "/news1-4_copy.webp", alt: "FARMEX Corporation Recognized" },
+    { src: "/news1-5_copy.webp", alt: "FARMEX Corporation Recognized" },
+    { src: "/news1-6_copy.webp", alt: "FARMEX Corporation Recognized" },
   ],
   1: [
-    { src: "/news2 1.png", alt: "FARMEX  Regional Training" },
-    { src: "/news2 2.png", alt: "FARMEX  Regional Training" },
-    { src: "/news2 3.png", alt: "FARMEX  Regional Training" },
-    { src: "/news2 4.png", alt: "FARMEX  Regional Training" },
-    { src: "/news2 5.png", alt: "FARMEX  Regional Training" },
-    { src: "/news2 6.png", alt: "FARMEX  Regional Training" },
+    { src: "/news2 1_copy.webp", alt: "FARMEX  Regional Training" },
+    { src: "/news2 2_copy.webp", alt: "FARMEX  Regional Training" },
+    { src: "/news2 3_copy.webp", alt: "FARMEX  Regional Training" },
+    { src: "/news2 4_copy.webp", alt: "FARMEX  Regional Training" },
+    { src: "/news2 5_copy.webp", alt: "FARMEX  Regional Training" },
+    { src: "/news2 6_copy.webp", alt: "FARMEX  Regional Training" },
   ],
   2: [
-    { src: "/news3 1.png", alt: "LEADS Agriventures Corporation Showcases Jackpot 102" },
-    { src: "/news3 2.png", alt: "LEADS Agriventures Corporation Showcases Jackpot 102" },
-    { src: "/news3 3.png", alt: "LEADS Agriventures Corporation Showcases Jackpot 102" },
-    { src: "/news3 4.png", alt: "LEADS Agriventures Corporation Showcases Jackpot 102" },
-    { src: "/news3 5.png", alt: "LEADS Agriventures Corporation Showcases Jackpot 102" },
-    { src: "/news3 6.png", alt: "LEADS Agriventures Corporation Showcases Jackpot 102" },
-    { src: "/news3 7.png", alt: "LEADS Agriventures Corporation Showcases Jackpot 102" },
-    { src: "/news3 8.png", alt: "LEADS Agriventures Corporation Showcases Jackpot 102" },
+    { src: "/news3 1_copy.webp", alt: "LEADS Agriventures Corporation Showcases Jackpot 102" },
+    { src: "/news3 2_copy.webp", alt: "LEADS Agriventures Corporation Showcases Jackpot 102" },
+    { src: "/news3 3_copy.webp", alt: "LEADS Agriventures Corporation Showcases Jackpot 102" },
+    { src: "/news3 4_copy.webp", alt: "LEADS Agriventures Corporation Showcases Jackpot 102" },
+    { src: "/news3 5_copy.webp", alt: "LEADS Agriventures Corporation Showcases Jackpot 102" },
+    { src: "/news3 6_copy.webp", alt: "LEADS Agriventures Corporation Showcases Jackpot 102" },
+    { src: "/news3 7_copy.webp", alt: "LEADS Agriventures Corporation Showcases Jackpot 102" },
+    { src: "/news3 8_copy.webp", alt: "LEADS Agriventures Corporation Showcases Jackpot 102" },
   ],
   3: [
-    { src: "/news4 1.png", alt: "RiceBoard Elects New Officers for 2025–2026" },
+    { src: "/news4 1_copy.webp", alt: "RiceBoard Elects New Officers for 2025–2026" },
   ],
   4: [
-    { src: "/news5 1.png", alt: "USDA Visits LAV for Rice Industry Discussion" },
+    { src: "/news5 1_copy.webp", alt: "USDA Visits LAV for Rice Industry Discussion" },
   ],
   5: [
-    { src: "/news6 1.png", alt: "Leads explored the hybrid rice seed technologies" },
-    { src: "/news6 5.jpg", alt: "Leads explored the hybrid rice seed technologies" },
-    { src: "/news6 3.png", alt: "Leads explored the hybrid rice seed technologies" },
-    { src: "/news6 4.png", alt: "Leads explored the hybrid rice seed technologies" },
+    { src: "/news6 1_copy.webp", alt: "Leads explored the hybrid rice seed technologies" },
+    { src: "/news6 5_copy.webp", alt: "Leads explored the hybrid rice seed technologies" },
+    { src: "/news6 3_copy.webp", alt: "Leads explored the hybrid rice seed technologies" },
+    { src: "/news6 4_copy.webp", alt: "Leads explored the hybrid rice seed technologies" },
   ],
 };
 
@@ -222,12 +222,12 @@ function SliderModal({
 
   const [isMobile, setIsMobile] = useState(false);
 
-useEffect(() => {
-  const handleResize = () => setIsMobile(window.innerWidth < 768);
-  handleResize();
-  window.addEventListener("resize", handleResize);
-  return () => window.removeEventListener("resize", handleResize);
-}, []);
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <div className="fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center px-4" onClick={onClose}>
@@ -475,9 +475,9 @@ export default function News() {
                   <p className="text-white text-sm sm:text-base">
                     Victoria, Mallig, Isabela Variety planted/used: Jackpot 102
                   </p>
-                </div>  
+                </div>
               </motion.div>
-                 <motion.div
+              <motion.div
                 className="bg-gradient-to-tr from-[#788B5F] to-[#2A4127] rounded-xl p-6 sm:p-8 shadow-lg"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -518,44 +518,44 @@ export default function News() {
 
               {/* Right Card - Mr. Edson Del Rosario */}
               <motion.div
-  className="bg-gradient-to-tr from-[#788B5F] to-[#2A4127] rounded-xl p-6 sm:p-8 shadow-lg flex flex-col justify-between h-full"
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true, amount: 0.2 }}
-  transition={{ duration: 0.5, delay: 0.1 }}
->
-  {/* Profile Picture */}
-  <div className="flex justify-center mb-6">
-    <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-white shadow-lg">
-      <LazyLoadImage
-        src="/edison.png"
-        alt="Mr. Edson Del Rosario"
-        className="w-full h-full object-cover"
-      />
-    </div>
-  </div>
+                className="bg-gradient-to-tr from-[#788B5F] to-[#2A4127] rounded-xl p-6 sm:p-8 shadow-lg flex flex-col justify-between h-full"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                {/* Profile Picture */}
+                <div className="flex justify-center mb-6">
+                  <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                    <LazyLoadImage
+                      src="/edison.png"
+                      alt="Mr. Edson Del Rosario"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
 
-  {/* Testimonial */}
-  <div className="text-justify mb-8 flex-1">
-    <p className="text-white text-sm sm:text-base leading-relaxed">
-      “Sa tayo ng palay ng LAV 777, pwedeng pwedeng irekomenda sa mga magsasaka. Talagang kung ang habol natin ay maparami ang ani para tayo ay makaahon sa gastos, ito ay rekomendado ko. Kitang-kita naman natin, ang daming pumupuri. Maganda, matas, mahaba ang uhay.”
-    </p>
-  </div>
+                {/* Testimonial */}
+                <div className="text-justify mb-8 flex-1">
+                  <p className="text-white text-sm sm:text-base leading-relaxed">
+                    “Sa tayo ng palay ng LAV 777, pwedeng pwedeng irekomenda sa mga magsasaka. Talagang kung ang habol natin ay maparami ang ani para tayo ay makaahon sa gastos, ito ay rekomendado ko. Kitang-kita naman natin, ang daming pumupuri. Maganda, matas, mahaba ang uhay.”
+                  </p>
+                </div>
 
-  {/* Customer Info */}
-  <div className="text-center mt-4">
-    <h4 className="text-white font-bold text-lg sm:text-xl mb-1">
-      Mr. Edson Del Rosario
-    </h4>
-    <p className="text-white text-sm sm:text-base">
-      Farmer Calintaan, Occidental Minodoro
-    </p>
-  </div>
-</motion.div>
+                {/* Customer Info */}
+                <div className="text-center mt-4">
+                  <h4 className="text-white font-bold text-lg sm:text-xl mb-1">
+                    Mr. Edson Del Rosario
+                  </h4>
+                  <p className="text-white text-sm sm:text-base">
+                    Farmer Calintaan, Occidental Minodoro
+                  </p>
+                </div>
+              </motion.div>
 
 
-                <motion.div
-              className="bg-gradient-to-tr from-[#788B5F] to-[#2A4127] rounded-xl p-6 sm:p-8 shadow-lg"
+              <motion.div
+                className="bg-gradient-to-tr from-[#788B5F] to-[#2A4127] rounded-xl p-6 sm:p-8 shadow-lg"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
@@ -585,7 +585,7 @@ export default function News() {
                     Gina Gonzalez
                   </h4>
                   <p className="text-white text-sm sm:text-base">
-                   Rice trader and Miller, Brgy. Tubuan, Pila, Laguna
+                    Rice trader and Miller, Brgy. Tubuan, Pila, Laguna
                   </p>
                 </div>
               </motion.div>
