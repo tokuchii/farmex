@@ -343,12 +343,12 @@ export default function Services() {
                   ))}
               </div>
 
-              {/* Show More / Show Less button */}
               {images.length > 9 && (
                 <div className="mt-4 text-center">
                   <button
                     onClick={() => setShowMore(!showMore)}
-                    className="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition"
+                    className="text-green-700 font-semibold hover:underline"
+
                   >
                     {showMore ? "Show Less" : "Show More"}
                   </button>

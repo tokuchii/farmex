@@ -7825,13 +7825,13 @@ function Services() {
             lineNumber: 354,
             columnNumber: 15
           }, this),
-          images.length > 9 && /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "mt-4 text-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("button", { onClick: () => setShowMore(!showMore), className: "px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition", children: showMore ? "Show Less" : "Show More" }, void 0, false, {
+          images.length > 9 && /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "mt-4 text-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("button", { onClick: () => setShowMore(!showMore), className: "text-green-700 font-semibold hover:underline", children: showMore ? "Show Less" : "Show More" }, void 0, false, {
             fileName: "app/routes/services.tsx",
-            lineNumber: 382,
+            lineNumber: 381,
             columnNumber: 19
           }, this) }, void 0, false, {
             fileName: "app/routes/services.tsx",
-            lineNumber: 381,
+            lineNumber: 380,
             columnNumber: 37
           }, this)
         ] }, void 0, true, {
@@ -8210,4 +8210,4 @@ lucide-react/dist/esm/lucide-react.js:
    * See the LICENSE file in the root directory of this source tree.
    *)
 */
-//# sourceMappingURL=/build/routes/services-PKYXN4ID.js.map
+//# sourceMappingURL=/build/routes/services-67OWMAN6.js.map
