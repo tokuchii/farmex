@@ -456,7 +456,7 @@ export default function Services() {
                         setIsOpen(open);
                         if (!open) setSelectedDate(null); // clear previous selection
                       }}>
-                        <DialogContent>
+                        <DialogContent className="bg-white border-black rounded-lg">
                           <DialogHeader>
                             <DialogTitle className="text-center font-semibold">
                               {(() => {
@@ -468,7 +468,7 @@ export default function Services() {
                               })()}
                             </DialogTitle>
                           </DialogHeader>
-                          <p className="text-gray-200 text-center mt-2">
+                          <p className="text-black text-center mt-2">
                             {selectedDate
                               ? trainingRanges.find(r => isDateInRange(selectedDate, r.start, r.end))?.title ||
                               "No training scheduled for this date."

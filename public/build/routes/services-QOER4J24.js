@@ -7942,7 +7942,7 @@ function Services() {
               setIsOpen(open);
               if (!open)
                 setSelectedDate(null);
-            }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(DialogContent2, { children: [
+            }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(DialogContent2, { className: "bg-white border-black rounded-lg", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(DialogHeader, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)(DialogTitle2, { className: "text-center font-semibold", children: (() => {
                 if (!selectedDate)
                   return "";
@@ -7957,7 +7957,7 @@ function Services() {
                 lineNumber: 481,
                 columnNumber: 27
               }, this),
-              /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-gray-200 text-center mt-2", children: selectedDate ? trainingRanges.find((r2) => isDateInRange(selectedDate, r2.start, r2.end))?.title || "No training scheduled for this date." : "" }, void 0, false, {
+              /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-black text-center mt-2", children: selectedDate ? trainingRanges.find((r2) => isDateInRange(selectedDate, r2.start, r2.end))?.title || "No training scheduled for this date." : "" }, void 0, false, {
                 fileName: "app/routes/services.tsx",
                 lineNumber: 490,
                 columnNumber: 27
@@ -8210,4 +8210,4 @@ lucide-react/dist/esm/lucide-react.js:
    * See the LICENSE file in the root directory of this source tree.
    *)
 */
-//# sourceMappingURL=/build/routes/services-JI4HQ4WV.js.map
+//# sourceMappingURL=/build/routes/services-QOER4J24.js.map
