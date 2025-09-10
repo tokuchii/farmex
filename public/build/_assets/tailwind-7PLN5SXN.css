@@ -645,11 +645,23 @@ video {
 .h-full {
   height: 100%;
 }
+.h-\[5vh\] {
+  height: 5vh;
+}
+.h-\[vh\] {
+  height: vh;
+}
+.h-\[10vh\] {
+  height: 10vh;
+}
 .max-h-\[35vh\] {
   max-height: 35vh;
 }
 .max-h-\[95vh\] {
   max-height: 95vh;
+}
+.max-h-\[22vh\] {
+  max-height: 22vh;
 }
 .min-h-\[400px\] {
   min-height: 400px;
@@ -710,6 +722,9 @@ video {
 }
 .w-full {
   width: 100%;
+}
+.max-w-2xl {
+  max-width: 42rem;
 }
 .max-w-4xl {
   max-width: 56rem;
@@ -984,9 +999,6 @@ video {
 .border-t {
   border-top-width: 1px;
 }
-.border-b {
-  border-bottom-width: 1px;
-}
 .border-\[\#00703C\] {
   --tw-border-opacity: 1;
   border-color: rgb(0 112 60 / var(--tw-border-opacity, 1));
@@ -994,6 +1006,10 @@ video {
 .border-\[\#057A31\] {
   --tw-border-opacity: 1;
   border-color: rgb(5 122 49 / var(--tw-border-opacity, 1));
+}
+.border-black {
+  --tw-border-opacity: 1;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
 }
 .border-gray-200 {
   --tw-border-opacity: 1;
@@ -1022,10 +1038,6 @@ video {
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
-}
-.border-black {
-  --tw-border-opacity: 1;
-  border-color: rgb(0 0 0 / var(--tw-border-opacity, 1));
 }
 .bg-\[\#00703C\] {
   --tw-bg-opacity: 1;
@@ -1124,10 +1136,6 @@ video {
 .bg-yellow-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(234 179 8 / var(--tw-bg-opacity, 1));
-}
-.bg-gray-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(107 114 128 / var(--tw-bg-opacity, 1));
 }
 .bg-opacity-45 {
   --tw-bg-opacity: .45;
@@ -1436,10 +1444,6 @@ video {
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity, 1));
-}
-.text-gray-200 {
-  --tw-text-opacity: 1;
-  color: rgb(229 231 235 / var(--tw-text-opacity, 1));
 }
 .text-gray-500 {
   --tw-text-opacity: 1;
@@ -2079,6 +2083,9 @@ body {
   .md\:mt-\[87px\] {
     margin-top: 87px;
   }
+  .md\:mt-6 {
+    margin-top: 1.5rem;
+  }
   .md\:block {
     display: block;
   }
@@ -2114,6 +2121,12 @@ body {
   }
   .md\:h-\[600px\] {
     height: 600px;
+  }
+  .md\:h-full {
+    height: 100%;
+  }
+  .md\:max-h-\[22vh\] {
+    max-height: 22vh;
   }
   .md\:max-h-\[60vh\] {
     max-height: 60vh;
@@ -2392,4 +2405,4 @@ body {
     display: flex;
   }
 }
-/*# sourceMappingURL=/build/_assets/tailwind-XFI6A2T7.css.map */
+/*# sourceMappingURL=/build/_assets/tailwind-DJMBBDWJ.css.map */

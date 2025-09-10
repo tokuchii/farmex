@@ -79,6 +79,8 @@ export default function Services() {
     { src: "/training6.jpg", alt: "Training 6" },
     { src: "/training7.jpg", alt: "Training 7" },
     { src: "/training8.jpg", alt: "Training 8" },
+    { src: "/training9.jpg", alt: "Training 9" },
+    { src: "/training10.jpg", alt: "Training 10" },
   ];
 
   const [showMore, setShowMore] = useState(false);
@@ -450,25 +452,32 @@ export default function Services() {
                         </div>
                       )}
 
-
                       {/* Dialog Modal */}
                       <Dialog open={isOpen} onOpenChange={(open) => {
                         setIsOpen(open);
                         if (!open) setSelectedDate(null); // clear previous selection
                       }}>
-                        <DialogContent className="bg-white border-black rounded-lg">
+                        <DialogContent className="bg-white border-black rounded-lg max-w-2xl w-full h-full max-h-[22vh] py-2">
                           <DialogHeader>
                             <DialogTitle className="text-center font-semibold">
                               {(() => {
                                 if (!selectedDate) return "";
                                 const range = trainingRanges.find(r => isDateInRange(selectedDate, r.start, r.end));
+                                const formatDate = (date: Date) =>
+                                  date.toLocaleDateString("en-US", {
+                                    weekday: "long", // full day name
+                                    month: "long",   // full month name
+                                    day: "numeric",
+                                    year: "numeric",
+                                  });
+
                                 return range
-                                  ? `${new Date(range.start).toDateString()} - ${new Date(range.end).toDateString()}`
-                                  : selectedDate.toDateString();
+                                  ? `${formatDate(new Date(range.start))} - ${formatDate(new Date(range.end))}`
+                                  : formatDate(selectedDate);
                               })()}
                             </DialogTitle>
                           </DialogHeader>
-                          <p className="text-black text-center mt-2">
+                          <p className="text-black text-center mt-4 md:mt-6 mb-4">
                             {selectedDate
                               ? trainingRanges.find(r => isDateInRange(selectedDate, r.start, r.end))?.title ||
                               "No training scheduled for this date."
@@ -495,24 +504,35 @@ export default function Services() {
                           const start = new Date(event.start);
                           const end = new Date(event.end);
 
+                          const formatDate = (date: Date) =>
+                            date.toLocaleDateString("en-US", {
+                              weekday: "long", // full day name
+                              month: "long",   // full month name
+                              day: "numeric",
+                              year: "numeric",
+                            });
+
                           let statusBg = "bg-gray-200 text-gray-600"; // past
-                          if (now.getTime() >= start.getTime() && now.getTime() <= end.getTime()) statusBg = "bg-green-300 text-white"; // ongoing
-                          else if (now.getTime() < start.getTime()) statusBg = "bg-blue-200 text-gray-800"; // upcoming
+                          if (now.getTime() >= start.getTime() && now.getTime() <= end.getTime())
+                            statusBg = "bg-green-300 text-white"; // ongoing
+                          else if (now.getTime() < start.getTime())
+                            statusBg = "bg-blue-200 text-gray-800"; // upcoming
 
                           return (
                             <li key={idx}>
                               <button
                                 onClick={() => {
                                   setCalendarActiveStartDate(
-                                    new Date(new Date(event.start).getFullYear(), new Date(event.start).getMonth(), 1)
+                                    new Date(start.getFullYear(), start.getMonth(), 1)
                                   );
-                                  setSelectedDate(new Date(event.start));
+                                  setSelectedDate(start);
                                 }}
-
                                 className={`w-full text-left p-4 rounded-lg shadow-md transition hover:opacity-90 ${statusBg}`}
                               >
                                 <p className="font-semibold truncate">{event.title}</p>
-                                <p className="text-sm">{start.toDateString()} - {end.toDateString()}</p>
+                                <p className="text-sm">
+                                  {formatDate(start)} - {formatDate(end)}
+                                </p>
                                 <p className="text-xs mt-1">
                                   {now.getTime() > end.getTime()
                                     ? "Past"
@@ -521,7 +541,6 @@ export default function Services() {
                                       : "Upcoming"}
                                 </p>
                               </button>
-
                             </li>
                           );
                         })}
