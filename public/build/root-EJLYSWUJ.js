@@ -6,14 +6,14 @@ import {
   Scripts,
   ScrollRestoration,
   useLocation
-} from "/build/_shared/chunk-25UY2YLG.js";
+} from "/build/_shared/chunk-ADWLACKH.js";
 import "/build/_shared/chunk-PLT55Z5M.js";
 import {
   require_jsx_dev_runtime
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-FEEY3YGC.js";
+} from "/build/_shared/chunk-65CJFPR6.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -46,7 +46,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\Navbar.tsx"
   );
-  import.meta.hot.lastModified = "1754630065222.8594";
+  import.meta.hot.lastModified = "1756279500451.1987";
 }
 function Navbar() {
   _s();
@@ -520,7 +520,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\Footer.tsx"
   );
-  import.meta.hot.lastModified = "1755750224319.3855";
+  import.meta.hot.lastModified = "1756279500450.691";
 }
 function Footer() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("footer", { className: "bg-white relative", children: [
@@ -799,4 +799,4 @@ export {
   App as default,
   links
 };
-//# sourceMappingURL=/build/root-SSTYHUOX.js.map
+//# sourceMappingURL=/build/root-EJLYSWUJ.js.map

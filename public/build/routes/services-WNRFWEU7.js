@@ -4,7 +4,7 @@ import {
 import {
   Link,
   useLocation
-} from "/build/_shared/chunk-25UY2YLG.js";
+} from "/build/_shared/chunk-ADWLACKH.js";
 import {
   require_react_dom
 } from "/build/_shared/chunk-PLT55Z5M.js";
@@ -19,7 +19,7 @@ import {
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-FEEY3YGC.js";
+} from "/build/_shared/chunk-65CJFPR6.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -7143,7 +7143,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\lib\\utils.ts"
   );
-  import.meta.hot.lastModified = "1757317218307.3137";
+  import.meta.hot.lastModified = "1757308413209.2358";
 }
 function cn(...inputs) {
   return twMerge(clsx(inputs));
@@ -7168,7 +7168,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\ui\\dialog.tsx"
   );
-  import.meta.hot.lastModified = "1757329060420.935";
+  import.meta.hot.lastModified = "1757325149231.941";
 }
 var Dialog2 = Root;
 var DialogPortal2 = Portal2;
@@ -7194,7 +7194,7 @@ var DialogContent2 = React25.forwardRef(_c3 = ({
   }, this),
   /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Content, { ref, className: cn("fixed left-[50%] top-[50%] z-50 grid w-full max-w-lg translate-x-[-50%] translate-y-[-50%] gap-4 border bg-background p-6 shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] sm:rounded-lg", className8), ...props, children: [
     children,
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Close, { className: "absolute right-4 top-4\r\n             rounded-full bg-black/30 shadow-md p-2\r\n             hover:bg-black/40 transition\r\n             focus:outline-none", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Close, { className: "absolute right-4 top-4\n             rounded-full bg-black/30 shadow-md p-2\n             hover:bg-black/40 transition\n             focus:outline-none", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(X, { className: "h-4 w-4 text-white" }, void 0, false, {
         fileName: "app/components/ui/dialog.tsx",
         lineNumber: 47,
@@ -7570,7 +7570,7 @@ function Services() {
           ease: "easeOut"
         }, children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "px-2 sm:px-4 pt-2 sm:pt-4", children: [
-            /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("h3", { className: "text-green-600 font-bold text-base sm:text-lg md:text-xl lg:text-2xl", children: "Transplanter" }, void 0, false, {
+            /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("h3", { className: "text-green-600 font-bold text-base sm:text-lg md:text-xl lg:text-2xl", children: "Vacuum Seeder" }, void 0, false, {
               fileName: "app/routes/services.tsx",
               lineNumber: 244,
               columnNumber: 21
@@ -7585,7 +7585,7 @@ function Services() {
             lineNumber: 243,
             columnNumber: 19
           }, this),
-          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "h-[280px] sm:h-[280px] md:h-[350px] lg:h-[450px] w-full overflow-hidden relative rounded py-2 sm:py-3 lg:py-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("img", { src: "/new_transplanter.jpg", alt: "Transplanter", className: "w-full h-full object-cover border-2 sm:border-3 md:border-4 border-[#00703C] rounded-lg" }, void 0, false, {
+          /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("div", { className: "h-[280px] sm:h-[280px] md:h-[350px] lg:h-[450px] w-full overflow-hidden relative rounded py-2 sm:py-3 lg:py-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("img", { src: "/vacuumseeder.jpg", className: "w-full h-full object-cover border-2 sm:border-3 md:border-4 border-[#00703C] rounded-lg" }, void 0, false, {
             fileName: "app/routes/services.tsx",
             lineNumber: 248,
             columnNumber: 21
@@ -8232,4 +8232,4 @@ lucide-react/dist/esm/lucide-react.js:
    * See the LICENSE file in the root directory of this source tree.
    *)
 */
-//# sourceMappingURL=/build/routes/services-HIWNSZSB.js.map
+//# sourceMappingURL=/build/routes/services-WNRFWEU7.js.map

@@ -189,13 +189,12 @@ export default function Services() {
                   transition={{ duration: 0.6, ease: "easeOut" }}
                 >
                   <div className="px-2 sm:px-4 pt-2 sm:pt-4">
-                    <h3 className="text-green-600 font-bold text-base sm:text-lg md:text-xl lg:text-2xl">Transplanter</h3>
+                    <h3 className="text-green-600 font-bold text-base sm:text-lg md:text-xl lg:text-2xl">Vacuum Seeder</h3>
                     <div className="w-20 sm:w-24 md:w-28 h-0.5 sm:h-1 bg-yellow-400 mt-1"></div>
                   </div>
                   <div className="h-[280px] sm:h-[280px] md:h-[350px] lg:h-[450px] w-full overflow-hidden relative rounded py-2 sm:py-3 lg:py-4">
                     <img
-                      src="/new_transplanter.jpg"
-                      alt="Transplanter"
+                      src="/vacuumseeder.jpg"
                       className="w-full h-full object-cover border-2 sm:border-3 md:border-4 border-[#00703C] rounded-lg"
                     />
                   </div>
