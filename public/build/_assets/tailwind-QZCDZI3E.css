@@ -645,23 +645,14 @@ video {
 .h-full {
   height: 100%;
 }
-.h-\[5vh\] {
-  height: 5vh;
-}
-.h-\[vh\] {
-  height: vh;
-}
-.h-\[10vh\] {
-  height: 10vh;
+.max-h-\[22vh\] {
+  max-height: 22vh;
 }
 .max-h-\[35vh\] {
   max-height: 35vh;
 }
 .max-h-\[95vh\] {
   max-height: 95vh;
-}
-.max-h-\[22vh\] {
-  max-height: 22vh;
 }
 .min-h-\[400px\] {
   min-height: 400px;
@@ -2080,11 +2071,11 @@ body {
   .md\:mt-4 {
     margin-top: 1rem;
   }
-  .md\:mt-\[87px\] {
-    margin-top: 87px;
-  }
   .md\:mt-6 {
     margin-top: 1.5rem;
+  }
+  .md\:mt-\[87px\] {
+    margin-top: 87px;
   }
   .md\:block {
     display: block;
@@ -2121,12 +2112,6 @@ body {
   }
   .md\:h-\[600px\] {
     height: 600px;
-  }
-  .md\:h-full {
-    height: 100%;
-  }
-  .md\:max-h-\[22vh\] {
-    max-height: 22vh;
   }
   .md\:max-h-\[60vh\] {
     max-height: 60vh;
@@ -2405,4 +2390,4 @@ body {
     display: flex;
   }
 }
-/*# sourceMappingURL=/build/_assets/tailwind-DJMBBDWJ.css.map */
+/*# sourceMappingURL=/build/_assets/tailwind-RZGGFWJC.css.map */

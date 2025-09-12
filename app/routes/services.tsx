@@ -152,7 +152,7 @@ export default function Services() {
                   </div>
                   <div className="h-[280px] sm:h-[280px] md:h-[350px] lg:h-[450px] w-full overflow-hidden relative rounded py-2 sm:py-3 lg:py-4">
                     <img
-                      src="/mobiledryer.png"
+                      src="/new_mobiledryer.webp"
                       alt="Mobile Dryer"
                       className="w-full h-full object-cover border-2 sm:border-3 md:border-4 border-[#00703C] rounded-lg"
                     />
@@ -173,7 +173,7 @@ export default function Services() {
                   </div>
                   <div className="h-[280px] sm:h-[280px] md:h-[350px] lg:h-[450px] w-full overflow-hidden relative rounded py-2 sm:py-3 lg:py-4">
                     <img
-                      src="/tractor.png"
+                      src="/new_tractor.jpeg"
                       alt="Tractor"
                       className="w-full h-full object-cover border-2 sm:border-3 md:border-4 border-[#00703C] rounded-lg"
                     />
@@ -194,7 +194,7 @@ export default function Services() {
                   </div>
                   <div className="h-[280px] sm:h-[280px] md:h-[350px] lg:h-[450px] w-full overflow-hidden relative rounded py-2 sm:py-3 lg:py-4">
                     <img
-                      src="/transplanter.png"
+                      src="/new_transplanter.jpg"
                       alt="Transplanter"
                       className="w-full h-full object-cover border-2 sm:border-3 md:border-4 border-[#00703C] rounded-lg"
                     />
@@ -215,7 +215,7 @@ export default function Services() {
                   </div>
                   <div className="h-[280px] sm:h-[280px] md:h-[350px] lg:h-[450px] w-full overflow-hidden relative rounded py-2 sm:py-3 lg:py-4">
                     <img
-                      src="/Harvester.jpg"
+                      src="/new_harvester.jpg"
                       alt="Harvester"
                       className="w-full h-full object-cover border-2 sm:border-3 md:border-4 border-[#00703C] rounded-lg"
                     />
