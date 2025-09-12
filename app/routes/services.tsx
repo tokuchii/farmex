@@ -102,6 +102,19 @@ export default function Services() {
     return () => clearInterval(interval);
   }, []);
 
+
+useEffect(() => {
+  const handleEsc = (e: KeyboardEvent) => {
+    if (e.key === "Escape") {
+      setIsImageOpen(false);
+    }
+  };
+
+  window.addEventListener("keydown", handleEsc);
+  return () => window.removeEventListener("keydown", handleEsc);
+}, []);
+
+
   return (
     <div className="bg-white w-full min-h-screen relative">
       {/* Sevices Machine Rentals */}
@@ -561,6 +574,41 @@ export default function Services() {
 
               </div>
             </div>
+            {/* Image Viewer Modal */}
+{isImageOpen && selectedImage && (
+  <div
+    className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-2 sm:p-4"
+    onClick={() => setIsImageOpen(false)}
+  >
+    <div
+      className="relative w-full max-w-6xl max-h-[90vh] flex justify-center items-center"
+      onClick={(e) => e.stopPropagation()}
+    >
+      {/* Image wrapper */}
+      <div className="relative inline-block">
+        <img
+          src={selectedImage.src}
+          alt={selectedImage.alt}
+          className="w-full h-auto max-h-[80vh] object-contain rounded-lg shadow-2xl"
+        />
+
+        {/* Small Close button */}
+        <button
+          onClick={() => setIsImageOpen(false)}
+          className="
+            absolute top-1 right-1
+            text-white text-xs sm:text-sm font-bold
+            bg-black/70 w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center
+            rounded-full hover:bg-black transition
+          "
+        >
+          ✕
+        </button>
+      </div>
+    </div>
+  </div>
+)}
+
           </div>
         </>
       )}
