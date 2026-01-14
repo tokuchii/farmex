@@ -60,6 +60,7 @@ export default function Services() {
     { start: "2025-07-10", end: "2025-07-11", title: '🎓 Batch No. 3 — "1 day Field demo and 1 day graduation only"' },
     { start: "2025-07-21", end: "2025-07-25", title: '🌱 Batch No. 4 — "Building Stronger Rice Communities: Advancing Knowledge in Farm Machinaries Operations and Maintenance"' },
     { start: "2025-08-04", end: "2025-08-08", title: '🌱 Batch No. 5 — "Building Stronger Rice Communities: Advancing Knowledge in Farm Machinaries Operations and Maintenance"' },
+    { start: "2026-02-02", end: "2026-02-03", title: '"SKILLS TRAINING ON MECHANIZATION TO UPGRADE COPRA/CNO PROCESSING AND INTEGRATION OF HIGH VALUE CROPS CULTIVATION FOR PROFITABLE COOPERATIVE COCONUT-BASED AGRI-BUSINESS VENTURE."' },
   ];
 
   const isDateInRange = (date: Date, start: string, end: string): boolean => {
