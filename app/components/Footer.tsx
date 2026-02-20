@@ -32,7 +32,7 @@ export default function Footer() {
               +63 945 170 9401
             </a>
           </div>
-          <div className="flex items-center space-x-2">
+          {/* <div className="flex items-center space-x-2">
             <FaEnvelope className="text-green-600" />
             <a
               href="mailto:leadsagriventurescorporation@gmail.com"
@@ -40,7 +40,7 @@ export default function Footer() {
             >
               leadsagriventurescorporation@gmail.com
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
 
