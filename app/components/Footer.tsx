@@ -32,15 +32,15 @@ export default function Footer() {
               +63 945 170 9401
             </a>
           </div>
-          {/* <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2">
             <FaEnvelope className="text-green-600" />
             <a
-              href="mailto:leadsagriventurescorporation@gmail.com"
+              href="mailto:inquires@leads-farmex.com"
               className="hover:underline text-black leading-snug"
             >
-              leadsagriventurescorporation@gmail.com
+              inquires@leads-farmex.com
             </a>
-          </div> */}
+          </div>
         </div>
       </div>
 
