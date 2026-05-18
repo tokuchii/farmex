@@ -5,10 +5,10 @@ import {
   Scripts,
   ScrollRestoration,
   useLocation,
-} from "@remix-run/react";
-import type { LinksFunction, MetaFunction } from "@remix-run/node";
+} from "react-router";
+import type { LinksFunction, MetaFunction } from "react-router";
 
-import styles from "./tailwind.css";
+import styles from "./tailwind.css?url";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import React, { useEffect } from "react";

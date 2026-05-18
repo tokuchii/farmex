@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Link, useLocation } from "@remix-run/react";
-import type { MetaFunction } from "@remix-run/node";
+import { Link, useLocation } from "react-router";
+import type { MetaFunction } from "react-router";
 
 export const meta: MetaFunction = () => [
   { title: "Knowledge Transfer" },
