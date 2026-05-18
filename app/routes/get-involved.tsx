@@ -2,6 +2,18 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
+// EMAILJS CONFIG
+// EMAILJS CONFIG
+const EMAILJS_SERVICE_ID = "service_p1oxbrg";
+
+const EMAILJS_TEMPLATE_ID = "template_yt8cn5i"; 
+// auto-reply → sender
+
+const EMAILJS_AUTOREPLY_ID = "template_0s54upq"; 
+// notification email → admin
+
+const EMAILJS_PUBLIC_KEY = "KlmaVtugUAM18mELR";
+
 export function meta() {
   return [{ title: "Get Involved" }];
 }
@@ -31,58 +43,109 @@ export default function GetInvolved() {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
+
     let newValue = value;
 
+    // NAME FORMAT
     if (name === "name") {
       newValue = newValue.replace(/[0-9]/g, "").replace(/\s+/g, " ");
+
       newValue = newValue
         .split(" ")
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+        .map(
+          (word) =>
+            word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+        )
         .join(" ");
     }
 
+    // CONTACT FORMAT
     if (name === "contact") {
       newValue = newValue.replace(/[^0-9]/g, "").slice(0, 11);
     }
 
-    setFormData({ ...formData, [name]: newValue });
+    setFormData({
+      ...formData,
+      [name]: newValue,
+    });
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
     e.preventDefault();
+
     setIsSending(true);
 
     const isValidEmail = (email: string) => {
-      const emailRegex = /^[^\s@]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      const emailRegex =
+        /^[^\s@]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
       return emailRegex.test(email);
     };
 
+    // EMAIL VALIDATION
     if (!isValidEmail(formData.email)) {
-      setModalMessage("Please enter a valid email address (e.g., user@gmail.com)");
+      setModalMessage(
+        "Please enter a valid email address (e.g., user@gmail.com)"
+      );
+
       setIsSending(false);
       setModalOpen(true);
+
       return;
     }
 
-    const cleanedContact = formData.contact.replace(/[^0-9]/g, "");
-    const templateParams = {
-      ...formData,
-      contact: cleanedContact,
-      date: new Date().toLocaleString(),
-    };
+const cleanedContact = formData.contact.replace(
+  /[^0-9]/g,
+  ""
+);
+
+// GENERATE UNIQUE TICKET
+const ticketNumber =
+  "FMX-" +
+  Date.now().toString().slice(-6);
+
+const templateParams = {
+  ...formData,
+  contact: cleanedContact,
+  date: new Date().toLocaleString(),
+  ticket_number: ticketNumber,
+};
 
     try {
+      // AUTO REPLY TO USER
       await emailjs.send(
-        "service_p1oxbrg",
-        "template_0s54upq",
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
         templateParams,
-        "KlmaVtugUAM18mELR"
+        EMAILJS_PUBLIC_KEY
       );
-      setModalMessage("Your message has been sent successfully!");
-      setFormData({ name: "", email: "", contact: "", message: "" });
+
+      // EMAIL TO ADMIN
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_AUTOREPLY_ID,
+        templateParams,
+        EMAILJS_PUBLIC_KEY
+      );
+
+      setModalMessage(
+        "Your message has been sent successfully!"
+      );
+
+      setFormData({
+        name: "",
+        email: "",
+        contact: "",
+        message: "",
+      });
     } catch (error) {
       console.error("FAILED...", error);
-      setModalMessage("Failed to send message. Please try again.");
+
+      setModalMessage(
+        "Failed to send message. Please try again."
+      );
     } finally {
       setIsSending(false);
       setModalOpen(true);
@@ -91,8 +154,11 @@ export default function GetInvolved() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <motion.div className="relative w-full h-auto overflow-hidden" suppressHydrationWarning>
+      {/* HERO SECTION */}
+      <motion.div
+        className="relative w-full h-auto overflow-hidden"
+        suppressHydrationWarning
+      >
         {isClient ? (
           <motion.img
             src="/Jackpot102.jpg"
@@ -101,7 +167,10 @@ export default function GetInvolved() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+            }}
           />
         ) : (
           <img
@@ -110,7 +179,9 @@ export default function GetInvolved() {
             className="w-full h-64 sm:h-96 md:h-[600px] lg:h-[500px] object-cover object-top opacity-0"
           />
         )}
+
         <div className="absolute inset-0 bg-[#007F3D] bg-opacity-45"></div>
+
         <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
           <h2 className="text-white text-2xl md:text-4xl font-extrabold uppercase tracking-widest mb-4 mt-16">
             FARMEX AT A GLANCE
@@ -118,22 +189,32 @@ export default function GetInvolved() {
         </div>
       </motion.div>
 
-      {/* Contact Section */}
+      {/* CONTACT SECTION */}
       <section className="w-full min-h-screen pt-8 pb-16 px-4 sm:px-8 bg-[url('/newbgmachinerental.png')] bg-cover bg-center flex flex-col items-center">
         <div className="w-full max-w-7xl space-y-12">
-          {/* Form Section */}
+
+          {/* FORM SECTION */}
           <div className="bg-[url('/bgmascot-form_get-involved.png')] bg-cover bg-center rounded-xl p-6 md:p-10 shadow-xl">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+
+              {/* LEFT IMAGE */}
               <div className="flex flex-col items-center">
-                <img src="/pandoybg3_new.png" alt="Mascot" className="w-[350px] h-auto" />
+                <img
+                  src="/pandoybg3_new.png"
+                  alt="Mascot"
+                  className="w-[350px] h-auto"
+                />
+
                 <div className="h-1 bg-yellow-500 w-3/4 md:w-2/3 mt-4" />
               </div>
 
+              {/* FORM */}
               <div className="flex items-start justify-center">
                 <form
                   onSubmit={handleSubmit}
                   className="bg-white text-gray-800 p-6 rounded-lg w-full max-w-lg shadow-lg border border-gray-200"
                 >
+                  {/* NAME */}
                   <input
                     type="text"
                     name="name"
@@ -143,6 +224,8 @@ export default function GetInvolved() {
                     className="w-full px-4 py-3 rounded text-gray-700 bg-white border border-gray-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:outline-none mb-4"
                     required
                   />
+
+                  {/* EMAIL */}
                   <input
                     type="email"
                     name="email"
@@ -152,6 +235,8 @@ export default function GetInvolved() {
                     className="w-full px-4 py-3 rounded text-gray-700 bg-white border border-gray-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:outline-none mb-4"
                     required
                   />
+
+                  {/* CONTACT */}
                   <input
                     type="text"
                     name="contact"
@@ -161,6 +246,8 @@ export default function GetInvolved() {
                     className="w-full px-4 py-3 rounded text-gray-700 bg-white border border-gray-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:outline-none mb-4"
                     required
                   />
+
+                  {/* MESSAGE */}
                   <textarea
                     name="message"
                     rows={6}
@@ -170,11 +257,13 @@ export default function GetInvolved() {
                     className="w-full px-4 py-3 rounded text-gray-700 bg-white border border-gray-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:outline-none mb-4"
                     required
                   ></textarea>
+
+                  {/* BUTTON */}
                   <div className="flex justify-end">
                     <button
                       type="submit"
-                      className="flex items-center gap-2 bg-[#00703C] text-white px-4 py-2 rounded hover:bg-green-700 disabled:opacity-60"
                       disabled={isSending}
+                      className="flex items-center gap-2 bg-[#00703C] text-white px-4 py-2 rounded hover:bg-green-700 disabled:opacity-60"
                     >
                       {isSending && (
                         <svg
@@ -191,6 +280,7 @@ export default function GetInvolved() {
                             stroke="currentColor"
                             strokeWidth="4"
                           />
+
                           <path
                             className="opacity-75"
                             fill="currentColor"
@@ -198,7 +288,10 @@ export default function GetInvolved() {
                           />
                         </svg>
                       )}
-                      {isSending ? "Submitting..." : "Submit Form"}
+
+                      {isSending
+                        ? "Submitting..."
+                        : "Submit Form"}
                     </button>
                   </div>
                 </form>
@@ -206,41 +299,93 @@ export default function GetInvolved() {
             </div>
           </div>
 
-          {/* Contact Info */}
+          {/* CONTACT INFO */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+
             <div className="text-black space-y-6 text-sm sm:text-base lg:text-lg px-2 sm:px-4">
+
+              {/* EMAILS */}
               <div>
-                <h3 className="font-bold text-lg sm:text-xl mb-1">Emails:</h3>
+                <h3 className="font-bold text-lg sm:text-xl mb-1">
+                  Emails:
+                </h3>
+
                 <div>
-                  <a href="mailto:leadsagriventures@gmail.com" className="underline hover:text-green-600">
+                  <a
+                    href="mailto:leadsagriventures@gmail.com"
+                    className="underline hover:text-green-600"
+                  >
                     leadsagriventures@gmail.com
                   </a>
                 </div>
+
                 <div>
-                  <a href="mailto:hr@leadsagri.com" className="underline hover:text-green-600">
+                  <a
+                    href="mailto:hr@leadsagri.com"
+                    className="underline hover:text-green-600"
+                  >
                     hr@leadsagri.com
                   </a>
                 </div>
               </div>
 
+              {/* CONTACT NUMBERS */}
               <div>
-                <h3 className="font-bold text-lg sm:text-xl mb-1">Contact numbers:</h3>
-                <p>FARMEX Customer Service & Support:
-                  <a href="tel:+639451709401" className="underline hover:text-green-600"> +63 945 170 9401</a>
+                <h3 className="font-bold text-lg sm:text-xl mb-1">
+                  Contact numbers:
+                </h3>
+
+                <p>
+                  FARMEX Customer Service & Support:
+                  <a
+                    href="tel:+639451709401"
+                    className="underline hover:text-green-600"
+                  >
+                    {" "}
+                    +63 945 170 9401
+                  </a>
                 </p>
-                <p>Northern Luzon:
-                  <a href="tel:+639064819885" className="underline hover:text-green-600"> +63 906 481 9885</a>
+
+                <p>
+                  Northern Luzon:
+                  <a
+                    href="tel:+639064819885"
+                    className="underline hover:text-green-600"
+                  >
+                    {" "}
+                    +63 906 481 9885
+                  </a>
                 </p>
-                <p>MIMAROPA:
-                  <a href="tel:+639267091276" className="underline hover:text-green-600"> +63 917 313 8153</a>
+
+                <p>
+                  MIMAROPA:
+                  <a
+                    href="tel:+639267091276"
+                    className="underline hover:text-green-600"
+                  >
+                    {" "}
+                    +63 917 313 8153
+                  </a>
                 </p>
-                <p>CALABARZON:
-                  <a href="tel:+639173138162" className="underline hover:text-green-600"> +63 917 313 8162</a>
+
+                <p>
+                  CALABARZON:
+                  <a
+                    href="tel:+639173138162"
+                    className="underline hover:text-green-600"
+                  >
+                    {" "}
+                    +63 917 313 8162
+                  </a>
                 </p>
               </div>
 
+              {/* ADDRESS */}
               <div>
-                <h3 className="font-bold text-lg sm:text-xl mb-1">Office Address:</h3>
+                <h3 className="font-bold text-lg sm:text-xl mb-1">
+                  Office Address:
+                </h3>
+
                 <div className="break-words">
                   <a
                     href="https://maps.app.goo.gl/sjpAiD1d1ciTcU9n7"
@@ -248,8 +393,10 @@ export default function GetInvolved() {
                     rel="noopener noreferrer"
                     className="underline hover:text-green-600"
                   >
-                    Farmex Corporation KM 70 National Highway, Brgy. Bangyas, Calauan, Laguna
+                    Farmex Corporation KM 70 National Highway,
+                    Brgy. Bangyas, Calauan, Laguna
                   </a>
+
                   <div className="break-words mt-4">
                     <a
                       href="https://maps.app.goo.gl/wiCDvstV13xTotCq7"
@@ -257,13 +404,16 @@ export default function GetInvolved() {
                       rel="noopener noreferrer"
                       className="underline hover:text-green-600"
                     >
-                      Unit A 201 and Alfresco Area 2nd Floor Coral Center Mall Barangay San Francisco, Biñan Laguna
+                      Unit A 201 and Alfresco Area 2nd Floor
+                      Coral Center Mall Barangay San Francisco,
+                      Biñan Laguna
                     </a>
                   </div>
                 </div>
               </div>
             </div>
 
+            {/* MAP */}
             <div className="w-full max-w-md md:max-w-full h-80 md:h-[480px] border-2 md:border-4 border-[#057A31]">
               <iframe
                 title="FarmEx Location"
@@ -280,6 +430,7 @@ export default function GetInvolved() {
         </div>
       </section>
 
+      {/* MODAL */}
       {isClient && (
         <AnimatePresence>
           {modalOpen && (
@@ -291,16 +442,39 @@ export default function GetInvolved() {
             >
               <motion.div
                 className="bg-white p-6 rounded-xl shadow-2xl text-center max-w-sm w-full"
-                initial={{ y: 50, opacity: 0, scale: 0.95 }}
-                animate={{ y: 0, opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, ease: "easeOut" }}
+                initial={{
+                  y: 50,
+                  opacity: 0,
+                  scale: 0.95,
+                }}
+                animate={{
+                  y: 0,
+                  opacity: 1,
+                  scale: 1,
+                }}
+                transition={{
+                  duration: 0.4,
+                  ease: "easeOut",
+                }}
               >
                 <div className="flex justify-center mb-4">
-                  <div className={`text-4xl ${modalMessage.includes("success") ? "text-green-600" : "text-red-600"}`}>
-                    {modalMessage.includes("success") ? "✅" : "❌"}
+                  <div
+                    className={`text-4xl ${
+                      modalMessage.includes("success")
+                        ? "text-green-600"
+                        : "text-red-600"
+                    }`}
+                  >
+                    {modalMessage.includes("success")
+                      ? "✅"
+                      : "❌"}
                   </div>
                 </div>
-                <p className="text-gray-800 text-base">{modalMessage}</p>
+
+                <p className="text-gray-800 text-base">
+                  {modalMessage}
+                </p>
+
                 <button
                   onClick={() => setModalOpen(false)}
                   className="mt-6 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
