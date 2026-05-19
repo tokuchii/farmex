@@ -1,6 +1,6 @@
 import {
   Link
-} from "/build/_shared/chunk-NCCBZ6OM.js";
+} from "/build/_shared/chunk-ZCW6PNXX.js";
 import "/build/_shared/chunk-PLT55Z5M.js";
 import {
   motion
@@ -11,7 +11,7 @@ import {
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-JQ452JWN.js";
+} from "/build/_shared/chunk-3BOG53TH.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -43,7 +43,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\knowledge-transfer.tsx"
   );
-  import.meta.hot.lastModified = "1778736797160.535";
+  import.meta.hot.lastModified = "1779067909054.4434";
 }
 var meta = () => [{
   title: "Knowledge Transfer"
@@ -468,4 +468,4 @@ export {
   KnowledgeTransfer as default,
   meta
 };
-//# sourceMappingURL=/build/routes/knowledge-transfer-VVBBWE27.js.map
+//# sourceMappingURL=/build/routes/knowledge-transfer-FQTUWIOW.js.map

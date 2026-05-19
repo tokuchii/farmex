@@ -6,14 +6,14 @@ import {
   Scripts,
   ScrollRestoration,
   useLocation
-} from "/build/_shared/chunk-NCCBZ6OM.js";
+} from "/build/_shared/chunk-ZCW6PNXX.js";
 import "/build/_shared/chunk-PLT55Z5M.js";
 import {
   require_jsx_dev_runtime
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-JQ452JWN.js";
+} from "/build/_shared/chunk-3BOG53TH.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -46,7 +46,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\Navbar.tsx"
   );
-  import.meta.hot.lastModified = "1778736797144.9111";
+  import.meta.hot.lastModified = "1779067909046.8784";
 }
 function Navbar() {
   _s();
@@ -520,7 +520,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\Footer.tsx"
   );
-  import.meta.hot.lastModified = "1778736797144.9111";
+  import.meta.hot.lastModified = "1779067909045.7495";
 }
 function Footer() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("footer", { className: "bg-white relative", children: [
@@ -763,20 +763,20 @@ function App() {
     });
   }, [location]);
   return /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(import_jsx_dev_runtime3.Fragment, { children: [
-    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Navbar, {}, void 0, false, {
+    !location.pathname.startsWith("/admin") && /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Navbar, {}, void 0, false, {
       fileName: "app/root.tsx",
       lineNumber: 105,
-      columnNumber: 7
+      columnNumber: 51
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Outlet, {}, void 0, false, {
       fileName: "app/root.tsx",
       lineNumber: 106,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Footer, {}, void 0, false, {
+    !location.pathname.startsWith("/admin") && /* @__PURE__ */ (0, import_jsx_dev_runtime3.jsxDEV)(Footer, {}, void 0, false, {
       fileName: "app/root.tsx",
       lineNumber: 107,
-      columnNumber: 7
+      columnNumber: 51
     }, this)
   ] }, void 0, true, {
     fileName: "app/root.tsx",
@@ -799,4 +799,4 @@ export {
   App as default,
   links
 };
-//# sourceMappingURL=/build/root-NVMWSMZP.js.map
+//# sourceMappingURL=/build/root-LOYY7YJR.js.map

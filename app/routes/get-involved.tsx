@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/img-redundant-alt */
+/* eslint-disable import/no-named-as-default-member */
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
@@ -33,6 +35,7 @@ export default function GetInvolved() {
 
   useEffect(() => {
     setIsClient(true);
+    emailjs.init(EMAILJS_PUBLIC_KEY);
   }, []);
 
   useEffect(() => {
@@ -101,33 +104,31 @@ const cleanedContact = formData.contact.replace(
   ""
 );
 
-// GENERATE UNIQUE TICKET
-const ticketNumber =
-  "FMX-" +
-  Date.now().toString().slice(-6);
+    const ticketNumber = `FMX-${Date.now().toString().slice(-6)}`;
 
-const templateParams = {
-  ...formData,
-  contact: cleanedContact,
-  date: new Date().toLocaleString(),
-  ticket_number: ticketNumber,
-};
+    const templateParams: Record<string, string> = {
+      title: "Get Involved Inquiry",
+      name: formData.name,
+      email: formData.email,
+      contact: cleanedContact,
+      message: formData.message,
+      date: new Date().toLocaleString(),
+      ticket_number: ticketNumber,
+    };
 
     try {
-      // AUTO REPLY TO USER
+      // AUTO REPLY TO USER (template_yt8cn5i — dapat may {{ticket_number}} dito)
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        templateParams,
-        EMAILJS_PUBLIC_KEY
+        templateParams
       );
 
-      // EMAIL TO ADMIN
+      // EMAIL TO ADMIN (template_0s54upq — idagdag din {{ticket_number}} kung kailangan)
       await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_AUTOREPLY_ID,
-        templateParams,
-        EMAILJS_PUBLIC_KEY
+        templateParams
       );
 
       setModalMessage(

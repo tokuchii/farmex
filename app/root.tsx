@@ -63,9 +63,9 @@ export default function App() {
 
   return (
     <>
-      <Navbar />
+      {!location.pathname.startsWith("/admin") && <Navbar /> }
       <Outlet />
-      <Footer />
+      { !location.pathname.startsWith("/admin") && <Footer /> }
     </>
   );
 }

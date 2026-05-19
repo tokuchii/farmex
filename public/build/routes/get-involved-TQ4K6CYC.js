@@ -8,7 +8,7 @@ import {
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-JQ452JWN.js";
+} from "/build/_shared/chunk-3BOG53TH.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -282,7 +282,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\get-involved.tsx"
   );
-  import.meta.hot.lastModified = "1779091761101.707";
+  import.meta.hot.lastModified = "1779149712860.6902";
 }
 var EMAILJS_SERVICE_ID = "service_p1oxbrg";
 var EMAILJS_TEMPLATE_ID = "template_yt8cn5i";
@@ -307,6 +307,7 @@ function GetInvolved() {
   });
   (0, import_react.useEffect)(() => {
     setIsClient(true);
+    es_default.init(EMAILJS_PUBLIC_KEY);
   }, []);
   (0, import_react.useEffect)(() => {
     document.body.style.overflow = modalOpen ? "hidden" : "";
@@ -343,16 +344,19 @@ function GetInvolved() {
       return;
     }
     const cleanedContact = formData.contact.replace(/[^0-9]/g, "");
-    const ticketNumber = "FMX-" + Date.now().toString().slice(-6);
+    const ticketNumber = `FMX-${Date.now().toString().slice(-6)}`;
     const templateParams = {
-      ...formData,
+      title: "Get Involved Inquiry",
+      name: formData.name,
+      email: formData.email,
       contact: cleanedContact,
+      message: formData.message,
       date: (/* @__PURE__ */ new Date()).toLocaleString(),
       ticket_number: ticketNumber
     };
     try {
-      await es_default.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY);
-      await es_default.send(EMAILJS_SERVICE_ID, EMAILJS_AUTOREPLY_ID, templateParams, EMAILJS_PUBLIC_KEY);
+      await es_default.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+      await es_default.send(EMAILJS_SERVICE_ID, EMAILJS_AUTOREPLY_ID, templateParams);
       setModalMessage("Your message has been sent successfully!");
       setFormData({
         name: "",
@@ -384,30 +388,30 @@ function GetInvolved() {
         ease: "easeOut"
       } }, void 0, false, {
         fileName: "app/routes/get-involved.tsx",
-        lineNumber: 130,
+        lineNumber: 134,
         columnNumber: 21
       }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: "/Jackpot102.jpg", alt: "Farm Image Placeholder", className: "w-full h-64 sm:h-96 md:h-[600px] lg:h-[500px] object-cover object-top opacity-0" }, void 0, false, {
         fileName: "app/routes/get-involved.tsx",
-        lineNumber: 142,
+        lineNumber: 146,
         columnNumber: 15
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 bg-[#007F3D] bg-opacity-45" }, void 0, false, {
         fileName: "app/routes/get-involved.tsx",
-        lineNumber: 144,
+        lineNumber: 148,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 flex flex-col items-center justify-center z-20", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-white text-2xl md:text-4xl font-extrabold uppercase tracking-widest mb-4 mt-16", children: "FARMEX AT A GLANCE" }, void 0, false, {
         fileName: "app/routes/get-involved.tsx",
-        lineNumber: 147,
+        lineNumber: 151,
         columnNumber: 11
       }, this) }, void 0, false, {
         fileName: "app/routes/get-involved.tsx",
-        lineNumber: 146,
+        lineNumber: 150,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/get-involved.tsx",
-      lineNumber: 129,
+      lineNumber: 133,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("section", { className: "w-full min-h-screen pt-8 pb-16 px-4 sm:px-8 bg-[url('/newbgmachinerental.png')] bg-cover bg-center flex flex-col items-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-w-7xl space-y-12", children: [
@@ -415,83 +419,83 @@ function GetInvolved() {
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex flex-col items-center", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: "/pandoybg3_new.png", alt: "Mascot", className: "w-[350px] h-auto" }, void 0, false, {
             fileName: "app/routes/get-involved.tsx",
-            lineNumber: 163,
+            lineNumber: 167,
             columnNumber: 17
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "h-1 bg-yellow-500 w-3/4 md:w-2/3 mt-4" }, void 0, false, {
             fileName: "app/routes/get-involved.tsx",
-            lineNumber: 165,
+            lineNumber: 169,
             columnNumber: 17
           }, this)
         ] }, void 0, true, {
           fileName: "app/routes/get-involved.tsx",
-          lineNumber: 162,
+          lineNumber: 166,
           columnNumber: 15
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex items-start justify-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("form", { onSubmit: handleSubmit, className: "bg-white text-gray-800 p-6 rounded-lg w-full max-w-lg shadow-lg border border-gray-200", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("input", { type: "text", name: "name", placeholder: "Name", value: formData.name, onChange: handleChange, className: "w-full px-4 py-3 rounded text-gray-700 bg-white border border-gray-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:outline-none mb-4", required: true }, void 0, false, {
             fileName: "app/routes/get-involved.tsx",
-            lineNumber: 172,
+            lineNumber: 176,
             columnNumber: 19
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("input", { type: "email", name: "email", placeholder: "Email Address", value: formData.email, onChange: handleChange, className: "w-full px-4 py-3 rounded text-gray-700 bg-white border border-gray-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:outline-none mb-4", required: true }, void 0, false, {
             fileName: "app/routes/get-involved.tsx",
-            lineNumber: 175,
+            lineNumber: 179,
             columnNumber: 19
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("input", { type: "text", name: "contact", placeholder: "Contact Number", value: formData.contact, onChange: handleChange, className: "w-full px-4 py-3 rounded text-gray-700 bg-white border border-gray-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:outline-none mb-4", required: true }, void 0, false, {
             fileName: "app/routes/get-involved.tsx",
-            lineNumber: 178,
+            lineNumber: 182,
             columnNumber: 19
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("textarea", { name: "message", rows: 6, placeholder: "Your Message", value: formData.message, onChange: handleChange, className: "w-full px-4 py-3 rounded text-gray-700 bg-white border border-gray-300 shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)] focus:outline-none mb-4", required: true }, void 0, false, {
             fileName: "app/routes/get-involved.tsx",
-            lineNumber: 181,
+            lineNumber: 185,
             columnNumber: 19
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex justify-end", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { type: "submit", disabled: isSending, className: "flex items-center gap-2 bg-[#00703C] text-white px-4 py-2 rounded hover:bg-green-700 disabled:opacity-60", children: [
             isSending && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("svg", { className: "animate-spin h-5 w-5 text-white", xmlns: "http://www.w3.org/2000/svg", fill: "none", viewBox: "0 0 24 24", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("circle", { className: "opacity-25", cx: "12", cy: "12", r: "10", stroke: "currentColor", strokeWidth: "4" }, void 0, false, {
                 fileName: "app/routes/get-involved.tsx",
-                lineNumber: 187,
+                lineNumber: 191,
                 columnNumber: 27
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("path", { className: "opacity-75", fill: "currentColor", d: "M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" }, void 0, false, {
                 fileName: "app/routes/get-involved.tsx",
-                lineNumber: 189,
+                lineNumber: 193,
                 columnNumber: 27
               }, this)
             ] }, void 0, true, {
               fileName: "app/routes/get-involved.tsx",
-              lineNumber: 186,
+              lineNumber: 190,
               columnNumber: 37
             }, this),
             isSending ? "Submitting..." : "Submit Form"
           ] }, void 0, true, {
             fileName: "app/routes/get-involved.tsx",
-            lineNumber: 185,
+            lineNumber: 189,
             columnNumber: 21
           }, this) }, void 0, false, {
             fileName: "app/routes/get-involved.tsx",
-            lineNumber: 184,
+            lineNumber: 188,
             columnNumber: 19
           }, this)
         ] }, void 0, true, {
           fileName: "app/routes/get-involved.tsx",
-          lineNumber: 170,
+          lineNumber: 174,
           columnNumber: 17
         }, this) }, void 0, false, {
           fileName: "app/routes/get-involved.tsx",
-          lineNumber: 169,
+          lineNumber: 173,
           columnNumber: 15
         }, this)
       ] }, void 0, true, {
         fileName: "app/routes/get-involved.tsx",
-        lineNumber: 159,
+        lineNumber: 163,
         columnNumber: 13
       }, this) }, void 0, false, {
         fileName: "app/routes/get-involved.tsx",
-        lineNumber: 158,
+        lineNumber: 162,
         columnNumber: 11
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-8", children: [
@@ -499,36 +503,36 @@ function GetInvolved() {
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h3", { className: "font-bold text-lg sm:text-xl mb-1", children: "Emails:" }, void 0, false, {
               fileName: "app/routes/get-involved.tsx",
-              lineNumber: 207,
+              lineNumber: 211,
               columnNumber: 17
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "mailto:leadsagriventures@gmail.com", className: "underline hover:text-green-600", children: "leadsagriventures@gmail.com" }, void 0, false, {
               fileName: "app/routes/get-involved.tsx",
-              lineNumber: 212,
+              lineNumber: 216,
               columnNumber: 19
             }, this) }, void 0, false, {
               fileName: "app/routes/get-involved.tsx",
-              lineNumber: 211,
+              lineNumber: 215,
               columnNumber: 17
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "mailto:hr@leadsagri.com", className: "underline hover:text-green-600", children: "hr@leadsagri.com" }, void 0, false, {
               fileName: "app/routes/get-involved.tsx",
-              lineNumber: 218,
+              lineNumber: 222,
               columnNumber: 19
             }, this) }, void 0, false, {
               fileName: "app/routes/get-involved.tsx",
-              lineNumber: 217,
+              lineNumber: 221,
               columnNumber: 17
             }, this)
           ] }, void 0, true, {
             fileName: "app/routes/get-involved.tsx",
-            lineNumber: 206,
+            lineNumber: 210,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h3", { className: "font-bold text-lg sm:text-xl mb-1", children: "Contact numbers:" }, void 0, false, {
               fileName: "app/routes/get-involved.tsx",
-              lineNumber: 226,
+              lineNumber: 230,
               columnNumber: 17
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { children: [
@@ -538,12 +542,12 @@ function GetInvolved() {
                 "+63 945 170 9401"
               ] }, void 0, true, {
                 fileName: "app/routes/get-involved.tsx",
-                lineNumber: 232,
+                lineNumber: 236,
                 columnNumber: 19
               }, this)
             ] }, void 0, true, {
               fileName: "app/routes/get-involved.tsx",
-              lineNumber: 230,
+              lineNumber: 234,
               columnNumber: 17
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { children: [
@@ -553,12 +557,12 @@ function GetInvolved() {
                 "+63 906 481 9885"
               ] }, void 0, true, {
                 fileName: "app/routes/get-involved.tsx",
-                lineNumber: 240,
+                lineNumber: 244,
                 columnNumber: 19
               }, this)
             ] }, void 0, true, {
               fileName: "app/routes/get-involved.tsx",
-              lineNumber: 238,
+              lineNumber: 242,
               columnNumber: 17
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { children: [
@@ -568,12 +572,12 @@ function GetInvolved() {
                 "+63 917 313 8153"
               ] }, void 0, true, {
                 fileName: "app/routes/get-involved.tsx",
-                lineNumber: 248,
+                lineNumber: 252,
                 columnNumber: 19
               }, this)
             ] }, void 0, true, {
               fileName: "app/routes/get-involved.tsx",
-              lineNumber: 246,
+              lineNumber: 250,
               columnNumber: 17
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { children: [
@@ -583,76 +587,76 @@ function GetInvolved() {
                 "+63 917 313 8162"
               ] }, void 0, true, {
                 fileName: "app/routes/get-involved.tsx",
-                lineNumber: 256,
+                lineNumber: 260,
                 columnNumber: 19
               }, this)
             ] }, void 0, true, {
               fileName: "app/routes/get-involved.tsx",
-              lineNumber: 254,
+              lineNumber: 258,
               columnNumber: 17
             }, this)
           ] }, void 0, true, {
             fileName: "app/routes/get-involved.tsx",
-            lineNumber: 225,
+            lineNumber: 229,
             columnNumber: 15
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h3", { className: "font-bold text-lg sm:text-xl mb-1", children: "Office Address:" }, void 0, false, {
               fileName: "app/routes/get-involved.tsx",
-              lineNumber: 265,
+              lineNumber: 269,
               columnNumber: 17
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "break-words", children: [
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "https://maps.app.goo.gl/sjpAiD1d1ciTcU9n7", target: "_blank", rel: "noopener noreferrer", className: "underline hover:text-green-600", children: "Farmex Corporation KM 70 National Highway, Brgy. Bangyas, Calauan, Laguna" }, void 0, false, {
                 fileName: "app/routes/get-involved.tsx",
-                lineNumber: 270,
+                lineNumber: 274,
                 columnNumber: 19
               }, this),
               /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "break-words mt-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "https://maps.app.goo.gl/wiCDvstV13xTotCq7", target: "_blank", rel: "noopener noreferrer", className: "underline hover:text-green-600", children: "Unit A 201 and Alfresco Area 2nd Floor Coral Center Mall Barangay San Francisco, Bi\xF1an Laguna" }, void 0, false, {
                 fileName: "app/routes/get-involved.tsx",
-                lineNumber: 276,
+                lineNumber: 280,
                 columnNumber: 21
               }, this) }, void 0, false, {
                 fileName: "app/routes/get-involved.tsx",
-                lineNumber: 275,
+                lineNumber: 279,
                 columnNumber: 19
               }, this)
             ] }, void 0, true, {
               fileName: "app/routes/get-involved.tsx",
-              lineNumber: 269,
+              lineNumber: 273,
               columnNumber: 17
             }, this)
           ] }, void 0, true, {
             fileName: "app/routes/get-involved.tsx",
-            lineNumber: 264,
+            lineNumber: 268,
             columnNumber: 15
           }, this)
         ] }, void 0, true, {
           fileName: "app/routes/get-involved.tsx",
-          lineNumber: 203,
+          lineNumber: 207,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-w-md md:max-w-full h-80 md:h-[480px] border-2 md:border-4 border-[#057A31]", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("iframe", { title: "FarmEx Location", src: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d35917.25807111052!2d121.25206336136385!3d14.173866964059993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd5f625f843819%3A0x2869c3992b0c6d61!2sLeads%20Agriventures!5e1!3m2!1sen!2sph!4v1755487300350!5m2!1sen!2sph", width: "100%", height: "100%", allowFullScreen: true, loading: "lazy", className: "rounded-md shadow-lg", referrerPolicy: "no-referrer-when-downgrade" }, void 0, false, {
           fileName: "app/routes/get-involved.tsx",
-          lineNumber: 288,
+          lineNumber: 292,
           columnNumber: 15
         }, this) }, void 0, false, {
           fileName: "app/routes/get-involved.tsx",
-          lineNumber: 287,
+          lineNumber: 291,
           columnNumber: 13
         }, this)
       ] }, void 0, true, {
         fileName: "app/routes/get-involved.tsx",
-        lineNumber: 201,
+        lineNumber: 205,
         columnNumber: 11
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/get-involved.tsx",
-      lineNumber: 155,
+      lineNumber: 159,
       columnNumber: 9
     }, this) }, void 0, false, {
       fileName: "app/routes/get-involved.tsx",
-      lineNumber: 154,
+      lineNumber: 158,
       columnNumber: 7
     }, this),
     isClient && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(AnimatePresence, { children: modalOpen && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50", initial: {
@@ -675,39 +679,39 @@ function GetInvolved() {
     }, children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex justify-center mb-4", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: `text-4xl ${modalMessage.includes("success") ? "text-green-600" : "text-red-600"}`, children: modalMessage.includes("success") ? "\u2705" : "\u274C" }, void 0, false, {
         fileName: "app/routes/get-involved.tsx",
-        lineNumber: 316,
+        lineNumber: 320,
         columnNumber: 19
       }, this) }, void 0, false, {
         fileName: "app/routes/get-involved.tsx",
-        lineNumber: 315,
+        lineNumber: 319,
         columnNumber: 17
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-gray-800 text-base", children: modalMessage }, void 0, false, {
         fileName: "app/routes/get-involved.tsx",
-        lineNumber: 321,
+        lineNumber: 325,
         columnNumber: 17
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: () => setModalOpen(false), className: "mt-6 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition", children: "OK" }, void 0, false, {
         fileName: "app/routes/get-involved.tsx",
-        lineNumber: 325,
+        lineNumber: 329,
         columnNumber: 17
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/get-involved.tsx",
-      lineNumber: 303,
+      lineNumber: 307,
       columnNumber: 15
     }, this) }, void 0, false, {
       fileName: "app/routes/get-involved.tsx",
-      lineNumber: 296,
+      lineNumber: 300,
       columnNumber: 25
     }, this) }, void 0, false, {
       fileName: "app/routes/get-involved.tsx",
-      lineNumber: 295,
+      lineNumber: 299,
       columnNumber: 20
     }, this)
   ] }, void 0, true, {
     fileName: "app/routes/get-involved.tsx",
-    lineNumber: 127,
+    lineNumber: 131,
     columnNumber: 10
   }, this);
 }
@@ -721,4 +725,4 @@ export {
   GetInvolved as default,
   meta
 };
-//# sourceMappingURL=/build/routes/get-involved-PRAF5AAF.js.map
+//# sourceMappingURL=/build/routes/get-involved-TQ4K6CYC.js.map

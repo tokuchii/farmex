@@ -3,7 +3,7 @@ import {
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-JQ452JWN.js";
+} from "/build/_shared/chunk-3BOG53TH.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import "/build/_shared/chunk-2Z2JGDFU.js";
 import {
@@ -29,7 +29,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\admin\\index.tsx"
   );
-  import.meta.hot.lastModified = "1778742747390.1902";
+  import.meta.hot.lastModified = "1779106492173.7168";
 }
 var stats = [{
   label: "Total Users",
@@ -225,4 +225,4 @@ window.$RefreshSig$ = prevRefreshSig;
 export {
   AdminDashboard as default
 };
-//# sourceMappingURL=/build/routes/admin-54WGNI2L.js.map
+//# sourceMappingURL=/build/routes/admin-U2CUPT6U.js.map
