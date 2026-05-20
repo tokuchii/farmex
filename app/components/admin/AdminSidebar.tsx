@@ -1,121 +1,127 @@
-// components/admin/AdminSidebar.tsx
+import { NavLink, useLocation } from "@remix-run/react";
+import { LucideX } from "lucide-react";
+import { useEffect } from "react";
+import type { FC } from "react";
+import { adminNavLinks } from "./adminNavLinks";
+import { cn } from "~/lib/utils";
 
-import { NavLink } from "react-router";
+type AdminSidebarProps = {
+  mobileOpen?: boolean;
+  onMobileClose?: () => void;
+};
 
-const navItems = [
-  {
-    label: "Dashboard",
-    to: "/admin",
-    icon: (
-      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <rect x="3" y="3" width="7" height="7" rx="1" />
-        <rect x="14" y="3" width="7" height="7" rx="1" />
-        <rect x="3" y="14" width="7" height="7" rx="1" />
-        <rect x="14" y="14" width="7" height="7" rx="1" />
-      </svg>
-    ),
-  },
-  {
-    label: "Users",
-    to: "/admin/users",
-    icon: (
-      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-        <circle cx="9" cy="7" r="4" />
-        <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-        <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-      </svg>
-    ),
-  },
-  {
-    label: "Products",
-    to: "/admin/products",
-    icon: (
-      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-        <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-        <line x1="12" y1="22.08" x2="12" y2="12" />
-      </svg>
-    ),
-  },
-  {
-    label: "Orders",
-    to: "/admin/orders",
-    icon: (
-      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
-        <rect x="9" y="3" width="6" height="4" rx="1" />
-        <line x1="9" y1="12" x2="15" y2="12" />
-        <line x1="9" y1="16" x2="13" y2="16" />
-      </svg>
-    ),
-  },
-  {
-    label: "Settings",
-    to: "/admin/settings",
-    icon: (
-      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
-        <circle cx="12" cy="12" r="3" />
-        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
-      </svg>
-    ),
-  },
-];
-
-export default function AdminSidebar() {
-  return (
-    <aside className="w-56 shrink-0 border-r border-white/[0.07] flex flex-col py-6 px-3 gap-0.5 bg-[#0d0f14]">
-      {/* Logo */}
-      <div className="flex items-baseline gap-2 px-3 mb-8">
-        <span className="text-[#a3e635] text-lg font-bold tracking-tight">FARMEX</span>
-        <span className="text-[10px] text-white/25 uppercase tracking-[0.2em]">Admin</span>
-      </div>
-
-      {/* Section label */}
-      <span className="px-3 text-[10px] text-white/25 uppercase tracking-[0.2em] mb-2">
-        Navigation
-      </span>
-
-      {/* Nav */}
-      {navItems.map((item) => (
-        <NavLink
-          key={item.to}
-          to={item.to}
-          end={item.to === "/admin"}
-          className={({ isActive }) =>
-            `group flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-all duration-150 ${
-              isActive
-                ? "bg-[#a3e635]/10 text-[#a3e635]"
-                : "text-white/40 hover:text-white hover:bg-white/5"
-            }`
-          }
-        >
-          {({ isActive }) => (
-            <>
-              <span className={isActive ? "text-[#a3e635]" : "text-white/30 group-hover:text-white/70"}>
-                {item.icon}
-              </span>
-              {item.label}
-              {isActive && (
-                <span className="ml-auto w-1 h-1 rounded-full bg-[#a3e635]" />
-              )}
-            </>
-          )}
-        </NavLink>
-      ))}
-
-      {/* Footer */}
-      <div className="mt-auto pt-4 border-t border-white/[0.07] px-1">
-        <div className="flex items-center gap-3 px-2 py-2">
-          <div className="w-7 h-7 rounded-full bg-[#a3e635]/20 flex items-center justify-center text-[#a3e635] text-xs font-bold">
-            A
-          </div>
-          <div className="flex flex-col">
-            <span className="text-xs text-white/70">Admin</span>
-            <span className="text-[10px] text-white/25">admin@farmex.com</span>
-          </div>
-        </div>
-      </div>
-    </aside>
+const navLinkClass = ({ isActive }: { isActive: boolean }) =>
+  cn(
+    "flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium transition",
+    isActive
+      ? "bg-emerald-500 text-slate-950 shadow-sm shadow-emerald-500/25"
+      : "text-slate-600 hover:bg-emerald-50 hover:text-emerald-800"
   );
-}
+
+const SidebarBrand = () => (
+  <div className="flex items-center gap-3">
+    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-emerald-500 text-sm font-bold text-slate-950">
+      F
+    </span>
+    <div className="min-w-0">
+      <p className="text-xs font-bold uppercase tracking-[0.18em] text-emerald-600">Farmex</p>
+      <p className="truncate text-base font-semibold text-slate-900">Admin panel</p>
+    </div>
+  </div>
+);
+
+const AdminNav = ({ onNavigate }: { onNavigate?: () => void }) => (
+  <nav className="flex flex-col gap-1" aria-label="Admin navigation">
+    {adminNavLinks.map((item) => {
+      const Icon = item.icon;
+
+      return (
+        <NavLink key={item.to} to={item.to} onClick={onNavigate} className={navLinkClass}>
+          <Icon className="h-4 w-4 shrink-0" aria-hidden />
+          {item.label}
+        </NavLink>
+      );
+    })}
+  </nav>
+);
+
+const AdminSidebar: FC<AdminSidebarProps> = ({ mobileOpen = false, onMobileClose }) => {
+  const location = useLocation();
+
+  useEffect(() => {
+    onMobileClose?.();
+  }, [location.pathname, onMobileClose]);
+
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
+  return (
+    <>
+      <aside className="hidden lg:fixed lg:inset-y-0 lg:left-0 lg:z-20 lg:flex lg:w-64 lg:flex-col border-r border-slate-200 bg-white">
+        <div className="admin-scrollbar flex h-full flex-col overflow-y-auto px-4 py-5">
+          <SidebarBrand />
+          <div className="mt-8 flex-1">
+            <AdminNav />
+          </div>
+          <p className="mt-6 border-t border-slate-100 pt-4 text-xs text-slate-400">
+            Sample account for testing only.
+          </p>
+        </div>
+      </aside>
+
+      <div
+        className={cn(
+          "fixed inset-0 z-40 lg:hidden",
+          mobileOpen ? "pointer-events-auto" : "pointer-events-none"
+        )}
+        aria-hidden={!mobileOpen}
+      >
+        <button
+          type="button"
+          aria-label="Close menu"
+          onClick={onMobileClose}
+          className={cn(
+            "absolute inset-0 bg-slate-900/40 transition-opacity duration-300",
+            mobileOpen ? "opacity-100" : "opacity-0"
+          )}
+        />
+
+        <aside
+          className={cn(
+            "absolute left-0 top-0 flex h-full w-[min(100%,18rem)] flex-col border-r border-slate-200 bg-white shadow-2xl transition-transform duration-300 ease-out",
+            mobileOpen ? "translate-x-0" : "-translate-x-full"
+          )}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Admin menu"
+        >
+          <div className="flex items-center justify-between gap-3 border-b border-slate-100 px-4 py-4">
+            <SidebarBrand />
+            <button
+              type="button"
+              onClick={onMobileClose}
+              className="rounded-xl border border-slate-200 p-2 text-slate-600 transition hover:bg-slate-50 hover:text-slate-900"
+              aria-label="Close menu"
+            >
+              <LucideX className="h-5 w-5" />
+            </button>
+          </div>
+
+          <div className="admin-scrollbar flex-1 overflow-y-auto px-4 py-5">
+            <AdminNav onNavigate={onMobileClose} />
+          </div>
+
+          <p className="border-t border-slate-100 px-4 py-4 text-xs text-slate-400">
+            Sample account for testing only.
+          </p>
+        </aside>
+      </div>
+    </>
+  );
+};
+
+export default AdminSidebar;

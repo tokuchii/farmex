@@ -29,3 +29,37 @@ body {
 .animate-slide-up {
   animation: slide-up 0.3s ease-out forwards;
 }
+
+/* Admin panel — thin, rounded scrollbar (emerald on hover) */
+@layer utilities {
+  .admin-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 #f1f5f9;
+  }
+
+  .admin-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .admin-scrollbar::-webkit-scrollbar-track {
+    margin: 4px 0;
+    background: transparent;
+    border-radius: 9999px;
+  }
+
+  .admin-scrollbar::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    border-radius: 9999px;
+  }
+
+  .admin-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: #34d399;
+  }
+
+  .admin-scrollbar::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
