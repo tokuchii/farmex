@@ -13,8 +13,6 @@ import {
   DialogTitle
 } from "../components/ui/dialog";
 
-
-
 export const links = () => [
   { rel: "stylesheet", href: calendarStyles },
 ];
@@ -22,6 +20,7 @@ export const links = () => [
 export const meta: MetaFunction = () => [
   { title: "Services" },
 ];
+
 export default function Services() {
   const [activeSection, setActiveSection] = useState<'rentals' | 'consultation' | 'training'>('rentals');
   const [isClient, setIsClient] = useState(false);
@@ -29,12 +28,10 @@ export default function Services() {
     setIsClient(true);
   }, []);
 
-
   const location = useLocation();
 
   useEffect(() => {
     const hash = location.hash;
-
     if (hash === '#technical-consultation') {
       setActiveSection('consultation');
     } else if (hash === '#training') {
@@ -53,7 +50,6 @@ export default function Services() {
   const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
   const [isImageOpen, setIsImageOpen] = useState(false);
 
-
   const trainingRanges: { start: string; end: string; title: string }[] = [
     { start: "2025-06-23", end: "2025-06-27", title: '🌱 Batch No. 1 — "Building Stronger Rice Communities: Advancing Knowledge in Farm Machinaries Operations and Maintenance"' },
     { start: "2025-06-30", end: "2025-07-02", title: '🌱 Batch No. 2 — "Building Stronger Rice Communities: Advancing Knowledge in Farm Machinaries Operations and Maintenance"' },
@@ -70,8 +66,6 @@ export default function Services() {
     return d >= s && d <= e;
   };
 
-
-  // Example at the top of your component
   const images: { src: string; alt: string }[] = [
     { src: "/training1.jpg", alt: "Training 1" },
     { src: "/training2.jpg", alt: "Training 2" },
@@ -89,9 +83,6 @@ export default function Services() {
   const [index, setIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
 
-  const firstNineImages = images.slice(0, 9);
-  const remainingImages = images.slice(9);
-
   useEffect(() => {
     setIsMobile(window.innerWidth < 768);
   }, []);
@@ -99,29 +90,27 @@ export default function Services() {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
-    }, 4000); // 4 seconds
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
-
-useEffect(() => {
-  const handleEsc = (e: KeyboardEvent) => {
-    if (e.key === "Escape") {
-      setIsImageOpen(false);
-    }
-  };
-
-  window.addEventListener("keydown", handleEsc);
-  return () => window.removeEventListener("keydown", handleEsc);
-}, []);
-
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsImageOpen(false);
+      }
+    };
+    window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, []);
 
   return (
     <div className="bg-white w-full min-h-screen relative">
-      {/* Sevices Machine Rentals */}
+
+      {/* ── MACHINE RENTALS ───────────────────────────────────────────── */}
       {activeSection === 'rentals' && (
         <>
-          {/* Hero Section */}
+          {/* Hero */}
           <motion.div className="relative w-full h-[350px] sm:h-[400px] md:h-[600px] lg:h-[500px] overflow-hidden">
             {isClient && (
               <motion.img
@@ -148,103 +137,48 @@ useEffect(() => {
             </div>
           </motion.div>
 
-          {/* Equipment Grid Section */}
+          {/* Equipment Grid */}
           <motion.div>
             <section className="w-full py-16 px-4 sm:px-8 bg-[url('/newbgmachinerental.png')] bg-cover bg-center flex flex-col items-center">
               <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-                {/* Mobile Dryer */}
-                <motion.div
-                  className="overflow-hidden p-2 sm:p-3 lg:p-4"
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                >
-                  <div className="px-2 sm:px-4 pt-2 sm:pt-4">
-                    <h3 className="text-green-600 font-bold text-base sm:text-lg md:text-xl lg:text-2xl">Mobile Dryer</h3>
-                    <div className="w-20 sm:w-24 md:w-28 h-0.5 sm:h-1 bg-yellow-400 mt-1"></div>
-                  </div>
-                  <div className="h-[280px] sm:h-[280px] md:h-[350px] lg:h-[450px] w-full overflow-hidden relative rounded py-2 sm:py-3 lg:py-4">
-                    <img
-                      src="/new_mobiledryer.png"
-                      alt="Mobile Dryer"
-                      className="w-full h-full object-cover border-2 sm:border-3 md:border-4 border-[#00703C] rounded-lg"
-                    />
-                  </div>
-                </motion.div>
-
-                {/* Tractor */}
-                <motion.div
-                  className="overflow-hidden p-2 sm:p-3 lg:p-4"
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                >
-                  <div className="px-2 sm:px-4 pt-2 sm:pt-4">
-                    <h3 className="text-green-600 font-bold text-base sm:text-lg md:text-xl lg:text-2xl">Tractor</h3>
-                    <div className="w-20 sm:w-24 md:w-28 h-0.5 sm:h-1 bg-yellow-400 mt-1"></div>
-                  </div>
-                  <div className="h-[280px] sm:h-[280px] md:h-[350px] lg:h-[450px] w-full overflow-hidden relative rounded py-2 sm:py-3 lg:py-4">
-                    <img
-                      src="/new_tractor.jpeg"
-                      alt="Tractor"
-                      className="w-full h-full object-cover border-2 sm:border-3 md:border-4 border-[#00703C] rounded-lg"
-                    />
-                  </div>
-                </motion.div>
-
-                {/* Transplanter */}
-                <motion.div
-                  className="overflow-hidden p-2 sm:p-3 lg:p-4"
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                >
-                  <div className="px-2 sm:px-4 pt-2 sm:pt-4">
-                    <h3 className="text-green-600 font-bold text-base sm:text-lg md:text-xl lg:text-2xl">Vacuum Seeder</h3>
-                    <div className="w-20 sm:w-24 md:w-28 h-0.5 sm:h-1 bg-yellow-400 mt-1"></div>
-                  </div>
-                  <div className="h-[280px] sm:h-[280px] md:h-[350px] lg:h-[450px] w-full overflow-hidden relative rounded py-2 sm:py-3 lg:py-4">
-                    <img
-                      src="/vacuumseeder.jpg"
-                      className="w-full h-full object-cover border-2 sm:border-3 md:border-4 border-[#00703C] rounded-lg"
-                    />
-                  </div>
-                </motion.div>
-
-                {/* Harvester */}
-                <motion.div
-                  className="overflow-hidden p-2 sm:p-3 lg:p-4"
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                >
-                  <div className="px-2 sm:px-4 pt-2 sm:pt-4">
-                    <h3 className="text-green-600 font-bold text-base sm:text-lg md:text-xl lg:text-2xl">Harvester</h3>
-                    <div className="w-20 sm:w-24 md:w-28 h-0.5 sm:h-1 bg-yellow-400 mt-1"></div>
-                  </div>
-                  <div className="h-[280px] sm:h-[280px] md:h-[350px] lg:h-[450px] w-full overflow-hidden relative rounded py-2 sm:py-3 lg:py-4">
-                    <img
-                      src="/new_harvester.jpg"
-                      alt="Harvester"
-                      className="w-full h-full object-cover border-2 sm:border-3 md:border-4 border-[#00703C] rounded-lg"
-                    />
-                  </div>
-                </motion.div>
+                {[
+                  { label: "Mobile Dryer", src: "/new_mobiledryer.png", alt: "Mobile Dryer" },
+                  { label: "Tractor", src: "/new_tractor.jpeg", alt: "Tractor" },
+                  { label: "Vacuum Seeder", src: "/vacuumseeder.jpg", alt: "Vacuum Seeder" },
+                  { label: "Harvester", src: "/new_harvester.jpg", alt: "Harvester" },
+                ].map((item, i) => (
+                  <motion.div
+                    key={item.label}
+                    className="overflow-hidden p-2 sm:p-3 lg:p-4"
+                    custom={i}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.6, delay: i * 0.15, ease: "easeOut" }}
+                  >
+                    <div className="px-2 sm:px-4 pt-2 sm:pt-4">
+                      <h3 className="text-green-600 font-bold text-base sm:text-lg md:text-xl lg:text-2xl">{item.label}</h3>
+                      <div className="w-20 sm:w-24 md:w-28 h-0.5 sm:h-1 bg-yellow-400 mt-1"></div>
+                    </div>
+                    <div className="h-[280px] sm:h-[280px] md:h-[350px] lg:h-[450px] w-full overflow-hidden relative rounded py-2 sm:py-3 lg:py-4">
+                      <img
+                        src={item.src}
+                        alt={item.alt}
+                        className="w-full h-full object-cover border-2 sm:border-3 md:border-4 border-[#00703C] rounded-lg"
+                      />
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </section>
-            {/* <div className="relative w-full h-1 bg-[#E0B100]"></div> */}
           </motion.div>
         </>
       )}
 
-      {/* Sevices Technical Consultation */}
+      {/* ── TECHNICAL CONSULTATION ────────────────────────────────────── */}
       {activeSection === 'consultation' && (
         <>
-          {/* Hero Section for Technical Consultation */}
+          {/* Hero */}
           <motion.div className="relative w-full h-[400px] sm:h-[400px] md:h-[600px] lg:h-[550px] overflow-hidden flex items-center justify-center">
             {isClient && (
               <motion.img
@@ -271,20 +205,19 @@ useEffect(() => {
             </div>
           </motion.div>
 
-          {/* Image Carousel/Slider Section */}
+          {/* Slider */}
           <div className="w-full py-8 sm:py-12 bg-white md:bg-[url('/bgmachinerentals.jpg')] md:bg-center md:bg-repeat-y flex justify-center">
             <div className="relative w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl px-2 sm:px-4 py-4 sm:py-6 flex flex-col items-center">
-              {/* Simple slider logic */}
               <TechnicalConsultationSlider />
             </div>
           </div>
         </>
       )}
 
-      {/* Services Training */}
+      {/* ── TRAINING ──────────────────────────────────────────────────── */}
       {activeSection === "training" && (
         <>
-          {/* Hero Section for Training */}
+          {/* Hero */}
           <motion.div className="relative w-full h-[600px] sm:h-[600px] md:h-[1000px] lg:h-[800px] overflow-hidden">
             {isClient && (
               <motion.img
@@ -313,304 +246,251 @@ useEffect(() => {
             </div>
           </motion.div>
 
-          {/* Grid Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 md:px-8 py-12 items-stretch">
-            {/* Left: Image Collage */}
-            <div className="w-full order-2 lg:order-1">
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {/* First 9 images */}
-                {images.slice(0, 9).map((img, i) => (
-                  <div key={i} className="overflow-hidden rounded-2xl shadow-lg">
-                    <button
-                      onClick={() => {
-                        setSelectedImage(img);
-                        setIsImageOpen(true);
-                      }}
-                      className="w-full h-full focus:outline-none"
-                    >
-                      <LazyLoadImage
-                        src={img.src}
-                        alt={img.alt}
-                        className="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
-                      />
-                    </button>
-                  </div>
-                ))}
+          {/* Main content */}
+          <div className="flex flex-col gap-8 px-4 md:px-8 py-12">
 
-                {/* Remaining images shown when toggled */}
-                {showMore &&
-                  images.slice(9).map((img, i) => (
-                    <div key={i + 9} className="overflow-hidden rounded-2xl shadow-lg">
-                      <button
-                        onClick={() => {
-                          setSelectedImage(img);
-                          setIsImageOpen(true);
-                        }}
-                        className="w-full h-full focus:outline-none"
-                      >
-                        <LazyLoadImage
-                          src={img.src}
-                          alt={img.alt}
-                          className="w-full aspect-[4/3] object-cover hover:scale-105 transition-transform duration-300 cursor-pointer"
+            {/* Top row: Calendar (left) + Training Events (right) */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+
+              {/* Left: Calendar */}
+              <div className="w-full">
+                <div className="bg-gradient-to-br from-green-300 via-green-200 to-green-300 rounded-2xl shadow-lg p-4 w-full flex flex-col sticky top-24">
+                  <h3 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-center text-white bg-green-600 bg-opacity-90 rounded-t-2xl py-3 px-6 shadow-lg tracking-wider uppercase animate-fadeIn">
+                    Training Schedule
+                  </h3>
+                  <div className="flex justify-center flex-1 overflow-auto h-[400px] md:h-[500px] lg:h-[600px]">
+                    {isClient && (
+                      <>
+                        <Calendar
+                          key={selectedDate ? selectedDate.toDateString() : "calendar"}
+                          className="w-full border border-gray-600 rounded-b-2xl mb-6"
+                          onClickDay={(date: Date) => {
+                            setSelectedDate(date);
+                            setIsOpen(true);
+                          }}
+                          activeStartDate={calendarActiveStartDate}
+                          onActiveStartDateChange={({ activeStartDate }) => {
+                            if (activeStartDate) setCalendarActiveStartDate(activeStartDate);
+                          }}
+                          tileClassName={({ date, view }) => {
+                            if (view !== "month") return "";
+                            const range = trainingRanges.find(r => isDateInRange(date, r.start, r.end));
+                            const isSelected = selectedDate && date.toDateString() === selectedDate.toDateString();
+                            let statusClass = "";
+                            if (range) {
+                              const now = new Date();
+                              const start = new Date(range.start);
+                              const end = new Date(range.end);
+                              if (now.getTime() >= start.getTime() && now.getTime() <= end.getTime()) statusClass = "ongoing";
+                              else if (now.getTime() < start.getTime()) statusClass = "upcoming";
+                              else if (now.getTime() > end.getTime()) statusClass = "past";
+                            }
+                            if (isSelected) statusClass += " selected";
+                            return statusClass;
+                          }}
+                          tileContent={({ date, view }) => {
+                            if (view !== "month") return null;
+                            const ranges = trainingRanges.filter(r => isDateInRange(date, r.start, r.end));
+                            if (!ranges.length) return null;
+                            return (
+                              <div
+                                className="w-full h-full flex flex-col justify-start items-center relative"
+                                onMouseEnter={(e) => {
+                                  setTooltip({ visible: true, text: ranges.map(r => r.title).join(", "), x: e.clientX, y: e.clientY });
+                                }}
+                                onMouseMove={(e) => {
+                                  setTooltip(prev => ({ ...prev, x: e.clientX, y: e.clientY }));
+                                }}
+                                onMouseLeave={() => setTooltip({ visible: false, text: "", x: 0, y: 0 })}
+                              >
+                                {ranges.map((range, idx) => {
+                                  const now = new Date();
+                                  const start = new Date(range.start);
+                                  const end = new Date(range.end);
+                                  let bg = "bg-blue-500";
+                                  if (now.getTime() >= start.getTime() && now.getTime() <= end.getTime()) bg = "bg-green-500";
+                                  else if (now.getTime() > end.getTime()) bg = "bg-gray-400";
+                                  return <span key={idx} className={`w-2 h-2 rounded-full ${bg} absolute bottom-1`}></span>;
+                                })}
+                              </div>
+                            );
+                          }}
                         />
-                      </button>
-                    </div>
-                  ))}
+
+                        {tooltip.visible && (
+                          <div
+                            className="fixed bg-gray-800 text-white text-xs px-2 py-1 rounded shadow-lg pointer-events-none z-50"
+                            style={{ top: tooltip.y + 10, left: tooltip.x + 10 }}
+                          >
+                            {tooltip.text}
+                          </div>
+                        )}
+
+                        <Dialog open={isOpen} onOpenChange={(open) => {
+                          setIsOpen(open);
+                          if (!open) setSelectedDate(null);
+                        }}>
+                          <DialogContent className="bg-white border-black rounded-lg max-w-2xl w-full h-full max-h-[22vh] py-2">
+                            <DialogHeader>
+                              <DialogTitle className="text-center font-semibold">
+                                {(() => {
+                                  if (!selectedDate) return "";
+                                  const range = trainingRanges.find(r => isDateInRange(selectedDate, r.start, r.end));
+                                  const formatDate = (date: Date) =>
+                                    date.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" });
+                                  return range
+                                    ? `${formatDate(new Date(range.start))} - ${formatDate(new Date(range.end))}`
+                                    : formatDate(selectedDate);
+                                })()}
+                              </DialogTitle>
+                            </DialogHeader>
+                            <p className="text-black text-center mt-4 md:mt-6 mb-4">
+                              {selectedDate
+                                ? trainingRanges.find(r => isDateInRange(selectedDate, r.start, r.end))?.title || "No training scheduled for this date."
+                                : ""}
+                            </p>
+                          </DialogContent>
+                        </Dialog>
+                      </>
+                    )}
+                  </div>
+                </div>
               </div>
 
-              {images.length > 9 && (
-                <div className="mt-4 text-center">
-                  <button
-                    onClick={() => setShowMore(!showMore)}
-                    className="text-green-700 font-semibold hover:underline"
-
-                  >
-                    {showMore ? "Show Less" : "Show More"}
-                  </button>
-                </div>
-              )}
-            </div>
-
-
-            {/* Right: Calendar */}
-            <div className="w-full order-1 lg:order-2">
-              <div className="bg-gradient-to-br from-green-300 via-green-200 to-green-300 rounded-2xl shadow-lg p-4 w-full flex flex-col sticky top-24">
-                <h3 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-center text-white bg-green-600 bg-opacity-90 rounded-t-2xl py-3 px-6 shadow-lg tracking-wider uppercase animate-fadeIn">
-                  Training Schedule
-                </h3>
-
-                <div className="flex justify-center flex-1 overflow-auto h-[400px] md:h-[500px] lg:h-[600px]">
-                  {isClient && (
-                    <>
-                      <Calendar
-                        key={selectedDate ? selectedDate.toDateString() : "calendar"}
-                        className="w-full border border-gray-600 rounded-b-2xl mb-6"
-                        onClickDay={(date: Date) => {
-                          setSelectedDate(date);
-                          setIsOpen(true);
-                        }}
-                        activeStartDate={calendarActiveStartDate}
-                        onActiveStartDateChange={({ activeStartDate }) => {
-                          if (activeStartDate) setCalendarActiveStartDate(activeStartDate);
-                        }}
-                        tileClassName={({ date, view }) => {
-                          if (view !== "month") return "";
-
-                          const range = trainingRanges.find(r => isDateInRange(date, r.start, r.end));
-                          const isSelected = selectedDate && date.toDateString() === selectedDate.toDateString();
-
-                          let statusClass = "";
-                          if (range) {
-                            const now = new Date();
-                            const start = new Date(range.start);
-                            const end = new Date(range.end);
-                            if (now.getTime() >= start.getTime() && now.getTime() <= end.getTime()) statusClass = "ongoing";
-                            else if (now.getTime() < start.getTime()) statusClass = "upcoming";
-                            else if (now.getTime() > end.getTime()) statusClass = "past";
-                          }
-
-                          if (isSelected) statusClass += " selected";
-
-                          return statusClass;
-                        }}
-                        tileContent={({ date, view, activeStartDate, ...props }) => {
-                          if (view !== "month") return null;
-
-                          const ranges = trainingRanges.filter(r => isDateInRange(date, r.start, r.end));
-                          if (!ranges.length) return null;
-
-                          return (
-                            <div
-                              className="w-full h-full flex flex-col justify-start items-center relative"
-                              onMouseEnter={(e) => {
-                                setTooltip({
-                                  visible: true,
-                                  text: ranges.map(r => r.title).join(", "),
-                                  x: e.clientX,
-                                  y: e.clientY,
-                                });
-                              }}
-                              onMouseMove={(e) => {
-                                setTooltip(prev => ({
-                                  ...prev,
-                                  x: e.clientX,
-                                  y: e.clientY,
-                                }));
-                              }}
-                              onMouseLeave={() => setTooltip({ visible: false, text: "", x: 0, y: 0 })}
-                            >
-                              {/* Dots for events */}
-                              {ranges.map((range, idx) => {
-                                const now = new Date();
-                                const start = new Date(range.start);
-                                const end = new Date(range.end);
-
-                                let bg = "bg-blue-500"; // upcoming
-                                if (now.getTime() >= start.getTime() && now.getTime() <= end.getTime()) bg = "bg-green-500"; // ongoing
-                                else if (now.getTime() > end.getTime()) bg = "bg-gray-400"; // past
-
-                                return <span key={idx} className={`w-2 h-2 rounded-full ${bg} absolute bottom-1`}></span>;
-                              })}
-                            </div>
-                          );
-                        }}
-                      />
-
-                      {tooltip.visible && (
-                        <div
-                          className="fixed bg-gray-800 text-white text-xs px-2 py-1 rounded shadow-lg pointer-events-none z-50"
-                          style={{ top: tooltip.y + 10, left: tooltip.x + 10 }}
-                        >
-                          {tooltip.text}
-                        </div>
-                      )}
-
-                      {/* Dialog Modal */}
-                      <Dialog open={isOpen} onOpenChange={(open) => {
-                        setIsOpen(open);
-                        if (!open) setSelectedDate(null); // clear previous selection
-                      }}>
-                        <DialogContent className="bg-white border-black rounded-lg max-w-2xl w-full h-full max-h-[22vh] py-2">
-                          <DialogHeader>
-                            <DialogTitle className="text-center font-semibold">
-                              {(() => {
-                                if (!selectedDate) return "";
-                                const range = trainingRanges.find(r => isDateInRange(selectedDate, r.start, r.end));
-                                const formatDate = (date: Date) =>
-                                  date.toLocaleDateString("en-US", {
-                                    weekday: "long", // full day name
-                                    month: "long",   // full month name
-                                    day: "numeric",
-                                    year: "numeric",
-                                  });
-
-                                return range
-                                  ? `${formatDate(new Date(range.start))} - ${formatDate(new Date(range.end))}`
-                                  : formatDate(selectedDate);
-                              })()}
-                            </DialogTitle>
-                          </DialogHeader>
-                          <p className="text-black text-center mt-4 md:mt-6 mb-4">
-                            {selectedDate
-                              ? trainingRanges.find(r => isDateInRange(selectedDate, r.start, r.end))?.title ||
-                              "No training scheduled for this date."
-                              : ""}
-                          </p>
-                        </DialogContent>
-                      </Dialog>
-                    </>
-                  )}
-                </div>
-                {/* Events List */}
+              {/* Right: Training Events */}
+              <div className="w-full">
                 {isClient && (
-                  <div className="mt-6 px-4 md:px-8">
+                  <div className="bg-white rounded-2xl shadow-lg p-4 md:p-6 sticky top-24">
                     <h3 className="text-xl font-bold mb-4 text-center text-green-700 border-b-2 border-green-300 pb-2">
                       Training Events
                     </h3>
-
                     <ul className="flex flex-col gap-3">
                       {trainingRanges
                         .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime())
-                        .slice(0, showAll ? trainingRanges.length : 3) // show only first 3 if showAll is false
+                        .slice(0, showAll ? trainingRanges.length : 3)
                         .map((event, idx) => {
                           const now = new Date();
                           const start = new Date(event.start);
                           const end = new Date(event.end);
-
                           const formatDate = (date: Date) =>
-                            date.toLocaleDateString("en-US", {
-                              weekday: "long", // full day name
-                              month: "long",   // full month name
-                              day: "numeric",
-                              year: "numeric",
-                            });
-
-                          let statusBg = "bg-gray-200 text-gray-600"; // past
+                            date.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric", year: "numeric" });
+                          let statusBg = "bg-gray-200 text-gray-600";
                           if (now.getTime() >= start.getTime() && now.getTime() <= end.getTime())
-                            statusBg = "bg-green-300 text-white"; // ongoing
+                            statusBg = "bg-green-300 text-white";
                           else if (now.getTime() < start.getTime())
-                            statusBg = "bg-blue-200 text-gray-800"; // upcoming
-
+                            statusBg = "bg-blue-200 text-gray-800";
                           return (
                             <li key={idx}>
                               <button
                                 onClick={() => {
-                                  setCalendarActiveStartDate(
-                                    new Date(start.getFullYear(), start.getMonth(), 1)
-                                  );
+                                  setCalendarActiveStartDate(new Date(start.getFullYear(), start.getMonth(), 1));
                                   setSelectedDate(start);
                                 }}
                                 className={`w-full text-left p-4 rounded-lg shadow-md transition hover:opacity-90 ${statusBg}`}
                               >
                                 <p className="font-semibold truncate">{event.title}</p>
-                                <p className="text-sm">
-                                  {formatDate(start)} - {formatDate(end)}
-                                </p>
+                                <p className="text-sm">{formatDate(start)} - {formatDate(end)}</p>
                                 <p className="text-xs mt-1">
-                                  {now.getTime() > end.getTime()
-                                    ? "Past"
-                                    : now.getTime() >= start.getTime()
-                                      ? "Ongoing"
-                                      : "Upcoming"}
+                                  {now.getTime() > end.getTime() ? "Past" : now.getTime() >= start.getTime() ? "Ongoing" : "Upcoming"}
                                 </p>
                               </button>
                             </li>
                           );
                         })}
                     </ul>
-
-                    {/* See More / See Less Button */}
                     {trainingRanges.length > 3 && (
                       <div className="mt-4 text-center">
-                        <button
-                          onClick={() => setShowAll(!showAll)}
-                          className="text-green-700 font-semibold hover:underline"
-                        >
+                        <button onClick={() => setShowAll(!showAll)} className="text-green-700 font-semibold hover:underline">
                           {showAll ? "See Less" : "See More"}
                         </button>
                       </div>
                     )}
                   </div>
                 )}
-
               </div>
             </div>
-            {/* Image Viewer Modal */}
-{isImageOpen && selectedImage && (
-  <div
-    className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-2 sm:p-4"
-    onClick={() => setIsImageOpen(false)}
-  >
-    <div
-      className="relative w-full max-w-6xl max-h-[90vh] flex justify-center items-center"
-      onClick={(e) => e.stopPropagation()}
-    >
-      {/* Image wrapper */}
-      <div className="relative inline-block">
-        <img
-          src={selectedImage.src}
-          alt={selectedImage.alt}
-          className="w-full h-auto max-h-[80vh] object-contain rounded-lg shadow-2xl"
-        />
 
-        {/* Small Close button */}
-        <button
-          onClick={() => setIsImageOpen(false)}
-          className="
-            absolute top-1 right-1
-            text-white text-xs sm:text-sm font-bold
-            bg-black/70 w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center
-            rounded-full hover:bg-black transition
-          "
-        >
-          ✕
-        </button>
-      </div>
-    </div>
+{/* Bottom: Image Cards (full width) */}
+<div className="w-full">
+  <h3 className="text-2xl md:text-3xl font-extrabold text-center text-green-700 border-b-2 border-green-300 pb-2 mb-8 uppercase tracking-widest">
+    Training Gallery
+  </h3>
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    {images.slice(0, showMore ? images.length : 9).map((img, i) => (
+      <motion.div
+        key={i}
+        className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col cursor-pointer group"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ duration: 0.5, delay: (i % 3) * 0.12, ease: "easeOut" }}
+        onClick={() => { setSelectedImage(img); setIsImageOpen(true); }}
+      >
+        {/* Image */}
+        <div className="overflow-hidden h-52">
+          <LazyLoadImage
+            src={img.src}
+            alt={img.alt}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+
+        {/* Card Footer */}
+        <div className="flex items-center justify-between px-4 py-3 bg-white border-t border-gray-100">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-green-500"></div>
+            <span className="text-sm font-semibold text-gray-700 uppercase tracking-wide">
+              {img.alt}
+            </span>
+          </div>
+          <span className="text-xs text-gray-400 font-medium">
+            View
+          </span>
+        </div>
+      </motion.div>
+    ))}
   </div>
-)}
+
+  {images.length > 9 && (
+    <div className="mt-6 text-center">
+      <button
+        onClick={() => setShowMore(!showMore)}
+        className="bg-green-600 text-white px-8 py-2 rounded-full font-semibold hover:bg-green-700 transition-colors duration-200"
+      >
+        {showMore ? "Show Less" : "Show More"}
+      </button>
+    </div>
+  )}
+</div>
 
           </div>
+
+          {/* Image Viewer Modal */}
+          {isImageOpen && selectedImage && (
+            <div
+              className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-2 sm:p-4"
+              onClick={() => setIsImageOpen(false)}
+            >
+              <div
+                className="relative w-full max-w-6xl max-h-[90vh] flex justify-center items-center"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="relative inline-block">
+                  <img
+                    src={selectedImage.src}
+                    alt={selectedImage.alt}
+                    className="w-full h-auto max-h-[80vh] object-contain rounded-lg shadow-2xl"
+                  />
+                  <button
+                    onClick={() => setIsImageOpen(false)}
+                    className="absolute top-1 right-1 text-white text-xs sm:text-sm font-bold bg-black/70 w-6 h-6 sm:w-7 sm:h-7 flex items-center justify-center rounded-full hover:bg-black transition"
+                  >
+                    ✕
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
         </>
       )}
     </div>
@@ -630,28 +510,19 @@ function TechnicalConsultationSlider() {
   const prev = () => setIndex((i) => (i === 0 ? images.length - 1 : i - 1));
   const next = () => setIndex((i) => (i === images.length - 1 ? 0 : i + 1));
 
-  // Handle swipe start
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     setTouchStart(e.targetTouches[0].clientX);
   };
 
-  // Handle swipe move
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     setTouchEnd(e.targetTouches[0].clientX);
   };
 
-  // Handle swipe end
   const handleTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
     const distance = touchStart - touchEnd;
-
-    if (distance > 50) {
-      next(); // swipe left → next
-    }
-    if (distance < -50) {
-      prev(); // swipe right → prev
-    }
-
+    if (distance > 50) next();
+    if (distance < -50) prev();
     setTouchStart(null);
     setTouchEnd(null);
   };
@@ -664,41 +535,29 @@ function TechnicalConsultationSlider() {
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        {/* Left Arrow */}
         <button
           onClick={prev}
-          className="text-3xl sm:text-4xl md:text-5xl text-[#00703C] hover:text-[#00703C] 
-                   px-1 sm:px-2 focus:outline-none ml-1 sm:ml-4"
+          className="text-3xl sm:text-4xl md:text-5xl text-[#00703C] hover:text-[#00703C] px-1 sm:px-2 focus:outline-none ml-1 sm:ml-4"
         >
           &#60;
         </button>
-
-        {/* Main Image */}
         <img
           src={images[index].src}
           alt={images[index].alt}
-          className="w-full max-w-[260px] sm:max-w-md md:max-w-lg lg:max-w-4xl 
-                   h-56 sm:h-80 md:h-[350px] lg:h-[550px] 
-                   object-cover rounded-lg mx-1 sm:mx-4 border-2 border-gray-200 bg-white"
+          className="w-full max-w-[260px] sm:max-w-md md:max-w-lg lg:max-w-4xl h-56 sm:h-80 md:h-[350px] lg:h-[550px] object-cover rounded-lg mx-1 sm:mx-4 border-2 border-gray-200 bg-white"
         />
-
-        {/* Right Arrow */}
         <button
           onClick={next}
-          className="text-3xl sm:text-4xl md:text-5xl text-[#00703C] hover:text-[#00703C] 
-                   px-1 sm:px-2 focus:outline-none mr-1 sm:mr-4"
+          className="text-3xl sm:text-4xl md:text-5xl text-[#00703C] hover:text-[#00703C] px-1 sm:px-2 focus:outline-none mr-1 sm:mr-4"
         >
           &#62;
         </button>
       </div>
-
-      {/* Pagination Dots */}
       <div className="flex justify-center mt-2 sm:mt-4">
         {images.map((_, i) => (
           <span
             key={i}
-            className={`mx-0.5 sm:mx-1 w-2 h-2 sm:w-3 sm:h-3 rounded-full ${i === index ? "bg-yellow-500" : "bg-gray-300"
-              }`}
+            className={`mx-0.5 sm:mx-1 w-2 h-2 sm:w-3 sm:h-3 rounded-full ${i === index ? "bg-yellow-500" : "bg-gray-300"}`}
             style={{ display: "inline-block" }}
           ></span>
         ))}
