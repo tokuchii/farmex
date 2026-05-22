@@ -1,0 +1,1006 @@
+import {
+  require_build
+} from "/build/_shared/chunk-KKCJH6ZU.js";
+import {
+  motion
+} from "/build/_shared/chunk-ZJN32EVK.js";
+import "/build/_shared/chunk-Y6RJRNBS.js";
+import {
+  require_jsx_dev_runtime
+} from "/build/_shared/chunk-F4KNNEUR.js";
+import {
+  createHotContext
+} from "/build/_shared/chunk-JQ452JWN.js";
+import "/build/_shared/chunk-JR22VO6P.js";
+import {
+  require_react
+} from "/build/_shared/chunk-2Z2JGDFU.js";
+import {
+  __toESM
+} from "/build/_shared/chunk-PZDJHGND.js";
+
+// app/routes/news.tsx
+var import_react = __toESM(require_react(), 1);
+var import_react_lazy_load_image_component = __toESM(require_build(), 1);
+var import_jsx_dev_runtime = __toESM(require_jsx_dev_runtime(), 1);
+if (!window.$RefreshReg$ || !window.$RefreshSig$ || !window.$RefreshRuntime$) {
+  console.warn("remix:hmr: React Fast Refresh only works when the Remix compiler is running in development mode.");
+} else {
+  prevRefreshReg = window.$RefreshReg$;
+  prevRefreshSig = window.$RefreshSig$;
+  window.$RefreshReg$ = (type, id) => {
+    window.$RefreshRuntime$.register(type, '"app\\\\routes\\\\news.tsx"' + id);
+  };
+  window.$RefreshSig$ = window.$RefreshRuntime$.createSignatureFunctionForTransform;
+}
+var prevRefreshReg;
+var prevRefreshSig;
+var _s = $RefreshSig$();
+var _s2 = $RefreshSig$();
+var _s3 = $RefreshSig$();
+if (import.meta) {
+  import.meta.hot = createHotContext(
+    //@ts-expect-error
+    "app\\routes\\news.tsx"
+  );
+  import.meta.hot.lastModified = "1779421939776.3035";
+}
+var {
+  LazyLoadImage
+} = import_react_lazy_load_image_component.default;
+function meta() {
+  return [{
+    title: "News"
+  }];
+}
+var newsItems = [{
+  title: "FARMEX Corporation Recognized",
+  description: "FARMEX Corporation Recognized as Learning Site for Agriculture I",
+  image: "/news1.png",
+  author: "-Jayson S. Baldoz, Project Supervisor",
+  location: "Brgy. Bangyas, Calauan, Laguna",
+  organization: "ATI-CALABARZON",
+  content: `FARMEX Corporation was officially awarded the Learning Site for Agriculture I (LSA I) Certificate by the Agricultural Training Institute \u2013 CALABARZON (ATI-CALABARZON) on May 2, 2025, during a ceremony held at its station in Brgy. Bangyas, Calauan, Laguna.
+
+The event featured key messages from ATI-CALABARZON Center Director Dr. Rolando V. Maningas, FARMEX Chief Operations Officer Mr. Arturo A. Alejar, and Ms. Angelica A. Belarmino, Operations Manager and LSA cooperator, along with the signing of a Memorandum of Understanding (MOU) between the two organizations.
+
+"Ang kasunduang ito ay tanda ng pagsisimula ng ating pagtutulungan upang higit nating maabot ang mga magsasakang Pilipino at mapabuti ang kanilang kabuhayan sa pamamagitan ng pagpapalaganap ng mga makabago at angkop na teknolohiya sa pagsasaka," said Dir. Rolando V. Maningas during his message at the event.
+
+FARMEX also presented its plans for facility and project development as an LSA through Ms. Myrille T. Adlus (Business Development Manager) and Engr. Karlo Miguel Santos (LEADSTECH Operations Manager).
+
+This was followed by the unveiling of the LSA billboard, a guided tour of the farm and its facilities, and a photo opportunity. As an accredited Learning Site, FARMEX will now serve as a hub for knowledge sharing, sustainable farming practices, and farmer capacity-building in the region.
+
+The event was facilitated by ATI-CALABARZON staff, led by Ms. Abbie del Rosario, Partnerships and Accreditation Section Chief, and Ms. Soledad E. Leal, Agriculturist II and ATI-LSA Focal Person. It was witnessed by executives from the LEADS Group of Companies, including Senior Vice President Romeo Obcena Jr., HR Director Almicko Reyes, Engr. Kelvin Chryzth Velasquez (Chief HR and Transformation Officer of Malveda Holdings Corporation), and Vice President for Finance Catalina Malveda.
+
+The Learning Site for Agriculture (LSA) program is one of ATI's strategies to promote sustainable and practical agriculture through farm-based learning. An LSA I is a private farm accredited by ATI to serve as a model learning venue where farmers and stakeholders can observe, learn, and adopt best practices and technologies in agriculture.
+
+FARMEX Corporation, a newly ATI-Certified Learning Site for Agriculture I (LSA I), proudly hosted its first batch of farmer training following the official awarding of its LSA I certificate last May. The five-day course, conducted by the Department of Agriculture - Agricultural Training Institute (DA-ATI) CALABARZON, was held on June 9\u201313, 2025, and focused on strengthening the capabilities of farmers in harvest and post-harvest management to improve Rice Processing Center (RPC) operations.
+
+Held at the FARMEX demonstration site in Brgy. Bangyas, Calauan, Laguna, the training brought together 25 farmer-leaders from different rice clusters/associations in Rizal and Quezon provinces. The activity was conducted in partnership with the Philippine Center for Postharvest Development and Mechanization (PhilMech) and the Coalition Alliance of Farmers in Santa Cruz, Laguna (CAFSCL).
+
+The training program included lectures, field demonstrations, and hands-on activities covering the correct use and maintenance of vital post-harvest machinery such as multi-stage rice mills and mechanical dryers. These sessions aimed to help reduce post-harvest losses, enhance grain quality, and improve the overall efficiency of community-based RPCs.
+
+Dr. Rolando V. Maningas, Center Director of DA-ATI CALABARZON, personally attended the closing program and delivered an inspiring message to the participants. He encouraged them to apply their newly acquired knowledge in their farming communities and to serve as advocates of improved rice post-harvest practices.
+
+As a newly certified LSA I, FARMEX Corporation is honored to contribute to the capacity-building of Filipino farmers and remains committed to supporting ATI's mission of empowering rural communities through training, innovation, and sustainable agricultural practices.`
+}, {
+  title: "FARMEX Regional Training",
+  description: "FARMEX Hosts Regional Training on Rice Harvest and Post-Harvest Management",
+  image: "/news2.png",
+  author: "-Jayson S. Baldoz, Project Supervisor",
+  location: "Brgy. Bangyas, Calauan, Laguna",
+  organization: "DA-ATI CALABARZON & PhilMech",
+  content: `FARMEX Corporation, a newly ATI-Certified Learning Site for Agriculture I (LSA I), proudly hosted its first batch of farmer training following the official awarding of its LSA I certificate last May. The five-day course, conducted by the Department of Agriculture - Agricultural Training Institute (DA-ATI) CALABARZON, was held on June 9\u201313, 2025, and focused on strengthening the capabilities of farmers in harvest and post-harvest management to improve Rice Processing Center (RPC) operations.
+
+Held at the FARMEX demonstration site in Brgy. Bangyas, Calauan, Laguna, the training brought together 25 farmer-leaders from different rice clusters/associations in Rizal and Quezon provinces. The activity was conducted in partnership with the Philippine Center for Postharvest Development and Mechanization (PhilMech) and the Coalition Alliance of Farmers in Santa Cruz, Laguna (CAFSCL).
+
+The training program included lectures, field demonstrations, and hands-on activities covering the correct use and maintenance of vital post-harvest machinery such as multi-stage rice mills and mechanical dryers. These sessions aimed to help reduce post-harvest losses, enhance grain quality, and improve the overall efficiency of community-based RPCs.
+
+Dr. Rolando V. Maningas, Center Director of DA-ATI CALABARZON, personally attended the closing program and delivered an inspiring message to the participants. He encouraged them to apply their newly acquired knowledge in their farming communities and to serve as advocates of improved rice post-harvest practices.
+
+As a newly certified LSA I, FARMEX Corporation is honored to contribute to the capacity-building of Filipino farmers and remains committed to supporting ATI's mission of empowering rural communities through training, innovation, and sustainable agricultural practices.`
+}, {
+  title: "LEADS Agriventures Corporation Showcases Jackpot 102",
+  description: "LEADS Agriventures Corporation Showcases Jackpot 102 at Licab's Kariton Festival",
+  image: "/news3.png",
+  author: "-Jayson S. Baldoz, Project Supervisor",
+  location: "Licab, Nueva Ecija",
+  organization: "LEADS Agriventures Corporation",
+  content: `LEADS Agriventures Corporation (LAV) proudly showcased its famous Jackpot 102 hybrid rice variety at the Kariton Festival in Licab, Nueva Ecija, held on March 29, 2025, in celebration of Licab's 131st Founding Anniversary.
+
+The festival featured a grand parade of kariton (wooden cart) floats, each uniquely decorated to highlight Licab's rich agricultural heritage. LAV's float, pulled by a kalabaw (carabao), stood out with its innovative display of ready-to-harvest Jackpot 102 rice plants in pots, that symbolizes the fusion of tradition and modern farming.
+
+Thousands of spectators lined the streets as the parade made its way from Exequiel R. Lina High School, through Don Dalmacio Avenue, and concluded at Liwasang Dalmacio. The festivities also included a Street Dancing Competition, with students from various high schools showcasing vibrant performances, and the much-anticipated Binibining Licab 2025 beauty pageant.
+
+Through their participation, LAV, together with LEADS Agricultural Products Corporation, reaffirmed their commitment to empowering Filipino farmers by providing high-quality seeds, agrochemicals, and innovative farming solutions. Jackpot 102, known for its exceptional yield and grain quality, remains a preferred choice among farmers in Nueva Ecija and beyond.
+
+The return of the Kariton Festival after a five-year hiatus due to COVID-19 was a significant moment for the community. LEADS Agriventures Corporation's participation was made possible through the initiative of Mr. Randolph Diaz, with the strong support of Chief Operations Officer Mr. Arturo A. Alejar Jr. and Business Development Manager Ms. Myrille T. Adlus.
+
+Through this event, LAV's presence left a lasting impression on festival-goers and reinforced its commitment to strengthening the agriculture sector\u2014the backbone of the country.`
+}, {
+  title: "RiceBoard Elects New Officers for 2025\u20132026",
+  description: "The Rice Advocacy Inc. (RiceBoard) has elected its new set of officers for 2025\u20132026",
+  image: "/news4.png",
+  author: "",
+  location: "Philippines",
+  organization: "Rice Advocacy Inc. (RiceBoard)",
+  content2: "(from left to right: Bonn August Decena (Atlas Fertilizer Corp.), Devadatta Sirdeshpande (Bioseed Research), Joseph Fajardo (TAO Seeds), Recher Ondap (Bayer CropScience, former RB President), Ivy Escobin (ProAgri Seed Corporation), Ruby Eduarte (Syngenta Phils), Jojo Alejar (Farmex Corporation), Anthony Tan (New Hope Corporation) and Dr. Narciso Intal (Inavet Nutrition Technologies Inc.)",
+  content: `The Rice Advocacy Inc. (RiceBoard) has elected its new set of officers for 2025\u20132026 on April 11, 2025, marking a new chapter in its ongoing mission to uplift the Philippine rice industry.
+
+Arturo "Jojo" A. Alejar, Jr. of Farmex Corporation (formerly Leads Agriventures) was elected as President, with Anthony Tan of New Hope as Vice President, Ruby Eduarte of Syngenta as Secretary, Ivy Escobin of PASCO as Treasurer, and Bonn August Decena of Atlas, Devadatta Sirdeshpande of Bioseed and Joseph Fajardo of TAO Seeds as Auditors.
+
+The RiceBoard is a key organization that plays a critical role in representing seed companies and input providers committed to advancing rice productivity in the Philippines.
+
+As a unified body, the RiceBoard consolidates the expertise and resources of both multinational and local seed companies. It serves as a vital channel for disseminating the latest agricultural innovations, such as advanced hybrid rice varieties, drone-assisted farming, and biofertilizer applications directly to rice farmers across the country. These contributions support the broader goal of transforming the Philippine rice sector into a globally competitive and self-reliant industry.
+
+More than just an association of seed companies, the organization actively collaborates with the Department of Agriculture (DA) and continues to be an instrumental partner in helping the DA navigate issues stemming from various rice supply issues, technology adoption and other policy developments.
+
+The new leadership and unified voice of the RiceBoard allows to advocate more on behalf of the industry ensuring that the private sector's insights and innovations are integrated into national agricultural strategies.`
+}, {
+  title: "USDA Visits LAV for Rice Industry Discussion",
+  description: "A delegation from the United States Department of Agriculture (USDA), led by Agricultural Counselor Michael Ward.",
+  image: "/news5.png",
+  author: "",
+  location: "Leads Agriventures (LAV)",
+  organization: "USDA & Leads Agriventures",
+  content2: "In the photo (from left): Sherwin Hermosa, USDA Agricultural Counselor Michael Ward, Mayflor Gamino, Myrille Adlus, Angelica Belarmino, USDA Agricultural Specialists: Tricia Joy Arroyo and Florence Sevilla.",
+  content: `A delegation from the United States Department of Agriculture (USDA), led by Agricultural Counselor Michael Ward, visited Leads Agriventures (LAV) on August 22, 2024 to discuss the current state of the rice industry in the Philippines. LAV, in collaboration with the LAPC, provided valuable insights into the challenges and opportunities facing the sector.
+
+The USDA expressed interest in gaining a private-sector perspective on the country's rice situation, including an outlook on future developments. Key topics discussed included the extension of the Rice Competitiveness Enhancement Fund (RCEF) program by the Philippine Department of Agriculture until 2030, current industry statistics, regulatory concerns, and potential areas where the USDA could support the Philippine government in improving rice production.
+
+Additionally, discussions touched on the Department of Agriculture's export priorities, which include rice alongside mangosteen, pineapple, young coconut, and durian, as part of efforts to expand agricultural exports to the U.S. market.`
+}, {
+  title: "Leads explored the hybrid rice seed technologies",
+  description: "Leads explored the hybrid rice seed technologies at Winall China Headquarters in Anhui Province last September 1, 2023.",
+  image: "/news6.png",
+  author: "",
+  location: "Winall HQ, Anhui Province, China",
+  organization: "Leads Agriventures & Winall Hi-Tech Seed",
+  content: `Leads explored the hybrid rice seed technologies at Winall China Headquarters in Anhui Province last September 1, 2023. Winall, a strong player in the hybrid rice seed industry and currently holds the second position in market share in China, warmly welcomed the Leads delegation led by Mr. Arturo A. Alejar, Jr., Leads Agriventures' Chief Operations Officer.
+
+The visit started with a tour of Winall's exhibit area, showcasing their top-performing varieties. After an insightful tour, Leads presented to Winall an overview of the hybrid rice seed production and distribution landscape in the Philippines. The discussion extended to some upcoming marketing programs for rice and the sales forecast of Jackpot 102 for the next three years.
+
+Leads delegates also explored Winall's advanced laboratory, cold storage facilities, repacking plants, and research center where nearly 400 hybrid rice seed varieties are undergoing rigorous trials. Impressed by the growing market share of Jackpot 102, Winall committed to supporting Leads in establishing its local seed production trial. This collaborative effort aims to deliver and introduce more suitable seed varieties in Philippine conditions aligning with consumer preferences.
+
+The visit resulted in a strengthened partnership between Leads and Winall, both companies committed to increasing the market presence of Jackpot 102 and subsequently, introducing other Winall varieties in the Philippine market.`
+}];
+var newsSlides = {
+  0: [{
+    src: "/news1-1_copy.webp",
+    alt: "FARMEX Corporation Recognized"
+  }, {
+    src: "/news1-7_copy.webp",
+    alt: "FARMEX Corporation Recognized"
+  }, {
+    src: "/news1-8_copy.webp",
+    alt: "FARMEX Corporation Recognized"
+  }, {
+    src: "/news1-3_copy.webp",
+    alt: "FARMEX Corporation Recognized"
+  }, {
+    src: "/news1-4_copy.webp",
+    alt: "FARMEX Corporation Recognized"
+  }, {
+    src: "/news1-5_copy.webp",
+    alt: "FARMEX Corporation Recognized"
+  }, {
+    src: "/news1-6_copy.webp",
+    alt: "FARMEX Corporation Recognized"
+  }],
+  1: [{
+    src: "/news2 1_copy.webp",
+    alt: "FARMEX Regional Training"
+  }, {
+    src: "/news2 2_copy.webp",
+    alt: "FARMEX Regional Training"
+  }, {
+    src: "/news2 3_copy.webp",
+    alt: "FARMEX Regional Training"
+  }, {
+    src: "/news2 4_copy.webp",
+    alt: "FARMEX Regional Training"
+  }, {
+    src: "/news2 5_copy.webp",
+    alt: "FARMEX Regional Training"
+  }, {
+    src: "/news2 6_copy.webp",
+    alt: "FARMEX Regional Training"
+  }],
+  2: [{
+    src: "/news3 1_copy.webp",
+    alt: "LEADS Agriventures Corporation Showcases Jackpot 102"
+  }, {
+    src: "/news3 2_copy.webp",
+    alt: "LEADS Agriventures Corporation Showcases Jackpot 102"
+  }, {
+    src: "/news3 3_copy.webp",
+    alt: "LEADS Agriventures Corporation Showcases Jackpot 102"
+  }, {
+    src: "/news3 4_copy.webp",
+    alt: "LEADS Agriventures Corporation Showcases Jackpot 102"
+  }, {
+    src: "/news3 5_copy.webp",
+    alt: "LEADS Agriventures Corporation Showcases Jackpot 102"
+  }, {
+    src: "/news3 6_copy.webp",
+    alt: "LEADS Agriventures Corporation Showcases Jackpot 102"
+  }, {
+    src: "/news3 7_copy.webp",
+    alt: "LEADS Agriventures Corporation Showcases Jackpot 102"
+  }, {
+    src: "/news3 8_copy.webp",
+    alt: "LEADS Agriventures Corporation Showcases Jackpot 102"
+  }],
+  3: [{
+    src: "/news4 1_copy.webp",
+    alt: "RiceBoard Elects New Officers for 2025\u20132026"
+  }],
+  4: [{
+    src: "/news5 1_copy.webp",
+    alt: "USDA Visits LAV for Rice Industry Discussion"
+  }],
+  5: [{
+    src: "/news6 1_copy.webp",
+    alt: "Leads explored the hybrid rice seed technologies"
+  }, {
+    src: "/news6 5_copy.webp",
+    alt: "Leads explored the hybrid rice seed technologies"
+  }, {
+    src: "/news6 3_copy.webp",
+    alt: "Leads explored the hybrid rice seed technologies"
+  }, {
+    src: "/news6 4_copy.webp",
+    alt: "Leads explored the hybrid rice seed technologies"
+  }]
+};
+function IconPin() {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("svg", { xmlns: "http://www.w3.org/2000/svg", className: "w-4 h-4 text-white", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", strokeWidth: 1.5, children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" }, void 0, false, {
+      fileName: "app/routes/news.tsx",
+      lineNumber: 245,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" }, void 0, false, {
+      fileName: "app/routes/news.tsx",
+      lineNumber: 246,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, true, {
+    fileName: "app/routes/news.tsx",
+    lineNumber: 244,
+    columnNumber: 10
+  }, this);
+}
+_c = IconPin;
+function IconBuilding() {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("svg", { xmlns: "http://www.w3.org/2000/svg", className: "w-4 h-4 text-white", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", strokeWidth: 1.5, children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" }, void 0, false, {
+    fileName: "app/routes/news.tsx",
+    lineNumber: 252,
+    columnNumber: 7
+  }, this) }, void 0, false, {
+    fileName: "app/routes/news.tsx",
+    lineNumber: 251,
+    columnNumber: 10
+  }, this);
+}
+_c2 = IconBuilding;
+function IconUser() {
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("svg", { xmlns: "http://www.w3.org/2000/svg", className: "w-4 h-4 text-white", fill: "none", viewBox: "0 0 24 24", stroke: "currentColor", strokeWidth: 1.5, children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" }, void 0, false, {
+    fileName: "app/routes/news.tsx",
+    lineNumber: 258,
+    columnNumber: 7
+  }, this) }, void 0, false, {
+    fileName: "app/routes/news.tsx",
+    lineNumber: 257,
+    columnNumber: 10
+  }, this);
+}
+_c3 = IconUser;
+function NewsCard({
+  item,
+  index,
+  onReadMore
+}) {
+  _s();
+  const [hovered, setHovered] = (0, import_react.useState)(false);
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative w-full h-[400px] cursor-pointer rounded-xl overflow-hidden shadow-lg", onMouseEnter: () => setHovered(true), onMouseLeave: () => setHovered(false), children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0", style: {
+      filter: hovered ? "blur(4px) brightness(0.35)" : "blur(0px) brightness(1)",
+      transition: "filter 0.5s ease"
+    }, children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: item.image, alt: item.title, className: "w-full h-full object-cover object-center" }, void 0, false, {
+      fileName: "app/routes/news.tsx",
+      lineNumber: 276,
+      columnNumber: 9
+    }, this) }, void 0, false, {
+      fileName: "app/routes/news.tsx",
+      lineNumber: 272,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 flex flex-col justify-end p-5", style: {
+      opacity: hovered ? 0 : 1,
+      transition: "opacity 0.4s ease",
+      pointerEvents: hovered ? "none" : "auto"
+    }, children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" }, void 0, false, {
+        fileName: "app/routes/news.tsx",
+        lineNumber: 284,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative z-10", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h3", { className: "text-white text-[15px] font-semibold leading-snug mb-1", children: item.title }, void 0, false, {
+          fileName: "app/routes/news.tsx",
+          lineNumber: 286,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white/70 text-[12px] leading-relaxed line-clamp-2", children: item.description }, void 0, false, {
+          fileName: "app/routes/news.tsx",
+          lineNumber: 289,
+          columnNumber: 11
+        }, this)
+      ] }, void 0, true, {
+        fileName: "app/routes/news.tsx",
+        lineNumber: 285,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, true, {
+      fileName: "app/routes/news.tsx",
+      lineNumber: 279,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 flex flex-col justify-between p-6 z-10", style: {
+      opacity: hovered ? 1 : 0,
+      transition: "opacity 0.4s ease",
+      pointerEvents: hovered ? "auto" : "none"
+    }, children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h3", { className: "text-white text-[17px] font-semibold leading-snug", children: item.title }, void 0, false, {
+        fileName: "app/routes/news.tsx",
+        lineNumber: 300,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex flex-col gap-3", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex items-start gap-3 border-b border-white/20 pb-3", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-8 h-8 border border-white/40 rounded-md flex items-center justify-center shrink-0", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(IconPin, {}, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 307,
+            columnNumber: 15
+          }, this) }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 306,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "block text-white/60 text-[11px] uppercase tracking-wider font-medium mb-0.5", children: "Location" }, void 0, false, {
+              fileName: "app/routes/news.tsx",
+              lineNumber: 310,
+              columnNumber: 15
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "text-white/90 text-[13px] leading-snug", children: item.location ?? "Philippines" }, void 0, false, {
+              fileName: "app/routes/news.tsx",
+              lineNumber: 313,
+              columnNumber: 15
+            }, this)
+          ] }, void 0, true, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 309,
+            columnNumber: 13
+          }, this)
+        ] }, void 0, true, {
+          fileName: "app/routes/news.tsx",
+          lineNumber: 305,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex items-start gap-3 border-b border-white/20 pb-3", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-8 h-8 border border-white/40 rounded-md flex items-center justify-center shrink-0", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(IconBuilding, {}, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 321,
+            columnNumber: 15
+          }, this) }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 320,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "block text-white/60 text-[11px] uppercase tracking-wider font-medium mb-0.5", children: "Organization" }, void 0, false, {
+              fileName: "app/routes/news.tsx",
+              lineNumber: 324,
+              columnNumber: 15
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "text-white/90 text-[13px] leading-snug", children: item.organization ?? "LEADS Group of Companies" }, void 0, false, {
+              fileName: "app/routes/news.tsx",
+              lineNumber: 327,
+              columnNumber: 15
+            }, this)
+          ] }, void 0, true, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 323,
+            columnNumber: 13
+          }, this)
+        ] }, void 0, true, {
+          fileName: "app/routes/news.tsx",
+          lineNumber: 319,
+          columnNumber: 11
+        }, this),
+        item.author ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex items-start gap-3", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-8 h-8 border border-white/40 rounded-md flex items-center justify-center shrink-0", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(IconUser, {}, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 335,
+            columnNumber: 17
+          }, this) }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 334,
+            columnNumber: 15
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "block text-white/60 text-[11px] uppercase tracking-wider font-medium mb-0.5", children: "Author" }, void 0, false, {
+              fileName: "app/routes/news.tsx",
+              lineNumber: 338,
+              columnNumber: 17
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "text-white/90 text-[13px] leading-snug", children: item.author.replace(/^-/, "").trim() }, void 0, false, {
+              fileName: "app/routes/news.tsx",
+              lineNumber: 341,
+              columnNumber: 17
+            }, this)
+          ] }, void 0, true, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 337,
+            columnNumber: 15
+          }, this)
+        ] }, void 0, true, {
+          fileName: "app/routes/news.tsx",
+          lineNumber: 333,
+          columnNumber: 26
+        }, this) : null
+      ] }, void 0, true, {
+        fileName: "app/routes/news.tsx",
+        lineNumber: 304,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: () => onReadMore(index), className: "w-full py-3 rounded-lg text-white text-[13px] font-semibold uppercase tracking-widest hover:opacity-80 transition-opacity", style: {
+        background: "#1a5c35"
+      }, children: "Read More" }, void 0, false, {
+        fileName: "app/routes/news.tsx",
+        lineNumber: 348,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, true, {
+      fileName: "app/routes/news.tsx",
+      lineNumber: 295,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, true, {
+    fileName: "app/routes/news.tsx",
+    lineNumber: 271,
+    columnNumber: 10
+  }, this);
+}
+_s(NewsCard, "V8YbV+gTZxGliGj1g0fftBlvsq4=");
+_c4 = NewsCard;
+function SliderModal({
+  images,
+  title,
+  author,
+  content,
+  content2,
+  onClose
+}) {
+  _s2();
+  const [index, setIndex] = (0, import_react.useState)(0);
+  const touchStartXRef = (0, import_react.useRef)(null);
+  const prev = () => setIndex((i) => i === 0 ? images.length - 1 : i - 1);
+  const next = () => setIndex((i) => i === images.length - 1 ? 0 : i + 1);
+  (0, import_react.useEffect)(() => {
+    document.body.style.overflow = "hidden";
+    const handleKey = (e) => {
+      if (e.key === "Escape")
+        onClose();
+      if (e.key === "ArrowLeft" && images.length > 1)
+        prev();
+      if (e.key === "ArrowRight" && images.length > 1)
+        next();
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => {
+      document.body.style.overflow = "auto";
+      window.removeEventListener("keydown", handleKey);
+    };
+  }, [images.length, onClose]);
+  const onTouchStart = (e) => {
+    touchStartXRef.current = e.changedTouches[0].screenX;
+  };
+  const onTouchEnd = (e) => {
+    const startX = touchStartXRef.current;
+    if (startX == null)
+      return;
+    const delta = e.changedTouches[0].screenX - startX;
+    touchStartXRef.current = null;
+    if (Math.abs(delta) < 40 || images.length <= 1)
+      return;
+    if (delta > 0)
+      prev();
+    else
+      next();
+  };
+  const [isMobile, setIsMobile] = (0, import_react.useState)(false);
+  (0, import_react.useEffect)(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center px-4", onClick: onClose, children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative rounded-xl shadow-2xl w-full max-w-5xl p-6 pt-12 overflow-y-auto max-h-[95vh] bg-white", onClick: (e) => e.stopPropagation(), onTouchStart, onTouchEnd, children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute top-0 left-0 right-0 h-1.5 rounded-t-xl", style: {
+      background: "linear-gradient(90deg, #1a5c35, #4ade80)"
+    } }, void 0, false, {
+      fileName: "app/routes/news.tsx",
+      lineNumber: 408,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: onClose, className: "absolute top-3 right-4 text-gray-400 hover:text-gray-700 text-3xl font-bold z-50 transition-colors", children: "\xD7" }, void 0, false, {
+      fileName: "app/routes/news.tsx",
+      lineNumber: 412,
+      columnNumber: 9
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative flex items-center justify-center mb-6", children: [
+      images.length > 1 && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: prev, className: "absolute left-0 text-2xl text-green-700 px-3 py-1 font-bold bg-gray-100 rounded-full hover:bg-gray-200 transition", children: "<" }, void 0, false, {
+        fileName: "app/routes/news.tsx",
+        lineNumber: 417,
+        columnNumber: 33
+      }, this),
+      isMobile ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: images[index].src, target: "_blank", rel: "noopener noreferrer", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(LazyLoadImage, { src: images[index].src, alt: images[index].alt, className: "max-h-[35vh] md:max-h-[60vh] object-contain rounded-md border-4 border-green-700 cursor-zoom-in" }, void 0, false, {
+        fileName: "app/routes/news.tsx",
+        lineNumber: 421,
+        columnNumber: 15
+      }, this) }, void 0, false, {
+        fileName: "app/routes/news.tsx",
+        lineNumber: 420,
+        columnNumber: 23
+      }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(LazyLoadImage, { src: images[index].src, alt: images[index].alt, className: "max-h-[35vh] md:max-h-[60vh] object-contain rounded-md border-4 border-green-700" }, void 0, false, {
+        fileName: "app/routes/news.tsx",
+        lineNumber: 422,
+        columnNumber: 20
+      }, this),
+      images.length > 1 && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute bottom-2 left-1/2 -translate-x-1/2 text-white text-xs bg-black/40 px-2 py-0.5 rounded", children: [
+        index + 1,
+        " / ",
+        images.length
+      ] }, void 0, true, {
+        fileName: "app/routes/news.tsx",
+        lineNumber: 423,
+        columnNumber: 33
+      }, this),
+      images.length > 1 && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { onClick: next, className: "absolute right-0 text-2xl text-green-700 px-3 py-1 font-bold bg-gray-100 rounded-full hover:bg-gray-200 transition", children: ">" }, void 0, false, {
+        fileName: "app/routes/news.tsx",
+        lineNumber: 426,
+        columnNumber: 33
+      }, this)
+    ] }, void 0, true, {
+      fileName: "app/routes/news.tsx",
+      lineNumber: 416,
+      columnNumber: 9
+    }, this),
+    images.length > 1 && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex justify-center mb-6", children: images.map((_, i) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { "aria-label": `Go to slide ${i + 1}`, onClick: () => setIndex(i), className: `mx-1 w-2.5 h-2.5 rounded-full ${i === index ? "bg-green-700" : "bg-gray-300"}` }, i, false, {
+      fileName: "app/routes/news.tsx",
+      lineNumber: 432,
+      columnNumber: 35
+    }, this)) }, void 0, false, {
+      fileName: "app/routes/news.tsx",
+      lineNumber: 431,
+      columnNumber: 31
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-left px-2", children: [
+      content2 && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-gray-500 text-[12px] italic leading-relaxed whitespace-pre-line mb-6 border-l-2 border-green-200 pl-3", children: content2 }, void 0, false, {
+        fileName: "app/routes/news.tsx",
+        lineNumber: 436,
+        columnNumber: 24
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-2xl font-bold text-gray-800 mb-1", children: title }, void 0, false, {
+        fileName: "app/routes/news.tsx",
+        lineNumber: 439,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-sm text-gray-400 italic mb-4", children: author }, void 0, false, {
+        fileName: "app/routes/news.tsx",
+        lineNumber: 440,
+        columnNumber: 11
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-gray-700 text-base leading-relaxed whitespace-pre-line", children: content }, void 0, false, {
+        fileName: "app/routes/news.tsx",
+        lineNumber: 441,
+        columnNumber: 11
+      }, this)
+    ] }, void 0, true, {
+      fileName: "app/routes/news.tsx",
+      lineNumber: 435,
+      columnNumber: 9
+    }, this)
+  ] }, void 0, true, {
+    fileName: "app/routes/news.tsx",
+    lineNumber: 406,
+    columnNumber: 7
+  }, this) }, void 0, false, {
+    fileName: "app/routes/news.tsx",
+    lineNumber: 404,
+    columnNumber: 10
+  }, this);
+}
+_s2(SliderModal, "k+z6xl+v1nURMU62eovZ2G3dYMk=");
+_c5 = SliderModal;
+function News() {
+  _s3();
+  const [isClient, setIsClient] = (0, import_react.useState)(false);
+  const [selectedNewsIndex, setSelectedNewsIndex] = (0, import_react.useState)(null);
+  (0, import_react.useEffect)(() => {
+    setIsClient(true);
+  }, []);
+  return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "min-h-screen w-full", children: [
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative min-h-screen w-full", style: {
+      background: "#00743B"
+    }, children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative z-10 flex flex-col items-center min-h-screen px-4 py-20 space-y-8 mt-6", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-w-6xl", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex items-center gap-3 mb-1", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-1 h-9 rounded-full shrink-0", style: {
+              background: "linear-gradient(180deg, #4ade80, #16a34a)"
+            } }, void 0, false, {
+              fileName: "app/routes/news.tsx",
+              lineNumber: 470,
+              columnNumber: 15
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-white text-3xl md:text-4xl font-extrabold uppercase tracking-widest", children: "Events" }, void 0, false, {
+              fileName: "app/routes/news.tsx",
+              lineNumber: 473,
+              columnNumber: 15
+            }, this)
+          ] }, void 0, true, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 469,
+            columnNumber: 13
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white/40 text-sm ml-4", children: "Latest news and milestones from the LEADS Group of Companies" }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 477,
+            columnNumber: 13
+          }, this)
+        ] }, void 0, true, {
+          fileName: "app/routes/news.tsx",
+          lineNumber: 468,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "max-w-6xl w-full px-2 mt-10", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8", children: newsItems.map((item, index) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(NewsCard, { item, index, onReadMore: setSelectedNewsIndex }, index, false, {
+          fileName: "app/routes/news.tsx",
+          lineNumber: 485,
+          columnNumber: 47
+        }, this)) }, void 0, false, {
+          fileName: "app/routes/news.tsx",
+          lineNumber: 484,
+          columnNumber: 13
+        }, this) }, void 0, false, {
+          fileName: "app/routes/news.tsx",
+          lineNumber: 483,
+          columnNumber: 11
+        }, this)
+      ] }, void 0, true, {
+        fileName: "app/routes/news.tsx",
+        lineNumber: 465,
+        columnNumber: 9
+      }, this),
+      selectedNewsIndex !== null && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(SliderModal, { images: newsSlides[selectedNewsIndex], title: newsItems[selectedNewsIndex].title, author: newsItems[selectedNewsIndex].author, content: newsItems[selectedNewsIndex].content, content2: newsItems[selectedNewsIndex].content2, onClose: () => setSelectedNewsIndex(null) }, void 0, false, {
+        fileName: "app/routes/news.tsx",
+        lineNumber: 490,
+        columnNumber: 40
+      }, this)
+    ] }, void 0, true, {
+      fileName: "app/routes/news.tsx",
+      lineNumber: 462,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("section", { className: "relative w-full py-16 px-4 sm:px-6 lg:px-8 bg-[#f0f7f2] flex flex-col items-center justify-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "relative z-10 w-full max-w-6xl", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "mb-12", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex items-center gap-3 mb-1", children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-1 h-9 rounded-full shrink-0", style: {
+            background: "linear-gradient(180deg, #16a34a, #14532d)"
+          } }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 501,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-[#1a5c35] text-2xl md:text-3xl lg:text-4xl font-extrabold uppercase tracking-widest", children: "Customer Testimonials" }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 504,
+            columnNumber: 17
+          }, this)
+        ] }, void 0, true, {
+          fileName: "app/routes/news.tsx",
+          lineNumber: 500,
+          columnNumber: 15
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-gray-400 text-sm ml-4", children: "What farmers say about our varieties" }, void 0, false, {
+          fileName: "app/routes/news.tsx",
+          lineNumber: 508,
+          columnNumber: 15
+        }, this)
+      ] }, void 0, true, {
+        fileName: "app/routes/news.tsx",
+        lineNumber: 499,
+        columnNumber: 13
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "bg-gradient-to-tr from-[#788B5F] to-[#2A4127] rounded-xl p-6 sm:p-8 shadow-lg flex flex-col", initial: {
+          opacity: 0,
+          y: 20
+        }, whileInView: {
+          opacity: 1,
+          y: 0
+        }, viewport: {
+          once: true,
+          amount: 0.2
+        }, transition: {
+          duration: 0.5
+        }, children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex justify-center mb-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-white shadow-lg", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(LazyLoadImage, { src: "/gab_image.png", alt: "Honorato Gabriel", className: "w-full h-full object-cover" }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 530,
+            columnNumber: 21
+          }, this) }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 529,
+            columnNumber: 19
+          }, this) }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 528,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-justify mb-6 flex-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-sm sm:text-base leading-relaxed", children: '"Nagtanim ako ng Jackpot 102 , bilib ako sa dami ng suwi niya. Katamtaman ang taas nito, matibay sa hangin, mahaba ang inuhay at siksik ang butil. Mabigat pa ang timbang ng kada sako ng palay ko. Malambot at masarap ang kanin at may aroma siya".' }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 535,
+            columnNumber: 19
+          }, this) }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 534,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-center", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-white font-bold text-lg sm:text-xl mb-1", children: "Honorato Gabriel" }, void 0, false, {
+              fileName: "app/routes/news.tsx",
+              lineNumber: 540,
+              columnNumber: 19
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-sm sm:text-base", children: "Region 2 (Cagayan Valley)" }, void 0, false, {
+              fileName: "app/routes/news.tsx",
+              lineNumber: 541,
+              columnNumber: 19
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-sm sm:text-base", children: "Victoria, Mallig, Isabela Variety planted/used: Jackpot 102" }, void 0, false, {
+              fileName: "app/routes/news.tsx",
+              lineNumber: 542,
+              columnNumber: 19
+            }, this)
+          ] }, void 0, true, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 539,
+            columnNumber: 17
+          }, this)
+        ] }, void 0, true, {
+          fileName: "app/routes/news.tsx",
+          lineNumber: 516,
+          columnNumber: 15
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "bg-gradient-to-tr from-[#788B5F] to-[#2A4127] rounded-xl p-6 sm:p-8 shadow-lg flex flex-col", initial: {
+          opacity: 0,
+          y: 20
+        }, whileInView: {
+          opacity: 1,
+          y: 0
+        }, viewport: {
+          once: true,
+          amount: 0.2
+        }, transition: {
+          duration: 0.5,
+          delay: 0.1
+        }, children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex justify-center mb-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-white shadow-lg", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(LazyLoadImage, { src: "/est_image.png", alt: "Melchor Estorga", className: "w-full h-full object-cover" }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 562,
+            columnNumber: 21
+          }, this) }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 561,
+            columnNumber: 19
+          }, this) }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 560,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-justify mb-6 flex-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-sm sm:text-base leading-relaxed", children: '"Noong nagtanim ako ng LAV 777, na-obserbahan ko na maganda at marami ang suhi niya at hindi siya prone sa sakit. Nang lumabas ang uhay niya ay mahaba, at siksik ang butil niya. Mataas ang milling recovery, malambot ang kanin at masarap po siya kainin".' }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 566,
+            columnNumber: 19
+          }, this) }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 565,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-center", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-white font-bold text-lg sm:text-xl mb-1", children: "Melchor Estorga" }, void 0, false, {
+              fileName: "app/routes/news.tsx",
+              lineNumber: 571,
+              columnNumber: 19
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-sm sm:text-base", children: "Cordillera Administrative Region" }, void 0, false, {
+              fileName: "app/routes/news.tsx",
+              lineNumber: 572,
+              columnNumber: 19
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-sm sm:text-base", children: "Bulo, Tabuk, Kalinga Variety planted/used: LAV 777" }, void 0, false, {
+              fileName: "app/routes/news.tsx",
+              lineNumber: 573,
+              columnNumber: 19
+            }, this)
+          ] }, void 0, true, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 570,
+            columnNumber: 17
+          }, this)
+        ] }, void 0, true, {
+          fileName: "app/routes/news.tsx",
+          lineNumber: 547,
+          columnNumber: 15
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "bg-gradient-to-tr from-[#788B5F] to-[#2A4127] rounded-xl p-6 sm:p-8 shadow-lg flex flex-col", initial: {
+          opacity: 0,
+          y: 20
+        }, whileInView: {
+          opacity: 1,
+          y: 0
+        }, viewport: {
+          once: true,
+          amount: 0.2
+        }, transition: {
+          duration: 0.5,
+          delay: 0.1
+        }, children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex justify-center mb-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-white shadow-lg", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(LazyLoadImage, { src: "/edison.png", alt: "Mr. Edson Del Rosario", className: "w-full h-full object-cover" }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 593,
+            columnNumber: 21
+          }, this) }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 592,
+            columnNumber: 19
+          }, this) }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 591,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-justify mb-6 flex-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-sm sm:text-base leading-relaxed", children: '"Sa tayo ng palay ng LAV 777, pwedeng pwedeng irekomenda sa mga magsasaka. Talagang kung ang habol natin ay maparami ang ani para tayo ay makaahon sa gastos, ito ay rekomendado ko. Kitang-kita naman natin, ang daming pumupuri. Maganda, matas, mahaba ang uhay."' }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 597,
+            columnNumber: 19
+          }, this) }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 596,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-center", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-white font-bold text-lg sm:text-xl mb-1", children: "Mr. Edson Del Rosario" }, void 0, false, {
+              fileName: "app/routes/news.tsx",
+              lineNumber: 602,
+              columnNumber: 19
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-sm sm:text-base", children: "Farmer Calintaan, Occidental Minodoro" }, void 0, false, {
+              fileName: "app/routes/news.tsx",
+              lineNumber: 603,
+              columnNumber: 19
+            }, this)
+          ] }, void 0, true, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 601,
+            columnNumber: 17
+          }, this)
+        ] }, void 0, true, {
+          fileName: "app/routes/news.tsx",
+          lineNumber: 578,
+          columnNumber: 15
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "bg-gradient-to-tr from-[#788B5F] to-[#2A4127] rounded-xl p-6 sm:p-8 shadow-lg flex flex-col", initial: {
+          opacity: 0,
+          y: 20
+        }, whileInView: {
+          opacity: 1,
+          y: 0
+        }, viewport: {
+          once: true,
+          amount: 0.2
+        }, transition: {
+          duration: 0.5,
+          delay: 0.1
+        }, children: [
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex justify-center mb-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-white shadow-lg", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(LazyLoadImage, { src: "/gina.png", alt: "Gina Gonzalez", className: "w-full h-full object-cover" }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 623,
+            columnNumber: 21
+          }, this) }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 622,
+            columnNumber: 19
+          }, this) }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 621,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-justify mb-6 flex-1", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-sm sm:text-base leading-relaxed", children: `"Sa Jackpot, nagustuhan yon dahil mataas ang milling recovery, nag-aaverage sya ng almost 67 to 68 (percent), and yung quality ng bigas niya ay buo at malambot. Regular milled pa lang yun. Siguro mas lalong quality pa ang labas ng bigas no'n kapag i-papolish pa yun. Nakasubok na kami makakain ng Jackpot (na binigas). Maganda na ang butil sa Single-pass pa lang. Nagugustuhan ng mga suki ko, laging hinahanap ang Jackpot na bigas. Maganda ang pagkakanin, masarap ang kanin, quality. Nasubukan na namin at kumita na kami ng Malaki."` }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 627,
+            columnNumber: 19
+          }, this) }, void 0, false, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 626,
+            columnNumber: 17
+          }, this),
+          /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "text-center", children: [
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h4", { className: "text-white font-bold text-lg sm:text-xl mb-1", children: "Gina Gonzalez" }, void 0, false, {
+              fileName: "app/routes/news.tsx",
+              lineNumber: 632,
+              columnNumber: 19
+            }, this),
+            /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-white text-sm sm:text-base", children: "Rice trader and Miller, Brgy. Tubuan, Pila, Laguna" }, void 0, false, {
+              fileName: "app/routes/news.tsx",
+              lineNumber: 633,
+              columnNumber: 19
+            }, this)
+          ] }, void 0, true, {
+            fileName: "app/routes/news.tsx",
+            lineNumber: 631,
+            columnNumber: 17
+          }, this)
+        ] }, void 0, true, {
+          fileName: "app/routes/news.tsx",
+          lineNumber: 608,
+          columnNumber: 15
+        }, this)
+      ] }, void 0, true, {
+        fileName: "app/routes/news.tsx",
+        lineNumber: 513,
+        columnNumber: 13
+      }, this)
+    ] }, void 0, true, {
+      fileName: "app/routes/news.tsx",
+      lineNumber: 496,
+      columnNumber: 11
+    }, this) }, void 0, false, {
+      fileName: "app/routes/news.tsx",
+      lineNumber: 495,
+      columnNumber: 9
+    }, this) }, void 0, false, {
+      fileName: "app/routes/news.tsx",
+      lineNumber: 494,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, true, {
+    fileName: "app/routes/news.tsx",
+    lineNumber: 459,
+    columnNumber: 10
+  }, this);
+}
+_s3(News, "/HWAV2AYV0a57r7JNPRHUDVyvvM=");
+_c6 = News;
+var _c;
+var _c2;
+var _c3;
+var _c4;
+var _c5;
+var _c6;
+$RefreshReg$(_c, "IconPin");
+$RefreshReg$(_c2, "IconBuilding");
+$RefreshReg$(_c3, "IconUser");
+$RefreshReg$(_c4, "NewsCard");
+$RefreshReg$(_c5, "SliderModal");
+$RefreshReg$(_c6, "News");
+window.$RefreshReg$ = prevRefreshReg;
+window.$RefreshSig$ = prevRefreshSig;
+export {
+  News as default,
+  meta
+};
+//# sourceMappingURL=/build/routes/news-T3I3VRU2.js.map

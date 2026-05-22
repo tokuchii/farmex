@@ -202,7 +202,7 @@ function IconUser() {
   );
 }
 
-// News Card with fade + blur hover effect
+// NewsCard — UNCHANGED
 function NewsCard({
   item,
   index,
@@ -220,7 +220,6 @@ function NewsCard({
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Background image — blurs & darkens on hover, no zoom/scale */}
       <div
         className="absolute inset-0"
         style={{
@@ -235,7 +234,6 @@ function NewsCard({
         />
       </div>
 
-      {/* FRONT — fades out on hover */}
       <div
         className="absolute inset-0 flex flex-col justify-end p-5"
         style={{
@@ -244,7 +242,6 @@ function NewsCard({
           pointerEvents: hovered ? "none" : "auto",
         }}
       >
-        {/* Bottom gradient for readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent" />
         <div className="relative z-10">
           <h3 className="text-white text-[15px] font-semibold leading-snug mb-1">
@@ -256,7 +253,6 @@ function NewsCard({
         </div>
       </div>
 
-      {/* BACK — fades in on hover */}
       <div
         className="absolute inset-0 flex flex-col justify-between p-6 z-10"
         style={{
@@ -270,7 +266,6 @@ function NewsCard({
         </h3>
 
         <div className="flex flex-col gap-3">
-          {/* Location */}
           <div className="flex items-start gap-3 border-b border-white/20 pb-3">
             <div className="w-8 h-8 border border-white/40 rounded-md flex items-center justify-center shrink-0">
               <IconPin />
@@ -285,7 +280,6 @@ function NewsCard({
             </div>
           </div>
 
-          {/* Organization */}
           <div className="flex items-start gap-3 border-b border-white/20 pb-3">
             <div className="w-8 h-8 border border-white/40 rounded-md flex items-center justify-center shrink-0">
               <IconBuilding />
@@ -300,7 +294,6 @@ function NewsCard({
             </div>
           </div>
 
-          {/* Author */}
           {item.author ? (
             <div className="flex items-start gap-3">
               <div className="w-8 h-8 border border-white/40 rounded-md flex items-center justify-center shrink-0">
@@ -318,7 +311,6 @@ function NewsCard({
           ) : null}
         </div>
 
-        {/* Read More Button */}
         <button
           onClick={() => onReadMore(index)}
           className="w-full py-3 rounded-lg text-white text-[13px] font-semibold uppercase tracking-widest hover:opacity-80 transition-opacity"
@@ -331,7 +323,7 @@ function NewsCard({
   );
 }
 
-// Slider Modal
+// SliderModal — CHANGE 1: removed backgroundImage, now uses plain white bg
 function SliderModal({
   images,
   title,
@@ -393,16 +385,19 @@ function SliderModal({
       className="fixed inset-0 z-50 bg-black bg-opacity-80 flex items-center justify-center px-4"
       onClick={onClose}
     >
+      {/* CHANGE 1: replaced backgroundImage style with clean white card */}
       <div
-        className="relative rounded-lg shadow-xl w-full max-w-5xl p-6 pt-12 overflow-y-auto max-h-[95vh] bg-no-repeat bg-cover bg-center"
-        style={{ backgroundImage: "url('/newbgevents.png')", backgroundSize: "100% 100%" }}
+        className="relative rounded-xl shadow-2xl w-full max-w-5xl p-6 pt-12 overflow-y-auto max-h-[95vh] bg-white"
         onClick={(e) => e.stopPropagation()}
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
+        {/* Green accent bar at top of modal */}
+        <div className="absolute top-0 left-0 right-0 h-1.5 rounded-t-xl" style={{ background: "linear-gradient(90deg, #1a5c35, #4ade80)" }} />
+
         <button
           onClick={onClose}
-          className="absolute top-3 right-4 text-gray-600 hover:text-black text-3xl font-bold z-50"
+          className="absolute top-3 right-4 text-gray-400 hover:text-gray-700 text-3xl font-bold z-50 transition-colors"
         >
           &times;
         </button>
@@ -411,7 +406,7 @@ function SliderModal({
           {images.length > 1 && (
             <button
               onClick={prev}
-              className="absolute left-0 text-2xl text-green-800 px-3 py-1 font-bold bg-black/40 rounded-full hover:bg-gray-800 transition"
+              className="absolute left-0 text-2xl text-green-700 px-3 py-1 font-bold bg-gray-100 rounded-full hover:bg-gray-200 transition"
             >
               &#60;
             </button>
@@ -439,7 +434,7 @@ function SliderModal({
           {images.length > 1 && (
             <button
               onClick={next}
-              className="absolute right-0 text-2xl text-green-800 px-3 py-1 font-bold bg-black/40 rounded-full hover:bg-gray-800 transition"
+              className="absolute right-0 text-2xl text-green-700 px-3 py-1 font-bold bg-gray-100 rounded-full hover:bg-gray-200 transition"
             >
               &#62;
             </button>
@@ -461,12 +456,12 @@ function SliderModal({
 
         <div className="text-left px-2">
           {content2 && (
-            <p className="text-gray-700 text-[12px] italic leading-relaxed whitespace-pre-line mb-6">
+            <p className="text-gray-500 text-[12px] italic leading-relaxed whitespace-pre-line mb-6 border-l-2 border-green-200 pl-3">
               {content2}
             </p>
           )}
           <h2 className="text-2xl font-bold text-gray-800 mb-1">{title}</h2>
-          <p className="text-sm text-gray-500 italic mb-4">{author}</p>
+          <p className="text-sm text-gray-400 italic mb-4">{author}</p>
           <p className="text-gray-700 text-base leading-relaxed whitespace-pre-line">
             {content}
           </p>
@@ -487,23 +482,33 @@ export default function News() {
 
   return (
     <div className="min-h-screen w-full">
+
+      {/* CHANGE 2: replaced tiled PNG background with solid radial gradient */}
       <div
-  className="relative min-h-screen w-full"
-  style={{
-    backgroundImage: "url('/newsbg.png')",
-    backgroundSize: "contain",
-    backgroundRepeat: "repeat",
-    backgroundPosition: "top center",
-  }}
->
+        className="relative min-h-screen w-full"
+       style={{
+  background: "#00743B",
+}}
+      >
         <div className="relative z-10 flex flex-col items-center min-h-screen px-4 py-20 space-y-8 mt-6">
+
+          {/* CHANGE 3: replaced plain <h2> with accent-bar header + subtitle */}
           <div className="w-full max-w-6xl">
-            <h2 className="text-white text-3xl md:text-4xl font-extrabold uppercase tracking-widest">
-              Events
-            </h2>
+            <div className="flex items-center gap-3 mb-1">
+              <div
+                className="w-1 h-9 rounded-full shrink-0"
+                style={{ background: "linear-gradient(180deg, #4ade80, #16a34a)" }}
+              />
+              <h2 className="text-white text-3xl md:text-4xl font-extrabold uppercase tracking-widest">
+                Events
+              </h2>
+            </div>
+            <p className="text-white/40 text-sm ml-4">
+              Latest news and milestones from the LEADS Group of Companies
+            </p>
           </div>
 
-          {/* News Grid — no more /newbgevents.png wrapper */}
+          {/* News Grid — UNCHANGED */}
           <div className="max-w-6xl w-full px-2 mt-10">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {newsItems.map((item, index) => (
@@ -530,20 +535,32 @@ export default function News() {
         )}
       </div>
 
-      {/* Testimonials */}
+      {/* Testimonials — CHANGE 4: new bg color, accent-bar header, cleaned-up cards */}
       <motion.div>
-        <section className="relative w-full py-16 px-4 sm:px-6 lg:px-8 bg-[url('/newbgfeedback.png')] bg-cover bg-center flex flex-col items-center justify-center">
+        <section className="relative w-full py-16 px-4 sm:px-6 lg:px-8 bg-[#f0f7f2] flex flex-col items-center justify-center">
           <div className="relative z-10 w-full max-w-6xl">
+
+            {/* Accent-bar heading */}
             <div className="mb-12">
-              <h2 className="text-[#057A31] text-2xl md:text-3xl lg:text-4xl font-extrabold uppercase tracking-widest mb-4">
-                Customer Testimonials
-              </h2>
+              <div className="flex items-center gap-3 mb-1">
+                <div
+                  className="w-1 h-9 rounded-full shrink-0"
+                  style={{ background: "linear-gradient(180deg, #16a34a, #14532d)" }}
+                />
+                <h2 className="text-[#1a5c35] text-2xl md:text-3xl lg:text-4xl font-extrabold uppercase tracking-widest">
+                  Customer Testimonials
+                </h2>
+              </div>
+              <p className="text-gray-400 text-sm ml-4">
+                What farmers say about our varieties
+              </p>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+
               {/* Honorato Gabriel */}
               <motion.div
-                className="bg-gradient-to-tr from-[#788B5F] to-[#2A4127] rounded-xl p-6 sm:p-8 shadow-lg"
+                className="bg-gradient-to-tr from-[#788B5F] to-[#2A4127] rounded-xl p-6 sm:p-8 shadow-lg flex flex-col"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
@@ -554,12 +571,13 @@ export default function News() {
                     <LazyLoadImage src="/gab_image.png" alt="Honorato Gabriel" className="w-full h-full object-cover" />
                   </div>
                 </div>
-                <div className="text-justify mb-6">
+                {/* CHANGE 4c: flex-1 so quote fills space, removed mt-[87px] */}
+                <div className="text-justify mb-6 flex-1">
                   <p className="text-white text-sm sm:text-base leading-relaxed">
                     "Nagtanim ako ng Jackpot 102 , bilib ako sa dami ng suwi niya. Katamtaman ang taas nito, matibay sa hangin, mahaba ang inuhay at siksik ang butil. Mabigat pa ang timbang ng kada sako ng palay ko. Malambot at masarap ang kanin at may aroma siya".
                   </p>
                 </div>
-                <div className="text-center mt-0 md:mt-28">
+                <div className="text-center">
                   <h4 className="text-white font-bold text-lg sm:text-xl mb-1">Honorato Gabriel</h4>
                   <p className="text-white text-sm sm:text-base">Region 2 (Cagayan Valley)</p>
                   <p className="text-white text-sm sm:text-base">Victoria, Mallig, Isabela Variety planted/used: Jackpot 102</p>
@@ -568,7 +586,7 @@ export default function News() {
 
               {/* Melchor Estorga */}
               <motion.div
-                className="bg-gradient-to-tr from-[#788B5F] to-[#2A4127] rounded-xl p-6 sm:p-8 shadow-lg"
+                className="bg-gradient-to-tr from-[#788B5F] to-[#2A4127] rounded-xl p-6 sm:p-8 shadow-lg flex flex-col"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
@@ -579,12 +597,12 @@ export default function News() {
                     <LazyLoadImage src="/est_image.png" alt="Melchor Estorga" className="w-full h-full object-cover" />
                   </div>
                 </div>
-                <div className="text-justify mb-8">
+                <div className="text-justify mb-6 flex-1">
                   <p className="text-white text-sm sm:text-base leading-relaxed">
                     "Noong nagtanim ako ng LAV 777, na-obserbahan ko na maganda at marami ang suhi niya at hindi siya prone sa sakit. Nang lumabas ang uhay niya ay mahaba, at siksik ang butil niya. Mataas ang milling recovery, malambot ang kanin at masarap po siya kainin".
                   </p>
                 </div>
-                <div className="text-center mt-0 md:mt-[87px]">
+                <div className="text-center">
                   <h4 className="text-white font-bold text-lg sm:text-xl mb-1">Melchor Estorga</h4>
                   <p className="text-white text-sm sm:text-base">Cordillera Administrative Region</p>
                   <p className="text-white text-sm sm:text-base">Bulo, Tabuk, Kalinga Variety planted/used: LAV 777</p>
@@ -593,7 +611,7 @@ export default function News() {
 
               {/* Mr. Edson Del Rosario */}
               <motion.div
-                className="bg-gradient-to-tr from-[#788B5F] to-[#2A4127] rounded-xl p-6 sm:p-8 shadow-lg flex flex-col justify-between h-full"
+                className="bg-gradient-to-tr from-[#788B5F] to-[#2A4127] rounded-xl p-6 sm:p-8 shadow-lg flex flex-col"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
@@ -604,12 +622,12 @@ export default function News() {
                     <LazyLoadImage src="/edison.png" alt="Mr. Edson Del Rosario" className="w-full h-full object-cover" />
                   </div>
                 </div>
-                <div className="text-justify mb-8 flex-1">
+                <div className="text-justify mb-6 flex-1">
                   <p className="text-white text-sm sm:text-base leading-relaxed">
                     "Sa tayo ng palay ng LAV 777, pwedeng pwedeng irekomenda sa mga magsasaka. Talagang kung ang habol natin ay maparami ang ani para tayo ay makaahon sa gastos, ito ay rekomendado ko. Kitang-kita naman natin, ang daming pumupuri. Maganda, matas, mahaba ang uhay."
                   </p>
                 </div>
-                <div className="text-center mt-4">
+                <div className="text-center">
                   <h4 className="text-white font-bold text-lg sm:text-xl mb-1">Mr. Edson Del Rosario</h4>
                   <p className="text-white text-sm sm:text-base">Farmer Calintaan, Occidental Minodoro</p>
                 </div>
@@ -617,7 +635,7 @@ export default function News() {
 
               {/* Gina Gonzalez */}
               <motion.div
-                className="bg-gradient-to-tr from-[#788B5F] to-[#2A4127] rounded-xl p-6 sm:p-8 shadow-lg"
+                className="bg-gradient-to-tr from-[#788B5F] to-[#2A4127] rounded-xl p-6 sm:p-8 shadow-lg flex flex-col"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
@@ -628,20 +646,22 @@ export default function News() {
                     <LazyLoadImage src="/gina.png" alt="Gina Gonzalez" className="w-full h-full object-cover" />
                   </div>
                 </div>
-                <div className="text-justify mb-8">
+                <div className="text-justify mb-6 flex-1">
                   <p className="text-white text-sm sm:text-base leading-relaxed">
                     "Sa Jackpot, nagustuhan yon dahil mataas ang milling recovery, nag-aaverage sya ng almost 67 to 68 (percent), and yung quality ng bigas niya ay buo at malambot. Regular milled pa lang yun. Siguro mas lalong quality pa ang labas ng bigas no'n kapag i-papolish pa yun. Nakasubok na kami makakain ng Jackpot (na binigas). Maganda na ang butil sa Single-pass pa lang. Nagugustuhan ng mga suki ko, laging hinahanap ang Jackpot na bigas. Maganda ang pagkakanin, masarap ang kanin, quality. Nasubukan na namin at kumita na kami ng Malaki."
                   </p>
                 </div>
-                <div className="text-center mt-0 md:mt-[87px]">
+                <div className="text-center">
                   <h4 className="text-white font-bold text-lg sm:text-xl mb-1">Gina Gonzalez</h4>
                   <p className="text-white text-sm sm:text-base">Rice trader and Miller, Brgy. Tubuan, Pila, Laguna</p>
                 </div>
               </motion.div>
+
             </div>
           </div>
         </section>
       </motion.div>
+
     </div>
   );
 }
