@@ -522,7 +522,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\Footer.tsx"
   );
-  import.meta.hot.lastModified = "1779067909045.7495";
+  import.meta.hot.lastModified = "1779437954976.5593";
 }
 function Footer() {
   return /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("footer", { className: "bg-white relative", children: [
@@ -605,7 +605,11 @@ function Footer() {
       lineNumber: 55,
       columnNumber: 7
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-green-700 text-center text-xs sm:text-sm md:text-base", children: "\xA9 2025 Farmex Corporation" }, void 0, false, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("a", { href: "/admin", className: "block", children: /* @__PURE__ */ (0, import_jsx_dev_runtime2.jsxDEV)("p", { className: "text-green-700 text-center text-xs sm:text-sm md:text-base", children: "\xA9 2025 Farmex Corporation" }, void 0, false, {
+      fileName: "app/components/Footer.tsx",
+      lineNumber: 57,
+      columnNumber: 9
+    }, this) }, void 0, false, {
       fileName: "app/components/Footer.tsx",
       lineNumber: 56,
       columnNumber: 7
@@ -801,4 +805,4 @@ export {
   App as default,
   links
 };
-//# sourceMappingURL=/build/root-5KDS4V2S.js.map
+//# sourceMappingURL=/build/root-SEYZ5T2C.js.map

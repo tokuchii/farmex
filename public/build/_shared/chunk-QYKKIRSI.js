@@ -343,29 +343,38 @@ var __iconNode22 = [
 ];
 var Settings2 = createLucideIcon("settings-2", __iconNode22);
 
-// node_modules/lucide-react/dist/esm/icons/trash-2.js
+// node_modules/lucide-react/dist/esm/icons/table.js
 var __iconNode23 = [
+  ["path", { d: "M12 3v18", key: "108xh3" }],
+  ["rect", { width: "18", height: "18", x: "3", y: "3", rx: "2", key: "afitv7" }],
+  ["path", { d: "M3 9h18", key: "1pudct" }],
+  ["path", { d: "M3 15h18", key: "5xshup" }]
+];
+var Table = createLucideIcon("table", __iconNode23);
+
+// node_modules/lucide-react/dist/esm/icons/trash-2.js
+var __iconNode24 = [
   ["path", { d: "M10 11v6", key: "nco0om" }],
   ["path", { d: "M14 11v6", key: "outv1u" }],
   ["path", { d: "M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6", key: "miytrc" }],
   ["path", { d: "M3 6h18", key: "d0wm0j" }],
   ["path", { d: "M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2", key: "e791ji" }]
 ];
-var Trash2 = createLucideIcon("trash-2", __iconNode23);
+var Trash2 = createLucideIcon("trash-2", __iconNode24);
 
 // node_modules/lucide-react/dist/esm/icons/user.js
-var __iconNode24 = [
+var __iconNode25 = [
   ["path", { d: "M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2", key: "975kel" }],
   ["circle", { cx: "12", cy: "7", r: "4", key: "17ys0d" }]
 ];
-var User = createLucideIcon("user", __iconNode24);
+var User = createLucideIcon("user", __iconNode25);
 
 // node_modules/lucide-react/dist/esm/icons/x.js
-var __iconNode25 = [
+var __iconNode26 = [
   ["path", { d: "M18 6 6 18", key: "1bl5f8" }],
   ["path", { d: "m6 6 12 12", key: "d8bk6v" }]
 ];
-var X = createLucideIcon("x", __iconNode25);
+var X = createLucideIcon("x", __iconNode26);
 
 export {
   ArrowRight,
@@ -387,6 +396,7 @@ export {
   Newspaper,
   Plus,
   Settings2,
+  Table,
   Tractor,
   Trash2,
   UserCog,
@@ -604,6 +614,14 @@ lucide-react/dist/esm/icons/settings-2.js:
    * See the LICENSE file in the root directory of this source tree.
    *)
 
+lucide-react/dist/esm/icons/table.js:
+  (**
+   * @license lucide-react v0.542.0 - ISC
+   *
+   * This source code is licensed under the ISC license.
+   * See the LICENSE file in the root directory of this source tree.
+   *)
+
 lucide-react/dist/esm/icons/trash-2.js:
   (**
    * @license lucide-react v0.542.0 - ISC
@@ -636,4 +654,4 @@ lucide-react/dist/esm/lucide-react.js:
    * See the LICENSE file in the root directory of this source tree.
    *)
 */
-//# sourceMappingURL=/build/_shared/chunk-7C2OVJSI.js.map
+//# sourceMappingURL=/build/_shared/chunk-QYKKIRSI.js.map

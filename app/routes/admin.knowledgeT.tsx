@@ -10,15 +10,21 @@ import {
   deleteLavStation,
   getLavStations,
 } from "~/lib/lav-stations.server";
+import {
+  createRiceDerbies,
+  deleteRiceDerbies,
+  getRiceDerbies,
+} from "~/lib/rice-derbies.server";
 import { getCloudinaryConfig } from "~/lib/cloudinary.server";
 import { requireAdminUser } from "~/lib/session.server";
 
 export async function loader({ request }: LoaderFunctionArgs) {
   await requireAdminUser(request);
   const lavStations = await getLavStations();
+  const riceDerbies = await getRiceDerbies();
   const cloudinary = getCloudinaryConfig();
 
-  return json({ lavStations, cloudinary });
+  return json({ lavStations, riceDerbies, cloudinary });
 }
 
 export async function action({ request }: ActionFunctionArgs) {
@@ -26,6 +32,7 @@ export async function action({ request }: ActionFunctionArgs) {
   const form = await request.formData();
   const intent = form.get("intent");
 
+  // Lav Station actions
   if (intent === "create-lav-station") {
     const title = form.get("title");
     const description = form.get("description");
@@ -33,11 +40,11 @@ export async function action({ request }: ActionFunctionArgs) {
     const imagesRaw = form.get("images");
 
     if (typeof title !== "string" || !title.trim()) {
-      return json({ error: "Kailangan ang title." }, { status: 400 });
+      return json({ error: "Title is required." }, { status: 400 });
     }
 
     if (typeof description !== "string" || !description.trim()) {
-      return json({ error: "Kailangan ang description." }, { status: 400 });
+      return json({ error: "Description is required." }, { status: 400 });
     }
 
     let images: string[] = [];
@@ -45,16 +52,16 @@ export async function action({ request }: ActionFunctionArgs) {
       try {
         const parsed = JSON.parse(imagesRaw) as unknown;
         if (!Array.isArray(parsed) || !parsed.every((item) => typeof item === "string")) {
-          return json({ error: "Hindi valid ang image data." }, { status: 400 });
+          return json({ error: "Invalid image data." }, { status: 400 });
         }
         images = parsed;
       } catch {
-        return json({ error: "Hindi valid ang image data." }, { status: 400 });
+        return json({ error: "Invalid image data." }, { status: 400 });
       }
     }
 
-    if (images.length > 10) {
-      return json({ error: "Maximum 10 images lang ang pwede." }, { status: 400 });
+    if (images.length > 20) {
+      return json({ error: "Maximum 20 images allowed." }, { status: 400 });
     }
 
     try {
@@ -67,8 +74,9 @@ export async function action({ request }: ActionFunctionArgs) {
       return json({ ok: true, message: "Lav station saved successfully." });
     } catch (error) {
       console.error("Create lav station error:", error);
-      return json({ error: "Hindi ma-save ang lav station." }, { status: 500 });
+      return json({ error: "Failed to save lav station." }, { status: 500 });
     }
+
   }
 
   if (intent === "delete-lav-station") {
@@ -82,7 +90,68 @@ export async function action({ request }: ActionFunctionArgs) {
       return json({ ok: true, message: "Lav station deleted successfully." });
     } catch (error) {
       console.error("Delete lav station error:", error);
-      return json({ error: "Hindi ma-delete ang lav station." }, { status: 500 });
+      return json({ error: "Failed to delete lav station." }, { status: 500 });
+    }
+  }
+
+  //Rice Derbies actions
+  if (intent === "create-rice-derbies") {
+    const title = form.get("title");
+    const description = form.get("description");
+    const youtubeLink = form.get("youtubeLink");
+    const imagesRaw = form.get("images");
+
+    if (typeof title !== "string" || !title.trim()) {
+      return json({ error: "Title is required." }, { status: 400 });
+    }
+
+    if (typeof description !== "string" || !description.trim()) {
+      return json({ error: "Description is required." }, { status: 400 });
+    }
+
+    let images: string[] = [];
+    if (typeof imagesRaw === "string" && imagesRaw) {
+      try {
+        const parsed = JSON.parse(imagesRaw) as unknown;
+        if (!Array.isArray(parsed) || !parsed.every((item) => typeof item === "string")) {
+          return json({ error: "Invalid image data." }, { status: 400 });
+        }
+        images = parsed;
+      } catch {
+        return json({ error: "Invalid image data." }, { status: 400 });
+      }
+    }
+
+    if (images.length > 20) {
+      return json({ error: "Maximum 20 images allowed." }, { status: 400 });
+    }
+
+    try {
+      await createRiceDerbies({
+        title: title.trim(),
+        description: description.trim(),
+        images,
+        youtubeLink: typeof youtubeLink === "string" ? youtubeLink.trim() : "",
+      });
+      return json({ ok: true, message: "Rice derbies saved successfully." });
+    } catch (error) {
+      console.error("Create rice derbies error:", error);
+      return json({ error: "Failed to save rice derbies." }, { status: 500 });
+    }
+  }
+
+  if (intent === "delete-rice-derbies") {
+    const id = form.get("id");
+    if (typeof id !== "string" || !id) {
+      return json({ error: "Invalid rice derbies id." }, { status: 400 });
+    }
+
+    try {
+      await deleteRiceDerbies(id);
+      return json({ ok: true, message: "Rice derbies deleted successfully." });
+    } catch (error) {
+      console.error("Delete rice derbies error:", error);
+      return json({ error: "Failed to delete rice derbies." }, { status: 500 });
     }
   }
 
@@ -90,7 +159,7 @@ export async function action({ request }: ActionFunctionArgs) {
 }
 
 const KnowledgeTransferAdmin = () => {
-  const { lavStations, cloudinary } = useLoaderData<typeof loader>();
+  const { lavStations, riceDerbies, cloudinary } = useLoaderData<typeof loader>();
   const fetcher = useFetcher<typeof action>();
   const [activeSection, setActiveSection] = useState<"lav-station" | "rice-derbies">(
     "lav-station"
@@ -132,7 +201,11 @@ const KnowledgeTransferAdmin = () => {
           cloudinary={cloudinary}
         />
       ) : (
-        <RiceDerbiesModule />
+        <RiceDerbiesModule
+          derbies={riceDerbies}
+          fetcher={fetcher}
+          cloudinaryConfig={cloudinary}
+        />
       )}
     </section>
   );

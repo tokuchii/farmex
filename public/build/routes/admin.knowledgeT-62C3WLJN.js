@@ -7,12 +7,12 @@ import {
 import {
   LavStationModule,
   RiceDerbiesModule
-} from "/build/_shared/chunk-ERJBGZMK.js";
-import "/build/_shared/chunk-PCGOXFBZ.js";
-import "/build/_shared/chunk-GGM4ORHQ.js";
+} from "/build/_shared/chunk-MWXIN6PT.js";
+import "/build/_shared/chunk-WHS3PIMC.js";
+import "/build/_shared/chunk-QZLS37B3.js";
 import "/build/_shared/chunk-QHNS7JQF.js";
 import "/build/_shared/chunk-Y6RJRNBS.js";
-import "/build/_shared/chunk-SQPYWWRJ.js";
+import "/build/_shared/chunk-PIOGO2FW.js";
 import {
   useFetcher,
   useLoaderData
@@ -20,7 +20,7 @@ import {
 import {
   Captions,
   Wheat
-} from "/build/_shared/chunk-7C2OVJSI.js";
+} from "/build/_shared/chunk-QYKKIRSI.js";
 import "/build/_shared/chunk-PLT55Z5M.js";
 import {
   require_jsx_dev_runtime
@@ -44,6 +44,13 @@ var require_lav_stations = __commonJS({
   }
 });
 
+// empty-module:~/lib/rice-derbies.server
+var require_rice_derbies = __commonJS({
+  "empty-module:~/lib/rice-derbies.server"(exports, module) {
+    module.exports = {};
+  }
+});
+
 // empty-module:~/lib/cloudinary.server
 var require_cloudinary = __commonJS({
   "empty-module:~/lib/cloudinary.server"(exports, module) {
@@ -55,6 +62,7 @@ var require_cloudinary = __commonJS({
 var import_node = __toESM(require_node(), 1);
 var import_react2 = __toESM(require_react(), 1);
 var import_lav_stations = __toESM(require_lav_stations(), 1);
+var import_rice_derbies = __toESM(require_rice_derbies(), 1);
 var import_cloudinary = __toESM(require_cloudinary(), 1);
 var import_session = __toESM(require_session(), 1);
 var import_jsx_dev_runtime = __toESM(require_jsx_dev_runtime(), 1);
@@ -76,12 +84,13 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\admin.knowledgeT.tsx"
   );
-  import.meta.hot.lastModified = "1779370767331.2205";
+  import.meta.hot.lastModified = "1779436487273.114";
 }
 var KnowledgeTransferAdmin = () => {
   _s();
   const {
     lavStations,
+    riceDerbies,
     cloudinary
   } = useLoaderData();
   const fetcher = useFetcher();
@@ -91,48 +100,48 @@ var KnowledgeTransferAdmin = () => {
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { type: "button", onClick: () => setActiveSection("lav-station"), className: `flex-1 rounded-2xl px-5 py-3 text-sm font-semibold transition ${activeSection === "lav-station" ? "bg-emerald-500 text-white hover:bg-emerald-400" : "bg-slate-200 text-slate-900 hover:bg-slate-300"}`, children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Captions, { className: "mr-2 inline-block" }, void 0, false, {
           fileName: "app/routes/admin.knowledgeT.tsx",
-          lineNumber: 155,
+          lineNumber: 253,
           columnNumber: 11
         }, this),
         "LAV STATION"
       ] }, void 0, true, {
         fileName: "app/routes/admin.knowledgeT.tsx",
-        lineNumber: 154,
+        lineNumber: 252,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { type: "button", onClick: () => setActiveSection("rice-derbies"), className: `flex-1 rounded-2xl px-5 py-3 text-sm font-semibold transition ${activeSection === "rice-derbies" ? "bg-emerald-500 text-white hover:bg-emerald-400" : "bg-slate-200 text-slate-900 hover:bg-slate-300"}`, children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Wheat, { className: "mr-2 inline-block" }, void 0, false, {
           fileName: "app/routes/admin.knowledgeT.tsx",
-          lineNumber: 159,
+          lineNumber: 257,
           columnNumber: 11
         }, this),
         "Rice Derbies"
       ] }, void 0, true, {
         fileName: "app/routes/admin.knowledgeT.tsx",
-        lineNumber: 158,
+        lineNumber: 256,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/admin.knowledgeT.tsx",
-      lineNumber: 153,
+      lineNumber: 251,
       columnNumber: 7
     }, this),
     activeSection === "lav-station" ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(LavStationModule, { stations: lavStations, fetcher, cloudinary }, void 0, false, {
       fileName: "app/routes/admin.knowledgeT.tsx",
-      lineNumber: 164,
+      lineNumber: 262,
       columnNumber: 42
-    }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(RiceDerbiesModule, {}, void 0, false, {
+    }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(RiceDerbiesModule, { derbies: riceDerbies, fetcher, cloudinaryConfig: cloudinary }, void 0, false, {
       fileName: "app/routes/admin.knowledgeT.tsx",
-      lineNumber: 164,
+      lineNumber: 262,
       columnNumber: 130
     }, this)
   ] }, void 0, true, {
     fileName: "app/routes/admin.knowledgeT.tsx",
-    lineNumber: 152,
+    lineNumber: 250,
     columnNumber: 10
   }, this);
 };
-_s(KnowledgeTransferAdmin, "aObEXGGYiu/G/j9PJqsVMkyuHtM=", false, function() {
+_s(KnowledgeTransferAdmin, "SuIHAF1zB2eBeQAAOjAqTo7RtZk=", false, function() {
   return [useLoaderData, useFetcher];
 });
 _c = KnowledgeTransferAdmin;
@@ -144,4 +153,4 @@ window.$RefreshSig$ = prevRefreshSig;
 export {
   admin_knowledgeT_default as default
 };
-//# sourceMappingURL=/build/routes/admin.knowledgeT-KDZSFPGP.js.map
+//# sourceMappingURL=/build/routes/admin.knowledgeT-62C3WLJN.js.map

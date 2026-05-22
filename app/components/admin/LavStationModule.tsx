@@ -76,7 +76,7 @@ export const LavStationModule = ({
       }
 
       if (fetcher.data?.ok) {
-        toast.success(fetcher.data.message ?? "Action completed successfully.");
+        toast.success(fetcher.data.message ?? "Lav station saved successfully.");
         setModalOpen(false);
         resetForm();
       }
@@ -85,19 +85,17 @@ export const LavStationModule = ({
 
   const handleSave = async () => {
     if (!title.trim()) {
-      toast.error("Kailangan ang title.");
+      toast.error("Title is required.");
       return;
     }
 
     if (!description.trim()) {
-      toast.error("Kailangan ang description.");
+      toast.error("Description is required.");
       return;
     }
 
     if (imageFiles.length > 0 && !cloudinary) {
-      toast.error(
-        "Cloudinary ay hindi naka-configure. Lagyan ang VITE_CLOUDINARY_CLOUD_NAME at VITE_CLOUDINARY_UPLOAD_PRESET sa .env file."
-      );
+      toast.error("Image upload is not configured.");
       return;
     }
 
@@ -120,11 +118,11 @@ export const LavStationModule = ({
         { method: "post" }
       );
     } catch (error) {
-      console.error("Upload error:", error);
+      toast.error("Failed to upload images. Please try again.");
       toast.error(
         error instanceof Error
           ? error.message
-          : "May error sa pag-upload ng images. Subukan ulit."
+          : "An unknown error occurred during image upload."
       );
     } finally {
       setIsUploading(false);
@@ -286,7 +284,7 @@ export const LavStationModule = ({
               name="title"
               value={title}
               onChange={(event) => setTitle(event.target.value)}
-              placeholder="Lav station title"
+              placeholder="Lav station title, e.g. 'Main Lav Station near the rice fields'"
               className={adminInputClass}
               required
             />
@@ -309,7 +307,7 @@ export const LavStationModule = ({
             files={imageFiles}
             onChange={setImageFiles}
             disabled={isBusy}
-            maxFiles={10}
+            maxFiles={20}
           />
 
           <label className="block text-sm font-medium text-slate-700">

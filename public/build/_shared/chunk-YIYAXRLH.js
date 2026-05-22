@@ -18,7 +18,7 @@ import {
   Settings2,
   User,
   X
-} from "/build/_shared/chunk-7C2OVJSI.js";
+} from "/build/_shared/chunk-QYKKIRSI.js";
 import {
   require_jsx_dev_runtime
 } from "/build/_shared/chunk-F4KNNEUR.js";
@@ -419,4 +419,4 @@ export {
   AdminNavbar_default,
   AdminSidebar_default
 };
-//# sourceMappingURL=/build/_shared/chunk-RDGPY53Q.js.map
+//# sourceMappingURL=/build/_shared/chunk-YIYAXRLH.js.map

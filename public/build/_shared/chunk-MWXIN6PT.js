@@ -1,12 +1,12 @@
 import {
   AdminModal_default
-} from "/build/_shared/chunk-PCGOXFBZ.js";
+} from "/build/_shared/chunk-WHS3PIMC.js";
 import {
   cn
 } from "/build/_shared/chunk-QHNS7JQF.js";
 import {
   useAdminToast
-} from "/build/_shared/chunk-SQPYWWRJ.js";
+} from "/build/_shared/chunk-PIOGO2FW.js";
 import {
   ChevronLeft,
   ChevronRight,
@@ -15,9 +15,10 @@ import {
   ExternalLink,
   ImagePlus,
   Plus,
+  Table,
   Trash2,
   X
-} from "/build/_shared/chunk-7C2OVJSI.js";
+} from "/build/_shared/chunk-QYKKIRSI.js";
 import {
   require_jsx_dev_runtime
 } from "/build/_shared/chunk-F4KNNEUR.js";
@@ -677,7 +678,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\admin\\LavStationModule.tsx"
   );
-  import.meta.hot.lastModified = "1779415840021.3938";
+  import.meta.hot.lastModified = "1779434393484.9219";
 }
 var formatDate = (iso) => {
   if (!iso)
@@ -732,7 +733,7 @@ var LavStationModule = ({
         return;
       }
       if (fetcher.data?.ok) {
-        toast.success(fetcher.data.message ?? "Action completed successfully.");
+        toast.success(fetcher.data.message ?? "Lav station saved successfully.");
         setModalOpen(false);
         resetForm();
       }
@@ -740,15 +741,15 @@ var LavStationModule = ({
   }, [fetcher.state, fetcher.data, toast.error, toast.success]);
   const handleSave = async () => {
     if (!title.trim()) {
-      toast.error("Kailangan ang title.");
+      toast.error("Title is required.");
       return;
     }
     if (!description.trim()) {
-      toast.error("Kailangan ang description.");
+      toast.error("Description is required.");
       return;
     }
     if (imageFiles.length > 0 && !cloudinary) {
-      toast.error("Cloudinary ay hindi naka-configure. Lagyan ang VITE_CLOUDINARY_CLOUD_NAME at VITE_CLOUDINARY_UPLOAD_PRESET sa .env file.");
+      toast.error("Image upload is not configured.");
       return;
     }
     setIsUploading(true);
@@ -764,8 +765,8 @@ var LavStationModule = ({
         method: "post"
       });
     } catch (error) {
-      console.error("Upload error:", error);
-      toast.error(error instanceof Error ? error.message : "May error sa pag-upload ng images. Subukan ulit.");
+      toast.error("Failed to upload images. Please try again.");
+      toast.error(error instanceof Error ? error.message : "An unknown error occurred during image upload.");
     } finally {
       setIsUploading(false);
     }
@@ -928,7 +929,7 @@ var LavStationModule = ({
     }, this), children: /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("form", { ref: formRef, className: "space-y-4", onSubmit: (event) => event.preventDefault(), children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("label", { className: "block text-sm font-medium text-slate-700", children: [
         "Title lav station",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("input", { type: "text", name: "title", value: title, onChange: (event) => setTitle(event.target.value), placeholder: "Lav station title", className: adminInputClass, required: true }, void 0, false, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)("input", { type: "text", name: "title", value: title, onChange: (event) => setTitle(event.target.value), placeholder: "Lav station title, e.g. 'Main Lav Station near the rice fields'", className: adminInputClass, required: true }, void 0, false, {
           fileName: "app/components/admin/LavStationModule.tsx",
           lineNumber: 197,
           columnNumber: 13
@@ -950,7 +951,7 @@ var LavStationModule = ({
         lineNumber: 200,
         columnNumber: 11
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(AdminMultiImageUpload_default, { files: imageFiles, onChange: setImageFiles, disabled: isBusy, maxFiles: 10 }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime5.jsxDEV)(AdminMultiImageUpload_default, { files: imageFiles, onChange: setImageFiles, disabled: isBusy, maxFiles: 20 }, void 0, false, {
         fileName: "app/components/admin/LavStationModule.tsx",
         lineNumber: 205,
         columnNumber: 11
@@ -1012,137 +1013,312 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\admin\\RiceDerbiesModule.tsx"
   );
-  import.meta.hot.lastModified = "1779332593217.717";
+  import.meta.hot.lastModified = "1779437494326.7532";
 }
-var adminInputClass2 = "mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-500/20";
-var RiceDerbiesModule = () => {
+var formatDate2 = (iso) => {
+  if (!iso)
+    return "-";
+  try {
+    return new Date(iso).toLocaleDateString("en-PH", {
+      year: "numeric",
+      month: "short",
+      day: "numeric"
+    });
+  } catch {
+    return "-";
+  }
+};
+var RiceDerbiesModule = ({
+  derbies,
+  fetcher,
+  cloudinaryConfig
+}) => {
   _s4();
   const [isModalOpen, setModalOpen] = (0, import_react4.useState)(false);
+  const [title, setTitle] = (0, import_react4.useState)("");
+  const [description, setDescription] = (0, import_react4.useState)("");
+  const [youtubeLink, setYoutubeLink] = (0, import_react4.useState)("");
+  const [imageFiles, setImageFiles] = (0, import_react4.useState)([]);
+  const [isUploading, setIsUploading] = (0, import_react4.useState)(false);
+  const toast = useAdminToast();
+  const formRef = (0, import_react4.useRef)(null);
+  const wasSubmitting = (0, import_react4.useRef)(false);
+  const isBusy = isUploading || fetcher.state !== "idle";
+  const resetForm = () => {
+    setTitle("");
+    setDescription("");
+    setYoutubeLink("");
+    setImageFiles([]);
+    formRef.current?.reset();
+  };
+  const closeModal = () => {
+    if (isBusy)
+      return;
+    setModalOpen(false);
+    resetForm();
+  };
+  (0, import_react4.useEffect)(() => {
+    if (fetcher.state === "submitting") {
+      wasSubmitting.current = true;
+    }
+    if (wasSubmitting.current && fetcher.state === "idle") {
+      wasSubmitting.current = false;
+      if (fetcher.data?.error) {
+        toast.error(fetcher.data.error);
+        return;
+      }
+      if (fetcher.data?.ok) {
+        toast.success(fetcher.data.message ?? "Rice derbies created successfully.");
+        setModalOpen(false);
+        resetForm();
+      }
+    }
+  }, [fetcher.state, fetcher.data, toast.error, toast.success]);
+  const handleSave = async () => {
+    if (!title.trim()) {
+      toast.error("Title is required.");
+      return;
+    }
+    if (!description.trim()) {
+      toast.error("Description is required.");
+      return;
+    }
+    if (imageFiles.length > 0 && !cloudinaryConfig) {
+      toast.error("Image upload is not configured.");
+      return;
+    }
+    setIsUploading(true);
+    try {
+      const imageUrls = imageFiles.length > 0 && cloudinaryConfig ? await uploadImagesToCloudinary(imageFiles, cloudinaryConfig) : [];
+      fetcher.submit({
+        intent: "create-rice-derbies",
+        title: title.trim(),
+        description: description.trim(),
+        youtubeLink: youtubeLink.trim(),
+        images: JSON.stringify(imageUrls)
+      }, {
+        method: "post"
+      });
+    } catch (error) {
+      toast.error("Failed to upload images. Please try again.");
+      toast.error(error instanceof Error ? error.message : "An unknown error occurred during image upload.");
+    } finally {
+      setIsUploading(false);
+    }
+  };
+  const handleDelete = (id) => {
+    if (!confirm("Are you sure you want to delete this rice derbies? This action cannot be undone."))
+      return;
+    fetcher.submit({
+      intent: "delete-rice-derbies",
+      id
+    }, {
+      method: "post"
+    });
+  };
+  const columns = [{
+    id: "title",
+    header: "Title",
+    cell: (row) => /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("p", { className: "font-semibold text-slate-900", children: row.title || "-" }, void 0, false, {
+      fileName: "app/components/admin/RiceDerbiesModule.tsx",
+      lineNumber: 131,
+      columnNumber: 18
+    }, this)
+  }, {
+    id: "description",
+    header: "Description",
+    cell: (row) => /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("p", { className: "line-clamp-2 text-slate-600", children: row.description || "-" }, void 0, false, {
+      fileName: "app/components/admin/RiceDerbiesModule.tsx",
+      lineNumber: 135,
+      columnNumber: 18
+    }, this)
+  }, {
+    id: "images",
+    header: "Images",
+    cell: (row) => /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex items-center gap-2", children: [
+      row.images.length > 0 ? /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("img", { src: row.images[0], alt: row.title, className: "h-10 w-10 rounded-lg border border-slate-200 object-cover" }, void 0, false, {
+        fileName: "app/components/admin/RiceDerbiesModule.tsx",
+        lineNumber: 140,
+        columnNumber: 46
+      }, this) : null,
+      /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("span", { className: "text-slate-600", children: [
+        row.images.length,
+        " images(s)"
+      ] }, void 0, true, {
+        fileName: "app/components/admin/RiceDerbiesModule.tsx",
+        lineNumber: 141,
+        columnNumber: 21
+      }, this)
+    ] }, void 0, true, {
+      fileName: "app/components/admin/RiceDerbiesModule.tsx",
+      lineNumber: 139,
+      columnNumber: 18
+    }, this)
+  }, {
+    id: "youtube",
+    header: "YouTube",
+    cell: (row) => row.youtubeLink ? /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("a", { href: row.youtubeLink, target: "_blank", rel: "noreferrer", className: "inline-flex items-center gap-1 font-medium text-emerald-600 hover-emerald-700", children: [
+      "View",
+      /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(ExternalLink, { className: "h-3.5 w-3.5" }, void 0, false, {
+        fileName: "app/components/admin/RiceDerbiesModule.tsx",
+        lineNumber: 148,
+        columnNumber: 25
+      }, this)
+    ] }, void 0, true, {
+      fileName: "app/components/admin/RiceDerbiesModule.tsx",
+      lineNumber: 146,
+      columnNumber: 36
+    }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("span", { className: "text-slate-400", children: "-" }, void 0, false, {
+      fileName: "app/components/admin/RiceDerbiesModule.tsx",
+      lineNumber: 149,
+      columnNumber: 28
+    }, this)
+  }, {
+    id: "createdAt",
+    header: "Created At",
+    cell: (row) => /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("span", { className: "text-slate-600", children: formatDate2(row.createdAt) }, void 0, false, {
+      fileName: "app/components/admin/RiceDerbiesModule.tsx",
+      lineNumber: 153,
+      columnNumber: 18
+    }, this)
+  }, {
+    id: "actions",
+    header: "Actions",
+    cell: (row) => /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("button", { type: "button", onClick: () => handleDelete(row.id), disabled: isBusy, className: "inline-flex items-center gap-1 rounded-xl border border-rose-200 bg-rose-50 px-3 py-1.5 text-xs font-semibold text-rose-700 transition hover:bg-rose-100 disabled:opacity-60", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(Table, { className: "h-3.5 w-3.5" }, void 0, false, {
+        fileName: "app/components/admin/RiceDerbiesModule.tsx",
+        lineNumber: 158,
+        columnNumber: 21
+      }, this),
+      "Delete"
+    ] }, void 0, true, {
+      fileName: "app/components/admin/RiceDerbiesModule.tsx",
+      lineNumber: 157,
+      columnNumber: 18
+    }, this)
+  }];
   return /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("section", { className: "space-y-6", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("p", { className: "text-sm font-bold uppercase tracking-[0.2em] text-emerald-600", children: "RICE DERBIES" }, void 0, false, {
           fileName: "app/components/admin/RiceDerbiesModule.tsx",
-          lineNumber: 32,
+          lineNumber: 165,
           columnNumber: 21
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("h1", { className: "mt-2 text-3xl font-semibold text-slate-900", children: "Manage rice derbies" }, void 0, false, {
           fileName: "app/components/admin/RiceDerbiesModule.tsx",
-          lineNumber: 33,
+          lineNumber: 166,
           columnNumber: 21
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("p", { className: "mt-3 text-slate-500", children: "Add and manage information about your rice derbies." }, void 0, false, {
           fileName: "app/components/admin/RiceDerbiesModule.tsx",
-          lineNumber: 34,
+          lineNumber: 167,
           columnNumber: 21
         }, this)
       ] }, void 0, true, {
         fileName: "app/components/admin/RiceDerbiesModule.tsx",
-        lineNumber: 31,
+        lineNumber: 164,
         columnNumber: 17
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("button", { type: "button", onClick: () => setModalOpen(true), className: "flex justify-center items-center rounded-2xl bg-emerald-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-400", children: [
         /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(Plus, { className: "mr-2 h-4 w-4" }, void 0, false, {
           fileName: "app/components/admin/RiceDerbiesModule.tsx",
-          lineNumber: 40,
+          lineNumber: 173,
           columnNumber: 17
         }, this),
         "Add rice derbies"
       ] }, void 0, true, {
         fileName: "app/components/admin/RiceDerbiesModule.tsx",
-        lineNumber: 39,
+        lineNumber: 172,
         columnNumber: 17
       }, this)
     ] }, void 0, true, {
       fileName: "app/components/admin/RiceDerbiesModule.tsx",
-      lineNumber: 30,
+      lineNumber: 163,
       columnNumber: 13
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("div", { className: "rounded-3xl border border-dashed border-slate-200 bg-slate-50/80 p-10 text-center text-slate-500", children: "No rice derbies yet. Use \u201CAdd rice derbies\u201D to create one in the modal." }, void 0, false, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(AdminPaginatedTable_default, { columns, data: derbies, getRowKey: (row) => row.id, isLoading: fetcher.state === "loading", emptyMessage: 'No rice derbies yet. Use "Add rice derbies" to create one.', itemLabel: "rice derbies", pagination: {
+      pageSize: 5
+    } }, void 0, false, {
       fileName: "app/components/admin/RiceDerbiesModule.tsx",
-      lineNumber: 45,
+      lineNumber: 178,
       columnNumber: 13
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(AdminModal_default, { open: isModalOpen, onOpenChange: setModalOpen, title: "Add Rice Derbies", description: "Fill in the details for the new rice derbies.", size: "lg", footer: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_jsx_dev_runtime6.Fragment, { children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("button", { type: "button", onClick: () => setModalOpen(false), className: "rounded-2xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50", children: "Cancel" }, void 0, false, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(AdminModal_default, { open: isModalOpen, onOpenChange: (open) => open ? setModalOpen(true) : closeModal(), title: "Add Rice Derbies", description: "Fill in the details for the new rice derbies.", size: "lg", footer: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(import_jsx_dev_runtime6.Fragment, { children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("button", { type: "button", onClick: closeModal, disabled: isBusy, className: "rounded-2xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50", children: "Cancel" }, void 0, false, {
         fileName: "app/components/admin/RiceDerbiesModule.tsx",
-        lineNumber: 49,
-        columnNumber: 25
+        lineNumber: 182,
+        columnNumber: 23
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("button", { type: "button", onClick: () => setModalOpen(false), className: "rounded-2xl bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-400", children: "Save rice derbies" }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("button", { type: "button", onClick: handleSave, disabled: isBusy, className: "rounded-2xl bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-400", children: isUploading ? "Uploading images..." : fetcher.state === "submitting" ? "Saving..." : "Save rice derbies" }, void 0, false, {
         fileName: "app/components/admin/RiceDerbiesModule.tsx",
-        lineNumber: 52,
-        columnNumber: 25
+        lineNumber: 185,
+        columnNumber: 23
       }, this)
     ] }, void 0, true, {
       fileName: "app/components/admin/RiceDerbiesModule.tsx",
-      lineNumber: 48,
-      columnNumber: 175
-    }, this), children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("form", { className: "space-y-4", onSubmit: (event) => event.preventDefault(), children: [
+      lineNumber: 181,
+      columnNumber: 211
+    }, this), children: /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("form", { ref: formRef, className: "space-y-4", onSubmit: (event) => event.preventDefault(), children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("label", { className: "block text-sm font-medium text-slate-700", children: [
         "Title rice derbies",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("input", { type: "text", name: "name", placeholder: "Full name", className: adminInputClass2 }, void 0, false, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("input", { type: "text", name: "title", value: title, onChange: (event) => setTitle(event.target.value), placeholder: 'Rice Derbies title, e.g. "2024 Harvest Festival Rice Derbies"', className: adminInputClass, required: true }, void 0, false, {
           fileName: "app/components/admin/RiceDerbiesModule.tsx",
-          lineNumber: 59,
+          lineNumber: 192,
           columnNumber: 25
         }, this)
       ] }, void 0, true, {
         fileName: "app/components/admin/RiceDerbiesModule.tsx",
-        lineNumber: 57,
+        lineNumber: 190,
         columnNumber: 21
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("label", { className: "block text-sm font-medium text-slate-700", children: [
         "Description",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("textarea", { name: "content", placeholder: "Brief description of the lav station", className: `${adminInputClass2} admin-scrollbar resize-none`, rows: 4 }, void 0, false, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("textarea", { name: "content", value: description, onChange: (event) => setDescription(event.target.value), placeholder: "Brief description of the rice derbies", className: `${adminInputClass} admin-scrollbar resize-none`, rows: 4, required: true }, void 0, false, {
           fileName: "app/components/admin/RiceDerbiesModule.tsx",
-          lineNumber: 63,
+          lineNumber: 196,
           columnNumber: 25
         }, this)
       ] }, void 0, true, {
         fileName: "app/components/admin/RiceDerbiesModule.tsx",
-        lineNumber: 61,
+        lineNumber: 194,
+        columnNumber: 21
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)(AdminMultiImageUpload_default, { files: imageFiles, onChange: setImageFiles, disabled: isBusy, maxFiles: 20 }, void 0, false, {
+        fileName: "app/components/admin/RiceDerbiesModule.tsx",
+        lineNumber: 198,
         columnNumber: 21
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("label", { className: "block text-sm font-medium text-slate-700", children: [
-        "Images",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("input", { type: "file", name: "images", className: adminInputClass2 }, void 0, false, {
+        "YouTube Link",
+        /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("input", { type: "url", name: "youtubeLink", value: youtubeLink, onChange: (event) => setYoutubeLink(event.target.value), placeholder: "https://www.youtube.com/watch?v=example", className: adminInputClass }, void 0, false, {
           fileName: "app/components/admin/RiceDerbiesModule.tsx",
-          lineNumber: 67,
+          lineNumber: 201,
           columnNumber: 25
         }, this)
       ] }, void 0, true, {
         fileName: "app/components/admin/RiceDerbiesModule.tsx",
-        lineNumber: 65,
-        columnNumber: 25
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("label", { className: "block text-sm font-medium text-slate-700", children: [
-        "Youtube video link",
-        /* @__PURE__ */ (0, import_jsx_dev_runtime6.jsxDEV)("input", { type: "text", name: "youtubeLink", placeholder: "https://www.youtube.com/watch?v=...", className: adminInputClass2 }, void 0, false, {
-          fileName: "app/components/admin/RiceDerbiesModule.tsx",
-          lineNumber: 71,
-          columnNumber: 25
-        }, this)
-      ] }, void 0, true, {
-        fileName: "app/components/admin/RiceDerbiesModule.tsx",
-        lineNumber: 69,
+        lineNumber: 199,
         columnNumber: 21
       }, this)
     ] }, void 0, true, {
       fileName: "app/components/admin/RiceDerbiesModule.tsx",
-      lineNumber: 56,
+      lineNumber: 189,
       columnNumber: 17
     }, this) }, void 0, false, {
       fileName: "app/components/admin/RiceDerbiesModule.tsx",
-      lineNumber: 48,
+      lineNumber: 181,
       columnNumber: 13
     }, this)
   ] }, void 0, true, {
     fileName: "app/components/admin/RiceDerbiesModule.tsx",
-    lineNumber: 29,
+    lineNumber: 162,
     columnNumber: 10
   }, this);
 };
-_s4(RiceDerbiesModule, "o+ymuZc6VVdUpCAroHabBGZ51VI=");
+_s4(RiceDerbiesModule, "PMX9gU+MOCnFQVI9TEwcCsC9KNU=", false, function() {
+  return [useAdminToast];
+});
 _c6 = RiceDerbiesModule;
 var _c6;
 $RefreshReg$(_c6, "RiceDerbiesModule");
@@ -1153,4 +1329,4 @@ export {
   LavStationModule,
   RiceDerbiesModule
 };
-//# sourceMappingURL=/build/_shared/chunk-ERJBGZMK.js.map
+//# sourceMappingURL=/build/_shared/chunk-MWXIN6PT.js.map
