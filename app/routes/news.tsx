@@ -395,7 +395,7 @@ function SliderModal({
     >
       <div
         className="relative rounded-lg shadow-xl w-full max-w-5xl p-6 pt-12 overflow-y-auto max-h-[95vh] bg-no-repeat bg-cover bg-center"
-        style={{ backgroundImage: "url('/newsbg.png')", backgroundSize: "100% 100%" }}
+        style={{ backgroundImage: "url('/newbgevents.png')", backgroundSize: "100% 100%" }}
         onClick={(e) => e.stopPropagation()}
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}

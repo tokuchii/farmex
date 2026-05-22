@@ -140,7 +140,7 @@ export default function Home() {
   <section className="relative w-full py-16 px-4 sm:px-6 md:px-8 bg-white">
     <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
       <motion.h2
-        className="text-3xl md:text-4xl font-extrabold text-white mb-4 uppercase text-center tracking-widest"
+        className="text-3xl md:text-4xl font-extrabold text-green-700 mb-4 uppercase text-center tracking-widest"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
