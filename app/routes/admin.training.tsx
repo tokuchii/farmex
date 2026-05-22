@@ -1,86 +1,72 @@
 import { useState } from "react";
-import { LucidePlus } from "lucide-react";
-import AdminModal from "~/components/admin/AdminModal";
 
-const adminInputClass =
-  "mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-500/20";
-
-const AdminTraining = () => {
-  const [modalOpen, setModalOpen] = useState(false);
+const AdminServices = () => {
+  const [activeSection, setActiveSection] = useState<"rentals" | "consultation" | "training">("rentals");
 
   return (
     <section className="space-y-6 rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5">
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <div>
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-600">Training</p>
-          <h1 className="mt-2 text-3xl font-semibold text-slate-900">Manage training events</h1>
-          <p className="mt-3 text-slate-500">
-            Schedule workshops and training sessions for the knowledge transfer calendar.
-          </p>
-        </div>
-
+      <div className="flex gap-3 sm:flex-row">
         <button
           type="button"
-          onClick={() => setModalOpen(true)}
-          className="flex justify-between items-center rounded-2xl bg-emerald-500 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-emerald-400"
+          onClick={() => setActiveSection("rentals")}
+          className={`flex-1 rounded-2xl px-5 py-3 text-sm font-semibold transition ${
+            activeSection === "rentals"
+              ? "bg-emerald-500 text-white hover:bg-emerald-400"
+              : "bg-slate-200 text-slate-900 hover:bg-slate-300"
+          }`}
         >
-          <LucidePlus className="mr-2 h-4 w-4" />
-          Add event
+          Machine Rentals
+        </button>
+        <button
+          type="button"
+          onClick={() => setActiveSection("consultation")}
+          className={`flex-1 rounded-2xl px-5 py-3 text-sm font-semibold transition ${
+            activeSection === "consultation"
+              ? "bg-emerald-500 text-white hover:bg-emerald-400"
+              : "bg-slate-200 text-slate-900 hover:bg-slate-300"
+          }`}
+        >
+          Technical Consultant
+        </button>
+        <button
+          type="button"
+          onClick={() => setActiveSection("training")}
+          className={`flex-1 rounded-2xl px-5 py-3 text-sm font-semibold transition ${
+            activeSection === "training"
+              ? "bg-emerald-500 text-white hover:bg-emerald-400"
+              : "bg-slate-200 text-slate-900 hover:bg-slate-300"
+          }`}
+        >
+          Training
         </button>
       </div>
 
-      <div className="rounded-3xl border border-dashed border-slate-200 bg-slate-50/80 p-10 text-center text-slate-500">
-        No training events yet. Use &ldquo;Add event&rdquo; to create one in the modal.
-      </div>
-
-      <AdminModal
-        open={modalOpen}
-        onOpenChange={setModalOpen}
-        title="Add training event"
-        description="Set the date, location, and details for a new training session."
-        size="lg"
-        footer={
+      <div className="rounded-3xl border border-dashed border-slate-200 bg-slate-50/80 p-10 text-slate-700">
+        {activeSection === "rentals" ? (
           <>
-            <button
-              type="button"
-              onClick={() => setModalOpen(false)}
-              className="rounded-2xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50"
-            >
-              Cancel
-            </button>
-            <button
-              type="button"
-              onClick={() => setModalOpen(false)}
-              className="rounded-2xl bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-emerald-400"
-            >
-              Save event
-            </button>
+            <p className="text-lg font-semibold text-slate-900">Machine rentals</p>
+            <p className="mt-3 text-slate-500">
+              Manage equipment inventory, rental rates, and machine availability for tractors, harvesters, and other agricultural tools.
+            </p>
           </>
-        }
-      >
-        <form className="space-y-4" onSubmit={(event) => event.preventDefault()}>
-          <label className="block text-sm font-medium text-slate-700">
-            Event title
-            <input type="text" name="title" placeholder="Workshop name" className={adminInputClass} />
-          </label>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <label className="block text-sm font-medium text-slate-700">
-              Date
-              <input type="date" name="date" className={adminInputClass} />
-            </label>
-            <label className="block text-sm font-medium text-slate-700">
-              Time
-              <input type="time" name="time" className={adminInputClass} />
-            </label>
-          </div>
-          <label className="block text-sm font-medium text-slate-700">
-            Location
-            <input type="text" name="location" placeholder="Venue or online link" className={adminInputClass} />
-          </label>
-        </form>
-      </AdminModal>
+        ) : activeSection === "consultation" ? (
+          <>
+            <p className="text-lg font-semibold text-slate-900">Technical consultant</p>
+            <p className="mt-3 text-slate-500">
+              Coordinate consultant assignments, advisory sessions, and field support for farmer clients and extension programs.
+            </p>
+          </>
+        ) : (
+          <>
+            <p className="text-lg font-semibold text-slate-900">Training</p>
+            <p className="mt-3 text-slate-500">
+              Organize training schedules, workshop topics, and venue details for production training and knowledge-transfer events.
+            </p>
+          </>
+        )}
+      </div>
     </section>
   );
 };
 
-export default AdminTraining;
+export default AdminServices;

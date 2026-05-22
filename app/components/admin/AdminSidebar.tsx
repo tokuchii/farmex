@@ -14,13 +14,13 @@ const navLinkClass = ({ isActive }: { isActive: boolean }) =>
   cn(
     "flex items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium transition",
     isActive
-      ? "bg-emerald-500 text-slate-950 shadow-sm shadow-emerald-500/25"
+      ? "bg-emerald-500 text-white shadow-sm shadow-emerald-500/25"
       : "text-slate-600 hover:bg-emerald-50 hover:text-emerald-800"
   );
 
 const SidebarBrand = () => (
   <div className="flex items-center gap-3">
-    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-emerald-500 text-sm font-bold text-slate-950">
+    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-emerald-500 text-sm font-bold text-white">
       F
     </span>
     <div className="min-w-0">

@@ -3,7 +3,7 @@ import { LucidePlus } from "lucide-react";
 import AdminModal from "~/components/admin/AdminModal";
 
 const adminInputClass =
-  "mt-2 w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-500/20";
+  "mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-500/20";
 
 const AdminNews = () => {
   const [modalOpen, setModalOpen] = useState(false);
@@ -22,7 +22,7 @@ const AdminNews = () => {
         <button
           type="button"
           onClick={() => setModalOpen(true)}
-          className="flex justify-between items-center rounded-2xl bg-emerald-500 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:bg-emerald-400"
+          className="flex justify-center items-center rounded-2xl bg-emerald-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-400"
         >
           <LucidePlus className="mr-2 h-4 w-4" />
           Add article
@@ -51,7 +51,7 @@ const AdminNews = () => {
             <button
               type="button"
               onClick={() => setModalOpen(false)}
-              className="rounded-2xl bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-emerald-400"
+              className="rounded-2xl bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-emerald-400"
             >
               Save article
             </button>
@@ -64,17 +64,50 @@ const AdminNews = () => {
             <input type="text" name="title" placeholder="Article title" className={adminInputClass} />
           </label>
           <label className="block text-sm font-medium text-slate-700">
-            Summary
-            <textarea
-              name="summary"
-              rows={3}
-              placeholder="Short description for listings"
+            Name of Supervice Technical Consultant
+            <span className="ml-1 text-slate-400 text-xs">(Optional)</span>
+
+            <input
+              type="text"
+              name="supervisor"
+              placeholder="Full name"
               className={adminInputClass}
+            />
+          </label>
+
+          <label className="block text-sm font-medium text-slate-700">
+            Position
+            <span className="ml-1 text-slate-400 text-xs">(Optional)</span>
+
+            <input
+              type="text"
+              name="position"
+              placeholder="Job title or role"
+              className={adminInputClass}
+            />
+          </label>
+          <label className="block text-sm font-medium text-slate-700">
+            Notes
+            <span className="ml-1 text-slate-400 text-xs">(Optional)</span>
+            <textarea
+              name="notes"
+              placeholder="Additional details or context"
+              className={`${adminInputClass} resize-none`}
+              rows={3}
             />
           </label>
           <label className="block text-sm font-medium text-slate-700">
             Publish date
             <input type="date" name="publishedAt" className={adminInputClass} />
+          </label>
+          <label className="block text-sm font-medium text-slate-700">
+            Summary
+            <textarea
+              name="summary"
+              rows={3}
+              placeholder="Short description for listings"
+              className={`${adminInputClass} resize-none`}
+            />
           </label>
         </form>
       </AdminModal>

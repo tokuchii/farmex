@@ -1,5 +1,24 @@
-import { Link } from "@remix-run/react";
+import type { LoaderFunctionArgs } from "@remix-run/node";
+import { json } from "@remix-run/node";
+import { Link, useLoaderData } from "@remix-run/react";
 import { LucideArrowRight, LucideCalendar, LucideNewspaper } from "lucide-react";
+import type { AdminUrlToastConfig } from "~/components/admin/useAdminUrlToast";
+import { useAdminUrlToast } from "~/components/admin/useAdminUrlToast";
+import { requireAdminUser } from "~/lib/session.server";
+
+const DASHBOARD_URL_TOASTS: AdminUrlToastConfig[] = [
+  {
+    param: "login",
+    value: "success",
+    type: "success",
+    message: "Login successful! Welcome back.",
+  },
+];
+
+export async function loader({ request }: LoaderFunctionArgs) {
+  const user = await requireAdminUser(request);
+  return json({ user });
+}
 
 const stats = [
   { label: "News articles", value: "0", description: "Published on the site" },
@@ -16,19 +35,25 @@ const quickLinks = [
     icon: LucideNewspaper,
   },
   {
-    title: "Manage training",
-    description: "Schedule workshops and calendar events.",
-    to: "/admin/training",
+    title: "Manage services",
+    description: "Manage machine rentals, technical consultants, and training.",
+    to: "/admin/services",
     icon: LucideCalendar,
   },
 ] as const;
 
 const AdminDashboard = () => {
+  const { user } = useLoaderData<typeof loader>();
+
+  useAdminUrlToast(DASHBOARD_URL_TOASTS);
+
   return (
     <section className="space-y-6 rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5">
       <div>
         <p className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-600">Dashboard</p>
-        <h1 className="mt-2 text-3xl font-semibold text-slate-900">Welcome back, Admin</h1>
+        <h1 className="mt-2 text-3xl font-semibold text-slate-900">
+          Welcome back, {user.username}
+        </h1>
         <p className="mt-3 max-w-2xl text-slate-500">
           Overview of your Farmex admin panel. Use the cards below to jump to news or training, or
           open the sidebar anytime.

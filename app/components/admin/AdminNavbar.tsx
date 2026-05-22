@@ -1,4 +1,4 @@
-import { Link, useLocation } from "@remix-run/react";
+import { Form, Link, useLocation } from "@remix-run/react";
 import { LucideExternalLink, LucideLogOut, LucideMenu, LucideUser } from "lucide-react";
 import type { FC } from "react";
 import { adminNavLinks } from "./adminNavLinks";
@@ -6,6 +6,8 @@ import { cn } from "~/lib/utils";
 
 type AdminNavbarProps = {
   onMenuClick?: () => void;
+  username?: string;
+  email?: string;
 };
 
 const getPageTitle = (pathname: string) => {
@@ -16,9 +18,10 @@ const getPageTitle = (pathname: string) => {
   return match?.label ?? "Admin";
 };
 
-const AdminNavbar: FC<AdminNavbarProps> = ({ onMenuClick }) => {
+const AdminNavbar: FC<AdminNavbarProps> = ({ onMenuClick, username, email }) => {
   const { pathname } = useLocation();
   const pageTitle = getPageTitle(pathname);
+  const displayName = username ?? "Admin";
 
   return (
     <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/95 px-4 py-3 shadow-sm backdrop-blur-sm sm:px-6">
@@ -59,27 +62,30 @@ const AdminNavbar: FC<AdminNavbarProps> = ({ onMenuClick }) => {
 
           <div
             className="hidden items-center gap-2 rounded-xl border border-slate-200 bg-slate-50 px-3 py-2 sm:flex"
-            title="admin@farmex.com"
+            title={email ?? displayName}
           >
             <span className="rounded-lg bg-white p-1.5 text-emerald-600 shadow-sm">
               <LucideUser className="h-4 w-4" aria-hidden />
             </span>
             <span className="max-w-[8rem] truncate text-sm font-medium text-slate-700 md:max-w-[10rem]">
-              Admin
+              {displayName}
             </span>
           </div>
 
-          <Link
-            to="/admin"
-            className={cn(
-              "inline-flex items-center gap-1.5 rounded-xl bg-emerald-500 px-3 py-2 text-sm font-semibold text-slate-950 transition hover:bg-emerald-400",
-              "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/40"
-            )}
-          >
-            <LucideLogOut className="h-4 w-4" aria-hidden />
-            <span className="hidden sm:inline">Logout</span>
-            <span className="sr-only sm:hidden">Logout</span>
-          </Link>
+          <Form method="post" action="/admin">
+            <input type="hidden" name="intent" value="logout" />
+            <button
+              type="submit"
+              className={cn(
+                "inline-flex items-center gap-1.5 rounded-xl bg-emerald-500 px-3 py-2 text-sm font-semibold text-white transition hover:bg-emerald-400",
+                "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/40"
+              )}
+            >
+              <LucideLogOut className="h-4 w-4" aria-hidden />
+              <span className="hidden sm:inline">Logout</span>
+              <span className="sr-only sm:hidden">Logout</span>
+            </button>
+          </Form>
         </div>
       </div>
     </header>

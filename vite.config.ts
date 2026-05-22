@@ -21,4 +21,7 @@ export default defineConfig({
     }),
     tsconfigPaths(),
   ],
+  ssr: {
+    external: ["firebase", "firebase/app", "firebase/auth", "firebase/firestore"],
+  },
 });

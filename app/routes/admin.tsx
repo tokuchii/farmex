@@ -1,19 +1,76 @@
-import type { ActionFunction } from "@remix-run/node";
+import type { ActionFunctionArgs, LoaderFunctionArgs } from "@remix-run/node";
 import { json, redirect } from "@remix-run/node";
-import { Form, Link, Outlet, useActionData, useLocation } from "@remix-run/react";
+import {
+  Form,
+  Link,
+  Outlet,
+  useActionData,
+  useLoaderData,
+  useLocation,
+} from "@remix-run/react";
 import { useCallback, useState } from "react";
+import { compare } from "bcryptjs";
+import AdminAuthShell, { adminInputClass } from "~/components/admin/AdminAuthShell";
+import { AdminToastProvider } from "~/components/admin/AdminToast";
+import { useAdminActionToast } from "~/components/admin/useAdminActionToast";
+import type { AdminUrlToastConfig } from "~/components/admin/useAdminUrlToast";
+import { useAdminUrlToast } from "~/components/admin/useAdminUrlToast";
 import AdminNavbar from "~/components/admin/AdminNavbar";
 import AdminSidebar from "~/components/admin/AdminSidebar";
-
-const SAMPLE_EMAIL = "admin@farmex.com";
-const SAMPLE_PASSWORD = "password123";
+import { db } from "~/lib/firebase.server";
+import {
+  createAdminSession,
+  destroyAdminSession,
+  getAdminUser,
+  isPublicAdminPath,
+} from "~/lib/session.server";
+import { collection, query, where, getDocs } from "firebase/firestore";
 
 type ActionData = {
   formError?: string;
 };
 
-export const action: ActionFunction = async ({ request }) => {
+const LOGIN_URL_TOASTS: AdminUrlToastConfig[] = [
+  {
+    param: "logout",
+    value: "success",
+    type: "success",
+    message: "Logout successful. See you again!",
+  },
+];
+
+export async function loader({ request }: LoaderFunctionArgs) {
+  const url = new URL(request.url);
+  const user = await getAdminUser(request);
+
+  if (user && isPublicAdminPath(url.pathname)) {
+    throw redirect("/admin/dashboard");
+  }
+
+  if (!user && !isPublicAdminPath(url.pathname)) {
+    throw redirect("/admin");
+  }
+
+  return json({ user });
+}
+
+export async function action({ request }: ActionFunctionArgs) {
   const form = await request.formData();
+  const intent = form.get("intent");
+
+  if (intent === "logout") {
+    return destroyAdminSession(request);
+  }
+
+  if (request.method !== "POST") {
+    return json({ formError: "Invalid request method" }, { status: 405 });
+  }
+
+  const existingUser = await getAdminUser(request);
+  if (existingUser) {
+    return redirect("/admin/dashboard");
+  }
+
   const email = form.get("email");
   const password = form.get("password");
 
@@ -25,95 +82,154 @@ export const action: ActionFunction = async ({ request }) => {
     return json({ formError: "Punan ang email at password." }, { status: 400 });
   }
 
-  if (email !== SAMPLE_EMAIL || password !== SAMPLE_PASSWORD) {
+  try {
+    const usersRef = collection(db, "users");
+    const emailQuery = query(usersRef, where("email", "==", email.toLowerCase()));
+    const snapshot = await getDocs(emailQuery);
+
+    if (snapshot.empty) {
+      return json(
+        { formError: "Email o password ay hindi tama." },
+        { status: 401 }
+      );
+    }
+
+    const userDoc = snapshot.docs[0];
+    const userData = userDoc.data();
+    const storedPassword = userData.password;
+
+    if (typeof storedPassword !== "string") {
+      return json(
+        { formError: "Email o password ay hindi tama." },
+        { status: 401 }
+      );
+    }
+
+    const passwordMatches = storedPassword.startsWith("$2")
+      ? await compare(password, storedPassword)
+      : storedPassword === password;
+
+    if (!passwordMatches) {
+      return json(
+        { formError: "Email o password ay hindi tama." },
+        { status: 401 }
+      );
+    }
+
+    const username =
+      typeof userData.username === "string" ? userData.username : "Admin";
+    const role = typeof userData.role === "string" ? userData.role : "admin";
+
+    return createAdminSession(
+      request,
+      {
+        userId: userDoc.id,
+        email: email.toLowerCase(),
+        username,
+        role,
+      },
+      "/admin/dashboard?login=success"
+    );
+  } catch (error) {
+    console.error("Login error:", error);
     return json(
-      { formError: "Maling email o password. Gamitin ang sample account sa ibaba." },
-      { status: 401 }
+      { formError: "May error sa pag-login. Subukan ulit." },
+      { status: 500 }
     );
   }
+}
 
-  return redirect("/admin/dashboard");
-};
-
-const AdminRoot = () => {
-  const location = useLocation();
+const AdminLoginForm = () => {
   const actionData = useActionData<ActionData>();
-  const [mobileNavOpen, setMobileNavOpen] = useState(false);
-  const openMobileNav = useCallback(() => setMobileNavOpen(true), []);
-  const closeMobileNav = useCallback(() => setMobileNavOpen(false), []);
-  const isLoginPage = location.pathname === "/admin" || location.pathname === "/admin/";
+  useAdminUrlToast(LOGIN_URL_TOASTS);
+  useAdminActionToast(actionData?.formError);
 
-  if (isLoginPage) {
-    return (
-      <main className="min-h-screen bg-white text-slate-100 flex items-center justify-center px-4 py-10">
-        <section className="w-full max-w-md rounded-3xl bg-slate-900/95 border border-slate-700 shadow-2xl shadow-slate-950/30 backdrop-blur-xl p-8">
-          <div className="mb-8 text-center">
-            <span className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-500 text-2xl font-semibold text-slate-950">
-              A
-            </span>
-            <h1 className="mt-6 text-3xl font-semibold tracking-tight text-white">Admin Login</h1>
-            <p className="mt-3 text-sm text-slate-400">
-              Log in with the sample account to access the admin panel.
-            </p>
-          </div>
-
-          {actionData?.formError ? (
-            <div className="mt-6 rounded-3xl border border-rose-500 bg-rose-500/10 px-4 py-3 text-sm text-rose-200">
-              {actionData.formError}
-            </div>
-          ) : null}
-
-          <Form method="post" className="mt-6 space-y-6">
+  return (
+    <AdminAuthShell
+        eyebrow="Login"
+        title="Admin login"
+        description="I-login ang iyong credentials para mag-access sa admin panel."
+        footer={
+          <p>
+            Walang account?{" "}
+            <Link
+              to="/admin/register"
+              className="font-semibold text-emerald-600 transition hover:text-emerald-700"
+            >
+              Mag-register
+            </Link>
+          </p>
+        }
+      >
+        <div className="space-y-5">
+          <Form method="post" className="space-y-5">
             <label className="block">
-              <span className="text-sm font-medium text-slate-300">Email address</span>
+              <span className="text-sm font-medium text-slate-700">Email address</span>
               <input
                 type="email"
                 name="email"
                 placeholder="example@mail.com"
-                className="mt-2 w-full rounded-3xl border border-slate-700 bg-slate-900/80 px-4 py-3 text-slate-100 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-500/20"
+                autoComplete="email"
+                className={adminInputClass}
                 required
               />
             </label>
 
             <label className="block">
-              <span className="text-sm font-medium text-slate-300">Password</span>
+              <span className="text-sm font-medium text-slate-700">Password</span>
               <input
                 type="password"
                 name="password"
-                placeholder="********"
-                className="mt-2 w-full rounded-3xl border border-slate-700 bg-slate-900/80 px-4 py-3 text-slate-100 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-500/20"
+                placeholder="••••••••"
+                autoComplete="current-password"
+                className={adminInputClass}
                 required
               />
             </label>
 
             <button
               type="submit"
-              className="w-full rounded-3xl bg-emerald-500 px-4 py-3 text-sm font-semibold text-slate-950 transition hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/30"
+              className="w-full rounded-2xl bg-emerald-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/30"
             >
               Login
             </button>
           </Form>
+        </div>
+      </AdminAuthShell>
+  );
+};
 
-          <div className="mt-6 text-center text-sm text-slate-500">
-            <p>
-              Don&rsquo;t have an account? <Link to="/" className="font-medium text-white underline">Back to the homepage</Link>
-            </p>
-          </div>
-        </section>
-      </main>
-    );
-  }
+const AdminRoot = () => {
+  const { user } = useLoaderData<typeof loader>();
+  const location = useLocation();
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const openMobileNav = useCallback(() => setMobileNavOpen(true), []);
+  const closeMobileNav = useCallback(() => setMobileNavOpen(false), []);
+  const isLoginPage = location.pathname === "/admin" || location.pathname === "/admin/";
+  const isRegisterPage = location.pathname === "/admin/register";
 
   return (
-    <div className="h-screen overflow-hidden bg-slate-50 text-slate-900">
+    <AdminToastProvider>
+      {isRegisterPage ? (
+        <Outlet />
+      ) : isLoginPage ? (
+        <AdminLoginForm />
+      ) : (
+        <div className="h-screen overflow-hidden bg-slate-50 text-slate-900">
       <AdminSidebar mobileOpen={mobileNavOpen} onMobileClose={closeMobileNav} />
       <div className="flex h-full min-w-0 flex-col lg:pl-64">
-        <AdminNavbar onMenuClick={openMobileNav} />
+        <AdminNavbar
+          onMenuClick={openMobileNav}
+          username={user?.username}
+          email={user?.email}
+        />
         <main className="admin-scrollbar flex-1 overflow-y-auto p-3 sm:p-4 lg:p-6">
           <Outlet />
         </main>
       </div>
     </div>
+      )}
+    </AdminToastProvider>
   );
 };
 

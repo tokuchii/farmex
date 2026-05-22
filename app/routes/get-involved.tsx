@@ -1,26 +1,22 @@
 /* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable import/no-named-as-default-member */
+import { json } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
+import { getEmailJsConfig } from "~/lib/emailjs.server";
 
-// EMAILJS CONFIG
-// EMAILJS CONFIG
-const EMAILJS_SERVICE_ID = "service_p1oxbrg";
-
-const EMAILJS_TEMPLATE_ID = "template_yt8cn5i"; 
-// auto-reply → sender
-
-const EMAILJS_AUTOREPLY_ID = "template_0s54upq"; 
-// notification email → admin
-
-const EMAILJS_PUBLIC_KEY = "KlmaVtugUAM18mELR";
+export async function loader() {
+  return json({ emailJs: getEmailJsConfig() });
+}
 
 export function meta() {
   return [{ title: "Get Involved" }];
 }
 
 export default function GetInvolved() {
+  const { emailJs } = useLoaderData<typeof loader>();
   const [isClient, setIsClient] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [modalMessage, setModalMessage] = useState("");
@@ -35,8 +31,10 @@ export default function GetInvolved() {
 
   useEffect(() => {
     setIsClient(true);
-    emailjs.init(EMAILJS_PUBLIC_KEY);
-  }, []);
+    if (emailJs?.publicKey) {
+      emailjs.init(emailJs.publicKey);
+    }
+  }, [emailJs?.publicKey]);
 
   useEffect(() => {
     document.body.style.overflow = modalOpen ? "hidden" : "";
@@ -116,18 +114,27 @@ const cleanedContact = formData.contact.replace(
       ticket_number: ticketNumber,
     };
 
+    if (!emailJs) {
+      setModalMessage(
+        "Email service is not configured. Please set VITE_EMAILJS_* variables in your .env file."
+      );
+      setIsSending(false);
+      setModalOpen(true);
+      return;
+    }
+
     try {
       // AUTO REPLY TO USER (template_yt8cn5i — dapat may {{ticket_number}} dito)
       await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
+        emailJs.serviceId,
+        emailJs.templateId,
         templateParams
       );
 
       // EMAIL TO ADMIN (template_0s54upq — idagdag din {{ticket_number}} kung kailangan)
       await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_AUTOREPLY_ID,
+        emailJs.serviceId,
+        emailJs.autoreplyId,
         templateParams
       );
 

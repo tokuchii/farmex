@@ -62,7 +62,7 @@ const AdminModal = ({
           ) : null}
         </DialogHeader>
 
-        {children ? <div className="px-6 py-5">{children}</div> : null}
+        {children ? <div className="admin-scrollbar max-h-[calc(100vh-280px)] overflow-y-auto px-6 py-5">{children}</div> : null}
 
         {footer ? (
           <DialogFooter className="gap-3 border-t border-slate-100 bg-slate-50/80 px-6 py-4 sm:flex-row sm:justify-end">
