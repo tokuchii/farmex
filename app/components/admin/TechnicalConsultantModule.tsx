@@ -1,9 +1,8 @@
 import { LucidePlus } from "lucide-react";
 import { useState } from "react";
+import { adminInputClass } from "~/components/admin/adminFormStyles";
 import AdminModal from "~/components/admin/AdminModal";
-
-const adminInputClass =
-  "mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-500/20";
+import AdminMultiImageUpload from "~/components/admin/AdminMultiImageUpload";
 
 export const TechnicalConsultantModule = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -60,22 +59,18 @@ export const TechnicalConsultantModule = () => {
       >
         <form className="space-y-4" onSubmit={(event) => event.preventDefault()}>
           <label className="block text-sm font-medium text-slate-700">
-            Consultant name
-            <input type="text" name="name" placeholder="Full name" className={adminInputClass} />
+            Title
+            <input type="text" name="title" placeholder="Full name" className={adminInputClass} />
           </label>
           <label className="block text-sm font-medium text-slate-700">
-            Specialty
-            <input type="text" name="specialty" placeholder="Soil, machinery, crop planning" className={adminInputClass} />
+            Description
+            <input type="text" name="description" placeholder="Brief bio and expertise" className={adminInputClass} />
           </label>
-          <label className="block text-sm font-medium text-slate-700">
-            Availability notes
-            <textarea
-              name="details"
-              placeholder="Dates, locations, or service scope"
-              className={`${adminInputClass} admin-scrollbar resize-none`}
-              rows={4}
-            />
-          </label>
+          
+          <AdminMultiImageUpload
+            files={[]}
+            onChange={() => {}}
+          />
         </form>
       </AdminModal>
     </section>

@@ -1,4 +1,3 @@
-import { Link } from "@remix-run/react";
 import type { ReactNode } from "react";
 
 const adminInputClass =
@@ -77,12 +76,6 @@ const AdminAuthShell = ({
             </div>
           ) : null}
         </section>
-
-        <p className="text-center text-xs text-slate-400">
-          <Link to="/" className="font-medium text-emerald-600 transition hover:text-emerald-700">
-            Back to homepage
-          </Link>
-        </p>
       </div>
     </main>
   );

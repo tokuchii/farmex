@@ -6,24 +6,54 @@ import {
   getDocs,
   orderBy,
   query,
+  updateDoc,
 } from "firebase/firestore";
 import { db } from "~/lib/firebase.server";
 
 export type LavStationRecord = {
   id: string;
   title: string;
-  description: string;
+  descriptions: string[];
   images: string[];
-  youtubeLink: string;
+  youtubeLinks: string[];
+  active: boolean;
   createdAt: string;
 };
 
 export type LavStationInput = {
   title: string;
-  description: string;
+  descriptions: string[];
   images: string[];
-  youtubeLink: string;
+  youtubeLinks: string[];
 };
+
+export function normalizeStringList(value: unknown): string[] {
+  if (Array.isArray(value)) {
+    return value
+      .filter((item): item is string => typeof item === "string")
+      .map((item) => item.trim())
+      .filter(Boolean);
+  }
+
+  if (typeof value === "string" && value.trim()) {
+    return [value.trim()];
+  }
+
+  return [];
+}
+
+export function parseStringListFromJson(raw: FormDataEntryValue | null): string[] {
+  if (raw === null || raw === "") {
+    return [];
+  }
+
+  if (typeof raw !== "string") {
+    throw new Error("Invalid list data.");
+  }
+
+  const parsed = JSON.parse(raw) as unknown;
+  return normalizeStringList(parsed);
+}
 
 export async function getLavStations(): Promise<LavStationRecord[]> {
   const stationsRef = collection(db, "lavStations");
@@ -32,14 +62,16 @@ export async function getLavStations(): Promise<LavStationRecord[]> {
 
   return snapshot.docs.map((stationDoc) => {
     const data = stationDoc.data();
+
     return {
       id: stationDoc.id,
       title: typeof data.title === "string" ? data.title : "",
-      description: typeof data.description === "string" ? data.description : "",
+      descriptions: normalizeStringList(data.descriptions ?? data.description),
       images: Array.isArray(data.images)
         ? data.images.filter((url): url is string => typeof url === "string")
         : [],
-      youtubeLink: typeof data.youtubeLink === "string" ? data.youtubeLink : "",
+      youtubeLinks: normalizeStringList(data.youtubeLinks ?? data.youtubeLink),
+      active: data.active === true,
       createdAt: typeof data.createdAt === "string" ? data.createdAt : "",
     };
   });
@@ -50,11 +82,25 @@ export async function createLavStation(input: LavStationInput) {
 
   await addDoc(stationsRef, {
     title: input.title,
-    description: input.description,
+    descriptions: input.descriptions,
     images: input.images,
-    youtubeLink: input.youtubeLink,
+    youtubeLinks: input.youtubeLinks,
+    active: false,
     createdAt: new Date().toISOString(),
   });
+}
+
+export async function updateLavStation(id: string, input: LavStationInput) {
+  await updateDoc(doc(db, "lavStations", id), {
+    title: input.title,
+    descriptions: input.descriptions,
+    images: input.images,
+    youtubeLinks: input.youtubeLinks,
+  });
+}
+
+export async function setLavStationActive(id: string, active: boolean) {
+  await updateDoc(doc(db, "lavStations", id), { active });
 }
 
 export async function deleteLavStation(id: string) {

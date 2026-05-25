@@ -75,11 +75,11 @@ export async function action({ request }: ActionFunctionArgs) {
   const password = form.get("password");
 
   if (typeof email !== "string" || typeof password !== "string") {
-    return json({ formError: "Hindi valid ang form data." }, { status: 400 });
+    return json({ formError: "Invalid form data." }, { status: 400 });
   }
 
   if (!email || !password) {
-    return json({ formError: "Punan ang email at password." }, { status: 400 });
+    return json({ formError: "Please fill in all fields." }, { status: 400 });
   }
 
   try {
@@ -89,7 +89,7 @@ export async function action({ request }: ActionFunctionArgs) {
 
     if (snapshot.empty) {
       return json(
-        { formError: "Email o password ay hindi tama." },
+        { formError: "Email or password is incorrect." },
         { status: 401 }
       );
     }
@@ -100,7 +100,7 @@ export async function action({ request }: ActionFunctionArgs) {
 
     if (typeof storedPassword !== "string") {
       return json(
-        { formError: "Email o password ay hindi tama." },
+        { formError: "Email or password is incorrect." },
         { status: 401 }
       );
     }
@@ -111,7 +111,7 @@ export async function action({ request }: ActionFunctionArgs) {
 
     if (!passwordMatches) {
       return json(
-        { formError: "Email o password ay hindi tama." },
+        { formError: "Email or password is incorrect." },
         { status: 401 }
       );
     }
@@ -133,7 +133,7 @@ export async function action({ request }: ActionFunctionArgs) {
   } catch (error) {
     console.error("Login error:", error);
     return json(
-      { formError: "May error sa pag-login. Subukan ulit." },
+      { formError: "An error occurred while logging in. Please try again." },
       { status: 500 }
     );
   }
@@ -148,15 +148,15 @@ const AdminLoginForm = () => {
     <AdminAuthShell
         eyebrow="Login"
         title="Admin login"
-        description="I-login ang iyong credentials para mag-access sa admin panel."
+        description="Log in with your credentials to access the admin panel."
         footer={
           <p>
-            Walang account?{" "}
+            Don&apos;t have an account?{" "}
             <Link
               to="/admin/register"
               className="font-semibold text-emerald-600 transition hover:text-emerald-700"
             >
-              Mag-register
+              Register here
             </Link>
           </p>
         }

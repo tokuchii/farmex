@@ -1,6 +1,7 @@
-import { LucideExternalLink, LucidePlus, LucideTrash2 } from "lucide-react";
+import { LucideExternalLink, LucidePencil, LucidePlus, LucideTrash2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import type { FetcherWithComponents } from "@remix-run/react";
+import AdminActiveToggle from "~/components/admin/AdminActiveToggle";
 import AdminModal from "~/components/admin/AdminModal";
 import AdminMultiImageUpload from "~/components/admin/AdminMultiImageUpload";
 import AdminPaginatedTable, {
@@ -18,6 +19,8 @@ type LavStationModuleProps = {
   cloudinary: CloudinaryConfig | null;
 };
 
+const EMPTY_LIST_ITEM = "";
+
 const formatDate = (iso: string) => {
   if (!iso) return "—";
   try {
@@ -31,15 +34,106 @@ const formatDate = (iso: string) => {
   }
 };
 
+const updateListItem = (items: string[], index: number, value: string) => {
+  const next = [...items];
+  next[index] = value;
+  return next;
+};
+
+const addListItem = (items: string[]) => [...items, EMPTY_LIST_ITEM];
+
+const removeListItem = (items: string[], index: number) =>
+  items.length === 1 ? [EMPTY_LIST_ITEM] : items.filter((_, itemIndex) => itemIndex !== index);
+
+const trimNonEmpty = (items: string[]) =>
+  items.map((item) => item.trim()).filter(Boolean);
+
+const toEditableList = (items: string[]) =>
+  items.length > 0 ? items : [EMPTY_LIST_ITEM];
+
+type StringListFieldProps = {
+  label: string;
+  items: string[];
+  onChange: (items: string[]) => void;
+  addLabel: string;
+  inputType?: "text" | "url";
+  placeholder: string;
+  multiline?: boolean;
+  disabled?: boolean;
+};
+
+const StringListField = ({
+  label,
+  items,
+  onChange,
+  addLabel,
+  inputType = "text",
+  placeholder,
+  multiline = false,
+  disabled = false,
+}: StringListFieldProps) => (
+  <div className="space-y-3">
+    <div className="flex items-center justify-between gap-3">
+      <span className="text-sm font-medium text-slate-700">{label}</span>
+      <button
+        type="button"
+        onClick={() => onChange(addListItem(items))}
+        disabled={disabled}
+        className="inline-flex items-center gap-1 rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-semibold text-emerald-700 transition hover:bg-emerald-100 disabled:opacity-60"
+      >
+        <LucidePlus className="h-3.5 w-3.5" />
+        {addLabel}
+      </button>
+    </div>
+
+    <div className="space-y-2">
+      {items.map((item, index) => (
+        <div key={`${label}-${index}`} className="flex items-start gap-2">
+          {multiline ? (
+            <textarea
+              value={item}
+              onChange={(event) => onChange(updateListItem(items, index, event.target.value))}
+              placeholder={placeholder}
+              className={`${adminInputClass} admin-scrollbar min-h-[88px] flex-1 resize-none`}
+              rows={3}
+              disabled={disabled}
+            />
+          ) : (
+            <input
+              type={inputType}
+              value={item}
+              onChange={(event) => onChange(updateListItem(items, index, event.target.value))}
+              placeholder={placeholder}
+              className={`${adminInputClass} flex-1`}
+              disabled={disabled}
+            />
+          )}
+          <button
+            type="button"
+            onClick={() => onChange(removeListItem(items, index))}
+            disabled={disabled}
+            className="mt-2 inline-flex shrink-0 items-center justify-center rounded-xl border border-rose-200 bg-rose-50 p-2.5 text-rose-700 transition hover:bg-rose-100 disabled:opacity-60"
+            aria-label={`Remove ${label.toLowerCase()} ${index + 1}`}
+          >
+            <LucideTrash2 className="h-4 w-4" />
+          </button>
+        </div>
+      ))}
+    </div>
+  </div>
+);
+
 export const LavStationModule = ({
   stations,
   fetcher,
   cloudinary,
 }: LavStationModuleProps) => {
   const [isModalOpen, setModalOpen] = useState(false);
+  const [editingId, setEditingId] = useState<string | null>(null);
   const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [youtubeLink, setYoutubeLink] = useState("");
+  const [descriptions, setDescriptions] = useState<string[]>([EMPTY_LIST_ITEM]);
+  const [youtubeLinks, setYoutubeLinks] = useState<string[]>([EMPTY_LIST_ITEM]);
+  const [existingImages, setExistingImages] = useState<string[]>([]);
   const [imageFiles, setImageFiles] = useState<File[]>([]);
   const [isUploading, setIsUploading] = useState(false);
   const toast = useAdminToast();
@@ -47,13 +141,32 @@ export const LavStationModule = ({
   const wasSubmitting = useRef(false);
 
   const isBusy = isUploading || fetcher.state !== "idle";
+  const fetcherFormData = fetcher.formData as FormData | undefined;
+  const isEditing = editingId !== null;
 
   const resetForm = () => {
+    setEditingId(null);
     setTitle("");
-    setDescription("");
-    setYoutubeLink("");
+    setDescriptions([EMPTY_LIST_ITEM]);
+    setYoutubeLinks([EMPTY_LIST_ITEM]);
+    setExistingImages([]);
     setImageFiles([]);
     formRef.current?.reset();
+  };
+
+  const openCreateModal = () => {
+    resetForm();
+    setModalOpen(true);
+  };
+
+  const openEditModal = (station: LavStationRecord) => {
+    setEditingId(station.id);
+    setTitle(station.title);
+    setDescriptions(toEditableList(station.descriptions));
+    setYoutubeLinks(toEditableList(station.youtubeLinks));
+    setExistingImages([...station.images]);
+    setImageFiles([]);
+    setModalOpen(true);
   };
 
   const closeModal = () => {
@@ -76,21 +189,30 @@ export const LavStationModule = ({
       }
 
       if (fetcher.data?.ok) {
-        toast.success(fetcher.data.message ?? "Lav station saved successfully.");
-        setModalOpen(false);
-        resetForm();
+        toast.success(fetcher.data.message ?? "Updated successfully.");
+        const submittedIntent = fetcherFormData?.get("intent");
+        if (
+          submittedIntent === "create-lav-station" ||
+          submittedIntent === "update-lav-station"
+        ) {
+          setModalOpen(false);
+          resetForm();
+        }
       }
     }
-  }, [fetcher.state, fetcher.data, toast.error, toast.success]);
+  }, [fetcher.state, fetcher.data, fetcherFormData, toast.error, toast.success, toast]);
 
   const handleSave = async () => {
+    const trimmedDescriptions = trimNonEmpty(descriptions);
+    const trimmedYoutubeLinks = trimNonEmpty(youtubeLinks);
+
     if (!title.trim()) {
       toast.error("Title is required.");
       return;
     }
 
-    if (!description.trim()) {
-      toast.error("Description is required.");
+    if (trimmedDescriptions.length === 0) {
+      toast.error("At least one description is required.");
       return;
     }
 
@@ -102,27 +224,38 @@ export const LavStationModule = ({
     setIsUploading(true);
 
     try {
-      const imageUrls =
+      const newImageUrls =
         imageFiles.length > 0 && cloudinary
           ? await uploadImagesToCloudinary(imageFiles, cloudinary)
           : [];
+      const allImages = [...existingImages, ...newImageUrls];
 
-      fetcher.submit(
-        {
-          intent: "create-lav-station",
-          title: title.trim(),
-          description: description.trim(),
-          youtubeLink: youtubeLink.trim(),
-          images: JSON.stringify(imageUrls),
-        },
-        { method: "post" }
-      );
+      if (allImages.length > 20) {
+        toast.error("Maximum 20 images allowed.");
+        return;
+      }
+
+      const payload = {
+        title: title.trim(),
+        descriptions: JSON.stringify(trimmedDescriptions),
+        youtubeLinks: JSON.stringify(trimmedYoutubeLinks),
+        images: JSON.stringify(allImages),
+      };
+
+      if (isEditing && editingId) {
+        fetcher.submit(
+          { intent: "update-lav-station", id: editingId, ...payload },
+          { method: "post" }
+        );
+      } else {
+        fetcher.submit({ intent: "create-lav-station", ...payload }, { method: "post" });
+      }
     } catch (error) {
-      toast.error("Failed to upload images. Please try again.");
+      console.error("Upload error:", error);
       toast.error(
         error instanceof Error
           ? error.message
-          : "An unknown error occurred during image upload."
+          : "Failed to upload images. Please try again."
       );
     } finally {
       setIsUploading(false);
@@ -132,11 +265,24 @@ export const LavStationModule = ({
   const handleDelete = (id: string) => {
     if (!confirm("Delete this lav station?")) return;
 
+    fetcher.submit({ intent: "delete-lav-station", id }, { method: "post" });
+  };
+
+  const handleToggleActive = (id: string, nextActive: boolean) => {
     fetcher.submit(
-      { intent: "delete-lav-station", id },
+      {
+        intent: "toggle-lav-station-active",
+        id,
+        active: nextActive ? "true" : "false",
+      },
       { method: "post" }
     );
   };
+
+  const isRowBusy = (id: string, intent: string) =>
+    fetcher.state !== "idle" &&
+    fetcherFormData?.get("intent") === intent &&
+    fetcherFormData?.get("id") === id;
 
   const columns: AdminTableColumn<LavStationRecord>[] = [
     {
@@ -147,11 +293,24 @@ export const LavStationModule = ({
       ),
     },
     {
-      id: "description",
-      header: "Description",
+      id: "descriptions",
+      header: "Descriptions",
       className: "max-w-xs",
       cell: (row) => (
-        <p className="line-clamp-2 text-slate-600">{row.description || "—"}</p>
+        <div className="space-y-1">
+          {row.descriptions.length > 0 ? (
+            <>
+              <p className="line-clamp-2 text-slate-600">{row.descriptions[0]}</p>
+              {row.descriptions.length > 1 ? (
+                <p className="text-xs font-medium text-slate-400">
+                  +{row.descriptions.length - 1} more
+                </p>
+              ) : null}
+            </>
+          ) : (
+            <span className="text-slate-400">—</span>
+          )}
+        </div>
       ),
     },
     {
@@ -174,16 +333,26 @@ export const LavStationModule = ({
       id: "youtube",
       header: "YouTube",
       cell: (row) =>
-        row.youtubeLink ? (
-          <a
-            href={row.youtubeLink}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1 font-medium text-emerald-600 hover:text-emerald-700"
-          >
-            View
-            <LucideExternalLink className="h-3.5 w-3.5" />
-          </a>
+        row.youtubeLinks.length > 0 ? (
+          <div className="flex flex-col gap-1">
+            {row.youtubeLinks.slice(0, 2).map((link) => (
+              <a
+                key={link}
+                href={link}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1 text-sm font-medium text-emerald-600 hover:text-emerald-700"
+              >
+                View
+                <LucideExternalLink className="h-3.5 w-3.5" />
+              </a>
+            ))}
+            {row.youtubeLinks.length > 2 ? (
+              <span className="text-xs text-slate-400">
+                +{row.youtubeLinks.length - 2} more
+              </span>
+            ) : null}
+          </div>
         ) : (
           <span className="text-slate-400">—</span>
         ),
@@ -194,19 +363,42 @@ export const LavStationModule = ({
       cell: (row) => <span className="text-slate-600">{formatDate(row.createdAt)}</span>,
     },
     {
+      id: "active",
+      header: "Active",
+      className: "w-28",
+      cell: (row) => (
+        <AdminActiveToggle
+          active={row.active}
+          disabled={isBusy || isRowBusy(row.id, "toggle-lav-station-active")}
+          onToggle={() => handleToggleActive(row.id, !row.active)}
+        />
+      ),
+    },
+    {
       id: "actions",
       header: "Actions",
-      className: "w-24",
+      className: "w-40",
       cell: (row) => (
-        <button
-          type="button"
-          onClick={() => handleDelete(row.id)}
-          disabled={isBusy}
-          className="inline-flex items-center gap-1 rounded-xl border border-rose-200 bg-rose-50 px-3 py-1.5 text-xs font-semibold text-rose-700 transition hover:bg-rose-100 disabled:opacity-60"
-        >
-          <LucideTrash2 className="h-3.5 w-3.5" />
-          Delete
-        </button>
+        <div className="flex flex-wrap gap-2">
+          <button
+            type="button"
+            onClick={() => openEditModal(row)}
+            disabled={isBusy}
+            className="inline-flex items-center gap-1 rounded-xl border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-50 disabled:opacity-60"
+          >
+            <LucidePencil className="h-3.5 w-3.5" />
+            Edit
+          </button>
+          <button
+            type="button"
+            onClick={() => handleDelete(row.id)}
+            disabled={isBusy}
+            className="inline-flex items-center gap-1 rounded-xl border border-rose-200 bg-rose-50 px-3 py-1.5 text-xs font-semibold text-rose-700 transition hover:bg-rose-100 disabled:opacity-60"
+          >
+            <LucideTrash2 className="h-3.5 w-3.5" />
+            Delete
+          </button>
+        </div>
       ),
     },
   ];
@@ -227,7 +419,7 @@ export const LavStationModule = ({
         <button
           type="button"
           className="flex items-center justify-center rounded-2xl bg-emerald-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-400 disabled:opacity-60"
-          onClick={() => setModalOpen(true)}
+          onClick={openCreateModal}
           disabled={isBusy}
         >
           <LucidePlus className="mr-2 h-4 w-4" />
@@ -248,8 +440,12 @@ export const LavStationModule = ({
       <AdminModal
         open={isModalOpen}
         onOpenChange={(open) => (open ? setModalOpen(true) : closeModal())}
-        title="Add Lav Station"
-        description="Fill in the details. Images upload to Cloudinary; data saves to Firestore."
+        title={isEditing ? "Edit Lav Station" : "Add Lav Station"}
+        description={
+          isEditing
+            ? "I-update ang details. Puwedeng magdagdag o mag-alis ng images, descriptions, at links."
+            : "Fill in the details. Images upload to Cloudinary; data saves to Firestore."
+        }
         size="lg"
         footer={
           <>
@@ -271,12 +467,14 @@ export const LavStationModule = ({
                 ? "Uploading images..."
                 : fetcher.state === "submitting"
                   ? "Saving..."
-                  : "Save lav station"}
+                  : isEditing
+                    ? "Update lav station"
+                    : "Save lav station"}
             </button>
           </>
         }
       >
-        <form ref={formRef} className="space-y-4" onSubmit={(event) => event.preventDefault()}>
+        <form ref={formRef} className="space-y-5" onSubmit={(event) => event.preventDefault()}>
           <label className="block text-sm font-medium text-slate-700">
             Title lav station
             <input
@@ -290,37 +488,34 @@ export const LavStationModule = ({
             />
           </label>
 
-          <label className="block text-sm font-medium text-slate-700">
-            Description
-            <textarea
-              name="description"
-              value={description}
-              onChange={(event) => setDescription(event.target.value)}
-              placeholder="Brief description of the lav station"
-              className={`${adminInputClass} admin-scrollbar resize-none`}
-              rows={4}
-              required
-            />
-          </label>
+          <StringListField
+            label="Descriptions"
+            items={descriptions}
+            onChange={setDescriptions}
+            addLabel="Add description"
+            placeholder="Brief description of the lav station"
+            multiline
+            disabled={isBusy}
+          />
 
           <AdminMultiImageUpload
             files={imageFiles}
             onChange={setImageFiles}
+            existingUrls={existingImages}
+            onExistingUrlsChange={setExistingImages}
             disabled={isBusy}
             maxFiles={20}
           />
 
-          <label className="block text-sm font-medium text-slate-700">
-            Youtube video link
-            <input
-              type="url"
-              name="youtubeLink"
-              value={youtubeLink}
-              onChange={(event) => setYoutubeLink(event.target.value)}
-              placeholder="https://www.youtube.com/watch?v=..."
-              className={adminInputClass}
-            />
-          </label>
+          <StringListField
+            label="YouTube video links"
+            items={youtubeLinks}
+            onChange={setYoutubeLinks}
+            addLabel="Add link"
+            inputType="url"
+            placeholder="https://www.youtube.com/watch?v=..."
+            disabled={isBusy}
+          />
         </form>
       </AdminModal>
     </section>

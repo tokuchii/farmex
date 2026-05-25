@@ -1,9 +1,8 @@
 import { LucidePlus } from "lucide-react";
 import { useState } from "react";
+import { TrainingGalleryModule } from "./TrainingGalleryModule";
 import AdminModal from "~/components/admin/AdminModal";
-
-const adminInputClass =
-  "mt-2 w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-emerald-400 focus:ring-2 focus:ring-emerald-500/20";
+import { adminInputClass } from "./adminFormStyles";
 
 export const TrainingModule = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -27,6 +26,12 @@ export const TrainingModule = () => {
           <LucidePlus className="mr-2 h-4 w-4" />
           Add training session
         </button>
+      </div>
+
+      <div>
+        <p className="text-lg font-semibold text-slate-700">
+          Event schedule
+        </p>
       </div>
 
       <div className="rounded-3xl border border-dashed border-slate-200 bg-slate-50/80 p-10 text-center text-slate-500">
@@ -79,6 +84,10 @@ export const TrainingModule = () => {
           </label>
         </form>
       </AdminModal>
+
+         <hr className="my-4 border-slate-200" />
+
+      <TrainingGalleryModule />
     </section>
   );
 };
