@@ -1,5 +1,3 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
-/* eslint-disable import/no-named-as-default-member */
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { useEffect, useState } from "react";
@@ -31,6 +29,7 @@ export default function GetInvolved() {
 
   useEffect(() => {
     setIsClient(true);
+
     if (emailJs?.publicKey) {
       emailjs.init(emailJs.publicKey);
     }
@@ -104,11 +103,25 @@ export default function GetInvolved() {
     }
 
     try {
-      await emailjs.send(emailJs.serviceId, emailJs.templateId, templateParams);
-      await emailjs.send(emailJs.serviceId, emailJs.autoreplyId, templateParams);
+      await emailjs.send(
+        emailJs.serviceId,
+        emailJs.templateId,
+        templateParams
+      );
+
+      await emailjs.send(
+        emailJs.serviceId,
+        emailJs.autoreplyId,
+        templateParams
+      );
 
       setModalMessage("Your message has been sent successfully!");
-      setFormData({ name: "", email: "", contact: "", message: "" });
+      setFormData({
+        name: "",
+        email: "",
+        contact: "",
+        message: "",
+      });
     } catch (error) {
       console.error("FAILED...", error);
       setModalMessage("Failed to send message. Please try again.");
@@ -116,6 +129,17 @@ export default function GetInvolved() {
       setIsSending(false);
       setModalOpen(true);
     }
+  };
+
+  const copyNumber = async (number: string) => {
+    try {
+      await navigator.clipboard.writeText(number);
+      setModalMessage(`${number} copied to clipboard`);
+    } catch {
+      setModalMessage("Failed to copy number");
+    }
+
+    setModalOpen(true);
   };
 
   return (
@@ -142,7 +166,9 @@ export default function GetInvolved() {
             className="w-full h-64 sm:h-96 md:h-[600px] lg:h-[500px] object-cover object-top opacity-0"
           />
         )}
+
         <div className="absolute inset-0 bg-[#007F3D] bg-opacity-45" />
+
         <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
           <h2 className="text-white text-2xl md:text-4xl font-extrabold uppercase tracking-widest mb-4 mt-16">
             FARMEX AT A GLANCE
@@ -153,10 +179,8 @@ export default function GetInvolved() {
       {/* CONTACT SECTION */}
       <section className="w-full min-h-screen pt-8 pb-16 px-4 sm:px-8 bg-[url('/newbgmachinerental.png')] bg-cover bg-center flex flex-col items-center">
         <div className="w-full max-w-5xl space-y-12">
-
           {/* REDESIGNED FORM CARD */}
           <div className="rounded-2xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
-
             {/* LEFT PANEL */}
             <div className="relative bg-[#2e9e5b] p-8 md:p-10 flex flex-col justify-between md:w-2/5 overflow-hidden">
               {/* Decorative circles */}
@@ -165,89 +189,146 @@ export default function GetInvolved() {
 
               <div className="relative z-10">
                 <h3 className="text-white text-2xl md:text-3xl font-bold leading-snug mb-3">
-                  Let&apos;s talk about<br />
+                  Let&apos;s talk about
+                  <br />
                   something{" "}
-                  <span className="text-yellow-300">great</span><br />
+                  <span className="text-yellow-300">great</span>
+                  <br />
                   together
                 </h3>
+
                 <p className="text-white/70 text-sm leading-relaxed mb-8">
-                  Have a question or want to partner with FARMEX?
-                  Reach out and we&apos;ll be in touch.
+                  Have a question or want to partner with FARMEX? Reach out and
+                  we&apos;ll be in touch.
                 </p>
 
                 <div className="flex flex-col gap-4">
                   {/* Email */}
                   <div className="flex items-start gap-3">
                     <div className="w-8 h-8 rounded-lg bg-white/[0.18] flex items-center justify-center flex-shrink-0">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-4 h-4 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
                       </svg>
                     </div>
+
                     <div className="text-xs text-white/85 leading-relaxed">
-                      <a href="mailto:leadsagriventures@gmail.com" className="hover:text-yellow-300 transition-colors block">leadsagriventures@gmail.com</a>
-                      <a href="mailto:hr@leadsagri.com" className="hover:text-yellow-300 transition-colors block">hr@leadsagri.com</a>
+                      <a
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=leadsagriventures@gmail.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-yellow-300 transition-colors block"
+                      >
+                        leadsagriventures@gmail.com
+                      </a>
+
+                      <a
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=hr@leadsagri.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-yellow-300 transition-colors block"
+                      >
+                        hr@leadsagri.com
+                      </a>
                     </div>
                   </div>
 
                   {/* Phone */}
                   <div className="flex items-start gap-3">
                     <div className="w-8 h-8 rounded-lg bg-white/[0.18] flex items-center justify-center flex-shrink-0">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-4 h-4 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                        />
                       </svg>
                     </div>
-                    <div className="text-xs text-white/85 leading-relaxed">
-                      <a href="tel:+639451709401" className="hover:text-yellow-300 transition-colors block">+63 945 170 9401 (Customer Service)</a>
-                      <a href="tel:+639064819885" className="hover:text-yellow-300 transition-colors block">+63 906 481 9885 (Northern Luzon)</a>
-                      <a href="tel:+639173138162" className="hover:text-yellow-300 transition-colors block">+63 917 313 8162 (CALABARZON)</a>
+
+                    <div className="text-xs text-white/85 leading-relaxed flex flex-col gap-1">
+                      <button
+                        type="button"
+                        onClick={() => copyNumber("+63 945 170 9401")}
+                        className="text-left hover:text-yellow-300 transition-colors"
+                      >
+                        +63 945 170 9401 (Customer Service)
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => copyNumber("+63 906 481 9885")}
+                        className="text-left hover:text-yellow-300 transition-colors"
+                      >
+                        +63 906 481 9885 (Northern Luzon)
+                      </button>
+
+                      <button
+                        type="button"
+                        onClick={() => copyNumber("+63 917 313 8162")}
+                        className="text-left hover:text-yellow-300 transition-colors"
+                      >
+                        +63 917 313 8162 (CALABARZON)
+                      </button>
                     </div>
                   </div>
 
                   {/* Address */}
                   <div className="flex items-start gap-3">
                     <div className="w-8 h-8 rounded-lg bg-white/[0.18] flex items-center justify-center flex-shrink-0">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-4 h-4 text-white"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                        />
+
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
                       </svg>
                     </div>
+
                     <div className="text-xs text-white/85 leading-relaxed">
-                      KM 70 National Hwy, Brgy. Bangyas,<br />Calauan, Laguna
+                      KM 70 National Hwy, Brgy. Bangyas,
+                      <br />
+                      Calauan, Laguna
                     </div>
                   </div>
                 </div>
-              </div>
-
-              {/* Social links */}
-              <div className="relative z-10 mt-8 flex gap-3">
-                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-lg border border-white/30 flex items-center justify-center text-white/80 hover:bg-white/15 hover:text-white transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
-                  </svg>
-                </a>
-                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-lg border border-white/30 flex items-center justify-center text-white/80 hover:bg-white/15 hover:text-white transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                  </svg>
-                </a>
-                <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-lg border border-white/30 flex items-center justify-center text-white/80 hover:bg-white/15 hover:text-white transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58A2.78 2.78 0 003.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.95A29 29 0 0023 12a29 29 0 00-.46-5.58z" />
-                    <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white" />
-                  </svg>
-                </a>
               </div>
             </div>
 
             {/* RIGHT PANEL — FORM */}
             <div className="bg-[#f0faf4] p-8 md:p-10 flex-1">
               <p className="text-[#1a5c35] text-base font-semibold mb-6">
-                Send us a <span className="text-[#2e9e5b]">message</span>
+                Send us a{" "}
+                <span className="text-[#2e9e5b]">message</span>
               </p>
 
               <form onSubmit={handleSubmit} className="flex flex-col gap-5">
@@ -256,6 +337,7 @@ export default function GetInvolved() {
                   <label className="block text-[10.5px] font-semibold text-[#5a9470] uppercase tracking-widest mb-1">
                     Name
                   </label>
+
                   <input
                     type="text"
                     name="name"
@@ -272,6 +354,7 @@ export default function GetInvolved() {
                   <label className="block text-[10.5px] font-semibold text-[#5a9470] uppercase tracking-widest mb-1">
                     Email Address
                   </label>
+
                   <input
                     type="email"
                     name="email"
@@ -288,6 +371,7 @@ export default function GetInvolved() {
                   <label className="block text-[10.5px] font-semibold text-[#5a9470] uppercase tracking-widest mb-1">
                     Contact Number
                   </label>
+
                   <input
                     type="text"
                     name="contact"
@@ -304,6 +388,7 @@ export default function GetInvolved() {
                   <label className="block text-[10.5px] font-semibold text-[#5a9470] uppercase tracking-widest mb-1">
                     Your Message
                   </label>
+
                   <textarea
                     name="message"
                     rows={4}
@@ -322,11 +407,29 @@ export default function GetInvolved() {
                   className="mt-2 w-full flex items-center justify-center gap-2 bg-[#2e9e5b] hover:bg-[#227a45] text-white text-sm font-semibold py-3 rounded-xl transition-colors disabled:opacity-60"
                 >
                   {isSending && (
-                    <svg className="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z" />
+                    <svg
+                      className="animate-spin h-4 w-4 text-white"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle
+                        className="opacity-25"
+                        cx="12"
+                        cy="12"
+                        r="10"
+                        stroke="currentColor"
+                        strokeWidth="4"
+                      />
+
+                      <path
+                        className="opacity-75"
+                        fill="currentColor"
+                        d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                      />
                     </svg>
                   )}
+
                   {isSending ? "Submitting..." : "Submit Form"}
                 </button>
               </form>
@@ -366,11 +469,23 @@ export default function GetInvolved() {
                 transition={{ duration: 0.4, ease: "easeOut" }}
               >
                 <div className="flex justify-center mb-4">
-                  <div className={`text-4xl ${modalMessage.includes("success") ? "text-green-600" : "text-red-600"}`}>
-                    {modalMessage.includes("success") ? "✅" : "❌"}
+                  <div
+                    className={`text-4xl ${
+                      modalMessage.includes("success") ||
+                      modalMessage.includes("copied")
+                        ? "text-green-600"
+                        : "text-red-600"
+                    }`}
+                  >
+                    {modalMessage.includes("success") ||
+                    modalMessage.includes("copied")
+                      ? "✅"
+                      : "❌"}
                   </div>
                 </div>
+
                 <p className="text-gray-800 text-base">{modalMessage}</p>
+
                 <button
                   onClick={() => setModalOpen(false)}
                   className="mt-6 px-4 py-2 bg-[#2e9e5b] text-white rounded-lg hover:bg-[#227a45] transition"

@@ -2,11 +2,274 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export function meta() {
-  return [
-    { title: "About Us" },
-  ];
+  return [{ title: "About Us" }];
 }
 
+// ─── Timeline data ────────────────────────────────────────────────────────────
+const timelineEvents = [
+  {
+    year: "2018",
+    title: "Founded as Leads Agriventures Corporation",
+    body: "Established as a proud subsidiary of LEADS Agri, the company began its journey focused on hybrid rice seed varietal testing and milled rice distribution to improve food security across the country.",
+    accent: "gold",
+  },
+  {
+    year: "2018–23",
+    title: "Growth & diversification",
+    body: "Expanded into financing for rice farmers, rental of large-scale agricultural machinery, and distribution of small farm tools and equipment — offering end-to-end solutions from planting to post-harvest.",
+    accent: "gold",
+  },
+  {
+    year: "2024",
+    title: "Rebranded to Farmex Corporation",
+    body: "As the company expanded its scope and vision, it was officially rebranded to Farmex Corporation — cementing its commitment to advancing Philippine agriculture through innovation, sustainability, and meaningful partnerships.",
+    accent: "green",
+  },
+];
+
+// ─── History Section ──────────────────────────────────────────────────────────
+function HistorySection() {
+  return (
+    <section className="w-full relative py-14 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Blurred background image */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: "url('/history.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "blur(6px) brightness(0.35)",
+          transform: "scale(1.05)",
+        }}
+      />
+      {/* Foreground content */}
+      <div className="relative z-10 max-w-4xl mx-auto">
+
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+          className="mb-10"
+        >
+          <p className="text-xs font-semibold uppercase tracking-widest text-yellow-400 mb-2">
+            Our story
+          </p>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-white uppercase tracking-widest mb-3">
+            History
+          </h2>
+          <div className="w-10 h-1 bg-yellow-400 rounded-full" />
+        </motion.div>
+
+        {/* Timeline */}
+        <div className="flex flex-col">
+          {timelineEvents.map((event, index) => {
+            const isLast = index === timelineEvents.length - 1;
+            return (
+              <motion.div
+                key={event.year}
+                className="flex gap-6"
+                initial={{ opacity: 0, x: -24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.12 }}
+              >
+                {/* Left col: dot + year + connector line */}
+                <div className="flex flex-col items-center" style={{ minWidth: 72 }}>
+                  <div
+                    className={`w-4 h-4 rounded-full border-4 border-white/20 flex-shrink-0 mt-1 ${
+                      event.accent === "green"
+                        ? "bg-green-400 ring-2 ring-green-400"
+                        : "bg-yellow-400 ring-2 ring-yellow-400"
+                    }`}
+                  />
+                  <span
+                    className={`text-xs font-bold mt-1.5 mb-1 ${
+                      event.accent === "green" ? "text-green-400" : "text-yellow-400"
+                    }`}
+                  >
+                    {event.year}
+                  </span>
+                  {!isLast && (
+                    <div className="flex-1 w-0.5 bg-gradient-to-b from-yellow-400 to-green-400 rounded-full" />
+                  )}
+                </div>
+
+                {/* Right col: card — frosted glass */}
+                <div
+                  className={`mb-8 flex-1 rounded-xl px-5 py-4 border backdrop-blur-sm ${
+                    event.accent === "green"
+                      ? "bg-white/10 border-green-400/30"
+                      : "bg-white/10 border-white/20"
+                  }`}
+                >
+                  <p className="text-sm font-semibold text-white mb-1">
+                    {event.title}
+                  </p>
+                  <p className="text-sm text-white/70 leading-relaxed">
+                    {event.body}
+                  </p>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+// ─── Mission & Vision pillars ─────────────────────────────────────────────────
+const missionPillars = [
+  "High-yielding variety testing",
+  "Machinery rental & farm tools",
+  "Technical consultations & training",
+  "Farmer financing solutions",
+];
+
+const visionPillars = [
+  "Strengthen rice food security",
+  "Advance Philippine agriculture",
+  "Sustainable farming practices",
+  "Nationwide farmer partnerships",
+];
+
+// ─── Mission & Vision Section ─────────────────────────────────────────────────
+function MissionVisionSection() {
+  return (
+    <>
+      <section className="w-full relative border-t border-gray-100 py-14 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Blurred background image */}
+        <div
+          className="absolute inset-0 z-0"
+          style={{
+            backgroundImage: "url('/mission.jpg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            filter: "blur(6px) brightness(0.35)",
+            transform: "scale(1.05)",
+          }}
+        />
+
+        {/* Foreground content */}
+        <div className="relative z-10 max-w-4xl mx-auto">
+
+          {/* Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.55, ease: "easeOut" }}
+            className="mb-10"
+          >
+            <p className="text-xs font-semibold uppercase tracking-widest text-yellow-400 mb-2">
+              What drives us
+            </p>
+            <h2 className="text-3xl md:text-4xl font-extrabold text-white uppercase tracking-widest mb-3">
+              Our Mission
+            </h2>
+            <div className="w-10 h-1 bg-yellow-400 rounded-full" />
+          </motion.div>
+
+          {/* Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            {/* Mission card */}
+            <motion.div
+              className="relative rounded-xl border border-white/20 overflow-hidden backdrop-blur-sm bg-white/10"
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+            >
+              <div className="h-1 w-full bg-green-400" />
+              <div className="px-6 pt-6 pb-7">
+                <div className="w-11 h-11 rounded-lg bg-green-400/20 flex items-center justify-center mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-green-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10" />
+                    <circle cx="12" cy="12" r="6" />
+                    <circle cx="12" cy="12" r="2" />
+                  </svg>
+                </div>
+                <p className="text-xs font-semibold uppercase tracking-widest text-green-400 mb-1">
+                  Mission
+                </p>
+                <p className="text-lg font-bold text-white mb-3">What we do every day</p>
+                <p className="text-sm text-white/70 leading-relaxed mb-5">
+                  To bring all the technologies and provide holistic support to the Filipino rice farmer — from land preparation through to post-harvest.
+                </p>
+                <ul className="flex flex-col gap-2">
+                  {missionPillars.map((item) => (
+                    <li key={item} className="flex items-center gap-2.5 bg-green-400/10 border border-green-400/20 rounded-lg px-3 py-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-green-400 flex-shrink-0" />
+                      <span className="text-sm font-medium text-white">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+
+            {/* Vision card */}
+            <motion.div
+              className="relative rounded-xl border border-white/20 overflow-hidden backdrop-blur-sm bg-white/10"
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+            >
+              <div className="h-1 w-full bg-yellow-400" />
+              <div className="px-6 pt-6 pb-7">
+                <div className="w-11 h-11 rounded-lg bg-yellow-400/20 flex items-center justify-center mb-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-yellow-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </div>
+                <p className="text-xs font-semibold uppercase tracking-widest text-yellow-400 mb-1">
+                  Vision
+                </p>
+                <p className="text-lg font-bold text-white mb-3">Where we are headed</p>
+                <p className="text-sm text-white/70 leading-relaxed mb-5">
+                  To be the leading end-to-end agricultural solutions provider in the Philippines — empowering farming communities through innovation and sustainability.
+                </p>
+                <ul className="flex flex-col gap-2">
+                  {visionPillars.map((item) => (
+                    <li key={item} className="flex items-center gap-2.5 bg-yellow-400/10 border border-yellow-400/20 rounded-lg px-3 py-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-yellow-400 flex-shrink-0" />
+                      <span className="text-sm font-medium text-white">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Quote banner */}
+      <motion.div
+        className="w-full bg-gradient-to-br from-[#2A4127] to-[#3B6D11] py-12 px-6 text-center"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <p className="text-4xl leading-none text-yellow-400 font-serif mb-2">&ldquo;</p>
+        <p className="text-white/90 text-base md:text-lg italic leading-relaxed max-w-2xl mx-auto mb-4">
+          Advancing Philippine agriculture through innovation, sustainability, and meaningful partnerships with the farming community.
+        </p>
+        <p className="text-xs font-semibold uppercase tracking-widest text-yellow-400">
+          Farmex Corporation
+        </p>
+      </motion.div>
+    </>
+  );
+}
+
+// ─── Main About Page ──────────────────────────────────────────────────────────
 export default function About() {
   const [isClient, setIsClient] = useState(false);
 
@@ -16,10 +279,9 @@ export default function About() {
 
   return (
     <div className="min-h-screen">
-      <motion.div
-        className="relative w-full h-auto overflow-hidden"
 
-      >
+      {/* ── Hero Banner ── */}
+      <motion.div className="relative w-full h-auto overflow-hidden">
         {isClient && (
           <motion.img
             src="/bgabout.png"
@@ -32,119 +294,49 @@ export default function About() {
           />
         )}
         <div className="absolute inset-0 flex flex-col items-center justify-center z-20">
-          <h2 className="text-white text-2xl md:text-4xl font-extrabold uppercase tracking-widest mb-4 h-auto mt-16 md:-mt-26">
+          <h2 className="text-white text-2xl md:text-4xl font-extrabold uppercase tracking-widest mb-4 mt-16 md:-mt-26">
             FARMEX AT A GLANCE
           </h2>
         </div>
       </motion.div>
-      <motion.div>
-        {/* History and Our Mission Section */}
-        <section className="relative w-full py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center bg-white justify-center bg-cover bg-center"
-          style={{ backgroundImage: "url('/About us 1.png')" }}>
-          <div className="w-full max-w-7xl flex flex-col gap-16">
-            {/* History Row */}
-            <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-16">
-              {/* Image 1 */}
-              <div className="w-full md:w-1/2 flex justify-center">
-                <div
-                  className="rounded-lg shadow-lg w-full max-w-md h-64 sm:h-72 md:h-80 overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-105"
-                  style={{
-                    boxShadow: "0 2px 20px 2px rgba(234, 179, 8, 0.85)", // gold shadow
-                  }}
-                >
-                  <img
-                    src="/history.jpg" // or "/mission.jpg"
-                    alt="FarmEx History" // or "FarmEx Mission"
-                    className="w-full h-full object-cover rounded-lg"
-                  />
-                </div>
-              </div>
-              {/* History Text */}
-              <div className="w-full md:w-1/2 flex flex-col justify-center">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-green-700 mb-4 uppercase tracking-widest">
-                  History
-                </h2>
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  {/* Replace this with your actual history text */}
-                  Farmex Corporation began its journey in 2018 under the name Leads Agriventures Corporation (LAV), as a proud subsidiary of LEADS Agri. In 2024, as the company expanded its scope and vision, it was officially rebranded to Farmex Corporation.  <br /><br />
 
-                  Farmex continues to strengthen its position in the agricultural sector. Our core business focuses on hybrid rice seed varietal testing and milled rice distribution, helping improve rice productivity and food security across the country. <br /><br />
-
-                  Building on our strong foundation, Farmex has recently diversified into financing of rice farmers, rental of large-scale agricultural machinery and the distribution of small farm tools and equipment, offering farmers end-to-end solutions from planting to post-harvest. <br /><br />
-
-                  We are committed to advancing Philippine agriculture through innovation, sustainability, and meaningful partnerships with the farming community.
-                </p>
-              </div>
-            </div>
-            {/* Our Mission Row */}
-            <div className="flex flex-col md:flex-row-reverse items-center md:items-start gap-8 md:gap-16">
-              {/* Image 2 */}
-              <div className="w-full md:w-1/2 flex justify-center">
-                <div
-                  className="rounded-lg shadow-lg w-full max-w-md h-64 sm:h-72 md:h-80 overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-105"
-                  style={{
-                    boxShadow: "0 2px 20px 2px rgba(234, 179, 8, 0.85)", // gold shadow
-                  }}
-                >
-                  <img
-                    src="/mission.jpg" // or "/mission.jpg"
-                    alt="FarmEx History" // or "FarmEx Mission"
-                    className="w-full h-full object-cover rounded-lg"
-                  />
-                </div>
-              </div>
-              {/* Mission Text */}
-              <div className="w-full md:w-1/2 flex flex-col justify-center">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-green-700 mb-4 uppercase tracking-widest">
-                  Our Mission
-                </h2>
-                <p className="text-gray-700 text-lg leading-relaxed">
-                  {/* Replace this with your actual mission text */}
-                  Farmex mission is to come up with all the technologies and provide holistic support to the Filipino rice farmers. Farmex is continuously testing high yielding rice seed varieties adaptable to the local conditions. From land preparation to harvesting activities, we provide after-sales support through technical consultations, machineries rental, production trainings and field demonstrations.
-
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
+      {/* ── History (timeline) ── */}
+      <motion.div
+        initial={{ opacity: 0, y: 32 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <HistorySection />
       </motion.div>
 
-      {/*Farmex Leadership Team*/}
-      <motion.div>
-        {/* Leadership Team Section */}
-        <section className="relative w-full bg-gradient-to-tr from-[#788B5F] to-[#2A4127] min-h-screen">
-          {/* Golden Wavy Header */}
-          <div className="relative w-full h-1 bg-[#E0B100]">
-            {/* <svg className="absolute bottom-0 w-full h-12" viewBox="0 0 1200 120" preserveAspectRatio="none">
-              <path 
-                d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" 
-                opacity=".25" 
-                fill="#E0B100"
-              />
-              <path 
-                d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" 
-                opacity=".5" 
-                fill="#E0B100"
-              />
-              <path 
-                d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" 
-                fill="#E0B100"
-              />
-            </svg> */}
-          </div>
+      {/* ── Mission & Vision + Quote banner ── */}
+      <motion.div
+        initial={{ opacity: 0, y: 32 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.1 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+      >
+        <MissionVisionSection />
+      </motion.div>
 
-          {/* Main Content */}
+      {/* ── Leadership Team ── */}
+      <motion.div>
+        <section className="relative w-full bg-gradient-to-tr from-[#788B5F] to-[#2A4127] min-h-screen">
+          <div className="relative w-full h-1 bg-[#E0B100]" />
+
           <div className="relative z-10 px-4 sm:px-6 lg:px-8 py-16">
             <div className="max-w-6xl mx-auto">
+
               {/* Header */}
               <div className="text-center mb-16">
                 <h2 className="text-[24px] md:text-5xl font-extrabold text-white mb-4">
                   Farmex Leadership Team
                 </h2>
-                <div className="w-auto md:w-[620px] h-1 bg-[#E0B100] mx-auto"></div>
+                <div className="w-auto md:w-[620px] h-1 bg-[#E0B100] mx-auto" />
               </div>
 
-              {/* Introductory Text */}
+              {/* Intro text */}
               <div className="text-white text-center text-base md:text-lg leading-relaxed mb-16 space-y-6">
                 <p>
                   The leadership team of Farmex Corporation comprises dedicated and forward-thinking individuals committed to empowering Filipino rice farmers through innovation and comprehensive agricultural support.
@@ -157,94 +349,58 @@ export default function About() {
                 </p>
               </div>
 
-              {/* Leadership Personnel */}
+              {/* Personnel */}
               <div className="mb-16">
                 {/* Chairman */}
-                <div className="text-center mb-12 order-1 md:order-none">
+                <div className="text-center mb-12">
                   <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
                     Fernando B. Malveda
                   </h3>
-                  <p className="text-white text-lg tracking-wide">
-                    Chairman
-                  </p>
+                  <p className="text-white text-lg tracking-wide">Chairman</p>
                 </div>
-                <div className="mb-16">
-                  {/* Leaders */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 text-center">
-                    {/* Item 1 - Jose Maria */}
-                    <div>
-                      <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
-                        Jose Maria Fernando L. Malveda
-                      </h4>
-                      <p className="text-white text-base">President</p>
-                    </div>
 
-                    {/* Item 2 - Arturo */}
-                    <div>
-                      <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
-                        Arturo A. Alejar Jr.
-                      </h4>
-                      <p className="text-white text-base">
-                        Chief Operations Officer (COO)
-                      </p>
-                    </div>
-
-                    {/* Item 3 - Angelica */}
-                    <div>
-                      <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
-                        Angelica A. Belarmino
-                      </h4>
-                      <p className="text-white text-base">Operations Manager</p>
-                    </div>
-
-                    {/* Item 4 - Myrile */}
-                    <div>
-                      <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
-                        Myrile Mae T. Adlus
-                      </h4>
-                      <p className="text-white text-base">Business Development Manager</p>
-                    </div>
-
-                    {/* Item 5 - Karlo */}
-                    <div>
-                      <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
-                        Karlo Miguel F. Santos
-                      </h4>
-                      <p className="text-white text-base">LTC Operations Manager</p>
-                    </div>
-
-                    {/* Item 6 - Janine */}
-                    <div>
-                      <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
-                        Janine M. Villamor
-                      </h4>
-                      <p className="text-white text-base">
-                        Admin and Sales Operations Manager
-                      </p>
-                    </div>
-
-                    {/* Item 7 - Rey */}
-                    <div>
-                      <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
-                        Rey N. Rivera
-                      </h4>
-                      <p className="text-white text-base">Warehouse Manager</p>
-                    </div>
-
-                    {/* Item 8 - Angelou */}
-                    <div>
-                      <h4 className="text-xl md:text-2xl font-bold text-white mb-1">
-                        Angelou Q. Reodique
-                      </h4>
-                      <p className="text-white text-base">Communications Manager</p>
-                    </div>
+                {/* Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 text-center">
+                  <div>
+                    <h4 className="text-xl md:text-2xl font-bold text-white mb-1">Jose Maria Fernando L. Malveda</h4>
+                    <p className="text-white text-base">President</p>
+                  </div>
+                  <div>
+                    <h4 className="text-xl md:text-2xl font-bold text-white mb-1">Arturo A. Alejar Jr.</h4>
+                    <p className="text-white text-base">Chief Operations Officer (COO)</p>
+                  </div>
+                  <div>
+                    <h4 className="text-xl md:text-2xl font-bold text-white mb-1">Angelica A. Belarmino</h4>
+                    <p className="text-white text-base">Operations Manager</p>
+                  </div>
+                  <div>
+                    <h4 className="text-xl md:text-2xl font-bold text-white mb-1">Myrile Mae T. Adlus</h4>
+                    <p className="text-white text-base">Business Development Manager</p>
+                  </div>
+                  <div>
+                    <h4 className="text-xl md:text-2xl font-bold text-white mb-1">Karlo Miguel F. Santos</h4>
+                    <p className="text-white text-base">LTC Operations Manager</p>
+                  </div>
+                  <div>
+                    <h4 className="text-xl md:text-2xl font-bold text-white mb-1">Janine M. Villamor</h4>
+                    <p className="text-white text-base">Admin and Sales Operations Manager</p>
+                  </div>
+                  <div>
+                    <h4 className="text-xl md:text-2xl font-bold text-white mb-1">Rey N. Rivera</h4>
+                    <p className="text-white text-base">Warehouse Manager</p>
+                  </div>
+                  <div>
+                    <h4 className="text-xl md:text-2xl font-bold text-white mb-1">Angelou Q. Reodique</h4>
+                    <p className="text-white text-base">Communications Manager</p>
                   </div>
                 </div>
               </div>
+
             </div>
           </div>
         </section>
       </motion.div>
+
     </div>
   );
 }
