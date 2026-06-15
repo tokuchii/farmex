@@ -34,7 +34,7 @@ body {
 @layer utilities {
   .admin-scrollbar {
     scrollbar-width: thin;
-    scrollbar-color: #cbd5e1 #f1f5f9;
+    scrollbar-color: #cbd5e1 transparent;
   }
 
   .admin-scrollbar::-webkit-scrollbar {
@@ -49,8 +49,7 @@ body {
   }
 
   .admin-scrollbar::-webkit-scrollbar-thumb {
-    background-color: #cbd5e1;
-    border: 2px solid transparent;
+    border: transparent;
     background-clip: padding-box;
     border-radius: 9999px;
   }

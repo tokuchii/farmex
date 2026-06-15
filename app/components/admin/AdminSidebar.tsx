@@ -68,7 +68,7 @@ const AdminSidebar: FC<AdminSidebarProps> = ({ mobileOpen = false, onMobileClose
             <AdminNav />
           </div>
           <p className="mt-6 border-t border-slate-100 pt-4 text-xs text-slate-400">
-            Sample account for testing only.
+              Farmex Corporation @2026.
           </p>
         </div>
       </aside>
@@ -116,7 +116,7 @@ const AdminSidebar: FC<AdminSidebarProps> = ({ mobileOpen = false, onMobileClose
           </div>
 
           <p className="border-t border-slate-100 px-4 py-4 text-xs text-slate-400">
-            Sample account for testing only.
+            Farmex Corporation @2026.
           </p>
         </aside>
       </div>

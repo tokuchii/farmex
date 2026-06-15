@@ -20,6 +20,7 @@ export { MachineRentalsModule } from "./MachineRentalsModule";
 export { TechnicalConsultantModule } from "./TechnicalConsultantModule";
 export { TestimonialsModule } from "./TestimonialsModule";
 export { TrainingModule } from "./TrainingModule";
+export { TrainingHeroModule } from "./TrainingHeroModule";
 export { TrainingGalleryModule } from "./TrainingGalleryModule";
 export { NewsModule } from "./NewsModule";
 export { default as AdminActiveToggle } from "./AdminActiveToggle";
