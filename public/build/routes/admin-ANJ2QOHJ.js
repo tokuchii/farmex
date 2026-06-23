@@ -1,12 +1,14 @@
 import {
   AdminAuthShell_default,
-  adminInputClass,
+  adminInputClass
+} from "/build/_shared/chunk-LOQCLT7D.js";
+import {
   require_firebase
-} from "/build/_shared/chunk-DR5NO43D.js";
+} from "/build/_shared/chunk-YCTLD5DC.js";
 import {
   AdminNavbar_default,
   AdminSidebar_default
-} from "/build/_shared/chunk-COVJFQDL.js";
+} from "/build/_shared/chunk-6TKFRF23.js";
 import "/build/_shared/chunk-UF6K54N4.js";
 import {
   require_session
@@ -73,13 +75,18 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\admin.tsx"
   );
-  import.meta.hot.lastModified = "1780897890278.7717";
+  import.meta.hot.lastModified = "1781568838955.2021";
 }
 var LOGIN_URL_TOASTS = [{
   param: "logout",
   value: "success",
   type: "success",
   message: "Logout successful. See you again!"
+}, {
+  param: "logout",
+  value: "deleted",
+  type: "success",
+  message: "Account deleted. Goodbye!"
 }];
 var AdminLoginForm = () => {
   _s();
@@ -93,37 +100,21 @@ var AdminLoginForm = () => {
     " ",
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Link, { to: "/admin/register", className: "font-semibold text-emerald-600 transition hover:text-emerald-700", children: "Register here" }, void 0, false, {
       fileName: "app/routes/admin.tsx",
-      lineNumber: 147,
+      lineNumber: 152,
       columnNumber: 13
     }, this)
   ] }, void 0, true, {
     fileName: "app/routes/admin.tsx",
-    lineNumber: 145,
+    lineNumber: 150,
     columnNumber: 140
   }, this), children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "space-y-5", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Form, { method: "post", className: "space-y-5", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("label", { className: "block", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "text-sm font-medium text-slate-700", children: "Email address" }, void 0, false, {
         fileName: "app/routes/admin.tsx",
-        lineNumber: 154,
-        columnNumber: 15
-      }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("input", { type: "email", name: "email", placeholder: "example@mail.com", autoComplete: "email", className: adminInputClass, required: true }, void 0, false, {
-        fileName: "app/routes/admin.tsx",
-        lineNumber: 155,
-        columnNumber: 15
-      }, this)
-    ] }, void 0, true, {
-      fileName: "app/routes/admin.tsx",
-      lineNumber: 153,
-      columnNumber: 13
-    }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("label", { className: "block", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "text-sm font-medium text-slate-700", children: "Password" }, void 0, false, {
-        fileName: "app/routes/admin.tsx",
         lineNumber: 159,
         columnNumber: 15
       }, this),
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("input", { type: "password", name: "password", placeholder: "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022", autoComplete: "current-password", className: adminInputClass, required: true }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("input", { type: "email", name: "email", placeholder: "example@mail.com", autoComplete: "email", className: adminInputClass, required: true }, void 0, false, {
         fileName: "app/routes/admin.tsx",
         lineNumber: 160,
         columnNumber: 15
@@ -133,22 +124,38 @@ var AdminLoginForm = () => {
       lineNumber: 158,
       columnNumber: 13
     }, this),
-    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { type: "submit", disabled: isSubmitting, className: "w-full rounded-2xl bg-emerald-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-400 disabled:cursor-not-allowed disabled:opacity-70 focus:outline-none focus:ring-2 focus:ring-emerald-500/30", children: isSubmitting ? "Logging in..." : "Log in" }, void 0, false, {
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("label", { className: "block", children: [
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "text-sm font-medium text-slate-700", children: "Password" }, void 0, false, {
+        fileName: "app/routes/admin.tsx",
+        lineNumber: 164,
+        columnNumber: 15
+      }, this),
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("input", { type: "password", name: "password", placeholder: "\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022", autoComplete: "current-password", className: adminInputClass, required: true }, void 0, false, {
+        fileName: "app/routes/admin.tsx",
+        lineNumber: 165,
+        columnNumber: 15
+      }, this)
+    ] }, void 0, true, {
       fileName: "app/routes/admin.tsx",
       lineNumber: 163,
+      columnNumber: 13
+    }, this),
+    /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { type: "submit", disabled: isSubmitting, className: "w-full rounded-2xl bg-emerald-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-400 disabled:cursor-not-allowed disabled:opacity-70 focus:outline-none focus:ring-2 focus:ring-emerald-500/30", children: isSubmitting ? "Logging in..." : "Log in" }, void 0, false, {
+      fileName: "app/routes/admin.tsx",
+      lineNumber: 168,
       columnNumber: 13
     }, this)
   ] }, void 0, true, {
     fileName: "app/routes/admin.tsx",
-    lineNumber: 152,
+    lineNumber: 157,
     columnNumber: 11
   }, this) }, void 0, false, {
     fileName: "app/routes/admin.tsx",
-    lineNumber: 151,
+    lineNumber: 156,
     columnNumber: 9
   }, this) }, void 0, false, {
     fileName: "app/routes/admin.tsx",
-    lineNumber: 145,
+    lineNumber: 150,
     columnNumber: 10
   }, this);
 };
@@ -169,45 +176,45 @@ var AdminRoot = () => {
   const isRegisterPage = location.pathname === "/admin/register";
   return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(AdminToastProvider, { children: isRegisterPage ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Outlet, {}, void 0, false, {
     fileName: "app/routes/admin.tsx",
-    lineNumber: 186,
+    lineNumber: 191,
     columnNumber: 25
   }, this) : isLoginPage ? /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(AdminLoginForm, {}, void 0, false, {
     fileName: "app/routes/admin.tsx",
-    lineNumber: 186,
+    lineNumber: 191,
     columnNumber: 52
   }, this) : /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "h-screen overflow-hidden bg-slate-50 text-slate-900", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(AdminSidebar_default, { mobileOpen: mobileNavOpen, onMobileClose: closeMobileNav }, void 0, false, {
       fileName: "app/routes/admin.tsx",
-      lineNumber: 187,
+      lineNumber: 192,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex h-full min-w-0 flex-col lg:pl-64", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(AdminNavbar_default, { onMenuClick: openMobileNav, username: user?.username, email: user?.email }, void 0, false, {
         fileName: "app/routes/admin.tsx",
-        lineNumber: 189,
+        lineNumber: 194,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("main", { className: "admin-scrollbar flex-1 overflow-y-auto p-3 sm:p-4 lg:p-6", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Outlet, {}, void 0, false, {
         fileName: "app/routes/admin.tsx",
-        lineNumber: 191,
+        lineNumber: 196,
         columnNumber: 11
       }, this) }, void 0, false, {
         fileName: "app/routes/admin.tsx",
-        lineNumber: 190,
+        lineNumber: 195,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/admin.tsx",
-      lineNumber: 188,
+      lineNumber: 193,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/routes/admin.tsx",
-    lineNumber: 186,
+    lineNumber: 191,
     columnNumber: 73
   }, this) }, void 0, false, {
     fileName: "app/routes/admin.tsx",
-    lineNumber: 185,
+    lineNumber: 190,
     columnNumber: 10
   }, this);
 };
@@ -225,4 +232,4 @@ window.$RefreshSig$ = prevRefreshSig;
 export {
   admin_default as default
 };
-//# sourceMappingURL=/build/routes/admin-LS73ZJJT.js.map
+//# sourceMappingURL=/build/routes/admin-ANJ2QOHJ.js.map

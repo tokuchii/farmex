@@ -68,7 +68,7 @@ const AdminNavbar: FC<AdminNavbarProps> = ({ onMenuClick, username, email }) => 
               <LucideUser className="h-4 w-4" aria-hidden />
             </span>
             <span className="max-w-[8rem] truncate text-sm font-medium text-slate-700 md:max-w-[10rem]">
-              {displayName}
+              <a href="/admin/profile">{displayName}</a>
             </span>
           </div>
 

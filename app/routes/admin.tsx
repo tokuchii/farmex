@@ -38,6 +38,12 @@ const LOGIN_URL_TOASTS: AdminUrlToastConfig[] = [
     type: "success",
     message: "Logout successful. See you again!",
   },
+  {
+    param: "logout",
+    value: "deleted",
+    type: "success",
+    message: "Account deleted. Goodbye!",
+  },
 ];
 
 export async function loader({ request }: LoaderFunctionArgs) {

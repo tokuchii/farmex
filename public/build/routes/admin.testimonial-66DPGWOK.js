@@ -3,10 +3,11 @@ import {
 } from "/build/_shared/chunk-SEQ7IFIP.js";
 import {
   TestimonialsModule
-} from "/build/_shared/chunk-Z74I43MM.js";
+} from "/build/_shared/chunk-5QVOTQXX.js";
 import {
   require_cloudinary
-} from "/build/_shared/chunk-3SIS6I7N.js";
+} from "/build/_shared/chunk-2T37EEZG.js";
+import "/build/_shared/chunk-SCF47TFB.js";
 import "/build/_shared/chunk-NPIM253G.js";
 import "/build/_shared/chunk-UF6K54N4.js";
 import "/build/_shared/chunk-Y6RJRNBS.js";
@@ -90,4 +91,4 @@ window.$RefreshSig$ = prevRefreshSig;
 export {
   admin_testimonial_default as default
 };
-//# sourceMappingURL=/build/routes/admin.testimonial-H3IZJ4MT.js.map
+//# sourceMappingURL=/build/routes/admin.testimonial-66DPGWOK.js.map

@@ -75,10 +75,11 @@ export async function createAdminSession(
   });
 }
 
-export async function destroyAdminSession(request: Request) {
+export async function destroyAdminSession(request: Request, reason?: string) {
   const session = await getAdminSession(request);
+  const param = reason === "deleted" ? "deleted" : "success";
 
-  return redirect("/admin?logout=success", {
+  return redirect(`/admin?logout=${param}`, {
     headers: {
       "Set-Cookie": await sessionStorage.destroySession(session),
     },

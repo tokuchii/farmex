@@ -38,7 +38,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\admin\\adminNavLinks.ts"
   );
-  import.meta.hot.lastModified = "1779346442105.241";
+  import.meta.hot.lastModified = "1781485061121.4082";
 }
 var adminNavLinks = [
   { label: "Dashboard", to: "/admin/dashboard", icon: LayoutDashboard },
@@ -68,7 +68,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\components\\admin\\AdminNavbar.tsx"
   );
-  import.meta.hot.lastModified = "1779367955221.157";
+  import.meta.hot.lastModified = "1781484607815.1133";
 }
 var getPageTitle = (pathname) => {
   const match = adminNavLinks.find((link) => pathname === link.to || pathname.startsWith(`${link.to}/`));
@@ -156,7 +156,11 @@ var AdminNavbar = ({
           lineNumber: 70,
           columnNumber: 13
         }, this),
-        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "max-w-[8rem] truncate text-sm font-medium text-slate-700 md:max-w-[10rem]", children: displayName }, void 0, false, {
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "max-w-[8rem] truncate text-sm font-medium text-slate-700 md:max-w-[10rem]", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "/admin/profile", children: displayName }, void 0, false, {
+          fileName: "app/components/admin/AdminNavbar.tsx",
+          lineNumber: 74,
+          columnNumber: 15
+        }, this) }, void 0, false, {
           fileName: "app/components/admin/AdminNavbar.tsx",
           lineNumber: 73,
           columnNumber: 13
@@ -419,4 +423,4 @@ export {
   AdminNavbar_default,
   AdminSidebar_default
 };
-//# sourceMappingURL=/build/_shared/chunk-COVJFQDL.js.map
+//# sourceMappingURL=/build/_shared/chunk-6TKFRF23.js.map
