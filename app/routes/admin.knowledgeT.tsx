@@ -9,14 +9,77 @@ import {
   createLavStation,
   deleteLavStation,
   getLavStations,
+  parseStringListFromJson,
+  setLavStationActive,
+  updateLavStation,
 } from "~/lib/lav-stations.server";
 import {
   createRiceDerbies,
   deleteRiceDerbies,
   getRiceDerbies,
+  setRiceDerbiesActive,
+  updateRiceDerbies,
 } from "~/lib/rice-derbies.server";
 import { getCloudinaryConfig } from "~/lib/cloudinary.server";
 import { requireAdminUser } from "~/lib/session.server";
+
+type KnowledgePayload = {
+  title: string;
+  descriptions: string[];
+  youtubeLinks: string[];
+  images: string[];
+};
+
+function parseKnowledgePayload(form: FormData):
+  | { error: string; status: number }
+  | KnowledgePayload {
+  const title = form.get("title");
+  const descriptionsRaw = form.get("descriptions");
+  const youtubeLinksRaw = form.get("youtubeLinks");
+  const imagesRaw = form.get("images");
+
+  if (typeof title !== "string" || !title.trim()) {
+    return { error: "Title is required.", status: 400 };
+  }
+
+  let descriptions: string[] = [];
+  let youtubeLinks: string[] = [];
+
+  try {
+    descriptions = parseStringListFromJson(descriptionsRaw);
+    youtubeLinks = parseStringListFromJson(youtubeLinksRaw);
+  } catch {
+    return { error: "Invalid description or YouTube link data.", status: 400 };
+  }
+
+  if (descriptions.length === 0) {
+    return { error: "At least one description is required.", status: 400 };
+  }
+
+  let images: string[] = [];
+  if (typeof imagesRaw === "string" && imagesRaw) {
+    try {
+      const parsed = JSON.parse(imagesRaw) as unknown;
+      if (!Array.isArray(parsed) || !parsed.every((item) => typeof item === "string")) {
+        return { error: "Invalid image data.", status: 400 };
+      }
+      images = parsed;
+    } catch {
+      return { error: "Invalid image data.", status: 400 };
+    }
+  }
+
+  if (images.length > 20) {
+    return { error: "Maximum 20 images allowed.", status: 400 };
+  }
+
+  return {
+    title: title.trim(),
+    descriptions,
+    youtubeLinks,
+    images,
+  };
+}
 
 export async function loader({ request }: LoaderFunctionArgs) {
   await requireAdminUser(request);
@@ -34,49 +97,38 @@ export async function action({ request }: ActionFunctionArgs) {
 
   // Lav Station actions
   if (intent === "create-lav-station") {
-    const title = form.get("title");
-    const description = form.get("description");
-    const youtubeLink = form.get("youtubeLink");
-    const imagesRaw = form.get("images");
-
-    if (typeof title !== "string" || !title.trim()) {
-      return json({ error: "Title is required." }, { status: 400 });
-    }
-
-    if (typeof description !== "string" || !description.trim()) {
-      return json({ error: "Description is required." }, { status: 400 });
-    }
-
-    let images: string[] = [];
-    if (typeof imagesRaw === "string" && imagesRaw) {
-      try {
-        const parsed = JSON.parse(imagesRaw) as unknown;
-        if (!Array.isArray(parsed) || !parsed.every((item) => typeof item === "string")) {
-          return json({ error: "Invalid image data." }, { status: 400 });
-        }
-        images = parsed;
-      } catch {
-        return json({ error: "Invalid image data." }, { status: 400 });
-      }
-    }
-
-    if (images.length > 20) {
-      return json({ error: "Maximum 20 images allowed." }, { status: 400 });
+    const payload = parseKnowledgePayload(form);
+    if ("error" in payload) {
+      return json({ error: payload.error }, { status: payload.status });
     }
 
     try {
-      await createLavStation({
-        title: title.trim(),
-        description: description.trim(),
-        images,
-        youtubeLink: typeof youtubeLink === "string" ? youtubeLink.trim() : "",
-      });
+      await createLavStation(payload);
       return json({ ok: true, message: "Lav station saved successfully." });
     } catch (error) {
       console.error("Create lav station error:", error);
       return json({ error: "Failed to save lav station." }, { status: 500 });
     }
+  }
 
+  if (intent === "update-lav-station") {
+    const id = form.get("id");
+    if (typeof id !== "string" || !id) {
+      return json({ error: "Invalid station id." }, { status: 400 });
+    }
+
+    const payload = parseKnowledgePayload(form);
+    if ("error" in payload) {
+      return json({ error: payload.error }, { status: payload.status });
+    }
+
+    try {
+      await updateLavStation(id, payload);
+      return json({ ok: true, message: "Lav station updated successfully." });
+    } catch (error) {
+      console.error("Update lav station error:", error);
+      return json({ error: "Failed to update lav station." }, { status: 500 });
+    }
   }
 
   if (intent === "delete-lav-station") {
@@ -94,49 +146,65 @@ export async function action({ request }: ActionFunctionArgs) {
     }
   }
 
-  //Rice Derbies actions
+  if (intent === "toggle-lav-station-active") {
+    const id = form.get("id");
+    const activeRaw = form.get("active");
+
+    if (typeof id !== "string" || !id) {
+      return json({ error: "Invalid station id." }, { status: 400 });
+    }
+
+    if (activeRaw !== "true" && activeRaw !== "false") {
+      return json({ error: "Invalid active state." }, { status: 400 });
+    }
+
+    const active = activeRaw === "true";
+
+    try {
+      await setLavStationActive(id, active);
+      return json({
+        ok: true,
+        message: active ? "Lav station is now On." : "Lav station is now Off.",
+      });
+    } catch (error) {
+      console.error("Toggle lav station active error:", error);
+      return json({ error: "Failed to update active state." }, { status: 500 });
+    }
+  }
+
+  // Rice Derbies actions
   if (intent === "create-rice-derbies") {
-    const title = form.get("title");
-    const description = form.get("description");
-    const youtubeLink = form.get("youtubeLink");
-    const imagesRaw = form.get("images");
-
-    if (typeof title !== "string" || !title.trim()) {
-      return json({ error: "Title is required." }, { status: 400 });
-    }
-
-    if (typeof description !== "string" || !description.trim()) {
-      return json({ error: "Description is required." }, { status: 400 });
-    }
-
-    let images: string[] = [];
-    if (typeof imagesRaw === "string" && imagesRaw) {
-      try {
-        const parsed = JSON.parse(imagesRaw) as unknown;
-        if (!Array.isArray(parsed) || !parsed.every((item) => typeof item === "string")) {
-          return json({ error: "Invalid image data." }, { status: 400 });
-        }
-        images = parsed;
-      } catch {
-        return json({ error: "Invalid image data." }, { status: 400 });
-      }
-    }
-
-    if (images.length > 20) {
-      return json({ error: "Maximum 20 images allowed." }, { status: 400 });
+    const payload = parseKnowledgePayload(form);
+    if ("error" in payload) {
+      return json({ error: payload.error }, { status: payload.status });
     }
 
     try {
-      await createRiceDerbies({
-        title: title.trim(),
-        description: description.trim(),
-        images,
-        youtubeLink: typeof youtubeLink === "string" ? youtubeLink.trim() : "",
-      });
+      await createRiceDerbies(payload);
       return json({ ok: true, message: "Rice derbies saved successfully." });
     } catch (error) {
       console.error("Create rice derbies error:", error);
       return json({ error: "Failed to save rice derbies." }, { status: 500 });
+    }
+  }
+
+  if (intent === "update-rice-derbies") {
+    const id = form.get("id");
+    if (typeof id !== "string" || !id) {
+      return json({ error: "Invalid rice derbies id." }, { status: 400 });
+    }
+
+    const payload = parseKnowledgePayload(form);
+    if ("error" in payload) {
+      return json({ error: payload.error }, { status: payload.status });
+    }
+
+    try {
+      await updateRiceDerbies(id, payload);
+      return json({ ok: true, message: "Rice derbies updated successfully." });
+    } catch (error) {
+      console.error("Update rice derbies error:", error);
+      return json({ error: "Failed to update rice derbies." }, { status: 500 });
     }
   }
 
@@ -152,6 +220,32 @@ export async function action({ request }: ActionFunctionArgs) {
     } catch (error) {
       console.error("Delete rice derbies error:", error);
       return json({ error: "Failed to delete rice derbies." }, { status: 500 });
+    }
+  }
+
+  if (intent === "toggle-rice-derbies-active") {
+    const id = form.get("id");
+    const activeRaw = form.get("active");
+
+    if (typeof id !== "string" || !id) {
+      return json({ error: "Invalid rice derbies id." }, { status: 400 });
+    }
+
+    if (activeRaw !== "true" && activeRaw !== "false") {
+      return json({ error: "Invalid active state." }, { status: 400 });
+    }
+
+    const active = activeRaw === "true";
+
+    try {
+      await setRiceDerbiesActive(id, active);
+      return json({
+        ok: true,
+        message: active ? "Rice derbies is now On." : "Rice derbies is now Off.",
+      });
+    } catch (error) {
+      console.error("Toggle rice derbies active error:", error);
+      return json({ error: "Failed to update active state." }, { status: 500 });
     }
   }
 

@@ -19,7 +19,7 @@ const REGISTER_URL_TOASTS: AdminUrlToastConfig[] = [
     param: "registered",
     value: "true",
     type: "success",
-    message: "Account successfully created! Maaari ka nang mag-login.",
+    message: "Account successfully created! You can now log in.",
   },
 ];
 
@@ -51,27 +51,27 @@ export async function action({ request }: ActionFunctionArgs) {
   const fieldErrors: ActionData["fieldErrors"] = {};
 
   if (typeof username !== "string" || !username.trim()) {
-    fieldErrors.username = "Kailangan ang username.";
+    fieldErrors.username = "Username is required.";
   } else if (username.trim().length < 3) {
-    fieldErrors.username = "Dapat hindi bababa sa 3 characters ang username.";
+    fieldErrors.username = "Username must be at least 3 characters.";
   }
 
   if (typeof email !== "string" || !email.trim()) {
-    fieldErrors.email = "Kailangan ang email.";
+    fieldErrors.email = "Email is required.";
   } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
-    fieldErrors.email = "Hindi valid ang email address.";
+    fieldErrors.email = "Email address is not valid.";
   }
 
   if (typeof password !== "string" || !password) {
-    fieldErrors.password = "Kailangan ang password.";
+    fieldErrors.password = "Password is required.";
   } else if (password.length < 6) {
-    fieldErrors.password = "Dapat hindi bababa sa 6 characters ang password.";
+    fieldErrors.password = "Password must be at least 6 characters.";
   }
 
   if (typeof confirmPassword !== "string" || !confirmPassword) {
-    fieldErrors.confirmPassword = "Kumpirmahin ang password.";
+    fieldErrors.confirmPassword = "Confirm password is required.";
   } else if (password !== confirmPassword) {
-    fieldErrors.confirmPassword = "Hindi magkatugma ang mga password.";
+    fieldErrors.confirmPassword = "Passwords do not match.";
   }
 
   if (Object.keys(fieldErrors).length > 0) {
@@ -88,7 +88,7 @@ export async function action({ request }: ActionFunctionArgs) {
 
     if (!existingByEmail.empty) {
       return json(
-        { fieldErrors: { email: "May account na gamit ang email na ito." } },
+        { fieldErrors: { email: "An account with this email already exists." } },
         { status: 409 }
       );
     }
@@ -101,7 +101,7 @@ export async function action({ request }: ActionFunctionArgs) {
 
     if (!existingByUsername.empty) {
       return json(
-        { fieldErrors: { username: "May account na gamit ang username na ito." } },
+        { fieldErrors: { username: "An account with this username already exists." } },
         { status: 409 }
       );
     }
@@ -120,7 +120,7 @@ export async function action({ request }: ActionFunctionArgs) {
   } catch (error) {
     console.error("Registration error:", error);
     return json(
-      { formError: "May error sa pag-register. Subukan ulit." },
+      { formError: "An error occurred while registering. Please try again." },
       { status: 500 }
     );
   }
@@ -136,15 +136,15 @@ export default function AdminRegister() {
     <AdminAuthShell
       eyebrow="Register"
       title="Create admin account"
-      description="Gumawa ng admin account para ma-access ang panel."
+      description="Create an admin account to access the panel."
       footer={
         <p>
-          May account na?{" "}
+          Have an account?{" "}
           <Link
             to="/admin"
             className="font-semibold text-emerald-600 transition hover:text-emerald-700"
           >
-            Mag-login
+            Log in here
           </Link>
         </p>
       }
