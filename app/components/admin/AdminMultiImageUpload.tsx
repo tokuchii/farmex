@@ -1,7 +1,7 @@
 import { LucideImagePlus, LucideX } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import type { ChangeEvent, FC } from "react";
-import { cn } from "~/lib/utils";
+import { cn, sortFilesByName } from "~/lib/utils";
 import { adminInputClass } from "./adminFormStyles";
 
 type AdminMultiImageUploadProps = {
@@ -37,7 +37,7 @@ const AdminMultiImageUpload: FC<AdminMultiImageUploadProps> = ({
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const selected = Array.from(event.target.files ?? []);
     const remaining = maxFiles - existingUrls.length;
-    const merged = [...files, ...selected].slice(0, remaining);
+    const merged = sortFilesByName([...files, ...selected]).slice(0, remaining);
     onChange(merged);
     event.target.value = "";
   };

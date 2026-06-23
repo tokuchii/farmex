@@ -249,13 +249,13 @@ export default function Products() {
                 </div>
 
                 {/* Show contact info here only on md+ */}
-                <div className="hidden md:block text-center md:text-left text-black text-sm sm:text-base">
+                <div className="hidden md:block text-center md:text-left text-white text-sm sm:text-base">
                   <span className="block font-semibold mb-1">For sales inquiries,</span>
                   <span className="leading-relaxed text-sm">
                     Or call{" "}
                     <a
                       href="tel:(+63) 945 170 9401"
-                      className="text-black text-sm underline hover:underline"
+                      className="text-white text-sm underline hover:underline"
                     >
                       (+63) 945 170 9401
                     </a>
@@ -264,7 +264,7 @@ export default function Products() {
                       href="https://www.google.com/maps?q=14.330623,121.076050"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-black text-sm underline hover:underline inline-flex items-center"
+                      className="text-white text-sm underline hover:underline inline-flex items-center"
                     >
                       Unit A 201 and Alfresco Area 2nd Floor Coral Center Mall
                       Barangay San Francisco, Biñan Laguna
@@ -295,13 +295,13 @@ export default function Products() {
                   </p>
                 )}
                 {/* Contact info on mobile only */}
-                <div className="block md:hidden text-center text-black text-sm sm:text-base mb-6">
+                <div className="block md:hidden text-center text-white text-sm sm:text-base mb-6">
                   <span className="block font-semibold mb-1">For sales inquiries,</span>
                   <span className="leading-relaxed">
                     Or call{" "}
                     <a
                       href="tel:(+63) 945 170 9401"
-                      className="text-black underline hover:underline"
+                      className="text-white underline hover:underline"
                     >
                       (+63) 945 170 9401
                     </a>
@@ -310,7 +310,7 @@ export default function Products() {
                       href="https://www.google.com/maps?q=14.330623,121.076050"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-black underline hover:underline inline-flex items-center"
+                      className="text-white underline hover:underline inline-flex items-center"
                     >
                       Unit A 201 and Alfresco Area 2nd Floor Coral Center Mall
                       Barangay San Francisco, Biñan Laguna

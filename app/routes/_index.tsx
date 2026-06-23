@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import type { MetaFunction } from "@remix-run/node";
 
 export const meta: MetaFunction = () => [
   { title: "Farmex Corporation" },
 ];
 
-const cardVariants = {
+const cardVariants: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i: number) => ({
     opacity: 1,
@@ -14,7 +15,7 @@ const cardVariants = {
     transition: {
       delay: i * 0.15,
       duration: 0.6,
-      ease: "easeOut",
+      ease: [0.22, 1, 0.36, 1],
     },
   }),
 };

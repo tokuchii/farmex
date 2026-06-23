@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { useEffect } from "react";
 import {
   Dialog,
   DialogContent,
@@ -41,8 +42,28 @@ const AdminModal = ({
   className,
   contentClassName,
 }: AdminModalProps) => {
+  useEffect(() => {
+    if (!open) {
+      document.body.style.pointerEvents = "";
+      document.body.style.overflow = "";
+      return;
+    }
+
+    return () => {
+      document.body.style.pointerEvents = "";
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  if (!open) return null;
+
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <Dialog
+      open
+      onOpenChange={(nextOpen) => {
+        if (!nextOpen) onOpenChange(false);
+      }}
+    >
       <DialogContent
         className={cn(
           "gap-0 overflow-hidden rounded-3xl border border-slate-200 bg-white p-0 text-slate-900 shadow-2xl shadow-slate-900/10",

@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import type { FetcherWithComponents } from "@remix-run/react";
 import AdminActiveToggle from "~/components/admin/AdminActiveToggle";
 import AdminModal from "~/components/admin/AdminModal";
+import DeleteConfirmationModal from "~/components/admin/DeleteConfirmationModal";
 import AdminMultiImageUpload from "~/components/admin/AdminMultiImageUpload";
 import AdminPaginatedTable, {
   type AdminTableColumn,
@@ -136,12 +137,15 @@ export const LavStationModule = ({
   const [existingImages, setExistingImages] = useState<string[]>([]);
   const [imageFiles, setImageFiles] = useState<File[]>([]);
   const [isUploading, setIsUploading] = useState(false);
+  const [pendingIntent, setPendingIntent] = useState<string | null>(null);
+  const [deleteTarget, setDeleteTarget] = useState<{ id: string; label: string } | null>(null);
   const toast = useAdminToast();
   const formRef = useRef<HTMLFormElement>(null);
   const wasSubmitting = useRef(false);
-
-  const isBusy = isUploading || fetcher.state !== "idle";
   const fetcherFormData = fetcher.formData as FormData | undefined;
+
+  const isSubmitting = fetcher.state === "submitting";
+  const isBusy = isUploading || isSubmitting;
   const isEditing = editingId !== null;
 
   const resetForm = () => {
@@ -170,7 +174,7 @@ export const LavStationModule = ({
   };
 
   const closeModal = () => {
-    if (isBusy) return;
+    if (isUploading || isSubmitting) return;
     setModalOpen(false);
     resetForm();
   };
@@ -185,22 +189,18 @@ export const LavStationModule = ({
 
       if (fetcher.data?.error) {
         toast.error(fetcher.data.error);
+        setPendingIntent(null);
         return;
       }
 
-      if (fetcher.data?.ok) {
-        toast.success(fetcher.data.message ?? "Updated successfully.");
-        const submittedIntent = fetcherFormData?.get("intent");
-        if (
-          submittedIntent === "create-lav-station" ||
-          submittedIntent === "update-lav-station"
-        ) {
+      if (fetcher.data?.ok && (pendingIntent === "create-lav-station" || pendingIntent === "update-lav-station")) {
+          toast.success(fetcher.data.message ?? "Updated successfully.");
           setModalOpen(false);
           resetForm();
-        }
+          setPendingIntent(null);
       }
     }
-  }, [fetcher.state, fetcher.data, fetcherFormData, toast.error, toast.success, toast]);
+  }, [fetcher.state, fetcher.data, pendingIntent, toast.error, toast.success, toast]);
 
   const handleSave = async () => {
     const trimmedDescriptions = trimNonEmpty(descriptions);
@@ -243,11 +243,13 @@ export const LavStationModule = ({
       };
 
       if (isEditing && editingId) {
+        setPendingIntent("update-lav-station");
         fetcher.submit(
           { intent: "update-lav-station", id: editingId, ...payload },
           { method: "post" }
         );
       } else {
+        setPendingIntent("create-lav-station");
         fetcher.submit({ intent: "create-lav-station", ...payload }, { method: "post" });
       }
     } catch (error) {
@@ -262,10 +264,15 @@ export const LavStationModule = ({
     }
   };
 
-  const handleDelete = (id: string) => {
-    if (!confirm("Delete this lav station?")) return;
+  const handleDelete = (id: string, label: string) => {
+    setDeleteTarget({ id, label });
+  };
 
-    fetcher.submit({ intent: "delete-lav-station", id }, { method: "post" });
+  const handleConfirmDelete = () => {
+    if (!deleteTarget) return;
+    toast.success("Lav station deleted.");
+    fetcher.submit({ intent: "delete-lav-station", id: deleteTarget.id }, { method: "post" });
+    setDeleteTarget(null);
   };
 
   const handleToggleActive = (id: string, nextActive: boolean) => {
@@ -281,7 +288,7 @@ export const LavStationModule = ({
 
   const isRowBusy = (id: string, intent: string) =>
     fetcher.state !== "idle" &&
-    fetcherFormData?.get("intent") === intent &&
+    pendingIntent === intent &&
     fetcherFormData?.get("id") === id;
 
   const columns: AdminTableColumn<LavStationRecord>[] = [
@@ -387,16 +394,14 @@ export const LavStationModule = ({
             className="inline-flex items-center gap-1 rounded-xl border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700 transition hover:bg-slate-50 disabled:opacity-60"
           >
             <LucidePencil className="h-3.5 w-3.5" />
-            Edit
           </button>
           <button
             type="button"
-            onClick={() => handleDelete(row.id)}
+            onClick={() => handleDelete(row.id, row.title || "this lav station")}
             disabled={isBusy}
             className="inline-flex items-center gap-1 rounded-xl border border-rose-200 bg-rose-50 px-3 py-1.5 text-xs font-semibold text-rose-700 transition hover:bg-rose-100 disabled:opacity-60"
           >
             <LucideTrash2 className="h-3.5 w-3.5" />
-            Delete
           </button>
         </div>
       ),
@@ -431,7 +436,7 @@ export const LavStationModule = ({
         columns={columns}
         data={stations}
         getRowKey={(row) => row.id}
-        isLoading={fetcher.state === "loading"}
+        isLoading={isSubmitting}
         emptyMessage='No lav stations yet. Use "Add lav station" to create one.'
         itemLabel="lav stations"
         pagination={{ pageSize: 5 }}
@@ -518,6 +523,26 @@ export const LavStationModule = ({
           />
         </form>
       </AdminModal>
+      <DeleteConfirmationModal
+        open={deleteTarget !== null}
+        onOpenChange={(open) => {
+          if (!open) setDeleteTarget(null);
+        }}
+        title="Delete lav station"
+        description={
+          deleteTarget ? (
+            <>
+              Are you sure you want to delete{" "}
+              <strong>{deleteTarget.label}</strong>? This action cannot be undone.
+            </>
+          ) : (
+            "Are you sure you want to delete this item?"
+          )
+        }
+        confirmLabel="Delete lav station"
+        onConfirm={handleConfirmDelete}
+        isBusy={isBusy}
+      />
     </section>
   );
 };

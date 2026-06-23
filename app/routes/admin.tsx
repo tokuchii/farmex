@@ -7,6 +7,7 @@ import {
   useActionData,
   useLoaderData,
   useLocation,
+  useNavigation,
 } from "@remix-run/react";
 import { useCallback, useState } from "react";
 import { compare } from "bcryptjs";
@@ -141,6 +142,10 @@ export async function action({ request }: ActionFunctionArgs) {
 
 const AdminLoginForm = () => {
   const actionData = useActionData<ActionData>();
+  const navigation = useNavigation();
+
+  const isSubmitting = navigation.state === "submitting";
+
   useAdminUrlToast(LOGIN_URL_TOASTS);
   useAdminActionToast(actionData?.formError);
 
@@ -189,9 +194,10 @@ const AdminLoginForm = () => {
 
             <button
               type="submit"
-              className="w-full rounded-2xl bg-emerald-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/30"
+              disabled={isSubmitting}
+              className="w-full rounded-2xl bg-emerald-500 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-400 disabled:cursor-not-allowed disabled:opacity-70 focus:outline-none focus:ring-2 focus:ring-emerald-500/30"
             >
-              Login
+              {isSubmitting ? "Logging in..." : "Log in"}
             </button>
           </Form>
         </div>

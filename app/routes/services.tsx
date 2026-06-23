@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Link, useLocation } from "@remix-run/react";
+import { Link, useLocation, useLoaderData } from "@remix-run/react";
 import type { MetaFunction } from "@remix-run/node";
+import { json } from "@remix-run/node";
 import Calendar from 'react-calendar';
 import calendarStyles from "../styles/calendar.css?url";
 const { LazyLoadImage } = LazyLoadImagePkg;
@@ -12,6 +13,10 @@ import {
   DialogHeader,
   DialogTitle
 } from "../components/ui/dialog";
+import { 
+  getTechnicalConsultants, getMachineRentals, getMachineRentalGalleries, getTrainingSessions, getTrainingGalleries, getTrainingHeroes,
+  type TechnicalConsultantRecord, MachineRentalRecord, MachineRentalGalleryRecord, TrainingSessionRecord, TrainingGalleryRecord, TrainingHeroRecord
+} from "~/lib/trainings.server";
 
 export const links = () => [
   { rel: "stylesheet", href: calendarStyles },
@@ -21,6 +26,19 @@ export const meta: MetaFunction = () => [
   { title: "Services" },
 ];
 
+export async function loader() {
+  const [technicalConsultants, machineRentals, machineRentalGalleries, trainingSessions, trainingGalleries, trainingHeroes] = await Promise.all([
+    getTechnicalConsultants(),
+    getMachineRentals(),
+    getMachineRentalGalleries(),
+    getTrainingSessions(),
+    getTrainingGalleries(),
+    getTrainingHeroes(),
+  ]);
+
+  return json({ technicalConsultants, machineRentals, machineRentalGalleries, trainingSessions, trainingGalleries, trainingHeroes });
+}
+
 export default function Services() {
   const [activeSection, setActiveSection] = useState<'rentals' | 'consultation' | 'training'>('rentals');
   const [isClient, setIsClient] = useState(false);
@@ -29,6 +47,43 @@ export default function Services() {
   }, []);
 
   const location = useLocation();
+
+  const { technicalConsultants, machineRentals, machineRentalGalleries, trainingSessions, trainingGalleries, trainingHeroes } = useLoaderData() as {
+    technicalConsultants: TechnicalConsultantRecord[];
+    machineRentals: MachineRentalRecord[];
+    machineRentalGalleries: MachineRentalGalleryRecord[];
+    trainingSessions: TrainingSessionRecord[];
+    trainingGalleries: TrainingGalleryRecord[];
+    trainingHeroes: TrainingHeroRecord[];
+  };
+
+  const rentalGalleryItems = [...machineRentalGalleries]
+    .sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime())
+    .flatMap((gallery) =>
+      gallery.images.map((src) => ({
+        src,
+        alt: gallery.collectionName || "Machine Rental",
+        label: gallery.collectionName || "Machine Rental",
+      }))
+    );
+
+  const heroRecord = technicalConsultants && technicalConsultants.length > 0 ? technicalConsultants[0] : null;
+  const heroTitle = heroRecord?.title ?? "Technical Consultation";
+  const heroDescription = heroRecord?.description ?? "Farmex's commitment to the rice farming communities does not end in providing quality hybrid rice seeds but extends its hands to those who are in need of free technical consultations. From farmers to agriculture students, Farmex technical team is always ready to share their expertise and strategy on rice farming production and technologies. Regular technical trainings are done to further equip and update our Seed Production Specialists on the latest technologies and having them share new learnings to our farmers.";
+
+  const rentalsHeroRecord = machineRentals && machineRentals.length > 0 ? machineRentals[0] : null;
+  const rentalsHeroTitle = rentalsHeroRecord?.title ?? "Machine Rentals";
+  const rentalsHeroDescription = rentalsHeroRecord?.descriptions ?? "Genuine to its mission of providing all the Filipino farmer needs, Farmex is offering farm machineries rentals to extend the accessibility of farm technologies and equipment to individual rice farmers and farm cooperatives. With the help of our sister company, Leads Tech, Farmex team also do machine demonstrations and provides after-sales support to our customers.";
+
+  const trainingHeroRecord = trainingHeroes.length > 0 ? trainingHeroes[0] : null;
+  const trainingHeroTitle = trainingHeroRecord?.title ?? "Trainings";
+  const trainingHeroDescriptions =
+    trainingHeroRecord?.descriptions && trainingHeroRecord.descriptions.length > 0
+      ? trainingHeroRecord.descriptions
+      : [
+          "Farmex Corporation is proud to be recognized as a Learning Site for Agriculture (LSA). Since the 2nd quarter of 2025, we have been hosting training programs in partnership with the Agricultural Training Institute (ATI)-CALABARZON. Beyond these collaborations, our LAV Station also opens its doors to schools, farmer clusters, and other organizations seeking practical, science-based learning experiences in agriculture.",
+          "As an LSA, we remain committed to helping Filipino farmers and agri-stakeholders across crop industries by providing relevant knowledge, field-based demonstrations, and hands-on training. We believe that continuous education not only improves productivity but also inspires the next generation to pursue and sustain the future of agriculture.",
+        ];
 
   useEffect(() => {
     const hash = location.hash;
@@ -50,14 +105,14 @@ export default function Services() {
   const [selectedImage, setSelectedImage] = useState<{ src: string; alt: string } | null>(null);
   const [isImageOpen, setIsImageOpen] = useState(false);
 
-  const trainingRanges: { start: string; end: string; title: string }[] = [
-    { start: "2025-06-23", end: "2025-06-27", title: '🌱 Batch No. 1 — "Building Stronger Rice Communities: Advancing Knowledge in Farm Machinaries Operations and Maintenance"' },
-    { start: "2025-06-30", end: "2025-07-02", title: '🌱 Batch No. 2 — "Building Stronger Rice Communities: Advancing Knowledge in Farm Machinaries Operations and Maintenance"' },
-    { start: "2025-07-10", end: "2025-07-11", title: '🎓 Batch No. 3 — "1 day Field demo and 1 day graduation only"' },
-    { start: "2025-07-21", end: "2025-07-25", title: '🌱 Batch No. 4 — "Building Stronger Rice Communities: Advancing Knowledge in Farm Machinaries Operations and Maintenance"' },
-    { start: "2025-08-04", end: "2025-08-08", title: '🌱 Batch No. 5 — "Building Stronger Rice Communities: Advancing Knowledge in Farm Machinaries Operations and Maintenance"' },
-    { start: "2026-02-02", end: "2026-02-03", title: '"SKILLS TRAINING ON MECHANIZATION TO UPGRADE COPRA/CNO PROCESSING AND INTEGRATION OF HIGH VALUE CROPS CULTIVATION FOR PROFITABLE COOPERATIVE COCONUT-BASED AGRI-BUSINESS VENTURE."' },
-  ];
+  const trainingRanges = trainingSessions
+    .filter((session) => session.startDate && session.endDate)
+    .map((session) => ({
+      start: session.startDate,
+      end: session.endDate,
+      title: session.title,
+      createdAt: session.createdAt,
+    }));
 
   const isDateInRange = (date: Date, start: string, end: string): boolean => {
     const d: number = date.setHours(0, 0, 0, 0);
@@ -66,17 +121,12 @@ export default function Services() {
     return d >= s && d <= e;
   };
 
-  const images: { src: string; alt: string }[] = [
-    { src: "/training1.jpg", alt: "Training 1" },
-    { src: "/training2.jpg", alt: "Training 2" },
-    { src: "/training4.jpg", alt: "Training 4" },
-    { src: "/training5.jpg", alt: "Training 5" },
-    { src: "/training6.jpg", alt: "Training 6" },
-    { src: "/training7.jpg", alt: "Training 7" },
-    { src: "/training8.jpg", alt: "Training 8" },
-    { src: "/training9.jpg", alt: "Training 9" },
-    { src: "/training10.jpg", alt: "Training 10" },
-  ];
+  const images = trainingGalleries.flatMap((gallery) =>
+    gallery.images.map((src) => ({
+      src,
+      alt: gallery.collectionName || "Training",
+    }))
+  );
 
   const [showMore, setShowMore] = useState(false);
   const [showAll, setShowAll] = useState(false);
@@ -88,11 +138,12 @@ export default function Services() {
   }, []);
 
   useEffect(() => {
+    if (images.length === 0) return;
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % images.length);
     }, 4000);
     return () => clearInterval(interval);
-  }, []);
+  }, [images.length]);
 
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
@@ -126,10 +177,10 @@ export default function Services() {
             <div className="absolute inset-0 bg-green-600 bg-opacity-50"></div>
             <div className="absolute inset-0 flex flex-col items-center justify-center z-20 px-4 py-2 pt-20 md:pt-12">
               <h2 className="text-white text-2xl md:text-4xl font-extrabold uppercase tracking-widest mb-2 md:mb-6">
-                MACHINE RENTALS
+                {rentalsHeroTitle}
               </h2>
               <p className="text-white text-[10px] md:text-xl leading-relaxed max-w-4xl text-center mb-4 md:mb-8">
-                Genuine to its mission of providing all the Filipino farmer needs, Farmex is offering farm machineries rentals to extend the accessibility of farm technologies and equipment to individual rice farmers and farm cooperatives. With the help of our sister company, Leads Tech, Farmex team also do machine demonstrations and provides after-sales support to our customers.
+                {rentalsHeroDescription}
               </p>
               <Link to="/get-involved" className="bg-[#E0B100F7] text-white px-2 md:px-8 py-1 md:py-3 rounded-lg font-bold hover:bg-[#E0B100F7] transition-colors duration-300 inline-block">
                 Contact Us
@@ -141,14 +192,14 @@ export default function Services() {
           <motion.div>
             <section className="w-full py-16 px-4 sm:px-8 bg-[url('/newbgmachinerental.png')] bg-cover bg-center flex flex-col items-center">
               <div className="w-full max-w-6xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-                {[
+                {(rentalGalleryItems.length ? rentalGalleryItems : [
                   { label: "Mobile Dryer", src: "/new_mobiledryer.png", alt: "Mobile Dryer" },
                   { label: "Tractor", src: "/new_tractor.jpeg", alt: "Tractor" },
                   { label: "Vacuum Seeder", src: "/vacuumseeder.jpg", alt: "Vacuum Seeder" },
                   { label: "Harvester", src: "/new_harvester.jpg", alt: "Harvester" },
-                ].map((item, i) => (
+                ]).map((item, i) => (
                   <motion.div
-                    key={item.label}
+                    key={`${item.label}-${i}`}
                     className="overflow-hidden p-2 sm:p-3 lg:p-4"
                     custom={i}
                     initial={{ opacity: 0, y: 40 }}
@@ -194,10 +245,12 @@ export default function Services() {
             <div className="absolute inset-0 bg-green-600 bg-opacity-50"></div>
             <div className="absolute inset-0 flex flex-col items-center justify-center z-20 px-4 py-2 pt-20 md:pt-16">
               <h2 className="text-white text-center text-2xl md:text-4xl font-extrabold uppercase tracking-widest mb-2 md:mb-6">
-                TECHNICAL<span className="block md:inline"> CONSULTATION</span>
+                {/* TECHNICAL<span className="block md:inline"> CONSULTATION</span> */}
+                {heroTitle.split(" ")[0]}<span className="block md:inline"> {heroTitle.split(" ").slice(1).join("")} </span>
               </h2>
               <p className="text-white text-[10px] md:text-xl leading-relaxed max-w-6xl text-center mb-4 md:mb-8">
-                Farmex's commitment to the rice farming communities does not end in providing quality hybrid rice seeds but extends its hands to those who are in need of free technical consultations. From farmers to agriculture students, Farmex technical team is always ready to share their expertise and strategy on rice farming production and technologies. Regular technical trainings are done to further equip and update our Seed Production Specialists on the latest technologies and having them share new learnings to our farmers.
+                {/* Farmex's commitment to the rice farming communities does not end in providing quality hybrid rice seeds but extends its hands to those who are in need of free technical consultations. From farmers to agriculture students, Farmex technical team is always ready to share their expertise and strategy on rice farming production and technologies. Regular technical trainings are done to further equip and update our Seed Production Specialists on the latest technologies and having them share new learnings to our farmers. */}
+                {heroDescription}
               </p>
               <Link to="/get-involved" className="bg-[#E0B100F7] text-white px-2 md:px-8 py-1 md:py-3 rounded-lg font-bold hover:bg-[#E0B100F7] transition-colors duration-300 inline-block">
                 Contact Us
@@ -208,7 +261,7 @@ export default function Services() {
           {/* Slider */}
           <div className="w-full py-8 sm:py-12 bg-white md:bg-[url('/bgmachinerentals.jpg')] md:bg-center md:bg-repeat-y flex justify-center">
             <div className="relative w-full max-w-xs sm:max-w-md md:max-w-2xl lg:max-w-4xl px-2 sm:px-4 py-4 sm:py-6 flex flex-col items-center">
-              <TechnicalConsultationSlider />
+              <TechnicalConsultationSlider images={heroRecord?.images ?? []} />
             </div>
           </div>
         </>
@@ -233,15 +286,17 @@ export default function Services() {
             <div className="absolute inset-0 bg-green-600 bg-opacity-80"></div>
             <div className="absolute inset-0 flex flex-col items-center justify-center z-20 px-4 md:px-8 py-4 pt-24 md:pt-24">
               <h2 className="text-white text-3xl md:text-5xl lg:text-6xl font-extrabold tracking-widest mb-8 md:mb-12 text-center">
-                Trainings
+                {trainingHeroTitle}
               </h2>
               <div className="text-white text-[12px] md:text-lg lg:text-xl font-semibold leading-relaxed max-w-6xl mb-4 md:mb-8 text-justify">
-                <p className="mb-4">
-                  Farmex Corporation is proud to be recognized as a Learning Site for Agriculture (LSA). Since the 2nd quarter of 2025, we have been hosting training programs in partnership with the Agricultural Training Institute (ATI)-CALABARZON. Beyond these collaborations, our LAV Station also opens its doors to schools, farmer clusters, and other organizations seeking practical, science-based learning experiences in agriculture.
-                </p>
-                <p>
-                  As an LSA, we remain committed to helping Filipino farmers and agri-stakeholders across crop industries by providing relevant knowledge, field-based demonstrations, and hands-on training. We believe that continuous education not only improves productivity but also inspires the next generation to pursue and sustain the future of agriculture.
-                </p>
+                {trainingHeroDescriptions.map((paragraph, index) => (
+                  <p
+                    key={`training-hero-desc-${index}`}
+                    className={index < trainingHeroDescriptions.length - 1 ? "mb-4" : undefined}
+                  >
+                    {paragraph}
+                  </p>
+                ))}
               </div>
             </div>
           </motion.div>
@@ -366,7 +421,7 @@ export default function Services() {
                     </h3>
                     <ul className="flex flex-col gap-3">
                       {trainingRanges
-                        .sort((a, b) => new Date(a.start).getTime() - new Date(b.start).getTime())
+                        .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime())
                         .slice(0, showAll ? trainingRanges.length : 3)
                         .map((event, idx) => {
                           const now = new Date();
@@ -410,58 +465,58 @@ export default function Services() {
               </div>
             </div>
 
-{/* Bottom: Image Cards (full width) */}
-<div className="w-full">
-  <h3 className="text-2xl md:text-3xl font-extrabold text-center text-green-700 border-b-2 border-green-300 pb-2 mb-8 uppercase tracking-widest">
-    Training Gallery
-  </h3>
-  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-    {images.slice(0, showMore ? images.length : 9).map((img, i) => (
-      <motion.div
-        key={i}
-        className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col cursor-pointer group"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.5, delay: (i % 3) * 0.12, ease: "easeOut" }}
-        onClick={() => { setSelectedImage(img); setIsImageOpen(true); }}
-      >
-        {/* Image */}
-        <div className="overflow-hidden h-52">
-          <LazyLoadImage
-            src={img.src}
-            alt={img.alt}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-          />
-        </div>
+            {/* Bottom: Image Cards (full width) */}
+            <div className="w-full">
+              <h3 className="text-2xl md:text-3xl font-extrabold text-center text-green-700 border-b-2 border-green-300 pb-2 mb-8 uppercase tracking-widest">
+                Training Gallery
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                {images.slice(0, showMore ? images.length : 9).map((img, i) => (
+                  <motion.div
+                    key={`${img.src}-${i}`}
+                    className="bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col cursor-pointer group"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.2 }}
+                    transition={{ duration: 0.5, delay: (i % 3) * 0.12, ease: "easeOut" }}
+                    onClick={() => { setSelectedImage(img); setIsImageOpen(true); }}
+                  >
+                    {/* Image */}
+                    <div className="overflow-hidden h-52">
+                      <LazyLoadImage
+                        src={img.src}
+                        alt={img.alt}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                    </div>
 
-        {/* Card Footer */}
-        <div className="flex items-center justify-between px-4 py-3 bg-white border-t border-gray-100">
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-green-500"></div>
-            <span className="text-sm font-semibold text-gray-700 uppercase tracking-wide">
-              {img.alt}
-            </span>
-          </div>
-          <span className="text-xs text-gray-400 font-medium">
-            View
-          </span>
-        </div>
-      </motion.div>
-    ))}
-  </div>
+                    {/* Card Footer */}
+                    <div className="flex items-center justify-between px-4 py-3 bg-white border-t border-gray-100">
+                      <div className="flex items-center gap-2">
+                        <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                        <span className="text-sm font-semibold text-gray-700 uppercase tracking-wide">
+                          {img.alt}
+                        </span>
+                      </div>
+                      <span className="text-xs text-gray-400 font-medium">
+                        View
+                      </span>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
 
-  {images.length > 9 && (
-    <div className="mt-6 text-center">
-      <button
-        onClick={() => setShowMore(!showMore)}
-        className="bg-green-600 text-white px-8 py-2 rounded-full font-semibold hover:bg-green-700 transition-colors duration-200"
-      >
-        {showMore ? "Show Less" : "Show More"}
-      </button>
-    </div>
-  )}
-</div>
+              {images.length > 9 && (
+                <div className="mt-6 text-center">
+                  <button
+                    onClick={() => setShowMore(!showMore)}
+                    className="bg-green-600 text-white px-8 py-2 rounded-full font-semibold hover:bg-green-700 transition-colors duration-200"
+                  >
+                    {showMore ? "Show Less" : "Show More"}
+                  </button>
+                </div>
+              )}
+            </div>
 
           </div>
 
@@ -497,18 +552,20 @@ export default function Services() {
   );
 }
 
-function TechnicalConsultationSlider() {
-  const images = [
-    { src: "/technicalconsultantimg1.jpg", alt: "Technical Consultation 1" },
-    { src: "/technicalconsultantimg2.jpg", alt: "Technical Consultation 2" },
-  ];
+function TechnicalConsultationSlider({ images }: { images: string[] }) {
+  const sliderImages = images.length
+    ? images.map((src, idx) => ({ src, alt: `Technical Consultation ${idx + 1}` }))
+    : [
+        { src: "/technicalconsultantimg1.jpg", alt: "Technical Consultation 1" },
+        { src: "/technicalconsultantimg2.jpg", alt: "Technical Consultation 2" },
+      ];
 
   const [index, setIndex] = useState(0);
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
-  const prev = () => setIndex((i) => (i === 0 ? images.length - 1 : i - 1));
-  const next = () => setIndex((i) => (i === images.length - 1 ? 0 : i + 1));
+  const prev = () => setIndex((i) => (i === 0 ? sliderImages.length - 1 : i - 1));
+  const next = () => setIndex((i) => (i === sliderImages.length - 1 ? 0 : i + 1));
 
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     setTouchStart(e.targetTouches[0].clientX);
@@ -542,8 +599,8 @@ function TechnicalConsultationSlider() {
           &#60;
         </button>
         <img
-          src={images[index].src}
-          alt={images[index].alt}
+          src={sliderImages[index].src}
+          alt={sliderImages[index].alt}
           className="w-full max-w-[260px] sm:max-w-md md:max-w-lg lg:max-w-4xl h-56 sm:h-80 md:h-[350px] lg:h-[550px] object-cover rounded-lg mx-1 sm:mx-4 border-2 border-gray-200 bg-white"
         />
         <button
@@ -554,7 +611,7 @@ function TechnicalConsultationSlider() {
         </button>
       </div>
       <div className="flex justify-center mt-2 sm:mt-4">
-        {images.map((_, i) => (
+        {sliderImages.map((_, i) => (
           <span
             key={i}
             className={`mx-0.5 sm:mx-1 w-2 h-2 sm:w-3 sm:h-3 rounded-full ${i === index ? "bg-yellow-500" : "bg-gray-300"}`}

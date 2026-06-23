@@ -55,7 +55,7 @@ const AdminPagination: FC<AdminPaginationProps> = ({
         <span className="font-semibold text-slate-700">
           {rangeStart}–{rangeEnd}
         </span>{" "}
-        of <span className="font-semibold text-slate-700">{totalItems}</span> {itemLabel}
+        of <span className="font-semibold text-slate-700">{totalItems}</span> | {itemLabel}
       </p>
 
       <div className="flex flex-wrap items-center gap-3">
