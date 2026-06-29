@@ -136,71 +136,71 @@ export default function Home() {
         </section>
       </motion.div>
 
-<motion.div>
-  {/* Services Section */}
-  <section className="relative w-full py-16 px-4 sm:px-6 md:px-8 bg-white">
-    <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
-      <motion.h2
-        className="text-3xl md:text-4xl font-extrabold text-green-700 mb-4 uppercase text-center tracking-widest"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
-      >
-        Services
-      </motion.h2>
-      <div className="h-1 w-40 md:w-48 lg:w-52 bg-yellow-500 rounded-full mb-12"></div>
+      <motion.div>
+        {/* Services Section */}
+        <section className="relative w-full py-16 px-4 sm:px-6 md:px-8 bg-white">
+          <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
+            <motion.h2
+              className="text-3xl md:text-4xl font-extrabold text-green-700 mb-4 uppercase text-center tracking-widest"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
+              Services
+            </motion.h2>
+            <div className="h-1 w-40 md:w-48 lg:w-52 bg-yellow-500 rounded-full mb-12"></div>
 
-      {/* Card Row */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 w-full">
+            {/* Card Row */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 w-full">
 
-        {/* Service Cards */}
-        {services.map((service, i) => (
-          <motion.div
-            key={service.alt}
-            className="bg-white rounded-2xl overflow-hidden flex flex-col shadow-md hover:shadow-xl transition-shadow duration-300"
-            custom={i}
-            variants={cardVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-          >
-            {/* Image area with circle bg like the reference */}
-            <div className="flex items-center justify-center bg-gray-100 h-52 relative overflow-hidden">
-              <div className="w-40 h-40 rounded-full bg-white/70 absolute"></div>
-              <img
-                src={service.image}
-                alt={service.alt}
-                className="relative z-10 w-full h-full object-cover"
-              />
-            </div>
-
-            {/* Card Body */}
-            <div className="flex flex-col justify-between flex-1 p-5 gap-4">
-              <div>
-                <h3 className="text-gray-900 font-bold text-base md:text-lg uppercase tracking-wide">
-                  {service.label}
-                </h3>
-                <p className="text-gray-400 text-xs mt-1 tracking-wide">
-                  Click below to learn more and get involved
-                </p>
-              </div>
-              <a href={service.href} className="w-full">
-                <button
-                  type="button"
-                  className="w-full bg-yellow-400 text-black text-sm font-bold py-2 rounded-full hover:bg-yellow-300 transition-colors duration-200"
+              {/* Service Cards */}
+              {services.map((service, i) => (
+                <motion.div
+                  key={service.alt}
+                  className="bg-white rounded-2xl overflow-hidden flex flex-col shadow-md hover:shadow-xl transition-shadow duration-300"
+                  custom={i}
+                  variants={cardVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.2 }}
                 >
-                  Get Involved →
-                </button>
-              </a>
-            </div>
-          </motion.div>
-        ))}
+                  {/* Image area with circle bg like the reference */}
+                  <div className="flex items-center justify-center bg-gray-100 h-52 relative overflow-hidden">
+                    <div className="w-40 h-40 rounded-full bg-white/70 absolute"></div>
+                    <img
+                      src={service.image}
+                      alt={service.alt}
+                      className="relative z-10 w-full h-full object-cover"
+                    />
+                  </div>
 
-      </div>
-    </div>
-  </section>
-</motion.div>
+                  {/* Card Body */}
+                  <div className="flex flex-col justify-between flex-1 p-5 gap-4">
+                    <div>
+                      <h3 className="text-gray-900 font-bold text-base md:text-lg uppercase tracking-wide">
+                        {service.label}
+                      </h3>
+                      <p className="text-gray-400 text-xs mt-1 tracking-wide">
+                        Click below to learn more and get involved
+                      </p>
+                    </div>
+                    <a href={service.href} className="w-full">
+                      <button
+                        type="button"
+                        className="w-full bg-yellow-400 text-black text-sm font-bold py-2 rounded-full hover:bg-yellow-300 transition-colors duration-200"
+                      >
+                        Get Involved →
+                      </button>
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+
+            </div>
+          </div>
+        </section>
+      </motion.div>
 
       <motion.main
         className="relative z-20"

@@ -12,8 +12,8 @@
     "@cloudinary/react": "^1.14.4",
     "@cloudinary/url-gen": "^1.22.0",
     "@emailjs/browser": "^4.4.1",
-    "@headlessui/react": "^2.2.7",
-    "@radix-ui/react-dialog": "^1.1.15",
+    "@headlessui/react": "^2.2.10",
+    "@radix-ui/react-dialog": "^1.1.17",
     "@remix-run/express": "^2.16.7",
     "@remix-run/node": "^2.16.7",
     "@remix-run/react": "^2.16.7",
@@ -36,7 +36,7 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@remix-run/dev": "^2.16.7",
+    "@remix-run/dev": "^2.17.5",
     "@types/bcryptjs": "^2.4.6",
     "@types/react": "^18.2.20",
     "@types/react-dom": "^18.2.7",

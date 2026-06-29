@@ -1,9 +1,11 @@
 import {
     addDoc,
     collection,
+    doc,
     getDocs,
     orderBy,
     query,
+    updateDoc,
 } from "firebase/firestore";
 import { db } from "~/lib/firebase.server";
 
@@ -47,5 +49,13 @@ export async function createVisitorsSession(input: VisitorsSessionInput) {
     await addDoc(collection(db, "visitorSessions"), {
         ...input,
         createdAt: new Date().toISOString(),
+    });
+}
+
+export async function updateVisitorsSession(sessionId: string, view: boolean) {
+    const ref = doc(db, "visitorSessions", sessionId);
+
+    await updateDoc(ref, {
+        view,
     });
 }
