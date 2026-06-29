@@ -1,6 +1,6 @@
 import {
   useAdminToast
-} from "/build/_shared/chunk-VYS3PCQI.js";
+} from "/build/_shared/chunk-NYPZHE2B.js";
 import {
   useSearchParams
 } from "/build/_shared/chunk-ZCW6PNXX.js";
@@ -50,4 +50,4 @@ function useAdminUrlToast(configs) {
 export {
   useAdminUrlToast
 };
-//# sourceMappingURL=/build/_shared/chunk-SOAH3HEL.js.map
+//# sourceMappingURL=/build/_shared/chunk-O2OGYDR2.js.map

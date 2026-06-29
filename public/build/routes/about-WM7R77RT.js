@@ -7,7 +7,7 @@ import {
 } from "/build/_shared/chunk-F4KNNEUR.js";
 import {
   createHotContext
-} from "/build/_shared/chunk-JQ452JWN.js";
+} from "/build/_shared/chunk-3BOG53TH.js";
 import "/build/_shared/chunk-JR22VO6P.js";
 import {
   require_react
@@ -37,7 +37,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\about.tsx"
   );
-  import.meta.hot.lastModified = "1779692792398.727";
+  import.meta.hot.lastModified = "1782198860195.4373";
 }
 function meta() {
   return [{
@@ -782,4 +782,4 @@ export {
   About as default,
   meta
 };
-//# sourceMappingURL=/build/routes/about-XNZFSZM7.js.map
+//# sourceMappingURL=/build/routes/about-WM7R77RT.js.map

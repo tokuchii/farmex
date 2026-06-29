@@ -3,7 +3,7 @@ import {
 } from "/build/_shared/chunk-AG2JF7JH.js";
 import {
   NewsModule
-} from "/build/_shared/chunk-H7ULNRH6.js";
+} from "/build/_shared/chunk-IQHHND2G.js";
 import {
   require_cloudinary
 } from "/build/_shared/chunk-2T37EEZG.js";
@@ -14,7 +14,7 @@ import "/build/_shared/chunk-Y6RJRNBS.js";
 import {
   require_session
 } from "/build/_shared/chunk-WDL7VJWI.js";
-import "/build/_shared/chunk-VYS3PCQI.js";
+import "/build/_shared/chunk-NYPZHE2B.js";
 import "/build/_shared/chunk-HHCPKSUZ.js";
 import {
   require_node
@@ -91,4 +91,4 @@ window.$RefreshSig$ = prevRefreshSig;
 export {
   admin_news_default as default
 };
-//# sourceMappingURL=/build/routes/admin.news-O2VUYOSW.js.map
+//# sourceMappingURL=/build/routes/admin.news-TCIHGA6U.js.map

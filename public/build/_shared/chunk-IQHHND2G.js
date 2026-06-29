@@ -13,7 +13,7 @@ import {
 } from "/build/_shared/chunk-UF6K54N4.js";
 import {
   useAdminToast
-} from "/build/_shared/chunk-VYS3PCQI.js";
+} from "/build/_shared/chunk-NYPZHE2B.js";
 import {
   Pencil,
   Plus,
@@ -642,4 +642,4 @@ window.$RefreshSig$ = prevRefreshSig;
 export {
   NewsModule
 };
-//# sourceMappingURL=/build/_shared/chunk-H7ULNRH6.js.map
+//# sourceMappingURL=/build/_shared/chunk-IQHHND2G.js.map
