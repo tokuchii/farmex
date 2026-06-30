@@ -1,0 +1,1 @@
+import{c as e}from"/build/_shared/chunk-UED2Q7CE.js";var f=e((d,x)=>{x.exports={}});var a=typeof setImmediate=="function"?setImmediate:typeof scheduler=="object"&&typeof scheduler.postTask=="function"?scheduler.postTask.bind(scheduler):setTimeout;var c="./ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789".split("");export{f as a};
