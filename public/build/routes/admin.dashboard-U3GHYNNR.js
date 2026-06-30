@@ -1023,7 +1023,7 @@ var require_use_sync_external_store_shim_development = __commonJS({
             "The result of getSnapshot should be cached to avoid an infinite loop"
           ), didWarnUncachedGetSnapshot = true);
         }
-        cachedValue = useState13({
+        cachedValue = useState14({
           inst: { value, getSnapshot }
         });
         var inst = cachedValue[0].inst, forceUpdate = cachedValue[1];
@@ -1061,7 +1061,7 @@ var require_use_sync_external_store_shim_development = __commonJS({
         return getSnapshot();
       }
       "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(Error());
-      var React36 = require_react(), objectIs = "function" === typeof Object.is ? Object.is : is4, useState13 = React36.useState, useEffect17 = React36.useEffect, useLayoutEffect9 = React36.useLayoutEffect, useDebugValue2 = React36.useDebugValue, didWarnOld18Alpha = false, didWarnUncachedGetSnapshot = false, shim = "undefined" === typeof window || "undefined" === typeof window.document || "undefined" === typeof window.document.createElement ? useSyncExternalStore$1 : useSyncExternalStore$2;
+      var React36 = require_react(), objectIs = "function" === typeof Object.is ? Object.is : is4, useState14 = React36.useState, useEffect17 = React36.useEffect, useLayoutEffect9 = React36.useLayoutEffect, useDebugValue2 = React36.useDebugValue, didWarnOld18Alpha = false, didWarnUncachedGetSnapshot = false, shim = "undefined" === typeof window || "undefined" === typeof window.document || "undefined" === typeof window.document.createElement ? useSyncExternalStore$1 : useSyncExternalStore$2;
       exports.useSyncExternalStore = void 0 !== React36.useSyncExternalStore ? React36.useSyncExternalStore : shim;
       "undefined" !== typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ && "function" === typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop && __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(Error());
     })();
@@ -3076,6 +3076,7 @@ var import_rice_derbies = __toESM(require_rice_derbies(), 1);
 var import_session = __toESM(require_session(), 1);
 var import_testimonials = __toESM(require_testimonials(), 1);
 var import_visitors = __toESM(require_visitors(), 1);
+var import_react50 = __toESM(require_react(), 1);
 var import_trainings = __toESM(require_trainings(), 1);
 
 // node_modules/recharts/es6/container/Surface.js
@@ -25790,7 +25791,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\admin.dashboard.tsx"
   );
-  import.meta.hot.lastModified = "1782788822144.7395";
+  import.meta.hot.lastModified = "1782790750598.836";
 }
 var DASHBOARD_URL_TOASTS = [{
   param: "login",
@@ -25805,6 +25806,8 @@ var AdminDashboard = () => {
     totals,
     visitorChartData
   } = useLoaderData();
+  const currentYear = (/* @__PURE__ */ new Date()).getFullYear();
+  const [selectedYear, setSelectedYear] = (0, import_react50.useState)(currentYear);
   useAdminUrlToast(DASHBOARD_URL_TOASTS);
   const stats = [{
     label: "News articles",
@@ -25827,11 +25830,14 @@ var AdminDashboard = () => {
     value: totals.visitors.toString(),
     description: "Total guest/user who view the website"
   }];
+  const years = Array.from({
+    length: currentYear - 2024 + 1
+  }, (_, index) => 2024 + index).reverse();
   return /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("section", { className: "space-y-6 rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5", children: [
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-sm font-bold uppercase tracking-[0.2em] text-emerald-600", children: "Dashboard" }, void 0, false, {
         fileName: "app/routes/admin.dashboard.tsx",
-        lineNumber: 106,
+        lineNumber: 112,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h1", { className: "mt-2 text-3xl font-semibold text-slate-900", children: [
@@ -25839,48 +25845,63 @@ var AdminDashboard = () => {
         user.username
       ] }, void 0, true, {
         fileName: "app/routes/admin.dashboard.tsx",
-        lineNumber: 107,
+        lineNumber: 113,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "mt-3 max-w-2xl text-slate-500", children: "Overview of the current admin content. Use quick actions below to manage each section." }, void 0, false, {
         fileName: "app/routes/admin.dashboard.tsx",
-        lineNumber: 110,
+        lineNumber: 116,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/admin.dashboard.tsx",
-      lineNumber: 105,
+      lineNumber: 111,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "grid gap-4 sm:grid-cols-2 xl:grid-cols-4", children: stats.map((item) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("article", { className: "rounded-3xl border border-slate-200 bg-slate-50/50 p-5 shadow-sm", children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-xs font-semibold uppercase tracking-[0.18em] text-slate-500", children: item.label }, void 0, false, {
         fileName: "app/routes/admin.dashboard.tsx",
-        lineNumber: 117,
+        lineNumber: 123,
         columnNumber: 13
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "mt-3 text-3xl font-semibold text-slate-900", children: item.value }, void 0, false, {
         fileName: "app/routes/admin.dashboard.tsx",
-        lineNumber: 120,
+        lineNumber: 126,
         columnNumber: 13
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "mt-1 text-sm text-slate-500", children: item.description }, void 0, false, {
         fileName: "app/routes/admin.dashboard.tsx",
-        lineNumber: 121,
+        lineNumber: 127,
         columnNumber: 13
       }, this)
     ] }, item.label, true, {
       fileName: "app/routes/admin.dashboard.tsx",
-      lineNumber: 116,
+      lineNumber: 122,
       columnNumber: 28
     }, this)) }, void 0, false, {
       fileName: "app/routes/admin.dashboard.tsx",
-      lineNumber: 115,
+      lineNumber: 121,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "rounded-3xl border border-slate-200 bg-white p-6 shadow-sm", children: [
-      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "mb-6 text-xl font-semibold text-slate-900", children: "Website Visitors" }, void 0, false, {
+      /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "mb-6 flex items-center justify-between", children: [
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h2", { className: "text-xl font-semibold text-slate-900", children: "Website Visitors" }, void 0, false, {
+          fileName: "app/routes/admin.dashboard.tsx",
+          lineNumber: 133,
+          columnNumber: 11
+        }, this),
+        /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("select", { value: selectedYear, onChange: (e) => setSelectedYear(Number(e.target.value)), className: "rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200", children: years.map((year) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("option", { value: year, children: year }, year, false, {
+          fileName: "app/routes/admin.dashboard.tsx",
+          lineNumber: 138,
+          columnNumber: 32
+        }, this)) }, void 0, false, {
+          fileName: "app/routes/admin.dashboard.tsx",
+          lineNumber: 137,
+          columnNumber: 11
+        }, this)
+      ] }, void 0, true, {
         fileName: "app/routes/admin.dashboard.tsx",
-        lineNumber: 126,
+        lineNumber: 132,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "h-[350px]", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(ResponsiveContainer, { width: "100%", height: "100%", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(AreaChart, { data: visitorChartData, accessibilityLayer: false, margin: {
@@ -25892,26 +25913,26 @@ var AdminDashboard = () => {
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("defs", { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("linearGradient", { id: "visitorGradient", x1: "0", y1: "0", x2: "0", y2: "1", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("stop", { offset: "0%", stopColor: "#84cc16", stopOpacity: 0.45 }, void 0, false, {
             fileName: "app/routes/admin.dashboard.tsx",
-            lineNumber: 140,
+            lineNumber: 154,
             columnNumber: 19
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("stop", { offset: "100%", stopColor: "#84cc16", stopOpacity: 0 }, void 0, false, {
             fileName: "app/routes/admin.dashboard.tsx",
-            lineNumber: 141,
+            lineNumber: 155,
             columnNumber: 19
           }, this)
         ] }, void 0, true, {
           fileName: "app/routes/admin.dashboard.tsx",
-          lineNumber: 139,
+          lineNumber: 153,
           columnNumber: 17
         }, this) }, void 0, false, {
           fileName: "app/routes/admin.dashboard.tsx",
-          lineNumber: 138,
+          lineNumber: 152,
           columnNumber: 15
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(CartesianGrid, { vertical: false, stroke: "#e5e7eb", strokeDasharray: "0" }, void 0, false, {
           fileName: "app/routes/admin.dashboard.tsx",
-          lineNumber: 145,
+          lineNumber: 159,
           columnNumber: 15
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(XAxis, { dataKey: "month", axisLine: false, tickLine: false, tick: {
@@ -25919,7 +25940,7 @@ var AdminDashboard = () => {
           fontSize: 13
         } }, void 0, false, {
           fileName: "app/routes/admin.dashboard.tsx",
-          lineNumber: 147,
+          lineNumber: 161,
           columnNumber: 15
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(YAxis, { axisLine: false, tickLine: false, domain: [0, "dataMax + 3"], tick: {
@@ -25927,12 +25948,12 @@ var AdminDashboard = () => {
           fontSize: 13
         } }, void 0, false, {
           fileName: "app/routes/admin.dashboard.tsx",
-          lineNumber: 152,
+          lineNumber: 166,
           columnNumber: 15
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Tooltip, {}, void 0, false, {
           fileName: "app/routes/admin.dashboard.tsx",
-          lineNumber: 157,
+          lineNumber: 171,
           columnNumber: 15
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(Area, { type: "monotone", dataKey: "visitors", stroke: "#84cc16", strokeWidth: 4, fill: "url(#visitorGradient)", dot: {
@@ -25947,34 +25968,34 @@ var AdminDashboard = () => {
           strokeWidth: 4
         } }, void 0, false, {
           fileName: "app/routes/admin.dashboard.tsx",
-          lineNumber: 159,
+          lineNumber: 173,
           columnNumber: 15
         }, this)
       ] }, void 0, true, {
         fileName: "app/routes/admin.dashboard.tsx",
-        lineNumber: 132,
+        lineNumber: 146,
         columnNumber: 13
       }, this) }, void 0, false, {
         fileName: "app/routes/admin.dashboard.tsx",
-        lineNumber: 131,
+        lineNumber: 145,
         columnNumber: 11
       }, this) }, void 0, false, {
         fileName: "app/routes/admin.dashboard.tsx",
-        lineNumber: 130,
+        lineNumber: 144,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/admin.dashboard.tsx",
-      lineNumber: 125,
+      lineNumber: 131,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/routes/admin.dashboard.tsx",
-    lineNumber: 104,
+    lineNumber: 110,
     columnNumber: 10
   }, this);
 };
-_s(AdminDashboard, "SfB0py2c9ac4UPgyh+5j80E7Ry8=", false, function() {
+_s(AdminDashboard, "RdzEqHfrE59wJvdxTx+85ceLw7k=", false, function() {
   return [useLoaderData, useAdminUrlToast];
 });
 _c = AdminDashboard;
@@ -26034,4 +26055,4 @@ react-is/cjs/react-is.development.js:
    * LICENSE file in the root directory of this source tree.
    *)
 */
-//# sourceMappingURL=/build/routes/admin.dashboard-ZGB2EW3V.js.map
+//# sourceMappingURL=/build/routes/admin.dashboard-U3GHYNNR.js.map

@@ -9,6 +9,7 @@ import { getRiceDerbies } from "~/lib/rice-derbies.server";
 import { requireAdminUser } from "~/lib/session.server";
 import { getTestimonials } from "~/lib/testimonials.server";
 import { getVisitorSessions } from "~/lib/visitors.server";
+import { useState } from "react";
 import {
   getMachineRentalGalleries,
   getMachineRentals,
@@ -115,6 +116,9 @@ export async function loader({ request }: LoaderFunctionArgs) {
 
 const AdminDashboard = () => {
   const { user, totals, visitorChartData } = useLoaderData<typeof loader>();
+  const currentYear = new Date().getFullYear();
+
+  const [selectedYear, setSelectedYear] = useState(currentYear);
 
   useAdminUrlToast(DASHBOARD_URL_TOASTS);
 
@@ -152,6 +156,11 @@ const AdminDashboard = () => {
     },
   ] as const;
 
+  const years = Array.from(
+    { length: currentYear - 2024 + 1 },
+    (_, index) => 2024 + index
+  ).reverse();
+
   return (
     <section className="space-y-6 rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5">
       <div>
@@ -180,9 +189,23 @@ const AdminDashboard = () => {
       </div>
 
       <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 className="mb-6 text-xl font-semibold text-slate-900">
-          Website Visitors
-        </h2>
+        <div className="mb-6 flex items-center justify-between">
+          <h2 className="text-xl font-semibold text-slate-900">
+            Website Visitors
+          </h2>
+
+          <select
+            value={selectedYear}
+            onChange={(e) => setSelectedYear(Number(e.target.value))}
+            className="rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
+          >
+            {years.map((year) => (
+              <option key={year} value={year}>
+                {year}
+              </option>
+            ))}
+          </select>
+        </div>
 
         <div className="h-[350px]">
           <ResponsiveContainer width="100%" height="100%">
