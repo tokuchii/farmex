@@ -3,11 +3,11 @@ import {
   AdminPaginatedTable_default,
   adminInputClass,
   uploadImagesToCloudinary
-} from "/build/_shared/chunk-TSWEK2BM.js";
+} from "/build/_shared/chunk-2T37EEZG.js";
 import {
   AdminModal_default,
   DeleteConfirmationModal_default
-} from "/build/_shared/chunk-B5MSCQQ7.js";
+} from "/build/_shared/chunk-VWGDMZQF.js";
 import {
   useAdminToast
 } from "/build/_shared/chunk-NYPZHE2B.js";
@@ -550,4 +550,4 @@ window.$RefreshSig$ = prevRefreshSig;
 export {
   TestimonialsModule
 };
-//# sourceMappingURL=/build/_shared/chunk-FPFT6CIE.js.map
+//# sourceMappingURL=/build/_shared/chunk-PEAKY3ZT.js.map
