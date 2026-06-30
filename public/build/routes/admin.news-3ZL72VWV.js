@@ -3,17 +3,18 @@ import {
 } from "/build/_shared/chunk-AG2JF7JH.js";
 import {
   NewsModule
-} from "/build/_shared/chunk-D57DDJGT.js";
+} from "/build/_shared/chunk-SRYFDE2R.js";
 import {
   require_cloudinary
-} from "/build/_shared/chunk-2T37EEZG.js";
-import "/build/_shared/chunk-VWGDMZQF.js";
-import "/build/_shared/chunk-OJ2362QI.js";
-import "/build/_shared/chunk-UF6K54N4.js";
+} from "/build/_shared/chunk-TSWEK2BM.js";
+import "/build/_shared/chunk-B5MSCQQ7.js";
+import "/build/_shared/chunk-D6FIOM5R.js";
+import "/build/_shared/chunk-3TJB5JYW.js";
 import "/build/_shared/chunk-Y6RJRNBS.js";
 import {
   require_session
 } from "/build/_shared/chunk-WDL7VJWI.js";
+import "/build/_shared/chunk-Y3Q3TNJF.js";
 import "/build/_shared/chunk-NYPZHE2B.js";
 import "/build/_shared/chunk-HHCPKSUZ.js";
 import {
@@ -91,4 +92,4 @@ window.$RefreshSig$ = prevRefreshSig;
 export {
   admin_news_default as default
 };
-//# sourceMappingURL=/build/routes/admin.news-JSYUBORA.js.map
+//# sourceMappingURL=/build/routes/admin.news-3ZL72VWV.js.map

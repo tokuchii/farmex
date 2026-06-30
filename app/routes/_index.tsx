@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
 import type { MetaFunction } from "@remix-run/node";
+import { LoaderFunctionArgs, json } from "@remix-run/node";
+import { createVisitorsSession } from "~/lib/visitors.server";
+import { randomUUID } from "crypto";
 
 export const meta: MetaFunction = () => [
   { title: "Farmex Corporation" },
@@ -19,6 +22,49 @@ const cardVariants: Variants = {
     },
   }),
 };
+
+export async function loader({ request }: LoaderFunctionArgs) {
+
+    const headers = request.headers;
+
+    const forwarded =
+        headers.get("x-forwarded-for") ??
+        headers.get("cf-connecting-ip") ??
+        "";
+
+    const ipAddress = forwarded.split(",")[0] || "unknown";
+
+    const userAgent =
+        headers.get("user-agent") || "unknown";
+
+    let visitorUniqueID = "";
+
+    const cookie = headers.get("Cookie");
+
+    const match = cookie?.match(/visitorId=([^;]+)/);
+
+    if (match) {
+        visitorUniqueID = match[1];
+    } else {
+        visitorUniqueID = randomUUID();
+    }
+
+    await createVisitorsSession({
+        visitorUniqueID,
+        ipAddress,
+        userAgent,
+        view: false,
+    });
+
+    return json(
+        {},
+        {
+            headers: {
+                "Set-Cookie": `visitorId=${visitorUniqueID}; Path=/; HttpOnly; SameSite=Lax; Max-Age=31536000`,
+            },
+        }
+    );
+}
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);

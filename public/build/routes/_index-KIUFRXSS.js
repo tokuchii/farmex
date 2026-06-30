@@ -1,7 +1,13 @@
 import {
   motion
 } from "/build/_shared/chunk-ZJN32EVK.js";
+import {
+  require_visitors
+} from "/build/_shared/chunk-WSA5V6VW.js";
 import "/build/_shared/chunk-Y6RJRNBS.js";
+import {
+  require_node
+} from "/build/_shared/chunk-NBEH4DGX.js";
 import {
   require_jsx_dev_runtime
 } from "/build/_shared/chunk-F4KNNEUR.js";
@@ -18,6 +24,8 @@ import {
 
 // app/routes/_index.tsx
 var import_react = __toESM(require_react(), 1);
+var import_node = __toESM(require_node(), 1);
+var import_visitors = __toESM(require_visitors(), 1);
 var import_jsx_dev_runtime = __toESM(require_jsx_dev_runtime(), 1);
 if (!window.$RefreshReg$ || !window.$RefreshSig$ || !window.$RefreshRuntime$) {
   console.warn("remix:hmr: React Fast Refresh only works when the Remix compiler is running in development mode.");
@@ -37,7 +45,7 @@ if (import.meta) {
     //@ts-expect-error
     "app\\routes\\_index.tsx"
   );
-  import.meta.hot.lastModified = "1782715839711.1318";
+  import.meta.hot.lastModified = "1782783997785.6882";
 }
 var meta = () => [{
   title: "Farmex Corporation"
@@ -108,12 +116,12 @@ function Home() {
     }, children: [
       isClient && /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("video", { src: "/rice.mp4", autoPlay: true, loop: true, muted: true, playsInline: true, controls: false, disablePictureInPicture: true, controlsList: "nodownload noplaybackrate noremoteplayback", onContextMenu: (e) => e.preventDefault(), preload: "auto", className: "w-full h-full object-cover object-top pointer-events-none" }, void 0, false, {
         fileName: "app/routes/_index.tsx",
-        lineNumber: 91,
+        lineNumber: 121,
         columnNumber: 22
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 bg-black/30" }, void 0, false, {
         fileName: "app/routes/_index.tsx",
-        lineNumber: 92,
+        lineNumber: 122,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "absolute inset-0 flex items-center justify-center z-10", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.img, { src: "/welcome.png", alt: "Welcome", className: "w-full max-w-[300px] sm:max-w-lg md:max-w-lg xl:max-w-4xl h-auto mt-16 md:-mt-2", initial: {
@@ -130,26 +138,26 @@ function Home() {
         ease: "easeOut"
       } }, void 0, false, {
         fileName: "app/routes/_index.tsx",
-        lineNumber: 94,
+        lineNumber: 124,
         columnNumber: 11
       }, this) }, void 0, false, {
         fileName: "app/routes/_index.tsx",
-        lineNumber: 93,
+        lineNumber: 123,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/_index.tsx",
-      lineNumber: 78,
+      lineNumber: 108,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { children: [
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full flex justify-center", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "h-1 w-full bg-yellow-500" }, void 0, false, {
         fileName: "app/routes/_index.tsx",
-        lineNumber: 113,
+        lineNumber: 143,
         columnNumber: 11
       }, this) }, void 0, false, {
         fileName: "app/routes/_index.tsx",
-        lineNumber: 112,
+        lineNumber: 142,
         columnNumber: 9
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("section", { className: "relative w-full py-16 px-4 sm:px-6 lg:px-8 flex items-center bg-white justify-center bg-cover bg-center", style: {
@@ -172,12 +180,12 @@ function Home() {
           ease: "easeOut"
         }, children: "Featured Products" }, void 0, false, {
           fileName: "app/routes/_index.tsx",
-          lineNumber: 124,
+          lineNumber: 154,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "h-1 w-40 md:w-48 lg:w-[400px] bg-yellow-500 rounded-full mb-12" }, void 0, false, {
           fileName: "app/routes/_index.tsx",
-          lineNumber: 139,
+          lineNumber: 169,
           columnNumber: 13
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "grid sm:grid-cols-2 gap-8 xl:flex xl:justify-center xl:gap-16 w-full max-w-7xl mt-6", children: products.map((product, i) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "flex uppercase tracking-widest flex-col items-center", custom: i, variants: cardVariants, initial: "hidden", whileInView: "visible", viewport: {
@@ -186,43 +194,43 @@ function Home() {
         }, children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-w-[300px] mb-6 flex items-center justify-center overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: "/products", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: product.image, alt: product.name, className: "w-full h-80 object-cover" }, void 0, false, {
             fileName: "app/routes/_index.tsx",
-            lineNumber: 148,
+            lineNumber: 178,
             columnNumber: 23
           }, this) }, void 0, false, {
             fileName: "app/routes/_index.tsx",
-            lineNumber: 147,
+            lineNumber: 177,
             columnNumber: 21
           }, this) }, void 0, false, {
             fileName: "app/routes/_index.tsx",
-            lineNumber: 146,
+            lineNumber: 176,
             columnNumber: 19
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("span", { className: "font-semibold text-white mt-3 uppercase text-center text-md sm:text-base", children: product.name }, void 0, false, {
             fileName: "app/routes/_index.tsx",
-            lineNumber: 151,
+            lineNumber: 181,
             columnNumber: 19
           }, this)
         ] }, product.name, true, {
           fileName: "app/routes/_index.tsx",
-          lineNumber: 142,
+          lineNumber: 172,
           columnNumber: 45
         }, this)) }, void 0, false, {
           fileName: "app/routes/_index.tsx",
-          lineNumber: 141,
+          lineNumber: 171,
           columnNumber: 13
         }, this)
       ] }, void 0, true, {
         fileName: "app/routes/_index.tsx",
-        lineNumber: 123,
+        lineNumber: 153,
         columnNumber: 11
       }, this) }, void 0, false, {
         fileName: "app/routes/_index.tsx",
-        lineNumber: 117,
+        lineNumber: 147,
         columnNumber: 9
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/_index.tsx",
-      lineNumber: 110,
+      lineNumber: 140,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("section", { className: "relative w-full py-16 px-4 sm:px-6 md:px-8 bg-white", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-full max-w-7xl mx-auto flex flex-col items-center", children: [
@@ -240,12 +248,12 @@ function Home() {
         ease: "easeOut"
       }, children: "Services" }, void 0, false, {
         fileName: "app/routes/_index.tsx",
-        lineNumber: 164,
+        lineNumber: 194,
         columnNumber: 13
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "h-1 w-40 md:w-48 lg:w-52 bg-yellow-500 rounded-full mb-12" }, void 0, false, {
         fileName: "app/routes/_index.tsx",
-        lineNumber: 179,
+        lineNumber: 209,
         columnNumber: 13
       }, this),
       /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 w-full", children: services.map((service, i) => /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.div, { className: "bg-white rounded-2xl overflow-hidden flex flex-col shadow-md hover:shadow-xl transition-shadow duration-300", custom: i, variants: cardVariants, initial: "hidden", whileInView: "visible", viewport: {
@@ -255,70 +263,70 @@ function Home() {
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex items-center justify-center bg-gray-100 h-52 relative overflow-hidden", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "w-40 h-40 rounded-full bg-white/70 absolute" }, void 0, false, {
             fileName: "app/routes/_index.tsx",
-            lineNumber: 191,
+            lineNumber: 221,
             columnNumber: 21
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("img", { src: service.image, alt: service.alt, className: "relative z-10 w-full h-full object-cover" }, void 0, false, {
             fileName: "app/routes/_index.tsx",
-            lineNumber: 192,
+            lineNumber: 222,
             columnNumber: 21
           }, this)
         ] }, void 0, true, {
           fileName: "app/routes/_index.tsx",
-          lineNumber: 190,
+          lineNumber: 220,
           columnNumber: 19
         }, this),
         /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { className: "flex flex-col justify-between flex-1 p-5 gap-4", children: [
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("div", { children: [
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("h3", { className: "text-gray-900 font-bold text-base md:text-lg uppercase tracking-wide", children: service.label }, void 0, false, {
               fileName: "app/routes/_index.tsx",
-              lineNumber: 198,
+              lineNumber: 228,
               columnNumber: 23
             }, this),
             /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("p", { className: "text-gray-400 text-xs mt-1 tracking-wide", children: "Click below to learn more and get involved" }, void 0, false, {
               fileName: "app/routes/_index.tsx",
-              lineNumber: 201,
+              lineNumber: 231,
               columnNumber: 23
             }, this)
           ] }, void 0, true, {
             fileName: "app/routes/_index.tsx",
-            lineNumber: 197,
+            lineNumber: 227,
             columnNumber: 21
           }, this),
           /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("a", { href: service.href, className: "w-full", children: /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)("button", { type: "button", className: "w-full bg-yellow-400 text-black text-sm font-bold py-2 rounded-full hover:bg-yellow-300 transition-colors duration-200", children: "Get Involved \u2192" }, void 0, false, {
             fileName: "app/routes/_index.tsx",
-            lineNumber: 206,
+            lineNumber: 236,
             columnNumber: 23
           }, this) }, void 0, false, {
             fileName: "app/routes/_index.tsx",
-            lineNumber: 205,
+            lineNumber: 235,
             columnNumber: 21
           }, this)
         ] }, void 0, true, {
           fileName: "app/routes/_index.tsx",
-          lineNumber: 196,
+          lineNumber: 226,
           columnNumber: 19
         }, this)
       ] }, service.alt, true, {
         fileName: "app/routes/_index.tsx",
-        lineNumber: 185,
+        lineNumber: 215,
         columnNumber: 45
       }, this)) }, void 0, false, {
         fileName: "app/routes/_index.tsx",
-        lineNumber: 182,
+        lineNumber: 212,
         columnNumber: 13
       }, this)
     ] }, void 0, true, {
       fileName: "app/routes/_index.tsx",
-      lineNumber: 163,
+      lineNumber: 193,
       columnNumber: 11
     }, this) }, void 0, false, {
       fileName: "app/routes/_index.tsx",
-      lineNumber: 162,
+      lineNumber: 192,
       columnNumber: 9
     }, this) }, void 0, false, {
       fileName: "app/routes/_index.tsx",
-      lineNumber: 160,
+      lineNumber: 190,
       columnNumber: 7
     }, this),
     /* @__PURE__ */ (0, import_jsx_dev_runtime.jsxDEV)(motion.main, { className: "relative z-20", initial: {
@@ -335,12 +343,12 @@ function Home() {
       ease: "easeOut"
     } }, void 0, false, {
       fileName: "app/routes/_index.tsx",
-      lineNumber: 218,
+      lineNumber: 248,
       columnNumber: 7
     }, this)
   ] }, void 0, true, {
     fileName: "app/routes/_index.tsx",
-    lineNumber: 77,
+    lineNumber: 107,
     columnNumber: 10
   }, this);
 }
@@ -354,4 +362,4 @@ export {
   Home as default,
   meta
 };
-//# sourceMappingURL=/build/routes/_index-4DSYMYQP.js.map
+//# sourceMappingURL=/build/routes/_index-KIUFRXSS.js.map

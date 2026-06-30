@@ -16,6 +16,16 @@ import {
   getTrainingGalleries,
   getTrainingSessions,
 } from "~/lib/trainings.server";
+import {
+  AreaChart,
+  Area,
+  ResponsiveContainer,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+  defs,
+} from "recharts";
 
 const DASHBOARD_URL_TOASTS: AdminUrlToastConfig[] = [
   {
@@ -53,6 +63,38 @@ export async function loader({ request }: LoaderFunctionArgs) {
     getVisitorSessions(),
   ]);
 
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  const monthlyVisitors = months.map((month) => ({
+    month,
+    visitors: 0,
+  }));
+
+  visitors.forEach((visitor) => {
+    const month = new Date(visitor.createdAt).toLocaleString("en-US", {
+      month: "short",
+    });
+
+    const item = monthlyVisitors.find((m) => m.month === month);
+
+    if (item) {
+      item.visitors++;
+    }
+  });
+
   return json({
     user,
     totals: {
@@ -67,11 +109,12 @@ export async function loader({ request }: LoaderFunctionArgs) {
       riceDerbies: riceDerbies.length,
       visitors: visitors.length,
     },
+    visitorChartData: monthlyVisitors,
   });
 }
 
 const AdminDashboard = () => {
-  const { user, totals } = useLoaderData<typeof loader>();
+  const { user, totals, visitorChartData } = useLoaderData<typeof loader>();
 
   useAdminUrlToast(DASHBOARD_URL_TOASTS);
 
@@ -134,6 +177,76 @@ const AdminDashboard = () => {
             <p className="mt-1 text-sm text-slate-500">{item.description}</p>
           </article>
         ))}
+      </div>
+
+      <div className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 className="mb-6 text-xl font-semibold text-slate-900">
+          Website Visitors
+        </h2>
+
+        <div className="h-[350px]">
+          <ResponsiveContainer width="100%" height="100%">
+            <AreaChart
+              data={visitorChartData}
+              accessibilityLayer={false}
+              margin={{
+                top: 20,
+                right: 20,
+                left: 0,
+                bottom: 0,
+              }}
+            >
+              <defs>
+                <linearGradient id="visitorGradient" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="#84cc16" stopOpacity={0.45} />
+                  <stop offset="100%" stopColor="#84cc16" stopOpacity={0} />
+                </linearGradient>
+              </defs>
+
+              <CartesianGrid
+                vertical={false}
+                stroke="#e5e7eb"
+                strokeDasharray="0"
+              />
+
+              <XAxis
+                dataKey="month"
+                axisLine={false}
+                tickLine={false}
+                tick={{ fill: "#9ca3af", fontSize: 13 }}
+              />
+
+              <YAxis
+                axisLine={false}
+                tickLine={false}
+                domain={[0, "dataMax + 3"]}
+                tick={{ fill: "#9ca3af", fontSize: 13 }}
+              />
+
+              <Tooltip />
+
+              <Area
+                type="monotone"
+                dataKey="visitors"
+                stroke="#84cc16"
+                strokeWidth={4}
+                fill="url(#visitorGradient)"
+                dot={{
+                  r: 7,
+                  fill: "#84cc16",
+                  stroke: "#fff",
+                  strokeWidth: 3,
+                }}
+                activeDot={{
+                  r: 9,
+                  fill: "#84cc16",
+                  stroke: "#fff",
+                  strokeWidth: 4,
+                }}
+              />
+            </AreaChart>
+          </ResponsiveContainer>
+        </div>
       </div>
     </section>
   );

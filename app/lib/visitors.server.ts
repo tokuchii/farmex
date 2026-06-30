@@ -4,9 +4,10 @@ import {
     getDocs,
     orderBy,
     query,
+    where,
+    limit,
 } from "firebase/firestore";
 import { db } from "~/lib/firebase.server";
-
 
 export type VisitorsSessionRecord = {
     id: string;
@@ -35,7 +36,7 @@ export async function getVisitorSessions(): Promise<VisitorsSessionRecord[]> {
         return {
             id: item.id,
             visitorUniqueID: data.visitorUniqueID,
-            ipAddress: data.ipAdress,
+            ipAddress: data.ipAddress,
             userAgent: data.userAgent,
             view: data.view,
             createdAt: data.createdAt,
@@ -44,6 +45,18 @@ export async function getVisitorSessions(): Promise<VisitorsSessionRecord[]> {
 }
 
 export async function createVisitorsSession(input: VisitorsSessionInput) {
+    const existing = await getDocs(
+        query(
+            collection(db, "visitorSessions"),
+            where("visitorUniqueID", "==", input.visitorUniqueID),
+            limit(1)
+        )
+    );
+
+    if (!existing.empty) {
+        return;
+    }
+
     await addDoc(collection(db, "visitorSessions"), {
         ...input,
         createdAt: new Date().toISOString(),
