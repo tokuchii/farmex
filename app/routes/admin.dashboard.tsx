@@ -1,6 +1,6 @@
 import type { LoaderFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import { useLoaderData, useSearchParams } from "@remix-run/react";
 import type { AdminUrlToastConfig } from "~/components/admin/useAdminUrlToast";
 import { useAdminUrlToast } from "~/components/admin/useAdminUrlToast";
 import { getLavStations } from "~/lib/lav-stations.server";
@@ -8,8 +8,6 @@ import { getNews } from "~/lib/news.server";
 import { getRiceDerbies } from "~/lib/rice-derbies.server";
 import { requireAdminUser } from "~/lib/session.server";
 import { getTestimonials } from "~/lib/testimonials.server";
-import { getVisitorSessions } from "~/lib/visitors.server";
-import { useState } from "react";
 import {
   getMachineRentalGalleries,
   getMachineRentals,
@@ -25,8 +23,8 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  defs,
 } from "recharts";
+import { useVisitorChart } from "~/hooks/useVisitorChart";
 
 const DASHBOARD_URL_TOASTS: AdminUrlToastConfig[] = [
   {
@@ -36,6 +34,21 @@ const DASHBOARD_URL_TOASTS: AdminUrlToastConfig[] = [
     message: "Login successful! Welcome back.",
   },
 ];
+
+type ViewMode = "today" | "week" | "month" | "year";
+
+function getFilterLabel(view: ViewMode): string {
+  switch (view) {
+    case "today":
+      return "Today";
+    case "week":
+      return "This Week";
+    case "month":
+      return "This Year";
+    case "year":
+      return "All Time";
+  }
+}
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const user = await requireAdminUser(request);
@@ -50,7 +63,6 @@ export async function loader({ request }: LoaderFunctionArgs) {
     testimonials,
     lavStations,
     riceDerbies,
-    visitors,
   ] = await Promise.all([
     getNews(),
     getMachineRentals(),
@@ -61,40 +73,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
     getTestimonials(),
     getLavStations(),
     getRiceDerbies(),
-    getVisitorSessions(),
   ]);
-
-  const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-
-  const monthlyVisitors = months.map((month) => ({
-    month,
-    visitors: 0,
-  }));
-
-  visitors.forEach((visitor) => {
-    const month = new Date(visitor.createdAt).toLocaleString("en-US", {
-      month: "short",
-    });
-
-    const item = monthlyVisitors.find((m) => m.month === month);
-
-    if (item) {
-      item.visitors++;
-    }
-  });
 
   return json({
     user,
@@ -108,17 +87,22 @@ export async function loader({ request }: LoaderFunctionArgs) {
       testimonials: testimonials.length,
       lavStations: lavStations.length,
       riceDerbies: riceDerbies.length,
-      visitors: visitors.length,
     },
-    visitorChartData: monthlyVisitors,
   });
 }
 
-const AdminDashboard = () => {
-  const { user, totals, visitorChartData } = useLoaderData<typeof loader>();
-  const currentYear = new Date().getFullYear();
+const filterTabs: { key: ViewMode; label: string }[] = [
+  { key: "today", label: "Today" },
+  { key: "week", label: "Week" },
+  { key: "month", label: "Month" },
+  { key: "year", label: "Year" },
+];
 
-  const [selectedYear, setSelectedYear] = useState(currentYear);
+const AdminDashboard = () => {
+  const { user, totals } = useLoaderData<typeof loader>();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const view = (searchParams.get("view") || "year") as ViewMode;
+  const { chartData, filteredCount } = useVisitorChart(view);
 
   useAdminUrlToast(DASHBOARD_URL_TOASTS);
 
@@ -151,25 +135,29 @@ const AdminDashboard = () => {
     },
     {
       label: "Visitors",
-      value: totals.visitors.toString(),
-      description: "Total guest/user who view the website"
+      value: filteredCount.toString(),
+      description: `Live count — ${getFilterLabel(view)}`,
     },
   ] as const;
 
-  const years = Array.from(
-    { length: currentYear - 2024 + 1 },
-    (_, index) => 2024 + index
-  ).reverse();
+  function handleViewChange(v: ViewMode) {
+    const next = new URLSearchParams(searchParams);
+    next.set("view", v);
+    setSearchParams(next);
+  }
 
   return (
     <section className="space-y-6 rounded-3xl border border-slate-200 bg-white p-8 shadow-xl shadow-slate-900/5">
       <div>
-        <p className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-600">Dashboard</p>
+        <p className="text-sm font-bold uppercase tracking-[0.2em] text-emerald-600">
+          Dashboard
+        </p>
         <h1 className="mt-2 text-3xl font-semibold text-slate-900">
           Welcome back, {user.username}
         </h1>
         <p className="mt-3 max-w-2xl text-slate-500">
-          Overview of the current admin content. Use quick actions below to manage each section.
+          Overview of the current admin content. Use quick actions below to
+          manage each section.
         </p>
       </div>
 
@@ -182,7 +170,9 @@ const AdminDashboard = () => {
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
               {item.label}
             </p>
-            <p className="mt-3 text-3xl font-semibold text-slate-900">{item.value}</p>
+            <p className="mt-3 text-3xl font-semibold text-slate-900">
+              {item.value}
+            </p>
             <p className="mt-1 text-sm text-slate-500">{item.description}</p>
           </article>
         ))}
@@ -194,35 +184,48 @@ const AdminDashboard = () => {
             Website Visitors
           </h2>
 
-          <select
-            value={selectedYear}
-            onChange={(e) => setSelectedYear(Number(e.target.value))}
-            className="rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm transition focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-200"
-          >
-            {years.map((year) => (
-              <option key={year} value={year}>
-                {year}
-              </option>
+          <div className="flex gap-1 rounded-xl border border-slate-200 bg-slate-50 p-1">
+            {filterTabs.map((tab) => (
+              <button
+                key={tab.key}
+                onClick={() => handleViewChange(tab.key)}
+                className={`rounded-lg px-3 py-1.5 text-xs font-semibold transition ${
+                  view === tab.key
+                    ? "bg-emerald-500 text-white shadow-sm"
+                    : "text-slate-600 hover:bg-slate-200"
+                }`}
+              >
+                {tab.label}
+              </button>
             ))}
-          </select>
+          </div>
         </div>
 
         <div className="h-[350px]">
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart
-              data={visitorChartData}
+              data={chartData}
               accessibilityLayer={false}
-              margin={{
-                top: 20,
-                right: 20,
-                left: 0,
-                bottom: 0,
-              }}
+              margin={{ top: 20, right: 20, left: 0, bottom: 0 }}
             >
               <defs>
-                <linearGradient id="visitorGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stopColor="#84cc16" stopOpacity={0.45} />
-                  <stop offset="100%" stopColor="#84cc16" stopOpacity={0} />
+                <linearGradient
+                  id="visitorGradient"
+                  x1="0"
+                  y1="0"
+                  x2="0"
+                  y2="1"
+                >
+                  <stop
+                    offset="0%"
+                    stopColor="#84cc16"
+                    stopOpacity={0.45}
+                  />
+                  <stop
+                    offset="100%"
+                    stopColor="#84cc16"
+                    stopOpacity={0}
+                  />
                 </linearGradient>
               </defs>
 
@@ -233,7 +236,7 @@ const AdminDashboard = () => {
               />
 
               <XAxis
-                dataKey="month"
+                dataKey="label"
                 axisLine={false}
                 tickLine={false}
                 tick={{ fill: "#9ca3af", fontSize: 13 }}

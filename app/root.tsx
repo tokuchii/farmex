@@ -4,9 +4,11 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
   useLocation,
 } from "@remix-run/react";
-import type { LinksFunction, MetaFunction } from "@remix-run/node";
+import type { LinksFunction } from "@remix-run/node";
+import { json } from "@remix-run/node";
 
 import styles from "./tailwind.css";
 import Navbar from "./components/Navbar";
@@ -15,25 +17,31 @@ import React, { useEffect } from "react";
 
 
 export const links: LinksFunction = () => [
-  // Tailwind CSS
   { rel: "preload", as: "style", href: styles },
   { rel: "stylesheet", href: styles },
-
-  // Favicon
   { rel: "preload", as: "image", href: "/group30.png" },
   { rel: "icon", href: "/group30.png" },
-
-  // Google Fonts
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
   { rel: "preload", as: "style", href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" },
   { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" },
-
-  // Critical Images
   { rel: "preload", as: "image", href: "/bgnews.png" },
   { rel: "preload", as: "image", href: "/newbgevents.png" },
   { rel: "preload", as: "image", href: "/productbg1.png" },
 ];
+
+export async function loader() {
+  return json({
+    firebaseConfig: {
+      apiKey: process.env.VITE_FIREBASE_API_KEY || "",
+      authDomain: process.env.VITE_FIREBASE_AUTH_DOMAIN || "",
+      projectId: process.env.VITE_FIREBASE_PROJECT_ID || "",
+      storageBucket: process.env.VITE_FIREBASE_STORAGE_BUCKET || "",
+      messagingSenderId: process.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "",
+      appId: process.env.VITE_FIREBASE_APP_ID || "",
+    },
+  });
+}
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -54,12 +62,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+  const { firebaseConfig } = useLoaderData<typeof loader>();
   const location = useLocation();
 
-  // Scroll to top on page change
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
   }, [location]);
+
+  useEffect(() => {
+    import("~/lib/firebase").then(({ initFirebase }) => {
+      initFirebase(firebaseConfig);
+    });
+  }, [firebaseConfig]);
 
   return (
     <>
