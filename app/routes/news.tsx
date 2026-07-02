@@ -2,10 +2,8 @@ import { useEffect, useRef, useState } from "react";
 import { data } from "react-router";
 import { useLoaderData } from "react-router";
 import { motion } from "framer-motion";
-import LazyLoadImagePkg from "react-lazy-load-image-component";
 import { getTestimonials } from "~/lib/testimonials.server";
 import { getNews, type NewsRecords } from "~/lib/news.server";
-const { LazyLoadImage } = LazyLoadImagePkg;
 
 export async function loader() {
   const [testimonials, news] = await Promise.all([getTestimonials(), getNews()]);
@@ -298,14 +296,14 @@ function SliderModal({
           )}
           {isMobile ? (
             <a href={images[index].src} target="_blank" rel="noopener noreferrer">
-              <LazyLoadImage
+              <img
                 src={images[index].src}
                 alt={images[index].alt}
                 className="max-h-[35vh] md:max-h-[60vh] object-contain rounded-md border-4 border-green-700 cursor-zoom-in"
               />
             </a>
           ) : (
-            <LazyLoadImage
+            <img
               src={images[index].src}
               alt={images[index].alt}
               className="max-h-[35vh] md:max-h-[60vh] object-contain rounded-md border-4 border-green-700"
@@ -468,7 +466,7 @@ export default function News() {
                   <div className="flex justify-center mb-6">
                     <div className="w-24 h-24 sm:w-28 sm:h-28 rounded-full overflow-hidden border-4 border-white shadow-lg">
                       {testimonial.image ? (
-                        <LazyLoadImage
+                        <img
                           src={testimonial.image}
                           alt={testimonial.name}
                           className="w-full h-full object-cover"
