@@ -1,10 +1,70 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import type { MetaFunction } from "react-router";
+import type { Variants } from "framer-motion";
+import type { MetaFunction } from "@remix-run/node";
+import { LoaderFunctionArgs, json } from "@remix-run/node";
+import { createVisitorsSession } from "~/lib/visitors.server";
+import { randomUUID } from "crypto";
 
 export const meta: MetaFunction = () => [
   { title: "Farmex Corporation" },
 ];
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.15,
+      duration: 0.6,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  }),
+};
+
+export async function loader({ request }: LoaderFunctionArgs) {
+
+    const headers = request.headers;
+
+    const forwarded =
+        headers.get("x-forwarded-for") ??
+        headers.get("cf-connecting-ip") ??
+        "";
+
+    const ipAddress = forwarded.split(",")[0] || "unknown";
+
+    const userAgent =
+        headers.get("user-agent") || "unknown";
+
+    let visitorUniqueID = "";
+
+    const cookie = headers.get("Cookie");
+
+    const match = cookie?.match(/visitorId=([^;]+)/);
+
+    if (match) {
+        visitorUniqueID = match[1];
+    } else {
+        visitorUniqueID = randomUUID();
+    }
+
+    await createVisitorsSession({
+        visitorUniqueID,
+        ipAddress,
+        userAgent,
+        view: false,
+    });
+
+    return json(
+        {},
+        {
+            headers: {
+                "Set-Cookie": `visitorId=${visitorUniqueID}; Path=/; HttpOnly; SameSite=Lax; Max-Age=31536000`,
+            },
+        }
+    );
+}
 
 export default function Home() {
   const [isClient, setIsClient] = useState(false);
@@ -12,6 +72,19 @@ export default function Home() {
   useEffect(() => {
     setIsClient(true);
   }, []);
+
+  const products = [
+    { name: "Jackpot 102", image: "/J102.png" },
+    { name: "LAV 777", image: "/lav777_product.png" },
+    { name: "Leads 143", image: "/leads143_product.png" },
+    { name: "Jackpot ready", image: "/jr_new_image1.png" },
+  ];
+
+  const services = [
+    { image: "/service1.jpg", alt: "Machine Rentals", label: "Machine Rentals", href: "/services#machine-rentals" },
+    { image: "/service2.png", alt: "Technical Consultation", label: "Technical Consultation", href: "/services#technical-consultation" },
+    { image: "/training1.jpg", alt: "Training", label: "Training", href: "/services#training" },
+  ];
 
   return (
     <div className="min-h-screen">
@@ -50,47 +123,51 @@ export default function Home() {
           />
         </div>
       </motion.div>
+
       <motion.div>
-        {/* Gold line under products section */}
+        {/* Gold line */}
         <div className="w-full flex justify-center">
           <div className="h-1 w-full bg-yellow-500"></div>
         </div>
+
         {/* Products Section */}
         <section
           className="relative w-full py-16 px-4 sm:px-6 lg:px-8 flex items-center bg-white justify-center bg-cover bg-center"
           style={{
-            backgroundImage: "url('/featuredbg.png')",
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
+            backgroundImage: "url('/ricefieldbg.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
           }}
         >
           <div className="w-full flex flex-col items-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-2 uppercase tracking-widest text-center">
+            <motion.h2
+              className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-green-700 mb-2 uppercase tracking-widest text-center"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
               Featured Products
-            </h2>
+            </motion.h2>
             <div className="h-1 w-40 md:w-48 lg:w-[400px] bg-yellow-500 rounded-full mb-12"></div>
-            <div className="grid sm:grid-cols-2 gap-8 xl:flex xl:justify-center xl:gap-16 w-full max-w-7xl mt-6">
-              {/* Single Product Card */}
-              {[
-                { name: "Jackpot 102", image: "/J102.png" },
-                { name: "LAV 777", image: "/lav777_product.png" },
-                { name: "Leads 143", image: "/leads143_product.png" },
-                { name: "Jackpot ready", image: "/jr_new_image1.png" },
-              ].map((product) => (
-                <div key={product.name} className="flex uppercase tracking-widest flex-col items-center">
-                  <div
-                    className="w-full max-w-[300px] mb-6 flex items-center justify-center overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105"
 
-                  >
+            <div className="grid sm:grid-cols-2 gap-8 xl:flex xl:justify-center xl:gap-16 w-full max-w-7xl mt-6">
+              {products.map((product, i) => (
+                <motion.div
+                  key={product.name}
+                  className="flex uppercase tracking-widest flex-col items-center"
+                  custom={i}
+                  variants={cardVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.2 }}
+                >
+                  <div className="w-full max-w-[300px] mb-6 flex items-center justify-center overflow-hidden transition-transform duration-300 ease-in-out hover:scale-105">
                     <a href="/products">
-                      <motion.img
+                      <img
                         src={product.image}
                         alt={product.name}
-                        initial={{ opacity: 0, y: 40 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.2 }}
-                        transition={{ duration: 0.6, ease: "easeOut" }}
                         className="w-full h-80 object-cover"
                       />
                     </a>
@@ -98,91 +175,86 @@ export default function Home() {
                   <span className="font-semibold text-white mt-3 uppercase text-center text-md sm:text-base">
                     {product.name}
                   </span>
-                </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </motion.div>
+
+      <motion.div>
+        {/* Services Section */}
+        <section className="relative w-full py-16 px-4 sm:px-6 md:px-8 bg-white">
+          <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
+            <motion.h2
+              className="text-3xl md:text-4xl font-extrabold text-green-700 mb-4 uppercase text-center tracking-widest"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, ease: "easeOut" }}
+            >
+              Services
+            </motion.h2>
+            <div className="h-1 w-40 md:w-48 lg:w-52 bg-yellow-500 rounded-full mb-12"></div>
+
+            {/* Card Row */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 w-full">
+
+              {/* Service Cards */}
+              {services.map((service, i) => (
+                <motion.div
+                  key={service.alt}
+                  className="bg-white rounded-2xl overflow-hidden flex flex-col shadow-md hover:shadow-xl transition-shadow duration-300"
+                  custom={i}
+                  variants={cardVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.2 }}
+                >
+                  {/* Image area with circle bg like the reference */}
+                  <div className="flex items-center justify-center bg-gray-100 h-52 relative overflow-hidden">
+                    <div className="w-40 h-40 rounded-full bg-white/70 absolute"></div>
+                    <img
+                      src={service.image}
+                      alt={service.alt}
+                      className="relative z-10 w-full h-full object-cover"
+                    />
+                  </div>
+
+                  {/* Card Body */}
+                  <div className="flex flex-col justify-between flex-1 p-5 gap-4">
+                    <div>
+                      <h3 className="text-gray-900 font-bold text-base md:text-lg uppercase tracking-wide">
+                        {service.label}
+                      </h3>
+                      <p className="text-gray-400 text-xs mt-1 tracking-wide">
+                        Click below to learn more and get involved
+                      </p>
+                    </div>
+                    <a href={service.href} className="w-full">
+                      <button
+                        type="button"
+                        className="w-full bg-yellow-400 text-black text-sm font-bold py-2 rounded-full hover:bg-yellow-300 transition-colors duration-200"
+                      >
+                        Get Involved →
+                      </button>
+                    </a>
+                  </div>
+                </motion.div>
               ))}
 
             </div>
           </div>
         </section>
-        {/* Gold line under products section */}
-        {/* <div className="w-full flex justify-center">
-          <div className="h-1 w-full bg-yellow-500"></div>
-        </div> */}
       </motion.div>
-      <motion.div>
-        {/* Services Section */}
-        <section
-          className="relative w-full min-h-[900px] py-6 px-4 sm:px-6 md:px-8 flex items-center justify-center bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: "url('/bgservices.jpg')" }}
-        >
-          <div className="w-full max-w-7xl mx-auto flex flex-col items-center">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-12 uppercase text-center tracking-widest">
-              Services
-            </h2>
 
-            <div className="h-1 w-40 md:w-48 lg:w-52 bg-yellow-500 rounded-full -mt-12 mb-20"></div>
-
-            <div className="flex flex-col xl:flex-row justify-center items-center w-full gap-12 xl:gap-16">
-              {/* Service 1 */}
-              <div className="flex flex-col items-center w-full sm:w-2/3 md:w-1/2 lg:w-1/3 max-w-md">
-                <div
-                  className="w-full max-[525px]:w-[90%] h-72 rounded-lg border-4 border-white shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 overflow-hidden mb-8"
-                  style={{ boxShadow: '0 2px 32px 2px rgba(34,197,94,0.25)' }}
-                >
-                  <img
-                    src="/service1.jpg"
-                    alt="Service 1"
-                    className="w-full h-full object-cover block"
-                  />
-                </div>
-                <a href="/services#machine-rentals">
-                  <button
-                    type="button"
-                    className="bg-yellow-500 tracking-widest text-white px-8 py-3 max-[525px]:px-4 max-[525px]:py-2 rounded-lg font-bold text-base max-[525px]:text-sm shadow hover:bg-yellow-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:ring-opacity-50"
-                  >
-                    Get Involved
-                  </button>
-                </a>
-              </div>
-
-              {/* Service 2 */}
-              <div className="flex flex-col items-center w-full sm:w-2/3 md:w-1/2 lg:w-1/3 max-w-md">
-                <div
-                  className="w-full max-[525px]:w-[90%] h-72 rounded-lg border-4 border-white shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 overflow-hidden mb-8"
-                  style={{ boxShadow: '0 2px 32px 2px rgba(34,197,94,0.25)' }}
-                >
-                  <img
-                    src="/service2.png"
-                    alt="Service 2"
-                    className="w-full h-full object-cover block"
-                  />
-                </div>
-
-                <a href="/services#technical-consultation">
-                  <button
-                    type="button"
-                    className="bg-yellow-500 tracking-widest text-white px-8 py-3 max-[525px]:px-4 max-[525px]:py-2 rounded-lg font-bold text-base max-[525px]:text-sm shadow hover:bg-yellow-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-yellow-600 focus:ring-opacity-50"
-                  >
-                    Get Involved
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-      </motion.div>
-      {/* <div className="w-full flex justify-center">
-        <div className="h-1 w-full bg-yellow-500"></div>
-      </div> */}
       <motion.main
         className="relative z-20"
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-      >
-
-      </motion.main>
+      />
     </div>
   );
 }
