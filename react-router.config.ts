@@ -1,2 +1,6 @@
-// This file is not used with Remix v2 — config lives in remix.config.js
-export {};
+import type { Config } from "@react-router/dev/config";
+
+export default {
+  appDirectory: "app",
+  ssr: true,
+} satisfies Config;

@@ -4,7 +4,7 @@ import { adminInputClass } from "~/components/admin/adminFormStyles";
 import AdminModal from "~/components/admin/AdminModal";
 import DeleteConfirmationModal from "~/components/admin/DeleteConfirmationModal";
 import AdminMultiImageUpload from "~/components/admin/AdminMultiImageUpload";
-import type { FetcherWithComponents } from "@remix-run/react";
+import type { FetcherWithComponents } from "react-router";
 import type { CloudinaryConfig } from "~/lib/cloudinary.server";
 import { uploadImagesToCloudinary } from "~/lib/cloudinary.client";
 import type { TechnicalConsultantRecord } from "~/lib/trainings.server";

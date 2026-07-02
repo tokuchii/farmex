@@ -1,4 +1,4 @@
-import logo from "../../public/bgfooter.jpg";
+import logo from "/bgfooter.jpg";
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 
 export default function Footer() {

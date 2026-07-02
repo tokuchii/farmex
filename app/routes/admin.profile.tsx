@@ -1,11 +1,11 @@
-import type { ActionFunctionArgs, LoaderFunctionArgs } from "@remix-run/node";
-import { json, redirect } from "@remix-run/node";
+import type { ActionFunctionArgs, LoaderFunctionArgs } from "react-router";
+import { data, redirect } from "react-router";
 import {
   Form,
   useActionData,
   useLoaderData,
   useNavigation,
-} from "@remix-run/react";
+} from "react-router";
 import { useEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
 import { compare, hash } from "bcryptjs";
@@ -49,7 +49,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
 
   const adminData = adminSnapshot.data();
 
-  return json<LoaderData>({
+  return data<LoaderData>({
     admin: {
       id: adminSnapshot.id,
       username: typeof adminData.username === "string" ? adminData.username : "",
@@ -98,14 +98,14 @@ export async function action({ request }: ActionFunctionArgs) {
   }
 
   if (Object.keys(fieldErrors).length > 0) {
-    return json<ActionData>({ fieldErrors }, { status: 400 });
+    return data<ActionData>({ fieldErrors }, { status: 400 });
   }
 
   const adminRef = doc(db, "users", user.userId);
   const adminSnapshot = await getDoc(adminRef);
 
   if (!adminSnapshot.exists()) {
-    return json<ActionData>(
+    return data<ActionData>(
       { formError: "Admin account not found." },
       { status: 404 }
     );
@@ -115,7 +115,7 @@ export async function action({ request }: ActionFunctionArgs) {
   const storedPassword = adminData.password;
 
   if (typeof storedPassword !== "string") {
-    return json<ActionData>(
+    return data<ActionData>(
       { formError: "Unable to validate current password." },
       { status: 400 }
     );
@@ -126,7 +126,7 @@ export async function action({ request }: ActionFunctionArgs) {
     : storedPassword === currentPassword;
 
   if (!passwordMatches) {
-    return json<ActionData>(
+    return data<ActionData>(
       { fieldErrors: { currentPassword: "Current password is incorrect." } },
       { status: 401 }
     );
@@ -135,7 +135,7 @@ export async function action({ request }: ActionFunctionArgs) {
   const hashedPassword = await hash(newPassword as string, 10);
   await updateDoc(adminRef, { password: hashedPassword });
 
-  return json<ActionData>({ successMessage: "Password updated successfully." });
+  return data<ActionData>({ successMessage: "Password updated successfully." });
 }
 
 function AdminProfile() {

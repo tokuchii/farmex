@@ -1,19 +1,17 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Link, useLocation, useLoaderData } from "@remix-run/react";
-import type { MetaFunction } from "@remix-run/node";
-import { json } from "@remix-run/node";
+import { Link, useLocation, useLoaderData } from "react-router";
+import type { MetaFunction } from "react-router";
+import { data } from "react-router";
 import Calendar from 'react-calendar';
 import calendarStyles from "../styles/calendar.css?url";
-const { LazyLoadImage } = LazyLoadImagePkg;
-import LazyLoadImagePkg from "react-lazy-load-image-component";
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle
 } from "../components/ui/dialog";
-import { 
+import {
   getTechnicalConsultants, getMachineRentals, getMachineRentalGalleries, getTrainingSessions, getTrainingGalleries, getTrainingHeroes,
   type TechnicalConsultantRecord, MachineRentalRecord, MachineRentalGalleryRecord, TrainingSessionRecord, TrainingGalleryRecord, TrainingHeroRecord
 } from "~/lib/trainings.server";
@@ -36,7 +34,7 @@ export async function loader() {
     getTrainingHeroes(),
   ]);
 
-  return json({ technicalConsultants, machineRentals, machineRentalGalleries, trainingSessions, trainingGalleries, trainingHeroes });
+  return data({ technicalConsultants, machineRentals, machineRentalGalleries, trainingSessions, trainingGalleries, trainingHeroes });
 }
 
 export default function Services() {
@@ -483,7 +481,7 @@ export default function Services() {
                   >
                     {/* Image */}
                     <div className="overflow-hidden h-52">
-                      <LazyLoadImage
+                      <img
                         src={img.src}
                         alt={img.alt}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"

@@ -1,5 +1,5 @@
-import type { ActionFunctionArgs, LoaderFunctionArgs } from "@remix-run/node";
-import { json, redirect } from "@remix-run/node";
+import type { ActionFunctionArgs, LoaderFunctionArgs } from "react-router";
+import { data, redirect } from "react-router";
 import {
   Form,
   Link,
@@ -8,7 +8,7 @@ import {
   useLoaderData,
   useLocation,
   useNavigation,
-} from "@remix-run/react";
+} from "react-router";
 import { useCallback, useState } from "react";
 import { compare } from "bcryptjs";
 import AdminAuthShell, { adminInputClass } from "~/components/admin/AdminAuthShell";
@@ -58,7 +58,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
     throw redirect("/admin");
   }
 
-  return json({ user });
+  return data({ user });
 }
 
 export async function action({ request }: ActionFunctionArgs) {
@@ -70,7 +70,7 @@ export async function action({ request }: ActionFunctionArgs) {
   }
 
   if (request.method !== "POST") {
-    return json({ formError: "Invalid request method" }, { status: 405 });
+    return data({ formError: "Invalid request method" }, { status: 405 });
   }
 
   const existingUser = await getAdminUser(request);
@@ -82,11 +82,11 @@ export async function action({ request }: ActionFunctionArgs) {
   const password = form.get("password");
 
   if (typeof email !== "string" || typeof password !== "string") {
-    return json({ formError: "Invalid form data." }, { status: 400 });
+    return data({ formError: "Invalid form data." }, { status: 400 });
   }
 
   if (!email || !password) {
-    return json({ formError: "Please fill in all fields." }, { status: 400 });
+    return data({ formError: "Please fill in all fields." }, { status: 400 });
   }
 
   try {
@@ -95,7 +95,7 @@ export async function action({ request }: ActionFunctionArgs) {
     const snapshot = await getDocs(emailQuery);
 
     if (snapshot.empty) {
-      return json(
+      return data(
         { formError: "Email or password is incorrect." },
         { status: 401 }
       );
@@ -106,7 +106,7 @@ export async function action({ request }: ActionFunctionArgs) {
     const storedPassword = userData.password;
 
     if (typeof storedPassword !== "string") {
-      return json(
+      return data(
         { formError: "Email or password is incorrect." },
         { status: 401 }
       );
@@ -117,7 +117,7 @@ export async function action({ request }: ActionFunctionArgs) {
       : storedPassword === password;
 
     if (!passwordMatches) {
-      return json(
+      return data(
         { formError: "Email or password is incorrect." },
         { status: 401 }
       );
@@ -139,7 +139,7 @@ export async function action({ request }: ActionFunctionArgs) {
     );
   } catch (error) {
     console.error("Login error:", error);
-    return json(
+    return data(
       { formError: "An error occurred while logging in. Please try again." },
       { status: 500 }
     );

@@ -1,6 +1,6 @@
-import type { ActionFunctionArgs, LoaderFunctionArgs } from "@remix-run/node";
-import { json } from "@remix-run/node";
-import { useFetcher, useLoaderData } from "@remix-run/react";
+import type { ActionFunctionArgs, LoaderFunctionArgs } from "react-router";
+import { data } from "react-router";
+import { useFetcher, useLoaderData } from "react-router";
 import { useState } from "react";
 import { LucideTractor, LucideUserCog, LucideCalendar } from "lucide-react";
 import { MachineRentalsModule, TechnicalConsultantModule, TrainingModule } from "~/components/admin";
@@ -243,7 +243,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
     getCloudinaryConfig(),
   ]);
 
-  return json({
+  return data({
     machineRentals,
     machineRentalGalleries,
     trainingSessions,
@@ -262,304 +262,304 @@ export async function action({ request }: ActionFunctionArgs) {
   if (intent === "create-machine-rental") {
     const payload = parseMachineRentalPayload(form);
     if ("error" in payload) {
-      return json({ error: payload.error }, { status: payload.status });
+      return data({ error: payload.error }, { status: payload.status });
     }
 
     try {
       await createMachineRental(payload);
-      return json({ ok: true, message: "Machine rental saved successfully." });
+      return data({ ok: true, message: "Machine rental saved successfully." });
     } catch (error) {
       console.error("Create machine rental error:", error);
-      return json({ error: "Failed to save machine rental." }, { status: 500 });
+      return data({ error: "Failed to save machine rental." }, { status: 500 });
     }
   }
 
   if (intent === "update-machine-rental") {
     const id = form.get("id");
     if (typeof id !== "string" || !id) {
-      return json({ error: "Invalid machine rental id." }, { status: 400 });
+      return data({ error: "Invalid machine rental id." }, { status: 400 });
     }
 
     const payload = parseMachineRentalPayload(form);
     if ("error" in payload) {
-      return json({ error: payload.error }, { status: payload.status });
+      return data({ error: payload.error }, { status: payload.status });
     }
 
     try {
       await updateMachineRental(id, payload);
-      return json({ ok: true, message: "Machine rental updated successfully." });
+      return data({ ok: true, message: "Machine rental updated successfully." });
     } catch (error) {
       console.error("Update machine rental error:", error);
-      return json({ error: "Failed to update machine rental." }, { status: 500 });
+      return data({ error: "Failed to update machine rental." }, { status: 500 });
     }
   }
 
   if (intent === "delete-machine-rental") {
     const id = form.get("id");
     if (typeof id !== "string" || !id) {
-      return json({ error: "Invalid machine rental id." }, { status: 400 });
+      return data({ error: "Invalid machine rental id." }, { status: 400 });
     }
 
     try {
       await deleteMachineRental(id);
-      return json({ ok: true, message: "Machine rental deleted successfully." });
+      return data({ ok: true, message: "Machine rental deleted successfully." });
     } catch (error) {
       console.error("Delete machine rental error:", error);
-      return json({ error: "Failed to delete machine rental." }, { status: 500 });
+      return data({ error: "Failed to delete machine rental." }, { status: 500 });
     }
   }
 
   if (intent === "create-machine-rental-gallery") {
     const payload = parseMachineRentalGalleryPayload(form);
     if ("error" in payload) {
-      return json({ error: payload.error }, { status: payload.status });
+      return data({ error: payload.error }, { status: payload.status });
     }
 
     try {
       await createMachineRentalGallery(payload);
-      return json({ ok: true, message: "Machine rental gallery saved successfully." });
+      return data({ ok: true, message: "Machine rental gallery saved successfully." });
     } catch (error) {
       console.error("Create machine rental gallery error:", error);
-      return json({ error: "Failed to save machine rental gallery." }, { status: 500 });
+      return data({ error: "Failed to save machine rental gallery." }, { status: 500 });
     }
   }
 
   if (intent === "update-machine-rental-gallery") {
     const id = form.get("id");
     if (typeof id !== "string" || !id) {
-      return json({ error: "Invalid machine rental gallery id." }, { status: 400 });
+      return data({ error: "Invalid machine rental gallery id." }, { status: 400 });
     }
 
     const payload = parseMachineRentalGalleryPayload(form);
     if ("error" in payload) {
-      return json({ error: payload.error }, { status: payload.status });
+      return data({ error: payload.error }, { status: payload.status });
     }
 
     try {
       await updateMachineRentalGallery(id, payload);
-      return json({ ok: true, message: "Machine rental gallery updated successfully." });
+      return data({ ok: true, message: "Machine rental gallery updated successfully." });
     } catch (error) {
       console.error("Update machine rental gallery error:", error);
-      return json({ error: "Failed to update machine rental gallery." }, { status: 500 });
+      return data({ error: "Failed to update machine rental gallery." }, { status: 500 });
     }
   }
 
   if (intent === "delete-machine-rental-gallery") {
     const id = form.get("id");
     if (typeof id !== "string" || !id) {
-      return json({ error: "Invalid machine rental gallery id." }, { status: 400 });
+      return data({ error: "Invalid machine rental gallery id." }, { status: 400 });
     }
 
     try {
       await deleteMachineRentalGallery(id);
-      return json({ ok: true, message: "Machine rental gallery deleted successfully." });
+      return data({ ok: true, message: "Machine rental gallery deleted successfully." });
     } catch (error) {
       console.error("Delete machine rental gallery error:", error);
-      return json({ error: "Failed to delete machine rental gallery." }, { status: 500 });
+      return data({ error: "Failed to delete machine rental gallery." }, { status: 500 });
     }
   }
 
   if (intent === "create-training-session") {
     const payload = parseTrainingSessionPayload(form);
     if ("error" in payload) {
-      return json({ error: payload.error }, { status: payload.status });
+      return data({ error: payload.error }, { status: payload.status });
     }
 
     try {
       await createTrainingSession(payload);
-      return json({ ok: true, message: "Training session saved successfully." });
+      return data({ ok: true, message: "Training session saved successfully." });
     } catch (error) {
       console.error("Create training session error:", error);
-      return json({ error: "Failed to save training session." }, { status: 500 });
+      return data({ error: "Failed to save training session." }, { status: 500 });
     }
   }
 
   if (intent === "update-training-session") {
     const id = form.get("id");
     if (typeof id !== "string" || !id) {
-      return json({ error: "Invalid training session id." }, { status: 400 });
+      return data({ error: "Invalid training session id." }, { status: 400 });
     }
 
     const payload = parseTrainingSessionPayload(form);
     if ("error" in payload) {
-      return json({ error: payload.error }, { status: payload.status });
+      return data({ error: payload.error }, { status: payload.status });
     }
 
     try {
       await updateTrainingSession(id, payload);
-      return json({ ok: true, message: "Training session updated successfully." });
+      return data({ ok: true, message: "Training session updated successfully." });
     } catch (error) {
       console.error("Update training session error:", error);
-      return json({ error: "Failed to update training session." }, { status: 500 });
+      return data({ error: "Failed to update training session." }, { status: 500 });
     }
   }
 
   if (intent === "delete-training-session") {
     const id = form.get("id");
     if (typeof id !== "string" || !id) {
-      return json({ error: "Invalid training session id." }, { status: 400 });
+      return data({ error: "Invalid training session id." }, { status: 400 });
     }
 
     try {
       await deleteTrainingSession(id);
-      return json({ ok: true, message: "Training session deleted successfully." });
+      return data({ ok: true, message: "Training session deleted successfully." });
     } catch (error) {
       console.error("Delete training session error:", error);
-      return json({ error: "Failed to delete training session." }, { status: 500 });
+      return data({ error: "Failed to delete training session." }, { status: 500 });
     }
   }
 
   if (intent === "create-training-hero") {
     const payload = parseTrainingHeroPayload(form);
     if ("error" in payload) {
-      return json({ error: payload.error }, { status: payload.status });
+      return data({ error: payload.error }, { status: payload.status });
     }
 
     try {
       await createTrainingHero(payload);
-      return json({ ok: true, message: "Training hero saved successfully." });
+      return data({ ok: true, message: "Training hero saved successfully." });
     } catch (error) {
       console.error("Create training hero error:", error);
-      return json({ error: "Failed to save training hero." }, { status: 500 });
+      return data({ error: "Failed to save training hero." }, { status: 500 });
     }
   }
 
   if (intent === "update-training-hero") {
     const id = form.get("id");
     if (typeof id !== "string" || !id) {
-      return json({ error: "Invalid training hero id." }, { status: 400 });
+      return data({ error: "Invalid training hero id." }, { status: 400 });
     }
 
     const payload = parseTrainingHeroPayload(form);
     if ("error" in payload) {
-      return json({ error: payload.error }, { status: payload.status });
+      return data({ error: payload.error }, { status: payload.status });
     }
 
     try {
       await updateTrainingHero(id, payload);
-      return json({ ok: true, message: "Training hero updated successfully." });
+      return data({ ok: true, message: "Training hero updated successfully." });
     } catch (error) {
       console.error("Update training hero error:", error);
-      return json({ error: "Failed to update training hero." }, { status: 500 });
+      return data({ error: "Failed to update training hero." }, { status: 500 });
     }
   }
 
   if (intent === "delete-training-hero") {
     const id = form.get("id");
     if (typeof id !== "string" || !id) {
-      return json({ error: "Invalid training hero id." }, { status: 400 });
+      return data({ error: "Invalid training hero id." }, { status: 400 });
     }
 
     try {
       await deleteTrainingHero(id);
-      return json({ ok: true, message: "Training hero deleted successfully." });
+      return data({ ok: true, message: "Training hero deleted successfully." });
     } catch (error) {
       console.error("Delete training hero error:", error);
-      return json({ error: "Failed to delete training hero." }, { status: 500 });
+      return data({ error: "Failed to delete training hero." }, { status: 500 });
     }
   }
 
   if (intent === "create-training-gallery") {
     const payload = parseTrainingGalleryPayload(form);
     if ("error" in payload) {
-      return json({ error: payload.error }, { status: payload.status });
+      return data({ error: payload.error }, { status: payload.status });
     }
 
     try {
       await createTrainingGallery(payload);
-      return json({ ok: true, message: "Training gallery saved successfully." });
+      return data({ ok: true, message: "Training gallery saved successfully." });
     } catch (error) {
       console.error("Create training gallery error:", error);
-      return json({ error: "Failed to save training gallery." }, { status: 500 });
+      return data({ error: "Failed to save training gallery." }, { status: 500 });
     }
   }
 
   if (intent === "update-training-gallery") {
     const id = form.get("id");
     if (typeof id !== "string" || !id) {
-      return json({ error: "Invalid training gallery id." }, { status: 400 });
+      return data({ error: "Invalid training gallery id." }, { status: 400 });
     }
 
     const payload = parseTrainingGalleryPayload(form);
     if ("error" in payload) {
-      return json({ error: payload.error }, { status: payload.status });
+      return data({ error: payload.error }, { status: payload.status });
     }
 
     try {
       await updateTrainingGallery(id, payload);
-      return json({ ok: true, message: "Training gallery updated successfully." });
+      return data({ ok: true, message: "Training gallery updated successfully." });
     } catch (error) {
       console.error("Update training gallery error:", error);
-      return json({ error: "Failed to update training gallery." }, { status: 500 });
+      return data({ error: "Failed to update training gallery." }, { status: 500 });
     }
   }
 
   if (intent === "delete-training-gallery") {
     const id = form.get("id");
     if (typeof id !== "string" || !id) {
-      return json({ error: "Invalid training gallery id." }, { status: 400 });
+      return data({ error: "Invalid training gallery id." }, { status: 400 });
     }
 
     try {
       await deleteTrainingGallery(id);
-      return json({ ok: true, message: "Training gallery deleted successfully." });
+      return data({ ok: true, message: "Training gallery deleted successfully." });
     } catch (error) {
       console.error("Delete training gallery error:", error);
-      return json({ error: "Failed to delete training gallery." }, { status: 500 });
+      return data({ error: "Failed to delete training gallery." }, { status: 500 });
     }
   }
 
   if (intent === "create-technical-consultant") {
     const payload = parseTechnicalConsultantPayload(form);
     if ("error" in payload) {
-      return json({ error: payload.error }, { status: payload.status });
+      return data({ error: payload.error }, { status: payload.status });
     }
 
     try {
       await createTechnicalConsultant(payload);
-      return json({ ok: true, message: "Technical consultant saved successfully." });
+      return data({ ok: true, message: "Technical consultant saved successfully." });
     } catch (error) {
       console.error("Create technical consultant error:", error);
-      return json({ error: "Failed to save technical consultant." }, { status: 500 });
+      return data({ error: "Failed to save technical consultant." }, { status: 500 });
     }
   }
 
   if (intent === "update-technical-consultant") {
     const id = form.get("id");
     if (typeof id !== "string" || !id) {
-      return json({ error: "Invalid technical consultant id." }, { status: 400 });
+      return data({ error: "Invalid technical consultant id." }, { status: 400 });
     }
 
     const payload = parseTechnicalConsultantPayload(form);
     if ("error" in payload) {
-      return json({ error: payload.error }, { status: payload.status });
+      return data({ error: payload.error }, { status: payload.status });
     }
 
     try {
       await updateTechnicalConsultant(id, payload);
-      return json({ ok: true, message: "Technical consultant updated successfully." });
+      return data({ ok: true, message: "Technical consultant updated successfully." });
     } catch (error) {
       console.error("Update technical consultant error:", error);
-      return json({ error: "Failed to update technical consultant." }, { status: 500 });
+      return data({ error: "Failed to update technical consultant." }, { status: 500 });
     }
   }
 
   if (intent === "delete-technical-consultant") {
     const id = form.get("id");
     if (typeof id !== "string" || !id) {
-      return json({ error: "Invalid technical consultant id." }, { status: 400 });
+      return data({ error: "Invalid technical consultant id." }, { status: 400 });
     }
 
     try {
       await deleteTechnicalConsultant(id);
-      return json({ ok: true, message: "Technical consultant deleted successfully." });
+      return data({ ok: true, message: "Technical consultant deleted successfully." });
     } catch (error) {
       console.error("Delete technical consultant error:", error);
-      return json({ error: "Failed to delete technical consultant." }, { status: 500 });
+      return data({ error: "Failed to delete technical consultant." }, { status: 500 });
     }
   }
 
-  return json({ error: "Invalid action." }, { status: 400 });
+  return data({ error: "Invalid action." }, { status: 400 });
 }
 
 const AdminServices = () => {

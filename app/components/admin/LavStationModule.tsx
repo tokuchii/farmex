@@ -1,6 +1,6 @@
 import { LucideExternalLink, LucidePencil, LucidePlus, LucideTrash2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import type { FetcherWithComponents } from "@remix-run/react";
+import type { FetcherWithComponents } from "react-router";
 import AdminActiveToggle from "~/components/admin/AdminActiveToggle";
 import AdminModal from "~/components/admin/AdminModal";
 import DeleteConfirmationModal from "~/components/admin/DeleteConfirmationModal";

@@ -1,4 +1,4 @@
-import { useSearchParams } from "@remix-run/react";
+import { useSearchParams } from "react-router";
 import { useEffect, useRef } from "react";
 import { useAdminToast } from "~/components/admin/AdminToast";
 

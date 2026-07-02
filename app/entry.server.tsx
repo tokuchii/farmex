@@ -4,14 +4,11 @@
  * For more information, see https://remix.run/file-conventions/entry.server
  */
 
-// Load environment variables from .env file
-import "dotenv/config";
-
 import { PassThrough } from "node:stream";
 
-import type { AppLoadContext, EntryContext } from "@remix-run/node";
-import { createReadableStreamFromReadable } from "@remix-run/node";
-import { RemixServer } from "@remix-run/react";
+import type { AppLoadContext, EntryContext } from "@react-router/node";
+import { createReadableStreamFromReadable } from "@react-router/node";
+import { ServerRouter } from "react-router";
 import { isbot } from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
 
@@ -51,7 +48,7 @@ function handleBotRequest(
   return new Promise((resolve, reject) => {
     let shellRendered = false;
     const { pipe, abort } = renderToPipeableStream(
-      <RemixServer
+      <ServerRouter
         context={remixContext}
         url={request.url}
         abortDelay={ABORT_DELAY}
@@ -101,7 +98,7 @@ function handleBrowserRequest(
   return new Promise((resolve, reject) => {
     let shellRendered = false;
     const { pipe, abort } = renderToPipeableStream(
-      <RemixServer
+      <ServerRouter
         context={remixContext}
         url={request.url}
         abortDelay={ABORT_DELAY}

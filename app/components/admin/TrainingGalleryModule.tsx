@@ -4,7 +4,7 @@ import DeleteConfirmationModal from "~/components/admin/DeleteConfirmationModal"
 import { adminInputClass } from "./adminFormStyles";
 import { LucidePencil, LucidePlus, LucideTrash2 } from "lucide-react";
 import AdminMultiImageUpload from "~/components/admin/AdminMultiImageUpload";
-import type { FetcherWithComponents } from "@remix-run/react";
+import type { FetcherWithComponents } from "react-router";
 import type { CloudinaryConfig } from "~/lib/cloudinary.server";
 import { uploadImagesToCloudinary } from "~/lib/cloudinary.client";
 import {

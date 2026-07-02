@@ -6,11 +6,11 @@ import {
   ScrollRestoration,
   useLoaderData,
   useLocation,
-} from "@remix-run/react";
-import type { LinksFunction } from "@remix-run/node";
-import { json } from "@remix-run/node";
+} from "react-router";
+import type { LinksFunction } from "react-router";
+import { data } from "react-router";
 
-import styles from "./tailwind.css";
+import styles from "./tailwind.css?url";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import React, { useEffect } from "react";
@@ -31,7 +31,7 @@ export const links: LinksFunction = () => [
 ];
 
 export async function loader() {
-  return json({
+  return data({
     firebaseConfig: {
       apiKey: process.env.VITE_FIREBASE_API_KEY || "",
       authDomain: process.env.VITE_FIREBASE_AUTH_DOMAIN || "",

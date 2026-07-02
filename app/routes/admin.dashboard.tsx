@@ -1,6 +1,6 @@
-import type { LoaderFunctionArgs } from "@remix-run/node";
-import { json } from "@remix-run/node";
-import { useLoaderData, useSearchParams } from "@remix-run/react";
+import type { LoaderFunctionArgs } from "react-router";
+import { data } from "react-router";
+import { useLoaderData, useSearchParams } from "react-router";
 import type { AdminUrlToastConfig } from "~/components/admin/useAdminUrlToast";
 import { useAdminUrlToast } from "~/components/admin/useAdminUrlToast";
 import { getLavStations } from "~/lib/lav-stations.server";
@@ -75,7 +75,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
     getRiceDerbies(),
   ]);
 
-  return json({
+  return data({
     user,
     totals: {
       news: news.length,

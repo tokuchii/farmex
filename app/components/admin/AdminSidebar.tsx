@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from "@remix-run/react";
+import { NavLink, useLocation } from "react-router";
 import { LucideX } from "lucide-react";
 import { useEffect } from "react";
 import type { FC } from "react";

@@ -4,7 +4,7 @@ import { MachineRentalGalleryModule } from "./MachineRentalGalleryModule";
 import AdminModal from "~/components/admin/AdminModal";
 import DeleteConfirmationModal from "~/components/admin/DeleteConfirmationModal";
 import { adminInputClass } from "./adminFormStyles";
-import type { FetcherWithComponents } from "@remix-run/react";
+import type { FetcherWithComponents } from "react-router";
 import type { CloudinaryConfig } from "~/lib/cloudinary.server";
 import type { MachineRentalGalleryRecord, MachineRentalRecord } from "~/lib/trainings.server";
 import AdminPaginatedTable, {

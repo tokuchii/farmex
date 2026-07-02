@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Link, useLocation, useLoaderData } from "@remix-run/react";
-import type { MetaFunction } from "@remix-run/node";
-import { json } from "@remix-run/node";
+import { Link, useLocation, useLoaderData } from "react-router";
+import type { MetaFunction } from "react-router";
+import { data } from "react-router";
 import { getLavStations, type LavStationRecord } from "~/lib/lav-stations.server";
 import { getRiceDerbies, type RiceDerbiesRecord } from "~/lib/rice-derbies.server";
 
@@ -15,7 +15,7 @@ export async function loader() {
     getLavStations(),
     getRiceDerbies(),
   ]);
-  return json({ lavStations, riceDerbies });
+  return data({ lavStations, riceDerbies });
 }
 
 const description = [
