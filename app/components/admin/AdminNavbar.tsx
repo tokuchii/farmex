@@ -1,4 +1,4 @@
-import { Form, Link, useLocation } from "@remix-run/react";
+import { Form, Link, useLocation } from "react-router";
 import { LucideExternalLink, LucideLogOut, LucideMenu, LucideUser } from "lucide-react";
 import type { FC } from "react";
 import { adminNavLinks } from "./adminNavLinks";

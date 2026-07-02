@@ -1,6 +1,6 @@
-import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
-import { json, redirect } from "@remix-run/node";
-import { Form, Link, useActionData } from "@remix-run/react";
+import type { ActionFunctionArgs, MetaFunction } from "react-router";
+import { data, redirect } from "react-router";
+import { Form, Link, useActionData } from "react-router";
 import { hash } from "bcryptjs";
 import AdminAuthShell, {
   AdminAuthField,
@@ -39,7 +39,7 @@ export const meta: MetaFunction = () => [
 
 export async function action({ request }: ActionFunctionArgs) {
   if (request.method !== "POST") {
-    return json({ formError: "Invalid request method." }, { status: 405 });
+    return data({ formError: "Invalid request method." }, { status: 405 });
   }
 
   const form = await request.formData();
@@ -75,7 +75,7 @@ export async function action({ request }: ActionFunctionArgs) {
   }
 
   if (Object.keys(fieldErrors).length > 0) {
-    return json({ fieldErrors }, { status: 400 });
+    return data({ fieldErrors }, { status: 400 });
   }
 
   const normalizedEmail = (email as string).trim().toLowerCase();
@@ -87,7 +87,7 @@ export async function action({ request }: ActionFunctionArgs) {
     const existingByEmail = await getDocs(emailQuery);
 
     if (!existingByEmail.empty) {
-      return json(
+      return data(
         { fieldErrors: { email: "An account with this email already exists." } },
         { status: 409 }
       );
@@ -100,7 +100,7 @@ export async function action({ request }: ActionFunctionArgs) {
     const existingByUsername = await getDocs(usernameQuery);
 
     if (!existingByUsername.empty) {
-      return json(
+      return data(
         { fieldErrors: { username: "An account with this username already exists." } },
         { status: 409 }
       );
@@ -119,7 +119,7 @@ export async function action({ request }: ActionFunctionArgs) {
     return redirect("/admin/register?registered=true");
   } catch (error) {
     console.error("Registration error:", error);
-    return json(
+    return data(
       { formError: "An error occurred while registering. Please try again." },
       { status: 500 }
     );

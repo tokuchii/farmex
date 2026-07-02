@@ -1,12 +1,12 @@
-import { json } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import { data } from "react-router";
+import { useLoaderData } from "react-router";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { getEmailJsConfig } from "~/lib/emailjs.server";
 
 export async function loader() {
-  return json({ emailJs: getEmailJsConfig() });
+  return data({ emailJs: getEmailJsConfig() });
 }
 
 export function meta() {

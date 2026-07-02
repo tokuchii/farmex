@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { json } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import { data } from "react-router";
+import { useLoaderData } from "react-router";
 import { motion } from "framer-motion";
 import LazyLoadImagePkg from "react-lazy-load-image-component";
 import { getTestimonials } from "~/lib/testimonials.server";
@@ -9,7 +9,7 @@ const { LazyLoadImage } = LazyLoadImagePkg;
 
 export async function loader() {
   const [testimonials, news] = await Promise.all([getTestimonials(), getNews()]);
-  return json({ testimonials, news });
+  return data({ testimonials, news });
 }
 
 export function meta() {

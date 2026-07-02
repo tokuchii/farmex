@@ -1,6 +1,6 @@
-import type { ActionFunctionArgs, LoaderFunctionArgs } from "@remix-run/node";
-import { json } from "@remix-run/node";
-import { useFetcher, useLoaderData } from "@remix-run/react";
+import type { ActionFunctionArgs, LoaderFunctionArgs } from "react-router";
+import { data } from "react-router";
+import { useFetcher, useLoaderData } from "react-router";
 import { NewsModule } from "~/components/admin/NewsModule";
 import { requireAdminUser } from "~/lib/session.server";
 import { getCloudinaryConfig } from "~/lib/cloudinary.server";
@@ -30,7 +30,7 @@ function parseNewsPayload(form: FormData): { error: string; status: number } | N
   let images: string[] = [];
   if (typeof imagesRaw === "string" && imagesRaw) {
     try {
-      const parsed = JSON.parse(imagesRaw) as unknown;
+      const parsed = data.parse(imagesRaw) as unknown;
       if (!Array.isArray(parsed) || !parsed.every((item) => typeof item === "string")) {
         return { error: "Invalid image data.", status: 400 };
       }
@@ -60,7 +60,7 @@ function parseNewsPayload(form: FormData): { error: string; status: number } | N
 export async function loader({ request }: LoaderFunctionArgs) {
   await requireAdminUser(request);
   const [news, cloudinaryConfig] = await Promise.all([getNews(), getCloudinaryConfig()]);
-  return json({ news, cloudinaryConfig });
+  return data({ news, cloudinaryConfig });
 }
 
 export async function action({ request }: ActionFunctionArgs) {
@@ -71,54 +71,54 @@ export async function action({ request }: ActionFunctionArgs) {
   if (intent === "create-news") {
     const payload = parseNewsPayload(form);
     if ("error" in payload) {
-      return json({ error: payload.error }, { status: payload.status });
+      return data({ error: payload.error }, { status: payload.status });
     }
 
     try {
       await createNews(payload);
-      return json({ ok: true, message: "News article saved successfully." });
+      return data({ ok: true, message: "News article saved successfully." });
     } catch (error) {
       console.error("Create news error:", error);
-      return json({ error: "Failed to save news article." }, { status: 500 });
+      return data({ error: "Failed to save news article." }, { status: 500 });
     }
   }
 
   if (intent === "update-news") {
     const id = form.get("id");
     if (typeof id !== "string" || !id) {
-      return json({ error: "Invalid news id." }, { status: 400 });
+      return data({ error: "Invalid news id." }, { status: 400 });
     }
 
     const payload = parseNewsPayload(form);
     if ("error" in payload) {
-      return json({ error: payload.error }, { status: payload.status });
+      return data({ error: payload.error }, { status: payload.status });
     }
 
     try {
       await updateNews(id, payload);
-      return json({ ok: true, message: "News article updated successfully." });
+      return data({ ok: true, message: "News article updated successfully." });
     } catch (error) {
       console.error("Update news error:", error);
-      return json({ error: "Failed to update news article." }, { status: 500 });
+      return data({ error: "Failed to update news article." }, { status: 500 });
     }
   }
 
   if (intent === "delete-news") {
     const id = form.get("id");
     if (typeof id !== "string" || !id) {
-      return json({ error: "Invalid news id." }, { status: 400 });
+      return data({ error: "Invalid news id." }, { status: 400 });
     }
 
     try {
       await deleteNews(id);
-      return json({ ok: true, message: "News article deleted successfully." });
+      return data({ ok: true, message: "News article deleted successfully." });
     } catch (error) {
       console.error("Delete news error:", error);
-      return json({ error: "Failed to delete news article." }, { status: 500 });
+      return data({ error: "Failed to delete news article." }, { status: 500 });
     }
   }
 
-  return json({ error: "Invalid action." }, { status: 400 });
+  return data({ error: "Invalid action." }, { status: 400 });
 }
 
 export const AdminNews = () => {

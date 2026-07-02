@@ -1,6 +1,6 @@
-import type { ActionFunctionArgs, LoaderFunctionArgs } from "@remix-run/node";
-import { json } from "@remix-run/node";
-import { useLoaderData, useFetcher } from "@remix-run/react";
+import type { ActionFunctionArgs, LoaderFunctionArgs } from "react-router";
+import { data } from "react-router";
+import { useLoaderData, useFetcher } from "react-router";
 import { useState } from "react";
 import { LucideCaptions, LucideWheat } from "lucide-react";
 import { LavStationModule } from "~/components/admin/LavStationModule";
@@ -59,7 +59,7 @@ function parseKnowledgePayload(form: FormData):
   let images: string[] = [];
   if (typeof imagesRaw === "string" && imagesRaw) {
     try {
-      const parsed = JSON.parse(imagesRaw) as unknown;
+      const parsed = data.parse(imagesRaw) as unknown;
       if (!Array.isArray(parsed) || !parsed.every((item) => typeof item === "string")) {
         return { error: "Invalid image data.", status: 400 };
       }
@@ -87,7 +87,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
   const riceDerbies = await getRiceDerbies();
   const cloudinary = getCloudinaryConfig();
 
-  return json({ lavStations, riceDerbies, cloudinary });
+  return data({ lavStations, riceDerbies, cloudinary });
 }
 
 export async function action({ request }: ActionFunctionArgs) {
@@ -99,50 +99,50 @@ export async function action({ request }: ActionFunctionArgs) {
   if (intent === "create-lav-station") {
     const payload = parseKnowledgePayload(form);
     if ("error" in payload) {
-      return json({ error: payload.error }, { status: payload.status });
+      return data({ error: payload.error }, { status: payload.status });
     }
 
     try {
       await createLavStation(payload);
-      return json({ ok: true, message: "Lav station saved successfully." });
+      return data({ ok: true, message: "Lav station saved successfully." });
     } catch (error) {
       console.error("Create lav station error:", error);
-      return json({ error: "Failed to save lav station." }, { status: 500 });
+      return data({ error: "Failed to save lav station." }, { status: 500 });
     }
   }
 
   if (intent === "update-lav-station") {
     const id = form.get("id");
     if (typeof id !== "string" || !id) {
-      return json({ error: "Invalid station id." }, { status: 400 });
+      return data({ error: "Invalid station id." }, { status: 400 });
     }
 
     const payload = parseKnowledgePayload(form);
     if ("error" in payload) {
-      return json({ error: payload.error }, { status: payload.status });
+      return data({ error: payload.error }, { status: payload.status });
     }
 
     try {
       await updateLavStation(id, payload);
-      return json({ ok: true, message: "Lav station updated successfully." });
+      return data({ ok: true, message: "Lav station updated successfully." });
     } catch (error) {
       console.error("Update lav station error:", error);
-      return json({ error: "Failed to update lav station." }, { status: 500 });
+      return data({ error: "Failed to update lav station." }, { status: 500 });
     }
   }
 
   if (intent === "delete-lav-station") {
     const id = form.get("id");
     if (typeof id !== "string" || !id) {
-      return json({ error: "Invalid station id." }, { status: 400 });
+      return data({ error: "Invalid station id." }, { status: 400 });
     }
 
     try {
       await deleteLavStation(id);
-      return json({ ok: true, message: "Lav station deleted successfully." });
+      return data({ ok: true, message: "Lav station deleted successfully." });
     } catch (error) {
       console.error("Delete lav station error:", error);
-      return json({ error: "Failed to delete lav station." }, { status: 500 });
+      return data({ error: "Failed to delete lav station." }, { status: 500 });
     }
   }
 
@@ -151,24 +151,24 @@ export async function action({ request }: ActionFunctionArgs) {
     const activeRaw = form.get("active");
 
     if (typeof id !== "string" || !id) {
-      return json({ error: "Invalid station id." }, { status: 400 });
+      return data({ error: "Invalid station id." }, { status: 400 });
     }
 
     if (activeRaw !== "true" && activeRaw !== "false") {
-      return json({ error: "Invalid active state." }, { status: 400 });
+      return data({ error: "Invalid active state." }, { status: 400 });
     }
 
     const active = activeRaw === "true";
 
     try {
       await setLavStationActive(id, active);
-      return json({
+      return data({
         ok: true,
         message: active ? "Lav station is now On." : "Lav station is now Off.",
       });
     } catch (error) {
       console.error("Toggle lav station active error:", error);
-      return json({ error: "Failed to update active state." }, { status: 500 });
+      return data({ error: "Failed to update active state." }, { status: 500 });
     }
   }
 
@@ -176,50 +176,50 @@ export async function action({ request }: ActionFunctionArgs) {
   if (intent === "create-rice-derbies") {
     const payload = parseKnowledgePayload(form);
     if ("error" in payload) {
-      return json({ error: payload.error }, { status: payload.status });
+      return data({ error: payload.error }, { status: payload.status });
     }
 
     try {
       await createRiceDerbies(payload);
-      return json({ ok: true, message: "Rice derbies saved successfully." });
+      return data({ ok: true, message: "Rice derbies saved successfully." });
     } catch (error) {
       console.error("Create rice derbies error:", error);
-      return json({ error: "Failed to save rice derbies." }, { status: 500 });
+      return data({ error: "Failed to save rice derbies." }, { status: 500 });
     }
   }
 
   if (intent === "update-rice-derbies") {
     const id = form.get("id");
     if (typeof id !== "string" || !id) {
-      return json({ error: "Invalid rice derbies id." }, { status: 400 });
+      return data({ error: "Invalid rice derbies id." }, { status: 400 });
     }
 
     const payload = parseKnowledgePayload(form);
     if ("error" in payload) {
-      return json({ error: payload.error }, { status: payload.status });
+      return data({ error: payload.error }, { status: payload.status });
     }
 
     try {
       await updateRiceDerbies(id, payload);
-      return json({ ok: true, message: "Rice derbies updated successfully." });
+      return data({ ok: true, message: "Rice derbies updated successfully." });
     } catch (error) {
       console.error("Update rice derbies error:", error);
-      return json({ error: "Failed to update rice derbies." }, { status: 500 });
+      return data({ error: "Failed to update rice derbies." }, { status: 500 });
     }
   }
 
   if (intent === "delete-rice-derbies") {
     const id = form.get("id");
     if (typeof id !== "string" || !id) {
-      return json({ error: "Invalid rice derbies id." }, { status: 400 });
+      return data({ error: "Invalid rice derbies id." }, { status: 400 });
     }
 
     try {
       await deleteRiceDerbies(id);
-      return json({ ok: true, message: "Rice derbies deleted successfully." });
+      return data({ ok: true, message: "Rice derbies deleted successfully." });
     } catch (error) {
       console.error("Delete rice derbies error:", error);
-      return json({ error: "Failed to delete rice derbies." }, { status: 500 });
+      return data({ error: "Failed to delete rice derbies." }, { status: 500 });
     }
   }
 
@@ -228,28 +228,28 @@ export async function action({ request }: ActionFunctionArgs) {
     const activeRaw = form.get("active");
 
     if (typeof id !== "string" || !id) {
-      return json({ error: "Invalid rice derbies id." }, { status: 400 });
+      return data({ error: "Invalid rice derbies id." }, { status: 400 });
     }
 
     if (activeRaw !== "true" && activeRaw !== "false") {
-      return json({ error: "Invalid active state." }, { status: 400 });
+      return data({ error: "Invalid active state." }, { status: 400 });
     }
 
     const active = activeRaw === "true";
 
     try {
       await setRiceDerbiesActive(id, active);
-      return json({
+      return data({
         ok: true,
         message: active ? "Rice derbies is now On." : "Rice derbies is now Off.",
       });
     } catch (error) {
       console.error("Toggle rice derbies active error:", error);
-      return json({ error: "Failed to update active state." }, { status: 500 });
+      return data({ error: "Failed to update active state." }, { status: 500 });
     }
   }
 
-  return json({ error: "Invalid action." }, { status: 400 });
+  return data({ error: "Invalid action." }, { status: 400 });
 }
 
 const KnowledgeTransferAdmin = () => {

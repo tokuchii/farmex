@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Link, useLocation, useLoaderData } from "@remix-run/react";
-import type { MetaFunction } from "@remix-run/node";
-import { json } from "@remix-run/node";
+import { Link, useLocation, useLoaderData } from "react-router";
+import type { MetaFunction } from "react-router";
+import { data } from "react-router";
 import Calendar from 'react-calendar';
 import calendarStyles from "../styles/calendar.css?url";
 const { LazyLoadImage } = LazyLoadImagePkg;
@@ -36,7 +36,7 @@ export async function loader() {
     getTrainingHeroes(),
   ]);
 
-  return json({ technicalConsultants, machineRentals, machineRentalGalleries, trainingSessions, trainingGalleries, trainingHeroes });
+  return data({ technicalConsultants, machineRentals, machineRentalGalleries, trainingSessions, trainingGalleries, trainingHeroes });
 }
 
 export default function Services() {

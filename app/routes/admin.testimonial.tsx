@@ -1,6 +1,6 @@
-import type { ActionFunctionArgs, LoaderFunctionArgs } from "@remix-run/node";
-import { json } from "@remix-run/node";
-import { useFetcher, useLoaderData } from "@remix-run/react";
+import type { ActionFunctionArgs, LoaderFunctionArgs } from "react-router";
+import { data } from "react-router";
+import { useFetcher, useLoaderData } from "react-router";
 import { TestimonialsModule } from "~/components/admin/TestimonialsModule";
 import { getCloudinaryConfig } from "~/lib/cloudinary.server";
 import {
@@ -46,7 +46,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
     getTestimonials(),
     getCloudinaryConfig(),
   ]);
-  return json({ testimonials, cloudinaryConfig });
+  return data({ testimonials, cloudinaryConfig });
 }
 
 export async function action({ request }: ActionFunctionArgs) {
@@ -57,54 +57,54 @@ export async function action({ request }: ActionFunctionArgs) {
   if (intent === "create-testimonial") {
     const payload = parseTestimonialPayload(form);
     if ("error" in payload) {
-      return json({ error: payload.error }, { status: payload.status });
+      return data({ error: payload.error }, { status: payload.status });
     }
 
     try {
       await createTestimonial(payload);
-      return json({ ok: true, message: "Testimonial saved successfully." });
+      return data({ ok: true, message: "Testimonial saved successfully." });
     } catch (error) {
       console.error("Create testimonial error:", error);
-      return json({ error: "Failed to save testimonial." }, { status: 500 });
+      return data({ error: "Failed to save testimonial." }, { status: 500 });
     }
   }
 
   if (intent === "update-testimonial") {
     const id = form.get("id");
     if (typeof id !== "string" || !id) {
-      return json({ error: "Invalid testimonial id." }, { status: 400 });
+      return data({ error: "Invalid testimonial id." }, { status: 400 });
     }
 
     const payload = parseTestimonialPayload(form);
     if ("error" in payload) {
-      return json({ error: payload.error }, { status: payload.status });
+      return data({ error: payload.error }, { status: payload.status });
     }
 
     try {
       await updateTestimonial(id, payload);
-      return json({ ok: true, message: "Testimonial updated successfully." });
+      return data({ ok: true, message: "Testimonial updated successfully." });
     } catch (error) {
       console.error("Update testimonial error:", error);
-      return json({ error: "Failed to update testimonial." }, { status: 500 });
+      return data({ error: "Failed to update testimonial." }, { status: 500 });
     }
   }
 
   if (intent === "delete-testimonial") {
     const id = form.get("id");
     if (typeof id !== "string" || !id) {
-      return json({ error: "Invalid testimonial id." }, { status: 400 });
+      return data({ error: "Invalid testimonial id." }, { status: 400 });
     }
 
     try {
       await deleteTestimonial(id);
-      return json({ ok: true, message: "Testimonial deleted successfully." });
+      return data({ ok: true, message: "Testimonial deleted successfully." });
     } catch (error) {
       console.error("Delete testimonial error:", error);
-      return json({ error: "Failed to delete testimonial." }, { status: 500 });
+      return data({ error: "Failed to delete testimonial." }, { status: 500 });
     }
   }
 
-  return json({ error: "Invalid action." }, { status: 400 });
+  return data({ error: "Invalid action." }, { status: 400 });
 }
 
 export const AdminTestimonials = () => {

@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import type { Variants } from "framer-motion";
-import type { MetaFunction } from "@remix-run/node";
-import { LoaderFunctionArgs, json } from "@remix-run/node";
+import type { MetaFunction } from "react-router";
+import { LoaderFunctionArgs, data } from "react-router";
 import { createVisitorsSession } from "~/lib/visitors.server";
 import { randomUUID } from "crypto";
 
@@ -56,7 +56,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
         view: false,
     });
 
-    return json(
+    return data(
         {},
         {
             headers: {

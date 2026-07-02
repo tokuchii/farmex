@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import AdminModal from "~/components/admin/AdminModal";
 import DeleteConfirmationModal from "~/components/admin/DeleteConfirmationModal";
 import { adminInputClass } from "./adminFormStyles";
-import type { FetcherWithComponents } from "@remix-run/react";
+import type { FetcherWithComponents } from "react-router";
 import type { TrainingHeroRecord } from "~/lib/trainings.server";
 import AdminPaginatedTable, {
   type AdminTableColumn,

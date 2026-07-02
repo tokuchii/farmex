@@ -1,5 +1,2 @@
-/** @type {import('@remix-run/dev').AppConfig} */
-export default {
-  ignoredRouteFiles: ["**/.*"],
-  serverModuleFormat: "esm",
-};
+// This file is no longer used with React Router v7 — config lives in react-router.config.ts
+export {};
